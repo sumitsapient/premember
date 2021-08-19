@@ -1,0 +1,20 @@
+<!--/* Header */-->
+<sly
+	data-sly-use.employerConfig="com.mirumagency.uhc.premember.core.models.EmployerConfig"
+	data-sly-use.employerData="com.mirumagency.uhc.premember.core.models.EmployerData"
+	data-sly-use.headerTemplate="header.html"
+	data-sly-call="${headerTemplate.employerConfig @ config=employerConfig, data=employerData}"
+></sly>
+<!--/* Menu */-->
+<sly
+	data-sly-use.navigation="com.adobe.cq.wcm.core.components.models.Navigation"
+	data-sly-use.employerConfig="com.mirumagency.uhc.premember.core.models.EmployerConfig"
+	data-sly-use.groupTemplate="group.html"
+	data-sly-call="${groupTemplate.groupNav @ items=navigation.items, data=employerData, config=employerConfig}"
+></sly>
+<!--/* Zip Menu */-->
+<sly
+	data-sly-test="${employerData.showZipCodeOption}"
+	data-sly-use.zipTemplate="zipGroup.html"
+	data-sly-call="${zipTemplate}"
+></sly>

@@ -1,0 +1,187 @@
+$benefits-table-border: 1px solid unity-color('gray', 'dark');
+$benefits-padding: ($g-spacing-xs);
+
+.benefits-table {
+	background-color: unity-color('white');
+	color: unity-color('black');
+	display: block;
+	padding: 0;
+	width: 100%;
+
+	&#{&}--has-sibling {
+		padding-bottom: 0;
+
+		+ .benefits-table {
+			padding-top: 0;
+
+			.benefits-table__collapse-header:first-child,
+			.benefits-table__row-group:first-child + .benefits-table__collapse-header {
+				border-top: $benefits-table-border;
+			}
+		}
+	}
+}
+
+// @TODO: Can be removed when all blue tabs have been removed from site
+.cmp-tabs__tabpanel--blue {
+	.benefits-table {
+		padding: $g-spacing-sm;
+
+		@include mq(md) {
+			padding: $g-spacing-xl $g-spacing-xxl;
+		}
+
+		@include mq(lg) {
+			padding: $g-spacing-xxl $g-spacing-xxxl;
+		}
+	}
+}
+
+// Table Row Insanity
+// @TODO: Probably deserves a react/html rewrite
+.benefits-table__collapse-header,
+.benefits-table__row-group,
+.benefits-table__row {
+	border-top: $benefits-table-border;
+
+	&.benefits-table__row-group--collapse {
+		border: 0;
+	}
+
+	&:first-child {
+		border: 0;
+	}
+}
+
+.benefits-table__row-group {
+	padding: ($benefits-padding - $g-spacing-xxs) 0;
+
+	.benefits-table__collapse-header + & {
+		padding-top: 0;
+	}
+
+	&:first-child {
+		padding-bottom: 0;
+		border: 0;
+
+		.benefits-table__row {
+			padding-bottom: 0;
+		}
+
+		+ .benefits-table__collapse-header {
+			border-top: 0;
+		}
+	}
+
+	// Account for the first row often being "hidden" (cells are hidden only, bad)
+	@include mq($until: md) {
+		&:nth-child(2) {
+			border: 0;
+		}
+	}
+}
+
+.benefits-table__row {
+	display: flex;
+	flex-flow: wrap column;
+	padding: $benefits-padding 0;
+
+	.benefits-table__collapse-header ~ .benefits-table__row-group & {
+		border-color: rgba(unity-color('black'), 0.2);
+	}
+
+	&:last-child:not(:first-child) {
+		padding-bottom: $g-spacing-sm;
+	}
+
+	@include mq(md) {
+		flex-direction: row;
+	}
+}
+
+// Relativel normalcy
+.benefits-table__cell {
+	display: flex;
+	flex-wrap: wrap;
+	flex: 1 0 0;
+	padding: $benefits-padding 0;
+	width: 100%;
+
+	&:first-child {
+		flex: 1.5 0 0;
+		font-weight: $g-font-semibold;
+		padding-left: 0;
+		padding-right: $g-spacing;
+
+		@include mq($until: md) {
+			font-weight: $g-font-bold;
+		}
+	}
+
+	&::before {
+		content: attr(data-heading);
+		color: unity-color('gray', 'dark');
+		display: block;
+		font-weight: 700;
+		width: 100%;
+	}
+
+	&--bold {
+		@include unity-type('heading', 'h6');
+
+		font-weight: $g-font-bold !important;
+
+		&::before {
+			display: none;
+		}
+	}
+
+	&--visually-hidden {
+		position: relative;
+		overflow: hidden;
+		padding: 0 !important;
+
+		> span {
+			clip-path: inset(50%);
+			clip: rect(1px, 1px, 1px, 1px);
+			height: 1px;
+			margin: -1px;
+			overflow: hidden;
+			padding: 0;
+			position: absolute;
+			width: 1px;
+		}
+	}
+
+	&[role="columnheader"] {
+		display: none;
+		font-weight: 700;
+		padding-bottom: $g-spacing-xs;
+	}
+
+	@include mq(md) {
+		flex-wrap: nowrap;
+
+		&::before {
+			display: none;
+		}
+
+		&[role="columnheader"] {
+			display: block;
+		}
+	}
+}
+
+// Notes
+.benefits-table__notes {
+	flex-basis: 100%;
+	margin: 0;
+	padding: $benefits-padding 0;
+	width: 100%;
+
+	p {
+		@include unity-type('body', 'small');
+
+		max-width: 640px;
+	}
+}

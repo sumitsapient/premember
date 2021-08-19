@@ -1,0 +1,19 @@
+{
+  "extends": "stylelint-config-standard",
+  "rules": {
+    "font-family-no-missing-generic-family-keyword": null,
+    "max-empty-lines": 1,
+    "indentation": "tab",
+    "selector-list-comma-newline-after": "always",
+    "block-opening-brace-newline-after": "always",
+    "block-closing-brace-newline-before": "always",
+    "declaration-block-no-redundant-longhand-properties": true,
+    "max-nesting-depth": 4,
+    "font-weight-notation": "numeric",
+    "declaration-colon-space-after": "always",
+    "declaration-colon-space-before": "never",
+    "declaration-block-no-duplicate-properties": true,
+    "no-descending-specificity": null,
+    "at-rule-no-unknown": null
+  }
+}

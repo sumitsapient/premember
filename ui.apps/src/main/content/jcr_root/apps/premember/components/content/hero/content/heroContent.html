@@ -1,0 +1,25 @@
+<sly data-sly-use.hero="com.mirumagency.uhc.premember.core.models.Hero"></sly>
+<div class="o-container">
+	<div class="o-grid u-f-align-center hero-static__content">
+		<div class="o-grid__item-12 ${hero.textAlignment == 'center' ? 'o-grid__item-4@md o-grid__item--offset-1@md' : 'o-grid__item-5@md'} ${hero.imageDisplayLeft ? 'u-m-l-auto' : ''}">
+			<!-- Title -->
+			<h3 class="hero-static__title${hero.titleSize == 'h2' ? ' unity-type-h2' : ''}"
+				data-sly-test="${hero.isTitleNotEmpty}"
+				data-sly-element="${hero.titleType}">
+				${hero.title}
+			</h3>
+			<!-- Body -->
+			<div class="hero-static__text"
+				data-sly-test="${wcmmode.edit || hero.isTextNotEmpty}"
+				data-sly-resource="${'text' @ resourceType='premember/components/content/text'}"></div>
+			<!-- Button -->
+			<div class="u-m-t"
+				data-sly-test="${hero.isShowButton}"
+				data-sly-resource="${'button' @ resourceType='premember/components/content/button'}"></div>
+		</div>
+	</div>
+</div>
+<!-- Image -->
+<div class="hero-static__image${hero.isImageAlignedBottom ? ' hero-static__image--align-bottom' : ''}"
+	data-sly-test="${wcmmode.edit || hero.isImageNotEmpty}"
+	data-sly-resource="${'image' @ resourceType='premember/components/content/image'}"></div>

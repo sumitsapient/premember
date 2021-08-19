@@ -1,0 +1,32 @@
+<div data-sly-use.summary="com.mirumagency.uhc.premember.core.models.federal.Plan"
+	 data-sly-use.template="core/wcm/components/commons/v1/templates.html">
+	<div class="c-card u-bg-gray" style="box-shadow: none;">
+		<div class="c-card__header u-text-center u-m-b-lg" data-sly-test="${properties.title}">
+			<h3 data-sly-use.heading="com.mirumagency.uhc.premember.core.models.federal.HeadingConfig"
+				data-sly-element="${heading.titleTypeSize}"
+				data-sly-set.headingClass="${'unity-type-{0}' @ format=[heading.titleSizeStyle]}"
+				class="${['c-card__title', heading.titleSizeStyle ? headingClass : ''] @ join=' '}">
+				${properties.title}
+			</h3>
+		</div>
+		<div class="c-card__body">
+			<div class="o-grid" data-sly-test="${summary.data.benefits.items}" data-sly-list.item="${summary.data.benefits.items}">
+				<div class="o-grid__item-12 o-grid__item-6@md">
+					<div class="c-icon-block o-media  c-icon-block--sidebyside" data-container="Icon Block">
+						<div class="o-media__img u-f-align-self-center">
+							<div class="c-icon-box c-icon-box--circle u-bg-blue-medium u-color-blue">
+								<div class="cmp-icon">
+									<img src="${item.icon}" alt=""/>
+								</div>
+							</div>
+						</div>
+						<div class="o-media__body u-f-align-self-center">
+							<div data-sly-test="${item.text}" class="c-icon-block__text">${item.text @ context='html'}</div>
+						</div>
+					</div>
+				</div>
+			</div>
+		</div>
+		<p class="o-grid u-f-justify-center" data-sly-test="${wcmmode.edit && !summary.data.benefits.items}">Configure the benefits on the Configuration Component</p>
+	</div>
+</div>

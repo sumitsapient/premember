@@ -1,0 +1,68 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<jcr:root xmlns:sling="http://sling.apache.org/jcr/sling/1.0" xmlns:granite="http://www.adobe.com/jcr/granite/1.0" xmlns:cq="http://www.day.com/jcr/cq/1.0" xmlns:jcr="http://www.jcp.org/jcr/1.0" xmlns:nt="http://www.jcp.org/jcr/nt/1.0"
+          jcr:primaryType="nt:unstructured"
+          jcr:title="Analytics"
+          sling:resourceType="granite/ui/components/coral/foundation/fixedcolumns">
+    <items jcr:primaryType="nt:unstructured">
+        <column
+                jcr:primaryType="nt:unstructured"
+                sling:resourceType="granite/ui/components/coral/foundation/container">
+            <items jcr:primaryType="nt:unstructured">
+                <page
+                        jcr:primaryType="nt:unstructured"
+                        jcr:title="Page"
+                        sling:resourceType="granite/ui/components/coral/foundation/form/fieldset">
+                    <items jcr:primaryType="nt:unstructured">
+                        <pagename
+                                jcr:primaryType="nt:unstructured"
+                                sling:resourceType="granite/ui/components/coral/foundation/form/textfield"
+                                fieldLabel="Name"
+                                name="./pageName"
+                                renderReadOnly="{Boolean}true">
+                            <granite:data
+                                    jcr:primaryType="nt:unstructured"
+                                    cq-msm-lockable="pageName"/>
+                        </pagename>
+                        <pagecategory
+                                jcr:primaryType="nt:unstructured"
+                                sling:resourceType="granite/ui/components/coral/foundation/form/textfield"
+                                fieldLabel="Category"
+                                name="./pageCategory"
+                                renderReadOnly="{Boolean}true">
+                            <granite:data
+                                    jcr:primaryType="nt:unstructured"
+                                    cq-msm-lockable="pageCategory"/>
+                        </pagecategory>
+                    </items>
+                </page>
+                <plan
+                        jcr:primaryType="nt:unstructured"
+                        jcr:title="Plan"
+                        sling:resourceType="granite/ui/components/coral/foundation/form/fieldset">
+                    <items jcr:primaryType="nt:unstructured">
+                        <pagename
+                                jcr:primaryType="nt:unstructured"
+                                sling:resourceType="granite/ui/components/coral/foundation/form/textfield"
+                                fieldLabel="Name"
+                                name="./planName"
+                                renderReadOnly="{Boolean}true">
+                            <granite:data
+                                    jcr:primaryType="nt:unstructured"
+                                    cq-msm-lockable="planName"/>
+                        </pagename>
+                        <pagecategory
+                                jcr:primaryType="nt:unstructured"
+                                sling:resourceType="granite/ui/components/coral/foundation/form/textfield"
+                                fieldLabel="Compare Names"
+                                name="./compareNames"
+                                renderReadOnly="{Boolean}true">
+                            <granite:data
+                                    jcr:primaryType="nt:unstructured"
+                                    cq-msm-lockable="compareNames"/>
+                        </pagecategory>
+                    </items>
+                </plan>
+            </items>
+        </column>
+    </items>
+</jcr:root>

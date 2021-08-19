@@ -1,0 +1,21 @@
+<template data-sly-template.copayAndAllowanceValue="${@ name='Copay or allowance name', info='Copay or allowance info', networkValue='Network value', outOfNetworkValue='Out-of-network value'}">
+    <div class="plan-costs__values-wrapper u-d-flex u-f-align-start u-f-justify-center">
+        <p class="plan-costs__names">${name}
+            <sly data-sly-test="${info}">
+                <span class="plan-costs__info">${info}</span>
+            </sly>
+        </p>
+        <p>
+            <sly data-sly-test.isNetworkEmpty="${!networkValue}"><span class="plan-costs__not-available">N/A</span></sly>
+            <sly data-sly-test="${!isNetworkEmpty}">
+                <sup>$</sup>${',###' @ format=networkValue, type='number'}
+            </sly>
+        </p>
+        <p>
+            <sly data-sly-test.isOutOfNetworkEmpty="${!outOfNetworkValue}"><span class="plan-costs__not-available">N/A</span></sly>
+            <sly data-sly-test="${!isOutOfNetworkEmpty}">
+                <sup>$</sup>${',###' @ format=outOfNetworkValue, type='number'}
+            </sly>
+        </p>
+    </div>
+</template>

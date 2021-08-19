@@ -1,0 +1,40 @@
+// @TODO: remove when all references of this legacy container bologna are removed.
+// specific only to planpicker on standard platform
+.planPicker + .container {
+	@include unity-container;
+
+	margin-top: -2rem;
+}
+
+.o-container {
+	.o-container--padding > & {
+		padding-top: $g-spacing-lg;
+		padding-bottom: $g-spacing-lg;
+	}
+
+	.o-container--padding-lg > & {
+		padding-top: $g-spacing-lg;
+		padding-bottom: $g-spacing-lg;
+
+		@include mq(md) {
+			padding-top: $g-spacing-xxl;
+			padding-bottom: $g-spacing-xxl;
+		}
+	}
+
+	.o-container--padding-xl > & {
+		padding-top: $g-spacing-xl;
+		padding-bottom: $g-spacing-xl;
+
+		@include mq(md) {
+			padding-top: $g-spacing-xxxl;
+			padding-bottom: $g-spacing-xxxl;
+		}
+	}
+
+	.o-container--full > & {
+		max-width: none;
+		padding: 0;
+		overflow-x: hidden;
+	}
+}

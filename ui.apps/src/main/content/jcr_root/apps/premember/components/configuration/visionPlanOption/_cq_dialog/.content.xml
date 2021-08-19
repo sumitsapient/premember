@@ -1,0 +1,498 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<jcr:root xmlns:sling="http://sling.apache.org/jcr/sling/1.0" xmlns:granite="http://www.adobe.com/jcr/granite/1.0" xmlns:cq="http://www.day.com/jcr/cq/1.0" xmlns:jcr="http://www.jcp.org/jcr/1.0" xmlns:nt="http://www.jcp.org/jcr/nt/1.0"
+    jcr:primaryType="nt:unstructured"
+    jcr:title="Vision Plan Option"
+    sling:resourceType="cq/gui/components/authoring/dialog"
+    extraClientlibs="[premember.components.configuration.employerPlans.dialog]">
+    <content
+        granite:class="cmp-contentfragment__editor"
+        jcr:primaryType="nt:unstructured"
+        sling:resourceType="granite/ui/components/coral/foundation/container">
+        <granite:data
+            jcr:primaryType="nt:unstructured"
+            component-path="${requestPathInfo.suffix}"/>
+        <items jcr:primaryType="nt:unstructured">
+            <tabs
+                jcr:primaryType="nt:unstructured"
+                sling:resourceType="granite/ui/components/coral/foundation/tabs"
+                maximized="{Boolean}true">
+                <items jcr:primaryType="nt:unstructured">
+                    <general
+                        granite:class="generalEmployerPlanTab"
+                        jcr:primaryType="nt:unstructured"
+                        jcr:title="General"
+                        sling:resourceType="granite/ui/components/coral/foundation/container"
+                        margin="{Boolean}true">
+                        <items jcr:primaryType="nt:unstructured">
+                            <fragmentPath
+                                jcr:primaryType="nt:unstructured"
+                                sling:resourceType="granite/ui/components/coral/foundation/form/pathfield"
+                                emptyText="Enter or select Content Fragment with employer plan"
+                                fieldDescription="Path to the Content Fragment with employer plan."
+                                fieldLabel="Content Fragment"
+                                forceSelection="{Boolean}true"
+                                name="./fragmentPath"
+                                pickerTitle="Select Content Fragment"
+                                rootPath="/content/dam/premember/plans/options/vision"/>
+                            <variationName
+                                jcr:primaryType="nt:unstructured"
+                                sling:resourceType="granite/ui/components/coral/foundation/form/select"
+                                fieldDescription="Specify which variation to display"
+                                fieldLabel="Variation"
+                                name="./variationName">
+                                <datasource
+                                    jcr:primaryType="nt:unstructured"
+                                    sling:resourceType="core/wcm/components/contentfragment/v1/datasource/variations"
+                                    componentPath="${requestPathInfo.suffix}"
+                                    fragmentPath="${param.fragmentPath}"/>
+                                <granite:data
+                                    jcr:primaryType="nt:unstructured"
+                                    field-path="${requestPathInfo.resourcePath}"/>
+                            </variationName>
+                            <fullBenefitsLink
+                                jcr:primaryType="nt:unstructured"
+                                sling:resourceType="granite/ui/components/coral/foundation/form/pathfield"
+                                fieldLabel="Full Benefits Link"
+                                name="./fullBenefitsLink"
+                                rootPath="/content/dam/premember/documents/vision-plan-benefits-pdf"/>
+                        </items>
+                    </general>
+                    <copays
+                        jcr:primaryType="nt:unstructured"
+                        jcr:title="Copays"
+                        sling:resourceType="granite/ui/components/coral/foundation/container"
+                        margin="{Boolean}true">
+                        <items jcr:primaryType="nt:unstructured">
+                            <eyeExamsNetwork
+                                jcr:primaryType="nt:unstructured"
+                                sling:resourceType="granite/ui/components/coral/foundation/form/numberfield"
+                                fieldLabel="Eye Exams - Network ($)"
+                                metaType="number"
+                                min="0"
+                                name="./eyeExamsNetwork"
+                                step="1"
+                                typeHint="long"
+                                valueType="long"/>
+                            <eyeExamsOutOfNetwork
+                                jcr:primaryType="nt:unstructured"
+                                sling:resourceType="granite/ui/components/coral/foundation/form/numberfield"
+                                fieldLabel="Eye Exams - Out-of-Network ($)"
+                                metaType="number"
+                                min="0"
+                                name="./eyeExamsOutOfNetwork"
+                                step="1"
+                                typeHint="long"
+                                valueType="long"/>
+                            <materialsNetwork
+                                jcr:primaryType="nt:unstructured"
+                                sling:resourceType="granite/ui/components/coral/foundation/form/numberfield"
+                                fieldLabel="Materials - Network ($)"
+                                metaType="number"
+                                min="0"
+                                name="./materialsNetwork"
+                                step="1"
+                                typeHint="long"
+                                valueType="long"/>
+                            <materialsOutOfNetwork
+                                jcr:primaryType="nt:unstructured"
+                                sling:resourceType="granite/ui/components/coral/foundation/form/numberfield"
+                                fieldLabel="Materials - Out-of-Network ($)"
+                                metaType="number"
+                                min="0"
+                                name="./materialsOutOfNetwork"
+                                step="1"
+                                typeHint="long"
+                                valueType="long"/>
+                            <summaryTopic5ExtraText
+                                jcr:primaryType="nt:unstructured"
+                                sling:resourceType="granite/ui/components/coral/foundation/form/textfield"
+                                fieldLabel="Materials - Label Text"
+                                name="./materialsLabel"/>
+                        </items>
+                    </copays>
+                    <allowances
+                        jcr:primaryType="nt:unstructured"
+                        jcr:title="Allowances"
+                        sling:resourceType="granite/ui/components/coral/foundation/container"
+                        margin="{Boolean}true">
+                        <items jcr:primaryType="nt:unstructured">
+                            <hideAllowance
+                                jcr:primaryType="nt:unstructured"
+                                sling:resourceType="granite/ui/components/coral/foundation/form/checkbox"
+                                fieldLabel="Hide Allowance."
+                                name="./hideAllowance"
+                                text="Hide Allowance"
+                                uncheckedValue="{Boolean}false"
+                                value="{Boolean}true"/>
+													  <spectaclesLensesOptions
+														    jcr:primaryType="nt:unstructured"
+														    sling:resourceType="granite/ui/components/coral/foundation/form/select"
+														    fieldLabel="Options"
+														    name="./spectaclesLensesOptions">
+														      <items jcr:primaryType="nt:unstructured">
+															     <empty
+																   jcr:primaryType="nt:unstructured"
+																    text="Empty"
+																    value="empty"/>
+															      <upTo jcr:primaryType="nt:unstructured"
+																    text="Up to"
+																    value="upTo"/>
+														      </items>
+													</spectaclesLensesOptions>
+                            <framesReimbursementsOutOfNetwork
+                                jcr:primaryType="nt:unstructured"
+                                sling:resourceType="granite/ui/components/coral/foundation/form/numberfield"
+                                fieldLabel="Frames - Out Of Network - Reimbursements ($)"
+                                metaType="number"
+                                min="0"
+                                name="./framesReimbursementsOutOfNetwork"
+                                step="1"
+                                typeHint="long"
+                                valueType="long"/>
+                            <framesRetailChainNetwork
+                                jcr:primaryType="nt:unstructured"
+                                sling:resourceType="granite/ui/components/coral/foundation/form/numberfield"
+                                fieldLabel="Frames (retail chain) - Network ($)"
+                                metaType="number"
+                                min="0"
+                                name="./framesRetailChainNetwork"
+                                step="1"
+                                typeHint="long"
+                                valueType="long"/>
+                            <framesRetailChainOutOfNetwork
+                                jcr:primaryType="nt:unstructured"
+                                sling:resourceType="granite/ui/components/coral/foundation/form/numberfield"
+                                fieldLabel="Frames (retail chain) - Out-of-Network ($)"
+                                metaType="number"
+                                min="0"
+                                name="./framesRetailChainOutOfNetwork"
+                                step="1"
+                                typeHint="long"
+                                valueType="long"/>
+                            <framesPrivatePracticeNetwork
+                                jcr:primaryType="nt:unstructured"
+                                sling:resourceType="granite/ui/components/coral/foundation/form/numberfield"
+                                fieldLabel="Frames (private practice) - Network ($)"
+                                metaType="number"
+                                min="0"
+                                name="./framesPrivatePracticeNetwork"
+                                step="1"
+                                typeHint="long"
+                                valueType="long"/>
+                            <framesPrivatePracticeOutOfNetwork
+                                jcr:primaryType="nt:unstructured"
+                                sling:resourceType="granite/ui/components/coral/foundation/form/numberfield"
+                                fieldLabel="Frames (private practice) - Out-of-Network ($)"
+                                metaType="number"
+                                min="0"
+                                name="./framesPrivatePracticeOutOfNetwork"
+                                step="1"
+                                typeHint="long"
+                                valueType="long"/>
+                            <contactLensesNetwork
+                                jcr:primaryType="nt:unstructured"
+                                sling:resourceType="granite/ui/components/coral/foundation/form/numberfield"
+                                fieldLabel="Contact Lenses - Network ($)"
+                                metaType="number"
+                                min="0"
+                                name="./contactLensesNetwork"
+                                step="1"
+                                typeHint="long"
+                                valueType="long"/>
+                            <contactLensesOutOfNetwork
+                                jcr:primaryType="nt:unstructured"
+                                sling:resourceType="granite/ui/components/coral/foundation/form/numberfield"
+                                fieldLabel="Contact Lenses - Out-of-Network ($)"
+                                metaType="number"
+                                min="0"
+                                name="./contactLensesOutOfNetwork"
+                                step="1"
+                                typeHint="long"
+                                valueType="long"/>
+                            <contactLensesNecessaryNetwork
+                                jcr:primaryType="nt:unstructured"
+                                sling:resourceType="granite/ui/components/coral/foundation/form/select"
+                                fieldLabel="Contact Lenses - Necessary - Out Of Network ($)"
+                                metaType="enumeration"
+                                name="./contactLensesNecessaryNetwork"
+                                options=";{comparisonChapter4SubSection2Topic2Option1} - Paid in full after copay;{comparisonChapter4SubSection2Topic2Option2} - $X after copay"
+                                renderReadOnly="false"
+                                showEmptyInReadOnly="true"
+                                valueType="string">
+                                <datasource
+                                    jcr:primaryType="nt:unstructured"
+                                    sling:resourceType="dam/cfm/admin/components/datasources/optionrenderer"
+                                    variant="default"/>
+                            </contactLensesNecessaryNetwork>
+                            <contactLensesNecessaryOutOfNetwork
+                                jcr:primaryType="nt:unstructured"
+                                sling:resourceType="granite/ui/components/coral/foundation/form/numberfield"
+                                fieldLabel="Contact Lenses - Necessary - Out Of Network ($)"
+                                metaType="number"
+                                min="0"
+                                name="./contactLensesNecessaryOutOfNetwork"
+                                step="1"
+                                typeHint="long"
+                                valueType="long"/>
+                            <contactLensesElectiveNetwork
+                                jcr:primaryType="nt:unstructured"
+                                sling:resourceType="granite/ui/components/coral/foundation/form/numberfield"
+                                fieldLabel="Contact Lenses - Elective - Network ($)"
+                                metaType="number"
+                                min="0"
+                                name="./contactLensesElectiveNetwork"
+                                step="1"
+                                typeHint="long"
+                                valueType="long"/>
+                            <contactLensesElectiveOutOfNetwork
+                                jcr:primaryType="nt:unstructured"
+                                sling:resourceType="granite/ui/components/coral/foundation/form/numberfield"
+                                fieldLabel="Contact Lenses - Elective - Out Of Network ($)"
+                                metaType="number"
+                                min="0"
+                                name="./contactLensesElectiveOutOfNetwork"
+                                step="1"
+                                typeHint="long"
+                                valueType="long"/>
+                            <spectaclesLensesNetwork
+                                jcr:primaryType="nt:unstructured"
+                                sling:resourceType="granite/ui/components/coral/foundation/form/numberfield"
+                                fieldLabel="Spectacles Lenses - Network ($)"
+                                metaType="number"
+                                min="0"
+                                name="./spectaclesLensesNetwork"
+                                step="1"
+                                typeHint="long"
+                                valueType="long"/>
+                            <spectaclesLensesSingleVision
+                                jcr:primaryType="nt:unstructured"
+                                sling:resourceType="granite/ui/components/coral/foundation/form/numberfield"
+                                fieldLabel="Spectacles Lenses - Single Vision ($)"
+                                metaType="number"
+                                min="0"
+                                name="./spectaclesLensesSingleVision"
+                                step="1"
+                                typeHint="long"
+                                valueType="long"/>
+                            <spectaclesLensesLinedBifocal
+                                jcr:primaryType="nt:unstructured"
+                                sling:resourceType="granite/ui/components/coral/foundation/form/numberfield"
+                                fieldLabel="Spectacles Lenses - Lined Bifocal ($)"
+                                metaType="number"
+                                min="0"
+                                name="./spectaclesLensesLinedBifocal"
+                                step="1"
+                                typeHint="long"
+                                valueType="long"/>
+                            <spectaclesLensesLinedTrifocal
+                                jcr:primaryType="nt:unstructured"
+                                sling:resourceType="granite/ui/components/coral/foundation/form/numberfield"
+                                fieldLabel="Spectacles Lenses - Lined Trifocal ($)"
+                                metaType="number"
+                                min="0"
+                                name="./spectaclesLensesLinedTrifocal"
+                                step="1"
+                                typeHint="long"
+                                valueType="long"/>
+                            <spectaclesLensesLenticular
+                                jcr:primaryType="nt:unstructured"
+                                sling:resourceType="granite/ui/components/coral/foundation/form/numberfield"
+                                fieldLabel="Spectacles Lenses - Lenticular ($)"
+                                metaType="number"
+                                min="0"
+                                name="./spectaclesLensesLenticular"
+                                step="1"
+                                typeHint="long"
+                                valueType="long"/>
+                            <spectaclesLensesOutOfNetworkType
+                                granite:class="cq-dialog-dropdown-showhide"
+                                jcr:primaryType="nt:unstructured"
+                                sling:resourceType="granite/ui/components/coral/foundation/form/select"
+                                fieldLabel="Select Spectacles Lenses Type"
+                                name="./spectaclesLensesOutOfNetworkType">
+                                <granite:data
+                                    jcr:primaryType="nt:unstructured"
+                                    cq-dialog-dropdown-showhide-target=".spectacles-out-of-network"/>
+                                <items jcr:primaryType="nt:unstructured">
+                                    <single
+                                        jcr:primaryType="nt:unstructured"
+                                        text="Single Value"
+                                        value="single"/>
+                                    <range
+                                        jcr:primaryType="nt:unstructured"
+                                        text="Range Plans"
+                                        value="range"/>
+                                </items>
+                            </spectaclesLensesOutOfNetworkType>
+                            <spectaclesLensesOutOfNetworkSingle
+                                granite:class="hide spectacles-out-of-network"
+                                jcr:primaryType="nt:unstructured"
+                                sling:resourceType="granite/ui/components/foundation/container">
+                                <granite:data
+                                    jcr:primaryType="nt:unstructured"
+                                    showhidetargetvalue="single"/>
+                                <items jcr:primaryType="nt:unstructured">
+                                    <spectaclesLensesOutOfNetwork
+                                        jcr:primaryType="nt:unstructured"
+                                        sling:resourceType="granite/ui/components/coral/foundation/form/numberfield"
+                                        fieldLabel="Spectacles Lenses - Out-of-Network ($)"
+                                        metaType="number"
+                                        min="0"
+                                        name="./spectaclesLensesOutOfNetwork"
+                                        step="1"
+                                        typeHint="long"
+                                        valueType="long"/>
+                                </items>
+                            </spectaclesLensesOutOfNetworkSingle>
+                            <spectaclesLensesOutOfNetworkRanged
+                                granite:class="hide spectacles-out-of-network"
+                                jcr:primaryType="nt:unstructured"
+                                sling:resourceType="granite/ui/components/foundation/container">
+                                <granite:data
+                                    jcr:primaryType="nt:unstructured"
+                                    showhidetargetvalue="range"/>
+                                <items jcr:primaryType="nt:unstructured">
+                                    <spectacleLensesRangeStart
+                                        jcr:primaryType="nt:unstructured"
+                                        sling:resourceType="granite/ui/components/coral/foundation/form/numberfield"
+                                        fieldLabel="Spectacles Lens Start ($)"
+                                        metaType="number"
+                                        min="0"
+                                        name="./spectaclesStart"
+                                        step="1"
+                                        typeHint="long"
+                                        valueType="long"/>
+                                    <spectacleLensesRangeEnd
+                                        jcr:primaryType="nt:unstructured"
+                                        sling:resourceType="granite/ui/components/coral/foundation/form/numberfield"
+                                        fieldLabel="Spectacles Lens End ($)"
+                                        metaType="number"
+                                        min="0"
+                                        name="./spectaclesEnd"
+                                        step="1"
+                                        typeHint="long"
+                                        valueType="long"/>
+                                    <spectacleLensesRangeValuesTitle
+                                        jcr:primaryType="nt:unstructured"
+                                        sling:resourceType="granite/ui/components/coral/foundation/form/textfield"
+                                        fieldLabel="Spectacles Lens Range Values Title"
+                                        maxlength="50"
+                                        name="./spectacleLenseRangeValuesTitle"
+                                        required="{Boolean}false"/>
+                                </items>
+                            </spectaclesLensesOutOfNetworkRanged>
+                        </items>
+                    </allowances>
+                    <benefitFrequency
+                        jcr:primaryType="nt:unstructured"
+                        jcr:title="Benefit Frequency"
+                        sling:resourceType="granite/ui/components/coral/foundation/container"
+                        margin="{Boolean}true">
+                        <items jcr:primaryType="nt:unstructured">
+                            <eyeExamsFrequency
+                                jcr:primaryType="nt:unstructured"
+                                sling:resourceType="granite/ui/components/coral/foundation/form/numberfield"
+                                fieldLabel="Comprehensive Exam(s) - Once every (XX) months"
+                                metaType="number"
+                                min="0"
+                                name="./eyeExamsFrequency"
+                                step="1"
+                                typeHint="long"
+                                valueType="long"/>
+                            <eyeExamsOption
+                                jcr:primaryType="nt:unstructured"
+                                sling:resourceType="granite/ui/components/coral/foundation/form/select"
+                                emptyOption="{Boolean}true"
+                                fieldLabel="Comprehensive Exam(s)"
+                                name="./eyeExamsOption"
+                                valueType="string">
+                                <datasource
+                                    jcr:primaryType="nt:unstructured"
+                                    sling:resourceType="/apps/premember/dialog/dropdown/vision-plan-benefit"/>
+                            </eyeExamsOption>
+                            <framesFrequency
+                                jcr:primaryType="nt:unstructured"
+                                sling:resourceType="granite/ui/components/coral/foundation/form/numberfield"
+                                fieldLabel="Frames - Once every (XX) months"
+                                metaType="number"
+                                min="0"
+                                name="./framesFrequency"
+                                step="1"
+                                typeHint="long"
+                                valueType="long"/>
+                            <framesFrequencyOption
+                                jcr:primaryType="nt:unstructured"
+                                sling:resourceType="granite/ui/components/coral/foundation/form/select"
+                                emptyOption="{Boolean}true"
+                                fieldLabel="Frames"
+                                name="./framesFrequencyOption"
+                                valueType="string">
+                                <datasource
+                                    jcr:primaryType="nt:unstructured"
+                                    sling:resourceType="/apps/premember/dialog/dropdown/vision-plan-benefit"/>
+                            </framesFrequencyOption>
+                            <spectaclesLensesFrequency
+                                jcr:primaryType="nt:unstructured"
+                                sling:resourceType="granite/ui/components/coral/foundation/form/numberfield"
+                                fieldLabel="Eyeglass Lenses - Once every (XX) months"
+                                metaType="number"
+                                min="0"
+                                name="./spectaclesLensesFrequency"
+                                step="1"
+                                typeHint="long"
+                                valueType="long"/>
+                            <eyeGlassLensesOption
+                                jcr:primaryType="nt:unstructured"
+                                sling:resourceType="granite/ui/components/coral/foundation/form/select"
+                                emptyOption="{Boolean}true"
+                                fieldLabel="EyeGlass Lenses"
+                                name="./eyeGlassLensesOption"
+                                valueType="string">
+                                <datasource
+                                    jcr:primaryType="nt:unstructured"
+                                    sling:resourceType="/apps/premember/dialog/dropdown/vision-plan-benefit"/>
+                            </eyeGlassLensesOption>
+                            <contactLensesFrequency
+                                jcr:primaryType="nt:unstructured"
+                                sling:resourceType="granite/ui/components/coral/foundation/form/numberfield"
+                                fieldLabel="Contact Lenses (in place of eyeglasses) - Once every (XX) months"
+                                metaType="number"
+                                min="0"
+                                name="./contactLensesFrequency"
+                                step="1"
+                                typeHint="long"
+                                valueType="long"/>
+                            <contactLensesOption
+                                jcr:primaryType="nt:unstructured"
+                                sling:resourceType="granite/ui/components/coral/foundation/form/select"
+                                emptyOption="{Boolean}true"
+                                fieldLabel="Contact Lenses"
+                                name="./contactLensesOption"
+                                valueType="string">
+                                <datasource
+                                    jcr:primaryType="nt:unstructured"
+                                    sling:resourceType="/apps/premember/dialog/dropdown/vision-plan-benefit"/>
+                            </contactLensesOption>
+                        </items>
+                    </benefitFrequency>
+                    <promotions
+                        jcr:primaryType="nt:unstructured"
+                        jcr:title="Promotions"
+                        sling:resourceType="granite/ui/components/coral/foundation/container"
+                        margin="{Boolean}true">
+                        <items jcr:primaryType="nt:unstructured">
+                            <suppressPromotions
+                                jcr:primaryType="nt:unstructured"
+                                sling:resourceType="granite/ui/components/coral/foundation/form/checkbox"
+                                fieldLabel="Suppress Promotions"
+                                name="./suppressPromotions"
+                                text="Suppress Promotions"
+                                uncheckedValue="{Boolean}false"
+                                value="{Boolean}true"/>
+                        </items>
+                    </promotions>
+                </items>
+            </tabs>
+        </items>
+    </content>
+</jcr:root>

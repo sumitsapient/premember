@@ -1,0 +1,42 @@
+@import 'planSort';
+@import 'planCard';
+@import 'planCardFederal';
+
+.planCardsList {
+	margin-top: 1.25rem;
+
+	@include mq(md) {
+		margin-top: 3.5rem;
+	}
+
+	.plan-cards-header {
+		margin-bottom: $g-spacing;
+
+		@include mq(md) {
+			margin-bottom: $g-spacing-lg;
+		}
+
+		.c-button {
+			margin-top: $g-spacing-sm;
+
+			@include mq(md) {
+				margin-top: 0;
+			}
+		}
+	}
+
+	.plan-compare-card {
+		.c-card__header {
+			@include mq($until: md) {
+				margin-bottom: 0.75rem;
+			}
+		}
+
+		.c-card__title {
+			@include mq($until: md) {
+				font-size: 18px;
+				line-height: 22px;
+			}
+		}
+	}
+}

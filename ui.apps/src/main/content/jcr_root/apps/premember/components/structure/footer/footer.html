@@ -1,0 +1,216 @@
+<sly data-sly-use.model="com.mirumagency.uhc.premember.core.models.Footer">
+	<!--/* Disclaimer */-->
+	<div class="c-footer__disclaimer">
+		<div class="o-container" data-sly-test="${model.disclaimers}">
+			<!--<h3 class="u-text-h2 u-color-blue">Disclaimers</h3>-->
+			<ul class="o-list-bare" data-sly-list.disclaimer="${model.disclaimers}">
+				<li class="o-list-bare__item">
+					${disclaimer.text @ context='html'}
+				</li>
+			</ul>
+		</div>
+	</div>
+	<div class="c-footer__body">
+		<div class="o-container">
+			<div class="o-grid">
+				<!-- TODO: Determine whether "model.contactUsTitle" should be removed -->
+				<!--/* Contact Section 1 */-->
+				<div class="o-grid__item-12 o-grid__item-4@lg">
+					<!--/* Title */-->
+					<h3
+						class="c-footer__title"
+						data-sly-set.tileOneTitle="${model.contactUsTile1Override ? model.contactUsTile1Title : 'Enrollment Support'}"
+					>
+						${tileOneTitle @ context='text'}
+					</h3>
+					<!--/* Description */-->
+					<p>
+						<sly data-sly-test="${model.contactUsTile1Override}">
+							${model.contactUsTile1Description @ context='html'}
+						</sly>
+						<sly
+							data-sly-test="${!model.contactUsTile1Override}"
+							data-sly-use.phoneEventName="${'/apps/premember/components/analytics/eventName.js' @ text=model.customerServicePhone}"
+						>
+							Need help with—or have questions about—enrolling? Call us at
+							<a
+								data-event-type="tfn"
+								data-event-name="${phoneEventName}"
+								href="tel:${model.customerServicePhone}"
+							>
+								<strong>${model.customerServicePhone}</strong>
+							</a>,
+							we're here from ${model.operationHours}.
+						</sly>
+					</p>
+					<!--/* Emergency 911 */-->
+					<p class="u-text-bold">
+						${model.contactUsTile3Title @ context='text'}
+					</p>
+				</div>
+				<!--/* Contact Section 2 */-->
+				<div
+					data-sly-test="${model.shouldDisplayMemberSupport}"
+					class="o-grid__item-12 o-grid__item-4@lg"
+				>
+					<!--/* Title */-->
+					<h3 class="c-footer__title">
+						${model.contactUsTile2Title}
+					</h3>
+					<!--/* Description */-->
+					<p>
+						${model.contactUsTile2Description @ context='html'}
+					</p>
+				</div>
+				<!--/* Resource Nav Items */-->
+				<div class="o-grid__item-12 o-grid__item@lg">
+					<!--/* Title */-->
+					<h3 class="c-footer__title">
+						Resources
+					</h3>
+					<!--/* Items */-->
+					<nav data-sly-test="${model.navigationItems}">
+						<ul class="o-list-bare">
+							<sly data-sly-repeat.navigationItem="${model.navigationItems}">
+								<li
+									data-sly-test="${navigationItem.displayText != 'Privacy' && navigationItem.displayText != 'Legal' && navigationItem.displayText != 'Accessibility'}"
+									class="o-list-bare__item"
+								>
+									<a
+										data-sly-use.navigationItemEventName="${'/apps/premember/components/analytics/eventName.js' @ text=navigationItem.displayText}"
+										data-event-type="footer"
+										data-event-name="${navigationItemEventName}"
+										class="js-track-event u-text-nowrap"
+										href="${navigationItem.url}"
+										target="${navigationItem.openInNewTab ? '_blank' : ''}"
+									>
+										${navigationItem.displayText}
+										<!--/* New Tab Icon */-->
+										<sly data-sly-test="${navigationItem.openInNewTab}">
+										<span class="o-svg-icon o-svg-icon--lg u-m-l-xs">
+											<svg
+												viewBox="0, 0, 24, 24"
+												focusable="false"
+												shape-rendering="geometricPrecision"
+											>
+												<path
+													d="M20.385,20.385 L3.615,20.385 L3.615,3.615 L12,3.615 L12,1.219 L3.615,1.219 C2.285,1.219 1.219,2.297 1.219,3.615 L1.219,20.385 C1.219,21.703 2.285,22.781 3.615,22.781 L20.385,22.781 C21.703,22.781 22.781,21.703 22.781,20.385 L22.781,12 L20.385,12 L20.385,20.385 z M14.396,1.219 L14.396,3.615 L18.696,3.615 L6.921,15.39 L8.61,17.079 L20.385,5.304 L20.385,9.604 L22.781,9.604 L22.781,1.219 L14.396,1.219 z"
+													fill="currentColor"
+												/>
+											</svg>
+										</span>
+											<span class="u-visually-hidden">${'Opens in a new tab' @ i18n}</span>
+										</sly>
+									</a>
+								</li>
+							</sly>
+						</ul>
+					</nav>
+				</div>
+				<!--/* Disclaimers Nav Items */-->
+				<div class="o-grid__item-12 o-grid__item@lg u-m-0">
+					<!--/* Title */-->
+					<h3 class="c-footer__title">
+						Disclaimers
+					</h3>
+					<!--/* Items */-->
+					<nav data-sly-test="${model.navigationItems}">
+						<ul class="o-list-bare">
+							<sly data-sly-repeat.navigationItem="${model.navigationItems}">
+								<li
+									data-sly-test="${navigationItem.displayText == 'Privacy' || navigationItem.displayText == 'Legal' || navigationItem.displayText == 'Accessibility'}"
+									class="o-list-bare__item"
+								>
+									<a
+										data-sly-use.navigationItemEventName="${'/apps/premember/components/analytics/eventName.js' @ text=navigationItem.displayText}"
+										data-event-type="footer"
+										data-event-name="${navigationItemEventName}"
+										class="js-track-event"
+										href="${navigationItem.url}"
+										target="${navigationItem.openInNewTab ? '_blank' : ''}"
+									>
+										${navigationItem.displayText}
+										<!--/* New Tab Icon */-->
+										<sly data-sly-test="${navigationItem.openInNewTab}">
+										<span class="o-svg-icon o-svg-icon--lg u-m-l-xs">
+											<svg
+												viewBox="0, 0, 24, 24"
+												focusable="false"
+												shape-rendering="geometricPrecision"
+											>
+												<path
+													d="M20.385,20.385 L3.615,20.385 L3.615,3.615 L12,3.615 L12,1.219 L3.615,1.219 C2.285,1.219 1.219,2.297 1.219,3.615 L1.219,20.385 C1.219,21.703 2.285,22.781 3.615,22.781 L20.385,22.781 C21.703,22.781 22.781,21.703 22.781,20.385 L22.781,12 L20.385,12 L20.385,20.385 z M14.396,1.219 L14.396,3.615 L18.696,3.615 L6.921,15.39 L8.61,17.079 L20.385,5.304 L20.385,9.604 L22.781,9.604 L22.781,1.219 L14.396,1.219 z"
+													fill="currentColor"
+												/>
+											</svg>
+										</span>
+											<span class="u-visually-hidden">${'Opens in a new tab' @ i18n}</span>
+										</sly>
+									</a>
+								</li>
+							</sly>
+						</ul>
+					</nav>
+				</div>
+				<!--/* Divider */-->
+				<div class="o-grid__item-12 u-m-0">
+					<hr class="c-footer__divider"/>
+				</div>
+				<!--/* Copyright / Notices */-->
+				<div class="o-grid__item-12 unity-type-small">
+					<ul class="o-list-inline">
+						<!--/* Copyright Info */-->
+						<li class="o-list-inline__item">
+							${model.copyrightInformation}
+						</li>
+						<!--/* Non-Discrimination - English */-->
+						<li class="o-list-inline__item">
+							<sly data-sly-use.enNonDiscriminationEventName="${'/apps/premember/components/analytics/eventName.js' @ text=model.enNonDiscriminationCopy}"/>
+							<a
+								class="js-track-event"
+								href="https://www.uhc.com/legal/nondiscrimination-and-language-assistance-notices"
+								data-event-type="footer"
+								data-event-name="${enNonDiscriminationEventName}"
+							>
+								${model.enNonDiscriminationCopy}
+							</a>
+						</li>
+						<!--/* Non-Discrimination - Spanish */-->
+						<li class="o-list-inline__item">
+							<sly data-sly-use.esNonDiscriminationEventName="${'/apps/premember/components/analytics/eventName.js' @ text=model.esNonDiscriminationCopy}"/>
+							<a
+								class="js-track-event"
+								href="https://www.uhc.com/legal/nondiscrimination-and-language-assistance-notices"
+								data-event-type="footer"
+								data-event-name="${esNonDiscriminationEventName}"
+								hreflang="es"
+							>
+								${model.esNonDiscriminationCopy}
+							</a>
+						</li>
+						<!--/* Non-Discrimination - Chinese */-->
+						<li class="o-list-inline__item">
+							<sly data-sly-use.zhNonDiscriminationEventName="${'/apps/premember/components/analytics/eventName.js' @ text=model.zhNonDiscriminationCopy}"/>
+							<a
+								class="js-track-event"
+								href="https://www.uhc.com/legal/nondiscrimination-and-language-assistance-notices"
+								data-event-type="footer"
+								data-event-name="${zhNonDiscriminationEventName}"
+								hreflang="zh"
+							>
+								${model.zhNonDiscriminationCopy}
+							</a>
+						</li>
+					</ul>
+				</div>
+				<!--/* Project ID / Asset Number */-->
+				<div
+					data-sly-test="${model.projectId && model.assetNumber}"
+					class="o-grid__item-12 unity-type-small"
+				>
+					${model.projectId}-${model.assetNumber}
+				</div>
+			</div>
+		</div>
+	</div>
+</sly>

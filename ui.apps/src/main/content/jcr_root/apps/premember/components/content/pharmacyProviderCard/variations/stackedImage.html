@@ -1,0 +1,59 @@
+<sly data-sly-use.card="com.mirumagency.uhc.premember.core.models.Card"></sly>
+<sly data-sly-use.data="com.mirumagency.uhc.premember.core.models.EmployerData" data-sly-test="${data.employer.pharmacyProviderCard.showPharmacyProviderInHealthPlanDetails}">
+    <div class="c-card__img"
+        data-sly-test="${card.showImage && (wcmmode.edit || card.isImageNotEmpty)}">
+        <div class="o-ar o-ar--160:63">
+            <div class="o-ar__item" data-sly-resource="${'image' @ resourceType='premember/components/content/image'}">
+            </div>
+        </div>
+    </div>
+    <div class="c-card__header"
+        data-sly-test="${wcmmode.edit || card.showHeader}">
+        <div data-sly-test.showIcon="${card.showIcon}"
+            data-sly-test="${wcmmode.edit || card.isIconNotEmpty}"
+            data-sly-resource="${'icon' @ resourceType='premember/components/content/icon', decoration='true'}">
+        </div>
+        <h3 class="c-card__title ${card.showIcon ? 'unity-type-h4' : ''}"
+            data-sly-test="${card.isTitleNotEmpty}"
+            data-sly-element="${card.titleType}">
+            ${data.employer.pharmacyProviderCard.pharmacyProviderDisplayText}
+        </h3>
+        <p class="c-card__subtitle u-visually-hidden"
+            data-sly-test="${card.isSubtitleNotEmpty}">
+            ${card.subtitle}
+        </p>
+    </div>
+
+    <div class="c-card__body">
+        <div data-sly-test="${wcmmode.edit || data.employer.pharmacyProviderCard.pharmacyProviderDisplayText == 'Pharmacy Provider Text 1'}"
+            data-sly-resource="${'text' @ resourceType='premember/components/content/text'}"></div>
+        <div data-sly-test="${wcmmode.edit || data.employer.pharmacyProviderCard.pharmacyProviderDisplayText == 'Pharmacy Provider Text 2'}"
+            data-sly-resource="${'text2' @ resourceType='premember/components/content/text'}"></div>
+        <div data-sly-test="${wcmmode.edit || data.employer.pharmacyProviderCard.pharmacyProviderDisplayText == 'Pharmacy Provider Text 3'}"
+            data-sly-resource="${'text3' @ resourceType='premember/components/content/text'}"></div>
+        <div data-sly-test="${wcmmode.edit || card.isBodyNotEmpty}"
+            data-sly-resource="${'bodyPar' @ resourceType='wcm/foundation/components/parsys'}"></div>
+    </div>
+
+    <div class="c-card__footer ${card.showIcon ? 'c-card__footer--bordered' : ''}"
+        data-sly-test="${wcmmode.edit || card.isFooterNotEmpty}">
+        <div class="aem-buttons">
+            <div class="button" data-sly-test="${wcmmode.edit || data.employer.pharmacyProviderCard.customPharmacyProviderLink}">
+                <button class="c-button js-track-event js-language-exit-modal-trigger c-button--primary"
+                    data-href="${data.employer.pharmacyProviderCard.customPharmacyProviderLink}"
+                    data-toggle="modal"
+                    data-target="#language-exit-modal"
+                    data-event-name="${data.employer.pharmacyProviderCard.customPharmacyProviderLinkText}"
+                    data-event-type="button">
+                    ${data.employer.pharmacyProviderCard.customPharmacyProviderLinkText ? data.employer.pharmacyProviderCard.customPharmacyProviderLinkText : data.employer.pharmacyProviderCard.pharmacyProviderDisplayText }
+                    <span class="o-svg-icon o-svg-icon--lg u-m-l-xs">
+                        <svg viewBox="0, 0, 24, 24" focusable="false" role="presentation" shape-rendering="geometricPrecision">
+                            <path d="M20.385,20.385 L3.615,20.385 L3.615,3.615 L12,3.615 L12,1.219 L3.615,1.219 C2.285,1.219 1.219,2.297 1.219,3.615 L1.219,20.385 C1.219,21.703 2.285,22.781 3.615,22.781 L20.385,22.781 C21.703,22.781 22.781,21.703 22.781,20.385 L22.781,12 L20.385,12 L20.385,20.385 z M14.396,1.219 L14.396,3.615 L18.696,3.615 L6.921,15.39 L8.61,17.079 L20.385,5.304 L20.385,9.604 L22.781,9.604 L22.781,1.219 L14.396,1.219 z" fill="currentColor"></path>
+                        </svg>
+                    </span>
+                    <span class="u-visually-hidden">Opens in a new tab</span>
+                </button>
+            </div>
+        </div>
+    </div>
+</sly>

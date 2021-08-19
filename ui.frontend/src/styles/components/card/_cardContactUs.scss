@@ -1,0 +1,60 @@
+.cardContactUs {
+	.c-card__img {
+		padding: $g-spacing-sm $g-spacing 0;
+
+		@include mq(md) {
+			padding: $g-spacing-lg 2.25rem 0;
+		}
+
+		&.c-card__img--75height img {
+			max-height: 75px;
+			width: auto;
+		}
+	}
+
+	.c-card__header {
+		padding-top: 1.25rem;
+	}
+
+	.c-card__contact-field {
+		padding-right: 0.75rem;
+	}
+
+	.c-button {
+		vertical-align: baseline;
+	}
+
+	.c-card__body {
+		padding-bottom: 1.25rem;
+
+		@include mq(md) {
+			padding-bottom: 1.75rem;
+		}
+	}
+
+	.cmp-separator__horizontal-rule {
+		margin-bottom: 1.25rem;
+
+		@include mq(md) {
+			margin-bottom: $g-spacing;
+		}
+	}
+
+	.c-card__person:first-child:last-child {
+		flex-grow: 1;
+		max-width: 100%;
+	}
+
+	.c-card__person-name {
+		line-height: 1.25rem;
+		font-size: 1rem;
+	}
+
+	.c-card__person-title {
+		line-height: 1rem;
+
+		@include mq(md) {
+			line-height: 1.25rem;
+		}
+	}
+}

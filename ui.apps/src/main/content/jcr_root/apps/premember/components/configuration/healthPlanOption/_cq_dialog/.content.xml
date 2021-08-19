@@ -1,0 +1,1932 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<jcr:root xmlns:sling="http://sling.apache.org/jcr/sling/1.0" xmlns:granite="http://www.adobe.com/jcr/granite/1.0" xmlns:cq="http://www.day.com/jcr/cq/1.0" xmlns:jcr="http://www.jcp.org/jcr/1.0" xmlns:nt="http://www.jcp.org/jcr/nt/1.0"
+					jcr:primaryType="nt:unstructured"
+					jcr:title="Health Plan Option"
+					sling:resourceType="cq/gui/components/authoring/dialog"
+					extraClientlibs="[premember.components.configuration.employerPlans.dialog]">
+	<content
+		granite:class="cmp-contentfragment__editor"
+		jcr:primaryType="nt:unstructured"
+		sling:resourceType="granite/ui/components/coral/foundation/container">
+		<granite:data
+			jcr:primaryType="nt:unstructured"
+			component-path="${requestPathInfo.suffix}"/>
+		<items jcr:primaryType="nt:unstructured">
+			<tabs
+				jcr:primaryType="nt:unstructured"
+				sling:resourceType="granite/ui/components/coral/foundation/tabs"
+				maximized="{Boolean}true">
+				<items jcr:primaryType="nt:unstructured">
+					<general
+						granite:class="generalEmployerPlanTab"
+						jcr:primaryType="nt:unstructured"
+						jcr:title="General"
+						sling:resourceType="granite/ui/components/coral/foundation/container"
+						margin="{Boolean}true">
+						<items jcr:primaryType="nt:unstructured">
+							<fragmentPath
+								jcr:primaryType="nt:unstructured"
+								sling:resourceType="granite/ui/components/coral/foundation/form/pathfield"
+								emptyText="Enter or select Content Fragment with employer plan"
+								fieldDescription="Path to the Content Fragment with employer plan."
+								fieldLabel="Content Fragment"
+								forceSelection="{Boolean}true"
+								name="./fragmentPath"
+								pickerTitle="Select Content Fragment"
+								rootPath="/content/dam/premember/plans/options/health"/>
+							<variationName
+								jcr:primaryType="nt:unstructured"
+								sling:resourceType="granite/ui/components/coral/foundation/form/select"
+								fieldDescription="Specify which variation to display"
+								fieldLabel="Variation"
+								name="./variationName">
+								<datasource
+									jcr:primaryType="nt:unstructured"
+									sling:resourceType="core/wcm/components/contentfragment/v1/datasource/variations"
+									componentPath="${requestPathInfo.suffix}"
+									fragmentPath="${param.fragmentPath}"/>
+								<granite:data
+									jcr:primaryType="nt:unstructured"
+									field-path="${requestPathInfo.resourcePath}"/>
+							</variationName>
+							<fullBenefitsLink
+								jcr:primaryType="nt:unstructured"
+								sling:resourceType="granite/ui/components/coral/foundation/form/pathfield"
+								fieldLabel="Full Benefits Link"
+								name="./fullBenefitsLink"
+								rootPath="/content/dam/premember/documents/health-plan-benefits-pdf"/>
+						</items>
+					</general>
+					<planCosts
+						jcr:primaryType="nt:unstructured"
+						jcr:title="Plan Costs"
+						sling:resourceType="granite/ui/components/coral/foundation/container"
+						margin="{Boolean}true">
+						<items jcr:primaryType="nt:unstructured">
+							<deductibleIndividual
+								jcr:primaryType="nt:unstructured"
+								sling:resourceType="granite/ui/components/coral/foundation/form/numberfield"
+								fieldLabel="Deductible - Individual ($)"
+								metaType="number"
+								min="0"
+								name="./deductibleIndividual"
+								step="1"
+								typeHint="long"
+								valueType="long"/>
+							<deductibleFamily
+								jcr:primaryType="nt:unstructured"
+								sling:resourceType="granite/ui/components/coral/foundation/form/numberfield"
+								fieldLabel="Deductible - Family ($)"
+								metaType="number"
+								min="0"
+								name="./deductibleFamily"
+								step="1"
+								typeHint="long"
+								valueType="long"/>
+							<deductibleIndividualPlusOne
+								jcr:primaryType="nt:unstructured"
+								sling:resourceType="granite/ui/components/coral/foundation/form/numberfield"
+								fieldLabel="Deductible - Individual + One ($)"
+								metaType="number"
+								min="0"
+								name="./deductibleIndividualPlusOne"
+								step="1"
+								typeHint="long"
+								valueType="long"/>
+							<deductibleIndividualPlusChildren
+								jcr:primaryType="nt:unstructured"
+								sling:resourceType="granite/ui/components/coral/foundation/form/numberfield"
+								fieldLabel="Deductible - Individual + Children ($)"
+								metaType="number"
+								min="0"
+								name="./deductibleIndividualPlusChildren"
+								step="1"
+								typeHint="long"
+								valueType="long"/>
+							<deductibleIndividualPlusFamily
+								jcr:primaryType="nt:unstructured"
+								sling:resourceType="granite/ui/components/coral/foundation/form/numberfield"
+								fieldLabel="Deductible - Individual + Family ($)"
+								metaType="number"
+								min="0"
+								name="./deductibleIndividualPlusFamily"
+								step="1"
+								typeHint="long"
+								valueType="long"/>
+							<outOfPocketIndividual
+								jcr:primaryType="nt:unstructured"
+								sling:resourceType="granite/ui/components/coral/foundation/form/numberfield"
+								fieldLabel="Out-of-pocket - In network - Individual ($)"
+								metaType="number"
+								min="0"
+								name="./outOfPocketLimitIndividual"
+								step="1"
+								typeHint="long"
+								valueType="long"/>
+							<outOfPocketFamily
+								jcr:primaryType="nt:unstructured"
+								sling:resourceType="granite/ui/components/coral/foundation/form/numberfield"
+								fieldLabel="Out-of-pocket - In network - Family ($)"
+								metaType="number"
+								min="0"
+								name="./outOfPocketLimitFamily"
+								step="1"
+								typeHint="long"
+								valueType="long"/>
+							<outOfPocketIndividualPlusOne
+								jcr:primaryType="nt:unstructured"
+								sling:resourceType="granite/ui/components/coral/foundation/form/numberfield"
+								fieldLabel="Out-of-pocket - In network - Individual + One ($)"
+								metaType="number"
+								min="0"
+								name="./outOfPocketLimitIndividualPlusOne"
+								step="1"
+								typeHint="long"
+								valueType="long"/>
+							<outOfPocketIndividualPlusChildren
+								jcr:primaryType="nt:unstructured"
+								sling:resourceType="granite/ui/components/coral/foundation/form/numberfield"
+								fieldLabel="Out-of-pocket - In network - Individual + Children ($)"
+								metaType="number"
+								min="0"
+								name="./outOfPocketLimitIndividualPlusChildren"
+								step="1"
+								typeHint="long"
+								valueType="long"/>
+							<outOfPocketIndividualPlusFamily
+								jcr:primaryType="nt:unstructured"
+								sling:resourceType="granite/ui/components/coral/foundation/form/numberfield"
+								fieldLabel="Out-of-pocket - In network - Individual + Family ($)"
+								metaType="number"
+								min="0"
+								name="./outOfPocketLimitIndividualPlusFamily"
+								step="1"
+								typeHint="long"
+								valueType="long"/>
+						</items>
+					</planCosts>
+					<comparison
+						jcr:primaryType="nt:unstructured"
+						jcr:title="Comparison"
+						sling:resourceType="granite/ui/components/coral/foundation/container"
+						margin="{Boolean}true">
+						<items jcr:primaryType="nt:unstructured">
+							<tabs
+								jcr:primaryType="nt:unstructured"
+								sling:resourceType="granite/ui/components/coral/foundation/tabs">
+								<items jcr:primaryType="nt:unstructured">
+									<planCosts
+										jcr:primaryType="nt:unstructured"
+										jcr:title="Plan Costs"
+										sling:resourceType="granite/ui/components/coral/foundation/container"
+										margin="{Boolean}true">
+										<items jcr:primaryType="nt:unstructured">
+											<comparisonCoinsuranceType
+												granite:class="cq-dialog-dropdown-showhide"
+												jcr:primaryType="nt:unstructured"
+												sling:resourceType="granite/ui/components/coral/foundation/form/select"
+												fieldLabel="Coinsurance Type"
+												name="./coinsuranceType">
+												<granite:data
+													jcr:primaryType="nt:unstructured"
+													cq-dialog-dropdown-showhide-target=".comparisonCoinsurance"/>
+												<items jcr:primaryType="nt:unstructured">
+													<single
+														jcr:primaryType="nt:unstructured"
+														text="Single Value"
+														value="single"/>
+													<range
+														jcr:primaryType="nt:unstructured"
+														text="Range Plans"
+														value="range"/>
+												</items>
+											</comparisonCoinsuranceType>
+											<comparisonCoinsuranceSingle
+												granite:class="hide comparisonCoinsurance"
+												jcr:primaryType="nt:unstructured"
+												sling:resourceType="granite/ui/components/foundation/container">
+												<granite:data
+													jcr:primaryType="nt:unstructured"
+													showhidetargetvalue="single"/>
+												<items jcr:primaryType="nt:unstructured">
+													<comparisonCoinsurance
+														jcr:primaryType="nt:unstructured"
+														sling:resourceType="granite/ui/components/coral/foundation/form/numberfield"
+														fieldLabel="Coinsurance ($)"
+														metaType="number"
+														min="0"
+														name="./comparisonCoinsurance"
+														step="1"
+														typeHint="long"
+														valueType="long"/>
+												</items>
+											</comparisonCoinsuranceSingle>
+											<comparisonCoinsuranceRange
+												granite:class="hide comparisonCoinsurance"
+												jcr:primaryType="nt:unstructured"
+												sling:resourceType="granite/ui/components/foundation/container">
+												<granite:data
+													jcr:primaryType="nt:unstructured"
+													showhidetargetvalue="range"/>
+												<items jcr:primaryType="nt:unstructured">
+													<comparisonCoinsuranceRangeStart
+														jcr:primaryType="nt:unstructured"
+														sling:resourceType="granite/ui/components/coral/foundation/form/numberfield"
+														fieldLabel="Coinsurance Start ($)"
+														metaType="number"
+														min="0"
+														name="./comparisonCoinsuranceRangeStart"
+														step="1"
+														typeHint="long"
+														valueType="long"/>
+													<comparisonCoinsuranceRangeEnd
+														jcr:primaryType="nt:unstructured"
+														sling:resourceType="granite/ui/components/coral/foundation/form/numberfield"
+														fieldLabel="Coinsurance End ($)"
+														metaType="number"
+														min="0"
+														name="./comparisonCoinsuranceRangeEnd"
+														step="1"
+														typeHint="long"
+														valueType="long"/>
+													<comparisonCoinsuranceRangeValuesTitle
+														jcr:primaryType="nt:unstructured"
+														sling:resourceType="granite/ui/components/coral/foundation/form/textfield"
+														fieldLabel="Coinsurance Range Values Title"
+														maxlength="50"
+														name="./comparisonCoinsuranceRangeValuesTitle"
+														required="{Boolean}false"/>
+												</items>
+											</comparisonCoinsuranceRange>
+										</items>
+									</planCosts>
+									<primaryCareVisit
+										jcr:primaryType="nt:unstructured"
+										jcr:title="Primary Care Visit"
+										sling:resourceType="granite/ui/components/coral/foundation/container"
+										margin="{Boolean}true">
+										<items jcr:primaryType="nt:unstructured">
+											<primaryCareVisitCopayType
+												granite:class="cq-dialog-dropdown-showhide"
+												jcr:primaryType="nt:unstructured"
+												sling:resourceType="granite/ui/components/coral/foundation/form/select"
+												fieldLabel="Primary Care Visit Copay Type"
+												name="./comparisonPrimaryCareVisitCopayType">
+												<granite:data
+													jcr:primaryType="nt:unstructured"
+													cq-dialog-dropdown-showhide-target=".primary-care-visit-copay"/>
+												<items jcr:primaryType="nt:unstructured">
+													<single
+														jcr:primaryType="nt:unstructured"
+														text="Single Value"
+														value="single"/>
+													<tiered
+														jcr:primaryType="nt:unstructured"
+														text="Tiered Plans"
+														value="tiered"/>
+													<range
+														jcr:primaryType="nt:unstructured"
+														text="Range Plans"
+														value="range"/>
+												</items>
+											</primaryCareVisitCopayType>
+											<primaryCareVisitCopaySingle
+												granite:class="hide primary-care-visit-copay"
+												jcr:primaryType="nt:unstructured"
+												sling:resourceType="granite/ui/components/foundation/container">
+												<granite:data
+													jcr:primaryType="nt:unstructured"
+													showhidetargetvalue="single"/>
+												<items jcr:primaryType="nt:unstructured">
+													<comparisonPrimaryCareVisitCopay
+														jcr:primaryType="nt:unstructured"
+														sling:resourceType="granite/ui/components/coral/foundation/form/numberfield"
+														fieldLabel="Primary Care Visit Copay ($)"
+														metaType="number"
+														min="0"
+														name="./comparisonPrimaryCareVisitCopay"
+														step="1"
+														typeHint="long"
+														valueType="long"/>
+													<comparisonPrimaryCareVisitCopayCopy
+														jcr:primaryType="nt:unstructured"
+														sling:resourceType="granite/ui/components/coral/foundation/form/select"
+														emptyOption="{Boolean}true"
+														fieldLabel="Primary Care Visit Copay Copy"
+														name="./comparisonPrimaryCareVisitCopayCopy"
+														valueType="string">
+														<datasource
+															jcr:primaryType="nt:unstructured"
+															sling:resourceType="/apps/premember/dialog/dropdown/single-plan-copy"/>
+													</comparisonPrimaryCareVisitCopayCopy>
+												</items>
+											</primaryCareVisitCopaySingle>
+											<primaryCareVisitCopayTiered
+												granite:class="hide primary-care-visit-copay"
+												jcr:primaryType="nt:unstructured"
+												sling:resourceType="granite/ui/components/foundation/container">
+												<granite:data
+													jcr:primaryType="nt:unstructured"
+													showhidetargetvalue="tiered"/>
+												<items jcr:primaryType="nt:unstructured">
+													<tabs
+														jcr:primaryType="nt:unstructured"
+														sling:resourceType="granite/ui/components/coral/foundation/tabs">
+														<items jcr:primaryType="nt:unstructured">
+															<primaryCareVisitCopayTier1Tab
+																jcr:primaryType="nt:unstructured"
+																jcr:title="Tier 1"
+																sling:resourceType="granite/ui/components/coral/foundation/container"
+																margin="{Boolean}true">
+																<items jcr:primaryType="nt:unstructured">
+																	<comparisonPrimaryCareVisitCopayTier1
+																		jcr:primaryType="nt:unstructured"
+																		sling:resourceType="granite/ui/components/coral/foundation/form/numberfield"
+																		fieldLabel="Primary Care Visit Copay Tier 1 ($)"
+																		metaType="number"
+																		min="0"
+																		name="./comparisonPrimaryCareVisitCopayTier1"
+																		step="1"
+																		typeHint="long"
+																		valueType="long"/>
+																	<comparisonPrimaryCareVisitCopayTier1Copy
+																		jcr:primaryType="nt:unstructured"
+																		sling:resourceType="granite/ui/components/coral/foundation/form/select"
+																		dropdownFor="tiered"
+																		emptyOption="{Boolean}true"
+																		fieldLabel="Primary Care Visit Copay Tier 1 Copy"
+																		name="./comparisonPrimaryCareVisitCopayTier1Copy"
+																		valueType="string">
+																		<datasource
+																			jcr:primaryType="nt:unstructured"
+																			sling:resourceType="/apps/premember/dialog/dropdown/tiered-plan-copy"/>
+																	</comparisonPrimaryCareVisitCopayTier1Copy>
+																</items>
+															</primaryCareVisitCopayTier1Tab>
+															<primaryCareVisitCopayTier2Tab
+																jcr:primaryType="nt:unstructured"
+																jcr:title="Tier 2"
+																sling:resourceType="granite/ui/components/coral/foundation/container"
+																margin="{Boolean}true">
+																<items jcr:primaryType="nt:unstructured">
+																	<comparisonPrimaryCareVisitCopayTier2
+																		jcr:primaryType="nt:unstructured"
+																		sling:resourceType="granite/ui/components/coral/foundation/form/numberfield"
+																		fieldLabel="Primary Care Visit Copay Tier 2 ($)"
+																		metaType="number"
+																		min="0"
+																		name="./comparisonPrimaryCareVisitCopayTier2"
+																		step="1"
+																		typeHint="long"
+																		valueType="long"/>
+																	<comparisonPrimaryCareVisitCopayTier2Copy
+																		jcr:primaryType="nt:unstructured"
+																		sling:resourceType="granite/ui/components/coral/foundation/form/select"
+																		dropdownFor="tiered"
+																		emptyOption="{Boolean}true"
+																		fieldLabel="Primary Care Visit Copay Tier 2 Copy"
+																		name="./comparisonPrimaryCareVisitCopayTier2Copy"
+																		valueType="string">
+																		<datasource
+																			jcr:primaryType="nt:unstructured"
+																			sling:resourceType="/apps/premember/dialog/dropdown/tiered-plan-copy"/>
+																	</comparisonPrimaryCareVisitCopayTier2Copy>
+																</items>
+															</primaryCareVisitCopayTier2Tab>
+														</items>
+													</tabs>
+												</items>
+											</primaryCareVisitCopayTiered>
+											<primaryCareVisitCopayRange
+												granite:class="hide primary-care-visit-copay"
+												jcr:primaryType="nt:unstructured"
+												sling:resourceType="granite/ui/components/foundation/container">
+												<granite:data
+													jcr:primaryType="nt:unstructured"
+													showhidetargetvalue="range"/>
+												<items jcr:primaryType="nt:unstructured">
+													<comparisonPrimaryCareVisitCopayRangeStart
+														jcr:primaryType="nt:unstructured"
+														sling:resourceType="granite/ui/components/coral/foundation/form/numberfield"
+														fieldLabel="Primary Care Visit Copay Start ($)"
+														metaType="number"
+														min="0"
+														name="./comparisonPrimaryCareVisitCopayRangeStart"
+														step="1"
+														typeHint="long"
+														valueType="long"/>
+													<comparisonPrimaryCareVisitCopayRangeEnd
+														jcr:primaryType="nt:unstructured"
+														sling:resourceType="granite/ui/components/coral/foundation/form/numberfield"
+														fieldLabel="Primary Care Visit Copay End ($)"
+														metaType="number"
+														min="0"
+														name="./comparisonPrimaryCareVisitCopayRangeEnd"
+														step="1"
+														typeHint="long"
+														valueType="long"/>
+													<comparisonPrimaryCareVisitCopayRangeCopy
+														jcr:primaryType="nt:unstructured"
+														sling:resourceType="granite/ui/components/coral/foundation/form/select"
+														emptyOption="{Boolean}true"
+														fieldLabel="Primary Care Visit Copay Copy"
+														name="./comparisonPrimaryCareVisitCopayRangeCopy"
+														valueType="string">
+														<datasource
+															jcr:primaryType="nt:unstructured"
+															sling:resourceType="/apps/premember/dialog/dropdown/range-plan-copy"/>
+													</comparisonPrimaryCareVisitCopayRangeCopy>
+													<comparisonPrimaryCareVisitCopayRangeValuesTitle
+														jcr:primaryType="nt:unstructured"
+														sling:resourceType="granite/ui/components/coral/foundation/form/textfield"
+														fieldLabel="Primary Care Visit Copay Range Values Title"
+														maxlength="50"
+														name="./comparisonPrimaryCareVisitCopayRangeValuesTitle"
+														required="{Boolean}false"/>
+												</items>
+											</primaryCareVisitCopayRange>
+											<primaryCareVisitCoinsuranceType
+												granite:class="cq-dialog-dropdown-showhide"
+												jcr:primaryType="nt:unstructured"
+												sling:resourceType="granite/ui/components/coral/foundation/form/select"
+												fieldLabel="Primary Care Visit Coinsurance Type"
+												name="./comparisonPrimaryCareVisitCoinsuranceType">
+												<granite:data
+													jcr:primaryType="nt:unstructured"
+													cq-dialog-dropdown-showhide-target=".primary-care-visit-coinsurance"/>
+												<items jcr:primaryType="nt:unstructured">
+													<single
+														jcr:primaryType="nt:unstructured"
+														text="Single Value"
+														value="single"/>
+													<tiered
+														jcr:primaryType="nt:unstructured"
+														text="Tiered Plans"
+														value="tiered"/>
+												</items>
+											</primaryCareVisitCoinsuranceType>
+											<primaryCareVisitCoinsuranceSingle
+												granite:class="hide primary-care-visit-coinsurance"
+												jcr:primaryType="nt:unstructured"
+												sling:resourceType="granite/ui/components/foundation/container">
+												<granite:data
+													jcr:primaryType="nt:unstructured"
+													showhidetargetvalue="single"/>
+												<items jcr:primaryType="nt:unstructured">
+													<comparisonPrimaryCareVisitCoinsurance
+														jcr:primaryType="nt:unstructured"
+														sling:resourceType="granite/ui/components/coral/foundation/form/numberfield"
+														fieldLabel="Primary Care Visit Coinsurance (%)"
+														max="100"
+														metaType="number"
+														min="0"
+														name="./comparisonPrimaryCareVisitCoinsurance"
+														step="1"
+														typeHint="long"
+														valueType="long"/>
+													<comparisonPrimaryCareVisitCoinsuranceCopy
+														jcr:primaryType="nt:unstructured"
+														sling:resourceType="granite/ui/components/coral/foundation/form/select"
+														emptyOption="{Boolean}true"
+														fieldLabel="Primary Care Visit Coinsurance Copy"
+														name="./comparisonPrimaryCareVisitCoinsuranceCopy"
+														valueType="string">
+														<datasource
+															jcr:primaryType="nt:unstructured"
+															sling:resourceType="/apps/premember/dialog/dropdown/single-plan-copy"/>
+													</comparisonPrimaryCareVisitCoinsuranceCopy>
+												</items>
+											</primaryCareVisitCoinsuranceSingle>
+											<primaryCareVisitCoinsuranceTiered
+												granite:class="hide primary-care-visit-coinsurance"
+												jcr:primaryType="nt:unstructured"
+												sling:resourceType="granite/ui/components/foundation/container">
+												<granite:data
+													jcr:primaryType="nt:unstructured"
+													showhidetargetvalue="tiered"/>
+												<items jcr:primaryType="nt:unstructured">
+													<tabs
+														jcr:primaryType="nt:unstructured"
+														sling:resourceType="granite/ui/components/coral/foundation/tabs">
+														<items jcr:primaryType="nt:unstructured">
+															<primaryCareVisitCoinsuranceTier1Tab
+																jcr:primaryType="nt:unstructured"
+																jcr:title="Tier 1"
+																sling:resourceType="granite/ui/components/coral/foundation/container"
+																margin="{Boolean}true">
+																<items jcr:primaryType="nt:unstructured">
+																	<comparisonPrimaryCareVisitCoinsuranceTier1
+																		jcr:primaryType="nt:unstructured"
+																		sling:resourceType="granite/ui/components/coral/foundation/form/numberfield"
+																		fieldLabel="Primary Care Visit Coinsurance Tier 1 (%)"
+																		max="100"
+																		metaType="number"
+																		min="0"
+																		name="./comparisonPrimaryCareVisitCoinsuranceTier1"
+																		step="1"
+																		typeHint="long"
+																		valueType="long"/>
+																	<primaryCareVisitCoinsuranceTier1Copy
+																		jcr:primaryType="nt:unstructured"
+																		sling:resourceType="granite/ui/components/coral/foundation/form/select"
+																		emptyOption="{Boolean}true"
+																		fieldLabel="Primary Care Visit Coinsurance Tier 1 Copy"
+																		name="./comparisonPrimaryCareVisitCoinsuranceTier1Copy"
+																		valueType="string">
+																		<datasource
+																			jcr:primaryType="nt:unstructured"
+																			sling:resourceType="/apps/premember/dialog/dropdown/tiered-plan-copy"/>
+																	</primaryCareVisitCoinsuranceTier1Copy>
+																</items>
+															</primaryCareVisitCoinsuranceTier1Tab>
+															<primaryCareVisitCoinsuranceTier2Tab
+																jcr:primaryType="nt:unstructured"
+																jcr:title="Tier 2"
+																sling:resourceType="granite/ui/components/coral/foundation/container"
+																margin="{Boolean}true">
+																<items jcr:primaryType="nt:unstructured">
+																	<comparisonPrimaryCareVisitCoinsuranceTier2
+																		jcr:primaryType="nt:unstructured"
+																		sling:resourceType="granite/ui/components/coral/foundation/form/numberfield"
+																		fieldLabel="Primary Care Visit Coinsurance Tier 2 (%)"
+																		max="100"
+																		metaType="number"
+																		min="0"
+																		name="./comparisonPrimaryCareVisitCoinsuranceTier2"
+																		step="1"
+																		typeHint="long"
+																		valueType="long"/>
+																	<comparisonPrimaryCareVisitCoinsuranceTier2Copy
+																		jcr:primaryType="nt:unstructured"
+																		sling:resourceType="granite/ui/components/coral/foundation/form/select"
+																		emptyOption="{Boolean}true"
+																		fieldLabel="Primary Care Visit Coinsurance Tier 2 Copy"
+																		name="./comparisonPrimaryCareVisitCoinsuranceTier2Copy"
+																		valueType="string">
+																		<datasource
+																			jcr:primaryType="nt:unstructured"
+																			sling:resourceType="/apps/premember/dialog/dropdown/tiered-plan-copy"/>
+																	</comparisonPrimaryCareVisitCoinsuranceTier2Copy>
+																</items>
+															</primaryCareVisitCoinsuranceTier2Tab>
+														</items>
+													</tabs>
+												</items>
+											</primaryCareVisitCoinsuranceTiered>
+										</items>
+									</primaryCareVisit>
+									<specialistVisits
+										jcr:primaryType="nt:unstructured"
+										jcr:title="Specialist Visits"
+										sling:resourceType="granite/ui/components/coral/foundation/container"
+										margin="{Boolean}true">
+										<items jcr:primaryType="nt:unstructured">
+											<specialistVisitsCopayType
+												granite:class="cq-dialog-dropdown-showhide"
+												jcr:primaryType="nt:unstructured"
+												sling:resourceType="granite/ui/components/coral/foundation/form/select"
+												fieldLabel="Specialist Visits Copay Type"
+												name="./comparisonSpecialistVisitsCopayType">
+												<granite:data
+													jcr:primaryType="nt:unstructured"
+													cq-dialog-dropdown-showhide-target=".specialist-visits-copay"/>
+												<items jcr:primaryType="nt:unstructured">
+													<single
+														jcr:primaryType="nt:unstructured"
+														text="Single Value"
+														value="single"/>
+													<tiered
+														jcr:primaryType="nt:unstructured"
+														text="Tiered Plans"
+														value="tiered"/>
+													<range
+														jcr:primaryType="nt:unstructured"
+														text="Range Plans"
+														value="range"/>
+												</items>
+											</specialistVisitsCopayType>
+											<specialistVisitsCopaySingle
+												granite:class="hide specialist-visits-copay"
+												jcr:primaryType="nt:unstructured"
+												sling:resourceType="granite/ui/components/foundation/container">
+												<granite:data
+													jcr:primaryType="nt:unstructured"
+													showhidetargetvalue="single"/>
+												<items jcr:primaryType="nt:unstructured">
+													<comparisonSpecialistVisitsCopay
+														jcr:primaryType="nt:unstructured"
+														sling:resourceType="granite/ui/components/coral/foundation/form/numberfield"
+														fieldLabel="Specialist Visits Copay ($)"
+														metaType="number"
+														min="0"
+														name="./comparisonSpecialistVisitsCopay"
+														step="1"
+														typeHint="long"
+														valueType="long"/>
+													<comparisonSpecialistVisitsCopayCopy
+														jcr:primaryType="nt:unstructured"
+														sling:resourceType="granite/ui/components/coral/foundation/form/select"
+														emptyOption="{Boolean}true"
+														fieldLabel="Specialist Visits Copay Copy"
+														name="./comparisonSpecialistVisitsCopayCopy"
+														valueType="string">
+														<datasource
+															jcr:primaryType="nt:unstructured"
+															sling:resourceType="/apps/premember/dialog/dropdown/single-plan-copy"/>
+													</comparisonSpecialistVisitsCopayCopy>
+												</items>
+											</specialistVisitsCopaySingle>
+											<specialistVisitsCopayTiered
+												granite:class="hide specialist-visits-copay"
+												jcr:primaryType="nt:unstructured"
+												sling:resourceType="granite/ui/components/foundation/container">
+												<granite:data
+													jcr:primaryType="nt:unstructured"
+													showhidetargetvalue="tiered"/>
+												<items jcr:primaryType="nt:unstructured">
+													<specialistVisitsUseAlternateTierTitles
+														jcr:primaryType="nt:unstructured"
+														sling:resourceType="granite/ui/components/coral/foundation/form/checkbox"
+														fieldLabel="Use With referral - Without referral as tier titles."
+														name="./comparisonSpecialistVisitsCopayUseAlternateTierTitles"
+														text="Use With referral - Without referral as tier titles."
+														uncheckedValue="{Boolean}false"
+														value="{Boolean}true"/>
+													<tabs
+														jcr:primaryType="nt:unstructured"
+														sling:resourceType="granite/ui/components/coral/foundation/tabs">
+														<items jcr:primaryType="nt:unstructured">
+															<specialistVisitsCopayTier1Tab
+																jcr:primaryType="nt:unstructured"
+																jcr:title="Tier 1"
+																sling:resourceType="granite/ui/components/coral/foundation/container"
+																margin="{Boolean}true">
+																<items jcr:primaryType="nt:unstructured">
+																	<comparisonSpecialistVisitsCopayTier1
+																		jcr:primaryType="nt:unstructured"
+																		sling:resourceType="granite/ui/components/coral/foundation/form/numberfield"
+																		fieldLabel="Specialist Visits Copay Tier 1 ($)"
+																		metaType="number"
+																		min="0"
+																		name="./comparisonSpecialistVisitsCopayTier1"
+																		step="1"
+																		typeHint="long"
+																		valueType="long"/>
+																	<comparisonSpecialistVisitsCopayTier1Copy
+																		jcr:primaryType="nt:unstructured"
+																		sling:resourceType="granite/ui/components/coral/foundation/form/select"
+																		emptyOption="{Boolean}true"
+																		fieldLabel="Specialist Visits Copay Tier 1 Copy"
+																		name="./comparisonSpecialistVisitsCopayTier1Copy"
+																		valueType="string">
+																		<datasource
+																			jcr:primaryType="nt:unstructured"
+																			sling:resourceType="/apps/premember/dialog/dropdown/tiered-plan-copy"/>
+																	</comparisonSpecialistVisitsCopayTier1Copy>
+																</items>
+															</specialistVisitsCopayTier1Tab>
+															<specialistVisitsCopayTier2Tab
+																jcr:primaryType="nt:unstructured"
+																jcr:title="Tier 2"
+																sling:resourceType="granite/ui/components/coral/foundation/container"
+																margin="{Boolean}true">
+																<items jcr:primaryType="nt:unstructured">
+																	<comparisonSpecialistVisitsCopayTier2
+																		jcr:primaryType="nt:unstructured"
+																		sling:resourceType="granite/ui/components/coral/foundation/form/numberfield"
+																		fieldLabel="Specialist Visits Copay Tier 2 ($)"
+																		metaType="number"
+																		min="0"
+																		name="./comparisonSpecialistVisitsCopayTier2"
+																		step="1"
+																		typeHint="long"
+																		valueType="long"/>
+																	<comparisonSpecialistVisitsCopayTier2Copy
+																		jcr:primaryType="nt:unstructured"
+																		sling:resourceType="granite/ui/components/coral/foundation/form/select"
+																		emptyOption="{Boolean}true"
+																		fieldLabel="Specialist Visits Copay Tier 2 Copy"
+																		name="./comparisonSpecialistVisitsCopayTier2Copy"
+																		valueType="string">
+																		<datasource
+																			jcr:primaryType="nt:unstructured"
+																			sling:resourceType="/apps/premember/dialog/dropdown/tiered-plan-copy"/>
+																	</comparisonSpecialistVisitsCopayTier2Copy>
+																</items>
+															</specialistVisitsCopayTier2Tab>
+														</items>
+													</tabs>
+												</items>
+											</specialistVisitsCopayTiered>
+											<specialistVisitsCopayRange
+												granite:class="hide specialist-visits-copay"
+												jcr:primaryType="nt:unstructured"
+												sling:resourceType="granite/ui/components/foundation/container">
+												<granite:data
+													jcr:primaryType="nt:unstructured"
+													showhidetargetvalue="range"/>
+												<items jcr:primaryType="nt:unstructured">
+													<comparisonSpecialistVisitsCopayRangeStart
+														jcr:primaryType="nt:unstructured"
+														sling:resourceType="granite/ui/components/coral/foundation/form/numberfield"
+														fieldLabel="Specialist Visits Copay Start ($)"
+														metaType="number"
+														min="0"
+														name="./comparisonSpecialistVisitsCopayRangeStart"
+														step="1"
+														typeHint="long"
+														valueType="long"/>
+													<comparisonSpecialistVisitsCopayRangeEnd
+														jcr:primaryType="nt:unstructured"
+														sling:resourceType="granite/ui/components/coral/foundation/form/numberfield"
+														fieldLabel="Specialist Visits Copay End ($)"
+														metaType="number"
+														min="0"
+														name="./comparisonSpecialistVisitsCopayRangeEnd"
+														step="1"
+														typeHint="long"
+														valueType="long"/>
+													<comparisonSpecialistVisitsCopayRangeCopy
+														jcr:primaryType="nt:unstructured"
+														sling:resourceType="granite/ui/components/coral/foundation/form/select"
+														emptyOption="{Boolean}true"
+														fieldLabel="Specialist Visits Copay Copy"
+														name="./comparisonSpecialistVisitsCopayRangeCopy"
+														valueType="string">
+														<datasource
+															jcr:primaryType="nt:unstructured"
+															sling:resourceType="/apps/premember/dialog/dropdown/range-plan-copy"/>
+													</comparisonSpecialistVisitsCopayRangeCopy>
+													<comparisonSpecialistVisitsCopayRangeValuesTitle
+														jcr:primaryType="nt:unstructured"
+														sling:resourceType="granite/ui/components/coral/foundation/form/textfield"
+														fieldLabel="Specialist Visits Copay Range Values Title"
+														maxlength="50"
+														name="./comparisonSpecialistVisitsCopayRangeValuesTitle"
+														required="{Boolean}false"/>
+												</items>
+											</specialistVisitsCopayRange>
+											<specialistVisitsCoinsuranceType
+												granite:class="cq-dialog-dropdown-showhide"
+												jcr:primaryType="nt:unstructured"
+												sling:resourceType="granite/ui/components/coral/foundation/form/select"
+												fieldLabel="Specialist Visits Coinsurance Type"
+												name="./comparisonSpecialistVisitsCoinsuranceType">
+												<granite:data
+													jcr:primaryType="nt:unstructured"
+													cq-dialog-dropdown-showhide-target=".specialist-visits-coinsurance"/>
+												<items jcr:primaryType="nt:unstructured">
+													<single
+														jcr:primaryType="nt:unstructured"
+														text="Single Value"
+														value="single"/>
+													<tiered
+														jcr:primaryType="nt:unstructured"
+														text="Tiered Plans"
+														value="tiered"/>
+												</items>
+											</specialistVisitsCoinsuranceType>
+											<specialistVisitsCoinsuranceSingle
+												granite:class="hide specialist-visits-coinsurance"
+												jcr:primaryType="nt:unstructured"
+												sling:resourceType="granite/ui/components/foundation/container">
+												<granite:data
+													jcr:primaryType="nt:unstructured"
+													showhidetargetvalue="single"/>
+												<items jcr:primaryType="nt:unstructured">
+													<comparisonSpecialistVisitsCoinsurance
+														jcr:primaryType="nt:unstructured"
+														sling:resourceType="granite/ui/components/coral/foundation/form/numberfield"
+														fieldLabel="Specialist Visits Coinsurance (%)"
+														max="100"
+														metaType="number"
+														min="0"
+														name="./comparisonSpecialistVisitsCoinsurance"
+														step="1"
+														typeHint="long"
+														valueType="long"/>
+													<comparisonSpecialistVisitsCoinsuranceCopy
+														jcr:primaryType="nt:unstructured"
+														sling:resourceType="granite/ui/components/coral/foundation/form/select"
+														emptyOption="{Boolean}true"
+														fieldLabel="Specialist Visits Coinsurance Copy"
+														name="./comparisonSpecialistVisitsCoinsuranceCopy"
+														valueType="string">
+														<datasource
+															jcr:primaryType="nt:unstructured"
+															sling:resourceType="/apps/premember/dialog/dropdown/single-plan-copy"/>
+													</comparisonSpecialistVisitsCoinsuranceCopy>
+												</items>
+											</specialistVisitsCoinsuranceSingle>
+											<specialistVisitsCoinsuranceTiered
+												granite:class="hide specialist-visits-coinsurance"
+												jcr:primaryType="nt:unstructured"
+												sling:resourceType="granite/ui/components/foundation/container">
+												<granite:data
+													jcr:primaryType="nt:unstructured"
+													showhidetargetvalue="tiered"/>
+												<items jcr:primaryType="nt:unstructured">
+													<specialistVisitsCoinsuranceUseAlternateTierTitles
+														jcr:primaryType="nt:unstructured"
+														sling:resourceType="granite/ui/components/coral/foundation/form/checkbox"
+														fieldLabel="Use With referral - Without referral as tier titles."
+														name="./comparisonSpecialistVisitsCoinsuranceUseAlternateTierTitles"
+														text="Use With referral - Without referral as tier titles."
+														uncheckedValue="{Boolean}false"
+														value="{Boolean}true"/>
+													<tabs
+														jcr:primaryType="nt:unstructured"
+														sling:resourceType="granite/ui/components/coral/foundation/tabs">
+														<items jcr:primaryType="nt:unstructured">
+															<specialistVisitsCoinsuranceTier1Tab
+																jcr:primaryType="nt:unstructured"
+																jcr:title="Tier 1"
+																sling:resourceType="granite/ui/components/coral/foundation/container"
+																margin="{Boolean}true">
+																<items jcr:primaryType="nt:unstructured">
+																	<specialistVisitsCoinsuranceTier1
+																		jcr:primaryType="nt:unstructured"
+																		sling:resourceType="granite/ui/components/coral/foundation/form/numberfield"
+																		fieldLabel="Specialist Visits Coinsurance Tier 1 (%)"
+																		max="100"
+																		metaType="number"
+																		min="0"
+																		name="./comparisonSpecialistVisitsCoinsuranceTier1"
+																		step="1"
+																		typeHint="long"
+																		valueType="long"/>
+																	<specialistVisitsCoinsuranceTier1Copy
+																		jcr:primaryType="nt:unstructured"
+																		sling:resourceType="granite/ui/components/coral/foundation/form/select"
+																		emptyOption="{Boolean}true"
+																		fieldLabel="Specialist Visits Coinsurance Tier 1 Copy"
+																		name="./comparisonSpecialistVisitsCoinsuranceTier1Copy"
+																		valueType="string">
+																		<datasource
+																			jcr:primaryType="nt:unstructured"
+																			sling:resourceType="/apps/premember/dialog/dropdown/tiered-plan-copy"/>
+																	</specialistVisitsCoinsuranceTier1Copy>
+																</items>
+															</specialistVisitsCoinsuranceTier1Tab>
+															<specialistVisitsCoinsuranceTier2Tab
+																jcr:primaryType="nt:unstructured"
+																jcr:title="Tier 2"
+																sling:resourceType="granite/ui/components/coral/foundation/container"
+																margin="{Boolean}true">
+																<items jcr:primaryType="nt:unstructured">
+																	<specialistVisitsCoinsuranceTier2
+																		jcr:primaryType="nt:unstructured"
+																		sling:resourceType="granite/ui/components/coral/foundation/form/numberfield"
+																		fieldLabel="Specialist Visits Coinsurance Tier 2 (%)"
+																		max="100"
+																		metaType="number"
+																		min="0"
+																		name="./comparisonSpecialistVisitsCoinsuranceTier2"
+																		step="1"
+																		typeHint="long"
+																		valueType="long"/>
+																	<specialistVisitsCoinsuranceTier2Copy
+																		jcr:primaryType="nt:unstructured"
+																		sling:resourceType="granite/ui/components/coral/foundation/form/select"
+																		emptyOption="{Boolean}true"
+																		fieldLabel="Specialist Visits Coinsurance Tier 2 Copy"
+																		name="./comparisonSpecialistVisitsCoinsuranceTier2Copy"
+																		valueType="string">
+																		<datasource
+																			jcr:primaryType="nt:unstructured"
+																			sling:resourceType="/apps/premember/dialog/dropdown/tiered-plan-copy"/>
+																	</specialistVisitsCoinsuranceTier2Copy>
+																</items>
+															</specialistVisitsCoinsuranceTier2Tab>
+														</items>
+													</tabs>
+												</items>
+											</specialistVisitsCoinsuranceTiered>
+										</items>
+									</specialistVisits>
+									<labTesting
+										jcr:primaryType="nt:unstructured"
+										jcr:title="Lab Testing"
+										sling:resourceType="granite/ui/components/coral/foundation/container"
+										margin="{Boolean}true">
+										<items jcr:primaryType="nt:unstructured">
+											<labTestingCopayType
+												granite:class="cq-dialog-dropdown-showhide"
+												jcr:primaryType="nt:unstructured"
+												sling:resourceType="granite/ui/components/coral/foundation/form/select"
+												fieldLabel="Lab Testing Copay Type"
+												name="./comparisonLabTestingCopayType">
+												<granite:data
+													jcr:primaryType="nt:unstructured"
+													cq-dialog-dropdown-showhide-target=".lab-testing-copay"/>
+												<items jcr:primaryType="nt:unstructured">
+													<single
+														jcr:primaryType="nt:unstructured"
+														text="Single Value"
+														value="single"/>
+													<tiered
+														jcr:primaryType="nt:unstructured"
+														text="Tiered Plans"
+														value="tiered"/>
+												</items>
+											</labTestingCopayType>
+											<labTestingCopaySingle
+												granite:class="hide lab-testing-copay"
+												jcr:primaryType="nt:unstructured"
+												sling:resourceType="granite/ui/components/foundation/container">
+												<granite:data
+													jcr:primaryType="nt:unstructured"
+													showhidetargetvalue="single"/>
+												<items jcr:primaryType="nt:unstructured">
+													<comparisonLabTestingCopayUseSingleTitles
+														jcr:primaryType="nt:unstructured"
+														sling:resourceType="granite/ui/components/coral/foundation/form/checkbox"
+														fieldLabel="Use Freestanding/Office - Hospital as tier titles."
+														name="./comparisonLabTestingCopayUseSingleTitles"
+														text="Use Freestanding/Office - Hospital as tier titles."
+														uncheckedValue="{Boolean}false"
+														value="{Boolean}true"/>
+													<tabs
+														jcr:primaryType="nt:unstructured"
+														sling:resourceType="granite/ui/components/coral/foundation/tabs">
+														<items jcr:primaryType="nt:unstructured">
+															<labTestingCopaySingleTier1Tab
+																jcr:primaryType="nt:unstructured"
+																jcr:title="Tier 1"
+																sling:resourceType="granite/ui/components/coral/foundation/container"
+																margin="{Boolean}true">
+																<items jcr:primaryType="nt:unstructured">
+																	<comparisonLabTestingCopaySingleTier1
+																		jcr:primaryType="nt:unstructured"
+																		sling:resourceType="granite/ui/components/coral/foundation/form/numberfield"
+																		fieldLabel="Lab Testing Copay Tier 1 ($)"
+																		max="100"
+																		metaType="number"
+																		min="0"
+																		name="./comparisonLabTestingCopaySingleTier1"
+																		step="1"
+																		typeHint="long"
+																		valueType="long"/>
+																	<comparisonLabTestingCopaySingleTier1Copy
+																		jcr:primaryType="nt:unstructured"
+																		sling:resourceType="granite/ui/components/coral/foundation/form/select"
+																		emptyOption="{Boolean}true"
+																		fieldLabel="Lab Testing Copay Tier 1 Copy"
+																		name="./comparisonLabTestingCopaySingleTier1Copy"
+																		valueType="string">
+																		<datasource
+																			jcr:primaryType="nt:unstructured"
+																			sling:resourceType="/apps/premember/dialog/dropdown/tiered-plan-copy"/>
+																	</comparisonLabTestingCopaySingleTier1Copy>
+																</items>
+															</labTestingCopaySingleTier1Tab>
+															<labTestingCopaySingleTier2Tab
+																jcr:primaryType="nt:unstructured"
+																jcr:title="Tier 2"
+																sling:resourceType="granite/ui/components/coral/foundation/container"
+																margin="{Boolean}true">
+																<items jcr:primaryType="nt:unstructured">
+																	<comparisonLabTestingCopaySingleTier2
+																		jcr:primaryType="nt:unstructured"
+																		sling:resourceType="granite/ui/components/coral/foundation/form/numberfield"
+																		fieldLabel="Lab Testing Copay Tier 2 ($)"
+																		metaType="number"
+																		min="0"
+																		name="./comparisonLabTestingCopaySingleTier2"
+																		step="1"
+																		typeHint="long"
+																		valueType="long"/>
+																	<comparisonLabTestingCopaySingleTier2Copy
+																		jcr:primaryType="nt:unstructured"
+																		sling:resourceType="granite/ui/components/coral/foundation/form/select"
+																		emptyOption="{Boolean}true"
+																		fieldLabel="Lab Testing Copay Tier 2 Copy"
+																		name="./comparisonLabTestingCopaySingleTier2Copy"
+																		valueType="string">
+																		<datasource
+																			jcr:primaryType="nt:unstructured"
+																			sling:resourceType="/apps/premember/dialog/dropdown/tiered-plan-copy"/>
+																	</comparisonLabTestingCopaySingleTier2Copy>
+																</items>
+															</labTestingCopaySingleTier2Tab>
+														</items>
+													</tabs>
+													<comparisonLabTestingCopay
+														jcr:primaryType="nt:unstructured"
+														sling:resourceType="granite/ui/components/coral/foundation/form/numberfield"
+														fieldLabel="Lab Testing Copay ($)"
+														metaType="number"
+														min="0"
+														name="./comparisonLabTestingCopay"
+														step="1"
+														typeHint="long"
+														valueType="long"/>
+													<comparisonLabTestingCopayCopy
+														jcr:primaryType="nt:unstructured"
+														sling:resourceType="granite/ui/components/coral/foundation/form/select"
+														emptyOption="{Boolean}true"
+														fieldLabel="Lab Testing Copay Copy"
+														name="./comparisonLabTestingCopayCopy"
+														valueType="string">
+														<datasource
+															jcr:primaryType="nt:unstructured"
+															sling:resourceType="/apps/premember/dialog/dropdown/single-plan-copy"/>
+													</comparisonLabTestingCopayCopy>
+												</items>
+											</labTestingCopaySingle>
+											<labTestingCopayTiered
+												granite:class="hide lab-testing-copay"
+												jcr:primaryType="nt:unstructured"
+												sling:resourceType="granite/ui/components/foundation/container">
+												<granite:data
+													jcr:primaryType="nt:unstructured"
+													showhidetargetvalue="tiered"/>
+												<items jcr:primaryType="nt:unstructured">
+													<labTestingCopayUseAlternateTierTitles
+														jcr:primaryType="nt:unstructured"
+														sling:resourceType="granite/ui/components/coral/foundation/form/checkbox"
+														fieldLabel="Use Freestanding/Office - Hospital as tier titles."
+														name="./comparisonLabTestingCopayUseAlternateTierTitles"
+														text="Use Freestanding/Office - Hospital as tier titles."
+														uncheckedValue="{Boolean}false"
+														value="{Boolean}true"/>
+													<tabs
+														jcr:primaryType="nt:unstructured"
+														sling:resourceType="granite/ui/components/coral/foundation/tabs">
+														<items jcr:primaryType="nt:unstructured">
+															<labTestingCopayTier1Tab
+																jcr:primaryType="nt:unstructured"
+																jcr:title="Tier 1"
+																sling:resourceType="granite/ui/components/coral/foundation/container"
+																margin="{Boolean}true">
+																<items jcr:primaryType="nt:unstructured">
+																	<comparisonLabTestingCopayTier1
+																		jcr:primaryType="nt:unstructured"
+																		sling:resourceType="granite/ui/components/coral/foundation/form/numberfield"
+																		fieldLabel="Lab Testing Copay Tier 1 ($)"
+																		max="100"
+																		metaType="number"
+																		min="0"
+																		name="./comparisonLabTestingCopayTier1"
+																		step="1"
+																		typeHint="long"
+																		valueType="long"/>
+																	<comparisonLabTestingCopayTier1Copy
+																		jcr:primaryType="nt:unstructured"
+																		sling:resourceType="granite/ui/components/coral/foundation/form/select"
+																		emptyOption="{Boolean}true"
+																		fieldLabel="Lab Testing Copay Tier 1 Copy"
+																		name="./comparisonLabTestingCopayTier1Copy"
+																		valueType="string">
+																		<datasource
+																			jcr:primaryType="nt:unstructured"
+																			sling:resourceType="/apps/premember/dialog/dropdown/tiered-plan-copy"/>
+																	</comparisonLabTestingCopayTier1Copy>
+																</items>
+															</labTestingCopayTier1Tab>
+															<labTestingCopayTier2Tab
+																jcr:primaryType="nt:unstructured"
+																jcr:title="Tier 2"
+																sling:resourceType="granite/ui/components/coral/foundation/container"
+																margin="{Boolean}true">
+																<items jcr:primaryType="nt:unstructured">
+																	<comparisonLabTestingCopayTier2
+																		jcr:primaryType="nt:unstructured"
+																		sling:resourceType="granite/ui/components/coral/foundation/form/numberfield"
+																		fieldLabel="Lab Testing Copay Tier 2 ($)"
+																		metaType="number"
+																		min="0"
+																		name="./comparisonLabTestingCopayTier2"
+																		step="1"
+																		typeHint="long"
+																		valueType="long"/>
+																	<comparisonLabTestingCopayTier2Copy
+																		jcr:primaryType="nt:unstructured"
+																		sling:resourceType="granite/ui/components/coral/foundation/form/select"
+																		emptyOption="{Boolean}true"
+																		fieldLabel="Lab Testing Copay Tier 2 Copy"
+																		name="./comparisonLabTestingCopayTier2Copy"
+																		valueType="string">
+																		<datasource
+																			jcr:primaryType="nt:unstructured"
+																			sling:resourceType="/apps/premember/dialog/dropdown/tiered-plan-copy"/>
+																	</comparisonLabTestingCopayTier2Copy>
+																</items>
+															</labTestingCopayTier2Tab>
+														</items>
+													</tabs>
+												</items>
+											</labTestingCopayTiered>
+											<labTestingCoinsuranceType
+												granite:class="cq-dialog-dropdown-showhide"
+												jcr:primaryType="nt:unstructured"
+												sling:resourceType="granite/ui/components/coral/foundation/form/select"
+												fieldLabel="Lab Testing Coinsurance Type"
+												name="./comparisonLabTestingCoinsuranceType">
+												<granite:data
+													jcr:primaryType="nt:unstructured"
+													cq-dialog-dropdown-showhide-target=".lab-testing-coinsurance"/>
+												<items jcr:primaryType="nt:unstructured">
+													<single
+														jcr:primaryType="nt:unstructured"
+														text="Single Value"
+														value="single"/>
+													<tiered
+														jcr:primaryType="nt:unstructured"
+														text="Tiered Plans"
+														value="tiered"/>
+												</items>
+											</labTestingCoinsuranceType>
+											<labTestingCoinsuranceSingle
+												granite:class="hide lab-testing-coinsurance"
+												jcr:primaryType="nt:unstructured"
+												sling:resourceType="granite/ui/components/foundation/container">
+												<granite:data
+													jcr:primaryType="nt:unstructured"
+													showhidetargetvalue="single"/>
+												<items jcr:primaryType="nt:unstructured">
+													<comparisonLabTestingCoinsurance
+														jcr:primaryType="nt:unstructured"
+														sling:resourceType="granite/ui/components/coral/foundation/form/numberfield"
+														fieldLabel="Lab Testing Coinsurance (%)"
+														max="100"
+														metaType="number"
+														min="0"
+														name="./comparisonLabTestingCoinsurance"
+														step="1"
+														typeHint="long"
+														valueType="long"/>
+													<comparisonLabTestingCoinsuranceCopy
+														jcr:primaryType="nt:unstructured"
+														sling:resourceType="granite/ui/components/coral/foundation/form/select"
+														emptyOption="{Boolean}true"
+														fieldLabel="Lab Testing Coinsurance Copy"
+														name="./comparisonLabTestingCoinsuranceCopy"
+														valueType="string">
+														<datasource
+															jcr:primaryType="nt:unstructured"
+															sling:resourceType="/apps/premember/dialog/dropdown/single-plan-copy"/>
+													</comparisonLabTestingCoinsuranceCopy>
+												</items>
+											</labTestingCoinsuranceSingle>
+											<labTestingCoinsuranceTiered
+												granite:class="hide lab-testing-coinsurance"
+												jcr:primaryType="nt:unstructured"
+												sling:resourceType="granite/ui/components/foundation/container">
+												<granite:data
+													jcr:primaryType="nt:unstructured"
+													showhidetargetvalue="tiered"/>
+												<items jcr:primaryType="nt:unstructured">
+													<labTestingCoinsuranceUseaAlternateTierTitles
+														jcr:primaryType="nt:unstructured"
+														sling:resourceType="granite/ui/components/coral/foundation/form/checkbox"
+														fieldLabel="Use Freestanding/Office - Hospital as tier titles."
+														name="./comparisonLabTestingCoinsuranceUseAlternateTierTitles"
+														text="Use Freestanding/Office - Hospital as tier titles."
+														uncheckedValue="{Boolean}false"
+														value="{Boolean}true"/>
+													<tabs
+														jcr:primaryType="nt:unstructured"
+														sling:resourceType="granite/ui/components/coral/foundation/tabs">
+														<items jcr:primaryType="nt:unstructured">
+															<labTestingCoinsuranceTier1Tab
+																jcr:primaryType="nt:unstructured"
+																jcr:title="Tier 1"
+																sling:resourceType="granite/ui/components/coral/foundation/container"
+																margin="{Boolean}true">
+																<items jcr:primaryType="nt:unstructured">
+																	<labTestingCoinsuranceTier1
+																		jcr:primaryType="nt:unstructured"
+																		sling:resourceType="granite/ui/components/coral/foundation/form/numberfield"
+																		fieldLabel="Lab Testing Coinsurance Tier 1 (%)"
+																		max="100"
+																		metaType="number"
+																		min="0"
+																		name="./comparisonLabTestingCoinsuranceTier1"
+																		step="1"
+																		typeHint="long"
+																		valueType="long"/>
+																	<labTestingCoinsuranceTier1Copy
+																		jcr:primaryType="nt:unstructured"
+																		sling:resourceType="granite/ui/components/coral/foundation/form/select"
+																		emptyOption="{Boolean}true"
+																		fieldLabel="Lab Testing Coinsurance Tier 1 Copy"
+																		name="./comparisonLabTestingCoinsuranceTier1Copy"
+																		valueType="string">
+																		<datasource
+																			jcr:primaryType="nt:unstructured"
+																			sling:resourceType="/apps/premember/dialog/dropdown/tiered-plan-copy"/>
+																	</labTestingCoinsuranceTier1Copy>
+																</items>
+															</labTestingCoinsuranceTier1Tab>
+															<labTestingCoinsuranceTier2Tab
+																jcr:primaryType="nt:unstructured"
+																jcr:title="Tier 2"
+																sling:resourceType="granite/ui/components/coral/foundation/container"
+																margin="{Boolean}true">
+																<items jcr:primaryType="nt:unstructured">
+																	<labTestingCoinsuranceTier2
+																		jcr:primaryType="nt:unstructured"
+																		sling:resourceType="granite/ui/components/coral/foundation/form/numberfield"
+																		fieldLabel="Lab Testing Coinsurance Tier 2 (%)"
+																		max="100"
+																		metaType="number"
+																		min="0"
+																		name="./comparisonLabTestingCoinsuranceTier2"
+																		step="1"
+																		typeHint="long"
+																		valueType="long"/>
+																	<labTestingCoinsuranceTier2Copy
+																		jcr:primaryType="nt:unstructured"
+																		sling:resourceType="granite/ui/components/coral/foundation/form/select"
+																		emptyOption="{Boolean}true"
+																		fieldLabel="Lab Testing Coinsurance Tier 2 Copy"
+																		name="./comparisonLabTestingCoinsuranceTier2Copy"
+																		valueType="string">
+																		<datasource
+																			jcr:primaryType="nt:unstructured"
+																			sling:resourceType="/apps/premember/dialog/dropdown/tiered-plan-copy"/>
+																	</labTestingCoinsuranceTier2Copy>
+																</items>
+															</labTestingCoinsuranceTier2Tab>
+														</items>
+													</tabs>
+												</items>
+											</labTestingCoinsuranceTiered>
+										</items>
+									</labTesting>
+									<xrayTesting
+										jcr:primaryType="nt:unstructured"
+										jcr:title="X-Ray Testing"
+										sling:resourceType="granite/ui/components/coral/foundation/container"
+										margin="{Boolean}true">
+										<items jcr:primaryType="nt:unstructured">
+											<xrayTestingCopayType
+												granite:class="cq-dialog-dropdown-showhide"
+												jcr:primaryType="nt:unstructured"
+												sling:resourceType="granite/ui/components/coral/foundation/form/select"
+												fieldLabel="X-Ray Testing Copay Type"
+												name="./comparisonXRayTestingCopayType">
+												<granite:data
+													jcr:primaryType="nt:unstructured"
+													cq-dialog-dropdown-showhide-target=".xray-testing-copay"/>
+												<items jcr:primaryType="nt:unstructured">
+													<single
+														jcr:primaryType="nt:unstructured"
+														text="Single Value"
+														value="single"/>
+													<tiered
+														jcr:primaryType="nt:unstructured"
+														text="Tiered Plans"
+														value="tiered"/>
+												</items>
+											</xrayTestingCopayType>
+											<xrayTestingCopaySingle
+												granite:class="hide xray-testing-copay"
+												jcr:primaryType="nt:unstructured"
+												sling:resourceType="granite/ui/components/foundation/container">
+												<granite:data
+													jcr:primaryType="nt:unstructured"
+													showhidetargetvalue="single"/>
+												<items jcr:primaryType="nt:unstructured">
+													<xrayTestingCopayUseSingleTitles
+														jcr:primaryType="nt:unstructured"
+														sling:resourceType="granite/ui/components/coral/foundation/form/checkbox"
+														fieldLabel="Use Freestanding/Office - Hospital as tier titles."
+														name="./comparisonXRayTestingCopayUseSingleTitles"
+														text="Use Freestanding/Office - Hospital as tier titles."
+														uncheckedValue="{Boolean}false"
+														value="{Boolean}true"/>
+													<tabs
+														jcr:primaryType="nt:unstructured"
+														sling:resourceType="granite/ui/components/coral/foundation/tabs">
+														<items jcr:primaryType="nt:unstructured">
+															<xrayTestingCopaySingleTier1Tab
+																jcr:primaryType="nt:unstructured"
+																jcr:title="Tier 1"
+																sling:resourceType="granite/ui/components/coral/foundation/container"
+																margin="{Boolean}true">
+																<items jcr:primaryType="nt:unstructured">
+																	<comparisonXRayTestingCopaySingleTier1
+																		jcr:primaryType="nt:unstructured"
+																		sling:resourceType="granite/ui/components/coral/foundation/form/numberfield"
+																		fieldLabel="X-Ray Testing Copay Tier 1 ($)"
+																		metaType="number"
+																		min="0"
+																		name="./comparisonXRayTestingCopaySingleTier1"
+																		step="1"
+																		typeHint="long"
+																		valueType="long"/>
+																	<comparisonXRayTestingCoinsuranceSingleTier1Copy
+																		jcr:primaryType="nt:unstructured"
+																		sling:resourceType="granite/ui/components/coral/foundation/form/select"
+																		emptyOption="{Boolean}true"
+																		fieldLabel="X-Ray Testing Copay Tier 1 Copy"
+																		name="./comparisonXRayTestingCopaySingleTier1Copy"
+																		valueType="string">
+																		<datasource
+																			jcr:primaryType="nt:unstructured"
+																			sling:resourceType="/apps/premember/dialog/dropdown/tiered-plan-copy"/>
+																	</comparisonXRayTestingCoinsuranceSingleTier1Copy>
+																</items>
+															</xrayTestingCopaySingleTier1Tab>
+															<xrayTestingCopaySingleTier2Tab
+																jcr:primaryType="nt:unstructured"
+																jcr:title="Tier 2"
+																sling:resourceType="granite/ui/components/coral/foundation/container"
+																margin="{Boolean}true">
+																<items jcr:primaryType="nt:unstructured">
+																	<comparisonXRayTestingCopaySingleTier2
+																		jcr:primaryType="nt:unstructured"
+																		sling:resourceType="granite/ui/components/coral/foundation/form/numberfield"
+																		fieldLabel="X-Ray Testing Copay Tier 2 ($)"
+																		metaType="number"
+																		min="0"
+																		name="./comparisonXRayTestingCopaySingleTier2"
+																		step="1"
+																		typeHint="long"
+																		valueType="long"/>
+																	<comparisonXRayTestingCoinsuranceSingleTier2Copy
+																		jcr:primaryType="nt:unstructured"
+																		sling:resourceType="granite/ui/components/coral/foundation/form/select"
+																		emptyOption="{Boolean}true"
+																		fieldLabel="X-Ray Testing Copay Tier 2 Copy"
+																		name="./comparisonXRayTestingCopaySingleTier2Copy"
+																		valueType="string">
+																		<datasource
+																			jcr:primaryType="nt:unstructured"
+																			sling:resourceType="/apps/premember/dialog/dropdown/tiered-plan-copy"/>
+																	</comparisonXRayTestingCoinsuranceSingleTier2Copy>
+																</items>
+															</xrayTestingCopaySingleTier2Tab>
+														</items>
+													</tabs>
+													<comparisonXRayTestingCopay
+														jcr:primaryType="nt:unstructured"
+														sling:resourceType="granite/ui/components/coral/foundation/form/numberfield"
+														fieldLabel="X-Ray Testing Copay ($)"
+														metaType="number"
+														min="0"
+														name="./comparisonXRayTestingCopay"
+														step="1"
+														typeHint="long"
+														valueType="long"/>
+													<comparisonXRayTestingCopayCopy
+														jcr:primaryType="nt:unstructured"
+														sling:resourceType="granite/ui/components/coral/foundation/form/select"
+														emptyOption="{Boolean}true"
+														fieldLabel="X-Ray Testing Copay Copy"
+														name="./comparisonXRayTestingCopayCopy"
+														valueType="string">
+														<datasource
+															jcr:primaryType="nt:unstructured"
+															sling:resourceType="/apps/premember/dialog/dropdown/single-plan-copy"/>
+													</comparisonXRayTestingCopayCopy>
+												</items>
+											</xrayTestingCopaySingle>
+											<xrayTestingCopayTiered
+												granite:class="hide xray-testing-copay"
+												jcr:primaryType="nt:unstructured"
+												sling:resourceType="granite/ui/components/foundation/container">
+												<granite:data
+													jcr:primaryType="nt:unstructured"
+													showhidetargetvalue="tiered"/>
+												<items jcr:primaryType="nt:unstructured">
+													<xrayTestingCopayUseAlternateTierTitles
+														jcr:primaryType="nt:unstructured"
+														sling:resourceType="granite/ui/components/coral/foundation/form/checkbox"
+														fieldLabel="Use Freestanding/Office - Hospital as tier titles."
+														name="./comparisonXRayTestingCopayUseAlternateTierTitles"
+														text="Use Freestanding/Office - Hospital as tier titles."
+														uncheckedValue="{Boolean}false"
+														value="{Boolean}true"/>
+													<tabs
+														jcr:primaryType="nt:unstructured"
+														sling:resourceType="granite/ui/components/coral/foundation/tabs">
+														<items jcr:primaryType="nt:unstructured">
+															<xrayTestingCopayTier1Tab
+																jcr:primaryType="nt:unstructured"
+																jcr:title="Tier 1"
+																sling:resourceType="granite/ui/components/coral/foundation/container"
+																margin="{Boolean}true">
+																<items jcr:primaryType="nt:unstructured">
+																	<comparisonXRayTestingCopayTier1
+																		jcr:primaryType="nt:unstructured"
+																		sling:resourceType="granite/ui/components/coral/foundation/form/numberfield"
+																		fieldLabel="X-Ray Testing Copay Tier 1 ($)"
+																		metaType="number"
+																		min="0"
+																		name="./comparisonXRayTestingCopayTier1"
+																		step="1"
+																		typeHint="long"
+																		valueType="long"/>
+																	<comparisonXRayTestingCoinsuranceTier1Copy
+																		jcr:primaryType="nt:unstructured"
+																		sling:resourceType="granite/ui/components/coral/foundation/form/select"
+																		emptyOption="{Boolean}true"
+																		fieldLabel="X-Ray Testing Copay Tier 1 Copy"
+																		name="./comparisonXRayTestingCopayTier1Copy"
+																		valueType="string">
+																		<datasource
+																			jcr:primaryType="nt:unstructured"
+																			sling:resourceType="/apps/premember/dialog/dropdown/tiered-plan-copy"/>
+																	</comparisonXRayTestingCoinsuranceTier1Copy>
+																</items>
+															</xrayTestingCopayTier1Tab>
+															<xrayTestingCopayTier2Tab
+																jcr:primaryType="nt:unstructured"
+																jcr:title="Tier 2"
+																sling:resourceType="granite/ui/components/coral/foundation/container"
+																margin="{Boolean}true">
+																<items jcr:primaryType="nt:unstructured">
+																	<comparisonXRayTestingCopayTier2
+																		jcr:primaryType="nt:unstructured"
+																		sling:resourceType="granite/ui/components/coral/foundation/form/numberfield"
+																		fieldLabel="X-Ray Testing Copay Tier 2 ($)"
+																		metaType="number"
+																		min="0"
+																		name="./comparisonXRayTestingCopayTier2"
+																		step="1"
+																		typeHint="long"
+																		valueType="long"/>
+																	<comparisonXRayTestingCoinsuranceTier2Copy
+																		jcr:primaryType="nt:unstructured"
+																		sling:resourceType="granite/ui/components/coral/foundation/form/select"
+																		emptyOption="{Boolean}true"
+																		fieldLabel="X-Ray Testing Copay Tier 2 Copy"
+																		name="./comparisonXRayTestingCopayTier2Copy"
+																		valueType="string">
+																		<datasource
+																			jcr:primaryType="nt:unstructured"
+																			sling:resourceType="/apps/premember/dialog/dropdown/tiered-plan-copy"/>
+																	</comparisonXRayTestingCoinsuranceTier2Copy>
+																</items>
+															</xrayTestingCopayTier2Tab>
+														</items>
+													</tabs>
+												</items>
+											</xrayTestingCopayTiered>
+											<xrayTestingCoinsuranceType
+												granite:class="cq-dialog-dropdown-showhide"
+												jcr:primaryType="nt:unstructured"
+												sling:resourceType="granite/ui/components/coral/foundation/form/select"
+												fieldLabel="X-Ray Testing Coinsurance Type"
+												name="./comparisonXRayTestingCoinsuranceType">
+												<granite:data
+													jcr:primaryType="nt:unstructured"
+													cq-dialog-dropdown-showhide-target=".xray-testing-coinsurance"/>
+												<items jcr:primaryType="nt:unstructured">
+													<single
+														jcr:primaryType="nt:unstructured"
+														text="Single Value"
+														value="single"/>
+													<tiered
+														jcr:primaryType="nt:unstructured"
+														text="Tiered Plans"
+														value="tiered"/>
+												</items>
+											</xrayTestingCoinsuranceType>
+											<xrayTestingCoinsuranceSingle
+												granite:class="hide xray-testing-coinsurance"
+												jcr:primaryType="nt:unstructured"
+												sling:resourceType="granite/ui/components/foundation/container">
+												<granite:data
+													jcr:primaryType="nt:unstructured"
+													showhidetargetvalue="single"/>
+												<items jcr:primaryType="nt:unstructured">
+													<comparisonXRayTestingCoinsurance
+														jcr:primaryType="nt:unstructured"
+														sling:resourceType="granite/ui/components/coral/foundation/form/numberfield"
+														fieldLabel="X-Ray Testing Coinsurance (%)"
+														max="100"
+														metaType="number"
+														min="0"
+														name="./comparisonXRayTestingCoinsurance"
+														step="1"
+														typeHint="long"
+														valueType="long"/>
+													<comparisonXRayTestingCoinsuranceCopy
+														jcr:primaryType="nt:unstructured"
+														sling:resourceType="granite/ui/components/coral/foundation/form/select"
+														emptyOption="{Boolean}true"
+														fieldLabel="X-Ray Testing Coinsurance Copy"
+														name="./comparisonXRayTestingCoinsuranceCopy"
+														valueType="string">
+														<datasource
+															jcr:primaryType="nt:unstructured"
+															sling:resourceType="/apps/premember/dialog/dropdown/single-plan-copy"/>
+													</comparisonXRayTestingCoinsuranceCopy>
+												</items>
+											</xrayTestingCoinsuranceSingle>
+											<xrayTestingCoinsuranceTiered
+												granite:class="hide xray-testing-coinsurance"
+												jcr:primaryType="nt:unstructured"
+												sling:resourceType="granite/ui/components/foundation/container">
+												<granite:data
+													jcr:primaryType="nt:unstructured"
+													showhidetargetvalue="tiered"/>
+												<items jcr:primaryType="nt:unstructured">
+													<xrayTestingCoinsuranceUseAlternateTierTitles
+														jcr:primaryType="nt:unstructured"
+														sling:resourceType="granite/ui/components/coral/foundation/form/checkbox"
+														fieldLabel="Use Freestanding/Office - Hospital as tier titles."
+														name="./comparisonXRayTestingCoinsuranceUseAlternateTierTitles"
+														text="Use Freestanding/Office - Hospital as tier titles."
+														uncheckedValue="{Boolean}false"
+														value="{Boolean}true"/>
+													<tabs
+														jcr:primaryType="nt:unstructured"
+														sling:resourceType="granite/ui/components/coral/foundation/tabs">
+														<items jcr:primaryType="nt:unstructured">
+															<xrayTestingCoinsuranceTier1Tab
+																jcr:primaryType="nt:unstructured"
+																jcr:title="Tier 1"
+																sling:resourceType="granite/ui/components/coral/foundation/container"
+																margin="{Boolean}true">
+																<items jcr:primaryType="nt:unstructured">
+																	<comparisonXRayTestingCoinsuranceTier1
+																		jcr:primaryType="nt:unstructured"
+																		sling:resourceType="granite/ui/components/coral/foundation/form/numberfield"
+																		fieldLabel="X-Ray Testing Coinsurance Tier 1 (%)"
+																		max="100"
+																		metaType="number"
+																		min="0"
+																		name="./comparisonXRayTestingCoinsuranceTier1"
+																		step="1"
+																		typeHint="long"
+																		valueType="long"/>
+																	<comparisonXRayTestingCoinsuranceTier1Copy
+																		jcr:primaryType="nt:unstructured"
+																		sling:resourceType="granite/ui/components/coral/foundation/form/select"
+																		emptyOption="{Boolean}true"
+																		fieldLabel="X-Ray Testing Coinsurance Tier 1 Copy"
+																		name="./comparisonXRayTestingCoinsuranceTier1Copy"
+																		valueType="string">
+																		<datasource
+																			jcr:primaryType="nt:unstructured"
+																			sling:resourceType="/apps/premember/dialog/dropdown/tiered-plan-copy"/>
+																	</comparisonXRayTestingCoinsuranceTier1Copy>
+																</items>
+															</xrayTestingCoinsuranceTier1Tab>
+															<xrayTestingCoinsuranceTier2Tab
+																jcr:primaryType="nt:unstructured"
+																jcr:title="Tier 2"
+																sling:resourceType="granite/ui/components/coral/foundation/container"
+																margin="{Boolean}true">
+																<items jcr:primaryType="nt:unstructured">
+																	<comparisonXRayTestingCoinsuranceTier2
+																		jcr:primaryType="nt:unstructured"
+																		sling:resourceType="granite/ui/components/coral/foundation/form/numberfield"
+																		fieldLabel="X-Ray Testing Coinsurance Tier 2 (%)"
+																		max="100"
+																		metaType="number"
+																		min="0"
+																		name="./comparisonXRayTestingCoinsuranceTier2"
+																		step="1"
+																		typeHint="long"
+																		valueType="long"/>
+																	<comparisonXRayTestingCoinsuranceTier2Copy
+																		jcr:primaryType="nt:unstructured"
+																		sling:resourceType="granite/ui/components/coral/foundation/form/select"
+																		emptyOption="{Boolean}true"
+																		fieldLabel="X-Ray Testing Coinsurance Tier 2 Copy"
+																		name="./comparisonXRayTestingCoinsuranceTier2Copy"
+																		valueType="string">
+																		<datasource
+																			jcr:primaryType="nt:unstructured"
+																			sling:resourceType="/apps/premember/dialog/dropdown/tiered-plan-copy"/>
+																	</comparisonXRayTestingCoinsuranceTier2Copy>
+																</items>
+															</xrayTestingCoinsuranceTier2Tab>
+														</items>
+													</tabs>
+												</items>
+											</xrayTestingCoinsuranceTiered>
+										</items>
+									</xrayTesting>
+									<virtualVisits
+										jcr:primaryType="nt:unstructured"
+										jcr:title="Virtual Visits"
+										sling:resourceType="granite/ui/components/coral/foundation/container"
+										margin="{Boolean}true">
+										<items jcr:primaryType="nt:unstructured">
+											<_x0031_585603897669
+												jcr:primaryType="nt:unstructured"
+												sling:resourceType="granite/ui/components/coral/foundation/form/numberfield"
+												fieldLabel="Virtual Visits Copay ($)"
+												metaType="number"
+												min="0"
+												name="./comparisonVirtualVisitsCopay"
+												step="1"
+												typeHint="long"
+												valueType="long"/>
+											<_x0031_585603937065
+												jcr:primaryType="nt:unstructured"
+												sling:resourceType="granite/ui/components/coral/foundation/form/numberfield"
+												fieldLabel="Virtual Visits Coinsurance (%) "
+												max="100"
+												metaType="number"
+												min="0"
+												name="./comparisonVirtualVisitsCoinsurance"
+												step="1"
+												typeHint="long"
+												valueType="long"/>
+											<virtualVisitsCopayCopy
+												jcr:primaryType="nt:unstructured"
+												sling:resourceType="granite/ui/components/coral/foundation/form/select"
+												emptyOption="{Boolean}true"
+												fieldLabel="Virtual Visits Copay Copy"
+												name="./virtualVisitsCopayCopy"
+												valueType="string">
+												<datasource
+													jcr:primaryType="nt:unstructured"
+													sling:resourceType="/apps/premember/dialog/dropdown/single-plan-copy"/>
+											</virtualVisitsCopayCopy>
+										</items>
+									</virtualVisits>
+									<emergencyRoom
+										jcr:primaryType="nt:unstructured"
+										jcr:title="Emergency Room"
+										sling:resourceType="granite/ui/components/coral/foundation/container"
+										margin="{Boolean}true">
+										<items jcr:primaryType="nt:unstructured">
+											<emergencyRoomCopayType
+												granite:class="cq-dialog-dropdown-showhide"
+												jcr:primaryType="nt:unstructured"
+												sling:resourceType="granite/ui/components/coral/foundation/form/select"
+												fieldLabel="Emergency Room Copay Type"
+												name="./comparisonEmergencyRoomCopayType">
+												<granite:data
+													jcr:primaryType="nt:unstructured"
+													cq-dialog-dropdown-showhide-target=".emergency-room-copay"/>
+												<items jcr:primaryType="nt:unstructured">
+													<single
+														jcr:primaryType="nt:unstructured"
+														text="Single Value"
+														value="single"/>
+													<tiered
+														jcr:primaryType="nt:unstructured"
+														text="Tiered Plans"
+														value="tiered"/>
+												</items>
+											</emergencyRoomCopayType>
+											<emergencyRoomCopaySingle
+												granite:class="hide emergency-room-copay"
+												jcr:primaryType="nt:unstructured"
+												sling:resourceType="granite/ui/components/foundation/container">
+												<granite:data
+													jcr:primaryType="nt:unstructured"
+													showhidetargetvalue="single"/>
+												<items jcr:primaryType="nt:unstructured">
+													<comparisonEmergencyRoomCopay
+														jcr:primaryType="nt:unstructured"
+														sling:resourceType="granite/ui/components/coral/foundation/form/numberfield"
+														fieldLabel="Emergency Room Copay ($)"
+														metaType="number"
+														min="0"
+														name="./comparisonEmergencyRoomCopay"
+														step="1"
+														typeHint="long"
+														valueType="long"/>
+													<comparisonEmergencyRoomCopayCopy
+														jcr:primaryType="nt:unstructured"
+														sling:resourceType="granite/ui/components/coral/foundation/form/select"
+														emptyOption="{Boolean}true"
+														fieldLabel="Emergency Room Copay Copy"
+														name="./comparisonEmergencyRoomCopayCopy"
+														valueType="string">
+														<datasource
+															jcr:primaryType="nt:unstructured"
+															sling:resourceType="/apps/premember/dialog/dropdown/single-plan-copy"/>
+													</comparisonEmergencyRoomCopayCopy>
+												</items>
+											</emergencyRoomCopaySingle>
+											<emergencyRoomCopayTiered
+												granite:class="hide emergency-room-copay"
+												jcr:primaryType="nt:unstructured"
+												sling:resourceType="granite/ui/components/foundation/container">
+												<granite:data
+													jcr:primaryType="nt:unstructured"
+													showhidetargetvalue="tiered"/>
+												<items jcr:primaryType="nt:unstructured">
+													<tabs
+														jcr:primaryType="nt:unstructured"
+														sling:resourceType="granite/ui/components/coral/foundation/tabs">
+														<items jcr:primaryType="nt:unstructured">
+															<emergencyRoomCopayTier1Tab
+																jcr:primaryType="nt:unstructured"
+																jcr:title="First and Second Visit"
+																sling:resourceType="granite/ui/components/coral/foundation/container"
+																margin="{Boolean}true">
+																<items jcr:primaryType="nt:unstructured">
+																	<comparisonEmergencyRoomCopayTier1
+																		jcr:primaryType="nt:unstructured"
+																		sling:resourceType="granite/ui/components/coral/foundation/form/numberfield"
+																		fieldLabel="Emergency Room Copay First and Second Visit ($)"
+																		metaType="number"
+																		min="0"
+																		name="./comparisonEmergencyRoomCopayTier1"
+																		step="1"
+																		typeHint="long"
+																		valueType="long"/>
+																	<comparisonEmergencyRoomCopayTier1Copy
+																		jcr:primaryType="nt:unstructured"
+																		sling:resourceType="granite/ui/components/coral/foundation/form/select"
+																		emptyOption="{Boolean}true"
+																		fieldLabel="Emergency Room Copay First and Second Visit Copy"
+																		name="./comparisonEmergencyRoomCopayTier1Copy"
+																		valueType="string">
+																		<datasource
+																			jcr:primaryType="nt:unstructured"
+																			sling:resourceType="/apps/premember/dialog/dropdown/emergency-room-copy"/>
+																	</comparisonEmergencyRoomCopayTier1Copy>
+																</items>
+															</emergencyRoomCopayTier1Tab>
+															<emergencyRoomCopayTier2Tab
+																jcr:primaryType="nt:unstructured"
+																jcr:title="Third/Additional Visit"
+																sling:resourceType="granite/ui/components/coral/foundation/container"
+																margin="{Boolean}true">
+																<items jcr:primaryType="nt:unstructured">
+																	<comparisonEmergencyRoomCopayTier2
+																		jcr:primaryType="nt:unstructured"
+																		sling:resourceType="granite/ui/components/coral/foundation/form/numberfield"
+																		fieldLabel="Emergency Room Copay Third/Additional Visit ($)"
+																		metaType="number"
+																		min="0"
+																		name="./comparisonEmergencyRoomCopayTier2"
+																		step="1"
+																		typeHint="long"
+																		valueType="long"/>
+																	<comparisonEmergencyRoomCopayTier2Copy
+																		jcr:primaryType="nt:unstructured"
+																		sling:resourceType="granite/ui/components/coral/foundation/form/select"
+																		emptyOption="{Boolean}true"
+																		fieldLabel="Emergency Room Copay Third/Additional Visit Copy"
+																		name="./comparisonEmergencyRoomCopayTier2Copy"
+																		valueType="string">
+																		<datasource
+																			jcr:primaryType="nt:unstructured"
+																			sling:resourceType="/apps/premember/dialog/dropdown/emergency-room-copy"/>
+																	</comparisonEmergencyRoomCopayTier2Copy>
+																</items>
+															</emergencyRoomCopayTier2Tab>
+														</items>
+													</tabs>
+												</items>
+											</emergencyRoomCopayTiered>
+											<emergencyRoomCoinsuranceType
+												granite:class="cq-dialog-dropdown-showhide"
+												jcr:primaryType="nt:unstructured"
+												sling:resourceType="granite/ui/components/coral/foundation/form/select"
+												fieldLabel="Emergency Room Coinsurance Type"
+												name="./comparisonEmergencyRoomCoinsuranceType">
+												<granite:data
+													jcr:primaryType="nt:unstructured"
+													cq-dialog-dropdown-showhide-target=".emergency-room-coinsurance"/>
+												<items jcr:primaryType="nt:unstructured">
+													<single
+														jcr:primaryType="nt:unstructured"
+														text="Single Value"
+														value="single"/>
+													<tiered
+														jcr:primaryType="nt:unstructured"
+														text="Tiered Plans"
+														value="tiered"/>
+												</items>
+											</emergencyRoomCoinsuranceType>
+											<emergencyRoomCoinsuranceSingle
+												granite:class="hide emergency-room-coinsurance"
+												jcr:primaryType="nt:unstructured"
+												sling:resourceType="granite/ui/components/foundation/container">
+												<granite:data
+													jcr:primaryType="nt:unstructured"
+													showhidetargetvalue="single"/>
+												<items jcr:primaryType="nt:unstructured">
+													<comparisonEmergencyRoomCoinsurance
+														jcr:primaryType="nt:unstructured"
+														sling:resourceType="granite/ui/components/coral/foundation/form/numberfield"
+														fieldLabel="Emergency Room Coinsurance (%)"
+														max="100"
+														metaType="number"
+														min="0"
+														name="./comparisonEmergencyRoomCoinsurance"
+														step="1"
+														typeHint="long"
+														valueType="long"/>
+													<comparisonEmergencyRoomCoinsuranceCopy
+														jcr:primaryType="nt:unstructured"
+														sling:resourceType="granite/ui/components/coral/foundation/form/select"
+														emptyOption="{Boolean}true"
+														fieldLabel="Emergency Room Coinsurance Copy"
+														name="./comparisonEmergencyRoomCoinsuranceCopy"
+														valueType="string">
+														<datasource
+															jcr:primaryType="nt:unstructured"
+															sling:resourceType="/apps/premember/dialog/dropdown/single-plan-copy"/>
+													</comparisonEmergencyRoomCoinsuranceCopy>
+												</items>
+											</emergencyRoomCoinsuranceSingle>
+											<emergencyRoomCoinsuranceTiered
+												granite:class="hide emergency-room-coinsurance"
+												jcr:primaryType="nt:unstructured"
+												sling:resourceType="granite/ui/components/foundation/container">
+												<granite:data
+													jcr:primaryType="nt:unstructured"
+													showhidetargetvalue="tiered"/>
+												<items jcr:primaryType="nt:unstructured">
+													<tabs
+														jcr:primaryType="nt:unstructured"
+														sling:resourceType="granite/ui/components/coral/foundation/tabs">
+														<items jcr:primaryType="nt:unstructured">
+															<emergencyRoomCoinsuranceTier1Tab
+																jcr:primaryType="nt:unstructured"
+																jcr:title="First and Second Visit"
+																sling:resourceType="granite/ui/components/coral/foundation/container"
+																margin="{Boolean}true">
+																<items jcr:primaryType="nt:unstructured">
+																	<comparisonEmergencyRoomCoinsuranceTier1
+																		jcr:primaryType="nt:unstructured"
+																		sling:resourceType="granite/ui/components/coral/foundation/form/numberfield"
+																		fieldLabel="Emergency Room Coinsurance First and Second Visit (%)"
+																		max="100"
+																		metaType="number"
+																		min="0"
+																		name="./comparisonEmergencyRoomCoinsuranceTier1"
+																		step="1"
+																		typeHint="long"
+																		valueType="long"/>
+																	<comparisonEmergencyRoomCoinsuranceTier1Copy
+																		jcr:primaryType="nt:unstructured"
+																		sling:resourceType="granite/ui/components/coral/foundation/form/select"
+																		emptyOption="{Boolean}true"
+																		fieldLabel="Emergency Room Coinsurance First and Second Visit Copy"
+																		name="./comparisonEmergencyRoomCoinsuranceTier1Copy"
+																		valueType="string">
+																		<datasource
+																			jcr:primaryType="nt:unstructured"
+																			sling:resourceType="/apps/premember/dialog/dropdown/emergency-room-copy"/>
+																	</comparisonEmergencyRoomCoinsuranceTier1Copy>
+																</items>
+															</emergencyRoomCoinsuranceTier1Tab>
+															<emergencyRoomCoinsuranceTier2Tab
+																jcr:primaryType="nt:unstructured"
+																jcr:title="Third/Additional Visit"
+																sling:resourceType="granite/ui/components/coral/foundation/container"
+																margin="{Boolean}true">
+																<items jcr:primaryType="nt:unstructured">
+																	<comparisonEmergencyRoomCoinsuranceTier2
+																		jcr:primaryType="nt:unstructured"
+																		sling:resourceType="granite/ui/components/coral/foundation/form/numberfield"
+																		fieldLabel="Emergency Room Coinsurance Third/Additional Visit (%)"
+																		max="100"
+																		metaType="number"
+																		min="0"
+																		name="./comparisonEmergencyRoomCoinsuranceTier2"
+																		step="1"
+																		typeHint="long"
+																		valueType="long"/>
+																	<comparisonEmergencyRoomCoinsuranceTier2Copy
+																		jcr:primaryType="nt:unstructured"
+																		sling:resourceType="granite/ui/components/coral/foundation/form/select"
+																		emptyOption="{Boolean}true"
+																		fieldLabel="Emergency Room Coinsurance Third/Additional Visit Copy"
+																		name="./comparisonEmergencyRoomCoinsuranceTier2Copy"
+																		valueType="string">
+																		<datasource
+																			jcr:primaryType="nt:unstructured"
+																			sling:resourceType="/apps/premember/dialog/dropdown/emergency-room-copy"/>
+																	</comparisonEmergencyRoomCoinsuranceTier2Copy>
+																</items>
+															</emergencyRoomCoinsuranceTier2Tab>
+														</items>
+													</tabs>
+												</items>
+											</emergencyRoomCoinsuranceTiered>
+										</items>
+									</emergencyRoom>
+								</items>
+							</tabs>
+						</items>
+					</comparison>
+					<hra
+						jcr:primaryType="nt:unstructured"
+						jcr:title="HRA"
+						sling:resourceType="granite/ui/components/coral/foundation/container"
+						margin="{Boolean}true">
+						<items jcr:primaryType="nt:unstructured">
+							<unspentHraMoneyBullet
+								jcr:primaryType="nt:unstructured"
+								sling:resourceType="granite/ui/components/coral/foundation/form/checkbox"
+								fieldLabel="Show unspent HRA money bullet"
+								name="./unspentHraMoneyBullet"
+								text="Show unspent HRA money bullet"
+								uncheckedValue="{Boolean}false"
+								value="{Boolean}true"/>
+						</items>
+					</hra>
+				</items>
+			</tabs>
+		</items>
+	</content>
+</jcr:root>

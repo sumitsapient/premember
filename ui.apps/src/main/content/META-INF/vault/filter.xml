@@ -1,0 +1,15 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<workspaceFilter version="1.0">
+    <filter root="/apps/dam/cfm"/>
+    <filter root="/apps/premember"/>
+    <filter root="/apps/cq" mode="update"/>
+    <filter root="/apps/sling" />
+    <filter root="/apps/msm/premember_blueprint"/>
+    <filter root="/home/users/system/premember"/>
+    <filter root="/etc/map"/>
+    <filter root="/etc/map.publish.dev"/>
+    <filter root="/etc/map.publish.stg"/>
+    <filter root="/etc/map.publish.prd"/>
+    <filter root="/etc/map.publish.test"/>
+    <filter root="/etc/designs/cs/brightcove" mode="merge"/>
+</workspaceFilter>

@@ -1,0 +1,265 @@
+#!/usr/bin/env groovy
+// Modeled after https://github.optum.com/cloud-scaffolding/mix-master/blob/develop/Jenkinsfile
+// and
+// https://github.optum.com/corpcomm/UHG2019/blob/master/Jenkinsfile
+// https://github.optum.com/uxds-optum/Regportal/blob/6961e477d00962889fb416d64226a7f64a7a1582/Jenkinsfile
+
+@Library("com.optum.jenkins.pipeline.library@master") _
+//@Library('aem-jenkins-library')
+@Library('aemhub-pipeline-library')
+
+// import com.optum.aem.aemhub.*
+import com.optum.jenkins.pipeline.library.sca.Fortify
+import com.optum.aem.aemhub.*
+
+def ARTIFACT_GROUP='com.optum.premember'
+def ARTIFACT_ID='premember.ui.apps'
+def GIT_ORG_REPO='uhc-codebase/pre-member'
+def BUILD_VERSION = currentBuild.number
+
+//Test
+def TST_AUTHOR = 'http://apvrt55627:8080'
+def TST_PUBLISH = 'http://apvrt55626:8080'
+def TST_DISPATCHER_URL = 'https://uhc-stg.uhc.com/'
+def TST_DISPATCHER_PORT = '8080'
+
+def PUBLISH_ARTIFACTORY = 'dt'
+def LANGUAGE_TYPE = 'java'
+
+def TEST_ARTIFACTORY_HOST = 'https://repo1test.uhc.com/artifactory'
+def PROD_ARTIFACTORY_HOST = 'https://repo1.uhc.com/artifactory'
+
+def ARTIFACTORY_RELEASE_REPO = 'UHG-Releases'
+def ARTIFACTORY_SNAPSHOT_REPO = 'UHG-Snapshots'
+def ARTIFACTORY_RESOLVE_RELEASE_REPO = 'pre-member'
+def ARTIFACTORY_RESOLVE_SNAPSHOT_REPO = 'pre-member'
+
+def aem = new AEM_Central()
+
+pipeline {
+    agent {
+        label 'docker-kitchensink-slave' // This agent has nodejs ***AND*** Fortify ***AND*** Sonar
+    }
+    options { 
+        // add time stamps to console output logs - https://plugins.jenkins.io/timestamper
+        timestamps()
+        // limit # of kept builds
+        buildDiscarder(logRotator(numToKeepStr:'10'))
+        // Do not allow the pipeline to resume if the master restarts
+        disableResume()
+    }
+    environment {
+        GIT_CREDENTIALS_ID = 'dt_jenkins_id'      // Jenkins credential id
+        ARTIFACTORY_CREDENTIALS_ID = 'dt_artifactory_id'
+        APP_NAME = 'pre-member'
+        MAVEN_VERSION = '3.3.9'
+        JAVA_VERSION = '1.8.0'
+        JENKINSFILE_LOCATION = 'Jenkins/'
+        BRANCH = "${env.BRANCH_NAME}"   // **** Needed? Used? ****
+        NPM_AUTH_KEY = ''
+        NPM_EMAIL = ''
+    }
+    stages {
+        stage('Prebuild steps') {
+            steps {
+                echo 'Pre-build steps...'
+                echo 'No prebuild steps performed'
+            }
+        }
+        stage('Build') {
+            steps {
+                // Code is from a 3rd party "partner", this is from the 
+                // readme: https://github.optum.com/uhc-codebase/pre-member/tree/release/v1.2.1
+                // Note: profile init performed here to preserve shell context
+
+                script{
+                    pom = readMavenPom file: 'pom.xml'
+                    RELEASE_VERSION = pom.version
+                    currentBuild.displayName = "$RELEASE_VERSION.$BUILD_VERSION"
+                }
+
+                // see https://github.optum.com/uhc-codebase/pre-member/tree/release/v1.2.1 
+                // to get/setup ssh
+                sshagent (['MirumUnitySSH_ID']) {
+                    echo 'Bitbucket'
+                    sh '''
+                        . /etc/profile.d/jenkins.sh
+                        echo 'SSH dir setup'
+                        mkdir -p ~/.ssh
+                        touch ~/.ssh/config
+                        ls -la ~/.ssh
+                        chmod 600 ~/.ssh/config
+                        echo 'SSH Config'
+                        cp Jenkins/unity_rsa ~/.ssh/.
+                        chmod 400 ~/.ssh/unity_rsa
+                        ssh-add -k ~/.ssh/unity_rsa
+                        # build config file - move to whole file in source control?
+                        echo 'Host mirminuhc.bitbucket.uhub.biz' >> ~/.ssh/config
+                        echo 'HostName mirminuhc.bitbucket.uhub.biz' >> ~/.ssh/config
+                        echo 'User git' >> ~/.ssh/config
+                        echo 'IdentityFile ~/.ssh/unity_rsa' >> ~/.ssh/config
+                        echo 'StrictHostKeyChecking no' >> ~/.ssh/config
+                        # move UHG pom into build file structure
+                        echo 'delete project pom file'
+                        rm -rf pom.xml
+                        echo 'copy project pom file'
+                        cp Jenkins/pom.xml .
+                        echo 'Do build'
+                         ./mvnw clean install 
+                         
+                    '''
+                }
+
+                //Stash the artifact for later stages
+                stash includes: 'ui.apps/target/*.zip', name: 'artifact'
+                sh 'ls -al ui.apps/target'
+                //Save the artifact with the job
+                archiveArtifacts 'ui.apps/target/**.zip, core/target/**.jar'
+            }
+        }
+        stage ('Parallel Deployments') {        
+            parallel {
+                stage("Deploy To Author") {
+                    steps {
+                        unstash 'artifact'
+                        //Uninstall and delete any previous version of the artifact
+                        echo 'Uninstall and delete any previous version of the artifact'
+                        glAemUninstallPackage credentialsId: "premember_aem_deploy_id",
+                                            artifactId: "$ARTIFACT_ID",
+                                            artifactGroup: "$ARTIFACT_GROUP",
+                                            envUrl: "$TST_AUTHOR",
+                                            deleteArtifact: true
+                        
+                        //Install artifact from maven build
+                        echo 'Install artifact from maven build'
+                        glAemInstallPackage credentialsId: "premember_aem_deploy_id",
+                                            artifactId: "$ARTIFACT_ID",
+                                            artifactGroup: "$ARTIFACT_GROUP",
+                                            artifactVersion: "$RELEASE_VERSION",
+                                            artifactBuildPath: "ui.apps/target",
+                                            envUrl: "$TST_AUTHOR"
+
+                        /*
+                        //Bounce workflow bundle
+                        echo 'Bounce workflow bundle'
+                        withCredentials([usernameColonPassword(credentialsId: 'premember_aem_deploy_id', variable: 'CREDS')]) {
+                            script{
+                                command("curl -k --fail -u $CREDS $TST_AUTHOR/system/console/bundles/com.adobe.granite.workflow.core -Faction=stop")
+                                command("curl -k --fail -u $CREDS $TST_AUTHOR/system/console/bundles/com.adobe.granite.workflow.core -Faction=start")
+                            }
+                        }
+                        */
+                    }
+                } // end of stage
+                stage("Deploy To Publisher") {
+                    steps {
+                        unstash 'artifact'
+                        glAemUninstallPackage credentialsId: "premember_aem_deploy_id",
+                                                artifactId: "$ARTIFACT_ID",
+                                                artifactGroup: "$ARTIFACT_GROUP.$BUILD_VERSION",
+                                                envUrl: "$TST_PUBLISH",
+                                                deleteArtifact: true
+                        //Install artifact from maven build
+                        glAemInstallPackage credentialsId: "premember_aem_deploy_id",
+                                            artifactId: "$ARTIFACT_ID",
+                                            artifactGroup: "$ARTIFACT_GROUP",
+                                            artifactVersion: "$RELEASE_VERSION",
+                                            artifactBuildPath: "ui.apps/target",
+                                            envUrl: "$TST_PUBLISH"
+                        /*
+                        // Need to look at
+                        withCredentials([usernameColonPassword(credentialsId: 'premember_aem_deploy_id', variable: 'CREDS')]) {
+                            script{
+                                command("curl -k -u $CREDS -d shutdown_type=Restart $TST_AUTHOR/system/console/vmstat")
+                                command("curl -k -u $CREDS -d shutdown_type=Restart $TST_PUBLISH/system/console/vmstat")
+                            }
+                        }
+                        */
+                    }
+                }
+            }
+        }
+        stage ('Deploy to Dispacher') {
+            steps {
+                                
+                script {
+                    command ("curl -v -s -H 'CQ-Action: DELETE' -H CQ-Handle:/ -H 'Content-Length: 0' -H 'Content-Type: application/octet-stream' --noproxy .com ${TST_DISPATCHER_URL}:${TST_DISPATCHER_PORT}/dispatcher/invalidate.cache > /dev/null")
+                }
+            }
+        }
+        stage ('Parallel analysis') {
+            
+            parallel {
+                stage ('Sonar analysis')
+                {
+                    steps {
+                        // commenting out, sonar scans fail
+                        // glSonarMavenScan gitUserCredentialsId: '${GIT_CREDENTIALS_ID}', productName: '${APP_NAME}'
+
+                        echo 'Perform Sonar Scan'
+                        echo 'To do...'
+                        // From [UHCCP_AEM_6_4_SONAR_TEST] 
+                        // $ /tools/maven/apache-maven-3.3.3/bin/mvn -U compile sonar:sonar -Dsonar.host.url=https://sonar.optum.com -Dsonar.login=092c919905283a6d35ff1abe2128fc52e48a6156 -Dsonar.jdbc.url=jdbc:mysql://sonar.optum.com:3306/sonar?useUnicode=true&characterEncoding=utf8
+                        // Using Miram mvn wrapper
+                        // sh '''./mvnw -U compile sonar:sonar -Dsonar.host.url="https://sonar.optum.com" -Dsonar.login="092c919905283a6d35ff1abe2128fc52e48a6156" -Dsonar.jdbc.url="jdbc:mysql://sonar.optum.com:3306/sonar?useUnicode=true&characterEncoding=utf8"'''
+                    }
+                }
+                stage ('Fortify scan')
+                {
+                    // review for upload
+                    // https://hubconnect.uhg.com/people/srao1022/blog/2018/11/13/setting-up-fortify-scans
+                    steps {                        
+                        echo 'Do Foritfy scan.'
+                        glFortifyScan fortifyBuildName: "$ARTIFACT_ID",
+                            scarProjectName: 'UHGPremember_UHGWM110-022626 - All',
+                            fortifyJdkVersion: '1.8',
+                            scarProjectVersion:"Pre-member-6.5",
+                            fortifyMaxSizeMemory: "-Xmx8G",
+                            onlyNewIssues: true,
+                            isGenerateDevWorkbook: true,
+                            criticalThreshold:100,
+                            highThreshold:100,
+                            source: '**/core/src/*'
+                    }
+                }
+            }
+        }
+        stage ('Report to Kafka') {
+            steps {
+                echo 'Report to Kafka'
+                /*
+                // Need to review if this is still valid. Jenkins jobs
+                // are showing "Kafka Down"
+                try {
+                    aem.report2Kafka(this)
+                }
+                catch (all) {
+                    echo 'Kafka Down'
+                    currentBuild.result = 'SUCCESS'
+                }
+                */
+            }
+        }
+    }
+
+    post {
+        always {
+            echo '********* POST Pipeline processing *********'
+        }
+        success {
+            echo '********* POST Pipeline SUCCESS processing *********'            
+        }
+        failure {
+            echo 'This will run only if failed'
+        }
+        unstable {
+            echo 'This will run only if the run was marked as unstable'
+        }
+        changed {
+            echo 'This will run only if the state of the pipeline has changed'
+            echo 'For example, if the pipeline was previously failing but is now successful'
+        }
+    }
+}
+
+

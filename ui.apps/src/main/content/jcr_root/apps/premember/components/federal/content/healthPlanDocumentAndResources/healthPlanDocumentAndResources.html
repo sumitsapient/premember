@@ -1,0 +1,36 @@
+<sly data-sly-use.model="com.mirumagency.uhc.premember.core.models.federal.health.HealthPlanDocumentsAndResources">
+    <div
+        id="federal-health-plan-documents-and-resources"
+        class="u-bg-blue-light u-p-vert-lg"
+        data-sly-use.templates="core/wcm/components/commons/v1/templates.html">
+        <!--/* Container */-->
+        <div class="o-container" data-sly-use.heading="com.mirumagency.uhc.premember.core.models.federal.HeadingConfig">
+            <!--/* Title */-->
+            <h3 data-sly-element="${heading.titleTypeSize}"
+                data-sly-set.headingClass="${'unity-type-{0}' @ format=[heading.titleSizeStyle]}"
+                class="${['u-text-center', 'u-m-b-lg', heading.titleSizeStyle ? headingClass : ''] @ join=' '}">
+                ${model.title}
+            </h3>
+            <!--/* Sections */-->
+            <div
+                class="o-grid u-f-justify-center"
+                data-sly-list.sectionItems="${model.pdfFilesListSections}">
+                <div class="o-grid__item-12 o-grid__item-6@md o-grid__item-4@lg">
+                    <!--/* Section Title */-->
+                    <h4 data-sly-element="${heading.subtitleTypeSize}"
+                        data-sly-set.headingClass="${'unity-type-{0}' @ format=[heading.subtitleSizeStyle]}"
+                        class="${heading.subtitleSizeStyle ? headingClass : '' }">
+                        ${sectionItems.sectionTitle}</h4>
+                    <!--/* PDF List */-->
+                    <ul data-sly-list.items="${sectionItems.pdfFiles}">
+                        <li>
+                            <a href="${items.path}" target="_blank">
+                                ${items.title}
+                            </a>
+                        </li>
+                    </ul>
+                </div>
+            </div>
+        </div>
+    </div>
+</sly>

@@ -1,0 +1,88 @@
+<div
+  data-sly-use.card="com.mirumagency.uhc.premember.core.models.Card"
+  data-sly-attribute.id="${card.id}"
+  data-container="Card"
+  data-sly-set.imageClass="${' c-card--image-{0}' @ format=[card.imageAlignment || 'top']}"
+  data-sly-set.imgHorizontal="${card.imageAlignment == 'left' || card.imageAlignment == 'right' || card.imageLeftAligned}"
+  data-sly-set.hasImage="${card.showImage && (wcmmode.edit || card.isImageNotEmpty)}"
+  class="${[
+    'aem-component c-card',
+    card.imageAlignment && hasImage ? imageClass : null,
+    card.imageLeftAligned && !card.imageAlignment ? ' c-card--image-left' : null,
+    card.isShowBorder ? ' c-card--bordered' : null,
+    card.isCenterContent ? ' u-text-center' : null,
+    card.backgroundTransparent || card.backgroundColor == 'transparent' ? ' u-bg-transparent' : null,
+    card.backgroundColor == 'gray' ? ' u-bg-gray-light' : null,
+    card.backgroundColor == 'blue' ? ' u-bg-blue-light' : null,
+    card.isPaddingCleared ? ' c-card--cleared-padding' : null,
+    card.isImageLeftAlignMaintainedOnMobile ? ' c-card--left-align-mobile' : null,
+    card.isPromotionsCard && (card.isImageLeftAligned || imgHorizontal) ? ' c-card--promotions' : null
+  ] @ join=''}"
+>
+  <!--/* Image Top & Left */-->
+  <div
+    data-sly-test="${hasImage && (card.imageAlignment == 'left' || card.imageAlignment == 'top' || card.imageLeftAligned)}"
+    class="c-card__img"
+  >
+    <sly data-sly-resource="${'image' @ resourceType='premember/components/content/image'}" />
+  </div>
+
+  <div class="c-card__content">
+    <!--/* Header */-->
+    <div
+      data-sly-test="${wcmmode.edit || card.showHeader}"
+      class="c-card__header"
+    >
+      <!--/* Icon */-->
+      <sly
+        data-sly-test.showIcon="${card.showIcon}"
+        data-sly-test="${wcmmode.edit || card.isIconNotEmpty}"
+        data-sly-resource="${'icon' @ resourceType='premember/components/content/icon', decoration='true'}"
+      ></sly>
+
+      <!--/* Title */-->
+      <h3
+        data-sly-test="${card.isTitleNotEmpty}"
+        data-sly-element="${card.titleType}"
+        data-sly-set.headingClass="${'unity-type-{0}' @ format=[card.titleStyle || 'h2']}"
+        class="c-card__title ${headingClass}"
+      >
+        ${card.title}
+      </h3>
+
+      <!--/* Subtitle */-->
+      <p
+        class="c-card__subtitle u-visually-hidden"
+        data-sly-test="${card.isSubtitleNotEmpty}"
+      >
+        ${card.subtitle}
+      </p>
+    </div>
+
+    <!--/* Body	*/-->
+    <div
+      class="c-card__body"
+      data-sly-test="${wcmmode.edit || card.isBodyNotEmpty}"
+      data-sly-resource="${'bodyPar' @ resourceType='wcm/foundation/components/parsys'}"
+    ></div>
+
+    <!--/* Footer	*/-->
+    <div
+      class="c-card__footer ${card.showIcon ? 'c-card__footer--bordered' : ''}"
+      data-sly-test="${wcmmode.edit || card.isFooterNotEmpty}"
+    >
+      <div
+        class="aem-buttons"
+        data-sly-resource="${'footerPar' @ resourceType='wcm/foundation/components/parsys'}"
+      ></div>
+    </div>
+  </div>
+
+  <!--/* Image Right & Bottom */-->
+  <div
+    data-sly-test="${hasImage && (card.imageAlignment == 'right' || card.imageAlignment == 'bottom')}"
+    class="c-card__img"
+  >
+    <sly data-sly-resource="${'image' @ resourceType='premember/components/content/image'}" />
+  </div>
+</div>

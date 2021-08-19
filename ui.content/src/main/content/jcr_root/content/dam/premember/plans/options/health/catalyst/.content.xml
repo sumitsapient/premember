@@ -1,0 +1,66 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<jcr:root xmlns:dam="http://www.day.com/dam/1.0" xmlns:cq="http://www.day.com/jcr/cq/1.0" xmlns:jcr="http://www.jcp.org/jcr/1.0" xmlns:mix="http://www.jcp.org/jcr/mix/1.0" xmlns:nt="http://www.jcp.org/jcr/nt/1.0"
+    jcr:mixinTypes="[mix:referenceable]"
+    jcr:primaryType="dam:Asset">
+    <jcr:content
+        cq:name="catalyst"
+        cq:parentPath="/content/dam/premember/plans/options/health"
+        cq:versionCreator="admin"
+        jcr:description=""
+        jcr:primaryType="dam:AssetContent"
+        jcr:title="Catalyst"
+        contentFragment="{Boolean}true"
+        lastFragmentSave="{Date}2020-07-02T12:49:38.737Z">
+        <data
+            cq:model="/conf/premember/health-option/settings/dam/cfm/models/health-plan-option"
+            jcr:primaryType="nt:unstructured">
+            <master
+                jcr:mixinTypes="[cq:Taggable]"
+                jcr:primaryType="nt:unstructured"
+                catalystPlanAdditionalInfo="{Boolean}true"
+                comparisonChapter1Topic3Option1="{Boolean}false"
+                comparisonChapter1Topic3Option2="{Boolean}false"
+                comparisonChapter1Topic3Option3="{Boolean}false"
+                comparisonChapter1Topic3Option4="{Boolean}false"
+                comparisonPrescriptionLink="https://www.uhc.com/"
+                comparisonProviderLink="https://www.uhc.com/"
+                comparisonSearchCoverageLinkText="{Boolean}true"
+                comparisonFullBenefitsLinkText="{Boolean}true"
+                disclaimers="&lt;p>This is a disclaimer for Catalyst plan&lt;/p>&#xa;"
+                hasStateSpecificProvider="{Boolean}false"
+                hraOption="\{planDetailPageHealthReimbursementAccountTopic2Option3} - Split Deductible"
+                hsaOptumBank="{Boolean}false"
+                hsaWithOptumBank="{Boolean}true"
+                networkCoverage="[Covered]"
+                planDescription="&lt;p>This is sample Catalyst plan.&lt;/p>&#xa;"
+                planDetailPagePrimaryCarePhysicianTopic1Option="\{planDetailPagePrimaryCarePhysicianTopic1Option2} - This plan does not require you to have a primary care physician (PCP)"
+                planId="CT10"
+                planName="Catalyst"
+                prescriptionSearchLink="{Boolean}true"
+                primaryCarePhysician="\{summaryTopic2Option1} - Primary care provider required"
+                prescriptionsComparisonSearchCoverageLinkText="{Boolean}true"
+                prescriptionsComparisonSearchCoverageLinkText_x0040_LastModified="{Date}2020-07-08T16:31:08.544+02:00"
+                providerSearchLink="https://www.uhc.com/"
+                providersComparisonSearchCoverageLinkText="{Boolean}true"
+                providersComparisonSearchCoverageLinkText_x0040_LastModified="{Date}2020-07-08T16:31:08.543+02:00"
+                savingsAccountOptions="Standard HSA"
+                servicesCovered="{Boolean}false"
+                showPlanDetailPageNetworkCoverageTopic1Option1="{Boolean}true"
+                showPlanDetailPageNetworkCoverageTopic1Option2="{Boolean}true"
+                showPlanDetailPageNetworkCoverageTopic1Option3="{Boolean}true"
+                showPlanDetailPageNetworkCoverageTopic1Option4="{Boolean}true"
+                showPlanDetailPageNetworkCoverageTopic1Option5="{Boolean}true"
+                summaryCopays="\{summaryTopic3Option1} - Copay due for certain services, prescriptions and locations"
+                summaryNetworkCoverage="\{summaryTopic1Option1} - Both network and out-of-network providers covered"
+                summaryTopic4Option1="{Boolean}true"
+                summaryTopic4Option2="{Boolean}false"
+                summaryTopic4Option3="{Boolean}true"
+                summaryTopic4Option4="{Boolean}false"
+                suppressPrescriptionCoverage="{Boolean}false"/>
+        </data>
+        <metadata
+            jcr:mixinTypes="[cq:Taggable]"
+            jcr:primaryType="nt:unstructured"/>
+        <related jcr:primaryType="nt:unstructured"/>
+    </jcr:content>
+</jcr:root>

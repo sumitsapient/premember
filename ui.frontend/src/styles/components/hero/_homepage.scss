@@ -1,0 +1,397 @@
+.hero--home {
+	position: relative;
+
+	.hero__background {
+		height: 100%;
+		background-repeat: no-repeat;
+		background-position: right center;
+		background-size: cover;
+	}
+
+	.hero__background-container {
+		height: 100%;
+	}
+
+	.hero__image--main {
+		width: 100%;
+		height: 100%;
+		background-size: cover;
+		background-repeat: no-repeat;
+		background-position: center;
+	}
+
+	.hero__image--secondary {
+		width: 100%;
+		height: 100%;
+		background-size: contain;
+		background-repeat: no-repeat;
+		background-position: center;
+	}
+
+	.hero__title {
+		@include unity-type('heading', 'h1');
+
+		font-family: $unity-serif-font;
+		margin-bottom: $g-spacing-xxs;
+		margin-top: $g-spacing-xl;
+		width: 100%;
+
+		@include mq(lg) {
+			margin-bottom: $g-spacing-sm;
+			margin-top: $g-spacing-sm;
+			width: 424px;
+		}
+
+		@include mq(xl) {
+			width: 505px;
+		}
+	}
+
+	.hero__text {
+		width: 100%;
+		margin-bottom: $g-spacing;
+
+		.cmp-text {
+			font-size: 18px;
+			line-height: 25px;
+		}
+	}
+
+	.hero__enrollment {
+		background-color: unity-color('white');
+		padding: $g-spacing-xl $g-spacing-xs $g-spacing-xxl;
+
+		@include mq(md) {
+			padding-left: $g-spacing;
+		}
+
+		@include mq(lg) {
+			padding-left: $g-spacing-xl;
+		}
+
+		@include mq(xl) {
+			padding-left: $g-spacing-xxl;
+		}
+
+		.hero__plans-heading {
+			flex: 1 0 100%;
+			margin-bottom: 2rem;
+		}
+
+		.enrollment-container {
+			flex-basis: 74%;
+			max-width: 81.25rem; // 1300px
+		}
+	}
+
+	.hero__enrollment--image {
+		display: flex;
+		justify-content: center;
+		max-width: 18.75rem;
+		width: 100%;
+		margin: 0 0 $g-spacing-lg;
+
+		img {
+			align-self: start;
+		}
+
+		@include mq(md) {
+			max-width: 400px;
+			flex-basis: 24%;
+			margin-right: 0 $g-spacing-sm 0 0;
+		}
+	}
+
+	.hero__enrollment-item {
+		line-height: 1.25rem;
+		flex-basis: 100%;
+		margin-bottom: $g-spacing;
+		padding: $g-spacing-xxs $g-spacing;
+		max-width: 320px;
+
+		@include mq(md) {
+			flex-basis: 33%;
+			margin-bottom: 0;
+		}
+
+		.hero__enrollment-datedesc--container {
+			display: flex;
+			flex-direction: column;
+			justify-content: center;
+			align-items: center;
+
+			> div {
+				white-space: nowrap;
+			}
+		}
+	}
+
+	.hero__enrollment-date {
+		display: inline-block;
+		width: 45px;
+		margin: 0 5px;
+		padding: 2px 2px $g-spacing-xxs;
+		vertical-align: middle;
+		border-radius: 3px;
+		background-color: unity-color('blue');
+		text-align: center;
+
+		@include mq(lg) {
+			margin: 0 14px;
+			width: 54px;
+		}
+	}
+
+	.hero__enrollment-month {
+		display: block;
+		font-size: 10px;
+		line-height: 0.75rem;
+		text-transform: uppercase;
+		color: unity-color('white');
+		font-weight: 700;
+
+		@include mq(lg) {
+			font-size: 14px;
+			line-height: 19px;
+		}
+	}
+
+	.hero__enrollment-day {
+		display: block;
+		margin: 0 2px;
+		font-size: 1.25rem;
+		line-height: 1.2;
+		letter-spacing: -0.8px;
+		background-color: unity-color('white');
+		font-weight: 700;
+
+		@include mq(lg) {
+			font-size: 1.5rem;
+			line-height: 1.75rem;
+			letter-spacing: -1px;
+		}
+	}
+
+	.hero__enrollment-description {
+		display: block;
+		margin: 1em auto 0;
+
+		> :last-child {
+			margin: 0;
+		}
+
+		@include mq(md) {
+			@include rem('max-width', 350px);
+		}
+	}
+
+	.hero__content {
+		align-items: stretch;
+		height: initial;
+		z-index: 1;
+
+		@include mq($until: md) {
+			position: static;
+		}
+	}
+
+	.hero__content--container {
+		width: 100%;
+		flex-basis: 100%;
+
+		@include mq(md) {
+			width: 50%;
+			flex-basis: 60%;
+			padding-top: $g-spacing-lg;
+		}
+	}
+
+	.hero__header {
+		width: 100%;
+	}
+
+	.hero__plans {
+		position: relative;
+		box-shadow: 0 2px 20px 4px rgba($black, 0.2);
+		background-color: unity-color('blue');
+
+		@include mq(lg) {
+			border-width: 10px;
+			box-shadow: none;
+		}
+
+		#home-hero-zip {
+			h2 {
+				display: inline-block;
+			}
+
+			.zip-title {
+				display: none;
+			}
+		}
+	}
+
+	.hero__plans-heading {
+		margin: 0 0 $g-spacing;
+
+		@include mq(lg) {
+			margin: $g-spacing-sm 0 $g-spacing-xl;
+		}
+	}
+
+	.hero__plans-list {
+		margin-bottom: $g-spacing-xs;
+
+		@include mq(md) {
+			margin-left: -$g-spacing-xxs;
+			margin-right: -$g-spacing-xxs;
+		}
+
+		.c-icon-box {
+			width: $g-spacing-xl;
+			height: $g-spacing-xl;
+			background-color: #00bdd7;
+
+			@include mq(lg) {
+				width: $g-spacing-xxl;
+				height: $g-spacing-xxl;
+			}
+		}
+
+		.c-icon-box--circle svg {
+			@include unity-transition;
+		}
+
+		.cmp-icon__indicator {
+			position: absolute;
+			top: -6px;
+			right: -6px;
+			width: $g-spacing;
+			height: $g-spacing;
+			border-radius: 50%;
+			text-align: center;
+			font-weight: 700;
+			background-color: unity-color('white');
+			color: unity-color('blue');
+		}
+
+		@include mq(lg) {
+			li:hover .cmp-icon__indicator {
+				top: -10px;
+				right: -19px;
+			}
+		}
+
+		.o-media {
+			@include mq(lg) {
+				height: 5rem;
+			}
+		}
+
+		.o-media__img {
+			@include mq(lg) {
+				margin-right: 15px;
+			}
+
+			&.u-f-align-self-center {
+				margin-bottom: 7px;
+
+				@include mq(md) {
+					margin-bottom: 0;
+				}
+			}
+		}
+
+		.o-media__body {
+			padding-right: 0;
+
+			a {
+				display: block;
+				font-size: 18px;
+				line-height: 28px;
+				color: unity-color('blue');
+
+				@include mq(lg) {
+					font-size: 19px;
+					line-height: 22px;
+					letter-spacing: 0.1px;
+				}
+
+				&:hover,
+				&:focus {
+					color: unity-color('blue', 'digital');
+				}
+			}
+		}
+	}
+
+	.o-cover-link {
+		@include unity-transition;
+
+		width: 50%;
+		margin-bottom: $g-spacing;
+		display: flex;
+		justify-content: center;
+
+		@include mq(sm) {
+			padding: 0 $g-spacing-xxs;
+			width: 50%;
+		}
+
+		@include mq(md) {
+			padding: 0 $g-spacing-xxs;
+			width: 25%;
+		}
+
+		@include mq(lg) {
+			width: 25%;
+		}
+
+		.c-icon-block {
+			@include unity-transition;
+
+			flex-direction: column;
+			height: auto;
+			width: auto;
+			padding: $g-spacing-sm;
+
+			.o-media__img {
+				margin-left: auto;
+				margin-right: auto;
+			}
+
+			.o-media__body {
+				text-align: center;
+			}
+		}
+
+		&:hover {
+			@include mq(lg) {
+				.c-icon-block {
+					background-color: $colors-teal-base;
+				}
+
+				.cmp-icon > svg {
+					transform: translate(-50%, -50%) scale(1.5);
+				}
+
+				.o-media__body > a {
+					color: $colors-blue-dark;
+				}
+			}
+		}
+	}
+
+	.hero__image {
+		width: 100%;
+
+		.cmp-image__image {
+			@include mq($until: lg) {
+				position: static;
+				transform: none;
+				width: 100%;
+				min-height: 0;
+			}
+		}
+	}
+}

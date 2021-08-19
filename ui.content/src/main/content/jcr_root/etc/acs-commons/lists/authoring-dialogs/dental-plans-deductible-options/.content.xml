@@ -1,0 +1,31 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<jcr:root xmlns:sling="http://sling.apache.org/jcr/sling/1.0" xmlns:cq="http://www.day.com/jcr/cq/1.0" xmlns:jcr="http://www.jcp.org/jcr/1.0" xmlns:mix="http://www.jcp.org/jcr/mix/1.0" xmlns:nt="http://www.jcp.org/jcr/nt/1.0"
+    jcr:primaryType="cq:Page">
+    <jcr:content
+        cq:lastModified="{Date}2021-07-28T15:52:51.639-05:00"
+        cq:lastModifiedBy="admin"
+        jcr:isCheckedOut="{Boolean}true"
+        jcr:mixinTypes="[mix:versionable]"
+        jcr:primaryType="nt:unstructured"
+        jcr:title="Dental Plan Deductible Label Dialog Options"
+        jcr:uuid="add05473-6df7-412d-b636-a053a711af73"
+        sling:resourceType="acs-commons/components/utilities/genericlist">
+        <image
+            jcr:primaryType="nt:unstructured"
+            fileReference="/apps/acs-commons/components/utilities/genericlist/generic-list.png"/>
+        <list jcr:primaryType="nt:unstructured">
+            <item0
+                jcr:primaryType="nt:unstructured"
+                jcr:title="Not Applicable"
+                value="Not Applicable"/>
+            <item1
+                jcr:primaryType="nt:unstructured"
+                jcr:title="No Deductible"
+                value="No Deductible"/>
+            <item2
+                jcr:primaryType="nt:unstructured"
+                jcr:title="No Annual Maximum"
+                value="No Annual Maximum"/>
+        </list>
+    </jcr:content>
+</jcr:root>

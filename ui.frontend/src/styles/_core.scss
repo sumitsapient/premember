@@ -1,0 +1,18 @@
+html {
+	font-size: 16px;
+	scroll-behavior: smooth;
+}
+
+body {
+	padding-top: 60px;
+	color: unity-color('black');
+
+	@include mq(lg) {
+		overflow-x: hidden;
+		padding-top: 0;
+	}
+}
+
+p:empty {
+	margin: 0;
+}

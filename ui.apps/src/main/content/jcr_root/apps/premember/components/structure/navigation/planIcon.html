@@ -1,0 +1,23 @@
+<template
+    data-sly-template.planIcon="${@ plan='Plan', eventType='Analytics event type', additionalClass='Additional classes for the icon component'}">
+  <li class="o-cover-link">
+    <div class="c-icon-block o-media ${additionalClass}">
+      <div class="o-media__img u-f-align-self-center">
+        <div class="c-icon-box c-icon-box--circle u-bg-teal u-color-blue">
+          <div class="cmp-icon">
+            ${plan.iconContent @ context='unsafe'}
+          </div>
+          <span class="cmp-icon__indicator" aria-hidden="true">${plan.optionsCount}</span>
+        </div>
+      </div>
+      <div class="o-media__body u-f-align-self-center">
+        <sly
+            data-sly-use.eventName="${'/apps/premember/components/analytics/eventName.js' @ text=plan.typeName}"></sly>
+        <a href="${plan.summaryPageUrl}.html" class="o-cover-link__overlay u-text-semibold"
+           aria-label="${plan.optionsCount} ${plan.name} available"
+           data-event-type="${eventType}" data-event-name="${eventName}"
+           x-cq-linkchecker="valid">${plan.name}</a>
+      </div>
+    </div>
+  </li>
+</template>

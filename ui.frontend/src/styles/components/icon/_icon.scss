@@ -1,0 +1,112 @@
+.c-icon-box {
+	color: unity-color('black');
+	height: size(50);
+	width: size(50);
+	margin: 0 0 $g-spacing-sm;
+	max-width: 100%;
+	position: relative;
+
+	@include mq(md) {
+		height: size(91);
+		width: size(91);
+	}
+
+	svg,
+	img {
+		display: block;
+		max-height: 100%;
+		max-width: 100%;
+		width: 100%;
+		left: 50%;
+		position: absolute;
+		top: 50%;
+		transform: translate(-50%, -50%);
+		padding: $g-spacing-xs;
+	}
+}
+
+.c-icon-box--circle {
+	border-radius: 50%;
+	height: size(50);
+	width: size(50);
+	padding: $g-spacing-xs;
+
+	@include mq(md) {
+		height: size(91);
+		width: size(91);
+	}
+
+	svg {
+		padding: $g-spacing-xs;
+	}
+}
+
+// Federal only
+//
+// Hack for backward compat, but obviously isn't what is expected.
+// @TODO: match style system
+//
+// Since a lot of the embedded react components reference the svg src directly,
+// we need to color the svg with a filter.
+//
+// @TODO: Consolidate in brand refresh
+.federalpage .c-icon-box--circle.u-bg-blue-medium {
+	&.u-bg-blue-medium {
+		background-color: #00bdd7 !important;
+
+		.cmp-icon img {
+			filter: invert(7%) sepia(71%) saturate(6305%) hue-rotate(220deg) brightness(95%) contrast(101%); // maps to #002677
+		}
+	}
+
+	@include mq(md) {
+		svg,
+		img {
+			padding: $g-spacing-sm;
+		}
+	}
+}
+
+.c-icon-box--large {
+	height: size(80);
+	width: size(80);
+
+	@include mq(md) {
+		height: size(106);
+		width: size(106);
+	}
+
+	&.c-icon-box--circle {
+		height: size(80);
+		width: size(80);
+
+		@include mq(md) {
+			height: size(106);
+			width: size(106);
+		}
+	}
+
+	svg {
+		padding: $g-spacing-sm;
+	}
+}
+
+.c-icon-box--medium {
+	height: size(67);
+	width: size(67);
+
+	&.c-icon-box--circle {
+		height: size(67);
+		width: size(67);
+	}
+}
+
+.c-icon-box--small {
+	height: size(40);
+	width: size(40);
+
+	&.c-icon-box--circle {
+		height: size(40);
+		width: size(40);
+	}
+}

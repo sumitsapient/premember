@@ -1,0 +1,41 @@
+.providerSearch {
+	@include mq(md) {
+		max-width: 460px;
+	}
+}
+
+.provider-search {
+	margin-bottom: 0;
+
+	@include mq(md) {
+		margin-bottom: 10px;
+		padding: 2.25rem;
+	}
+
+	.provider-search__text {
+		margin-top: -$g-spacing-sm;
+		margin-bottom: $g-spacing;
+	}
+
+	.unity-type-h4 {
+		margin-bottom: 1.25rem;
+
+		@include mq(md) {
+			margin-bottom: $g-spacing;
+		}
+	}
+
+	.c-button {
+		@include mq(md) {
+			min-width: 268px;
+		}
+	}
+}
+
+.open-plan-provider-search__item {
+	display: none;
+
+	&[aria-hidden="false"] {
+		display: block;
+	}
+}

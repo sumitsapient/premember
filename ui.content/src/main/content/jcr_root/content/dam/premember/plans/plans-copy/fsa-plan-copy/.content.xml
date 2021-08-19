@@ -1,0 +1,47 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<jcr:root xmlns:dam="http://www.day.com/dam/1.0" xmlns:cq="http://www.day.com/jcr/cq/1.0" xmlns:jcr="http://www.jcp.org/jcr/1.0" xmlns:mix="http://www.jcp.org/jcr/mix/1.0" xmlns:nt="http://www.jcp.org/jcr/nt/1.0"
+    jcr:mixinTypes="[mix:referenceable]"
+    jcr:primaryType="dam:Asset">
+    <jcr:content
+        cq:name="fsa-plan-copy"
+        cq:parentPath="/content/dam/premember/plans/plans-copy"
+        jcr:description=""
+        jcr:primaryType="dam:AssetContent"
+        jcr:title="FSA Plan Copy"
+        contentFragment="{Boolean}true"
+        lastFragmentSave="{Date}2020-06-23T18:58:29.594+02:00">
+        <data
+            cq:model="/conf/premember/plans-copy/settings/dam/cfm/models/fsa-plans-copy"
+            jcr:primaryType="nt:unstructured">
+            <master
+                jcr:mixinTypes="[cq:Taggable]"
+                jcr:primaryType="nt:unstructured"
+                firstOptionHeadline="Limited Purpose Flexible Spending Account"
+                fourthOptionHeadline="Commuter Expense Reimbursement Account"
+                howToGetReimbursedForCommuterExpense="&lt;p>Getting reimbursed from your FSA is easy - just&amp;nbsp;submit your claims online at&amp;nbsp;&lt;a href=&quot;http://myuhc.com/&quot;>myuhc.com&lt;/a>.&amp;nbsp; You can also sign up for email alerts to track&amp;nbsp;claims and reimbursements. Check the box for direct deposits, too, so you can get reimbursements put directly into your personal bank account. To find out how to be reimbursed for commuter expenses, please go to the Commuter Expense Reimbursement section on this page.&amp;nbsp;&lt;/p>&#xa;"
+                howToGetReimbursedNotCommuterExpenseReimbursement="&lt;p>Getting reimbursed from your FSA is easy - just&amp;nbsp;submit your claims online at&amp;nbsp;&lt;a href=&quot;http://myuhc.com/&quot;>myuhc.com&lt;/a>.&amp;nbsp; You can also sign up for email alerts to track&amp;nbsp;claims and reimbursements. Check the box for direct deposits, too, so you can get reimbursements put directly into your personal bank account.&lt;/p>&#xa;"
+                paragraph1Description="&lt;p>A Flexible Spending Account (FSA)&amp;nbsp;saves you money by letting you put pre-tax dollars aside to help pay for eligible expenses like medical costs, child care and other health services.&lt;/p>&#xa;"
+                paragraph2Topic1Bullets="&lt;ul>&#xa;&lt;li>Before your plan year begins, you decide the amount of pre-tax dollars to set aside. Not sure&amp;nbsp;how much to put into your FSA? Use the&amp;nbsp;&lt;a href=&quot;https://www.myuhc.com/member/prefsaCalcMain.do?preLogin=true&quot;>FSA Savings Calculator&lt;/a>.&lt;/li>&#xa;&lt;li>When the plan year starts, a portion of that money is automatically deducted before taxes from each paycheck and held in your FSA.&lt;/li>&#xa;&lt;li>As eligible expenses incur, you can use your FSA to help pay for them. Your entire FSA amount is available to you on the first day of your plan year, so you don't have to wait until the money is reflected in your current balance to use it.&lt;/li>&#xa;&lt;/ul>&#xa;"
+                paragraph2Topic1Title="How a FSA Works"
+                paragraph4Topic3Description="&lt;p>When you sign up for the FSA, you'll&amp;nbsp;get a&amp;nbsp;&lt;b>Mastercard® Health Care Spending Card&amp;nbsp;&lt;/b>from UnitedHealthcare. This debit card lets you pay for covered health care services or other eligible expenses from your FSA. With the debit card, there's no need to write checks or submit claim forms— just use it by phone, online, or at any place that accepts MasterCard and you're good to go.&lt;/p>&#xa;"
+                paragraph4Topic3TItle="How to pay for services"
+                paragraph4Topic3Title="How to pay for services"
+                paragraph5Topic4Description="&lt;p>If you don’t spend your FSA dollars by the end of&amp;nbsp;your plan year, you may lose that money. While most people are able to spend the money they set aside, some employers may give employees more time to spend their FSA dollars — or carry it over to the next year.&lt;/p>&#xa;"
+                paragraph5Topic4Title="How to manage spending your FSA"
+                planName="Flexible Spending Accounts"
+                plansIconLink="/content/dam/premember/icons/modified-svgs/savings.svg"
+                plansNameHeader="Flexible Spending Account"
+                secondOptionHeadline="Dependent Care Flexible Spending Account"
+                thirdOptionHeadline="Health Care Flexible Spending Account"
+                topic2Bullets="&lt;p>&lt;b>Common expenses&lt;/b>&lt;/p>&#xa;&lt;ul>&#xa;&lt;li>Acupuncture&lt;/li>&#xa;&lt;li>Blood sugar test kits&lt;/li>&#xa;&lt;li>Breast pumps and lactation supplies&lt;/li>&#xa;&lt;li>Chiropractor visits&lt;/li>&#xa;&lt;li>Dental services like cleanings, fillings, X-rays and braces&lt;/li>&#xa;&lt;li>Doctor visits, X-rays and lab work&lt;/li>&#xa;&lt;li>Hearing aids and batteries&lt;/li>&#xa;&lt;li>Health plan deductible, coinsurance and copayments&lt;/li>&#xa;&lt;li>Lasik eye surgery&lt;/li>&#xa;&lt;li>Prescribed, over-the-counter medicines&lt;/li>&#xa;&lt;li>Prescriptions&amp;nbsp;&amp;nbsp;— retail and mail&lt;/li>&#xa;&lt;li>Sunscreen&amp;nbsp;SPF 30 or higher —&amp;nbsp;may require a prescription&lt;/li>&#xa;&lt;li>Surgery, excluding cosmetic surgery&lt;/li>&#xa;&lt;li>Vision services like exams, eyeglasses, frames and contact lenses&lt;/li>&#xa;&lt;/ul>&#xa;"
+                topic2BulletsIntro="&lt;p>Here is a list of some eligible expenses that you can pay for with a health care FSA. For a full list of expenses and rules, visit&amp;nbsp;&lt;a href=&quot;http://irs.gov/&quot;>irs.gov&lt;/a>.&lt;/p>&#xa;"
+                topic3DescriptionHowItWorks="&lt;p>When you sign up, log in to&amp;nbsp;&lt;a href=&quot;http://www.myuhc.com/&quot;>www.myuhc.com&lt;/a>&lt;/p>&#xa;&lt;ol>&#xa;&lt;li>Place your order based on what your commute and parking needs are for the following month.&lt;/li>&#xa;&lt;li>Optum will&amp;nbsp;fill your order and then&amp;nbsp;mail you a bus pass, reload your smart card, send a parking payment or whatever’s needed for your commute, just before the beginning of the month.&lt;/li>&#xa;&lt;/ol>&#xa;&lt;p>If you choose “Every Month” when you place your order, you’ll automatically receive the same benefit every month until you change or cancel it. The account works with any transit system and almost any parking provider or vanpool, nationwide. If your order is more than the monthly limits, the additional amount will be taken from your paycheck after taxes. It’s that easy.&lt;/p>&#xa;"
+                topic3DescriptionOptum="&lt;p>If offered by your employer, the Optum® Commuter Card is a convenient way to use your account. Use the card instead of cash or credit to buy transit passes, load smart cards or even pay for parking. If your transit operator or parking provider does not accept the card, we have several other ways for you to use the program to save.&lt;br>&#xa;&lt;/p>&#xa;"
+                topic4Description="&lt;p>Your employer may offer a benefit if you ride a bicycle to work. You may be able to receive a check for up to $20 per month to be used at participating bike shops for repairs, parts, or equipment to pay for qualified bike storage — or you can save the money and use it to buy&amp;nbsp;a new bike.&lt;/p>&#xa;"/>
+        </data>
+        <metadata
+            jcr:mixinTypes="[cq:Taggable]"
+            jcr:primaryType="nt:unstructured"/>
+        <related jcr:primaryType="nt:unstructured"/>
+    </jcr:content>
+</jcr:root>

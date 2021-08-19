@@ -1,0 +1,24 @@
+<sly data-sly-use.plan="com.mirumagency.uhc.premember.core.models.PlanModel"></sly>
+<sly data-sly-use.eventName="${'/apps/premember/components/analytics/eventName.js' @ text=plan.tokens['copy.summaryProviderSearchLinkText']}"/>
+<div
+  data-sly-use.templates="core/wcm/components/commons/v1/templates.html"
+  class="provider-search o-box u-bg-teal u-text-center"
+>
+  <h3 class="unity-type-h4 u-text-bold">${plan.tokens['copy.summaryProviderSearch']}</h3>
+  <p data-sly-test="${plan.tokens['copy.summaryProviderSearchDescription']}" class="provider-search__text">${plan.tokens['copy.summaryProviderSearchDescription']}</p>
+  <button
+    class="c-button c-button--primary js-track-event js-language-exit-modal-trigger"
+    data-href="${plan.tokens['selectedOption.providerSearchLink']}"
+    data-toggle="modal"
+    data-target="#language-exit-modal"
+    data-event-type="button"
+    data-event-name="${eventName}">
+    ${plan.tokens['copy.summaryProviderSearchLinkText']}
+    <span class="o-svg-icon o-svg-icon--lg u-m-l-xs">
+      <svg viewBox="0, 0, 24, 24" focusable="false" shape-rendering="geometricPrecision">
+          <path d="M20.385,20.385 L3.615,20.385 L3.615,3.615 L12,3.615 L12,1.219 L3.615,1.219 C2.285,1.219 1.219,2.297 1.219,3.615 L1.219,20.385 C1.219,21.703 2.285,22.781 3.615,22.781 L20.385,22.781 C21.703,22.781 22.781,21.703 22.781,20.385 L22.781,12 L20.385,12 L20.385,20.385 z M14.396,1.219 L14.396,3.615 L18.696,3.615 L6.921,15.39 L8.61,17.079 L20.385,5.304 L20.385,9.604 L22.781,9.604 L22.781,1.219 L14.396,1.219 z" fill="currentColor" />
+      </svg>
+    </span>
+    <span class="u-visually-hidden">${'Opens in a new tab' @ i18n}</span>
+  </button>
+</div>

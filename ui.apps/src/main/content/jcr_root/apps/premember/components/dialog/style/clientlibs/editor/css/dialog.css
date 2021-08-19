@@ -1,0 +1,26 @@
+/* Bizarre widths without maximums in coral dialogs */
+.dialog-style-system--fieldset {
+  margin: 0 0 0.25rem;
+}
+
+.dialog-style-system--fieldset .coral-Form-fieldset {
+  margin-bottom: 0.625rem;
+  margin-left: 0;
+}
+
+.dialog-style-system--fieldset .coral-Form-fieldlabel {
+  background: #f2f2f2;
+  color: #707070;
+  font-weight: bold;
+  padding: 0.25rem 1rem;
+  text-transform: uppercase;
+}
+
+.dialog-style-system--fieldset .coral-RadioGroup,
+.dialog-style-system--fieldset .coral-CheckboxGroup  {
+  padding: 0.5rem;
+}
+
+.dialog-style-system--fieldset .coral-Form-field.coral3-Radio {
+  padding: 0.3125rem 0;
+}

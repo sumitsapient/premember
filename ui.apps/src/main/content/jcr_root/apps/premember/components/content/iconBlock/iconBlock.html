@@ -1,0 +1,22 @@
+<div data-sly-use.iconBlock="com.mirumagency.uhc.premember.core.models.IconBlock"
+  data-sly-use.templates="core/wcm/components/commons/v1/templates.html"
+  data-sly-attribute.id="${iconBlock.id}"
+  class="c-icon-block o-media ${iconBlock.layout.isVertical ? 'c-icon-block--media' : ''} ${iconBlock.layout.isSideBySide ? 'c-icon-block--sidebyside' : ''}"
+  data-container="Icon Block">
+  <div data-sly-test="${iconBlock.iconVersion == 'legacy' || !iconBlock.iconVersion}" data-sly-resource="${'icon' @ resourceType='premember/components/content/icon', decoration='true'}"
+       class="o-media__img ${iconBlock.layout.isSideBySideWithTextCentered ? 'u-f-align-self-center' : ''} ${!iconBlock.layout.isSideBySide ? 'u-m-b-sm' : ''}">
+  </div>
+	<div data-sly-test="${iconBlock.iconVersion == 'tempo'}" data-sly-resource="${'iconTempo' @ resourceType='premember/components/content/iconTempo', decoration='true'}"
+			 class="o-media__img ${iconBlock.layout.isSideBySideWithTextCentered ? 'u-f-align-self-center' : ''} ${!iconBlock.layout.isSideBySide ? 'u-m-b-sm' : ''}">
+	</div>
+  <div class="o-media__body ${iconBlock.layout.isSideBySideWithTextCentered ? 'u-f-align-self-center' : ''}" >
+    <p data-sly-test="${iconBlock.title}"
+      class="unity-type-h6 u-text-bold ${iconBlock.iconBlockText ? 'u-m-b-xxs' : ''}"
+      data-sly-element="${iconBlock.titleTag}">
+     ${iconBlock.title}
+    </p>
+    <div data-sly-test="${iconBlock.iconBlockText}" class="c-icon-block__text">
+      ${iconBlock.iconBlockText @ context='html'}
+    </div>
+  </div>
+</div>

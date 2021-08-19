@@ -1,0 +1,128 @@
+.aem-AuthorLayer-Edit {
+	border: $g-spacing-xs solid #444;
+	border-top: 0;
+	border-bottom: 0;
+
+	@include mq(md) {
+		border-width: $g-spacing;
+	}
+}
+
+// Fix collapsing widths with flex elements in AEM editor.
+.cq-placeholder {
+	min-width: $g-spacing-xl;
+}
+
+// Layout/Section/Grid Component - Author Cleanup
+// Fine tune spacing and layout in author mode for the custom layout component.
+.o-aem-container.cq-Editable-dom {
+	padding-top: 0 !important;
+
+	.o-container {
+		padding: 0 $g-spacing-sm $g-spacing-xxs;
+	}
+
+	.o-section {
+		padding-bottom: $g-spacing;
+
+		&:first-child {
+			padding-top: $g-spacing-sm;
+		}
+
+		+ .newpar {
+			margin: 0 0 $g-spacing;
+		}
+	}
+
+	.o-grid,
+	.o-grid__item {
+		padding-top: $g-spacing;
+		padding-bottom: 0;
+
+		> .newpar {
+			margin: $g-spacing-lg 0 0;
+			padding-bottom: $g-spacing;
+		}
+	}
+
+	// Add padding in editor to allow for mouse over on grid, section and columns.
+	.o-grid {
+		padding-left: $g-spacing-sm;
+		padding-right: $g-spacing-sm;
+	}
+
+	.o-grid__item {
+		// Remove extraneous padding because of the grid margin system
+		> .cq-Editable-dom {
+			padding-top: 0;
+			padding-bottom: 0;
+		}
+
+		// Remove extraneous margin on new parsys because of the grid margin system
+		> .newpar {
+			margin-bottom: 0;
+		}
+
+		.o-grid {
+			margin-top: $g-spacing-xs;
+			margin-bottom: $g-spacing;
+		}
+	}
+
+	// Grow height author specific CSS to remove oddities.
+	.o-grid__item--grow-height.cq-Editable-dom {
+		padding-bottom: 3.25em;
+		position: relative;
+
+		// When AEM inserts a component that doesn't yet have its' inheritance
+		> .section {
+			width: 100%;
+		}
+
+		// Remove the newpar node from the flex calculations by moving it to position
+		// absolute and anchoring to the bottom.
+		> .newpar {
+			bottom: 0;
+			left: ($g-spacing-lg / 4);
+			position: absolute;
+			right: ($g-spacing-lg / 4);
+			width: auto;
+		}
+
+		@include mq(md) {
+			> .newpar {
+				left: ($g-spacing-lg / 2);
+				right: ($g-spacing-lg / 2);
+			}
+		}
+	}
+}
+
+.o-grid.cq-Editable-dom {
+	margin-left: 0;
+	margin-right: 0;
+
+	> .newpar.new.section.cq-Editable-dom {
+		min-width: 100%;
+		margin-left: 0.5rem;
+
+		@include mq(md) {
+			min-width: calc(100% - 2rem);
+			margin-left: 1rem;
+		}
+	}
+}
+
+.o-grid__item.cq-Editable-dom {
+	&.u-d-none\@sm-only,
+	&.u-d-none\@md {
+		display: block !important;
+	}
+}
+
+.cq-Editable-dom .accordion .accordion-body {
+	height: 100% !important;
+}
+
+@import './employerConfigurationPage';
+@import './disclaimersConfigurationPage';

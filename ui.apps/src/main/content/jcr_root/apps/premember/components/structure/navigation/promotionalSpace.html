@@ -1,0 +1,49 @@
+<template
+    data-sly-template.promotionalSpace="${@ space='Promotional Space Data'}">
+  <div class="c-navigation__promo-item">
+    <p class="c-navigation__promo-item-title">
+      ${space.title}
+    </p>
+    <span class="c-navigation__promo-item-description">
+      ${space.description @ context='html'}
+    </span>
+    <sly data-sly-use.spaceEventName="${'/apps/premember/components/analytics/eventName.js' @ text=space.link.text}" />
+    <a
+			href="${space.link.link}"
+			x-cq-linkchecker="valid"
+			rel="noopener noreferrer"
+			data-event-type="globalnav"
+			data-event-name="${spaceEventName}"
+			target="${space.link.target}"
+		>
+      ${space.link.text}
+			<!--/* New Tab Icon */-->
+      <sly data-sly-test.newTab="${space.link.target}">
+        <span class="o-svg-icon o-svg-icon--lg u-m-l-xs">
+          <svg viewBox="0, 0, 24, 24" focusable="false" role="presentation" shape-rendering="geometricPrecision">
+              <path
+                  d="M20.385,20.385 L3.615,20.385 L3.615,3.615 L12,3.615 L12,1.219 L3.615,1.219 C2.285,1.219 1.219,2.297 1.219,3.615 L1.219,20.385 C1.219,21.703 2.285,22.781 3.615,22.781 L20.385,22.781 C21.703,22.781 22.781,21.703 22.781,20.385 L22.781,12 L20.385,12 L20.385,20.385 z M14.396,1.219 L14.396,3.615 L18.696,3.615 L6.921,15.39 L8.61,17.079 L20.385,5.304 L20.385,9.604 L22.781,9.604 L22.781,1.219 L14.396,1.219 z"
+                  fill="currentColor"/>
+          </svg>
+        </span>
+        <span class="u-visually-hidden">${'Opens in a new tab' @ i18n}</span>
+      </sly>
+			<!--/* Chevron Icon */-->
+			<span
+				data-sly-test="${!newTab}"
+				class="o-svg-icon o-svg-icon--xl"
+			>
+			<svg
+				xmlns="http://www.w3.org/2000/svg"
+				viewBox="0 0 24 24"
+				fill="currentColor"
+				class="cmp-navigation__chevron"
+				focusable="false"
+			>
+				<path d="M0 0h24v24H0z" fill="none"/>
+				<path d="M10 6L8.59 7.41 13.17 12l-4.58 4.59L10 18l6-6z"/>
+			</svg>
+		</span>
+    </a>
+  </div>
+</template>

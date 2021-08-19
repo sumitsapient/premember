@@ -1,0 +1,10 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<jcr:root xmlns:sling="http://sling.apache.org/jcr/sling/1.0" xmlns:cq="http://www.day.com/jcr/cq/1.0" xmlns:jcr="http://www.jcp.org/jcr/1.0"
+    jcr:description="UHG Pharmacy Plan Option Component"
+    jcr:primaryType="cq:Component"
+    jcr:title="Pharmacy Plan Option"
+    cq:isContainer="{Boolean}false"
+    cq:icon="linkNav"
+    sling:resourceSuperType="premember/components/configuration/employerPlanOption"
+    allowedParents="*"
+    componentGroup="UHC EnI Pre Member.Config"/>

@@ -1,0 +1,12 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<jcr:root xmlns:cq="http://www.day.com/jcr/cq/1.0" xmlns:jcr="http://www.jcp.org/jcr/1.0" xmlns:rep="internal"
+    jcr:mixinTypes="[rep:AccessControllable]"
+    jcr:primaryType="cq:Page">
+    <generic-page-template/>
+    <federal-content-page-template/>
+    <content-page-template/>
+    <employer-config-page-template/>
+    <experience-fragment-web-variation-template/>
+    <federal-employer-config-page-template/>
+    <rep:policy/>
+</jcr:root>

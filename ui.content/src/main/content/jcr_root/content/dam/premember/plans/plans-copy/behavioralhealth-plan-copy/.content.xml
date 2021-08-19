@@ -1,0 +1,29 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<jcr:root xmlns:dam="http://www.day.com/dam/1.0" xmlns:cq="http://www.day.com/jcr/cq/1.0" xmlns:jcr="http://www.jcp.org/jcr/1.0" xmlns:mix="http://www.jcp.org/jcr/mix/1.0" xmlns:nt="http://www.jcp.org/jcr/nt/1.0"
+    jcr:mixinTypes="[mix:referenceable]"
+    jcr:primaryType="dam:Asset">
+    <jcr:content
+        cq:name="behavioralhealth-plan-copy"
+        cq:parentPath="/content/dam/premember/plans/plans-copy"
+        jcr:description=""
+        jcr:primaryType="dam:AssetContent"
+        jcr:title="Behavioral Health Plan Copy"
+        contentFragment="{Boolean}true"
+        lastFragmentSave="{Date}2020-05-25T10:59:42.615+02:00">
+        <data
+            cq:model="/conf/premember/plans-copy/settings/dam/cfm/models/behavioralhealth-plans-copy"
+            jcr:primaryType="nt:unstructured">
+            <master
+                jcr:mixinTypes="[cq:Taggable]"
+                jcr:primaryType="nt:unstructured"
+                plansNameHeader="Behavioral Health Plans"
+                providerSearchTabText="&lt;p> &lt;/p>&#xa;&lt;p>Behavioral health (or mental health) includes your emotional, psychological and social health. It affects how you think, feel and act, and impacts all areas of life. Some of the concerns that behavioral health professionals handle include: depression, anxiety or stress, anger management, alcohol or drug abuse, coping with grief or loss and more. &lt;/p>&#xa;&lt;p>Select a behavior health provider or facility that's in our network.&lt;/p>&#xa;"
+                providerSearchTabTitle="Behavioral Health Providers"
+                summaryProviderSearchLinkText="Search providers"/>
+        </data>
+        <metadata
+            jcr:mixinTypes="[cq:Taggable]"
+            jcr:primaryType="nt:unstructured"/>
+        <related jcr:primaryType="nt:unstructured"/>
+    </jcr:content>
+</jcr:root>

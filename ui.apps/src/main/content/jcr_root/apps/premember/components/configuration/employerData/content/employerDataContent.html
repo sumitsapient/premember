@@ -1,0 +1,238 @@
+<sly data-sly-use.data="com.mirumagency.uhc.premember.core.models.EmployerData">
+    <div class="container-main-title" data-sly-test="${wcmmode.edit}">
+        <h3>Employer Configuration</h3>
+    </div>
+    <div class="container-main-setion">
+        <div class="container-section-title">
+            <h4>UHC Logo</h4>
+        </div>
+        <div class="container-logo">
+            <div class="container--error" data-sly-test="${wcmmode.edit}">
+                <sly data-sly-test="${!data.uhcLogoPath}">
+                    Please configure UHC logo
+                </sly>
+            </div>
+            <div data-sly-test="${data.uhcLogoPath}">
+                <p>Path: <strong>${data.uhcLogoPath @ context='unsafe'} </strong></p>
+            </div>
+        </div>
+        <div class="container-section-title">
+            <h4>Employer Logo</h4>
+        </div>
+        <div class="container-logo">
+            <div data-sly-test="${data.employerLogoPath}">
+                <p>Path: <strong>${data.employerLogoPath @ context='unsafe'} </strong></p>
+            </div>
+        </div>
+        <div class="container-section-title">
+            <h4>Disclaimers</h4>
+        </div>
+        <div class="container-logo">
+            <div>
+                <p>Funding method: <strong>${data.employer.fundingMethod.name} </strong></p>
+                <p>State: <strong>${data.employer.state.name} </strong></p>
+            </div>
+        </div>
+        <div class="container-section-title">
+            <h4>Enrollment Dates General Configuration</h4>
+        </div>
+        <div class="container-logo">
+            <div>
+                <p>Enrollment Dates Heading: <strong>${data.openEnrollmentDateHeading}</strong></p>
+                <p>Dates Range Text: <strong>${data.datesRangeText} </strong></p>
+            </div>
+        </div>
+        <div class="container-section-title">
+            <h4>Enrollment Dates 1</h4>
+        </div>
+        <div class="container-enrollment-dates">
+            <div class="container-enrollment-dates-wrapper">
+                <div class="container-enrollment-dates--start" data-sly-test="${data.isStartDateNotBlank && data.isStartDateBeforeEndDate}">
+                    <h5>Start date:</h5>
+                    <p><strong>${data.startDate}</strong></p>
+                </div>
+                <div class="container-enrollment-dates--end" data-sly-test="${data.isEndDateNotBlank && data.isStartDateBeforeEndDate}">
+                    <h5>End date:</h5>
+                    <p><strong>${data.endDate}</strong></p>
+                </div>
+                <div class="container-enrollment-dates--showFrom" data-sly-test="${data.isShowEnrollmentFromDateNotBlank && data.isStartDateBeforeEndDate}">
+                    <h5>Show enrollment dates from date:</h5>
+                    <p><strong>${data.showEnrollmentDateFrom}</strong></p>
+                </div>
+                <div class="container-enrollment-dates--description">
+                    <h5>Description:</h5>
+                    <p>${data.description @ context='html'}</p>
+                </div>
+
+                <div class="container--error" data-sly-test="${data.isStartDateNotBlank && data.isEndDateNotBlank && !data.isStartDateBeforeEndDate}">
+                    <p>Please reconfigure enrollment dates. Start date should be set before the end date.</p>
+                </div>
+
+                <div class="container--error" data-sly-test="${!data.isStartDateNotBlank}">
+                    <p>Please configure enrollment start date</p>
+                </div>
+                <div class="container--error" data-sly-test="${!data.isEndDateNotBlank}">
+                    <p>Please configure enrollment end date</p>
+                </div>
+
+                <div class="container--error" data-sly-test="${data.isStartDateNotBlank && !data.isShowEnrollmentBeforeOrEqualStartDate}">
+                    <p>Please reconfigure enrollment dates. Show enrollment date should be set before the start date or should be equal start date.</p>
+                </div>
+            </div>
+        </div>
+    </div>
+    <div class="container-section-title">
+        <h4>Enrollment Dates 2</h4>
+    </div>
+    <div class="container-enrollment-dates">
+        <div class="container-enrollment-dates-wrapper">
+            <div class="container-enrollment-dates--start" data-sly-test="${data.isStartDate2NotBlank && data.isStartDate2BeforeEndDate2}">
+                <h5>Start date:</h5>
+                <p><strong>${data.startDate2}</strong></p>
+            </div>
+            <div class="container-enrollment-dates--end" data-sly-test="${data.isEndDate2NotBlank && data.isStartDate2BeforeEndDate2}">
+                <h5>End date:</h5>
+                <p><strong>${data.endDate2}</strong></p>
+            </div>
+            <div class="container-enrollment-dates--showFrom" data-sly-test="${data.isShowEnrollmentFromDate2NotBlank && data.isStartDate2BeforeEndDate2}">
+                <h5>Show enrollment dates from date:</h5>
+                <p><strong>${data.showEnrollmentDateFrom2}</strong></p>
+            </div>
+            <div class="container-enrollment-dates--description">
+                <h5>Description:</h5>
+                <p><strong>${data.description2}</strong></p>
+            </div>
+
+            <div class="container--error" data-sly-test="${data.isStartDate2NotBlank && data.isEndDate2NotBlank && !data.isStartDate2BeforeEndDate2}">
+                <p>Please reconfigure enrollment dates. Start date should be set before the end date.</p>
+            </div>
+
+            <div class="container--error" data-sly-test="${!data.isStartDate2NotBlank}">
+                <p>Please configure enrollment start date</p>
+            </div>
+
+            <div class="container--error" data-sly-test="${data.isStartDate2NotBlank && !data.isShowEnrollment2BeforeOrEqualStartDate2}">
+                <p>Please reconfigure enrollment dates. Show enrollment date should be set before the start date or should be equal start date.</p>
+            </div>
+        </div>
+    </div>
+	<div class="container-section-title">
+		<h4>Enrollment Dates 3</h4>
+	</div>
+	<div>
+		<div class="container-logo">
+			<p>Enrollment Dates Heading: <strong>${data.openEnrollmentDateHeading3}</strong></p>
+			<p>Dates Range Text: <strong>${data.datesRangeText3} </strong></p>
+		</div>
+	</div>
+	<div class="container-enrollment-dates">
+		<div class="container-enrollment-dates-wrapper">
+			<div class="container-enrollment-dates--start" data-sly-test="${data.isStartDate3NotBlank && data.isStartDate3BeforeEndDate3}">
+				<h5>Start date:</h5>
+				<p><strong>${data.startDate3}</strong></p>
+			</div>
+			<div class="container-enrollment-dates--end" data-sly-test="${data.isEndDate3NotBlank && data.isStartDate3BeforeEndDate3}">
+				<h5>End date:</h5>
+				<p><strong>${data.endDate3}</strong></p>
+			</div>
+			<div class="container-enrollment-dates--showFrom" data-sly-test="${data.isShowEnrollmentFromDate3NotBlank && data.isStartDate3BeforeEndDate3}">
+				<h5>Show enrollment dates from date:</h5>
+				<p><strong>${data.showEnrollmentDateFrom3}</strong></p>
+			</div>
+			<div class="container-enrollment-dates--description">
+				<h5>Description:</h5>
+				<p>${data.description3 @ context='html'}</p>
+			</div>
+
+			<div class="container--error" data-sly-test="${data.isStartDate3NotBlank && data.isEndDate3NotBlank && !data.isStartDate3BeforeEndDate3}">
+				<p>Please reconfigure enrollment dates. Start date should be set before the end date.</p>
+			</div>
+
+			<div class="container--error" data-sly-test="${!data.isStartDate3NotBlank}">
+				<p>Please configure enrollment start date</p>
+			</div>
+
+			<div class="container--error" data-sly-test="${data.isStartDate3NotBlank && !data.isShowEnrollment3BeforeOrEqualStartDate3}">
+				<p>Please reconfigure enrollment dates. Show enrollment date should be set before the start date or should be equal start date.</p>
+			</div>
+		</div>
+	</div>
+
+	<div class="container-section-title">
+		<h4>Enrollment Image</h4>
+	</div>
+	<div  class="container-logo">
+		<div data-sly-test="${data.openEnrollmentImagePath}">
+			<p>Path: <strong>${data.openEnrollmentImagePath @ context='unsafe'} </strong></p>
+		</div>
+	</div>
+
+    <div class="container-section-title">
+        <h4>Custom OptumRX Configuration</h4>
+    </div>
+    <div class="container-logo">
+        <div>
+            <p>Show OptumRX in Health Plans Details: <strong>${data.employer.optumRxCard.showOptumRxInHealthPlanDetails} </strong></p>
+            <p>Custom OptumRX link: <strong>${data.employer.optumRxCard.customOptumRxLink} </strong></p>
+            <p>Custom OptumRX link text: <strong>${data.employer.optumRxCard.customOptumRxLinkText} </strong></p>
+        </div>
+    </div>
+    <div class="container-section-title">
+        <h4>Custom Pharmacy Provider Configuration</h4>
+    </div>
+    <div class="container-logo">
+        <div>
+            <p>Show Pharmacy Provider in Health Plans Details: <strong>${data.employer.pharmacyProviderCard.showPharmacyProviderInHealthPlanDetails} </strong></p>
+            <p>Custom Pharmacy Provider link: <strong>${data.employer.pharmacyProviderCard.customPharmacyProviderLink} </strong></p>
+            <p>Custom Pharmacy Provider link text: <strong>${data.employer.pharmacyProviderCard.customPharmacyProviderLinkText} </strong></p>
+            <p>Custom Pharmacy Provider text to display: <strong>${data.employer.pharmacyProviderCard.pharmacyProviderDisplayText} </strong></p>
+        </div>
+    </div>
+    <div class="container-section-title">
+        <h4>Navigation Plan Options</h4>
+    </div>
+    <div class="container-logo">
+        <div>
+            <p>Hide Plan Options: <strong>${data.employer.hidePlanOptions.hidePlanOptions} </strong></p>
+        </div>
+    </div>
+
+    <div class="container-section-title">
+        <h4>Help contact</h4>
+    </div>
+    <div class="container-help-contact">
+        <div class="container-basic-info">
+            <div class="container-basic-info--time">
+                <h5>Opening days and hours:</h5>
+                <strong><p>${data.openingDays} ${data.openingHours}</p></strong>
+            </div>
+            <div class="container-basic-info--phone">
+                <h5>Phone number:</h5>
+                <strong><p>${data.phone}</p></strong>
+            </div>
+        </div>
+        <div class="container-contact-person">
+            <h5>Contact Person 1</h5>
+            <p>First name and last name: <strong>${data.person1.firstAndLastName}</strong></p>
+            <p>Job title: <strong>${data.person1.jobTitle}</strong></p>
+            <p>Contact text: <strong>${data.person1.contactText}</strong></p>
+            <p>Contact link: <strong>${data.person1.contactLink.link}</strong></p>
+            <p>Phone: <strong>${data.person1.phoneNumber.label}</strong></p>
+        </div>
+        <div class="container-contact-person">
+            <h5>Contact Person 2</h5>
+            <p>First name and last name: <strong>${data.person2.firstAndLastName}</strong></p>
+            <p>Job title: <strong>${data.person2.jobTitle}</strong></p>
+            <p>Contact text: <strong>${data.person2.contactText}</strong></p>
+            <p>Contact link: <strong>${data.person2.contactLink.link}</strong></p>
+            <p>Phone: <strong>${data.person2.phoneNumber.label}</strong></p>
+        </div>
+    </div>
+    <div class="container-section-title">
+        <h4>Personalized Content:</h4>
+    </div>
+    <div class="container-logo">
+        <p>Card Title: <strong>${data.cardTitle}</strong></p>
+        <p>Additional Details: <strong>${data.additionalDetails}</strong></p>
+    </div>
+</sly>

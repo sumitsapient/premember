@@ -1,0 +1,28 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<jcr:root xmlns:dam="http://www.day.com/dam/1.0" xmlns:cq="http://www.day.com/jcr/cq/1.0" xmlns:jcr="http://www.jcp.org/jcr/1.0" xmlns:mix="http://www.jcp.org/jcr/mix/1.0" xmlns:nt="http://www.jcp.org/jcr/nt/1.0"
+    jcr:mixinTypes="[mix:referenceable]"
+    jcr:primaryType="dam:Asset">
+    <jcr:content
+        cq:name="werally-connect"
+        cq:parentPath="/content/dam/premember/plans/options/behavioralhealth"
+        jcr:description="Created for TriNet employer"
+        jcr:primaryType="dam:AssetContent"
+        jcr:title="WeRally Connect"
+        contentFragment="{Boolean}true"
+        lastFragmentSave="{Date}2020-06-25T18:13:23.209Z">
+        <data
+            cq:model="/conf/premember/behavioralhealth-option/settings/dam/cfm/models/behavioralhealth-plan-option"
+            jcr:primaryType="nt:unstructured">
+            <master
+                jcr:mixinTypes="[cq:Taggable]"
+                jcr:primaryType="nt:unstructured"
+                hasStateSpecificProvider="{Boolean}false"
+                planName="We Rally"
+                providerSearchLink="Welcome to great coverage, cost-savings, and practical tools from a company that cares about your health."/>
+        </data>
+        <metadata
+            jcr:mixinTypes="[cq:Taggable]"
+            jcr:primaryType="nt:unstructured"/>
+        <related jcr:primaryType="nt:unstructured"/>
+    </jcr:content>
+</jcr:root>

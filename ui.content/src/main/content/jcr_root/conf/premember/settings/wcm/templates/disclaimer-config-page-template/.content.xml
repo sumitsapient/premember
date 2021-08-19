@@ -1,0 +1,11 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<jcr:root xmlns:cq="http://www.day.com/jcr/cq/1.0" xmlns:jcr="http://www.jcp.org/jcr/1.0"
+  jcr:primaryType="cq:Template"
+  allowedPaths="[/content/premember/]">
+  <jcr:content
+    cq:templateType="/conf/premember/settings/wcm/template-types/empty-page"
+    jcr:description="Template used for disclaimer configuration page for UHC EnI Pre Member"
+    jcr:primaryType="cq:PageContent"
+    jcr:title="Disclaimer Config Page"
+    status="enabled"/>
+</jcr:root>

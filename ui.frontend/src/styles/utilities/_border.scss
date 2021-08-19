@@ -1,0 +1,5 @@
+.u-b-r\@xlarge-up {
+	@include mq(xl) {
+		border-right: 15px solid unity-color('blue');
+	}
+}

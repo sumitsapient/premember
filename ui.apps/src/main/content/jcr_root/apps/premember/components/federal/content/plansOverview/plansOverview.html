@@ -1,0 +1,9 @@
+<div data-sly-use.model="com.mirumagency.uhc.premember.core.models.federal.health.HealthPlanOverview"
+     data-sly-use.templates="core/wcm/components/commons/v1/templates.html"
+     id="federal-plans-overview"
+     data-plans="${!model.empty ? model.plansAsJson : '[]'}"
+		 data-plan-type="health"
+     data-plans-url="${resource.path}.model.json">
+    <p data-sly-test="${wcmmode.edit}">Health Plans Overview</p>
+</div>
+<sly data-sly-call="${templates.placeholder @ isEmpty = !hasContent}"></sly>

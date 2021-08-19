@@ -1,0 +1,105 @@
+#!/usr/bin/env groovy
+// Modeled after https://github.optum.com/cloud-scaffolding/mix-master/blob/develop/Jenkinsfile
+// and
+// https://github.optum.com/corpcomm/UHG2019/blob/master/Jenkinsfile
+// https://github.optum.com/uxds-optum/Regportal/blob/6961e477d00962889fb416d64226a7f64a7a1582/Jenkinsfile
+
+@Library("com.optum.jenkins.pipeline.library@master") _
+
+pipeline {
+    agent {
+        label 'docker-kitchensink-slave' // This agent has nodejs ***AND*** Fortify ***AND*** Sonar
+    }
+    options { 
+        // add time stamps to console output logs - https://plugins.jenkins.io/timestamper
+        timestamps()
+        // limit # of kept builds
+        buildDiscarder(logRotator(numToKeepStr:'10'))
+        // Do not allow the pipeline to resume if the master restarts
+        disableResume()
+        // ToDo
+        // currentBuild.displayName()
+    }  
+    parameters {
+        booleanParam(name: 'UPLOADTOSCAR', defaultValue :false, description: 'Upload report to SCAR')
+    }   
+    environment {
+        GIT_CREDENTIALS_ID = 'dt_jenkins_id'
+        ARTIFACTORY_CREDENTIALS_ID = 'dt_artifactory_id'
+        FORTIFY_ID = 'dt_fortify_id'        
+        APP_NAME = 'Pre-member - Fortify Scan'
+        MAVEN_VERSION = '3.3.9'
+        JAVA_VERSION = '1.8.0'
+        JENKINSFILE_LOCATION = 'Jenkins/'
+        BRANCH = "${env.BRANCH_NAME}"   // **** Needed? Used? ****
+        NPM_AUTH_KEY = ''
+        NPM_EMAIL = ''
+        FORTIFY_BUILD_NAME = "Premember"
+        SCAR_PROJECT_NAME = 'OnboardingPrememberSites_UHGWM110-022626'
+        SCAR_PROJECT_VERSION = "22041"      // this value is found in the scar project url, example below
+        // https://scar.uhc.com/ssc/html/ssc/version/22041/fix/null/?filterSet=a243b195-0a59-3f8b-1403-d55b7a7d78e6
+    }
+    
+    stages {
+        stage('Prebuild steps') {
+            steps {
+                echo 'Pre-build steps...'
+                echo 'No prebuild steps performed'
+            }
+        }        
+        // trigger ***ONLY*** for a "release" branch
+        stage ('Parallel analysis') {
+            when {
+                expression{
+                    // from https://github.optum.com/paymentintegrity/rps-template/blob/cb7726760525bd5efb71787cd01b1170228be14d/Jenkinsfile
+                    // This does work, but does not match our branch name pattern
+                    // env.BRANCH_NAME ==~ /(?:\w+\/)?release-.*/
+                    env.BRANCH_NAME.toLowerCase().contains("dev")   // **** Change this value for release branch
+                }
+            }
+
+            parallel {
+                stage ('Sonar analysis')
+                {
+                    steps {
+                        // commenting out, sonar scans fail
+                        // glSonarMavenScan gitUserCredentialsId: '${GIT_CREDENTIALS_ID}', productName: '${APP_NAME}'
+
+                        echo 'Perform Sonar Scan'
+                        echo 'To do...'
+                        // From [UHCCP_AEM_6_4_SONAR_TEST] 
+                        // $ /tools/maven/apache-maven-3.3.3/bin/mvn -U compile sonar:sonar -Dsonar.host.url=https://sonar.optum.com -Dsonar.login=092c919905283a6d35ff1abe2128fc52e48a6156 -Dsonar.jdbc.url=jdbc:mysql://sonar.optum.com:3306/sonar?useUnicode=true&characterEncoding=utf8
+                        // Using Miram mvn wrapper
+                        // sh '''./mvnw -U compile sonar:sonar -Dsonar.host.url="https://sonar.optum.com" -Dsonar.login="092c919905283a6d35ff1abe2128fc52e48a6156" -Dsonar.jdbc.url="jdbc:mysql://sonar.optum.com:3306/sonar?useUnicode=true&characterEncoding=utf8"'''
+                    }
+                }
+                stage ('Fortify scan')
+                {
+                    // review for upload
+                    // https://hubconnect.uhg.com/people/srao1022/blog/2018/11/13/setting-up-fortify-scans
+                    // Good info here: https://github.optum.com/BDP/project/wiki/Fortify-Scan
+                    // https://github.optum.com/gp-abstraction/eligibility-abstraction/wiki/Fortify-Jenkins-setup
+                    steps {                        
+                        echo 'Do Foritfy scan.'
+                        glFortifyScan fortifyBuildName: "${FORTIFY_BUILD_NAME}",
+                            scarProjectName: "${SCAR_PROJECT_NAME}",
+                            scarCredentialsId: "${FORTIFY_ID}",
+                            fortifyJdkVersion: '1.8',
+                            scarProjectVersion:"${SCAR_PROJECT_VERSION}",
+                            fortifyMaxSizeMemory: '-Xmx10G',
+                            onlyNewIssues: false,           // was true
+                            isGenerateDevWorkbook: false,   // was true
+                            criticalThreshold:100,
+                            highThreshold:100,
+                            sourceExclusions: 'core/target/**/*.*,ui.content/target/**/*.*',
+                            uploadToScar: "${params.UPLOADTOSCAR}",             // was false
+                            outputFormatDoc: false,
+                            outputFormatPdf: true,
+                            outputFormatHtml: false,
+                            debug: true
+                    }
+                }
+            }
+        }
+    }
+}

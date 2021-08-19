@@ -1,0 +1,55 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<jcr:root xmlns:sling="http://sling.apache.org/jcr/sling/1.0"
+  xmlns:jcr="http://www.jcp.org/jcr/1.0"
+  xmlns:nt="http://www.jcp.org/jcr/nt/1.0"
+  xmlns:granite="http://www.adobe.com/jcr/granite/1.0"
+  jcr:primaryType="nt:unstructured"
+  jcr:title="Footer Configuration"
+  sling:resourceType="cq/gui/components/authoring/dialog">
+  <content
+    jcr:primaryType="nt:unstructured"
+    sling:resourceType="granite/ui/components/coral/foundation/container">
+    <items jcr:primaryType="nt:unstructured">
+      <column
+        jcr:primaryType="nt:unstructured"
+        sling:resourceType="granite/ui/components/coral/foundation/container">
+        <layout
+          jcr:primaryType="nt:unstructured"
+          sling:resourceType="/libs/granite/ui/components/foundation/layouts/fixedcolumns"/>
+        <items jcr:primaryType="nt:unstructured">
+          <customerServicePhone
+            jcr:primaryType="nt:unstructured"
+            sling:resourceType="granite/ui/components/coral/foundation/form/textfield"
+            fieldLabel="Customer Service phone number"
+            emptyText="Type phone number, e.g. +1-000-111-2222"
+            name="./customerServicePhone"/>
+          <operationHours
+            jcr:primaryType="nt:unstructured"
+            sling:resourceType="granite/ui/components/coral/foundation/form/textfield"
+            fieldLabel="Hours of operation"
+            emptyText="Type operation hours, e.g. 8 a.m. - 6 p.m"
+            name="./operationHours"/>
+          <displayMemberSupport
+            jcr:primaryType="nt:unstructured"
+            sling:resourceType="granite/ui/components/coral/foundation/form/checkbox"
+            fieldDescription="Check to display Member Support section in the footer"
+            name="./displayMemberSupport"
+            text="Display Member Support"
+            value="true"/>
+          <projectId
+            jcr:primaryType="nt:unstructured"
+            sling:resourceType="granite/ui/components/coral/foundation/form/textfield"
+            fieldLabel="Project ID"
+            fieldDescription="Leave blank for default Project ID"
+            name="./projectId"/>
+          <assetNumber
+            jcr:primaryType="nt:unstructured"
+            sling:resourceType="granite/ui/components/coral/foundation/form/textfield"
+            fieldLabel="Asset number"
+            fieldDescription="Leave blank for default Asset number"
+            name="./assetNumber"/>
+        </items>
+      </column>
+    </items>
+  </content>
+</jcr:root>

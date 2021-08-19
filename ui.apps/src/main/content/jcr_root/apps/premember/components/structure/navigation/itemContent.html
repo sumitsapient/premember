@@ -1,0 +1,43 @@
+<!--/* Link Template */-->
+<template data-sly-template.itemLink="${@ title='The navigation item text', url='The navigation item URL', count='The plan count'}">
+    <sly data-sly-use.eventName="${'/apps/premember/components/analytics/eventName.js' @ text=title}"></sly>
+    <a
+			data-event-type="globalnav"
+			data-event-name="${eventName}"
+			href="${url}"
+			title="${title}"
+			class="c-navigation__menu-action"
+		>
+			${title}
+			<span data-sly-test="${count}">
+				(${count})
+			</span>
+		</a>
+</template>
+<!--/* Button Template */-->
+<template data-sly-template.itemButton="${@ title='The navigation item text'}">
+	<sly data-sly-use.eventName="${'/apps/premember/components/analytics/eventName.js' @ text=title}"></sly>
+	<button
+		class="c-navigation__menu-action c-button-sub-menu"
+		aria-haspopup="true"
+		aria-expanded="false"
+		aria-controls="${eventName}"
+		data-event-type="globalnav"
+		data-event-name="${eventName}"
+	>
+		${title}
+		<!--/* Chevron Icon */-->
+		<span class="o-svg-icon o-svg-icon--xl">
+			<svg
+				xmlns="http://www.w3.org/2000/svg"
+				viewBox="0 0 24 24"
+				fill="currentColor"
+				class="cmp-navigation__chevron"
+				focusable="false"
+			>
+				<path d="M0 0h24v24H0z" fill="none"/>
+				<path d="M10 6L8.59 7.41 13.17 12l-4.58 4.59L10 18l6-6z"/>
+			</svg>
+		</span>
+	</button>
+</template>

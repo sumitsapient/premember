@@ -1,0 +1,189 @@
+.plan-accordion {
+	width: 100%;
+
+	h3 {
+		margin: 0;
+	}
+
+	.plan-accordion__link {
+		border: 0;
+		display: block;
+		font-size: 14px;
+		font-weight: 700;
+		line-height: 1.5;
+		text-align: right;
+		color: unity-color('white');
+		background-color: unity-color('blue');
+		padding: 6px 52px;
+		position: relative;
+		width: 100%;
+		text-decoration: none;
+		z-index: 1;
+
+		&:focus {
+			outline: 3px solid $colors-blue-accent;
+			outline-offset: 1px;
+		}
+
+		.o-svg-icon {
+			position: absolute;
+			display: block;
+			top: 2px;
+			right: 16px;
+			bottom: 0;
+
+			svg {
+				height: 2em;
+				width: 2em;
+			}
+		}
+
+		.o-svg-icon--expand svg {
+			width: 1.75em;
+		}
+
+		.o-svg-icon--collapse {
+			display: none;
+		}
+
+		&.active {
+			.o-svg-icon--expand {
+				display: none;
+			}
+
+			.o-svg-icon--collapse {
+				display: block;
+			}
+		}
+	}
+
+	.plan-accordion__content {
+		@include unity-transition('height', 'slow');
+
+		height: 0;
+		overflow: hidden;
+
+		&.show {
+			height: auto;
+		}
+
+		.iconBlock {
+			@include mq($until: md) {
+				margin-bottom: 28px;
+			}
+
+			&:first-child {
+				@include mq(md) {
+					display: none;
+				}
+			}
+		}
+
+		.accordion-view-less {
+			background-color: transparent;
+			border: 0;
+			font-weight: 600;
+			text-decoration: none;
+			margin-bottom: 18px;
+			text-align: right;
+			float: right;
+			color: unity-color('blue');
+			margin-right: 16px;
+			padding-right: 32px;
+			position: relative;
+			width: 60%;
+
+			@include mq(md) {
+				display: none;
+			}
+
+			&:focus {
+				outline: 3px solid unity-color('blue', 'digital');
+				outline-offset: 1px;
+			}
+
+			.o-svg-icon {
+				position: absolute;
+				right: 0;
+				top: -4px;
+			}
+
+			svg {
+				width: 1.75rem;
+				height: 1.75rem;
+			}
+		}
+	}
+
+	.plan-accordion__content-wrapper {
+		margin: 0 1px;
+
+		@include mq(md) {
+			padding: 34px $g-spacing-sm;
+		}
+	}
+
+	.plan-accordion__summary,
+	.plan-accordion__description {
+		@include mq($until: md) {
+			padding: 28px $g-spacing-sm;
+		}
+	}
+
+	.plan-accordion__summary {
+		@include mq($until: md) {
+			background-color: unity-color('gray', 'light');
+		}
+
+		@include mq(md) {
+			border-right: 0.5px solid $colors-grey-border;
+		}
+
+		.c-icon-block__text {
+			margin-bottom: 6px;
+			line-height: 1.25;
+
+			&:last-child {
+				margin-bottom: 0;
+			}
+		}
+	}
+
+	.plan-accordion__description {
+		@include mq(md) {
+			padding-left: 34px;
+		}
+
+		.plan-accordion__search-links {
+			margin-bottom: $g-spacing-xs;
+
+			&:last-child ul {
+				margin-bottom: 0;
+			}
+		}
+
+		> p {
+			@include mq(md) {
+				font-size: 19px;
+				margin-bottom: $g-spacing;
+			}
+		}
+	}
+
+	.plan-accordion__search-links {
+		h3 {
+			font-size: 1rem;
+			margin-bottom: $g-spacing-xs;
+			font-weight: 700;
+			line-height: 1.17;
+
+			@include mq(md) {
+				font-size: 18px;
+			}
+		}
+
+		a {
+			padding: 0;
+		}
+	}
+}

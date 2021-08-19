@@ -1,0 +1,2 @@
+org.apache.jackrabbit.oak.plugins.index.lucene.LucenePropertyIndex This index is deprecated: /oak:index/lucene
+org.apache.sling.caconfig.resource.impl.def.DefaultConfigurationResourceResolvingStrategy Ignoring reference to /conf/premember/settings from /conf/premember/settings - Probably misconfigured as it ends with '/settings'

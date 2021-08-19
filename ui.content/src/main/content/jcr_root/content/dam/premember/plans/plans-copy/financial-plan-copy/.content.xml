@@ -1,0 +1,47 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<jcr:root xmlns:dam="http://www.day.com/dam/1.0" xmlns:cq="http://www.day.com/jcr/cq/1.0" xmlns:jcr="http://www.jcp.org/jcr/1.0" xmlns:mix="http://www.jcp.org/jcr/mix/1.0" xmlns:nt="http://www.jcp.org/jcr/nt/1.0"
+    jcr:mixinTypes="[mix:referenceable]"
+    jcr:primaryType="dam:Asset">
+    <jcr:content
+        cq:name="financial-plan-copy"
+        cq:parentPath="/content/dam/premember/plans/plans-copy"
+        jcr:description=""
+        jcr:primaryType="dam:AssetContent"
+        jcr:title="Financial Plan Copy"
+        contentFragment="{Boolean}true"
+        lastFragmentSave="{Date}2020-06-25T01:45:28.348Z">
+        <data
+            cq:model="/conf/premember/plans-copy/settings/dam/cfm/models/financial-plans-copy"
+            jcr:primaryType="nt:unstructured">
+            <master
+                jcr:mixinTypes="[cq:Taggable]"
+                jcr:primaryType="nt:unstructured"
+                accidentalProtectionDisclaimer="&lt;p>UnitedHealthcare Accident Protection product is provided by UnitedHealthcare Insurance Company. The policies have exclusions, limitations, reductions of benefits, and terms under which the policy may be continued in force or discontinued. For costs and complete details of the coverage, call or write your insurance agent or the company. Some products are not available in all states. UnitedHealthcare Insurance Company is located in Hartford, CT.&lt;/p>&#xa;"
+                beneficiaryCompanionServicesDisclaimer="&lt;p>Beneficiary Companion services are provided by Generali Global Assistance, LLC, a service provider not affiliated with UnitedHealthcare. UnitedHealthcare is not responsible or liable for care services, or advice given by the provider or vendor of these services.&lt;/p>&#xa;"
+                beneficiaryServicesDisclaimer="&lt;p>Beneficiary Services are offered through Optum. Optum is an affiliate of UnitedHealthcare.&lt;/p>&#xa;"
+                criticalIllnessDisclaimer="&lt;p>UnitedHealthcare Critical Illness product is provided by UnitedHealthcare Insurance Company. Critical Illness coverage is NOT considered “minimum essential coverage” under the Affordable Care Act and therefore does NOT satisfy the mandate to have health insurance coverage. Failure to have other health insurance coverage may be subject to a tax penalty. Please consult a tax advisor. The policies have exclusions, limitations, reductions of benefits, and terms under which the policy may be continued in force or discontinued. For costs and complete details of the coverage, call or write your insurance agent or the company. Some products are not available in all tates. UnitedHealthcare Insurance Company is located in Hartford, CT.&lt;/p>&#xa;"
+                employeeAssistanceProgramDisclaimer="&lt;p>Noninsurance services are offered only on specific lines of coverage and are not insurance. These services may be modified or terminated at any time, may not be available in all states and may vary depending on state laws and&lt;br>&#xa;regulations. Employee Assistance Program (EAP) is offered through Optum. Optum is an affiliate of UnitedHealthcare.&lt;/p>&#xa;"
+                highlightsAccidentalDeathLifeInsurance="&lt;ul>&#xa;&lt;li>This plan includes Accidental Death &amp;amp; Dismemberment (AD&amp;amp;D) coverage which pays&amp;nbsp;an additional amount in the event of loss of life or limbs sustained in an accident.&lt;/li>&#xa;&lt;/ul>&#xa;"
+                highlightsBasicLifeInsurance="&lt;ul>&#xa;&lt;li>Your employer provides you with Basic Life insurance coverage at no cost to you.&lt;/li>&#xa;&lt;/ul>&#xa;"
+                highlightsSupplementalLifeInsurance="&lt;ul>&#xa;&lt;li>You have the opportunity to buy Supplemental Life insurance coverage. Please review your&amp;nbsp;enrollment materials for details about coverage amounts available and guarantee issue amounts.&lt;/li>&#xa;&lt;/ul>&#xa;"
+                hospitalIndemnityDisclaimer="&lt;p>UnitedHealthcare Hospital Indemnity product is provided by UnitedHealthcare Insurance Company. The product provides a limited benefit for certain hospital indemnity plan benefits. Please note: HOSPITAL INDEMNITY coverage is NOT considered “minimum essential coverage” under the Affordable Care Act and therefore does NOT satisfy the mandate to have health insurance coverage. Failure to have other health insurance coverage may be subject to a tax penalty. Please consult a tax advisor. The policy has exclusions, limitations, reductions of benefits, and terms under which the policy may be continued in force or discontinued. For costs and complete details of the coverage, call or write your insurance agent or the company. This product is not available in all states. UnitedHealthcare Insurance Company is located in Hartford, CT.&lt;/p>&#xa;"
+                lifeAndDisabilityDisclaimer="&lt;p>UnitedHealthcare Life and Disability products are provided by UnitedHealthcare Insurance Company and certain products in California by Unimerica Life Insurance Company. Life and Disability products are provided on policy forms LASD-POL (05/03) et al. and UHCLD-POL 2/2008 et al., in Texas on forms LASD-POL-TX(05/03) and UHCLD-POL 2/2008-TX and in Virginia on LASD-POL(05/03) and UHCLD-POL 2/2008. The policies have exclusions, limitations, reductions of benefits, and terms under which the policy may be continued in force or discontinued. For costs and complete details of the coverage, call or write your insurance agent or the company. Some products are not available in all states. UnitedHealthcare Insurance Company is located in Hartford, CT and Unimerica Life Insurance Company is located in Milwaukee, WI.&lt;/p>&#xa;"
+                plansIconLink="/content/dam/premember/icons/ic_financial-protection.svg"
+                plansNameHeader="Financial Protection Plans"
+                showClaimAdvocateHelpBullet="&lt;ul>&#xa;&lt;li>If you have a UnitedHealthcare Health Plan, a Claim Advocate can help you submit your claim.&lt;/li>&#xa;&lt;/ul>&#xa;"
+                showClaimAdvocateHelpBulletApp="&lt;ul>&#xa;&lt;li>If you have a UnitedHealthcare Health Plan, a Claim Advocate can help you submit your claim.&lt;/li>&#xa;&lt;/ul>&#xa;"
+                showClaimAdvocateHelpBulletCip="&lt;ul>&#xa;&lt;li>If you have a UnitedHealthcare Health Plan, a Claim Advocate can help you submit your claim.&lt;/li>&#xa;&lt;/ul>&#xa;"
+                showClaimAdvocateHelpBulletHip="&lt;ul>&#xa;&lt;li>If you have a UnitedHealthcare Health Plan, a Claim Advocate can help you submit your claim.&lt;/li>&#xa;&lt;/ul>&#xa;"
+                showPortableCoverageBullet="&lt;ul>&#xa;&lt;li>Coverage is portable so, if you change jobs, you can take the plan with you.&lt;/li>&#xa;&lt;/ul>&#xa;"
+                showPortableCoverageBulletApp="&lt;ul>&#xa;&lt;li>Coverage is portable so, if you change jobs, you can take the plan with you.&lt;/li>&#xa;&lt;/ul>&#xa;"
+                showPortableCoverageBulletCip="&lt;ul>&#xa;&lt;li>Coverage is portable so, if you change jobs, you can take the plan with you.&lt;/li>&#xa;&lt;/ul>&#xa;"
+                showPortableCoverageBulletHip="&lt;ul>&#xa;&lt;li>Coverage is portable so, if you change jobs, you can take the plan with you.&lt;/li>&#xa;&lt;/ul>&#xa;"
+                willAndTrustDisclaimer="&lt;p>Will and Trust Services are offered through Optum. Optum is an affiliate of UnitedHealthcare.&lt;/p>&#xa;"
+                travelAssistanceDisclaimer="&lt;p>Travel Assistance services are provided by UnitedHealthcare Global Assistance. Beneficiary Companion is provided by Generali Global Assistance, LLC, a service provider not affiliated with UnitedHealthcare. UnitedHealthcare is not responsible or liable for care, services, or advice given by the provider or vendor of these services.&lt;/p>&#xa;"/>
+        </data>
+        <metadata
+            jcr:mixinTypes="[cq:Taggable]"
+            jcr:primaryType="nt:unstructured"/>
+        <related jcr:primaryType="nt:unstructured"/>
+    </jcr:content>
+</jcr:root>

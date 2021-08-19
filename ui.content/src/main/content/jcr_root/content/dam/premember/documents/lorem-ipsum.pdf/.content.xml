@@ -1,0 +1,33 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<jcr:root xmlns:pdf="http://ns.adobe.com/pdf/1.3/" xmlns:xmp="http://ns.adobe.com/xap/1.0/" xmlns:xmpMM="http://ns.adobe.com/xap/1.0/mm/" xmlns:dc="http://purl.org/dc/elements/1.1/" xmlns:dam="http://www.day.com/dam/1.0" xmlns:cq="http://www.day.com/jcr/cq/1.0" xmlns:jcr="http://www.jcp.org/jcr/1.0" xmlns:mix="http://www.jcp.org/jcr/mix/1.0" xmlns:nt="http://www.jcp.org/jcr/nt/1.0"
+    jcr:mixinTypes="[mix:referenceable]"
+    jcr:primaryType="dam:Asset">
+    <jcr:content
+        cq:name="lorem-ipsum.pdf"
+        cq:parentPath="/content/dam/premember/documents"
+        jcr:primaryType="dam:AssetContent">
+        <metadata
+            dam:Author="manshanden"
+            dam:numPages="{Long}1"
+            dam:Physicalheightininches="{Decimal}11.694444444444445"
+            dam:Physicalwidthininches="{Decimal}8.266944444444444"
+            dam:Producer="Acrobat Distiller 7.0.5 (Windows)"
+            dam:sha1="37c364a6bc55a7f08ec451898908ab2ba37ab804"
+            dam:size="{Long}77123"
+            dc:creator="[manshanden]"
+            dc:creator_xmpArrayType="rdf:Seq"
+            dc:format="application/pdf"
+            dc:title="Microsoft Word - Test document Word.doc"
+            jcr:mixinTypes="[cq:Taggable]"
+            jcr:primaryType="nt:unstructured"
+            jcr:title="Microsoft Word - Test document Word.doc"
+            pdf:Producer="Acrobat Distiller 7.0.5 (Windows)"
+            xmp:CreateDate="{Date}2010-03-04T13:08:00.000+01:00"
+            xmp:CreatorTool="PScript5.dll Version 5.2"
+            xmp:MetadataDate="{Date}2010-03-04T13:08:37.000+01:00"
+            xmp:ModifyDate="{Date}2010-03-04T13:08:37.000+01:00"
+            xmpMM:DocumentID="uuid:07d0f0f0-c01f-4a64-9238-797d8a52f70c"
+            xmpMM:InstanceID="uuid:854f737c-7cbb-4877-9c1d-d9cba8705599"/>
+        <related jcr:primaryType="nt:unstructured"/>
+    </jcr:content>
+</jcr:root>

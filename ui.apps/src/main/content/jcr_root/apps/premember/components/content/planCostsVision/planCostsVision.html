@@ -1,0 +1,175 @@
+<sly data-sly-use.plan="com.mirumagency.uhc.premember.core.models.PlanModel"></sly>
+<div
+  class="c-card c-card--plan-costs"
+	data-sly-use.planCostValue="../planCosts/planCostValue.html"
+  data-sly-use.templates="core/wcm/components/commons/v1/templates.html"
+>
+	<div class="c-card__body">
+		<table>
+			<caption>${plan.tokens['copy.summaryTopic4']}</caption>
+			<thead>
+			<tr>
+				<td></td>
+				<th scope="col">${plan.tokens['copy.summaryPlanCostsNetworkHeadline']}</th>
+				<th scope="col">${plan.tokens['copy.summaryPlanCostsOutOfNetworkHeadline']}</th>
+			</tr>
+			</thead>
+			<tbody>
+			<!--/* Option One */-->
+			<tr>
+				<th scope="row">
+					${plan.tokens['copy.summaryTopic4Option1']}
+					<small data-sly-test="${plan.tokens['copy.summaryTopic4Option1Info']}">
+						${plan.tokens['copy.summaryTopic4Option1Info']}
+					</small>
+				</th>
+				<!--/* Network */-->
+				<sly data-sly-call="${planCostValue.planCostValue @ value=plan.tokens['selectedOption.eyeExamsNetwork']}"></sly>
+				<!--/* Out-of-Network */-->
+				<sly data-sly-call="${planCostValue.planCostValue @ value=plan.tokens['selectedOption.eyeExamsOutOfNetwork']}"></sly>
+			</tr>
+			<tr>
+				<th scope="row">Family</th>
+				<!--/* Network */-->
+				<sly data-sly-call="${planCostValue.planCostValue @ value=plan.tokens['selectedOption.deductibleFamilyInNetwork']}"></sly>
+				<!--/* Out-of-Network */-->
+				<sly data-sly-call="${planCostValue.planCostValue @ value=plan.tokens['selectedOption.deductibleFamilyOutOfNetwork']}"></sly>
+			</tr>
+			<!--/* Option Two */-->
+			<tr>
+				<th scope="row">
+					${plan.tokens['copy.summaryTopic4Option2']}
+				</th>
+				<!--/* Network */-->
+				<sly data-sly-call="${planCostValue.planCostValue @ value=plan.tokens['selectedOption.eyeExamsNetwork']}"></sly>
+				<!--/* Out-of-Network */-->
+				<sly data-sly-call="${planCostValue.planCostValue @ value=plan.tokens['selectedOption.eyeExamsOutOfNetwork']}"></sly>
+			</tr>
+			<tr>
+				<th scope="row">Family</th>
+				<!--/* Network */-->
+				<sly data-sly-call="${planCostValue.planCostValue @ value=plan.tokens['selectedOption.materialsNetwork']}"></sly>
+				<!--/* Out-of-Network */-->
+				<sly data-sly-call="${planCostValue.planCostValue @ value=plan.tokens['selectedOption.materialsOutOfNetwork']}"></sly>
+			</tr>
+			</tbody>
+		</table>
+	</div>
+	<div
+		class="c-card__body"
+		data-sly-test="${!plan.tokens['selectedOption.suppressSummaryTopic5']}"
+		data-sly-use.copayAndAllowanceValue="copayAndAllowanceValue.html"
+	>
+		<table>
+			<caption>
+				${plan.tokens['copy.summaryTopic5']}
+			</caption>
+			<thead>
+			<tr>
+				<td></td>
+				<th scope="col">${plan.tokens['copy.summaryPlanCostsNetworkHeadline']}</th>
+				<th scope="col">${plan.tokens['copy.summaryPlanCostsOutOfNetworkHeadline']}</th>
+			</tr>
+			</thead>
+			<tbody>
+			<!--/* Option One */-->
+			<tr data-sly-test="${plan.tokens['selectedOption.summaryTopic5Option1Offered']}">
+				<th scope="row">
+					${plan.tokens['copy.summaryTopic5Option1']}
+					<small data-sly-test="${plan.tokens['copy.summaryTopic5Option1Info']}">
+						${plan.tokens['copy.summaryTopic5Option1Info']}
+					</small>
+				</th>
+				<!--/* Network */-->
+				<sly data-sly-call="${planCostValue.planCostValue @ value=plan.tokens['selectedOption.framesRetailChainNetwork']}"></sly>
+				<!--/* Out-of-Network */-->
+				<sly data-sly-call="${planCostValue.planCostValue @ value=plan.tokens['selectedOption.framesRetailChainOutOfNetwork']}"></sly>
+			</tr>
+			<!--/* Option Two */-->
+			<tr data-sly-test="${plan.tokens['selectedOption.summaryTopic5Option2Offered']}">
+				<th scope="row">
+					${plan.tokens['copy.summaryTopic5Option2']}
+					<small data-sly-test="${plan.tokens['copy.summaryTopic5Option2Info']}">
+						${plan.tokens['copy.summaryTopic5Option2Info']}
+					</small>
+				</th>
+				<!--/* Network */-->
+				<sly data-sly-call="${planCostValue.planCostValue @ value=plan.tokens['selectedOption.framesPrivatePracticeNetwork']}"></sly>
+				<!--/* Out-of-Network */-->
+				<sly data-sly-call="${planCostValue.planCostValue @ value=plan.tokens['selectedOption.framesPrivatePracticeOutOfNetwork']}"></sly>
+			</tr>
+			<!--/* Option Three */-->
+			<tr data-sly-test="${plan.tokens['selectedOption.summaryTopic5Option3Offered']}">
+				<th scope="row">
+					${plan.tokens['copy.summaryTopic5Option3']}
+				</th>
+				<!--/* Network */-->
+				<sly data-sly-call="${planCostValue.planCostValue @ value=plan.tokens['selectedOption.spectaclesLensesNetwork']}"></sly>
+				<!--/* Out-of-Network */-->
+				<sly data-sly-call="${planCostValue.planCostValue @ value=plan.tokens['selectedOption.spectaclesLensesOutOfNetwork']}"></sly>
+			</tr>
+			<!--/* Option Four */-->
+			<tr data-sly-test="${plan.tokens['selectedOption.summaryTopic5Option4Offered']}">
+				<th scope="row">
+					${plan.tokens['copy.summaryTopic5Option4']}
+				</th>
+				<!--/* Network */-->
+				<sly data-sly-call="${planCostValue.planCostValue @ value=plan.tokens['selectedOption.contactLensesNetwork']}"></sly>
+				<!--/* Out-of-Network */-->
+				<sly data-sly-call="${planCostValue.planCostValue @ value=plan.tokens['selectedOption.contactLensesOutOfNetwork']}"></sly>
+			</tr>
+			</tbody>
+		</table>
+	</div>
+	<div class="c-card__body">
+		<table>
+			<caption>
+				${plan.tokens['copy.summaryTopic6']}
+			</caption>
+			<tbody>
+			<!--/* Eye Exams */-->
+			<tr>
+				<th scope="row">
+					${plan.tokens['copy.summaryTopic6Option1']}
+					<small data-sly-test="${plan.tokens['copy.summaryTopic6Option1Info']}">
+						${plan.tokens['copy.summaryTopic6Option1Info']}
+					</small>
+				</th>
+				<td>
+					Once every ${plan.tokens['selectedOption.eyeExamsFrequency']} months
+				</td>
+			</tr>
+			<!--/* Frames Frequency */-->
+			<tr data-sly-test="${plan.tokens['selectedOption.summaryTopic6Option2Offered']}">
+				<th scope="row">
+					${plan.tokens['copy.summaryTopic6Option2']}
+				</th>
+				<td>
+					Once every ${plan.tokens['selectedOption.framesFrequency']} months
+				</td>
+			</tr>
+			<!--/* Spectacle Lenses Frequency */-->
+			<tr data-sly-test="${plan.tokens['selectedOption.summaryTopic6Option3Offered']}">
+				<th scope="row">
+					${plan.tokens['copy.summaryTopic6Option3']}
+				</th>
+				<td>
+					Once every ${plan.tokens['selectedOption.spectaclesLensesFrequency']} months
+				</td>
+			</tr>
+			<!--/* Contact Lenses Frequency */-->
+			<tr data-sly-test="${plan.tokens['selectedOption.summaryTopic6Option4Offered']}">
+				<th scope="row">
+					${plan.tokens['copy.summaryTopic6Option4']}
+					<small data-sly-test="${plan.tokens['copy.summaryTopic6Option4Info']}">
+						${plan.tokens['copy.summaryTopic6Option4Info']}
+					</small>
+				</th>
+				<td>
+					Once every ${plan.tokens['selectedOption.contactLensesFrequency']} months
+				</td>
+			</tr>
+			</tbody>
+		</table>
+	</div>
+</div>

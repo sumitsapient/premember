@@ -1,0 +1,37 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<jcr:root xmlns:cq="http://www.day.com/jcr/cq/1.0" xmlns:jcr="http://www.jcp.org/jcr/1.0" xmlns:nt="http://www.jcp.org/jcr/nt/1.0" xmlns:sling="http://sling.apache.org/jcr/sling/1.0"
+    jcr:primaryType="nt:unstructured"
+    title="Lorem Ipsum"
+    backgroundColor="white"
+    titleStyle="h2"
+    imageAlignment="top"
+    hideIcon="{Boolean}true"
+    hideImage="{Boolean}true"
+    centerContent="{Boolean}false"
+    leftAlignImage="{Boolean}false">
+        <image
+            jcr:primaryType="nt:unstructured"
+            sling:resourceType="premember/components/content/image"/>
+        <icon
+            jcr:primaryType="nt:unstructured"
+            sling:resourceType="premember/components/content/icon"/>
+        <bodyPar
+            jcr:primaryType="nt:unstructured"
+            sling:resourceType="wcm/foundation/components/parsys">
+                <text
+                    jcr:primaryType="nt:unstructured"
+                    sling:resourceType="premember/components/content/text"
+                    text="&lt;p&gt;Lorem ipsum dolor sit amet.&lt;/p&gt;&#xa;"
+                    textIsRich="true"/>
+        </bodyPar>
+        <footerPar
+            jcr:primaryType="nt:unstructured"
+            sling:resourceType="wcm/foundation/components/parsys">
+                <button
+                    jcr:primaryType="nt:unstructured"
+                    sling:resourceType="premember/components/content/button"
+                    text="Primary"
+                    naked="{Boolean}true"
+                />
+        </footerPar>
+</jcr:root>

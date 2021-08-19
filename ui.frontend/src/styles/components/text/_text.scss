@@ -1,0 +1,54 @@
+@import "disclaimer";
+@import "hyperlink";
+@import "listStyles";
+
+.cmp-text,
+.aem-component-rte {
+	.aem-component-rte--clear-vert-margins & {
+		:first-child {
+			margin-top: 0;
+		}
+
+		:last-child {
+			margin-bottom: 0;
+		}
+	}
+
+	ul,
+	ol,
+	p {
+		margin: 0 0 $g-spacing-sm;
+	}
+
+	ul,
+	ol {
+		padding-left: $g-spacing;
+
+		li {
+			padding: 0 0 $g-spacing-xs 0;
+
+			small,
+			sub {
+				bottom: 0;
+				display: block;
+				font-size: 0.75em;
+				line-height: 16px;
+			}
+		}
+	}
+
+	ol {
+		list-style-position: inside;
+		padding-left: 0;
+	}
+
+	small {
+		display: inline-block;
+		font-size: 0.8125em;
+		line-height: 16px;
+	}
+
+	sub {
+		font-size: 0.8125em;
+	}
+}

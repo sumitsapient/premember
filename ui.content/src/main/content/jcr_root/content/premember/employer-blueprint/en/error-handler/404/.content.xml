@@ -1,0 +1,73 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<jcr:root xmlns:sling="http://sling.apache.org/jcr/sling/1.0" xmlns:cq="http://www.day.com/jcr/cq/1.0" xmlns:jcr="http://www.jcp.org/jcr/1.0" xmlns:nt="http://www.jcp.org/jcr/nt/1.0"
+    jcr:primaryType="cq:Page">
+    <jcr:content
+        cq:template="/conf/premember/settings/wcm/templates/content-page-template"
+        jcr:primaryType="cq:PageContent"
+        jcr:title="404"
+        sling:resourceType="premember/components/structure/page"
+        pageCategory="error_404"
+        pageName="error_404">
+        <root
+            jcr:primaryType="nt:unstructured"
+            sling:resourceType="wcm/foundation/components/responsivegrid">
+            <responsivegrid
+                jcr:primaryType="nt:unstructured"
+                sling:resourceType="wcm/foundation/components/responsivegrid">
+                <container
+                    jcr:primaryType="nt:unstructured"
+                    sling:resourceType="premember/components/structure/layout/container">
+                    <grid
+                        jcr:primaryType="nt:unstructured"
+                        sling:resourceType="premember/components/structure/layout/grid">
+                        <column
+                            jcr:primaryType="nt:unstructured"
+                            sling:resourceType="premember/components/structure/layout/column"/>
+                    </grid>
+                </container>
+                <container_1122743168
+                    jcr:primaryType="nt:unstructured"
+                    sling:resourceType="premember/components/structure/layout/container">
+                    <grid
+                        jcr:primaryType="nt:unstructured"
+                        sling:resourceType="premember/components/structure/layout/grid">
+                        <column
+                            jcr:primaryType="nt:unstructured"
+                            sling:resourceType="premember/components/structure/layout/column">
+                            <text_1890924500
+                                jcr:primaryType="nt:unstructured"
+                                sling:resourceType="premember/components/content/text"
+                                text="&lt;p>&lt;span class=&quot;unity-type-h1&quot;>&lt;b>Page Not Found&lt;/b>&lt;/span>&lt;/p>&#xd;&#xa;"
+                                textIsRich="true"/>
+                            <text
+                                jcr:primaryType="nt:unstructured"
+                                sling:resourceType="premember/components/content/text"
+                                text="&lt;p>&lt;span class=&quot;unity-type-h3&quot;>&lt;span class=&quot;unity-type-h4&quot;>We're sorry. The page you are looking for cannot be found.&lt;/span>&lt;/span>&lt;span class=&quot;unity-type-h4&quot;>&lt;/span>&lt;/p>&#xd;&#xa;"
+                                textIsRich="true"/>
+                            <button
+                                jcr:primaryType="nt:unstructured"
+																jcr:mixinTypes="[cq:LiveRelationship]"
+                                sling:resourceType="premember/components/content/button"
+                                fullWidth="false"
+                                fullWidthMobile="false"
+                                hiddenText="button"
+                                href="/content/premember/employers/{employerData.employerShortName}/en/home.html"
+                                inverse="false"
+                                naked="false"
+                                newTab="false"
+                                siteExitModalTrigger="false"
+                                text="Return to the Home Page"
+                                type="c-button--primary"/>
+                        </column>
+                    </grid>
+                </container_1122743168>
+            </responsivegrid>
+            <siteexitmodal
+                jcr:primaryType="nt:unstructured"
+                sling:resourceType="premember/components/content/siteExitModal"
+                buttonText="Continue"
+                includeCancelButton="true"
+                titleText="You're leaving the site."/>
+        </root>
+    </jcr:content>
+</jcr:root>

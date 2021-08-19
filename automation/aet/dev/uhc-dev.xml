@@ -1,0 +1,397 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<!DOCTYPE variables [
+	<!ENTITY selectPlansForCompareTable "
+        const compareTableDropdowns = document.querySelectorAll('.compare-table__headers select');
+        var changeEvent = document.createEvent('HTMLEvents');
+        changeEvent.initEvent('change', true, true);
+
+        for (var i = 0; i &lt; compareTableDropdowns.length; i++) {
+            compareTableDropdowns[i].selectedIndex = 1;
+            compareTableDropdowns[i].dispatchEvent(changeEvent);
+        }
+    ">
+]>
+
+<suite name="uhc-dev" company="cognifide" project="uhc">
+
+    <test name="uhc-component-library" useProxy="rest">
+
+        <collect>
+            <open/>
+            <resolution width="1440" />
+            <wait-for-image-completion css="img" timeout="10000"/>
+            <sleep duration="1000" />
+            <screen name="uhc-desktop-1440" />
+            <resolution width="1008" />
+            <wait-for-image-completion css="img" timeout="10000"/>
+            <sleep duration="1000" />
+            <screen name="uhc-tablet-1008" />
+            <resolution width="760" />
+            <sleep duration="1000" />
+            <screen name="uhc-tablet-760" />
+            <resolution width="375" />
+            <sleep duration="1000" />
+            <screen name="uhc-mobile-375" />
+            <status-codes/>
+            <js-errors/>
+            <accessibility standard="WCAG2AA"/>
+        </collect>
+
+        <compare>
+            <screen comparator="layout" fuzz="10" percentageThreshold ="1"/>
+            <status-codes filterRange="400,600" />
+            <source />
+            <js-errors />
+        </compare>
+
+        <urls>
+            <url href="/content/premember/component-demos/text-component.html" name="uhc-component-text"/>
+            <url href="/content/premember/component-demos/icon-component.html" name="uhc-component-icon"/>
+            <url href="/content/premember/component-demos/button-component.html" name="uhc-component-button"/>
+            <url href="/content/premember/component-demos/grid-component.html" name="uhc-component-grid"/>
+            <url href="/content/premember/component-demos/header-component.html" name="uhc-component-header"/>
+            <url href="/content/premember/component-demos/footer-component.html" name="uhc-component-footer"/>
+            <url href="/content/premember/component-demos/icon-block-component.html" name="uhc-component-icon-block"/>
+            <url href="/content/premember/component-demos/card-component.html" name="uhc-component-card"/>
+            <url href="/content/premember/component-demos/anchor-nav-component.html" name="uhc-component-anchor-nav"/>
+            <url href="/content/premember/component-demos/hero-component.html" name="uhc-component-hero"/>
+            <url href="/content/premember/component-demos/tabbed-content-component.html" name="uhc-component-tabbed-content"/>
+            <url href="/content/premember/component-demos/accordion-component.html" name="uhc-component-accordion"/>
+        </urls>
+    </test>
+
+    <test name="uhc-component-exit-site-modal" useProxy="rest">
+
+        <collect>
+            <open/>
+            <resolution width="1440" />
+            <wait-for-element-to-be-visible xpath="//a[contains(text(),'Button w/ Link (triggers site exit modal)')]" timeout="3000"/>
+            <scroll xpath="//a[contains(text(),'Button w/ Link (triggers site exit modal)')]" />
+            <click xpath="//a[contains(text(),'Button w/ Link (triggers site exit modal)')]" />
+            <hide css="div.anchorNavigation" />
+            <hide css="div.o-aem-container" />
+            <hide css="div.separator" />
+            <hide css="div.responsivegrid.aem-GridColumn--default--12" />
+            <sleep duration="500" />
+            <screen name="uhc-desktop-1440" />
+            <resolution width="1008" />
+            <screen name="uhc-tablet-1008" />
+            <resolution width="760" />
+            <screen name="uhc-tablet-760" />
+            <resolution width="375" />
+            <screen name="uhc-mobile-375" />
+            <status-codes/>
+            <js-errors/>
+            <accessibility standard="WCAG2AA"/>
+        </collect>
+
+        <compare>
+            <screen comparator="layout" />
+            <status-codes filterRange="400,600" />
+            <source />
+            <js-errors />
+        </compare>
+
+        <urls>
+            <url href="/content/premember/component-demos/button-component.html" name="exit-site-modal"/>
+        </urls>
+    </test>
+
+    <test name="uhc-component-header-your-plan-options-submenu" useProxy="rest">
+
+        <collect>
+            <open/>
+            <resolution width="1440" />
+            <wait-for-element-to-be-visible xpath="//button[contains(text(),'Your Plan Options')]" timeout="2000"/>
+            <scroll xpath="//button[contains(text(),'Your Plan Options')]" />
+            <click xpath="//button[contains(text(),'Your Plan Options')]" />
+            <sleep duration="500" />
+            <screen name="uhc-desktop-1440" />
+            <resolution width="1008" />
+            <sleep duration="500" />
+            <screen name="uhc-tablet-1008" />
+            <resolution width="760" />
+            <sleep duration="500" />
+            <screen name="uhc-tablet-760" />
+            <resolution width="375" />
+            <sleep duration="500" />
+            <screen name="uhc-mobile-375" />
+            <status-codes/>
+            <js-errors/>
+            <accessibility standard="WCAG2AA"/>
+        </collect>
+
+        <compare>
+            <screen comparator="layout" fuzz="10"/>
+            <status-codes filterRange="400,600" />
+            <source />
+            <js-errors />
+        </compare>
+
+        <urls>
+            <url href="/content/premember/employers/demo/basic-employer/en/home.html" name="your-plan-options-submenu"/>
+			<url href="/content/premember/employers/demo/corner-case-employer/en/home.html" name="your-plan-options-submenu-corner-case"/>
+        </urls>
+
+    </test>
+
+    <test name="uhc-component-tabbed-content-switch-tabs" useProxy="rest">
+
+        <collect>
+            <open/>
+            <resolution width="1440" />
+            <wait-for-element-to-be-visible xpath="//li[contains(text(),'Tab 2')]" timeout="2000"/>
+            <scroll xpath="//li[contains(text(),'Tab 2')]" />
+            <click xpath="//li[contains(text(),'Tab 2')]" />
+            <sleep duration="500" />
+            <screen name="uhc-desktop-1440" />
+            <resolution width="1008" />
+            <sleep duration="500" />
+            <screen name="uhc-tablet-1008" />
+            <resolution width="760" />
+            <sleep duration="500" />
+            <screen name="uhc-tablet-760" />
+            <resolution width="375" />
+            <sleep duration="500" />
+            <screen name="uhc-mobile-375" />
+            <status-codes/>
+            <js-errors/>
+            <accessibility standard="WCAG2AA"/>
+        </collect>
+
+        <compare>
+            <screen comparator="layout" fuzz="10"/>
+            <status-codes filterRange="400,600" />
+            <source />
+            <js-errors />
+        </compare>
+
+        <urls>
+            <url href="/content/premember/component-demos/tabbed-content-component.html" name="switch-tabs"/>
+        </urls>
+
+    </test>
+
+    <test name="uhc-component-accordion-open-collapse" useProxy="rest">
+
+        <collect>
+            <open/>
+            <hide css="img" />
+            <resolution width="1440" />
+            <wait-for-element-to-be-visible css="h3.accordion-title" timeout="2000"/>
+            <scroll css="h3.accordion-title" />
+            <click css="h3.accordion-title" />
+            <sleep duration="2000" />
+            <screen name="uhc-desktop-1440-open" />
+            <resolution width="1008" />
+            <sleep duration="500" />
+            <screen name="uhc-tablet-1008-open" />
+            <resolution width="760" />
+            <sleep duration="500" />
+            <screen name="uhc-tablet-760-open" />
+            <resolution width="375" />
+            <sleep duration="500" />
+            <screen name="uhc-mobile-375-open" />
+
+            <resolution width="1440" />
+            <scroll css="h3.accordion-title" />
+            <click css="h3.accordion-title" />
+            <sleep duration="500" />
+            <screen name="uhc-desktop-1440-collapse" />
+            <resolution width="1008" />
+            <sleep duration="500" />
+            <screen name="uhc-tablet-1008-collapse" />
+            <resolution width="760" />
+            <sleep duration="500" />
+            <screen name="uhc-tablet-760-collapse" />
+            <resolution width="375" />
+            <sleep duration="500" />
+            <screen name="uhc-mobile-375-collapse" />
+
+            <status-codes/>
+            <js-errors/>
+            <accessibility standard="WCAG2AA"/>
+        </collect>
+
+        <compare>
+            <screen comparator="layout"/>
+            <status-codes filterRange="400,600" />
+            <source />
+            <js-errors />
+        </compare>
+
+        <urls>
+            <url href="/content/premember/component-demos/accordion-component.html" name="open-collapse-accordion"/>
+        </urls>
+
+    </test>
+
+    <test name="uhc-component-video-as-tabbed-content" useProxy="rest">
+
+        <collect>
+            <open/>
+            <resolution width="1440" />
+            <wait-for-image-completion css="img.cmp-image__image" timeout="10000"/>
+            <click xpath="//li[@data-event-name='health_care_101']" />
+            <sleep duration="3000" />
+			<scroll position="top"/>
+            <resolution width="1440" />
+            <sleep duration="500" />
+            <screen name="uhc-desktop-1440" />
+            <resolution width="1008" />
+            <sleep duration="500" />
+            <screen name="uhc-tablet-1008" />
+            <resolution width="760" />
+            <sleep duration="500" />
+            <screen name="uhc-tablet-760" />
+            <resolution width="375" />
+            <sleep duration="500" />
+            <screen name="uhc-mobile-375" />
+
+            <status-codes/>
+            <js-errors/>
+            <accessibility standard="WCAG2AA"/>
+        </collect>
+
+        <compare>
+            <screen comparator="layout"/>
+            <status-codes filterRange="400,600" />
+            <source />
+            <js-errors>
+                <js-errors-filter sourcePattern="^.*brightcove.*" />
+            </js-errors>
+        </compare>
+
+        <urls>
+            <url href="/content/premember/employers/demo/basic-employer/en/home/benefits.html" name="video-as-tabbed-content"/>
+        </urls>
+
+    </test>
+
+    <test name="uhc-employer-demo" useProxy="rest">
+
+        <collect>
+            <open/>
+            <resolution width="1440" />
+            <wait-for-image-completion css="img.cmp-image__image" timeout="10000"/>
+			<scroll position="top"/>
+            <screen name="uhc-desktop-1440" />
+            <resolution width="1008" />
+            <sleep duration="1000" />
+            <screen name="uhc-tablet-1008" />
+            <resolution width="760" />
+            <sleep duration="1000" />
+            <screen name="uhc-tablet-760" />
+            <resolution width="375" />
+            <sleep duration="1000" />
+            <screen name="uhc-mobile-375" />
+            <status-codes/>
+            <js-errors/>
+            <accessibility standard="WCAG2AA"/>
+        </collect>
+
+        <compare>
+            <screen comparator="layout" fuzz="10" percentageThreshold ="1"/>
+            <status-codes filterRange="400,600" />
+            <source />
+            <js-errors />
+        </compare>
+
+        <urls>
+            <url href="/content/premember/employers/demo/basic-employer/en/home.html" name="basic-homepage"/>
+			<url href="/content/premember/employers/demo/basic-employer/en/home/health-plans.html" name="basic-health"/>
+			<url href="/content/premember/employers/demo/basic-employer/en/home/health-plans/plan-details.catalyst_836290857.html" name="basic-health-details"/>
+			<url href="/content/premember/employers/demo/basic-employer/en/home/health-plans/plan-details.charter-balanced_836290857.html" name="basic-health-details-charter-balanced"/>
+			<url href="/content/premember/employers/demo/basic-employer/en/home/dental-plans.html" name="basic-dental"/>
+            <url href="/content/premember/employers/demo/basic-employer/en/home/dental-plans/plan-details.dental-ppo_836290857.html" name="basic-dental-details"/>
+            <url href="/content/premember/employers/demo/basic-employer/en/home/dental-plans/plan-details.dental-ino_836290857.html" name="basic-dental-ino-details"/>
+			<url href="/content/premember/employers/demo/basic-employer/en/home/vision-plans.html" name="basic-vision"/>
+            <url href="/content/premember/employers/demo/basic-employer/en/home/vision-plans/plan-details.standard_836290857.html" name="basic-vision-details"/>
+			<url href="/content/premember/employers/demo/basic-employer/en/home/vision-plans/plan-details.enhanced_836290857.html" name="basic-vision-details-enhanced"/>
+			<url href="/content/premember/employers/demo/basic-employer/en/home/financial-plans.html" name="basic-financial"/>
+            <url href="/content/premember/employers/demo/basic-employer/en/home/fsa-plans.html" name="basic-fsa"/>
+			<url href="/content/premember/employers/demo/basic-employer/en/home/pharmacy-plans.html" name="basic-pharmacy"/>
+			<url href="/content/premember/employers/demo/basic-employer/en/home/search-for-a-prescription.html" name="basic-prescription"/>
+			<url href="/content/premember/employers/demo/basic-employer/en/home/search-for-a-provider.html" name="basic-provider"/>
+            <url href="/content/premember/employers/demo/basic-employer/en/home/sitemap.html" name="basic-sitemap"/>
+        </urls>
+    </test>
+
+	<test name="uhc-corner-case-employer-demo" useProxy="rest">
+
+        <collect>
+            <open/>
+            <resolution width="1440" />
+            <wait-for-image-completion css="img.cmp-image__image" timeout="10000"/>
+			<scroll position="top"/>
+            <screen name="uhc-desktop-1440" />
+            <resolution width="1008" />
+            <sleep duration="1000" />
+            <screen name="uhc-tablet-1008" />
+            <resolution width="760" />
+            <sleep duration="1000" />
+            <screen name="uhc-tablet-760" />
+            <resolution width="375" />
+            <sleep duration="1000" />
+            <screen name="uhc-mobile-375" />
+            <status-codes/>
+            <js-errors/>
+            <accessibility standard="WCAG2AA"/>
+        </collect>
+
+        <compare>
+            <screen comparator="layout" fuzz="10" percentageThreshold ="1"/>
+            <status-codes filterRange="400,600" />
+            <source />
+            <js-errors />
+        </compare>
+
+        <urls>
+            <url href="/content/premember/employers/demo/corner-case-employer/en/home.html" name="corner-case-homepage"/>
+			<url href="/content/premember/employers/demo/corner-case-employer/en/home/health-plans.html" name="corner-case-health"/>
+			<url href="/content/premember/employers/demo/corner-case-employer/en/home/dental-plans.html" name="corner-case-dental"/>
+			<url href="/content/premember/employers/demo/corner-case-employer/en/home/vision-plans.html" name="corner-case-vision"/>
+			<url href="/content/premember/employers/demo/corner-case-employer/en/home/search-for-a-provider.html" name="corner-case-provider"/>
+            <url href="/content/premember/employers/demo/corner-case-employer/en/home/sitemap.html" name="corner-case-sitemap"/>
+        </urls>
+    </test>
+
+    <test name="uhc-comparison-page" useProxy="rest">
+
+        <collect>
+			<open/>
+			<wait-for-page-loaded/>
+            <executejavascript cmd="&selectPlansForCompareTable;"/>
+            <resolution width="1440" />
+			<scroll position="top"/>
+            <screen name="uhc-desktop-1440" />
+            <resolution width="1008" />
+            <sleep duration="1000" />
+            <screen name="uhc-tablet-1008" />
+            <resolution width="760" />
+            <sleep duration="1000" />
+            <screen name="uhc-tablet-760" />
+            <resolution width="375" />
+            <sleep duration="1000" />
+            <executejavascript cmd="&selectPlansForCompareTable;"/>
+			<sleep duration="1000" />
+            <screen name="uhc-mobile-375" />
+            <status-codes/>
+            <js-errors/>
+            <accessibility standard="WCAG2AA"/>
+        </collect>
+
+        <compare>
+            <screen comparator="layout" fuzz="10" percentageThreshold ="1"/>
+            <status-codes filterRange="400,600" />
+            <source />
+            <js-errors />
+        </compare>
+
+        <urls>
+            <url href="/content/premember/employers/demo/basic-employer/en/home/health-plans/comparison-table.html" name="basic-health-compare-table"/>
+            <url href="/content/premember/employers/demo/basic-employer/en/home/dental-plans/comparison-table.html" name="basic-dental-compare-table"/>
+            <url href="/content/premember/employers/demo/basic-employer/en/home/vision-plans/comparison-table.html" name="basic-vision-compare-table"/>
+        </urls>
+    </test>
+</suite>

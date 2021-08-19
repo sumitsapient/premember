@@ -1,0 +1,42 @@
+<div data-sly-use.summary="com.mirumagency.uhc.premember.core.models.federal.PlanBenefitsSummary">
+	<div class="c-card u-bg-gray" style="box-shadow: none;">
+		<div class="c-card__header u-text-center u-m-b"
+			data-sly-test="${properties.title}">
+			<!-- Title -->
+			<h3 data-sly-use.heading="com.mirumagency.uhc.premember.core.models.federal.HeadingConfig"
+				data-sly-element="${heading.titleTypeSize}"
+				data-sly-set.headingClass="${'unity-type-{0}' @ format=[heading.titleSizeStyle]}"
+				class="${['c-card__title', heading.titleSizeStyle ? headingClass : ''] @ join=' '}">
+				${properties.title}
+			</h3>
+		</div>
+		<div class="c-card__body" data-sly-test="${!properties.titleOnly}">
+			<div class="o-grid u-f-justify-center">
+				<!-- Icon Block 1 -->
+				<div class="o-grid__item-12${properties.displayInline ? ' o-grid__item-6@sm o-grid__item-3@lg' : ''}" data-sly-test="${wcmmode.edit || summary.showBenefit1}">
+					<sly data-sly-resource="${'iconBlock1' @ resourceType='premember/components/content/iconBlock'}"></sly>
+				</div>
+				<!-- Icon Block 2 -->
+				<div class="o-grid__item-12${properties.displayInline ? ' o-grid__item-6@sm o-grid__item-3@lg' : ''}" data-sly-test="${wcmmode.edit || summary.showBenefit2}">
+					<sly data-sly-resource="${'iconBlock2' @ resourceType='premember/components/content/iconBlock'}"></sly>
+				</div>
+				<!-- Icon Block 3 -->
+				<div class="o-grid__item-12${properties.displayInline ? ' o-grid__item-6@sm o-grid__item-3@lg' : ''}" data-sly-test="${wcmmode.edit || summary.showBenefit3}">
+					<sly data-sly-resource="${'iconBlock3' @ resourceType='premember/components/content/iconBlock'}"></sly>
+				</div>
+				<!-- Icon Block 4 -->
+				<div class="o-grid__item-12${properties.displayInline ? ' o-grid__item-6@sm o-grid__item-3@lg' : ''}" data-sly-test="${wcmmode.edit || summary.showBenefit4}">
+					<sly data-sly-resource="${'iconBlock4' @ resourceType='premember/components/content/iconBlock'}"></sly>
+				</div>
+				<!-- Icon Block 5 -->
+				<div class="o-grid__item-12${properties.displayInline ? ' o-grid__item-6@sm o-grid__item-3@lg' : ''}" data-sly-test="${wcmmode.edit || summary.showBenefit5}">
+					<sly data-sly-resource="${'iconBlock5' @ resourceType='premember/components/content/iconBlock'}"></sly>
+				</div>
+				<!-- Icon Block 6 -->
+				<div class="o-grid__item-12${properties.displayInline ? ' o-grid__item-6@sm o-grid__item-3@lg' : ''}" data-sly-test="${wcmmode.edit || summary.showBenefit6}">
+					<sly data-sly-resource="${'iconBlock6' @ resourceType='premember/components/content/iconBlock'}"></sly>
+				</div>
+			</div>
+		</div>
+	</div>
+</div>

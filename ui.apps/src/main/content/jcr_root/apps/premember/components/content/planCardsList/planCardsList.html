@@ -1,0 +1,6 @@
+<sly data-sly-use.model="com.mirumagency.uhc.premember.core.models.PlanModel"
+     data-sly-use.employerData="com.mirumagency.uhc.premember.core.models.EmployerData">
+    <div id="plan-cards-list" data-generic="${employerData.showGenericSite}" data-plan="${model.planAsJson}"  data-sly-use.templates="core/wcm/components/commons/v1/templates.html">
+        <p data-sly-test="${wcmmode.edit}">Plan Cards List Component</p>
+    </div>
+</sly>

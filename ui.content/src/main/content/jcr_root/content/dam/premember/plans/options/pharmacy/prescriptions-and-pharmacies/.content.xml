@@ -1,0 +1,26 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<jcr:root xmlns:dam="http://www.day.com/dam/1.0" xmlns:cq="http://www.day.com/jcr/cq/1.0" xmlns:jcr="http://www.jcp.org/jcr/1.0" xmlns:mix="http://www.jcp.org/jcr/mix/1.0" xmlns:nt="http://www.jcp.org/jcr/nt/1.0"
+    jcr:mixinTypes="[mix:referenceable]"
+    jcr:primaryType="dam:Asset">
+    <jcr:content
+        cq:name="prescriptions-and-pharmacies"
+        cq:parentPath="/content/dam/premember/plans/options/pharmacy"
+        jcr:description=""
+        jcr:primaryType="dam:AssetContent"
+        jcr:title="Prescriptions and Pharmacies"
+        contentFragment="{Boolean}true"
+        lastFragmentSave="{Date}2020-06-24T15:57:54.156Z">
+        <data
+            cq:model="/conf/premember/pharmacy-option/settings/dam/cfm/models/pharmacy-plan-option"
+            jcr:primaryType="nt:unstructured">
+            <master
+                jcr:mixinTypes="[cq:Taggable]"
+                jcr:primaryType="nt:unstructured"
+                planName="Prescriptions and Pharmacies"/>
+        </data>
+        <metadata
+            jcr:mixinTypes="[cq:Taggable]"
+            jcr:primaryType="nt:unstructured"/>
+        <related jcr:primaryType="nt:unstructured"/>
+    </jcr:content>
+</jcr:root>

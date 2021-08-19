@@ -1,0 +1,1186 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<jcr:root xmlns:sling="http://sling.apache.org/jcr/sling/1.0"
+  xmlns:jcr="http://www.jcp.org/jcr/1.0"
+  xmlns:nt="http://www.jcp.org/jcr/nt/1.0"
+  xmlns:granite="http://www.adobe.com/jcr/granite/1.0"
+  jcr:primaryType="nt:unstructured"
+  jcr:title="Dental Plan Option"
+  sling:resourceType="cq/gui/components/authoring/dialog"
+  extraClientlibs="[premember.components.configuration.employerPlans.dialog]">
+  <content
+    jcr:primaryType="nt:unstructured"
+    sling:resourceType="granite/ui/components/coral/foundation/container"
+    granite:class="cmp-contentfragment__editor">
+    <granite:data
+      jcr:primaryType="nt:unstructured"
+      component-path="${requestPathInfo.suffix}"/>
+    <items jcr:primaryType="nt:unstructured">
+      <tabs jcr:primaryType="nt:unstructured"
+        sling:resourceType="granite/ui/components/coral/foundation/tabs"
+        maximized="{Boolean}true">
+        <items jcr:primaryType="nt:unstructured">
+          <general jcr:primaryType="nt:unstructured"
+            jcr:title="General"
+            sling:resourceType="granite/ui/components/coral/foundation/container"
+            granite:class="generalEmployerPlanTab"
+            margin="{Boolean}true">
+            <items jcr:primaryType="nt:unstructured">
+              <fragmentPath
+                jcr:primaryType="nt:unstructured"
+                sling:resourceType="granite/ui/components/coral/foundation/form/pathfield"
+                name="./fragmentPath"
+                fieldDescription="Path to the Content Fragment with employer plan."
+                fieldLabel="Content Fragment"
+                emptyText="Enter or select Content Fragment with employer plan"
+                pickerTitle="Select Content Fragment"
+                forceSelection="{Boolean}true"
+                rootPath="/content/dam/premember/plans/options/dental"/>
+              <variationName
+                jcr:primaryType="nt:unstructured"
+                sling:resourceType="granite/ui/components/coral/foundation/form/select"
+                name="./variationName"
+                fieldLabel="Variation"
+                fieldDescription="Specify which variation to display">
+                <datasource
+                  jcr:primaryType="nt:unstructured"
+                  sling:resourceType="core/wcm/components/contentfragment/v1/datasource/variations"
+                  componentPath="${requestPathInfo.suffix}"
+                  fragmentPath="${param.fragmentPath}"/>
+                <granite:data
+                  jcr:primaryType="nt:unstructured"
+                  field-path="${requestPathInfo.resourcePath}"/>
+              </variationName>
+              <fullBenefitsLink
+                jcr:primaryType="nt:unstructured"
+                sling:resourceType="granite/ui/components/coral/foundation/form/pathfield"
+                fieldLabel="Full Benefits Link"
+                name="./fullBenefitsLink"
+                rootPath="/content/dam/premember/documents/dental-plan-benefits-pdf"/>
+            </items>
+          </general>
+          <dentalPrograms jcr:primaryType="nt:unstructured"
+            jcr:title="Dental Programs"
+            sling:resourceType="granite/ui/components/coral/foundation/container"
+            margin="{Boolean}true">
+            <items jcr:primaryType="nt:unstructured">
+              <showProgramsSection
+                jcr:primaryType="nt:unstructured"
+                sling:resourceType="granite/ui/components/coral/foundation/form/checkbox"
+                fieldDescription="Please select this (additionally to selecting any program) if programs section should be visible"
+                name="./showProgramsSection"
+                text="Show programs section?"
+                value="true"
+                checked="false"
+                uncheckedValue="false"/>
+              <smileDirectClub
+                jcr:primaryType="nt:unstructured"
+                sling:resourceType="granite/ui/components/coral/foundation/form/checkbox"
+                name="./showProgramsTopic1"
+                text="SmileDirectClub"
+                value="true"
+                checked="false"
+                uncheckedValue="false"
+                granite:class="show-programs-topic-showhide"/>
+              <consumerMaxMultiplierProgram
+                jcr:primaryType="nt:unstructured"
+                sling:resourceType="granite/ui/components/coral/foundation/form/checkbox"
+                name="./showProgramsTopic3"
+                text="Consumer MaxMultiplier Program"
+                value="true"
+                checked="false"
+                uncheckedValue="false"
+                granite:class="show-programs-topic-showhide"/>
+              <dentalFlexAppealEnhancedProgram
+                jcr:primaryType="nt:unstructured"
+                sling:resourceType="granite/ui/components/coral/foundation/form/checkbox"
+                name="./showProgramsTopic2"
+                text="Dental FlexAppeal Enhanced Program"
+                value="true"
+                checked="false"
+                uncheckedValue="false"
+                granite:class="show-programs-topic-showhide"/>
+              <stepupPreventive
+                jcr:primaryType="nt:unstructured"
+                sling:resourceType="granite/ui/components/coral/foundation/form/checkbox"
+                name="./showProgramsTopic4"
+                text="Step-up Preventive"
+                value="true"
+                checked="false"
+                uncheckedValue="false"
+                granite:class="show-programs-topic-showhide"/>
+              <preventiveCareCleaning
+                jcr:primaryType="nt:unstructured"
+                sling:resourceType="granite/ui/components/coral/foundation/form/numberfield"
+                fieldLabel="Preventive Care - Cleaning"
+                min="0"
+                metaType="number"
+                step="1"
+                typeHint="long"
+                valueType="long"
+                name="./preventiveCareCleaning"/>
+              <preventiveCareCleaningMonths
+                jcr:primaryType="nt:unstructured"
+                sling:resourceType="granite/ui/components/coral/foundation/form/numberfield"
+                fieldLabel="Preventive Care - Cleaning - months"
+                min="0"
+                metaType="number"
+                step="1"
+                typeHint="long"
+                valueType="long"
+                name="./preventiveCareCleaningMonths"/>
+            </items>
+          </dentalPrograms>
+          <planCosts jcr:primaryType="nt:unstructured"
+            jcr:title="Plan Costs"
+            sling:resourceType="granite/ui/components/coral/foundation/container"
+            margin="{Boolean}true">
+            <items jcr:primaryType="nt:unstructured">
+							<deductibleIndividualInNetwork
+								jcr:primaryType="nt:unstructured"
+								sling:resourceType="granite/ui/components/coral/foundation/well">
+								<items jcr:primaryType="nt:unstructured">
+									<heading
+										jcr:primaryType="nt:unstructured"
+										sling:resourceType="granite/ui/components/coral/foundation/heading"
+										level="5"
+										text="Deductible (Non Orthodontics) - In network - Individual"/>
+									<value
+										jcr:primaryType="nt:unstructured"
+										sling:resourceType="granite/ui/components/coral/foundation/form/numberfield"
+										fieldLabel="Value ($)"
+										min="0"
+										metaType="number"
+										step="1"
+										typeHint="long"
+										valueType="long"
+										name="./deductibleIndividualInNetwork"/>
+									<label
+										jcr:primaryType="nt:unstructured"
+										sling:resourceType="granite/ui/components/coral/foundation/form/select"
+										fieldDescription="Only displayed when no value is set"
+										fieldLabel="Label"
+										name="./deductibleIndividualInNetworkLabel">
+										<datasource
+											jcr:primaryType="nt:unstructured"
+											sling:resourceType="acs-commons/components/utilities/genericlist/datasource"
+											path="/etc/acs-commons/lists/authoring-dialogs/dental-plans-deductible-options"/>
+									</label>
+									<disclaimer
+										jcr:primaryType="nt:unstructured"
+										sling:resourceType="granite/ui/components/coral/foundation/form/textfield"
+										fieldLabel="Disclaimer"
+										name="./deductibleIndividualInNetworkDisclaimer"
+										emptyText="Ex. per individual per year"/>
+								</items>
+							</deductibleIndividualInNetwork>
+							<deductibleIndividualOutOfNetwork
+								jcr:primaryType="nt:unstructured"
+								sling:resourceType="granite/ui/components/coral/foundation/well">
+								<items jcr:primaryType="nt:unstructured">
+									<heading
+										jcr:primaryType="nt:unstructured"
+										sling:resourceType="granite/ui/components/coral/foundation/heading"
+										level="5"
+										text="Deductible (Non Orthodontics) - Out of network - Individual"/>
+									<value
+										jcr:primaryType="nt:unstructured"
+										sling:resourceType="granite/ui/components/coral/foundation/form/numberfield"
+										fieldLabel="Value ($)"
+										min="0"
+										metaType="number"
+										step="1"
+										typeHint="long"
+										valueType="long"
+										name="./deductibleIndividualOutOfNetwork"/>
+									<label
+										jcr:primaryType="nt:unstructured"
+										sling:resourceType="granite/ui/components/coral/foundation/form/select"
+										fieldDescription="Only displayed when no value is set"
+										fieldLabel="Label"
+										name="./deductibleIndividualOutOfNetworkLabel">
+										<datasource
+											jcr:primaryType="nt:unstructured"
+											sling:resourceType="acs-commons/components/utilities/genericlist/datasource"
+											path="/etc/acs-commons/lists/authoring-dialogs/dental-plans-deductible-options"/>
+									</label>
+									<disclaimer
+										jcr:primaryType="nt:unstructured"
+										sling:resourceType="granite/ui/components/coral/foundation/form/textfield"
+										fieldLabel="Disclaimer"
+										name="./deductibleIndividualOutOfNetworkDisclaimer"
+										emptyText="Ex. per individual per year"/>
+								</items>
+							</deductibleIndividualOutOfNetwork>
+							<deductibleFamilyInNetwork
+								jcr:primaryType="nt:unstructured"
+								sling:resourceType="granite/ui/components/coral/foundation/well">
+								<items jcr:primaryType="nt:unstructured">
+									<heading
+										jcr:primaryType="nt:unstructured"
+										sling:resourceType="granite/ui/components/coral/foundation/heading"
+										level="5"
+										text="Deductible (Non Orthodontics) - In network - Family"/>
+									<value
+										jcr:primaryType="nt:unstructured"
+										sling:resourceType="granite/ui/components/coral/foundation/form/numberfield"
+										fieldLabel="Value ($)"
+										min="0"
+										metaType="number"
+										step="1"
+										typeHint="long"
+										valueType="long"
+										name="./deductibleFamilyInNetwork"/>
+									<label
+										jcr:primaryType="nt:unstructured"
+										sling:resourceType="granite/ui/components/coral/foundation/form/select"
+										fieldDescription="Only displayed when no value is set"
+										fieldLabel="Empty Label"
+										name="./deductibleFamilyInNetworkLabel">
+										<datasource
+											jcr:primaryType="nt:unstructured"
+											sling:resourceType="acs-commons/components/utilities/genericlist/datasource"
+											path="/etc/acs-commons/lists/authoring-dialogs/dental-plans-deductible-options"/>
+									</label>
+									<disclaimer
+										jcr:primaryType="nt:unstructured"
+										sling:resourceType="granite/ui/components/coral/foundation/form/textfield"
+										fieldLabel="Disclaimer"
+										name="./deductibleFamilyInNetworkDisclaimer"
+										emptyText="Ex. per individual per year"/>
+								</items>
+							</deductibleFamilyInNetwork>
+							<deductibleFamilyOutOfNetwork
+								jcr:primaryType="nt:unstructured"
+								sling:resourceType="granite/ui/components/coral/foundation/well">
+								<items jcr:primaryType="nt:unstructured">
+									<heading
+										jcr:primaryType="nt:unstructured"
+										sling:resourceType="granite/ui/components/coral/foundation/heading"
+										level="5"
+										text="Deductible (Non Orthodontics) - Out of network - Family"/>
+									<value
+										jcr:primaryType="nt:unstructured"
+										sling:resourceType="granite/ui/components/coral/foundation/form/numberfield"
+										fieldLabel="Value ($)"
+										min="0"
+										metaType="number"
+										step="1"
+										typeHint="long"
+										valueType="long"
+										name="./deductibleFamilyOutOfNetwork"/>
+									<label
+										jcr:primaryType="nt:unstructured"
+										sling:resourceType="granite/ui/components/coral/foundation/form/select"
+										fieldDescription="Only displayed when no value is set"
+										fieldLabel="Empty Label"
+										name="./deductibleFamilyOutOfNetworkLabel">
+										<datasource
+											jcr:primaryType="nt:unstructured"
+											sling:resourceType="acs-commons/components/utilities/genericlist/datasource"
+											path="/etc/acs-commons/lists/authoring-dialogs/dental-plans-deductible-options"/>
+									</label>
+									<disclaimer
+										jcr:primaryType="nt:unstructured"
+										sling:resourceType="granite/ui/components/coral/foundation/form/textfield"
+										fieldLabel="Disclaimer"
+										name="./deductibleFamilyOutOfNetworkDisclaimer"
+										emptyText="Ex. per individual per year"/>
+								</items>
+							</deductibleFamilyOutOfNetwork>
+							<annualMaximumIndividualInNetwork
+								jcr:primaryType="nt:unstructured"
+								sling:resourceType="granite/ui/components/coral/foundation/well">
+								<items jcr:primaryType="nt:unstructured">
+									<heading
+										jcr:primaryType="nt:unstructured"
+										sling:resourceType="granite/ui/components/coral/foundation/heading"
+										level="5"
+										text="Annual Maximum (Non Orthodontics) - In network - Individual"/>
+									<value
+										jcr:primaryType="nt:unstructured"
+										sling:resourceType="granite/ui/components/coral/foundation/form/numberfield"
+										fieldLabel="Value ($)"
+										min="0"
+										metaType="number"
+										step="1"
+										typeHint="long"
+										valueType="long"
+										name="./annualMaximumIndividualInNetwork"/>
+									<label
+										jcr:primaryType="nt:unstructured"
+										sling:resourceType="granite/ui/components/coral/foundation/form/select"
+										fieldDescription="Only displayed when no value is set"
+										fieldLabel="Empty Label"
+										name="./annualMaximumIndividualInNetworkLabel">
+										<datasource
+											jcr:primaryType="nt:unstructured"
+											sling:resourceType="acs-commons/components/utilities/genericlist/datasource"
+											path="/etc/acs-commons/lists/authoring-dialogs/dental-plans-deductible-options"/>
+									</label>
+									<disclaimer
+										jcr:primaryType="nt:unstructured"
+										sling:resourceType="granite/ui/components/coral/foundation/form/textfield"
+										fieldLabel="Disclaimer"
+										name="./annualMaximumIndividualInNetworkDisclaimer"
+										emptyText="Ex. per individual per year"/>
+								</items>
+							</annualMaximumIndividualInNetwork>
+							<annualMaximumIndividualOutOfNetwork
+								jcr:primaryType="nt:unstructured"
+								sling:resourceType="granite/ui/components/coral/foundation/well">
+								<items jcr:primaryType="nt:unstructured">
+									<heading
+										jcr:primaryType="nt:unstructured"
+										sling:resourceType="granite/ui/components/coral/foundation/heading"
+										level="5"
+										text="Annual Maximum (Non Orthodontics) - Out of network - Individual"/>
+									<value
+										jcr:primaryType="nt:unstructured"
+										sling:resourceType="granite/ui/components/coral/foundation/form/numberfield"
+										fieldLabel="Value ($)"
+										min="0"
+										metaType="number"
+										step="1"
+										typeHint="long"
+										valueType="long"
+										name="./annualMaximumIndividualOutOfNetwork"/>
+									<label
+										jcr:primaryType="nt:unstructured"
+										sling:resourceType="granite/ui/components/coral/foundation/form/select"
+										fieldDescription="Only displayed when no value is set"
+										fieldLabel="Empty Label"
+										name="./annualMaximumIndividualOutOfNetworkLabel">
+										<datasource
+											jcr:primaryType="nt:unstructured"
+											sling:resourceType="acs-commons/components/utilities/genericlist/datasource"
+											path="/etc/acs-commons/lists/authoring-dialogs/dental-plans-deductible-options"/>
+									</label>
+									<disclaimer
+										jcr:primaryType="nt:unstructured"
+										sling:resourceType="granite/ui/components/coral/foundation/form/textfield"
+										fieldLabel="Disclaimer"
+										name="./annualMaximumIndividualOutOfNetworkDisclaimer"
+										emptyText="Ex. per individual per year"/>
+								</items>
+							</annualMaximumIndividualOutOfNetwork>
+							<annualMaximumFamilyInNetwork
+								jcr:primaryType="nt:unstructured"
+								sling:resourceType="granite/ui/components/coral/foundation/well">
+								<items jcr:primaryType="nt:unstructured">
+									<heading
+										jcr:primaryType="nt:unstructured"
+										sling:resourceType="granite/ui/components/coral/foundation/heading"
+										level="5"
+										text="Annual Maximum (Non Orthodontics) - In network - Family"/>
+									<value
+										jcr:primaryType="nt:unstructured"
+										sling:resourceType="granite/ui/components/coral/foundation/form/numberfield"
+										fieldLabel="Value ($)"
+										min="0"
+										metaType="number"
+										step="1"
+										typeHint="long"
+										valueType="long"
+										name="./annualMaximumFamilyInNetwork"/>
+									<label
+										jcr:primaryType="nt:unstructured"
+										sling:resourceType="granite/ui/components/coral/foundation/form/select"
+										fieldDescription="Only displayed when no value is set"
+										fieldLabel="Empty Label"
+										name="./annualMaximumFamilyInNetworkLabel">
+										<datasource
+											jcr:primaryType="nt:unstructured"
+											sling:resourceType="acs-commons/components/utilities/genericlist/datasource"
+											path="/etc/acs-commons/lists/authoring-dialogs/dental-plans-deductible-options"/>
+									</label>
+									<disclaimer
+										jcr:primaryType="nt:unstructured"
+										sling:resourceType="granite/ui/components/coral/foundation/form/textfield"
+										fieldLabel="Disclaimer"
+										name="./annualMaximumFamilyInNetworkDisclaimer"
+										emptyText="Ex. per individual per year"/>
+								</items>
+							</annualMaximumFamilyInNetwork>
+							<annualMaximumFamilyOutOfNetwork
+								jcr:primaryType="nt:unstructured"
+								sling:resourceType="granite/ui/components/coral/foundation/well">
+								<items jcr:primaryType="nt:unstructured">
+									<heading
+										jcr:primaryType="nt:unstructured"
+										sling:resourceType="granite/ui/components/coral/foundation/heading"
+										level="5"
+										text="Annual Maximum (Non Orthodontics) - Out of network - Family"/>
+									<value
+										jcr:primaryType="nt:unstructured"
+										sling:resourceType="granite/ui/components/coral/foundation/form/numberfield"
+										fieldLabel="Value ($)"
+										min="0"
+										metaType="number"
+										step="1"
+										typeHint="long"
+										valueType="long"
+										name="./annualMaximumFamilyOutOfNetwork"/>
+									<label
+										jcr:primaryType="nt:unstructured"
+										sling:resourceType="granite/ui/components/coral/foundation/form/select"
+										fieldDescription="Only displayed when no value is set"
+										fieldLabel="Empty Label"
+										name="./annualMaximumFamilyOutOfNetworkLabel">
+										<datasource
+											jcr:primaryType="nt:unstructured"
+											sling:resourceType="acs-commons/components/utilities/genericlist/datasource"
+											path="/etc/acs-commons/lists/authoring-dialogs/dental-plans-deductible-options"/>
+									</label>
+									<disclaimer
+										jcr:primaryType="nt:unstructured"
+										sling:resourceType="granite/ui/components/coral/foundation/form/textfield"
+										fieldLabel="Disclaimer"
+										name="./annualMaximumFamilyOutOfNetworkDisclaimer"
+										emptyText="Ex. per individual per year"/>
+								</items>
+							</annualMaximumFamilyOutOfNetwork>
+							<deductibleIndividualInNetworkOrtho
+								jcr:primaryType="nt:unstructured"
+								sling:resourceType="granite/ui/components/coral/foundation/well">
+								<items jcr:primaryType="nt:unstructured">
+									<heading
+										jcr:primaryType="nt:unstructured"
+										sling:resourceType="granite/ui/components/coral/foundation/heading"
+										level="5"
+										text="Deductible (Orthodontia - braces) - In network - Individual ($)"/>
+									<value
+										jcr:primaryType="nt:unstructured"
+										sling:resourceType="granite/ui/components/coral/foundation/form/numberfield"
+										fieldLabel="Value"
+										min="0"
+										metaType="number"
+										step="1"
+										typeHint="long"
+										valueType="long"
+										name="./deductibleIndividualInNetworkOrtho"/>
+									<label
+										jcr:primaryType="nt:unstructured"
+										sling:resourceType="granite/ui/components/coral/foundation/form/select"
+										fieldDescription="Only displayed when no value is set"
+										fieldLabel="Empty Label"
+										name="./deductibleIndividualInNetworkOrthoLabel">
+										<datasource
+											jcr:primaryType="nt:unstructured"
+											sling:resourceType="acs-commons/components/utilities/genericlist/datasource"
+											path="/etc/acs-commons/lists/authoring-dialogs/dental-plans-deductible-options"/>
+									</label>
+									<disclaimer
+										jcr:primaryType="nt:unstructured"
+										sling:resourceType="granite/ui/components/coral/foundation/form/textfield"
+										fieldLabel="Disclaimer"
+										name="./deductibleIndividualInNetworkOrthoDisclaimer"
+										emptyText="Ex. per individual per year"/>
+								</items>
+							</deductibleIndividualInNetworkOrtho>
+							<deductibleIndividualOutOfNetworkOrtho
+								jcr:primaryType="nt:unstructured"
+								sling:resourceType="granite/ui/components/coral/foundation/well">
+								<items jcr:primaryType="nt:unstructured">
+									<heading
+										jcr:primaryType="nt:unstructured"
+										sling:resourceType="granite/ui/components/coral/foundation/heading"
+										level="5"
+										text="Deductible (Orthodontia - braces) - Out of network - Individual"/>
+									<value
+										jcr:primaryType="nt:unstructured"
+										sling:resourceType="granite/ui/components/coral/foundation/form/numberfield"
+										fieldLabel="Value ($)"
+										min="0"
+										metaType="number"
+										step="1"
+										typeHint="long"
+										valueType="long"
+										name="./deductibleIndividualOutOfNetworkOrtho"/>
+									<label
+										jcr:primaryType="nt:unstructured"
+										sling:resourceType="granite/ui/components/coral/foundation/form/select"
+										fieldDescription="Only displayed when no value is set"
+										fieldLabel="Empty Label"
+										name="./deductibleIndividualOutOfNetworkOrthoLabel">
+										<datasource
+											jcr:primaryType="nt:unstructured"
+											sling:resourceType="acs-commons/components/utilities/genericlist/datasource"
+											path="/etc/acs-commons/lists/authoring-dialogs/dental-plans-deductible-options"/>
+									</label>
+									<disclaimer
+										jcr:primaryType="nt:unstructured"
+										sling:resourceType="granite/ui/components/coral/foundation/form/textfield"
+										fieldLabel="Disclaimer"
+										name="./deductibleIndividualOutOfNetworkOrthoDisclaimer"
+										emptyText="Ex. per individual per year"/>
+								</items>
+							</deductibleIndividualOutOfNetworkOrtho>
+							<deductibleFamilyInNetworkOrtho
+								jcr:primaryType="nt:unstructured"
+								sling:resourceType="granite/ui/components/coral/foundation/well">
+								<items jcr:primaryType="nt:unstructured">
+									<heading
+										jcr:primaryType="nt:unstructured"
+										sling:resourceType="granite/ui/components/coral/foundation/heading"
+										level="5"
+										text="Deductible (Orthodontia - braces) - In network - Family"/>
+									<value
+										jcr:primaryType="nt:unstructured"
+										sling:resourceType="granite/ui/components/coral/foundation/form/numberfield"
+										fieldLabel="Value ($)"
+										min="0"
+										metaType="number"
+										step="1"
+										typeHint="long"
+										valueType="long"
+										name="./deductibleFamilyInNetworkOrtho"/>
+									<label
+										jcr:primaryType="nt:unstructured"
+										sling:resourceType="granite/ui/components/coral/foundation/form/select"
+										fieldDescription="Only displayed when no value is set"
+										fieldLabel="Empty Label"
+										name="./deductibleFamilyInNetworkOrthoLabel">
+										<datasource
+											jcr:primaryType="nt:unstructured"
+											sling:resourceType="acs-commons/components/utilities/genericlist/datasource"
+											path="/etc/acs-commons/lists/authoring-dialogs/dental-plans-deductible-options"/>
+									</label>
+									<disclaimer
+										jcr:primaryType="nt:unstructured"
+										sling:resourceType="granite/ui/components/coral/foundation/form/textfield"
+										fieldLabel="Disclaimer"
+										name="./deductibleFamilyInNetworkOrthoDisclaimer"
+										emptyText="Ex. per individual per year"/>
+								</items>
+							</deductibleFamilyInNetworkOrtho>
+							<deductibleFamilyOutOfNetworkOrtho
+								jcr:primaryType="nt:unstructured"
+								sling:resourceType="granite/ui/components/coral/foundation/well">
+								<items jcr:primaryType="nt:unstructured">
+									<heading
+										jcr:primaryType="nt:unstructured"
+										sling:resourceType="granite/ui/components/coral/foundation/heading"
+										level="5"
+										text="Deductible (Orthodontia - braces) - Out of network - Family"/>
+									<value
+										jcr:primaryType="nt:unstructured"
+										sling:resourceType="granite/ui/components/coral/foundation/form/numberfield"
+										fieldLabel="Value ($)"
+										min="0"
+										metaType="number"
+										step="1"
+										typeHint="long"
+										valueType="long"
+										name="./deductibleFamilyOutOfNetworkOrtho"/>
+									<label
+										jcr:primaryType="nt:unstructured"
+										sling:resourceType="granite/ui/components/coral/foundation/form/select"
+										fieldDescription="Only displayed when no value is set"
+										fieldLabel="Empty Label"
+										name="./deductibleFamilyOutOfNetworkOrthoLabel">
+										<datasource
+											jcr:primaryType="nt:unstructured"
+											sling:resourceType="acs-commons/components/utilities/genericlist/datasource"
+											path="/etc/acs-commons/lists/authoring-dialogs/dental-plans-deductible-options"/>
+									</label>
+									<disclaimer
+										jcr:primaryType="nt:unstructured"
+										sling:resourceType="granite/ui/components/coral/foundation/form/textfield"
+										fieldLabel="Disclaimer"
+										name="./deductibleFamilyOutOfNetworkOrthoDisclaimer"
+										emptyText="Ex. per individual per year"/>
+								</items>
+							</deductibleFamilyOutOfNetworkOrtho>
+							<annualMaximumIndividualInNetworkOrtho
+								jcr:primaryType="nt:unstructured"
+								sling:resourceType="granite/ui/components/coral/foundation/well">
+								<items jcr:primaryType="nt:unstructured">
+									<heading
+										jcr:primaryType="nt:unstructured"
+										sling:resourceType="granite/ui/components/coral/foundation/heading"
+										level="5"
+										text="Annual Maximum (Orthodontia - braces) - In network - Individual"/>
+									<value
+										jcr:primaryType="nt:unstructured"
+										sling:resourceType="granite/ui/components/coral/foundation/form/numberfield"
+										fieldLabel="Value ($)"
+										min="0"
+										metaType="number"
+										step="1"
+										typeHint="long"
+										valueType="long"
+										name="./annualMaximumIndividualInNetworkOrtho"/>
+									<label
+										jcr:primaryType="nt:unstructured"
+										sling:resourceType="granite/ui/components/coral/foundation/form/select"
+										fieldDescription="Only displayed when no value is set"
+										fieldLabel="Empty Label"
+										name="./annualMaximumIndividualInNetworkOrthoLabel">
+										<datasource
+											jcr:primaryType="nt:unstructured"
+											sling:resourceType="acs-commons/components/utilities/genericlist/datasource"
+											path="/etc/acs-commons/lists/authoring-dialogs/dental-plans-deductible-options"/>
+									</label>
+									<disclaimer
+										jcr:primaryType="nt:unstructured"
+										sling:resourceType="granite/ui/components/coral/foundation/form/textfield"
+										fieldLabel="Disclaimer"
+										name="./annualMaximumIndividualInNetworkOrthoDisclaimer"
+										emptyText="Ex. per individual per year"/>
+								</items>
+							</annualMaximumIndividualInNetworkOrtho>
+							<annualMaximumIndividualOutOfNetworkOrtho
+								jcr:primaryType="nt:unstructured"
+								sling:resourceType="granite/ui/components/coral/foundation/well">
+								<items jcr:primaryType="nt:unstructured">
+									<heading
+										jcr:primaryType="nt:unstructured"
+										sling:resourceType="granite/ui/components/coral/foundation/heading"
+										level="5"
+										text="Annual Maximum (Orthodontia - braces) - Out of network - Individual"/>
+									<value
+										jcr:primaryType="nt:unstructured"
+										sling:resourceType="granite/ui/components/coral/foundation/form/numberfield"
+										fieldLabel="Value ($)"
+										min="0"
+										metaType="number"
+										step="1"
+										typeHint="long"
+										valueType="long"
+										name="./annualMaximumIndividualOutOfNetworkOrtho"/>
+									<label
+										jcr:primaryType="nt:unstructured"
+										sling:resourceType="granite/ui/components/coral/foundation/form/select"
+										fieldDescription="Only displayed when no value is set"
+										fieldLabel="Empty Label"
+										name="./annualMaximumIndividualOutOfNetworkOrthoLabel">
+										<datasource
+											jcr:primaryType="nt:unstructured"
+											sling:resourceType="acs-commons/components/utilities/genericlist/datasource"
+											path="/etc/acs-commons/lists/authoring-dialogs/dental-plans-deductible-options"/>
+									</label>
+									<disclaimer
+										jcr:primaryType="nt:unstructured"
+										sling:resourceType="granite/ui/components/coral/foundation/form/textfield"
+										fieldLabel="Disclaimer"
+										name="./annualMaximumIndividualOutOfNetworkOrthoDisclaimer"
+										emptyText="Ex. per individual per year"/>
+								</items>
+							</annualMaximumIndividualOutOfNetworkOrtho>
+							<annualMaximumFamilyInNetworkOrtho
+								jcr:primaryType="nt:unstructured"
+								sling:resourceType="granite/ui/components/coral/foundation/well">
+								<items jcr:primaryType="nt:unstructured">
+									<heading
+										jcr:primaryType="nt:unstructured"
+										sling:resourceType="granite/ui/components/coral/foundation/heading"
+										level="5"
+										text="Annual Maximum (Orthodontia - braces) - In network - Family"/>
+									<value
+										jcr:primaryType="nt:unstructured"
+										sling:resourceType="granite/ui/components/coral/foundation/form/numberfield"
+										fieldLabel="Value ($)"
+										min="0"
+										metaType="number"
+										step="1"
+										typeHint="long"
+										valueType="long"
+										name="./annualMaximumFamilyInNetworkOrtho"/>
+									<label
+										jcr:primaryType="nt:unstructured"
+										sling:resourceType="granite/ui/components/coral/foundation/form/select"
+										fieldDescription="Only displayed when no value is set"
+										fieldLabel="Empty Label"
+										name="./annualMaximumFamilyInNetworkOrthoLabel">
+										<datasource
+											jcr:primaryType="nt:unstructured"
+											sling:resourceType="acs-commons/components/utilities/genericlist/datasource"
+											path="/etc/acs-commons/lists/authoring-dialogs/dental-plans-deductible-options"/>
+									</label>
+									<disclaimer
+										jcr:primaryType="nt:unstructured"
+										sling:resourceType="granite/ui/components/coral/foundation/form/textfield"
+										fieldLabel="Disclaimer"
+										name="./annualMaximumFamilyInNetworkOrthoDisclaimer"
+										emptyText="Ex. per individual per year"/>
+								</items>
+							</annualMaximumFamilyInNetworkOrtho>
+							<annualMaximumFamilyOutOfNetworkOrtho
+								jcr:primaryType="nt:unstructured"
+								sling:resourceType="granite/ui/components/coral/foundation/well">
+								<items jcr:primaryType="nt:unstructured">
+									<heading
+										jcr:primaryType="nt:unstructured"
+										sling:resourceType="granite/ui/components/coral/foundation/heading"
+										level="5"
+										text="Annual Maximum (Orthodontia - braces) - Out of network - Family"/>
+									<value
+										jcr:primaryType="nt:unstructured"
+										sling:resourceType="granite/ui/components/coral/foundation/form/numberfield"
+										fieldLabel="Value ($)"
+										min="0"
+										metaType="number"
+										step="1"
+										typeHint="long"
+										valueType="long"
+										name="./annualMaximumFamilyOutOfNetworkOrtho"/>
+									<label
+										jcr:primaryType="nt:unstructured"
+										sling:resourceType="granite/ui/components/coral/foundation/form/select"
+										fieldDescription="Only displayed when no value is set"
+										fieldLabel="Empty Label"
+										name="./annualMaximumFamilyOutOfNetworkOrthoLabel">
+										<datasource
+											jcr:primaryType="nt:unstructured"
+											sling:resourceType="acs-commons/components/utilities/genericlist/datasource"
+											path="/etc/acs-commons/lists/authoring-dialogs/dental-plans-deductible-options"/>
+									</label>
+									<disclaimer
+										jcr:primaryType="nt:unstructured"
+										sling:resourceType="granite/ui/components/coral/foundation/form/textfield"
+										fieldLabel="Disclaimer"
+										name="./annualMaximumFamilyOutOfNetworkOrthoDisclaimer"
+										emptyText="Ex. per individual per year"/>
+								</items>
+							</annualMaximumFamilyOutOfNetworkOrtho>
+            </items>
+          </planCosts>
+          <diagnosticServices
+            jcr:primaryType="nt:unstructured"
+            jcr:title="Diagnostic Services"
+            sling:resourceType="granite/ui/components/coral/foundation/container"
+            margin="{Boolean}true">
+            <items jcr:primaryType="nt:unstructured">
+              <routineExamsAndEvaluations
+                jcr:primaryType="nt:unstructured"
+                sling:resourceType="granite/ui/components/coral/foundation/form/numberfield"
+                fieldLabel="Routine Exams and Evaluations (%)"
+                min="0"
+                metaType="number"
+                step="1"
+                max="100"
+                typeHint="long"
+                valueType="long"
+                name="./routineExamsAndEvaluations"/>
+              <routineExamsAndEvaluationsOutOfNetwork
+                jcr:primaryType="nt:unstructured"
+                sling:resourceType="granite/ui/components/coral/foundation/form/numberfield"
+                fieldLabel="Routine Exams and Evaluations - Out of network (%)"
+                min="0"
+                metaType="number"
+                step="1"
+                max="100"
+                typeHint="long"
+                valueType="long"
+                name="./routineExamsAndEvaluationsOutOfNetwork"/>
+              <routineExamsAndEvaluationsOutOfNetworkPaidByMember
+                jcr:primaryType="nt:unstructured"
+                sling:resourceType="granite/ui/components/coral/foundation/form/numberfield"
+                fieldLabel="Routine Exams and Evaluations - Out of network - paid by member ($)"
+                min="0"
+                metaType="number"
+                step="1"
+                typeHint="long"
+                valueType="long"
+                name="./routineExamsAndEvaluationsPaidByMember"/>
+              <radiograph
+                jcr:primaryType="nt:unstructured"
+                sling:resourceType="granite/ui/components/coral/foundation/form/numberfield"
+                fieldLabel="Radiograph (%)"
+                min="0"
+                metaType="number"
+                step="1"
+                max="100"
+                typeHint="long"
+                valueType="long"
+                name="./radiograph"/>
+              <radiographOutOfNetwork
+                jcr:primaryType="nt:unstructured"
+                sling:resourceType="granite/ui/components/coral/foundation/form/numberfield"
+                fieldLabel="Radiograph - Out of network (%)"
+                min="0"
+                metaType="number"
+                step="1"
+                max="100"
+                typeHint="long"
+                valueType="long"
+                name="./radiographOutOfNetwork"/>
+              <labAndOtherDiagnosticTests
+                jcr:primaryType="nt:unstructured"
+                sling:resourceType="granite/ui/components/coral/foundation/form/numberfield"
+                fieldLabel="Lab and Other Diagnostic Tests (%)"
+                min="0"
+                metaType="number"
+                step="1"
+                max="100"
+                typeHint="long"
+                valueType="long"
+                name="./labAndOtherDiagnosticTests"/>
+              <labAndOtherDiagnosticTestsOutOfNetwork
+                jcr:primaryType="nt:unstructured"
+                sling:resourceType="granite/ui/components/coral/foundation/form/numberfield"
+                fieldLabel="Lab and Other Diagnostic Tests - Out of network (%)"
+                min="0"
+                metaType="number"
+                step="1"
+                max="100"
+                typeHint="long"
+                valueType="long"
+                name="./labAndOtherDiagnosticTestsOutOfNetwork"/>
+            </items>
+          </diagnosticServices>
+          <preventiveServices
+            jcr:primaryType="nt:unstructured"
+            jcr:title="Preventive Services"
+            sling:resourceType="granite/ui/components/coral/foundation/container"
+            margin="{Boolean}true">
+            <items jcr:primaryType="nt:unstructured">
+              <cleaning
+                jcr:primaryType="nt:unstructured"
+                sling:resourceType="granite/ui/components/coral/foundation/form/numberfield"
+                fieldLabel="Cleaning (%)"
+                min="0"
+                metaType="number"
+                step="1"
+                max="100"
+                typeHint="long"
+                valueType="long"
+                name="./cleaning"/>
+              <cleaningOutOfNetwork
+                jcr:primaryType="nt:unstructured"
+                sling:resourceType="granite/ui/components/coral/foundation/form/numberfield"
+                fieldLabel="Cleaning - Out of network (%)"
+                min="0"
+                metaType="number"
+                step="1"
+                max="100"
+                typeHint="long"
+                valueType="long"
+                name="./cleaningOutOfNetwork"/>
+              <cleaningOutOfNetworkPaidByMember
+                jcr:primaryType="nt:unstructured"
+                sling:resourceType="granite/ui/components/coral/foundation/form/numberfield"
+                fieldLabel="Cleaning - Out of network - paid by member ($)"
+                min="0"
+                metaType="number"
+                step="1"
+                typeHint="long"
+                valueType="long"
+                name="./cleaningOutOfNetworkPaidByMember"/>
+              <flourideTreatment
+                jcr:primaryType="nt:unstructured"
+                sling:resourceType="granite/ui/components/coral/foundation/form/numberfield"
+                fieldLabel="Flouride Treatment (%)"
+                min="0"
+                metaType="number"
+                step="1"
+                max="100"
+                typeHint="long"
+                valueType="long"
+                name="./flourideTreatment"/>
+              <flourideTreatmentOutOfNetwork
+                jcr:primaryType="nt:unstructured"
+                sling:resourceType="granite/ui/components/coral/foundation/form/numberfield"
+                fieldLabel="Flouride Treatment - Out of network (%)"
+                min="0"
+                metaType="number"
+                step="1"
+                max="100"
+                typeHint="long"
+                valueType="long"
+                name="./flourideTreatmentOutOfNetwork"/>
+              <sealants
+                jcr:primaryType="nt:unstructured"
+                sling:resourceType="granite/ui/components/coral/foundation/form/numberfield"
+                fieldLabel="Sealants (%)"
+                min="0"
+                metaType="number"
+                step="1"
+                max="100"
+                typeHint="long"
+                valueType="long"
+                name="./sealants"/>
+              <sealantsOutOfNetwork
+                jcr:primaryType="nt:unstructured"
+                sling:resourceType="granite/ui/components/coral/foundation/form/numberfield"
+                fieldLabel="Sealants - Out of network (%)"
+                min="0"
+                metaType="number"
+                step="1"
+                max="100"
+                typeHint="long"
+                valueType="long"
+                name="./sealantsOutOfNetwork"/>
+              <spaceMaintainers
+                jcr:primaryType="nt:unstructured"
+                sling:resourceType="granite/ui/components/coral/foundation/form/numberfield"
+                fieldLabel="Space Maintainers (%)"
+                min="0"
+                metaType="number"
+                step="1"
+                max="100"
+                typeHint="long"
+                valueType="long"
+                name="./spaceMaintainers"/>
+              <spaceMaintainersOutOfNetwork
+                jcr:primaryType="nt:unstructured"
+                sling:resourceType="granite/ui/components/coral/foundation/form/numberfield"
+                fieldLabel="Space Maintainers - Out of network (%)"
+                min="0"
+                metaType="number"
+                step="1"
+                max="100"
+                typeHint="long"
+                valueType="long"
+                name="./spaceMaintainersOutOfNetwork"/>
+            </items>
+          </preventiveServices>
+          <basicServices
+            jcr:primaryType="nt:unstructured"
+            jcr:title="Basic Services"
+            sling:resourceType="granite/ui/components/coral/foundation/container"
+            margin="{Boolean}true">
+            <items jcr:primaryType="nt:unstructured">
+              <restorations
+                jcr:primaryType="nt:unstructured"
+                sling:resourceType="granite/ui/components/coral/foundation/form/numberfield"
+                fieldLabel="Restorations (Amalgams or Composite) (%)"
+                min="0"
+                metaType="number"
+                step="1"
+                max="100"
+                typeHint="long"
+                valueType="long"
+                name="./restorations"/>
+              <restorationsOutOfNetwork
+                jcr:primaryType="nt:unstructured"
+                sling:resourceType="granite/ui/components/coral/foundation/form/numberfield"
+                fieldLabel="Restorations (Amalgams or Composite) - Out of network (%)"
+                min="0"
+                metaType="number"
+                step="1"
+                max="100"
+                typeHint="long"
+                valueType="long"
+                name="./restorationsOutOfNetwork"/>
+              <emergencyTreatmentGeneralServices
+                jcr:primaryType="nt:unstructured"
+                sling:resourceType="granite/ui/components/coral/foundation/form/numberfield"
+                fieldLabel="Emergency Treatment/General Services (%)"
+                min="0"
+                metaType="number"
+                step="1"
+                max="100"
+                typeHint="long"
+                valueType="long"
+                name="./emergencyTreatmentGeneralServices"/>
+              <emergencyTreatmentGeneralServicesOutOfNetwork
+                jcr:primaryType="nt:unstructured"
+                sling:resourceType="granite/ui/components/coral/foundation/form/numberfield"
+                fieldLabel="Emergency Treatment/General Services - Out of network (%)"
+                min="0"
+                metaType="number"
+                step="1"
+                max="100"
+                typeHint="long"
+                valueType="long"
+                name="./emergencyTreatmentGeneralServicesOutOfNetwork"/>
+              <simpleExtractions
+                jcr:primaryType="nt:unstructured"
+                sling:resourceType="granite/ui/components/coral/foundation/form/numberfield"
+                fieldLabel="Simple Extractions  (%)"
+                min="0"
+                metaType="number"
+                step="1"
+                max="100"
+                typeHint="long"
+                valueType="long"
+                name="./simpleExtractions"/>
+              <simpleExtractionsOutOfNetwork
+                jcr:primaryType="nt:unstructured"
+                sling:resourceType="granite/ui/components/coral/foundation/form/numberfield"
+                fieldLabel="Simple Extractions  - Out of network (%)"
+                min="0"
+                metaType="number"
+                step="1"
+                max="100"
+                typeHint="long"
+                valueType="long"
+                name="./simpleExtractionsOutOfNetwork"/>
+              <oralSurgery
+                jcr:primaryType="nt:unstructured"
+                sling:resourceType="granite/ui/components/coral/foundation/form/numberfield"
+                fieldLabel="Oral Surgery (Including Surgical Extractions)  (%)"
+                min="0"
+                metaType="number"
+                step="1"
+                max="100"
+                typeHint="long"
+                valueType="long"
+                name="./oralSurgery"/>
+              <oralSurgeryOutOfNetwork
+                jcr:primaryType="nt:unstructured"
+                sling:resourceType="granite/ui/components/coral/foundation/form/numberfield"
+                fieldLabel="Oral Surgery (Including Surgical Extractions)  - Out of network (%)"
+                min="0"
+                metaType="number"
+                step="1"
+                max="100"
+                typeHint="long"
+                valueType="long"
+                name="./oralSurgeryOutOfNetwork"/>
+              <periodontics
+                jcr:primaryType="nt:unstructured"
+                sling:resourceType="granite/ui/components/coral/foundation/form/numberfield"
+                fieldLabel="Periodontics (%)"
+                min="0"
+                metaType="number"
+                step="1"
+                max="100"
+                typeHint="long"
+                valueType="long"
+                name="./periodontics"/>
+              <periodonticsOutOfNetwork
+                jcr:primaryType="nt:unstructured"
+                sling:resourceType="granite/ui/components/coral/foundation/form/numberfield"
+                fieldLabel="Periodontics  - Out of network (%)"
+                min="0"
+                metaType="number"
+                step="1"
+                max="100"
+                typeHint="long"
+                valueType="long"
+                name="./periodonticsOutOfNetwork"/>
+              <endodontics
+                jcr:primaryType="nt:unstructured"
+                sling:resourceType="granite/ui/components/coral/foundation/form/numberfield"
+                fieldLabel="Endodontics (%)"
+                min="0"
+                metaType="number"
+                step="1"
+                max="100"
+                typeHint="long"
+                valueType="long"
+                name="./endodontics"/>
+              <endodonticsOutOfNetwork
+                jcr:primaryType="nt:unstructured"
+                sling:resourceType="granite/ui/components/coral/foundation/form/numberfield"
+                fieldLabel="Endodontics  - Out of network (%)"
+                min="0"
+                metaType="number"
+                step="1"
+                max="100"
+                typeHint="long"
+                valueType="long"
+                name="./endodonticsOutOfNetwork"/>
+            </items>
+          </basicServices>
+          <majorServices
+            jcr:primaryType="nt:unstructured"
+            jcr:title="Major Services"
+            sling:resourceType="granite/ui/components/coral/foundation/container"
+            margin="{Boolean}true">
+            <items jcr:primaryType="nt:unstructured">
+              <inlaysOnlaysCrowns
+                jcr:primaryType="nt:unstructured"
+                sling:resourceType="granite/ui/components/coral/foundation/form/numberfield"
+                fieldLabel="Inlays/Onlays/Crowns (%)"
+                min="0"
+                metaType="number"
+                step="1"
+                max="100"
+                typeHint="long"
+                valueType="long"
+                name="./inlaysOnlaysCrowns"/>
+              <inlaysOnlaysCrownsOutOfNetwork
+                jcr:primaryType="nt:unstructured"
+                sling:resourceType="granite/ui/components/coral/foundation/form/numberfield"
+                fieldLabel="Inlays/Onlays/Crowns - out of network (%)"
+                min="0"
+                metaType="number"
+                step="1"
+                max="100"
+                typeHint="long"
+                valueType="long"
+                name="./inlaysOnlaysCrownsOutOfNetwork"/>
+              <denturesAndRemovableProsthetics
+                jcr:primaryType="nt:unstructured"
+                sling:resourceType="granite/ui/components/coral/foundation/form/numberfield"
+                fieldLabel="Dentures and Removable Prosthetics (%)"
+                min="0"
+                metaType="number"
+                step="1"
+                max="100"
+                typeHint="long"
+                valueType="long"
+                name="./denturesAndRemovableProsthetics"/>
+              <denturesAndRemovableProstheticsOutOfNetwork
+                jcr:primaryType="nt:unstructured"
+                sling:resourceType="granite/ui/components/coral/foundation/form/numberfield"
+                fieldLabel="Dentures and Removable Prosthetics - out of network (%)"
+                min="0"
+                metaType="number"
+                step="1"
+                max="100"
+                typeHint="long"
+                valueType="long"
+                name="./denturesAndRemovableProstheticsOutOfNetwork"/>
+              <fixedPartialDentures
+                jcr:primaryType="nt:unstructured"
+                sling:resourceType="granite/ui/components/coral/foundation/form/numberfield"
+                fieldLabel="Fixed Partial Dentures (Bridges) (%)"
+                min="0"
+                metaType="number"
+                step="1"
+                max="100"
+                typeHint="long"
+                valueType="long"
+                name="./fixedPartialDentures"/>
+              <fixedPartialDenturesOutOfNetwork
+                jcr:primaryType="nt:unstructured"
+                sling:resourceType="granite/ui/components/coral/foundation/form/numberfield"
+                fieldLabel="Fixed Partial Dentures (Bridges) - out of network (%)"
+                min="0"
+                metaType="number"
+                step="1"
+                max="100"
+                typeHint="long"
+                valueType="long"
+                name="./fixedPartialDenturesOutOfNetwork"/>
+            </items>
+          </majorServices>
+          <orthodonticServices
+            jcr:primaryType="nt:unstructured"
+            jcr:title="Orthodontic Services"
+            sling:resourceType="granite/ui/components/coral/foundation/container"
+            margin="{Boolean}true">
+            <items jcr:primaryType="nt:unstructured">
+              <diagnoseCorrectMisalignment
+                jcr:primaryType="nt:unstructured"
+                sling:resourceType="granite/ui/components/coral/foundation/form/numberfield"
+                fieldLabel="Diagnose/Correct Misalignment (%)"
+                min="0"
+                metaType="number"
+                step="1"
+                max="100"
+                typeHint="long"
+                valueType="long"
+                name="./diagnoseCorrectMisalignment"/>
+              <diagnoseCorrectMisalignmentOutOfNetwork
+                jcr:primaryType="nt:unstructured"
+                sling:resourceType="granite/ui/components/coral/foundation/form/numberfield"
+                fieldLabel="Diagnose/Correct Misalignment - out of network (%)"
+                min="0"
+                metaType="number"
+                step="1"
+                max="100"
+                typeHint="long"
+                valueType="long"
+                name="./diagnoseCorrectMisalignmentOutOfNetwork"/>
+            </items>
+          </orthodonticServices>
+        </items>
+      </tabs>
+    </items>
+  </content>
+</jcr:root>

@@ -1,0 +1,123 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<jcr:root xmlns:dam="http://www.day.com/dam/1.0" xmlns:cq="http://www.day.com/jcr/cq/1.0" xmlns:jcr="http://www.jcp.org/jcr/1.0" xmlns:mix="http://www.jcp.org/jcr/mix/1.0" xmlns:nt="http://www.jcp.org/jcr/nt/1.0"
+    jcr:mixinTypes="[mix:referenceable]"
+    jcr:primaryType="dam:Asset">
+    <jcr:content
+        cq:name="enhanced"
+        cq:parentPath="/content/dam/premember/plans/options/vision"
+        cq:versionCreator="admin"
+        jcr:description=""
+        jcr:primaryType="dam:AssetContent"
+        jcr:title="Enhanced"
+        contentFragment="{Boolean}true"
+        lastFragmentSave="{Date}2020-06-24T15:37:48.607Z">
+        <data
+            cq:model="/conf/premember/vision-option/settings/dam/cfm/models/vision-plan-option"
+            jcr:primaryType="nt:unstructured">
+            <master
+                jcr:mixinTypes="[cq:Taggable]"
+                jcr:primaryType="nt:unstructured"
+                comparisonChapter5SubSection2Topic2Option1="{Boolean}false"
+                comparisonChapter5SubSection2Topic2Option2="{Boolean}false"
+                comparisonChapter5SubSection2Topic2Option3="{Boolean}false"
+                comparisonChapter5SubSection2Topic2Option4="{Boolean}false"
+                comparisonChapter5SubSection2Topic3Option1="{Boolean}true"
+                comparisonChapter5SubSection2Topic3Option2="{Boolean}false"
+                comparisonChapter5SubSection3Topic2Option1="{Boolean}true"
+                comparisonChapter5SubSection3Topic2Option2="{Boolean}false"
+                comparisonProviderLink="https://www.uhc.com/"
+                comparisonSearchCoverageLinkText="{Boolean}true"
+                comparisonFullBenefitsLinkText="{Boolean}true"
+                discountsTopic3Offered="{Boolean}true"
+                discountsTopic4Offered="{Boolean}true"
+                fullBenefitsLink="/content/dam/premember/documents/lorem-ipsum.pdf"
+                hasStateSpecificProvider="{Boolean}false"
+                hideDiscountsAvailable="{Boolean}false"
+                planDescription="&lt;p>Enhanced Plan&lt;/p>&#xa;"
+                planHighlightsTopic2Option="\{planHighlightsTopic2Option2}"
+                planHighlightsTopic3Offered="{Boolean}true"
+                planHighlightsTopic4Offered="{Boolean}true"
+                planHighlightsTopic5Offered="{Boolean}true"
+                planId="EV10"
+                planName="Enhanced Vision Plan"
+                providerSearchLink="https://www.uhc.com/"
+                summaryTopic1Option="\{summaryTopic1Option2} - Network providers recommended, out of network allowed"
+                summaryTopic2Option="\{summaryTopic2Option1} - Annual eye exams, flexible frame coverage, popular lens options, and more"
+                summaryTopic3Option="\{summaryTopic3Option2} - Lenses and contacts"
+								summaryTopic7Option="\{summaryTopic4Option1} - Covers in full standard, scratch resistant coating, polycarbonate lenses. See benefit document for details"
+                summaryTopic5Option1Offered="{Boolean}true"
+                summaryTopic5Option2Offered="{Boolean}true"
+                summaryTopic5Option3Offered="{Boolean}true"
+                summaryTopic5Option4Offered="{Boolean}true"
+                summaryTopic6Option2Offered="{Boolean}true"
+                summaryTopic6Option3Offered="{Boolean}true"
+                summaryTopic6Option4Offered="{Boolean}true"
+								suppressSummaryTopic7="{Boolean}false"
+                suppressSummaryTopic5="{Boolean}false"/>
+            <marcin
+                jcr:mixinTypes="[cq:Taggable]"
+                jcr:primaryType="nt:unstructured"
+                comparisonChapter5SubSection2Topic2Option1="{Boolean}false"
+                comparisonChapter5SubSection2Topic2Option2="{Boolean}false"
+                comparisonChapter5SubSection2Topic2Option3="{Boolean}false"
+                comparisonChapter5SubSection2Topic2Option4="{Boolean}false"
+                comparisonChapter5SubSection2Topic3Option1="{Boolean}true"
+                comparisonChapter5SubSection2Topic3Option2="{Boolean}false"
+                comparisonProviderLink="https://www.uhc.com/"
+                comparisonSearchCoverageLinkText="{Boolean}true"
+                comparisonFullBenefitsLinkText="{Boolean}true"
+                disclaimers="&lt;p>test raz dwa&lt;/p>&#xa;"
+                discountsTopic3Offered="{Boolean}true"
+                discountsTopic4Offered="{Boolean}true"
+                hasStateSpecificProvider="{Boolean}false"
+                hideDiscountsAvailable="{Boolean}false"
+                planDescription="&lt;p>Enhanced Pplan test 2&lt;/p>&#xa;"
+                planHighlightsTopic2Option="\{planHighlightsTopic2Option2}"
+                planHighlightsTopic3Offered="{Boolean}true"
+                planHighlightsTopic4Offered="{Boolean}true"
+                planHighlightsTopic5Offered="{Boolean}true"
+                planId="EV10"
+                planName="Enhanced Vision Plan"
+                providerSearchLink="https://www.uhc.com/"
+                summaryTopic1Option="\{summaryTopic1Option2} - Network providers recommended, out of network allowed"
+                summaryTopic2Option="\{summaryTopic2Option1} - Annual eye exams, flexible frame coverage, popular lens options, and more"
+                summaryTopic3Option="\{summaryTopic3Option2} - Lenses and contacts"
+                summaryTopic5Option1Offered="{Boolean}true"
+                summaryTopic5Option2Offered="{Boolean}true"
+                summaryTopic5Option3Offered="{Boolean}true"
+                summaryTopic5Option4Offered="{Boolean}true"
+                summaryTopic6Option2Offered="{Boolean}true"
+                summaryTopic6Option3Offered="{Boolean}true"
+                summaryTopic6Option4Offered="{Boolean}true"
+                suppressSummaryTopic5="{Boolean}false"/>
+        </data>
+        <metadata
+            jcr:mixinTypes="[cq:Taggable]"
+            jcr:primaryType="nt:unstructured"/>
+        <model jcr:primaryType="nt:unstructured">
+            <variations jcr:primaryType="nt:unstructured">
+                <second
+                    jcr:description=""
+                    jcr:mixinTypes="[cq:Taggable]"
+                    jcr:primaryType="nt:unstructured"
+                    jcr:title="Second"
+                    name="second">
+                    <properties
+                        jcr:primaryType="nt:unstructured"
+                        synchronizeWithVersion="[planName:4f9db409-f31d-4e80-9836-320b17adcf70,planId:4f9db409-f31d-4e80-9836-320b17adcf70,providerSearchLink:4f9db409-f31d-4e80-9836-320b17adcf70,prescriptionSearchLink:4f9db409-f31d-4e80-9836-320b17adcf70,fullBenefitsLink:4f9db409-f31d-4e80-9836-320b17adcf70]"/>
+                </second>
+                <marcin
+                    jcr:description=""
+                    jcr:mixinTypes="[cq:Taggable]"
+                    jcr:primaryType="nt:unstructured"
+                    jcr:title="marcin"
+                    name="marcin">
+                    <properties
+                        jcr:primaryType="nt:unstructured"
+                        synchronizeWithVersion="[planName:0b27e18e-7fbf-4eb3-9ae4-7324d3eb2554,planId:0b27e18e-7fbf-4eb3-9ae4-7324d3eb2554,planDescription:0b27e18e-7fbf-4eb3-9ae4-7324d3eb2554,providerSearchLink:0b27e18e-7fbf-4eb3-9ae4-7324d3eb2554,prescriptionSearchLink:0b27e18e-7fbf-4eb3-9ae4-7324d3eb2554,summaryTopic1Option:0b27e18e-7fbf-4eb3-9ae4-7324d3eb2554,summaryTopic2Option:0b27e18e-7fbf-4eb3-9ae4-7324d3eb2554,summaryTopic3Option:0b27e18e-7fbf-4eb3-9ae4-7324d3eb2554,hasStateSpecificProvider:0b27e18e-7fbf-4eb3-9ae4-7324d3eb2554,stateSpecificProviderDescription:0b27e18e-7fbf-4eb3-9ae4-7324d3eb2554,stateSpecificProviderLinkText:0b27e18e-7fbf-4eb3-9ae4-7324d3eb2554,stateSpecificProviderLink:0b27e18e-7fbf-4eb3-9ae4-7324d3eb2554,hideDiscountsAvailable:0b27e18e-7fbf-4eb3-9ae4-7324d3eb2554,suppressSummaryTopic5:0b27e18e-7fbf-4eb3-9ae4-7324d3eb2554,summaryTopic5Option1Offered:0b27e18e-7fbf-4eb3-9ae4-7324d3eb2554,summaryTopic5Option2Offered:0b27e18e-7fbf-4eb3-9ae4-7324d3eb2554,summaryTopic5Option3Offered:0b27e18e-7fbf-4eb3-9ae4-7324d3eb2554,summaryTopic5Option4Offered:0b27e18e-7fbf-4eb3-9ae4-7324d3eb2554,summaryTopic6Option2Offered:0b27e18e-7fbf-4eb3-9ae4-7324d3eb2554,summaryTopic6Option3Offered:0b27e18e-7fbf-4eb3-9ae4-7324d3eb2554,summaryTopic6Option4Offered:0b27e18e-7fbf-4eb3-9ae4-7324d3eb2554,comparisonChapter5SubSection2Topic2Option1:0b27e18e-7fbf-4eb3-9ae4-7324d3eb2554,comparisonChapter5SubSection2Topic2Option2:0b27e18e-7fbf-4eb3-9ae4-7324d3eb2554,comparisonChapter5SubSection2Topic2Option3:0b27e18e-7fbf-4eb3-9ae4-7324d3eb2554,comparisonChapter5SubSection2Topic2Option4:0b27e18e-7fbf-4eb3-9ae4-7324d3eb2554,comparisonChapter5SubSection2Topic3Option1:0b27e18e-7fbf-4eb3-9ae4-7324d3eb2554,comparisonChapter5SubSection2Topic3Option2:0b27e18e-7fbf-4eb3-9ae4-7324d3eb2554,comparisonSearchCoverageLinkText:0b27e18e-7fbf-4eb3-9ae4-7324d3eb2554,comparisonProviderLink:0b27e18e-7fbf-4eb3-9ae4-7324d3eb2554,planHighlightsTopic2Option:0b27e18e-7fbf-4eb3-9ae4-7324d3eb2554,planHighlightsTopic3Offered:0b27e18e-7fbf-4eb3-9ae4-7324d3eb2554,planHighlightsTopic4Offered:0b27e18e-7fbf-4eb3-9ae4-7324d3eb2554,planHighlightsTopic5Offered:0b27e18e-7fbf-4eb3-9ae4-7324d3eb2554,discountsTopic3Offered:0b27e18e-7fbf-4eb3-9ae4-7324d3eb2554,discountsTopic4Offered:0b27e18e-7fbf-4eb3-9ae4-7324d3eb2554,disclaimers:0b27e18e-7fbf-4eb3-9ae4-7324d3eb2554]"/>
+                </marcin>
+            </variations>
+        </model>
+        <related jcr:primaryType="nt:unstructured"/>
+    </jcr:content>
+</jcr:root>

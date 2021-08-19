@@ -1,0 +1,80 @@
+/**
+ * YOUR STYLESHEET
+ *
+ */
+
+// Unity Core
+$unity-font-path: './../resources/fonts';
+$icons-path: './../resources/images';
+$unity-serif-font-path: './../resources/fonts';
+
+@import "node_modules/unity-core/src/styles/unity-core";
+
+/**
+* CORE
+*
+* Project global styles
+*/
+
+@import "./core";
+
+/**
+ * SETTINGS
+ *
+ * Project global variables.
+ */
+
+@import "./settings/aspect-ratio";
+@import "./settings/crop";
+@import "./settings/colors";
+@import "./settings/globals";
+
+/**
+ * TOOLS
+ *
+ * Project functions and mixins.
+ */
+
+@import "./tools/functions";
+@import "./tools/mixins";
+
+/**
+ * OBJECTS
+ *
+ */
+
+// Unity Core
+@import "node_modules/unity-core/src/styles/objects/all";
+
+// Add your own objects here
+
+/**
+ * COMPONENTS
+ *
+ */
+
+// Unity Core
+@import "node_modules/unity-core/src/styles/components/all";
+@import "./components/all";
+
+/**
+ * UTILITIES (TRUMPS)
+ *
+ */
+
+// @include unity-type-classes;
+
+@import "node_modules/unity-core/src/styles/utilities/all";
+@import "./utilities/background";
+@import "./utilities/border";
+@import "./utilities/display";
+@import "./utilities/margin";
+@import "./utilities/type";
+
+/**
+ * AUTHORING
+ *
+ * Author/Editor styles.
+ */
+
+@import "./author/author";

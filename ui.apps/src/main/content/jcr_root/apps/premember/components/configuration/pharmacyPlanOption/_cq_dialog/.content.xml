@@ -1,0 +1,387 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<jcr:root xmlns:sling="http://sling.apache.org/jcr/sling/1.0"
+          xmlns:jcr="http://www.jcp.org/jcr/1.0"
+          xmlns:nt="http://www.jcp.org/jcr/nt/1.0"
+          xmlns:granite="http://www.adobe.com/jcr/granite/1.0"
+          jcr:primaryType="nt:unstructured"
+          jcr:title="Pharmacy Plan Option"
+          sling:resourceType="cq/gui/components/authoring/dialog"
+          extraClientlibs="[premember.components.configuration.employerPlans.dialog]">
+    <content
+            jcr:primaryType="nt:unstructured"
+            sling:resourceType="granite/ui/components/coral/foundation/container"
+            granite:class="cmp-contentfragment__editor">
+        <granite:data
+                jcr:primaryType="nt:unstructured"
+                component-path="${requestPathInfo.suffix}"/>
+        <items jcr:primaryType="nt:unstructured">
+            <tabs jcr:primaryType="nt:unstructured"
+                  sling:resourceType="granite/ui/components/coral/foundation/tabs"
+                  maximized="{Boolean}true">
+                <items jcr:primaryType="nt:unstructured">
+                    <general jcr:primaryType="nt:unstructured"
+                      jcr:title="General"
+                      sling:resourceType="granite/ui/components/coral/foundation/container"
+                      granite:class="generalEmployerPlanTab"
+                      margin="{Boolean}true">
+                        <items jcr:primaryType="nt:unstructured">
+                            <fragmentPath
+                              jcr:primaryType="nt:unstructured"
+                              sling:resourceType="granite/ui/components/coral/foundation/form/pathfield"
+                              name="./fragmentPath"
+                              fieldDescription="Path to the Content Fragment with employer plan."
+                              fieldLabel="Content Fragment"
+                              emptyText="Enter or select Content Fragment with employer plan"
+                              pickerTitle="Select Content Fragment"
+                              forceSelection="{Boolean}true"
+                              rootPath="/content/dam/premember/plans/options/pharmacy"/>
+                            <variationName
+                              jcr:primaryType="nt:unstructured"
+                              sling:resourceType="granite/ui/components/coral/foundation/form/select"
+                              name="./variationName"
+                              fieldLabel="Variation"
+                              fieldDescription="Specify which variation to display">
+                                <datasource
+                                  jcr:primaryType="nt:unstructured"
+                                  sling:resourceType="core/wcm/components/contentfragment/v1/datasource/variations"
+                                  componentPath="${requestPathInfo.suffix}"
+                                  fragmentPath="${param.fragmentPath}"/>
+                                <granite:data
+                                  jcr:primaryType="nt:unstructured"
+                                  field-path="${requestPathInfo.resourcePath}"/>
+                            </variationName>
+                            <fullBenefitsLink
+                              jcr:primaryType="nt:unstructured"
+                              sling:resourceType="granite/ui/components/coral/foundation/form/pathfield"
+                              fieldLabel="Full Benefits Link"
+                              name="./fullBenefitsLink"
+                              rootPath="/content/dam/premember/documents/pharmacy-plan-benefits-pdf"/>
+                        </items>
+                    </general>
+                    <pharmacyPrescription
+                      jcr:primaryType="nt:unstructured"
+                      jcr:title="Pharmacy and Prescription"
+                      sling:resourceType="granite/ui/components/coral/foundation/container"
+                      margin="{Boolean}true">
+                        <items jcr:primaryType="nt:unstructured">
+                            <specialityMedications
+                              jcr:primaryType="nt:unstructured"
+                              sling:resourceType="granite/ui/components/coral/foundation/form/checkbox"
+                              fieldDescription="If unchecked - hide the section in the template"
+                              name="./specialityMedications"
+                              text="Speciality Medications"
+                              value="true"
+                              checked="false"
+                              uncheckedValue="false"/>
+                            <showSpecialityMedicationsPdf
+                              jcr:primaryType="nt:unstructured"
+                              sling:resourceType="granite/ui/components/coral/foundation/form/checkbox"
+                              fieldDescription="If unchecked hide the section in the Speciality medication component"
+                              name="./showSpecialityMedicationsPdf"
+                              text="Show Speciality Medication - Link to PDF"
+                              value="true"
+                              checked="false"
+                              uncheckedValue="false"/>
+                            <specialityMedicationsPdf
+                              jcr:primaryType="nt:unstructured"
+                              sling:resourceType="granite/ui/components/coral/foundation/form/pathfield"
+                              fieldDescription="If unchecked hide the section in the Speciality medication component"
+                              name="./specialityMedicationsPdf"
+                              rootPath="/content/dam/premember/documents/pharmacy-plan-benefits-pdf"
+                              fieldLabel="Speciality Medication - Link to PDF"/>
+                            <prescriptionDrugCost
+                              jcr:primaryType="nt:unstructured"
+                              sling:resourceType="granite/ui/components/coral/foundation/form/checkbox"
+                              fieldDescription="If unchecked hide the section in the template"
+                              name="./prescriptionDrugCost"
+                              text="Prescription Drug Cost"
+                              value="true"
+                              checked="false"
+                              uncheckedValue="false"
+                              granite:class="drug-pricing-link-showhide"/>
+                            <drugPricingToolLink
+                              jcr:primaryType="nt:unstructured"
+                              sling:resourceType="granite/ui/components/coral/foundation/form/textfield"
+                              fieldLabel="Drug Pricing Tool Link"
+                              name="./drugPricingToolLink"
+                              granite:class="drug-pricing-link"/>
+                            <findPharmacy
+                              jcr:primaryType="nt:unstructured"
+                              sling:resourceType="granite/ui/components/coral/foundation/form/checkbox"
+                              fieldDescription="If unchecked hide the section in the template"
+                              name="./findPharmacy"
+                              text="Find a Pharmacy"
+                              value="true"
+                              checked="false"
+                              uncheckedValue="false"
+                              granite:class="pharmacy-link-showhide"/>
+                            <pharmacyLinkLabelOne
+                                jcr:primaryType="nt:unstructured"
+                                sling:resourceType="granite/ui/components/coral/foundation/form/textfield"
+                                fieldLabel="Pharmacy Link Label 1 (Default)"
+                                name="./pharmacyLinkLabel"
+                                value="Search Pharmacies"/>
+                            <pharmacyLinkOne
+                                jcr:primaryType="nt:unstructured"
+                                sling:resourceType="granite/ui/components/coral/foundation/form/textfield"
+                                fieldLabel="Pharmacy Link 1 (Default)"
+                                name="./pharmacyLink"
+                                granite:class="pharmacy-link"/>
+                            <pharmacyLinkLabelTwo
+                                jcr:primaryType="nt:unstructured"
+                                sling:resourceType="granite/ui/components/coral/foundation/form/textfield"
+                                fieldLabel="Pharmacy Link Label 2"
+                                name="./pharmacyLinkLabelTwo"/>
+                            <pharmacyLinkTwo
+                                jcr:primaryType="nt:unstructured"
+                                sling:resourceType="granite/ui/components/coral/foundation/form/textfield"
+                                fieldLabel="Pharmacy Link 2"
+                                name="./pharmacyLinkTwo"
+                                granite:class="pharmacy-link"/>
+                            <pharmacyLinkLabelThree
+                                jcr:primaryType="nt:unstructured"
+                                sling:resourceType="granite/ui/components/coral/foundation/form/textfield"
+                                fieldLabel="Pharmacy Link Label 3"
+                                name="./pharmacyLinkLabelThree"/>
+                            <pharmacyLinkThree
+                                jcr:primaryType="nt:unstructured"
+                                sling:resourceType="granite/ui/components/coral/foundation/form/textfield"
+                                fieldLabel="Pharmacy Link 3"
+                                name="./pharmacyLinkThree"
+                                granite:class="pharmacy-link"/>
+                            <pharmacyLinkLabelFour
+                                jcr:primaryType="nt:unstructured"
+                                sling:resourceType="granite/ui/components/coral/foundation/form/textfield"
+                                fieldLabel="Pharmacy Link Label 4"
+                                name="./pharmacyLinkLabelFour"/>
+                            <pharmacyLinkFour
+                                jcr:primaryType="nt:unstructured"
+                                sling:resourceType="granite/ui/components/coral/foundation/form/textfield"
+                                fieldLabel="Pharmacy Link 4"
+                                name="./pharmacyLinkFour"
+                                granite:class="pharmacy-link"/>
+                            <pharmacyLinkLabelFive
+                                jcr:primaryType="nt:unstructured"
+                                sling:resourceType="granite/ui/components/coral/foundation/form/textfield"
+                                fieldLabel="Pharmacy Link Label 5"
+                                name="./pharmacyLinkLabelFive"/>
+                            <pharmacyLinkFive
+                                jcr:primaryType="nt:unstructured"
+                                sling:resourceType="granite/ui/components/coral/foundation/form/textfield"
+                                fieldLabel="Pharmacy Link 5"
+                                name="./pharmacyLinkFive"
+                                granite:class="pharmacy-link"/>
+                        </items>
+                    </pharmacyPrescription>
+                    <fillsAndRefills
+                      jcr:primaryType="nt:unstructured"
+                      jcr:title="Pharmacy - Fills and Refills"
+                      sling:resourceType="granite/ui/components/coral/foundation/container"
+                      margin="{Boolean}true">
+                        <items jcr:primaryType="nt:unstructured">
+                            <showFillsAndRefills
+                              jcr:primaryType="nt:unstructured"
+                              sling:resourceType="granite/ui/components/coral/foundation/form/checkbox"
+                              fieldDescription="If unchecked - hide the section in the template"
+                              name="./showFillsAndRefills"
+                              text="Fills and Refills"
+                              value="true"
+                              checked="false"
+                              uncheckedValue="false"/>
+                            <fillsAndRefillsOrderInFrequency
+                              jcr:primaryType="nt:unstructured"
+                              sling:resourceType="granite/ui/components/coral/foundation/form/textfield"
+                              fieldDescription="Updates 'Order in' copy: 'With home delivery, you can order [(up to) a (3-month)] supply of medications you take regularly. Signing up is easy, and there's free standard shipping to U.S. addresses.'"
+                              name="./fillsAndRefillsOrderInFrequency"
+                              fieldLabel="Order in Frequency"/>
+                        </items>
+                    </fillsAndRefills>
+                    <tierCost
+                      jcr:primaryType="nt:unstructured"
+                      jcr:title="Tier - Your Cost"
+                      sling:resourceType="granite/ui/components/coral/foundation/container"
+                      margin="{Boolean}true"
+                      granite:class="sfp_properties">
+                        <items jcr:primaryType="nt:unstructured">
+                            <info
+                              jcr:primaryType="nt:unstructured"
+                              sling:resourceType="granite/ui/components/foundation/text"
+                              text="Maximum 4 options can be selected:"/>
+                            <tier1
+                              jcr:primaryType="nt:unstructured"
+                              sling:resourceType="granite/ui/components/coral/foundation/form/checkbox"
+                              name="./tier1"
+                              text="1 $ (Lowest Cost)"
+                              value="true"
+                              checked="false"
+                              uncheckedValue="false"/>
+                            <tier2
+                              jcr:primaryType="nt:unstructured"
+                              sling:resourceType="granite/ui/components/coral/foundation/form/checkbox"
+                              name="./tier2"
+                              text="2 $$ (Mid-Range Cost)"
+                              value="true"
+                              checked="false"
+                              uncheckedValue="false"/>
+                            <tier3
+                              jcr:primaryType="nt:unstructured"
+                              sling:resourceType="granite/ui/components/coral/foundation/form/checkbox"
+                              name="./tier3"
+                              text="3 $$$ (Higher Cost)"
+                              value="true"
+                              checked="false"
+                              uncheckedValue="false"/>
+                            <tier3highest
+                              jcr:primaryType="nt:unstructured"
+                              sling:resourceType="granite/ui/components/coral/foundation/form/checkbox"
+                              name="./tier3highest"
+                              text="3 $$$ (Highest Cost)"
+                              value="true"
+                              checked="false"
+                              uncheckedValue="false"/>
+                            <tier4
+                              jcr:primaryType="nt:unstructured"
+                              sling:resourceType="granite/ui/components/coral/foundation/form/checkbox"
+                              name="./tier4"
+                              text="4 $$$$ (Highest Cost)"
+                              value="true"
+                              checked="false"
+                              uncheckedValue="false"/>
+                        </items>
+                    </tierCost>
+                    <tierPdl
+                      jcr:primaryType="nt:unstructured"
+                      jcr:title="Tier - PDL"
+                      sling:resourceType="granite/ui/components/coral/foundation/container"
+                      margin="{Boolean}true"
+                      granite:class="sfp_properties">
+                        <items jcr:primaryType="nt:unstructured">
+                            <traditional3Tier
+                              jcr:primaryType="nt:unstructured"
+                              sling:resourceType="granite/ui/components/coral/foundation/form/checkbox"
+                              name="./traditional3Tier"
+                              text="Traditional 3-Tier"
+                              value="true"
+                              checked="false"
+                              uncheckedValue="false"/>
+                            <traditional4Tier
+                              jcr:primaryType="nt:unstructured"
+                              sling:resourceType="granite/ui/components/coral/foundation/form/checkbox"
+                              name="./traditional4Tier"
+                              text="Traditional 4-Tier"
+                              value="true"
+                              checked="false"
+                              uncheckedValue="false"/>
+                            <advantage3Tier
+                              jcr:primaryType="nt:unstructured"
+                              sling:resourceType="granite/ui/components/coral/foundation/form/checkbox"
+                              name="./advantage3Tier"
+                              text="Advantage 3-Tier"
+                              value="true"
+                              checked="false"
+                              uncheckedValue="false"/>
+                            <advantage4Tier
+                              jcr:primaryType="nt:unstructured"
+                              sling:resourceType="granite/ui/components/coral/foundation/form/checkbox"
+                              name="./advantage4Tier"
+                              text="Advantage 4-Tier"
+                              value="true"
+                              checked="false"
+                              uncheckedValue="false"/>
+                            <access3Tier
+                              jcr:primaryType="nt:unstructured"
+                              sling:resourceType="granite/ui/components/coral/foundation/form/checkbox"
+                              name="./access3Tier"
+                              text="Access 3-Tier"
+                              value="true"
+                              checked="false"
+                              uncheckedValue="false"/>
+                            <access4Tier
+                              jcr:primaryType="nt:unstructured"
+                              sling:resourceType="granite/ui/components/coral/foundation/form/checkbox"
+                              name="./access4Tier"
+                              text="Access 4-Tier"
+                              value="true"
+                              checked="false"
+                              uncheckedValue="false"/>
+                            <essentialAllStates
+                              jcr:primaryType="nt:unstructured"
+                              sling:resourceType="granite/ui/components/coral/foundation/form/checkbox"
+                              name="./essentialAllStates"
+                              text="Essential All States"
+                              value="true"
+                              checked="false"
+                              uncheckedValue="false"/>
+                            <coloradoDoctorsPlan
+                              jcr:primaryType="nt:unstructured"
+                              sling:resourceType="granite/ui/components/coral/foundation/form/checkbox"
+                              name="./coloradoDoctorsPlan"
+                              text="Colorado Doctors Plan"
+                              value="true"
+                              checked="false"
+                              uncheckedValue="false"/>
+                        </items>
+                    </tierPdl>
+                    <customPdl
+                        jcr:primaryType="nt:unstructured"
+                        jcr:title="Custom PDL"
+                        sling:resourceType="granite/ui/components/coral/foundation/container"
+                        margin="{Boolean}true"
+                        granite:class="customPdlsTab">
+                        <items jcr:primaryType="nt:unstructured">
+                            <pdls
+                                jcr:primaryType="nt:unstructured"
+                                sling:resourceType="granite/ui/components/coral/foundation/form/multifield"
+                                class="foundation-layout-util-maximized-alt"
+                                composite="{Boolean}true">
+                                <field
+                                    jcr:primaryType="nt:unstructured"
+                                    sling:resourceType="granite/ui/components/coral/foundation/container"
+                                    name="./customPdls">
+                                    <items jcr:primaryType="nt:unstructured">
+                                    <planName
+                                        jcr:primaryType="nt:unstructured"
+                                        sling:resourceType="granite/ui/components/coral/foundation/form/textfield"
+                                        fieldLabel="Plan Name"
+                                        name="planName"/>
+                                    <planLink
+                                        jcr:primaryType="nt:unstructured"
+                                        sling:resourceType="granite/ui/components/coral/foundation/form/textfield"
+                                        fieldLabel="Plan Link"
+                                        name="planLink"/>
+                                    <planLinkTitle
+                                        jcr:primaryType="nt:unstructured"
+                                        sling:resourceType="granite/ui/components/coral/foundation/form/textfield"
+                                        fieldLabel="Plan Link Title "
+                                        name="planLinkTitle"/>
+                                    <planFutureCoverageLink
+                                        jcr:primaryType="nt:unstructured"
+                                        sling:resourceType="granite/ui/components/coral/foundation/form/textfield"
+                                        fieldLabel="Plan Future Coverage Link"
+                                        name="planFutureCoverageLink"/>
+                                    <planFutureCoverageTitle
+                                        jcr:primaryType="nt:unstructured"
+                                        sling:resourceType="granite/ui/components/coral/foundation/form/textfield"
+                                        fieldLabel="Plan Future Coverage Title Override"
+                                        name="planFutureCoverageTitle"/>
+                                    <planPdfLinkTitle
+                                            jcr:primaryType="nt:unstructured"
+                                            sling:resourceType="granite/ui/components/coral/foundation/form/textfield"
+                                            fieldLabel="Plan PDF Link Title "
+                                            name="planPdfTitle"/>
+                                    <planPdf
+                                        jcr:primaryType="nt:unstructured"
+                                        sling:resourceType="granite/ui/components/coral/foundation/form/pathfield"
+                                        fieldLabel="Plan PDF"
+                                        name="planPdf"
+                                        rootPath="/content/dam/premember/documents/prescription-pdl-pdf"/>
+                                    </items>
+                                </field>
+                            </pdls>
+                        </items>
+                    </customPdl>
+                </items>
+            </tabs>
+        </items>
+    </content>
+</jcr:root>

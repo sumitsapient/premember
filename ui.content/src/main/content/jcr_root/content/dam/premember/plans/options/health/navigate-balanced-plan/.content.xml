@@ -1,0 +1,62 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<jcr:root xmlns:dam="http://www.day.com/dam/1.0" xmlns:cq="http://www.day.com/jcr/cq/1.0" xmlns:jcr="http://www.jcp.org/jcr/1.0" xmlns:mix="http://www.jcp.org/jcr/mix/1.0" xmlns:nt="http://www.jcp.org/jcr/nt/1.0"
+    jcr:mixinTypes="[mix:referenceable]"
+    jcr:primaryType="dam:Asset">
+    <jcr:content
+        cq:name="navigate-balanced-plan"
+        cq:parentPath="/content/dam/premember/plans/options/health"
+        cq:versionCreator="admin"
+        jcr:description=""
+        jcr:primaryType="dam:AssetContent"
+        jcr:title="Navigate Balanced Plan"
+        contentFragment="{Boolean}true"
+        lastFragmentSave="{Date}2020-06-25T06:06:18.523Z">
+        <data
+            cq:model="/conf/premember/health-option/settings/dam/cfm/models/health-plan-option"
+            jcr:primaryType="nt:unstructured">
+            <master
+                jcr:mixinTypes="[cq:Taggable]"
+                jcr:primaryType="nt:unstructured"
+                catalystPlanAdditionalInfo="{Boolean}false"
+                comparisonChapter1Topic3Option1="{Boolean}false"
+                comparisonChapter1Topic3Option2="{Boolean}false"
+                comparisonChapter1Topic3Option3="{Boolean}false"
+                comparisonChapter1Topic3Option4="{Boolean}true"
+                comparisonNetworkCoverage="\{comparisonChapter1Topic1Option2} - No — Search network doctors and facilities"
+                comparisonPcpRequirement="\{comparisonChapter1Topic2Option1} - Yes — you'll need to choose a PCP to help provide and coordinate your care"
+                comparisonPrescriptionLink="https://www.uhc.com/"
+                comparisonProviderLink="https://connect.werally.com/guest/eyJwbGFuTmFtZSI6Ik5hdmlnYXRlIFRpZXJlZCBCYWxhbmNlZCIsImRlbHN5cyI6IjU4IiwicGFydG5lcklkIjoidWhjIiwibGFuZ3VhZ2UiOiJlbiIsImFjY291bnRQb2xpY3lOdW1iZXIiOiIyVTkyOTMiLCJwbGFuVmFyaWF0aW9uIjoiMDAwMSJ9-pRjGnaIwIYo2t1lsO9qLvf1X1gbYuYjB"
+                comparisonSearchCoverageLinkText="{Boolean}true"
+                comparisonFullBenefitsLinkText="{Boolean}true"
+                hasStateSpecificProvider="{Boolean}false"
+                hsaWithOptumBank="{Boolean}false"
+                planDescription="&lt;p>With this health plan, you’ll need to select a primary care physician (PCP) from our network. Your PCP will perform a key role in guiding your health care by helping you avoid duplicating tests and services, connecting you with a specialist if needed, and supporting you in achieving your best health.&amp;nbsp;&lt;/p>&#xa;&lt;p>&amp;nbsp;&lt;/p>&#xa;&lt;p>This plan is designed to help you pay less when you see Tier 1 doctors and specialists. Our Tier 1 providers list is updated annually so it’s important to check your providers Tier 1 status before accessing care. In addition, using freestanding facilities for certain services can help drive cost savings.&amp;nbsp;&lt;/p>&#xa;&lt;p>&amp;nbsp;&lt;/p>&#xa;&lt;p>There’s no coverage if you use an out-of-network provider and you will be responsible for the cost of care services.&amp;nbsp; You’ll have a higher coverage if you get an electronic referral from your PCP to see a network specialist and a lower coverage if no referral.&amp;nbsp; &amp;nbsp;&lt;/p>&#xa;&lt;p>&amp;nbsp;&lt;/p>&#xa;&lt;p>Preventive care is covered 100 percent in the network. By using a network provider, you don't have to pay any out-of-pocket costs for age-appropriate preventive care.&amp;nbsp;&lt;/p>&#xa;"
+                planDetailPagePrimaryCarePhysicianTopic1Option="\{planDetailPagePrimaryCarePhysicianTopic1Option1} - With this plan, you'll need to select a primary care physician (PCP)"
+                planName="UnitedHealthcare Navigate® Balanced Plan"
+                prescriptionSearchLink="{Boolean}true"
+                primaryCarePhysician="\{summaryTopic2Option1} - Primary care provider required"
+                prescriptionsComparisonSearchCoverageLinkText="{Boolean}true"
+                prescriptionsComparisonSearchCoverageLinkText_x0040_LastModified="{Date}2020-07-08T16:31:08.544+02:00"
+                providerSearchLink="https://connect.werally.com/guest/eyJwbGFuTmFtZSI6Ik5hdmlnYXRlIFRpZXJlZCBCYWxhbmNlZCIsImRlbHN5cyI6IjU4IiwicGFydG5lcklkIjoidWhjIiwibGFuZ3VhZ2UiOiJlbiIsImFjY291bnRQb2xpY3lOdW1iZXIiOiIyVTkyOTMiLCJwbGFuVmFyaWF0aW9uIjoiMDAwMSJ9-pRjGnaIwIYo2t1lsO9qLvf1X1gbYuYjB2I4m1w22KU"
+                providersComparisonSearchCoverageLinkText="{Boolean}true"
+                providersComparisonSearchCoverageLinkText_x0040_LastModified="{Date}2020-07-08T16:31:08.543+02:00"
+                servicesCovered="{Boolean}true"
+                showPlanDetailPageNetworkCoverageTopic1Option1="{Boolean}true"
+                showPlanDetailPageNetworkCoverageTopic1Option2="{Boolean}false"
+                showPlanDetailPageNetworkCoverageTopic1Option3="{Boolean}false"
+                showPlanDetailPageNetworkCoverageTopic1Option4="{Boolean}true"
+                showPlanDetailPageNetworkCoverageTopic1Option5="{Boolean}false"
+                summaryCopays="\{summaryTopic3Option1} - Copay due for certain services, prescriptions and locations"
+                summaryNetworkCoverage="\{summaryTopic1Option3} - Only network providers covered, including Tier 1 providers"
+                summaryTopic4Option1="{Boolean}false"
+                summaryTopic4Option2="{Boolean}false"
+                summaryTopic4Option3="{Boolean}false"
+                summaryTopic4Option4="{Boolean}true"
+                suppressPrescriptionCoverage="{Boolean}true"/>
+        </data>
+        <metadata
+            jcr:mixinTypes="[cq:Taggable]"
+            jcr:primaryType="nt:unstructured"/>
+        <related jcr:primaryType="nt:unstructured"/>
+    </jcr:content>
+</jcr:root>

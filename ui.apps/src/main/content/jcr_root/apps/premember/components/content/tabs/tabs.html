@@ -1,0 +1,34 @@
+<div data-sly-use.tabs="com.adobe.cq.wcm.core.components.models.Tabs"
+  data-sly-use.templates="core/wcm/components/commons/v1/templates.html"
+  class="cmp-tabs"
+  data-cmp-is="tabs"
+>
+  <ol data-sly-test.hasMultipleTabs="${tabs.items && tabs.items.size > 1}"
+      data-sly-list.tab="${tabs.items}"
+      role="tablist"
+      class="cmp-tabs__tablist ${properties.enableBlueBackgroundStyles ? 'cmp-tabs__tablist--blue' : ''}"
+      aria-label="${tabs.accessibilityLabel}"
+      aria-multiselectable="false">
+      <sly data-sly-test.isActive="${tab.name == tabs.activeItem}"/>
+      <sly data-sly-use.eventName="${'/apps/premember/components/analytics/eventName.js' @ text=tab.title}"/>
+      <li
+          id="${eventName}-tab"
+          role="tab"
+          aria-controls="${eventName}-tabpanel"
+          class="cmp-tabs__tab${isActive ? ' cmp-tabs__tab--active' : ''} ${tabs.items.size == 1 ? 'u-d-none' : ''}"
+          tabindex="${isActive ? '0' : '-1'}"
+          data-cmp-hook-tabs="tab"
+          data-event-type="tab"
+          data-event-name="${eventName}">${tab.title}</li>
+  </ol>
+  <div data-sly-repeat.item="${tabs.items}"
+      data-sly-resource="${item.name @ decorationTagName='div'}"
+      id="${hasMultipleTabs ? '${eventName}-tabpanel' : false}"
+      role="${hasMultipleTabs ? 'tabpanel' : false}"
+      aria-labelledby="${hasMultipleTabs ? '${eventName}-tab' : false}"
+      tabindex="${hasMultipleTabs ? '0' : false}"
+      class="cmp-tabs__tabpanel${item.name == tabs.activeItem ? ' cmp-tabs__tabpanel--active' : ''} ${properties.enableBlueBackgroundStyles ? 'cmp-tabs__tabpanel--blue' : ''}"
+      data-cmp-hook-tabs="tabpanel"></div>
+  <sly data-sly-resource="${resource.path @ resourceType='wcm/foundation/components/parsys/newpar', appendPath='/*', decorationTagName='div', cssClassName='new section aem-Grid-newComponent'}"
+      data-sly-test="${(wcmmode.edit || wcmmode.preview) && tabs.items.size < 1}"></sly>
+</div>

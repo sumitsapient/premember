@@ -1,0 +1,151 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<jcr:root xmlns:dam="http://www.day.com/dam/1.0" xmlns:cq="http://www.day.com/jcr/cq/1.0" xmlns:jcr="http://www.jcp.org/jcr/1.0" xmlns:mix="http://www.jcp.org/jcr/mix/1.0" xmlns:nt="http://www.jcp.org/jcr/nt/1.0"
+    jcr:mixinTypes="[mix:referenceable]"
+    jcr:primaryType="dam:Asset">
+    <jcr:content
+        cq:name="navigate-plan"
+        cq:parentPath="/content/dam/premember/plans/options/health"
+        jcr:description=""
+        jcr:primaryType="dam:AssetContent"
+        jcr:title="Navigate Plan"
+        contentFragment="{Boolean}true"
+        lastFragmentSave="{Date}2020-06-30T15:29:19.324Z">
+        <data
+            cq:model="/conf/premember/health-option/settings/dam/cfm/models/health-plan-option"
+            jcr:primaryType="nt:unstructured">
+            <master
+                jcr:mixinTypes="[cq:Taggable]"
+                jcr:primaryType="nt:unstructured"
+                catalystPlanAdditionalInfo="{Boolean}false"
+                comparisonChapter1Topic3Option1="{Boolean}false"
+                comparisonChapter1Topic3Option2="{Boolean}false"
+                comparisonChapter1Topic3Option3="{Boolean}false"
+                comparisonChapter1Topic3Option4="{Boolean}true"
+                comparisonNetworkCoverage="\{comparisonChapter1Topic1Option2} - No — Search network doctors and facilities"
+                comparisonPcpRequirement="\{comparisonChapter1Topic2Option1} - Yes — you'll need to choose a PCP to help provide and coordinate your care"
+                comparisonPrescriptionLink="https://www.uhc.com/"
+                comparisonProviderLink="https://connect.werally.com/guest/eyJkZWxzeXMiOiI1NyIsInBsYW5OYW1lIjoiTmF2aWdhdGUifQGUY5UKKAcmxgyMaavHD7dy8PpzBeG2sOQLQDvR7k48k"
+                comparisonSearchCoverageLinkText="{Boolean}true"
+                comparisonFullBenefitsLinkText="{Boolean}true"
+                hasStateSpecificProvider="{Boolean}false"
+                hsaWithOptumBank="{Boolean}false"
+                planDescription="&lt;p>With this health plan, you’ll need to select a primary care physician (PCP) from our network. Your PCP will perform a key role in guiding your health care by helping you avoid duplicating tests and services, connecting you with a specialist if needed, and supporting you in achieving your best health.&amp;nbsp;&amp;nbsp;&lt;/p>&#xa;&lt;p>&amp;nbsp;&lt;/p>&#xa;&lt;p>Where you go for care can make a difference. Using network providers will help you save money. There's no coverage if you go out of network or if you see a network specialist without an electronic referral from your PCP. You will be responsible for the entire cost of care services.&amp;nbsp;&lt;/p>&#xa;&lt;p>&amp;nbsp;&lt;/p>&#xa;&lt;p>Preventive care is covered 100 percent in our network. You don't have to pay any out-of-pocket costs for age-appropriate preventive care as long as you use a network doctor.&lt;/p>&#xa;"
+                planDetailPagePrimaryCarePhysicianTopic1Option="\{planDetailPagePrimaryCarePhysicianTopic1Option1} - With this plan, you'll need to select a primary care physician (PCP)"
+                planName="UnitedHealthcare Navigate® Plan "
+                prescriptionSearchLink="{Boolean}true"
+                primaryCarePhysician="\{summaryTopic2Option1} - Primary care provider required"
+                providerSearchLink="https://connect.werally.com/guest/eyJkZWxzeXMiOiI1NyIsInBsYW5OYW1lIjoiTmF2aWdhdGUifQGUY5UKKAcmxgyMaavHD7dy8PpzBeG2sOQLQDvR7k48k"
+                servicesCovered="{Boolean}true"
+                showPlanDetailPageNetworkCoverageTopic1Option1="{Boolean}false"
+                showPlanDetailPageNetworkCoverageTopic1Option2="{Boolean}false"
+                showPlanDetailPageNetworkCoverageTopic1Option3="{Boolean}false"
+                showPlanDetailPageNetworkCoverageTopic1Option4="{Boolean}false"
+                showPlanDetailPageNetworkCoverageTopic1Option5="{Boolean}false"
+                summaryCopays="\{summaryTopic3Option1} - Copay due for certain services, prescriptions and locations"
+                summaryNetworkCoverage="\{summaryTopic1Option2} - Only network providers covered"
+                summaryTopic4Option1="{Boolean}false"
+                summaryTopic4Option2="{Boolean}false"
+                summaryTopic4Option3="{Boolean}false"
+                summaryTopic4Option4="{Boolean}true"
+                suppressPrescriptionCoverage="{Boolean}true"/>
+            <navigate_w_hsa
+                jcr:mixinTypes="[cq:Taggable]"
+                jcr:primaryType="nt:unstructured"
+                catalystPlanAdditionalInfo="{Boolean}false"
+                comparisonChapter1Topic3Option1="{Boolean}false"
+                comparisonChapter1Topic3Option2="{Boolean}false"
+                comparisonChapter1Topic3Option3="{Boolean}false"
+                comparisonChapter1Topic3Option4="{Boolean}true"
+                comparisonNetworkCoverage="\{comparisonChapter1Topic1Option2} - No — Search network doctors and facilities"
+                comparisonPcpRequirement="\{comparisonChapter1Topic2Option1} - Yes — you'll need to choose a PCP to help provide and coordinate your care"
+                comparisonPrescriptionLink="https://www.uhc.com/"
+                comparisonProviderLink="https://connect.werally.com/guest/eyJkZWxzeXMiOiI1NyIsInBsYW5OYW1lIjoiTmF2aWdhdGUifQGUY5UKKAcmxgyMaavHD7dy8PpzBeG2sOQLQDvR7k48k"
+                comparisonSearchCoverageLinkText="{Boolean}true"
+                comparisonFullBenefitsLinkText="{Boolean}true"
+                hasStateSpecificProvider="{Boolean}false"
+                hsaWithOptumBank="{Boolean}false"
+                planDescription="&lt;p>With this health plan, you’ll need to select a primary care physician (PCP) from our network. Your PCP will perform a key role in guiding your health care by helping you avoid duplicating tests and services, connecting you with a specialist if needed, and supporting you in achieving your best health.&amp;nbsp;&amp;nbsp;&lt;/p>&#xa;&lt;p>&amp;nbsp;&lt;/p>&#xa;&lt;p>Where you go for care can make a difference. Using network providers will help you save money. There's no coverage if you go out of network or if you see a network specialist without an electronic referral from your PCP. You will be responsible for the entire cost of care services.&amp;nbsp;&lt;/p>&#xa;&lt;p>&amp;nbsp;&lt;/p>&#xa;&lt;p>Preventive care is covered 100 percent in our network. You don't have to pay any out-of-pocket costs for age-appropriate preventive care as long as you use a network doctor.&lt;/p>&#xa;"
+                planDetailPagePrimaryCarePhysicianTopic1Option="\{planDetailPagePrimaryCarePhysicianTopic1Option1} - With this plan, you'll need to select a primary care physician (PCP)"
+                planName="UnitedHealthcare Navigate® Plan "
+                prescriptionSearchLink="{Boolean}true"
+                primaryCarePhysician="\{summaryTopic2Option1} - Primary care provider required"
+                providerSearchLink="https://connect.werally.com/guest/eyJkZWxzeXMiOiI1NyIsInBsYW5OYW1lIjoiTmF2aWdhdGUifQGUY5UKKAcmxgyMaavHD7dy8PpzBeG2sOQLQDvR7k48k"
+                servicesCovered="{Boolean}true"
+                showPlanDetailPageNetworkCoverageTopic1Option1="{Boolean}false"
+                showPlanDetailPageNetworkCoverageTopic1Option2="{Boolean}false"
+                showPlanDetailPageNetworkCoverageTopic1Option3="{Boolean}false"
+                showPlanDetailPageNetworkCoverageTopic1Option4="{Boolean}false"
+                showPlanDetailPageNetworkCoverageTopic1Option5="{Boolean}false"
+                summaryCopays="\{summaryTopic3Option1} - Copay due for certain services, prescriptions and locations"
+                summaryNetworkCoverage="\{summaryTopic1Option2} - Only network providers covered"
+                summaryTopic4Option1="{Boolean}false"
+                summaryTopic4Option2="{Boolean}false"
+                summaryTopic4Option3="{Boolean}false"
+                summaryTopic4Option4="{Boolean}true"
+                suppressPrescriptionCoverage="{Boolean}true"/>
+            <apple_navigate_plan
+                jcr:mixinTypes="[cq:Taggable]"
+                jcr:primaryType="nt:unstructured"
+                catalystPlanAdditionalInfo="{Boolean}false"
+                comparisonChapter1Topic3Option1="{Boolean}false"
+                comparisonChapter1Topic3Option2="{Boolean}false"
+                comparisonChapter1Topic3Option3="{Boolean}false"
+                comparisonChapter1Topic3Option4="{Boolean}true"
+                comparisonNetworkCoverage="\{comparisonChapter1Topic1Option2} - No — Search network doctors and facilities"
+                comparisonPcpRequirement="\{comparisonChapter1Topic2Option1} - Yes — you'll need to choose a PCP to help provide and coordinate your care"
+                comparisonPrescriptionLink="https://www.uhc.com/"
+                comparisonProviderLink="https://connect.werally.com/guest/eyJkZWxzeXMiOiI1NyIsInBsYW5OYW1lIjoiTmF2aWdhdGUifQGUY5UKKAcmxgyMaavHD7dy8PpzBeG2sOQLQDvR7k48k"
+                comparisonSearchCoverageLinkText="{Boolean}true"
+                comparisonFullBenefitsLinkText="{Boolean}true"
+                hasStateSpecificProvider="{Boolean}false"
+                hsaWithOptumBank="{Boolean}false"
+                planDescription="&lt;p>With this health plan, you’ll need to select a primary care physician (PCP) from our network. Your PCP will perform a key role in guiding your health care by helping you avoid duplicating tests and services, connecting you with a specialist if needed, and supporting you in achieving your best health.&amp;nbsp;&amp;nbsp;&lt;/p>&#xa;&lt;p>&amp;nbsp;&lt;/p>&#xa;&lt;p>Where you go for care can make a difference. Using network providers will help you save money. There's no coverage if you go out of network or if you see a network specialist without an electronic referral from your PCP. You will be responsible for the entire cost of care services.&amp;nbsp;&lt;/p>&#xa;&lt;p>&amp;nbsp;&lt;/p>&#xa;&lt;p>Preventive care is covered 100 percent in our network. You don't have to pay any out-of-pocket costs for age-appropriate preventive care as long as you use a network doctor.&lt;/p>&#xa;"
+                planDetailPagePrimaryCarePhysicianTopic1Option="\{planDetailPagePrimaryCarePhysicianTopic1Option1} - With this plan, you'll need to select a primary care physician (PCP)"
+                planName="Apple UnitedHealthcare Navigate® Plan "
+                prescriptionSearchLink="{Boolean}true"
+                primaryCarePhysician="\{summaryTopic2Option1} - Primary care provider required"
+                providerSearchLink="https://connect.werally.com/guest/eyJkZWxzeXMiOiI1NyIsInBsYW5OYW1lIjoiTmF2aWdhdGUifQGUY5UKKAcmxgyMaavHD7dy8PpzBeG2sOQLQDvR7k48k"
+                servicesCovered="{Boolean}true"
+                showPlanDetailPageNetworkCoverageTopic1Option1="{Boolean}false"
+                showPlanDetailPageNetworkCoverageTopic1Option2="{Boolean}false"
+                showPlanDetailPageNetworkCoverageTopic1Option3="{Boolean}false"
+                showPlanDetailPageNetworkCoverageTopic1Option4="{Boolean}false"
+                showPlanDetailPageNetworkCoverageTopic1Option5="{Boolean}false"
+                summaryCopays="\{summaryTopic3Option1} - Copay due for certain services, prescriptions and locations"
+                summaryNetworkCoverage="\{summaryTopic1Option2} - Only network providers covered"
+                summaryTopic4Option1="{Boolean}false"
+                summaryTopic4Option2="{Boolean}false"
+                summaryTopic4Option3="{Boolean}false"
+                summaryTopic4Option4="{Boolean}true"
+                suppressPrescriptionCoverage="{Boolean}true"/>
+        </data>
+        <metadata
+            jcr:mixinTypes="[cq:Taggable]"
+            jcr:primaryType="nt:unstructured"/>
+        <model jcr:primaryType="nt:unstructured">
+            <variations jcr:primaryType="nt:unstructured">
+                <navigate_w_hsa
+                    jcr:description="This is variation of navigate with HSA selected."
+                    jcr:mixinTypes="[cq:Taggable]"
+                    jcr:primaryType="nt:unstructured"
+                    jcr:title="Navigate w/ HSA"
+                    name="navigate_w_hsa">
+                    <properties
+                        jcr:primaryType="nt:unstructured"
+                        synchronizeWithVersion="[planName:fc24717e-90d6-4dae-94aa-ecb8e3d772bc,planId:fc24717e-90d6-4dae-94aa-ecb8e3d772bc,planDescription:fc24717e-90d6-4dae-94aa-ecb8e3d772bc,providerSearchLink:fc24717e-90d6-4dae-94aa-ecb8e3d772bc,prescriptionSearchLink:fc24717e-90d6-4dae-94aa-ecb8e3d772bc,hasStateSpecificProvider:fc24717e-90d6-4dae-94aa-ecb8e3d772bc,stateSpecificProviderDescription:fc24717e-90d6-4dae-94aa-ecb8e3d772bc,stateSpecificProviderLinkText:fc24717e-90d6-4dae-94aa-ecb8e3d772bc,stateSpecificProviderLink:fc24717e-90d6-4dae-94aa-ecb8e3d772bc,summaryNetworkCoverage:fc24717e-90d6-4dae-94aa-ecb8e3d772bc,primaryCarePhysician:fc24717e-90d6-4dae-94aa-ecb8e3d772bc,summaryCopays:fc24717e-90d6-4dae-94aa-ecb8e3d772bc,summaryTopic4Option1:fc24717e-90d6-4dae-94aa-ecb8e3d772bc,summaryTopic4Option2:fc24717e-90d6-4dae-94aa-ecb8e3d772bc,summaryTopic4Option3:fc24717e-90d6-4dae-94aa-ecb8e3d772bc,summaryTopic4Option4:fc24717e-90d6-4dae-94aa-ecb8e3d772bc,suppressPrescriptionCoverage:fc24717e-90d6-4dae-94aa-ecb8e3d772bc,showPlanDetailPageNetworkCoverageTopic1Option1:fc24717e-90d6-4dae-94aa-ecb8e3d772bc,showPlanDetailPageNetworkCoverageTopic1Option2:fc24717e-90d6-4dae-94aa-ecb8e3d772bc,showPlanDetailPageNetworkCoverageTopic1Option3:fc24717e-90d6-4dae-94aa-ecb8e3d772bc,showPlanDetailPageNetworkCoverageTopic1Option4:fc24717e-90d6-4dae-94aa-ecb8e3d772bc,showPlanDetailPageNetworkCoverageTopic1Option5:fc24717e-90d6-4dae-94aa-ecb8e3d772bc,planDetailPagePrimaryCarePhysicianTopic1Option:fc24717e-90d6-4dae-94aa-ecb8e3d772bc,catalystPlanAdditionalInfo:fc24717e-90d6-4dae-94aa-ecb8e3d772bc,hsaWithOptumBank:fc24717e-90d6-4dae-94aa-ecb8e3d772bc,hraOption:fc24717e-90d6-4dae-94aa-ecb8e3d772bc,comparisonNetworkCoverage:fc24717e-90d6-4dae-94aa-ecb8e3d772bc,comparisonPcpRequirement:fc24717e-90d6-4dae-94aa-ecb8e3d772bc,comparisonChapter1Topic3Option1:fc24717e-90d6-4dae-94aa-ecb8e3d772bc,comparisonChapter1Topic3Option2:fc24717e-90d6-4dae-94aa-ecb8e3d772bc,comparisonChapter1Topic3Option3:fc24717e-90d6-4dae-94aa-ecb8e3d772bc,comparisonChapter1Topic3Option4:fc24717e-90d6-4dae-94aa-ecb8e3d772bc,servicesCovered:fc24717e-90d6-4dae-94aa-ecb8e3d772bc,comparisonSearchCoverageLinkText:fc24717e-90d6-4dae-94aa-ecb8e3d772bc,comparisonProviderLink:fc24717e-90d6-4dae-94aa-ecb8e3d772bc,comparisonPrescriptionLink:fc24717e-90d6-4dae-94aa-ecb8e3d772bc,disclaimers:fc24717e-90d6-4dae-94aa-ecb8e3d772bc]"/>
+                </navigate_w_hsa>
+                <apple_navigate_plan
+                    jcr:description="Created for apple specifically."
+                    jcr:mixinTypes="[cq:Taggable]"
+                    jcr:primaryType="nt:unstructured"
+                    jcr:title="Apple Navigate Plan"
+                    name="apple_navigate_plan">
+                    <properties
+                        jcr:primaryType="nt:unstructured"
+                        synchronizeWithVersion="[planName:b1d148f9-89d7-4e84-be83-a2d4df819738,planId:b1d148f9-89d7-4e84-be83-a2d4df819738,planDescription:b1d148f9-89d7-4e84-be83-a2d4df819738,providerSearchLink:b1d148f9-89d7-4e84-be83-a2d4df819738,prescriptionSearchLink:b1d148f9-89d7-4e84-be83-a2d4df819738,hasStateSpecificProvider:b1d148f9-89d7-4e84-be83-a2d4df819738,stateSpecificProviderDescription:b1d148f9-89d7-4e84-be83-a2d4df819738,stateSpecificProviderLinkText:b1d148f9-89d7-4e84-be83-a2d4df819738,stateSpecificProviderLink:b1d148f9-89d7-4e84-be83-a2d4df819738,summaryNetworkCoverage:b1d148f9-89d7-4e84-be83-a2d4df819738,primaryCarePhysician:b1d148f9-89d7-4e84-be83-a2d4df819738,summaryCopays:b1d148f9-89d7-4e84-be83-a2d4df819738,summaryTopic4Option1:b1d148f9-89d7-4e84-be83-a2d4df819738,summaryTopic4Option2:b1d148f9-89d7-4e84-be83-a2d4df819738,summaryTopic4Option3:b1d148f9-89d7-4e84-be83-a2d4df819738,summaryTopic4Option4:b1d148f9-89d7-4e84-be83-a2d4df819738,suppressPrescriptionCoverage:b1d148f9-89d7-4e84-be83-a2d4df819738,showPlanDetailPageNetworkCoverageTopic1Option1:b1d148f9-89d7-4e84-be83-a2d4df819738,showPlanDetailPageNetworkCoverageTopic1Option2:b1d148f9-89d7-4e84-be83-a2d4df819738,showPlanDetailPageNetworkCoverageTopic1Option3:b1d148f9-89d7-4e84-be83-a2d4df819738,showPlanDetailPageNetworkCoverageTopic1Option4:b1d148f9-89d7-4e84-be83-a2d4df819738,showPlanDetailPageNetworkCoverageTopic1Option5:b1d148f9-89d7-4e84-be83-a2d4df819738,planDetailPagePrimaryCarePhysicianTopic1Option:b1d148f9-89d7-4e84-be83-a2d4df819738,catalystPlanAdditionalInfo:b1d148f9-89d7-4e84-be83-a2d4df819738,hsaWithOptumBank:b1d148f9-89d7-4e84-be83-a2d4df819738,hraOption:b1d148f9-89d7-4e84-be83-a2d4df819738,comparisonNetworkCoverage:b1d148f9-89d7-4e84-be83-a2d4df819738,comparisonPcpRequirement:b1d148f9-89d7-4e84-be83-a2d4df819738,comparisonChapter1Topic3Option1:b1d148f9-89d7-4e84-be83-a2d4df819738,comparisonChapter1Topic3Option2:b1d148f9-89d7-4e84-be83-a2d4df819738,comparisonChapter1Topic3Option3:b1d148f9-89d7-4e84-be83-a2d4df819738,comparisonChapter1Topic3Option4:b1d148f9-89d7-4e84-be83-a2d4df819738,servicesCovered:b1d148f9-89d7-4e84-be83-a2d4df819738,comparisonSearchCoverageLinkText:b1d148f9-89d7-4e84-be83-a2d4df819738,comparisonProviderLink:b1d148f9-89d7-4e84-be83-a2d4df819738,comparisonPrescriptionLink:b1d148f9-89d7-4e84-be83-a2d4df819738,disclaimers:b1d148f9-89d7-4e84-be83-a2d4df819738]"/>
+                </apple_navigate_plan>
+            </variations>
+        </model>
+        <related jcr:primaryType="nt:unstructured"/>
+    </jcr:content>
+</jcr:root>

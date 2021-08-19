@@ -1,0 +1,40 @@
+<sly data-sly-use.model="com.mirumagency.uhc.premember.core.models.TokensForEmployer"></sly>
+<div class="c-card aem-component--grow-height">
+  <sly data-sly-test="${wcmmode.edit || model.employer.logo.path != ''}">
+    <div class="c-card__img c-card__img--75height">
+      <img src="${model.employer.logo.path}" alt="${model.employer.logo.description}" />
+    </div>
+  </sly>
+  <div class="c-card__header">
+    <h3 class="c-card__title unity-type-h4">
+      <sly data-sly-test="${!model.employer.contact.cardTitle}">Need help? Have a Question?</sly>
+      ${model.employer.contact.cardTitle}
+    </h3>
+  </div>
+  <div class="c-card__body">
+    <div>
+      <p data-sly-test="${model.employer.contact.additionalDetails}">${model.employer.contact.additionalDetails}</p>
+      <span class="c-card__contact-field u-d-inline-block">${model.employer.contact.openingDays}</span>
+      <span class="c-card__contact-field u-d-inline-block">${model.employer.contact.openingHours}</span>
+      <sly data-sly-use.eventName="${'/apps/premember/components/analytics/eventName.js' @ text=model.employer.contact.phoneNumber.label}"/>
+      <a href="tel:${model.employer.contact.phoneNumber.number}"
+         class="c-button c-button--naked u-text-left u-text-nowrap"
+         x-cq-linkchecker="valid"
+         data-event-type="button"
+         data-event-name="${eventName}">
+        ${model.employer.contact.phoneNumber.label}
+      </a>
+    </div>
+  </div>
+  <div class="c-card__footer">
+    <hr class="cmp-separator__horizontal-rule">
+    <div class="o-grid">
+      <sly data-sly-use.template="contactPerson.html"
+           data-sly-call="${template.contactPerson @ contactPerson=model.employer.contact.firstContactPerson}">
+      </sly>
+      <sly data-sly-use.template="contactPerson.html"
+           data-sly-call="${template.contactPerson @ contactPerson=model.employer.contact.secondContactPerson}">
+      </sly>
+    </div>
+  </div>
+</div>

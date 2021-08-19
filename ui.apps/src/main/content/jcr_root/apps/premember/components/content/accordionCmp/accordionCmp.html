@@ -1,0 +1,52 @@
+<sly data-sly-use.accordionItem="com.mirumagency.uhc.premember.core.models.AccordionCmp"></sly>
+
+<h3 class="accordion-title u-m-b-0${!accordionItem.hideIcon ? ' accordion-title--icon' : ''}" data-sly-element="${accordionItem.titleType || 'h3'}">
+  <sly data-sly-use.eventName="${'/apps/premember/components/analytics/eventName.js' @ text=accordionItem.title}"/>
+  <button id="${accordionItem.id}-button"
+    class="c-collapse${accordionItem.hideIcon ? '' : ' c-collapse--icon'}"
+    aria-controls="${accordionItem.id}"
+    aria-expanded="false"
+    data-event-name="${eventName}"
+    data-event-type="accordion"
+    type="button">
+		<img
+			data-sly-test="${accordionItem.iconVariation != 'tempo' && !accordionItem.hideIcon}"
+			src="${accordionItem.icon}"
+			class="c-collapse__button-icon"
+			alt=""
+		/>
+    <div data-sly-test="${accordionItem.iconVariation == 'tempo' && !accordionItem.hideIcon}"
+      class="c-collapse__button-icon">
+      <sly data-sly-resource="${'iconTempo' @ resourceType='premember/components/content/iconTempo', decoration='false', cssClassName='c-tempo-icon--md'}"></sly>
+    </div>
+    <span class="c-collapse__button-text accordion-button--text">
+      ${accordionItem.title}
+    </span>
+    <span class="o-svg-icon">
+      <svg xmlns="http://www.w3.org/2000/svg" focusable="false" viewBox="0 0 32 32">
+				<path d="M16 32a16 16 0 1116-16 16 16 0 01-16 16zm0-31a15 15 0 1015 15A15 15 0 0016 1zm0 10.5l-6.35 6.35a.5.5 0 000 .71.48.48 0 00.7 0L16 12.91l5.65 5.65a.48.48 0 00.7 0 .5.5 0 000-.71z" fill="currentColor"/>
+			</svg>
+    </span>
+  </button>
+</h3>
+<div id="${accordionItem.id}"
+  role="region"
+  aria-labelledby="${accordionItem.id}-button"
+  aria-hidden="true"
+  class="accordion-body collapse ${wcmmode.edit ? 'show' : ''}">
+  <div class="accordion-content"
+    data-sly-resource="${'bodyPar' @ resourceType='wcm/foundation/components/parsys'}">
+  </div>
+  <button class="accordion-view-less"
+    aria-expanded="false"
+    aria-controls="${accordionItem.id}"
+    data-event-type="accordion"
+    data-event-name="${eventName}">
+    View Less Details
+    <span class="c-icon-box c-icon-box--small c-icon-box--circle c-icon-box-collapse u-color-blue">
+      <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 16 16" focusable="false" shape-rendering="geometricPrecision">
+        <path d="M1.9 3.1L8 9.2l6.1-6.1L16 4.9l-8 8-8-8 1.9-1.8z" fill="#002677"/>
+      </svg>
+    </span>
+  </button>
+</div>

@@ -1,0 +1,12 @@
+.hero {
+	position: relative;
+	margin: 0 0 $g-spacing-lg;
+
+	@include mq(md) {
+		min-height: $minHeroHeight;
+	}
+}
+
+@import 'heroStatic';
+@import 'heroImageAlignedBottom';
+@import 'homepage';

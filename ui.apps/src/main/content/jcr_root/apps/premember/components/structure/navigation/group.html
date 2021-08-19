@@ -1,0 +1,141 @@
+<template
+	data-sly-template.groupNav="${@ items='The navigation items for the current level', data='Employer plan data', config='Employer config'}"
+	data-sly-use.itemTemplate="item.html"
+>
+	<div
+		class="c-navigation__menu u-d-none"
+		data-sly-use.itemContentTemplate="itemContent.html"
+		id="main-menu"
+	>
+		<div class="c-navigation__menu-actions">
+			<!--/* Back Button */-->
+			<button class="c-button c-button--naked c-button--back">
+				<span class="o-svg-icon o-svg-icon--xl u-m-r-xs">
+					<!--/* Back Icon */-->
+					<svg
+						xmlns="http://www.w3.org/2000/svg"
+						viewBox="0 0 24 24"
+						fill="currentColor"
+					>
+						<path d="M0 0h24v24H0z" fill="none"/>
+						<path d="M20 11H7.83l5.59-5.59L12 4l-8 8 8 8 1.41-1.41L7.83 13H20v-2z"/>
+					</svg>
+				</span>
+				Back
+				<span class="u-visually-hidden">${'To Main Menu' @ i18n}</span>
+			</button>
+			<!--/* Close Button	*/-->
+			<button class="c-button-close">
+			<span class="o-svg-icon o-svg-icon--lg">
+				<svg viewBox="0, 0, 24, 24" focusable="false" shape-rendering="geometricPrecision">
+					<path d="M22.792,3.382 L20.618,1.208 L12,9.826 L3.382,1.208 L1.208,3.382 L9.826,12 L1.208,20.618 L3.382,22.792 L12,14.174 L20.618,22.792 L22.792,20.618 L14.174,12 z" fill="currentColor"></path>
+				</svg>
+			</span>
+				<span class="u-visually-hidden">${'Close' @ i18n}</span>
+			</button>
+		</div>
+		<ul class="c-navigation__menu-list">
+			<!--/* Home Link (Mobile Only)
+			<li class="u-d-none@lg">
+				<sly data-sly-call="${itemContentTemplate.itemLink @ title='Home', url=items.root}"></sly>
+			</li> */-->
+			<!--/* Your Plan Options */-->
+			<li
+				data-sly-test="${!data.employer.hidePlanOptions.hidePlanOptions}"
+				class="c-navigation__menu-item"
+			>
+				<sly
+					data-sly-test="${config.mainPlans.size == 1}"
+					data-sly-list.plan="${config.mainPlans}"
+				>
+					<sly
+							data-sly-set.subNavUrl="${plan.summaryPageUrl}.html"
+							data-sly-call="${itemContentTemplate.itemLink @ title='Your Plan Options', url=subNavUrl}"
+					></sly>
+				</sly>
+				<sly
+					data-sly-test="${config.mainPlans.size != 1}"
+				>
+					<sly data-sly-call="${itemContentTemplate.itemButton @ title='Your Plan Options'}"></sly>
+					<!--/* Sub-Menu */-->
+					<div class="c-navigation__sub-menu u-d-none" id="your_plan_options">
+						<ul class="c-navigation__menu-list c-navigation__menu-list--sub-menu">
+							<li class="c-navigation__menu-item c-navigation__menu-item--title">
+								<sly data-sly-test="${data.planOptionsTitle}">
+									${data.planOptionsTitle}
+								</sly>
+								<sly data-sly-test="${!data.planOptionsTitle}">
+									Your Plan Options
+								</sly>
+							</li>
+							<sly data-sly-list.plan="${config.mainPlans}">
+								<li class="c-navigation__menu-item">
+									<sly
+										data-sly-set.subNavUrl="${plan.summaryPageUrl}.html"
+										data-sly-call="${itemContentTemplate.itemLink @ title=plan.name, url=subNavUrl}"
+									></sly>
+								</li>
+							</sly>
+						</ul>
+						<div class="c-navigation__promo">
+							<sly
+								data-sly-test="${config.employer.promotionalAreas.showSpace1}"
+								data-sly-use.template="promotionalSpace.html"
+								data-sly-call="${template.promotionalSpace @ space=config.employer.promotionalAreas.space1}"></sly>
+							<sly
+								data-sly-use.template="promotionalSpace.html"
+								data-sly-call="${template.promotionalSpace @ space=config.employer.promotionalAreas.space2}"></sly>
+						</div>
+					</div>
+				</sly>
+			</li>
+			<sly data-sly-list="${items}">
+				<!--/* Search for a Prescription */-->
+				<sly data-sly-test="${item.name != 'benefits'}">
+					<li
+						data-sly-test="${item.title != 'Search for a Prescription' || (item.title == 'Search for a Prescription' && !config.hideSearchForPrescription)}"
+						class="c-navigation__menu-item"
+					>
+						<sly
+							data-sly-call="${itemContentTemplate.itemLink @ title=item.title, url=item.URL}"
+						></sly>
+					</li>
+				</sly>
+			</sly>
+			<!--/* Member Benefits */-->
+			<sly data-sly-list="${items}">
+				<sly data-sly-test="${item.name == 'benefits'}">
+					<li class="c-navigation__menu-item">
+						<sly
+							data-sly-call="${itemContentTemplate.itemLink @ title=item.title, url=item.URL}"
+						></sly>
+					</li>
+				</sly>
+			</sly>
+			<!--/* Member Login */-->
+			<li
+				data-sly-test="${data.memberLoginLink.showMemberLoginOption}"
+				class="c-navigation__menu-item u-d-none@lg"
+			>
+				<a
+					href="${data.memberLoginLink.memberLoginLink}"
+					target="_blank"
+					class="c-navigation__menu-action c-navigation__menu-action--no-border"
+				>
+					${data.memberLoginLink.memberLoginLinkText}
+					<span class="o-svg-icon o-svg-icon--lg">
+						<svg
+							viewBox="0, 0, 24, 24"
+							focusable="false"
+							shape-rendering="geometricPrecision"
+						>
+							<path
+								d="M20.385,20.385 L3.615,20.385 L3.615,3.615 L12,3.615 L12,1.219 L3.615,1.219 C2.285,1.219 1.219,2.297 1.219,3.615 L1.219,20.385 C1.219,21.703 2.285,22.781 3.615,22.781 L20.385,22.781 C21.703,22.781 22.781,21.703 22.781,20.385 L22.781,12 L20.385,12 L20.385,20.385 z M14.396,1.219 L14.396,3.615 L18.696,3.615 L6.921,15.39 L8.61,17.079 L20.385,5.304 L20.385,9.604 L22.781,9.604 L22.781,1.219 L14.396,1.219 z"
+								fill="currentColor"/>
+						</svg>
+					</span>
+				</a>
+			</li>
+		</ul>
+	</div>
+</template>

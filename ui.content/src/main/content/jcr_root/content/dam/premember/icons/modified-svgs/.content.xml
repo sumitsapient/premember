@@ -1,0 +1,57 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<jcr:root xmlns:sling="http://sling.apache.org/jcr/sling/1.0" xmlns:jcr="http://www.jcp.org/jcr/1.0" xmlns:nt="http://www.jcp.org/jcr/nt/1.0"
+    jcr:primaryType="sling:OrderedFolder">
+    <jcr:content
+        jcr:primaryType="nt:unstructured"
+        jcr:title="Modified SVGs">
+        <folderThumbnail/>
+    </jcr:content>
+    <account-balances.svg/>
+    <alert.svg/>
+    <ambulance.svg/>
+    <arrow-drop-down.svg/>
+    <caregiver-man.svg/>
+    <checkmark-take-action.svg/>
+    <claims.svg/>
+    <debit-card.svg/>
+    <dental.svg/>
+    <document.svg/>
+    <dollar.svg/>
+    <donut-chart-80-20.svg/>
+    <donut-chart-100.svg/>
+    <dr-man.svg/>
+    <dr-wm.svg/>
+    <drug-prescription.svg/>
+    <expand_back.svg/>
+    <expand_less.svg/>
+    <expand_more.svg/>
+    <external-link.svg/>
+    <eye-care.svg/>
+    <eyewear.svg/>
+    <favorite-filled.svg/>
+    <filter-2.svg/>
+    <health-preventive-care.svg/>
+    <heres-an-idea-tip.svg/>
+    <HSA.svg/>
+    <Information-Clear_Open.svg/>
+    <list-view.svg/>
+    <mail.svg/>
+    <mental-health.svg/>
+    <NA.svg/>
+    <no-co-pay.svg/>
+    <pdf-doc.svg/>
+    <plan-selector.svg/>
+    <plus.svg/>
+    <pregnant.svg/>
+    <Print_x0020_BTN.svg/>
+    <print.svg/>
+    <private-insurance.svg/>
+    <reimbursement.svg/>
+    <savings.svg/>
+    <tier-1.svg/>
+    <travel.svg/>
+    <two-hearts.svg/>
+    <view-eye.svg/>
+    <View-Less.svg/>
+    <X.svg/>
+</jcr:root>

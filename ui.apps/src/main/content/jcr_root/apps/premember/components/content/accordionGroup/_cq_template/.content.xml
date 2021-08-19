@@ -1,0 +1,19 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<jcr:root xmlns:jcr="http://www.jcp.org/jcr/1.0" xmlns:nt="http://www.jcp.org/jcr/nt/1.0"
+          xmlns:sling="http://sling.apache.org/jcr/sling/1.0"
+          jcr:primaryType="nt:unstructured"
+          titleType="h3">
+    <accordionItem0
+      jcr:primaryType="nt:unstructured"
+      sling:resourceType="premember/components/content/accordionCmp"
+      title="Tab 1">
+      <bodyPar
+        jcr:primaryType="nt:unstructured"
+        sling:resourceType="wcm/foundation/components/parsys">
+        <text
+          jcr:primaryType="nt:unstructured"
+          sling:resourceType="premember/components/content/text"
+          textIsRich="true"/>
+      </bodyPar>
+    </accordionItem0>
+</jcr:root>

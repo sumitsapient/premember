@@ -1,0 +1,46 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<jcr:root xmlns:sling="http://sling.apache.org/jcr/sling/1.0" xmlns:cq="http://www.day.com/jcr/cq/1.0" xmlns:jcr="http://www.jcp.org/jcr/1.0" xmlns:nt="http://www.jcp.org/jcr/nt/1.0"
+    jcr:primaryType="nt:unstructured"
+    jcr:title="Medicare Benefits"
+    sling:resourceType="cq/gui/components/authoring/dialog">
+    <content
+        jcr:primaryType="nt:unstructured"
+        sling:resourceType="granite/ui/components/coral/foundation/container">
+        <items jcr:primaryType="nt:unstructured">
+            <tabs
+                jcr:primaryType="nt:unstructured"
+                sling:resourceType="granite/ui/components/coral/foundation/tabs">
+                <items jcr:primaryType="nt:unstructured">
+                    <planInformation
+                        jcr:primaryType="nt:unstructured"
+                        jcr:title="Plans"
+                        sling:resourceType="granite/ui/components/coral/foundation/container"
+                        margin="{Boolean}true">
+                        <items jcr:primaryType="nt:unstructured">
+                            <planBenefits
+                                jcr:primaryType="nt:unstructured"
+                                sling:resourceType="granite/ui/components/coral/foundation/form/select"
+                                fieldLabel="Plan Benefits"
+                                name="./benefitKey">
+                                <items jcr:primaryType="nt:unstructured">
+                                    <medical
+                                        jcr:primaryType="nt:unstructured"
+                                        text="Medical"
+                                        value="medical"/>
+                                    <pharmacy
+                                        jcr:primaryType="nt:unstructured"
+                                        text="Pharmacy"
+                                        value="pharmacy"/>
+                                    <extras
+                                        jcr:primaryType="nt:unstructured"
+                                        text="Extras"
+                                        value="extras"/>
+                                </items>
+                            </planBenefits>
+                        </items>
+                    </planInformation>
+                </items>
+            </tabs>
+        </items>
+    </content>
+</jcr:root>

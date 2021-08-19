@@ -1,0 +1,21 @@
+.pharmacyProviderCard {
+	.c-card__body {
+		@include mq(md) {
+			max-width: 600px;
+		}
+
+		padding-bottom: 20px;
+	}
+
+	.c-card {
+		&.c-card--left-aligned {
+			.o-media__img {
+				width: 400px;
+			}
+
+			.o-media__body {
+				padding-left: $g-spacing-xxxl;
+			}
+		}
+	}
+}

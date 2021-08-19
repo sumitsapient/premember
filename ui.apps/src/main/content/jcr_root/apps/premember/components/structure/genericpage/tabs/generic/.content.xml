@@ -1,0 +1,74 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<jcr:root xmlns:sling="http://sling.apache.org/jcr/sling/1.0" xmlns:granite="http://www.adobe.com/jcr/granite/1.0" xmlns:cq="http://www.day.com/jcr/cq/1.0" xmlns:jcr="http://www.jcp.org/jcr/1.0" xmlns:nt="http://www.jcp.org/jcr/nt/1.0"
+		jcr:primaryType="nt:unstructured"
+		jcr:title="Generic Page Data"
+		sling:resourceType="granite/ui/components/coral/foundation/fixedcolumns">
+	<items jcr:primaryType="nt:unstructured">
+			<column
+					jcr:primaryType="nt:unstructured"
+					sling:resourceType="granite/ui/components/coral/foundation/container">
+					<items jcr:primaryType="nt:unstructured">
+							<genericdata
+									cq:showOnCreate="{Boolean}true"
+									jcr:primaryType="nt:unstructured"
+									jcr:title="Generic Page Data"
+									sling:resourceType="granite/ui/components/coral/foundation/form/fieldset">
+									<items jcr:primaryType="nt:unstructured">
+											<plantitle
+													cq:showOnCreate="{Boolean}true"
+													jcr:primaryType="nt:unstructured"
+													sling:resourceType="granite/ui/components/coral/foundation/form/textfield"
+													fieldLabel="Plan Title"
+													name="./planTitle"/>
+											<plandescription
+													cq:showOnCreate="{Boolean}true"
+													jcr:primaryType="nt:unstructured"
+													sling:resourceType="granite/ui/components/coral/foundation/form/textarea"
+													fieldLabel="Plan Description"
+													name="./planDescription"/>
+									</items>
+							</genericdata>
+							<finddoctor
+									cq:showOnCreate="{Boolean}true"
+									jcr:primaryType="nt:unstructured"
+									jcr:title="Find Your Doctor"
+									sling:resourceType="granite/ui/components/coral/foundation/form/fieldset">
+									<items jcr:primaryType="nt:unstructured">
+											<path
+											cq:showOnCreate="{Boolean}true"
+											jcr:primaryType="nt:unstructured"
+											sling:resourceType="granite/ui/components/coral/foundation/form/pathfield"
+											fieldLabel="Tempo Icon Path"
+											name="./path"
+											rootPath="/content/dam/premember/icons-tempo"/>
+									<title
+											cq:showOnCreate="{Boolean}true"
+											jcr:primaryType="nt:unstructured"
+											sling:resourceType="granite/ui/components/coral/foundation/form/textfield"
+											fieldLabel="Title"
+											name="./title"/>
+									<description
+											cq:showOnCreate="{Boolean}true"
+											jcr:primaryType="nt:unstructured"
+											sling:resourceType="granite/ui/components/coral/foundation/form/textarea"
+											fieldLabel="Description"
+											name="./description"/>
+									<linktitle
+											cq:showOnCreate="{Boolean}true"
+											jcr:primaryType="nt:unstructured"
+											sling:resourceType="granite/ui/components/coral/foundation/form/textfield"
+											fieldLabel="Link Title"
+											name="./linkTitle"/>
+									<link
+											cq:showOnCreate="{Boolean}true"
+											jcr:primaryType="nt:unstructured"
+											sling:resourceType="granite/ui/components/coral/foundation/form/pathbrowser"
+											fieldLabel="Link"
+											name="./link"
+											rootPath="/content/dam/premember"/>
+									</items>
+							</finddoctor>
+					</items>
+				</column>
+			</items>
+</jcr:root>

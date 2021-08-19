@@ -1,0 +1,93 @@
+$plan-costs-border-color: unity-color('gray', 'medium');
+$plan-costs-border-radius: $g-spacing-sm;
+
+.c-card.c-card--plan-costs {
+	background-color: transparent;
+	border: 1px solid $plan-costs-border-color;
+	border-radius: $plan-costs-border-radius;
+
+	.c-card__body {
+		&:not(:first-child) {
+			border-top: 1px solid $plan-costs-border-color;
+		}
+	}
+
+	table {
+		&:last-child {
+			margin-bottom: 0;
+		}
+	}
+
+	caption {
+		@include unity-type('heading', 'h5');
+
+		padding: $g-spacing-xs;
+		text-align: left;
+	}
+
+	tr {
+		> *:first-child {
+			width: 35%;
+
+			@include mq(md) {
+				width: 45%;
+			}
+
+			@include mq(lg) {
+				width: 40%;
+			}
+		}
+
+		> *:not(:first-child) {
+			max-width: 100px;
+		}
+	}
+
+	th,
+	td {
+		padding: $g-spacing-xs;
+	}
+
+	th {
+		small {
+			display: block;
+			font-weight: $g-font-normal;
+		}
+
+		&[scope="col"] {
+			vertical-align: bottom;
+		}
+	}
+
+	td {
+		&.c-card__table--has-value {
+			@include unity-type('heading', 'h6');
+		}
+	}
+
+	// Mobile only styles
+	@include mq($until: md) {
+		.c-card__body {
+			overflow-x: auto;
+			padding: $g-spacing-xs;
+		}
+
+		th {
+			font-weight: $g-font-normal;
+
+			small {
+				font-style: italic;
+			}
+
+			&[scope="col"] {
+				font-size: 0.85em;
+				text-align: center;
+			}
+		}
+
+		td {
+			white-space: nowrap;
+			text-align: center;
+		}
+	}
+}

@@ -1,0 +1,24 @@
+<div class="o-aem-container employer-container u-bg-gray-light"
+     data-sly-use.employerData="com.mirumagency.uhc.premember.core.models.EmployerData"
+     data-sly-attribute.id="${employerData.id}"
+     data-container="Employer Data Configuration">
+    <sly data-sly-use.data="com.mirumagency.uhc.premember.core.models.EmployerData">
+        <div data-sly-test="${wcmmode.edit || data.employer.pharmacyProviderCard.showPharmacyProviderInHealthPlanDetails}">
+            <div class="c-card aem-component ${card.isLeftBorderTealBlue ? 'c-card--teal-blue' : ''} ${card.backgroundTransparent ? 'u-bg-transparent' : ''} ${card.isPaddingCleared ? 'c-card--cleared-padding' : ''}"
+                 data-sly-use.card="com.mirumagency.uhc.premember.core.models.Card"
+                 data-sly-test="${!card.isImageLeftAligned && !card.isImageLeftAlignMaintainedOnMobile}"
+                 data-sly-attribute.id="${card.id}"
+                 data-sly-include="variations/stackedImage.html"
+                 data-container="Card">
+            </div>
+
+            <div class="c-card aem-component ${card.isImageLeftAlignMaintainedOnMobile ? 'c-card--left-aligned c-card--left-align-mobile' : 'c-card--left-aligned'} ${card.isLeftBorderTealBlue ? 'c-card--teal-blue' : ''} ${card.backgroundTransparent ? 'u-bg-transparent' : ''} ${card.isPaddingCleared ? 'c-card--cleared-padding' : ''} ${card.isPromotionsCard ? 'c-card--promotions' : ''}"
+                 data-sly-use.card="com.mirumagency.uhc.premember.core.models.Card"
+                 data-sly-test="${card.isImageLeftAligned || card.isImageLeftAlignMaintainedOnMobile}"
+                 data-sly-attribute.id="${card.id}"
+                 data-sly-include="variations/leftAlignedImage.html"
+                 data-container="Card">
+            </div>
+        </div>
+    </sly>
+</div>

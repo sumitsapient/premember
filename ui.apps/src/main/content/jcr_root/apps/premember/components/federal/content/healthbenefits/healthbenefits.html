@@ -1,0 +1,10 @@
+<div data-sly-use.model="com.mirumagency.uhc.premember.core.models.federal.PlanPartialBenefits"
+     data-sly-use.templates="core/wcm/components/commons/v1/templates.html"
+     data-sly-test.hasContent="${!model.empty}"
+     id="federal-health-plan-benefits-${model.benefitKey}"
+     class="federal-health-plan-benefits u-h-100%"
+     data-benefits="${model.planBenefitsAsJson}"
+     data-benefit-type="${model.benefitKey}">
+    <p data-sly-test="${wcmmode.edit}">Health Plans Benefits</p>
+</div>
+<sly data-sly-call="${templates.placeholder @ isEmpty = !hasContent}"></sly>

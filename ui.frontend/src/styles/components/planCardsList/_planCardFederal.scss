@@ -1,0 +1,44 @@
+.c-card.c-card--plan-federal {
+	.c-card__plan-main {
+		p {
+			margin-bottom: 0;
+		}
+
+		@include mq($from: sm, $until: md) {
+			> * {
+				margin-bottom: $g-spacing;
+			}
+		}
+
+		@include mq($from: md, $until: lg) {
+			> *:first-child {
+				margin-bottom: $g-spacing;
+			}
+		}
+	}
+
+	.c-card__plan-costs {
+		text-align: center;
+	}
+
+	.c-card__plan-cost-items {
+		.o-grid__item-auto:first-child {
+			@include mq($from: sm, $until: md) {
+				margin-bottom: 0;
+			}
+
+			@include mq(lg) {
+				margin-bottom: $g-spacing-sm;
+			}
+		}
+	}
+
+	.c-card__plan-cost-items--center {
+		margin-top: auto;
+		margin-bottom: auto;
+
+		.o-grid__item-auto:first-child {
+			margin-bottom: 0;
+		}
+	}
+}

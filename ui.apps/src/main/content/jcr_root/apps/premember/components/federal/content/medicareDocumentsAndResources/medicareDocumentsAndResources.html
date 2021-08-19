@@ -1,0 +1,10 @@
+<div data-sly-use.model="com.mirumagency.uhc.premember.core.models.federal.Plan"
+     data-sly-use.template="core/wcm/components/commons/v1/templates.html"
+     data-sly-test.hasContent="${!model.empty}"
+     class="text aem-component-rte">
+    <p class="u-m-b-xs"><strong>${model.data.documentsAndResources.sectionTitle}</strong></p>
+    <ul data-sly-list="${model.data.documentsAndResources.items}">
+      <li><a href="${item.path}">${item.title}</a></li>
+    </ul>
+</div>
+<sly data-sly-call="${template.placeholder @ isEmpty=!hasContent}"></sly>

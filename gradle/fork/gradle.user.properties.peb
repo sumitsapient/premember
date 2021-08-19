@@ -1,0 +1,36 @@
+# Authentication for file server (AEM jar, backups, etc.)
+fileTransfer.user={{companyUser}}
+fileTransfer.password={{companyPassword}}
+fileTransfer.domain={{companyDomain}}
+
+# AEM configuration
+
+{% if instanceAuthorHttpUrl is not empty %}
+instance.local-author.httpUrl={{instanceAuthorHttpUrl}}
+instance.local-author.type={{instanceType}}
+instance.local-author.runModes={{instanceRunModes}}
+instance.local-author.jvmOpts={{instanceJvmOpts}}
+{% endif %}
+
+{% if instancePublishHttpUrl is not empty %}
+instance.local-publish.httpUrl={{instancePublishHttpUrl}}
+instance.local-publish.type={{instanceType}}
+instance.local-publish.runModes={{instanceRunModes}}
+instance.local-publish.jvmOpts={{instanceJvmOpts}}
+{% endif %}
+
+{% if instanceType == 'local' %}
+localInstance.source={{ localInstanceSource }}
+localInstance.quickstart.jarUrl={{ localInstanceQuickstartJarUri }}
+localInstance.quickstart.licenseUrl={{ localInstanceQuickstartLicenseUri }}
+localInstance.backup.uploadUrl={{ localInstanceBackupUploadUri}}
+{% endif %}
+
+# Performance tuning
+org.gradle.daemon=true
+org.gradle.parallel=true
+org.gradle.caching=true
+
+# SMB / JCIFS workaround for Mac OSX
+systemProp.jcifs.resolveOrder=DNS
+systemProp.jcifs.smb.client.dfs.disabled=true

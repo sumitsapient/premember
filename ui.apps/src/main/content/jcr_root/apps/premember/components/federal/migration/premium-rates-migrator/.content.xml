@@ -1,0 +1,103 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<jcr:root xmlns:sling="http://sling.apache.org/jcr/sling/1.0" xmlns:granite="http://www.adobe.com/jcr/granite/1.0"
+          xmlns:cq="http://www.day.com/jcr/cq/1.0" xmlns:jcr="http://www.jcp.org/jcr/1.0"
+          xmlns:nt="http://www.jcp.org/jcr/nt/1.0"
+          jcr:primaryType="cq:Page">
+    <jcr:content
+            jcr:primaryType="nt:unstructured"
+            jcr:title="Federal Tools - Premium Rates Migrator"
+            sling:resourceType="granite/ui/components/shell/page"
+            consoleId="federal-premium-rates-migrator">
+        <head jcr:primaryType="nt:unstructured">
+            <clientlibs
+                    jcr:primaryType="nt:unstructured"
+                    sling:resourceType="granite/ui/components/coral/foundation/includeclientlibs"
+                    categories="[granite.ui.coral.foundation,premember.federal.formResponse]"/>
+        </head>
+        <title
+                jcr:primaryType="nt:unstructured"
+                jcr:title="Federal Tools - Premium Rates Migrator"
+                sling:resourceType="granite/ui/components/shell/title"/>
+        <content
+                jcr:primaryType="nt:unstructured"
+                sling:resourceType="granite/ui/components/coral/foundation/container"
+                margin="{Boolean}true">
+            <items jcr:primaryType="nt:unstructured">
+                <columns
+                        jcr:primaryType="nt:unstructured"
+                        sling:resourceType="granite/ui/components/coral/foundation/fixedcolumns"
+                        margin="{Boolean}true">
+                    <items jcr:primaryType="nt:unstructured">
+                        <column
+                                jcr:primaryType="nt:unstructured"
+                                sling:resourceType="granite/ui/components/coral/foundation/container"
+                                margin="{Boolean}true">
+                            <items jcr:primaryType="nt:unstructured">
+                                <container
+                                        jcr:primaryType="nt:unstructured"
+                                        sling:resourceType="granite/ui/components/coral/foundation/container"
+                                        margin="{Boolean}true">
+                                    <items jcr:primaryType="nt:unstructured">
+                                        <heading
+                                                granite:class="coral-Heading coral-Heading--2"
+                                                jcr:primaryType="nt:unstructured"
+                                                sling:resourceType="granite/ui/components/coral/foundation/heading"
+                                                level="{Long}2"
+                                                text="Select the premium rates to migrate here"/>
+                                        <well
+                                                jcr:primaryType="nt:unstructured"
+                                                sling:resourceType="granite/ui/components/coral/foundation/well"
+                                                margin="{Boolean}true">
+                                            <items jcr:primaryType="nt:unstructured">
+                                                <container
+                                                        granite:id="premiumRatesMigratorForm"
+                                                        jcr:primaryType="nt:unstructured"
+                                                        sling:resourceType="granite/ui/components/coral/foundation/form"
+                                                        method="POST"
+                                                        action="/apps/premember/federal/migration/premium-rates"
+                                                        enctype="multipart/form-data"
+                                                        foundationForm="{Boolean}true"
+                                                        async="{Boolean}true"
+                                                        loadingMask="{Boolean}true"
+                                                        margin="{Boolean}true"
+                                                        style="vertical">
+                                                    <items jcr:primaryType="nt:unstructured">
+                                                        <ratesFolder
+                                                                granite:id="premiumRatesPath"
+                                                                jcr:primaryType="nt:unstructured"
+                                                                sling:resourceType="granite/ui/components/coral/foundation/form/pathfield"
+                                                                emptyText="Enter a path, e.g. /content/dam/premember/rates"
+                                                                fieldLabel="Choose the folder where the rates are located. The files must be in .xlsx format"
+                                                                filter="folder"
+                                                                name="premiumRatesPath"
+                                                                required="{Boolean}true"
+                                                                rootPath="/content/dam"/>
+                                                        <contentFragmentsFolder
+                                                                granite:id="contentFragmentsPath"
+                                                                jcr:primaryType="nt:unstructured"
+                                                                sling:resourceType="granite/ui/components/coral/foundation/form/pathfield"
+                                                                disabled="{Boolean}true"
+                                                                fieldLabel="Content Migration Path"
+                                                                filter="folder"
+                                                                rootPath="/content/"
+                                                                value="/content/dam/premember/federal/regions"/>
+                                                        <submitButton
+                                                                granite:id="btnSubmit"
+                                                                jcr:primaryType="nt:unstructured"
+                                                                sling:resourceType="granite/ui/components/coral/foundation/button"
+                                                                text="Migrate"
+                                                                type="submit"/>
+                                                    </items>
+                                                </container>
+                                            </items>
+                                        </well>
+                                    </items>
+                                </container>
+                            </items>
+                        </column>
+                    </items>
+                </columns>
+            </items>
+        </content>
+    </jcr:content>
+</jcr:root>

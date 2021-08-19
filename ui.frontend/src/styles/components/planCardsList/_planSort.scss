@@ -1,0 +1,44 @@
+.plan-sort {
+	.plan-sort__field {
+		position: relative;
+	}
+
+	.plan-sort__label {
+		@include mq(md) {
+			margin-right: 1.25rem;
+			line-height: 27px;
+		}
+	}
+
+	.plan-sort__select {
+		appearance: none;
+		cursor: pointer;
+		padding-left: 0;
+		padding-right: 30px;
+		line-height: 27px;
+		border: none;
+		background-color: transparent;
+
+		&::-ms-expand {
+			display: none;
+		}
+	}
+
+	.plan-sort__dropdown-icon {
+		position: absolute;
+		top: $g-spacing-xxs;
+		right: 0;
+		width: 18px;
+		height: 18px;
+		pointer-events: none;
+		border-radius: 50%;
+		line-height: 1;
+		background: url('#{$icons-path}/arrow-drop-down.svg') no-repeat center 6px;
+		background-size: 14px 8px;
+
+		> svg {
+			width: 14px;
+			height: 8px;
+		}
+	}
+}

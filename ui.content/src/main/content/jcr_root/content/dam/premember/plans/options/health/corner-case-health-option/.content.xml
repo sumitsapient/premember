@@ -1,0 +1,140 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<jcr:root xmlns:dam="http://www.day.com/dam/1.0" xmlns:cq="http://www.day.com/jcr/cq/1.0" xmlns:jcr="http://www.jcp.org/jcr/1.0" xmlns:nt="http://www.jcp.org/jcr/nt/1.0"
+    jcr:primaryType="dam:Asset">
+    <jcr:content
+        cq:name="corner-case-health-option"
+        cq:parentPath="/content/dam/premember/plans/options/health"
+        jcr:description=""
+        jcr:primaryType="dam:AssetContent"
+        jcr:title="Corner Case Health Option"
+        contentFragment="{Boolean}true"
+        lastFragmentSave="{Date}2020-06-10T14:50:29.153Z">
+        <data
+            cq:model="/conf/premember/health-option/settings/dam/cfm/models/health-plan-option"
+            jcr:primaryType="nt:unstructured">
+            <master
+                jcr:mixinTypes="[cq:Taggable]"
+                jcr:primaryType="nt:unstructured"
+                catalystPlanAdditionalInfo="{Boolean}false"
+                comparisonChapter1Topic3Option1="{Boolean}false"
+                comparisonChapter1Topic3Option2="{Boolean}false"
+                comparisonChapter1Topic3Option3="{Boolean}false"
+                comparisonChapter1Topic3Option4="{Boolean}false"
+                comparisonPrescriptionLink="https://www.uhc.com/"
+                comparisonProviderLink="https://www.uhc.com/"
+                comparisonSearchCoverageLinkText="{Boolean}true"
+                comparisonFullBenefitsLinkText="{Boolean}true"
+                hasStateSpecificProvider="{Boolean}false"
+                hsaWithOptumBank="{Boolean}false"
+                planDetailPagePrimaryCarePhysicianTopic1Option="\{planDetailPagePrimaryCarePhysicianTopic1Option1} - With this plan, you'll need to select a primary care physician (PCP)"
+                planName="Corner Case Health Option"
+                prescriptionsComparisonSearchCoverageLinkText="{Boolean}true"
+                prescriptionsComparisonSearchCoverageLinkText_x0040_LastModified="{Date}2020-07-08T16:31:08.544+02:00"
+                prescriptionSearchLink="{Boolean}true"
+                primaryCarePhysician="\{summaryTopic2Option1} - Primary care provider required"
+                providersComparisonSearchCoverageLinkText="{Boolean}true"
+                providersComparisonSearchCoverageLinkText_x0040_LastModified="{Date}2020-07-08T16:31:08.543+02:00"
+                servicesCovered="{Boolean}false"
+                showPlanDetailPageNetworkCoverageTopic1Option1="{Boolean}false"
+                showPlanDetailPageNetworkCoverageTopic1Option2="{Boolean}false"
+                showPlanDetailPageNetworkCoverageTopic1Option3="{Boolean}false"
+                showPlanDetailPageNetworkCoverageTopic1Option4="{Boolean}false"
+                showPlanDetailPageNetworkCoverageTopic1Option5="{Boolean}false"
+                summaryCopays="\{summaryTopic3Option1} - Copay due for certain services, prescriptions and locations"
+                summaryNetworkCoverage="\{summaryTopic1Option1} - Both network and out-of-network providers covered"
+                summaryTopic4Option1="{Boolean}false"
+                summaryTopic4Option2="{Boolean}false"
+                summaryTopic4Option3="{Boolean}false"
+                summaryTopic4Option4="{Boolean}true"
+                suppressPrescriptionCoverage="{Boolean}true"/>
+            <marcintestuje
+                jcr:mixinTypes="[cq:Taggable]"
+                jcr:primaryType="nt:unstructured"
+                catalystPlanAdditionalInfo="{Boolean}false"
+                comparisonChapter1Topic3Option1="{Boolean}false"
+                comparisonChapter1Topic3Option2="{Boolean}false"
+                comparisonChapter1Topic3Option3="{Boolean}false"
+                comparisonChapter1Topic3Option4="{Boolean}false"
+                comparisonPrescriptionLink="https://www.uhc.com/"
+                comparisonProviderLink="https://www.uhc.com/"
+                comparisonSearchCoverageLinkText="{Boolean}true"
+                hasStateSpecificProvider="{Boolean}false"
+                hsaWithOptumBank="{Boolean}false"
+                planDetailPagePrimaryCarePhysicianTopic1Option="\{planDetailPagePrimaryCarePhysicianTopic1Option1} - With this plan, you'll need to select a primary care physician (PCP)"
+                planName="Corner Case Health Option Test"
+                prescriptionSearchLink="{Boolean}true"
+                primaryCarePhysician="\{summaryTopic2Option1} - Primary care provider required"
+                servicesCovered="{Boolean}false"
+                showPlanDetailPageNetworkCoverageTopic1Option1="{Boolean}false"
+                showPlanDetailPageNetworkCoverageTopic1Option2="{Boolean}false"
+                showPlanDetailPageNetworkCoverageTopic1Option3="{Boolean}false"
+                showPlanDetailPageNetworkCoverageTopic1Option4="{Boolean}false"
+                showPlanDetailPageNetworkCoverageTopic1Option5="{Boolean}false"
+                summaryCopays="\{summaryTopic3Option1} - Copay due for certain services, prescriptions and locations"
+                summaryNetworkCoverage="\{summaryTopic1Option1} - Both network and out-of-network providers covered"
+                summaryTopic4Option1="{Boolean}false"
+                summaryTopic4Option2="{Boolean}false"
+                summaryTopic4Option3="{Boolean}false"
+                summaryTopic4Option4="{Boolean}true"
+                suppressPrescriptionCoverage="{Boolean}true"/>
+            <marcintestuje-1
+                jcr:mixinTypes="[cq:Taggable]"
+                jcr:primaryType="nt:unstructured"
+                catalystPlanAdditionalInfo="{Boolean}false"
+                comparisonChapter1Topic3Option1="{Boolean}false"
+                comparisonChapter1Topic3Option2="{Boolean}false"
+                comparisonChapter1Topic3Option3="{Boolean}false"
+                comparisonChapter1Topic3Option4="{Boolean}false"
+                comparisonPrescriptionLink="https://www.uhc.com/"
+                comparisonProviderLink="https://www.uhc.com/"
+                comparisonSearchCoverageLinkText="{Boolean}true"
+                hasStateSpecificProvider="{Boolean}false"
+                hsaWithOptumBank="{Boolean}false"
+                planDetailPagePrimaryCarePhysicianTopic1Option="\{planDetailPagePrimaryCarePhysicianTopic1Option1} - With this plan, you'll need to select a primary care physician (PCP)"
+                planName="Corner Case Health Option"
+                prescriptionSearchLink="{Boolean}true"
+                primaryCarePhysician="\{summaryTopic2Option1} - Primary care provider required"
+                servicesCovered="{Boolean}false"
+                showPlanDetailPageNetworkCoverageTopic1Option1="{Boolean}false"
+                showPlanDetailPageNetworkCoverageTopic1Option2="{Boolean}false"
+                showPlanDetailPageNetworkCoverageTopic1Option3="{Boolean}false"
+                showPlanDetailPageNetworkCoverageTopic1Option4="{Boolean}false"
+                showPlanDetailPageNetworkCoverageTopic1Option5="{Boolean}false"
+                summaryCopays="\{summaryTopic3Option1} - Copay due for certain services, prescriptions and locations"
+                summaryNetworkCoverage="\{summaryTopic1Option1} - Both network and out-of-network providers covered"
+                summaryTopic4Option1="{Boolean}false"
+                summaryTopic4Option2="{Boolean}false"
+                summaryTopic4Option3="{Boolean}false"
+                summaryTopic4Option4="{Boolean}true"
+                suppressPrescriptionCoverage="{Boolean}true"/>
+        </data>
+        <metadata
+            jcr:mixinTypes="[cq:Taggable]"
+            jcr:primaryType="nt:unstructured"/>
+        <model jcr:primaryType="nt:unstructured">
+            <variations jcr:primaryType="nt:unstructured">
+                <marcintestuje
+                    jcr:description=""
+                    jcr:mixinTypes="[cq:Taggable]"
+                    jcr:primaryType="nt:unstructured"
+                    jcr:title="M"
+                    name="marcintestuje">
+                    <properties
+                        jcr:primaryType="nt:unstructured"
+                        synchronizeWithVersion="[planName:5853846c-2063-490a-b832-6a439bbf0c45,planId:5853846c-2063-490a-b832-6a439bbf0c45,planDescription:5853846c-2063-490a-b832-6a439bbf0c45,providerSearchLink:5853846c-2063-490a-b832-6a439bbf0c45,prescriptionSearchLink:5853846c-2063-490a-b832-6a439bbf0c45,hasStateSpecificProvider:5853846c-2063-490a-b832-6a439bbf0c45,stateSpecificProviderDescription:5853846c-2063-490a-b832-6a439bbf0c45,stateSpecificProviderLinkText:5853846c-2063-490a-b832-6a439bbf0c45,stateSpecificProviderLink:5853846c-2063-490a-b832-6a439bbf0c45,summaryNetworkCoverage:5853846c-2063-490a-b832-6a439bbf0c45,primaryCarePhysician:5853846c-2063-490a-b832-6a439bbf0c45,summaryCopays:5853846c-2063-490a-b832-6a439bbf0c45,summaryTopic4Option1:5853846c-2063-490a-b832-6a439bbf0c45,summaryTopic4Option2:5853846c-2063-490a-b832-6a439bbf0c45,summaryTopic4Option3:5853846c-2063-490a-b832-6a439bbf0c45,summaryTopic4Option4:5853846c-2063-490a-b832-6a439bbf0c45,suppressPrescriptionCoverage:5853846c-2063-490a-b832-6a439bbf0c45,showPlanDetailPageNetworkCoverageTopic1Option1:5853846c-2063-490a-b832-6a439bbf0c45,showPlanDetailPageNetworkCoverageTopic1Option2:5853846c-2063-490a-b832-6a439bbf0c45,showPlanDetailPageNetworkCoverageTopic1Option3:5853846c-2063-490a-b832-6a439bbf0c45,showPlanDetailPageNetworkCoverageTopic1Option4:5853846c-2063-490a-b832-6a439bbf0c45,showPlanDetailPageNetworkCoverageTopic1Option5:5853846c-2063-490a-b832-6a439bbf0c45,planDetailPagePrimaryCarePhysicianTopic1Option:5853846c-2063-490a-b832-6a439bbf0c45,catalystPlanAdditionalInfo:5853846c-2063-490a-b832-6a439bbf0c45,hsaWithOptumBank:5853846c-2063-490a-b832-6a439bbf0c45,hraOption:5853846c-2063-490a-b832-6a439bbf0c45,comparisonNetworkCoverage:5853846c-2063-490a-b832-6a439bbf0c45,comparisonPcpRequirement:5853846c-2063-490a-b832-6a439bbf0c45,comparisonChapter1Topic3Option1:5853846c-2063-490a-b832-6a439bbf0c45,comparisonChapter1Topic3Option2:5853846c-2063-490a-b832-6a439bbf0c45,comparisonChapter1Topic3Option3:5853846c-2063-490a-b832-6a439bbf0c45,comparisonChapter1Topic3Option4:5853846c-2063-490a-b832-6a439bbf0c45,servicesCovered:5853846c-2063-490a-b832-6a439bbf0c45,disclaimers:5853846c-2063-490a-b832-6a439bbf0c45,comparisonSearchCoverageLinkText:5853846c-2063-490a-b832-6a439bbf0c45,comparisonProviderLink:5853846c-2063-490a-b832-6a439bbf0c45,comparisonPrescriptionLink:5853846c-2063-490a-b832-6a439bbf0c45]"/>
+                </marcintestuje>
+                <marcintestuje-1
+                    jcr:description=""
+                    jcr:mixinTypes="[cq:Taggable]"
+                    jcr:primaryType="nt:unstructured"
+                    jcr:title="marcintestuje"
+                    name="marcintestuje-1">
+                    <properties
+                        jcr:primaryType="nt:unstructured"
+                        synchronizeWithVersion="[planName:07f413a6-c868-48f7-8662-670ad2328dbc,planId:07f413a6-c868-48f7-8662-670ad2328dbc,planDescription:07f413a6-c868-48f7-8662-670ad2328dbc,providerSearchLink:07f413a6-c868-48f7-8662-670ad2328dbc,prescriptionSearchLink:07f413a6-c868-48f7-8662-670ad2328dbc,hasStateSpecificProvider:07f413a6-c868-48f7-8662-670ad2328dbc,stateSpecificProviderDescription:07f413a6-c868-48f7-8662-670ad2328dbc,stateSpecificProviderLinkText:07f413a6-c868-48f7-8662-670ad2328dbc,stateSpecificProviderLink:07f413a6-c868-48f7-8662-670ad2328dbc,summaryNetworkCoverage:07f413a6-c868-48f7-8662-670ad2328dbc,primaryCarePhysician:07f413a6-c868-48f7-8662-670ad2328dbc,summaryCopays:07f413a6-c868-48f7-8662-670ad2328dbc,summaryTopic4Option1:07f413a6-c868-48f7-8662-670ad2328dbc,summaryTopic4Option2:07f413a6-c868-48f7-8662-670ad2328dbc,summaryTopic4Option3:07f413a6-c868-48f7-8662-670ad2328dbc,summaryTopic4Option4:07f413a6-c868-48f7-8662-670ad2328dbc,suppressPrescriptionCoverage:07f413a6-c868-48f7-8662-670ad2328dbc,showPlanDetailPageNetworkCoverageTopic1Option1:07f413a6-c868-48f7-8662-670ad2328dbc,showPlanDetailPageNetworkCoverageTopic1Option2:07f413a6-c868-48f7-8662-670ad2328dbc,showPlanDetailPageNetworkCoverageTopic1Option3:07f413a6-c868-48f7-8662-670ad2328dbc,showPlanDetailPageNetworkCoverageTopic1Option4:07f413a6-c868-48f7-8662-670ad2328dbc,showPlanDetailPageNetworkCoverageTopic1Option5:07f413a6-c868-48f7-8662-670ad2328dbc,planDetailPagePrimaryCarePhysicianTopic1Option:07f413a6-c868-48f7-8662-670ad2328dbc,catalystPlanAdditionalInfo:07f413a6-c868-48f7-8662-670ad2328dbc,hsaWithOptumBank:07f413a6-c868-48f7-8662-670ad2328dbc,hraOption:07f413a6-c868-48f7-8662-670ad2328dbc,comparisonNetworkCoverage:07f413a6-c868-48f7-8662-670ad2328dbc,comparisonPcpRequirement:07f413a6-c868-48f7-8662-670ad2328dbc,comparisonChapter1Topic3Option1:07f413a6-c868-48f7-8662-670ad2328dbc,comparisonChapter1Topic3Option2:07f413a6-c868-48f7-8662-670ad2328dbc,comparisonChapter1Topic3Option3:07f413a6-c868-48f7-8662-670ad2328dbc,comparisonChapter1Topic3Option4:07f413a6-c868-48f7-8662-670ad2328dbc,servicesCovered:07f413a6-c868-48f7-8662-670ad2328dbc,disclaimers:07f413a6-c868-48f7-8662-670ad2328dbc,comparisonSearchCoverageLinkText:07f413a6-c868-48f7-8662-670ad2328dbc,comparisonProviderLink:07f413a6-c868-48f7-8662-670ad2328dbc,comparisonPrescriptionLink:07f413a6-c868-48f7-8662-670ad2328dbc]"/>
+                </marcintestuje-1>
+            </variations>
+        </model>
+        <related jcr:primaryType="nt:unstructured"/>
+    </jcr:content>
+</jcr:root>

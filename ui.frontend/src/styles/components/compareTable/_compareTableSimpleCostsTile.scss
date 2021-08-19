@@ -1,0 +1,22 @@
+.compare-table__percentage-value,
+.compare-table__costs-value {
+	font-size: 34px;
+	font-weight: 700;
+	line-height: 1.18;
+
+	sup {
+		position: relative;
+		font-size: 14px;
+		font-weight: 500;
+		line-height: 1.2;
+		top: -12px;
+	}
+}
+
+.compare-table__tile-simple-costs sup {
+	left: -2px;
+}
+
+.compare-table__tile-percentage sup {
+	right: -2px;
+}

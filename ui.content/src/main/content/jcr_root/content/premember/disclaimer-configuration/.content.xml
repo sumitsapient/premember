@@ -1,0 +1,112 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<jcr:root xmlns:sling="http://sling.apache.org/jcr/sling/1.0" xmlns:cq="http://www.day.com/jcr/cq/1.0" xmlns:jcr="http://www.jcp.org/jcr/1.0" xmlns:nt="http://www.jcp.org/jcr/nt/1.0"
+    jcr:primaryType="cq:Page">
+    <jcr:content
+        cq:template="/conf/premember/settings/wcm/templates/disclaimer-config-page-template"
+        jcr:primaryType="cq:PageContent"
+        jcr:title="Disclaimer Configuration"
+        sling:resourceType="premember/components/structure/page">
+        <root
+            jcr:primaryType="nt:unstructured"
+            sling:resourceType="wcm/foundation/components/responsivegrid">
+            <responsivegrid
+                jcr:primaryType="nt:unstructured"
+                sling:resourceType="wcm/foundation/components/responsivegrid">
+                <disclaimerList
+                    jcr:primaryType="nt:unstructured"
+                    sling:resourceType="premember/components/configuration/disclaimers/disclaimerList">
+                    <disclaimer
+                        jcr:primaryType="nt:unstructured"
+                        sling:resourceType="premember/components/configuration/disclaimers/disclaimer"
+                        fundingMethod="All methods"
+                        pagesConcerned="all"
+                        state="ALL"
+                        text="&lt;p>The UnitedHealth Premium® designation program is a resource for informational purposes only. Designations are displayed in UnitedHealthcare online physician directories at &lt;a href=&quot;https://myuhc.com/&quot;>myuhc.com&lt;/a>®. You should always visit myuhc.com for the most current information. Premium designations are a guide to choosing a physician and may be used as one of many factors you consider when choosing a physician. If you already have a physician, you may also wish to confer with him or her for advice on selecting other physicians. You should also discuss designations with a physician before choosing him or her. Physician evaluations have a risk of error and should not be the sole basis for selecting a physician. Please visit myuhc.com for detailed program information and methodologies.&lt;/p>&#xd;&#xa;"
+                        textIsRich="true"
+                        type="LEGAL_ENTITY"/>
+                    <disclaimer_28133964
+                        jcr:primaryType="nt:unstructured"
+                        sling:resourceType="premember/components/configuration/disclaimers/disclaimer"
+                        fundingMethod="All methods"
+                        pagesConcerned="all"
+                        state="ALL"
+                        text="&lt;p>Certain preventive care services are provided as specified by the Patient Protection and Affordable Care Act (ACA), with no cost-sharing to you. These services are based on your age, gender and other health factors. UnitedHealthcare also covers other routine services that may require a copay, coinsurance or deductible.&lt;/p>&#xd;&#xa;"
+                        textIsRich="true"
+                        type="STATE_SPECIFIC"/>
+                    <disclaimer_1521789407
+                        jcr:primaryType="nt:unstructured"
+                        sling:resourceType="premember/components/configuration/disclaimers/disclaimer"
+                        fundingMethod="ASO"
+                        pagesConcerned="all"
+                        state="ALL_EXCEPT_NY"
+                        text="&lt;p>All UnitedHealthcare members can access a cost estimate online or on the mobile app. None of the cost estimates are intended to be a guarantee of your costs or benefits. Your actual costs may vary. When accessing a cost estimate, please refer to the Website or Mobile application terms of use under Find Care &amp;amp; Costs section.&lt;/p>&#xd;&#xa;"
+                        textIsRich="true"
+                        type="LEGAL"/>
+                    <disclaimer_83701159
+                        jcr:primaryType="nt:unstructured"
+                        sling:resourceType="premember/components/configuration/disclaimers/disclaimer"
+                        fundingMethod="All methods"
+                        pagesConcerned="all"
+                        state="AL"
+                        text="&lt;p>Virtual Visits are not an insurance product, health care provider or a health plan. Unless otherwise required, benefits are available only when services are delivered through a Designated Virtual Network Provider. Virtual Visits are not intended to address emergency or life-threatening medical conditions and should not be used in those circumstances. Services may not be available at all times or in all locations.&lt;/p>&#xd;&#xa;"
+                        textIsRich="true"
+                        type="STATE_SPECIFIC"/>
+                    <disclaimer_2132622738
+                        jcr:primaryType="nt:unstructured"
+                        sling:resourceType="premember/components/configuration/disclaimers/disclaimer"
+                        fundingMethod="All methods"
+                        pagesConcerned="health"
+                        state="ALL"
+                        text="&lt;p>The information provided under the Maternity Support Program is for general informational purposes only and is not intended to be nor should be construed as medical and/or nutritional advice. Participants should consult an appropriate health care professional to determine what is right for them. Employers are responsible for ensuring that any wellness programs they offer to their employees comply with applicable state and/or federal law, including, but not limited to, GINA, ADA, and HIPPA wellness regulations., which in many circumstances contain maximum incentive threshold limits for all wellness programs combined that are generally limited to 30 percent of the cost of self-only coverage of the lowest-cost plan, as well as obligations for employers to provide certain notices to their employees. Employers should discuss these issues with their own legal counsel.&lt;/p>&#xd;&#xa;"
+                        textIsRich="true"
+                        type="LEGAL_ENTITY"/>
+                    <disclaimer_262026560
+                        jcr:primaryType="nt:unstructured"
+                        sling:resourceType="premember/components/configuration/disclaimers/disclaimer"
+                        fundingMethod="ASO"
+                        pagesConcerned="fsa"
+                        state="ALL"
+                        text="&lt;p>This is FSA plan related disclaimer from LEGAL disclaimers category. Applicable to ASO funding method and all states.&amp;nbsp;This is FSA plan related disclaimer from LEGAL disclaimers category. Applicable to ASO funding method and all states.&amp;nbsp;This is FSA plan related disclaimer from LEGAL disclaimers category. Applicable to ASO funding method and all states.&amp;nbsp;This is FSA plan related disclaimer from LEGAL disclaimers category. Applicable to ASO funding method and all states.&amp;nbsp;This is FSA plan related disclaimer from LEGAL disclaimers category. Applicable to ASO funding method and all states.&amp;nbsp;&lt;/p>&#xd;&#xa;"
+                        textIsRich="true"
+                        type="LEGAL"/>
+                    <disclaimer_1156311880
+                        jcr:primaryType="nt:unstructured"
+                        sling:resourceType="premember/components/configuration/disclaimers/disclaimer"
+                        fundingMethod="All methods"
+                        pagesConcerned="vision"
+                        state="ALL"
+                        text="&lt;p>This is VISION plan related disclaimer from state specific disclaimers category.&lt;/p>&#xd;&#xa;"
+                        textIsRich="true"
+                        type="STATE_SPECIFIC"/>
+                    <disclaimer_1816638828
+                        jcr:primaryType="nt:unstructured"
+                        sling:resourceType="premember/components/configuration/disclaimers/disclaimer"
+                        fundingMethod="All methods"
+                        pagesConcerned="dental"
+                        state="ALL"
+                        text="&lt;p>This is DENTAL plan related disclaimer from state specific disclaimers category.&lt;/p>&#xd;&#xa;"
+                        textIsRich="true"
+                        type="STATE_SPECIFIC"/>
+                    <disclaimer_1552743108
+                        jcr:primaryType="nt:unstructured"
+                        sling:resourceType="premember/components/configuration/disclaimers/disclaimer"
+                        fundingMethod="All methods"
+                        pagesConcerned="pharmacy"
+                        state="ALL"
+                        text="&lt;p>This is PHARMACY plan related disclaimer from state specific disclaimers category.&lt;/p>&#xd;&#xa;"
+                        textIsRich="true"
+                        type="STATE_SPECIFIC"/>
+                    <disclaimer_1709467158
+                        jcr:primaryType="nt:unstructured"
+                        sling:resourceType="premember/components/configuration/disclaimers/disclaimer"
+                        fundingMethod="All methods"
+                        pagesConcerned="financial"
+                        state="ALL"
+                        text="&lt;p>This is FINANCIAL plan related disclaimer from state specific disclaimers category.&lt;/p>&#xd;&#xa;"
+                        textIsRich="true"
+                        type="STATE_SPECIFIC"/>
+                </disclaimerList>
+            </responsivegrid>
+        </root>
+    </jcr:content>
+</jcr:root>

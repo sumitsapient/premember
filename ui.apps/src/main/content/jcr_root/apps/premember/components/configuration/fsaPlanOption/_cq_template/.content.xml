@@ -1,0 +1,14 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<jcr:root xmlns:jcr="http://www.jcp.org/jcr/1.0"
+          xmlns:nt="http://www.jcp.org/jcr/nt/1.0"
+          jcr:primaryType="nt:unstructured"
+          fullBenefitsLink=""
+          commuterExpenseReimbursementAccount="{Boolean}false"
+          isDebitCardIncluded="{Boolean}false"
+          limitedPurposeFsa="{Boolean}false"
+          dependentCareFsa="{Boolean}false"
+          healthCareFsa="{Boolean}false"
+          howCommuterExpenseReimbursementAccountWorks="{Boolean}false"
+          payingWithTheOptumCommuterCard="{Boolean}false"
+          benefitForRidingBicycleToWork="{Boolean}false">
+</jcr:root>

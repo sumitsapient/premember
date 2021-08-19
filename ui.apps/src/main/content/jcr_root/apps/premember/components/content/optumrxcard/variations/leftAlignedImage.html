@@ -1,0 +1,48 @@
+<sly data-sly-use.card="com.mirumagency.uhc.premember.core.models.Card"></sly>
+<div class="o-media u-f-align-center">
+  <div class="o-media__img"
+       data-sly-test="${card.showImage && (wcmmode.edit || card.isImageNotEmpty)}">
+      <div class="o-ar o-ar--1:1">
+            <div class="o-ar__item" data-sly-resource="${'image' @ resourceType='premember/components/content/image'}"></div>
+      </div>
+  </div>
+  <div class="o-media__body">
+      <div class="c-card__header"
+            data-sly-test="${wcmmode.edit || card.showHeader}">
+            <div data-sly-test.showIcon="${card.showIcon}"
+                 data-sly-test="${wcmmode.edit || card.isIconNotEmpty}"
+                 data-sly-resource="${'icon' @ resourceType='premember/components/content/icon', decoration='true'}">
+            </div>
+            <h3 class="c-card__title"
+                data-sly-test="${card.isTitleNotEmpty}"
+                data-sly-element="${card.titleType}">
+                ${card.title}
+            </h3>
+            <p class="c-card__subtitle u-visually-hidden"
+               data-sly-test="${card.isSubtitleNotEmpty}">
+                ${card.subtitle}
+            </p>
+      </div>
+      <div class="c-card__body"
+           data-sly-test="${wcmmode.edit || card.isBodyNotEmpty}"
+           data-sly-resource="${'bodyPar' @ resourceType='wcm/foundation/components/parsys'}">
+      </div>
+      <div class="c-card__footer" data-sly-test="${wcmmode.edit || card.isFooterNotEmpty}">
+          <div class="aem-buttons">
+              <sly data-sly-use.data="com.mirumagency.uhc.premember.core.models.EmployerData">
+                  <div class="button" data-sly-test="${wcmmode.edit || data.employer.optumRxCard.customOptumRxLink}">
+                      <a class="c-button js-track-event c-button--primary " href="${data.employer.optumRxCard.customOptumRxLink}" data-asset-container="" data-asset-id="button-1107146179" data-cta-description="Optum RX" data-event-name="optum_rx" data-event-type="button" id="button-1107146179" target="_blank" rel="noopener noreferrer">
+                          ${data.employer.optumRxCard.customOptumRxLinkText}
+                            <span class="o-svg-icon o-svg-icon--lg u-m-l-xs">
+                                <svg viewBox="0, 0, 24, 24" focusable="false" role="presentation" shape-rendering="geometricPrecision">
+                                    <path d="M20.385,20.385 L3.615,20.385 L3.615,3.615 L12,3.615 L12,1.219 L3.615,1.219 C2.285,1.219 1.219,2.297 1.219,3.615 L1.219,20.385 C1.219,21.703 2.285,22.781 3.615,22.781 L20.385,22.781 C21.703,22.781 22.781,21.703 22.781,20.385 L22.781,12 L20.385,12 L20.385,20.385 z M14.396,1.219 L14.396,3.615 L18.696,3.615 L6.921,15.39 L8.61,17.079 L20.385,5.304 L20.385,9.604 L22.781,9.604 L22.781,1.219 L14.396,1.219 z" fill="currentColor"></path>
+                                </svg>
+                            </span>
+                            <span class="u-visually-hidden">Opens in a new tab</span>
+                      </a>
+                  </div>
+              </sly>
+          </div>
+      </div>
+  </div>
+</div>

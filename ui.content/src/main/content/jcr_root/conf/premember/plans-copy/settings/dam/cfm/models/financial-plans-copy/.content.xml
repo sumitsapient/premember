@@ -1,0 +1,255 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<jcr:root xmlns:sling="http://sling.apache.org/jcr/sling/1.0" xmlns:cq="http://www.day.com/jcr/cq/1.0" xmlns:jcr="http://www.jcp.org/jcr/1.0" xmlns:nt="http://www.jcp.org/jcr/nt/1.0"
+    jcr:primaryType="cq:Template"
+    allowedPaths="[/content/entities(/.*)?]"
+    ranking="{Long}100">
+    <jcr:content
+        cq:scaffolding="/conf/premember/plans-copy/settings/dam/cfm/models/financial-plans-copy/jcr:content/model"
+        cq:templateType="/libs/settings/dam/cfm/model-types/fragment"
+        jcr:primaryType="cq:PageContent"
+        jcr:title="Financial Plans Copy"
+        sling:resourceSuperType="dam/cfm/models/console/components/data/entity"
+        sling:resourceType="dam/cfm/models/console/components/data/entity/default">
+        <model
+            cq:targetPath="/content/entities"
+            jcr:primaryType="cq:PageContent"
+            sling:resourceType="wcm/scaffolding/components/scaffolding"
+            dataTypesConfig="/mnt/overlay/settings/dam/cfm/models/formbuilderconfig/datatypes"
+            maxGeneratedOrder="20">
+            <cq:dialog
+                jcr:primaryType="nt:unstructured"
+                sling:resourceType="cq/gui/components/authoring/dialog">
+                <content
+                    jcr:primaryType="nt:unstructured"
+                    sling:resourceType="granite/ui/components/coral/foundation/fixedcolumns">
+                    <items
+                        jcr:primaryType="nt:unstructured"
+                        maxGeneratedOrder="22">
+                        <_x0031_59039846374
+                          jcr:primaryType="nt:unstructured"
+                          sling:resourceType="granite/ui/components/coral/foundation/form/textfield"
+                          fieldLabel="Header Plans Name"
+                          listOrder="1"
+                          maxlength="255"
+                          metaType="text-single"
+                          name="plansNameHeader"
+                          renderReadOnly="false"
+                          showEmptyInReadOnly="true"
+                          valueType="string"/>
+                        <_x0031_591104393091
+                          jcr:primaryType="nt:unstructured"
+                          sling:resourceType="dam/cfm/models/editor/components/contentreference"
+                          fieldLabel="Plan Icon Link"
+                          filter="hierarchy"
+                          listOrder="21"
+                          metaType="reference"
+                          name="plansIconLink"
+                          nameSuffix="contentReference"
+                          renderReadOnly="false"
+                          rootPath="/content/dam/premember/icons-tempo"
+                          showEmptyInReadOnly="true"
+                          valueType="string"/>
+                        <_x0031_589463823835
+                            jcr:primaryType="nt:unstructured"
+                            sling:resourceType="dam/cfm/admin/components/authoring/contenteditor/multieditor"
+                            cfm-element="Life Insurance - Highlights Basic"
+                            default-mime-type="text/html"
+                            listOrder="2"
+                            metaType="text-multi"
+                            name="highlightsBasicLifeInsurance"
+                            renderReadOnly="false"
+                            showEmptyInReadOnly="true"
+                            valueType="string"/>
+                        <_x0031_589463875194
+                            jcr:primaryType="nt:unstructured"
+                            sling:resourceType="dam/cfm/admin/components/authoring/contenteditor/multieditor"
+                            cfm-element="Life Insurance - Highlights Supplemental"
+                            default-mime-type="text/html"
+                            listOrder="2"
+                            metaType="text-multi"
+                            name="highlightsSupplementalLifeInsurance"
+                            renderReadOnly="false"
+                            showEmptyInReadOnly="true"
+                            valueType="string"/>
+                        <_x0031_589463877760
+                            jcr:primaryType="nt:unstructured"
+                            sling:resourceType="dam/cfm/admin/components/authoring/contenteditor/multieditor"
+                            cfm-element="Life Insurance - Highlights Accidental Death"
+                            default-mime-type="text/html"
+                            listOrder="2"
+                            metaType="text-multi"
+                            name="highlightsAccidentalDeathLifeInsurance"
+                            renderReadOnly="false"
+                            showEmptyInReadOnly="true"
+                            valueType="string"/>
+                        <_x0031_589805319177
+                            jcr:primaryType="nt:unstructured"
+                            sling:resourceType="dam/cfm/admin/components/authoring/contenteditor/multieditor"
+                            cfm-element="Hospital Indemnity - Highlights Claim Advocate can help - bullet"
+                            default-mime-type="text/html"
+                            listOrder="2"
+                            metaType="text-multi"
+                            name="showClaimAdvocateHelpBulletHip"
+                            renderReadOnly="false"
+                            showEmptyInReadOnly="true"
+                            valueType="string"/>
+                        <_x0031_589805353646
+                            jcr:primaryType="nt:unstructured"
+                            sling:resourceType="dam/cfm/admin/components/authoring/contenteditor/multieditor"
+                            cfm-element="Hospital Indemnity - Highlights Coverage is portable - bullet"
+                            default-mime-type="text/html"
+                            listOrder="2"
+                            metaType="text-multi"
+                            name="showPortableCoverageBulletHip"
+                            renderReadOnly="false"
+                            showEmptyInReadOnly="true"
+                            valueType="string"/>
+                        <_x0031_589881288059
+                            jcr:primaryType="nt:unstructured"
+                            sling:resourceType="dam/cfm/admin/components/authoring/contenteditor/multieditor"
+                            cfm-element="Critical Illness - Highlights Claim Advocate can help - bullet"
+                            default-mime-type="text/html"
+                            listOrder="2"
+                            metaType="text-multi"
+                            name="showClaimAdvocateHelpBulletCip"
+                            renderReadOnly="false"
+                            showEmptyInReadOnly="true"
+                            valueType="string"/>
+                        <_x0031_589881293600
+                            jcr:primaryType="nt:unstructured"
+                            sling:resourceType="dam/cfm/admin/components/authoring/contenteditor/multieditor"
+                            cfm-element="Critical Illness - Highlights Coverage is portable - bullet"
+                            default-mime-type="text/html"
+                            listOrder="2"
+                            metaType="text-multi"
+                            name="showPortableCoverageBulletCip"
+                            renderReadOnly="false"
+                            showEmptyInReadOnly="true"
+                            valueType="string"/>
+                        <_x0031_589883511139
+                            jcr:primaryType="nt:unstructured"
+                            sling:resourceType="dam/cfm/admin/components/authoring/contenteditor/multieditor"
+                            cfm-element="Accident Protection - Highlights Claim Advocate can help - bullet"
+                            default-mime-type="text/html"
+                            listOrder="21"
+                            metaType="text-multi"
+                            name="showClaimAdvocateHelpBulletApp"
+                            renderReadOnly="false"
+                            showEmptyInReadOnly="true"
+                            valueType="string"/>
+                        <_x0031_589883518205
+                            jcr:primaryType="nt:unstructured"
+                            sling:resourceType="dam/cfm/admin/components/authoring/contenteditor/multieditor"
+                            cfm-element="Accident Protection - Highlights Coverage is portable - bullet"
+                            default-mime-type="text/html"
+                            listOrder="22"
+                            metaType="text-multi"
+                            name="showPortableCoverageBulletApp"
+                            renderReadOnly="false"
+                            showEmptyInReadOnly="true"
+                            valueType="string"/>
+                        <_x0031_589883518999
+                            jcr:primaryType="nt:unstructured"
+                            sling:resourceType="dam/cfm/admin/components/authoring/contenteditor/multieditor"
+                            cfm-element="Life and Disability Disclaimer"
+                            default-mime-type="text/html"
+                            listOrder="22"
+                            metaType="text-multi"
+                            name="lifeAndDisabilityDisclaimer"
+                            renderReadOnly="false"
+                            showEmptyInReadOnly="true"
+                            valueType="string"/>
+                        <_x0031_589883518998
+                            jcr:primaryType="nt:unstructured"
+                            sling:resourceType="dam/cfm/admin/components/authoring/contenteditor/multieditor"
+                            cfm-element="Accidental Protection Disclaimer"
+                            default-mime-type="text/html"
+                            listOrder="22"
+                            metaType="text-multi"
+                            name="accidentalProtectionDisclaimer"
+                            renderReadOnly="false"
+                            showEmptyInReadOnly="true"
+                            valueType="string"/>
+                        <_x0031_589883518997
+                            jcr:primaryType="nt:unstructured"
+                            sling:resourceType="dam/cfm/admin/components/authoring/contenteditor/multieditor"
+                            cfm-element="Critical Illness Disclaimer"
+                            default-mime-type="text/html"
+                            listOrder="22"
+                            metaType="text-multi"
+                            name="criticalIllnessDisclaimer"
+                            renderReadOnly="false"
+                            showEmptyInReadOnly="true"
+                            valueType="string"/>
+                        <_x0031_589883518996
+                            jcr:primaryType="nt:unstructured"
+                            sling:resourceType="dam/cfm/admin/components/authoring/contenteditor/multieditor"
+                            cfm-element="Hospital Indemnity Disclaimer"
+                            default-mime-type="text/html"
+                            listOrder="22"
+                            metaType="text-multi"
+                            name="hospitalIndemnityDisclaimer"
+                            renderReadOnly="false"
+                            showEmptyInReadOnly="true"
+                            valueType="string"/>
+                        <_x0031_589883518995
+                            jcr:primaryType="nt:unstructured"
+                            sling:resourceType="dam/cfm/admin/components/authoring/contenteditor/multieditor"
+                            cfm-element="Will and Trust Disclaimer"
+                            default-mime-type="text/html"
+                            listOrder="22"
+                            metaType="text-multi"
+                            name="willAndTrustDisclaimer"
+                            renderReadOnly="false"
+                            showEmptyInReadOnly="true"
+                            valueType="string"/>
+                        <_x0031_589883518994
+                            jcr:primaryType="nt:unstructured"
+                            sling:resourceType="dam/cfm/admin/components/authoring/contenteditor/multieditor"
+                            cfm-element="Beneficiary Services Disclaimer"
+                            default-mime-type="text/html"
+                            listOrder="22"
+                            metaType="text-multi"
+                            name="beneficiaryServicesDisclaimer"
+                            renderReadOnly="false"
+                            showEmptyInReadOnly="true"
+                            valueType="string"/>
+                        <_x0031_589883518993
+                            jcr:primaryType="nt:unstructured"
+                            sling:resourceType="dam/cfm/admin/components/authoring/contenteditor/multieditor"
+                            cfm-element="Employee Assistance Program Disclaimer"
+                            default-mime-type="text/html"
+                            listOrder="22"
+                            metaType="text-multi"
+                            name="employeeAssistanceProgramDisclaimer"
+                            renderReadOnly="false"
+                            showEmptyInReadOnly="true"
+                            valueType="string"/>
+                        <_x0031_589883518992
+                            jcr:primaryType="nt:unstructured"
+                            sling:resourceType="dam/cfm/admin/components/authoring/contenteditor/multieditor"
+                            cfm-element="Beneficiary Companion Services Disclaimer"
+                            default-mime-type="text/html"
+                            listOrder="22"
+                            metaType="text-multi"
+                            name="beneficiaryCompanionServicesDisclaimer"
+                            renderReadOnly="false"
+                            showEmptyInReadOnly="true"
+                            valueType="string"/>
+                        <_x0031_589883518991
+                            jcr:primaryType="nt:unstructured"
+                            sling:resourceType="dam/cfm/admin/components/authoring/contenteditor/multieditor"
+                            cfm-element="Travel Assistance Disclaimer"
+                            default-mime-type="text/html"
+                            listOrder="22"
+                            metaType="text-multi"
+                            name="travelAssistanceDisclaimer"
+                            renderReadOnly="false"
+                            showEmptyInReadOnly="true"
+                            valueType="string"/>
+                    </items>
+                </content>
+            </cq:dialog>
+        </model>
+    </jcr:content>
+</jcr:root>

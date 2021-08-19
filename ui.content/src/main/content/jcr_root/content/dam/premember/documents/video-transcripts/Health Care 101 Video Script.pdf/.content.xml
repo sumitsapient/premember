@@ -1,0 +1,32 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<jcr:root xmlns:pdf="http://ns.adobe.com/pdf/1.3/" xmlns:pdfx="http://ns.adobe.com/pdfx/1.3/" xmlns:xmp="http://ns.adobe.com/xap/1.0/" xmlns:xmpMM="http://ns.adobe.com/xap/1.0/mm/" xmlns:dc="http://purl.org/dc/elements/1.1/" xmlns:dam="http://www.day.com/dam/1.0" xmlns:cq="http://www.day.com/jcr/cq/1.0" xmlns:jcr="http://www.jcp.org/jcr/1.0" xmlns:mix="http://www.jcp.org/jcr/mix/1.0" xmlns:nt="http://www.jcp.org/jcr/nt/1.0"
+    jcr:mixinTypes="[mix:referenceable]"
+    jcr:primaryType="dam:Asset">
+    <jcr:content jcr:primaryType="dam:AssetContent">
+        <metadata
+            dam:Author="Karen Travis"
+            dam:numPages="{Long}2"
+            dam:Physicalheightininches="{Decimal}11.0"
+            dam:Physicalwidthininches="{Decimal}8.5"
+            dam:Producer="Adobe PDF Library 15.0"
+            dam:sha1="0b215bae1d145a058b8a83b9b234fa18f9cbb99b"
+            dam:size="{Long}69781"
+            dc:creator="[Karen Travis]"
+            dc:creator_xmpArrayType="rdf:Seq"
+            dc:format="application/pdf"
+            jcr:mixinTypes="[cq:Taggable]"
+            jcr:primaryType="nt:unstructured"
+            pdf:Producer="Adobe PDF Library 15.0"
+            pdfx:Company="WritePath Communications"
+            pdfx:SourceModified="D:20180130163743"
+            xmp:CreateDate="{Date}2018-02-07T01:46:08.000Z"
+            xmp:CreatorTool="Acrobat PDFMaker 15 for Word"
+            xmp:MetadataDate="{Date}2018-02-06T20:46:12.000-05:00"
+            xmp:ModifyDate="{Date}2018-02-07T01:46:12.000Z"
+            xmpMM:DocumentID="uuid:a0309cf3-487e-4abf-bddc-25a5e3bf12b0"
+            xmpMM:InstanceID="uuid:fd0eb236-842b-4088-8a2f-d99e90d6635f"
+            xmpMM:subject="{Long}[2]"
+            xmpMM:subject_xmpArrayType="rdf:Seq"/>
+        <related jcr:primaryType="nt:unstructured"/>
+    </jcr:content>
+</jcr:root>

@@ -1,0 +1,602 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<jcr:root xmlns:sling="http://sling.apache.org/jcr/sling/1.0" xmlns:cq="http://www.day.com/jcr/cq/1.0" xmlns:jcr="http://www.jcp.org/jcr/1.0" xmlns:nt="http://www.jcp.org/jcr/nt/1.0"
+    jcr:primaryType="cq:Template"
+    allowedPaths="[/content/entities(/.*)?]"
+    ranking="{Long}100">
+    <jcr:content
+        cq:lastModified="{Date}2021-06-08T14:17:06.642-05:00"
+        cq:lastModifiedBy="admin"
+        cq:scaffolding="/conf/premember/plans/models/health/health-option/settings/dam/cfm/models/health-plan-option/jcr:content/model"
+        cq:templateType="/libs/settings/dam/cfm/model-types/fragment"
+        jcr:primaryType="cq:PageContent"
+        jcr:title="Health Plan Option"
+        sling:resourceSuperType="dam/cfm/models/console/components/data/entity"
+        sling:resourceType="dam/cfm/models/console/components/data/entity/default">
+        <model
+            cq:targetPath="/content/entities"
+            jcr:primaryType="cq:PageContent"
+            sling:resourceType="wcm/scaffolding/components/scaffolding"
+            dataTypesConfig="/mnt/overlay/settings/dam/cfm/models/formbuilderconfig/datatypes"
+            maxGeneratedOrder="20">
+            <cq:dialog
+                jcr:primaryType="nt:unstructured"
+                sling:resourceType="cq/gui/components/authoring/dialog">
+                <content
+                    jcr:lastModified="{Date}2021-06-08T14:17:06.642-05:00"
+                    jcr:lastModifiedBy="admin"
+                    jcr:primaryType="nt:unstructured"
+                    sling:resourceType="granite/ui/components/coral/foundation/fixedcolumns">
+                    <items
+                        jcr:primaryType="nt:unstructured"
+                        maxGeneratedOrder="20">
+                        <_x0031_585084971452
+                            jcr:primaryType="nt:unstructured"
+                            sling:resourceType="granite/ui/components/coral/foundation/form/textfield"
+                            fieldLabel="Plan Name"
+                            listOrder="1"
+                            maxlength="255"
+                            metaType="text-single"
+                            name="planName"
+                            renderReadOnly="false"
+                            required="on"
+                            showEmptyInReadOnly="true"
+                            valueType="string"/>
+                        <_x0031_586330986591
+                            jcr:primaryType="nt:unstructured"
+                            sling:resourceType="granite/ui/components/coral/foundation/form/textfield"
+                            fieldLabel="Plan ID"
+                            listOrder="1"
+                            maxlength="255"
+                            metaType="text-single"
+                            name="planId"
+                            renderReadOnly="false"
+                            showEmptyInReadOnly="true"
+                            valueType="string"/>
+                        <_x0031_585085094536
+                            jcr:primaryType="nt:unstructured"
+                            sling:resourceType="dam/cfm/admin/components/authoring/contenteditor/multieditor"
+                            cfm-element="Plan Description"
+                            default-mime-type="text/html"
+                            listOrder="2"
+                            metaType="text-multi"
+                            name="planDescription"
+                            renderReadOnly="false"
+                            showEmptyInReadOnly="true"
+                            valueType="string"/>
+                        <_x0031_588256343542
+                            jcr:primaryType="nt:unstructured"
+                            sling:resourceType="dam/cfm/models/editor/components/contentreference"
+                            fieldLabel="Provider Search Link"
+                            filter="hierarchy"
+                            listOrder="8"
+                            metaType="reference"
+                            name="providerSearchLink"
+                            nameSuffix="contentReference"
+                            renderReadOnly="false"
+                            showEmptyInReadOnly="true"
+                            valueType="string"/>
+                        <_x0031_603300073752
+                            jcr:primaryType="nt:unstructured"
+                            sling:resourceType="granite/ui/components/coral/foundation/form/textfield"
+                            fieldLabel="Provider Search PDF Text"
+                            listOrder="1"
+                            maxlength="255"
+                            metaType="text-single"
+                            name="providerSearchPdfText"
+                            renderReadOnly="false"
+                            showEmptyInReadOnly="true"
+                            valueType="string"/>
+                        <_x0031_603140850030
+                            jcr:primaryType="nt:unstructured"
+                            sling:resourceType="dam/cfm/models/editor/components/contentreference"
+                            fieldLabel="Provider Search PDF"
+                            filter="hierarchy"
+                            listOrder="8"
+                            metaType="reference"
+                            name="providerSearchPdf"
+                            nameSuffix="contentReference"
+                            renderReadOnly="false"
+                            showEmptyInReadOnly="true"
+                            valueType="string"/>
+                        <_x0031_591107744214
+                            jcr:primaryType="nt:unstructured"
+                            sling:resourceType="granite/ui/components/coral/foundation/form/checkbox"
+                            checked="{Boolean}true"
+                            listOrder="4"
+                            metaType="boolean"
+                            name="prescriptionSearchLink"
+                            renderReadOnly="false"
+                            showEmptyInReadOnly="true"
+                            text="\{prescriptionSearchLink} - Adding prescription link into the plan option"
+                            valueType="boolean"/>
+                        <_x0031_590152230245
+                            jcr:primaryType="nt:unstructured"
+                            sling:resourceType="granite/ui/components/coral/foundation/form/checkbox"
+                            listOrder="4"
+                            metaType="boolean"
+                            name="hasStateSpecificProvider"
+                            renderReadOnly="false"
+                            showEmptyInReadOnly="true"
+                            text="This plan includes State Specific Provider"
+                            valueType="boolean"/>
+                        <_x0031_590152312703
+                            jcr:primaryType="nt:unstructured"
+                            sling:resourceType="granite/ui/components/coral/foundation/form/textfield"
+                            fieldLabel="State Specific Provider Description"
+                            listOrder="1"
+                            maxlength="255"
+                            metaType="text-single"
+                            name="stateSpecificProviderDescription"
+                            renderReadOnly="false"
+                            showEmptyInReadOnly="true"
+                            valueType="string"/>
+                        <_x0031_590152253608
+                            jcr:primaryType="nt:unstructured"
+                            sling:resourceType="granite/ui/components/coral/foundation/form/textfield"
+                            fieldLabel="State Specific Provider Link Text"
+                            listOrder="1"
+                            maxlength="255"
+                            metaType="text-single"
+                            name="stateSpecificProviderLinkText"
+                            renderReadOnly="false"
+                            showEmptyInReadOnly="true"
+                            valueType="string"/>
+                        <_x0031_590152273845
+                            jcr:primaryType="nt:unstructured"
+                            sling:resourceType="dam/cfm/models/editor/components/contentreference"
+                            fieldLabel="State Specific Provider Link"
+                            filter="hierarchy"
+                            listOrder="8"
+                            metaType="reference"
+                            name="stateSpecificProviderLink"
+                            nameSuffix="contentReference"
+                            renderReadOnly="false"
+                            showEmptyInReadOnly="true"
+                            valueType="string"/>
+                        <_x0031_585085332171
+                            jcr:primaryType="nt:unstructured"
+                            sling:resourceType="granite/ui/components/coral/foundation/form/select"
+                            emptyOption="{Boolean}true"
+                            fieldLabel="Summary Topic 1 - Network Coverage"
+                            listOrder="6"
+                            metaType="enumeration"
+                            name="summaryNetworkCoverage"
+                            options="\{summaryTopic1Option1} - Both network and out-of-network providers covered;{summaryTopic1Option2} - Only network providers covered;{summaryTopic1Option3} - Only network providers covered, including Tier 1 providers;{summaryTopic1Option4} - Both network and out-of-network providers covered, including Tier 1 providers"
+                            renderReadOnly="false"
+                            showEmptyInReadOnly="true"
+                            valueType="string">
+                            <datasource
+                                jcr:primaryType="nt:unstructured"
+                                sling:resourceType="dam/cfm/admin/components/datasources/optionrenderer"
+                                variant="default"/>
+                        </_x0031_585085332171>
+                        <_x0031_585088104260
+                            jcr:primaryType="nt:unstructured"
+                            sling:resourceType="granite/ui/components/coral/foundation/form/select"
+                            emptyOption="{Boolean}true"
+                            fieldLabel="Summary Topic 2 - Primary Care Physician"
+                            listOrder="6"
+                            metaType="enumeration"
+                            name="primaryCarePhysician"
+                            options="\{summaryTopic2Option1} - Primary care provider required;{summaryTopic2Option2} - Primary care provider not required"
+                            renderReadOnly="false"
+                            showEmptyInReadOnly="true"
+                            valueType="string">
+                            <datasource
+                                jcr:primaryType="nt:unstructured"
+                                sling:resourceType="dam/cfm/admin/components/datasources/optionrenderer"
+                                variant="default"/>
+                        </_x0031_585088104260>
+                        <_x0031_585088140004
+                            jcr:primaryType="nt:unstructured"
+                            sling:resourceType="granite/ui/components/coral/foundation/form/select"
+                            emptyOption="{Boolean}true"
+                            fieldLabel="Summary Topic 3 - Copays"
+                            listOrder="6"
+                            metaType="enumeration"
+                            name="summaryCopays"
+                            options="\{summaryTopic3Option1} - Copay due for certain services, prescriptions and locations;{summaryTopic3Option2} - No copay on services, prescriptions or plans"
+                            renderReadOnly="false"
+                            showEmptyInReadOnly="true"
+                            valueType="string">
+                            <datasource
+                                jcr:primaryType="nt:unstructured"
+                                sling:resourceType="dam/cfm/admin/components/datasources/optionrenderer"
+                                variant="default"/>
+                        </_x0031_585088140004>
+                        <_x0031_586295101851
+                            jcr:primaryType="nt:unstructured"
+                            sling:resourceType="granite/ui/components/coral/foundation/form/checkbox"
+                            listOrder="4"
+                            metaType="boolean"
+                            name="summaryTopic4Option1"
+                            renderReadOnly="false"
+                            showEmptyInReadOnly="true"
+                            text="\{summaryTopic4Option1} - Health savings account (HSA) offered?"
+                            valueType="boolean"/>
+                        <_x0031_586295099414
+                            jcr:primaryType="nt:unstructured"
+                            sling:resourceType="granite/ui/components/coral/foundation/form/checkbox"
+                            listOrder="4"
+                            metaType="boolean"
+                            name="summaryTopic4Option2"
+                            renderReadOnly="false"
+                            showEmptyInReadOnly="true"
+                            text="\{summaryTopic4Option2} - Health reimbursement account (HRA) offered?"
+                            valueType="boolean"/>
+                        <_x0031_586295096865
+                            jcr:primaryType="nt:unstructured"
+                            sling:resourceType="granite/ui/components/coral/foundation/form/checkbox"
+                            listOrder="4"
+                            metaType="boolean"
+                            name="summaryTopic4Option3"
+                            renderReadOnly="false"
+                            showEmptyInReadOnly="true"
+                            text="\{summaryTopic4Option3} - Flexible spending account (FSA) offered?"
+                            valueType="boolean"/>
+                        <_x0031_586295093781
+                            jcr:primaryType="nt:unstructured"
+                            sling:resourceType="granite/ui/components/coral/foundation/form/checkbox"
+                            listOrder="4"
+                            metaType="boolean"
+                            name="summaryTopic4Option4"
+                            renderReadOnly="false"
+                            showEmptyInReadOnly="true"
+                            text="\{summaryTopic4Option4} - Savings account options not offered?"
+                            valueType="boolean"/>
+                        <_x0031_586329657223
+                            jcr:primaryType="nt:unstructured"
+                            sling:resourceType="granite/ui/components/coral/foundation/form/checkbox"
+                            listOrder="4"
+                            metaType="boolean"
+                            name="suppressPrescriptionCoverage"
+                            renderReadOnly="false"
+                            showEmptyInReadOnly="true"
+                            text="Summary Topic 8  - Prescription Coverage - suppress?"
+                            valueType="boolean"/>
+                        <_x0031_586330232770
+                            jcr:primaryType="nt:unstructured"
+                            sling:resourceType="granite/ui/components/coral/foundation/form/checkbox"
+                            listOrder="4"
+                            metaType="boolean"
+                            name="showPlanDetailPageNetworkCoverageTopic1Option1"
+                            renderReadOnly="false"
+                            showEmptyInReadOnly="true"
+                            text="Network Coverage Topic 1 Option 1 - [Tiered plans] Spot the Tier 1 dot"
+                            valueType="boolean"/>
+                        <_x0031_586330320671
+                            jcr:primaryType="nt:unstructured"
+                            sling:resourceType="granite/ui/components/coral/foundation/form/checkbox"
+                            listOrder="4"
+                            metaType="boolean"
+                            name="showPlanDetailPageNetworkCoverageTopic1Option2"
+                            renderReadOnly="false"
+                            showEmptyInReadOnly="true"
+                            text="Network Coverage Topic 1 Option 2 - [Nexus Plans] Spot the Tier 1 dot"
+                            valueType="boolean"/>
+                        <_x0031_586330397562
+                            jcr:primaryType="nt:unstructured"
+                            sling:resourceType="granite/ui/components/coral/foundation/form/checkbox"
+                            listOrder="4"
+                            metaType="boolean"
+                            name="showPlanDetailPageNetworkCoverageTopic1Option3"
+                            renderReadOnly="false"
+                            showEmptyInReadOnly="true"
+                            text="Network Coverage Topic 1 Option 3 - [Non-tiered Plans/Oxford Tiered Plan] Look for the hearts"
+                            valueType="boolean"/>
+                        <_x0031_586330445007
+                            jcr:primaryType="nt:unstructured"
+                            sling:resourceType="granite/ui/components/coral/foundation/form/checkbox"
+                            listOrder="4"
+                            metaType="boolean"
+                            name="showPlanDetailPageNetworkCoverageTopic1Option4"
+                            renderReadOnly="false"
+                            showEmptyInReadOnly="true"
+                            text="Network Coverage Topic 1 Option 4 - [Premier/Direct/Advanced/Oxford Tiered Plan] Find the Freestanding Facilities symbol"
+                            valueType="boolean"/>
+                        <_x0031_586330577055
+                            jcr:primaryType="nt:unstructured"
+                            sling:resourceType="granite/ui/components/coral/foundation/form/checkbox"
+                            listOrder="4"
+                            metaType="boolean"
+                            name="showPlanDetailPageNetworkCoverageTopic1Option5"
+                            renderReadOnly="false"
+                            showEmptyInReadOnly="true"
+                            text="Network Coverage Topic 1 Option 5 - Look for the Preferred Lab symbol"
+                            valueType="boolean"/>
+                        <_x0031_588778683515
+                            jcr:primaryType="nt:unstructured"
+                            sling:resourceType="granite/ui/components/coral/foundation/form/select"
+                            emptyOption="{Boolean}true"
+                            fieldLabel="Plan Detail Page Primary Care Physician Topic 1"
+                            listOrder="6"
+                            metaType="enumeration"
+                            name="planDetailPagePrimaryCarePhysicianTopic1Option"
+                            options="\{planDetailPagePrimaryCarePhysicianTopic1Option1} - With this plan, you'll need to select a primary care physician (PCP);{planDetailPagePrimaryCarePhysicianTopic1Option2} - This plan does not require you to have a primary care physician (PCP)"
+                            renderReadOnly="false"
+                            showEmptyInReadOnly="true"
+                            valueType="string">
+                            <datasource
+                                jcr:primaryType="nt:unstructured"
+                                sling:resourceType="dam/cfm/admin/components/datasources/optionrenderer"
+                                variant="default"/>
+                        </_x0031_588778683515>
+                        <_x0031_586330771695
+                            jcr:primaryType="nt:unstructured"
+                            sling:resourceType="granite/ui/components/coral/foundation/form/checkbox"
+                            listOrder="4"
+                            metaType="boolean"
+                            name="catalystPlanAdditionalInfo"
+                            renderReadOnly="false"
+                            showEmptyInReadOnly="true"
+                            text="Copays and Cost Sharing Topic 2 - Catalyst Plan additional info"
+                            valueType="boolean"/>
+                        <_x0031_588943207518
+                            jcr:primaryType="nt:unstructured"
+                            sling:resourceType="granite/ui/components/coral/foundation/form/checkbox"
+                            listOrder="4"
+                            metaType="boolean"
+                            name="hsaWithOptumBank"
+                            renderReadOnly="false"
+                            showEmptyInReadOnly="true"
+                            text="HSA with Optum bank"
+                            valueType="boolean"/>
+                        <_x0031_586331054821
+                            jcr:primaryType="nt:unstructured"
+                            sling:resourceType="granite/ui/components/coral/foundation/form/select"
+                            emptyOption="{Boolean}true"
+                            fieldLabel="Savings Account Options Topic 5 - HRA Option"
+                            listOrder="6"
+                            metaType="enumeration"
+                            name="hraOption"
+                            options="\{planDetailPageHealthReimbursementAccountTopic2Option1} - First Dollar;{planDetailPageHealthReimbursementAccountTopic2Option2} - Shared;{planDetailPageHealthReimbursementAccountTopic2Option3} - Split Deductible"
+                            renderReadOnly="false"
+                            showEmptyInReadOnly="true"
+                            valueType="string">
+                            <datasource
+                                jcr:primaryType="nt:unstructured"
+                                sling:resourceType="dam/cfm/admin/components/datasources/optionrenderer"
+                                variant="default"/>
+                        </_x0031_586331054821>
+                        <_x0031_585085333470
+                            jcr:primaryType="nt:unstructured"
+                            sling:resourceType="granite/ui/components/coral/foundation/form/select"
+                            emptyOption="{Boolean}true"
+                            fieldLabel="Comparison Chapter 1 Topic 1 - Network Coverage"
+                            listOrder="6"
+                            metaType="enumeration"
+                            name="comparisonNetworkCoverage"
+                            options="\{comparisonChapter1Topic1Option1} - Yes — Search network and out-of-network doctors and providers;{comparisonChapter1Topic1Option2} - No — Search network doctors and facilities"
+                            renderReadOnly="false"
+                            showEmptyInReadOnly="true"
+                            valueType="string">
+                            <datasource
+                                jcr:primaryType="nt:unstructured"
+                                sling:resourceType="dam/cfm/admin/components/datasources/optionrenderer"
+                                variant="default"/>
+                        </_x0031_585085333470>
+                        <_x0031_585085333471
+                            jcr:primaryType="nt:unstructured"
+                            sling:resourceType="granite/ui/components/coral/foundation/form/select"
+                            emptyOption="{Boolean}true"
+                            fieldLabel="Comparison Chapter 1 Topic 2 - PCP Requirement"
+                            listOrder="6"
+                            metaType="enumeration"
+                            name="comparisonPcpRequirement"
+                            options="\{comparisonChapter1Topic2Option1} - Yes — you'll need to choose a PCP to help provide and coordinate your care;{comparisonChapter1Topic2Option2} - No — while this plan doesn't require a PCP, choosing one for yourself and each covered member is highly recommended"
+                            renderReadOnly="false"
+                            showEmptyInReadOnly="true"
+                            valueType="string">
+                            <datasource
+                                jcr:primaryType="nt:unstructured"
+                                sling:resourceType="dam/cfm/admin/components/datasources/optionrenderer"
+                                variant="default"/>
+                        </_x0031_585085333471>
+                        <_x0031_586295101900
+                            jcr:primaryType="nt:unstructured"
+                            sling:resourceType="granite/ui/components/coral/foundation/form/checkbox"
+                            listOrder="4"
+                            metaType="boolean"
+                            name="comparisonChapter1Topic3Option1"
+                            renderReadOnly="false"
+                            showEmptyInReadOnly="true"
+                            text="\{comparisonChapter1Topic3Option1} - Yes — health savings account (HSA)"
+                            valueType="boolean"/>
+                        <_x0031_586295099901
+                            jcr:primaryType="nt:unstructured"
+                            sling:resourceType="granite/ui/components/coral/foundation/form/checkbox"
+                            listOrder="4"
+                            metaType="boolean"
+                            name="comparisonChapter1Topic3Option2"
+                            renderReadOnly="false"
+                            showEmptyInReadOnly="true"
+                            text="\{comparisonChapter1Topic3Option2} - Yes — health reimbursement account (HRA)"
+                            valueType="boolean"/>
+                        <_x0031_586295096902
+                            jcr:primaryType="nt:unstructured"
+                            sling:resourceType="granite/ui/components/coral/foundation/form/checkbox"
+                            listOrder="4"
+                            metaType="boolean"
+                            name="comparisonChapter1Topic3Option3"
+                            renderReadOnly="false"
+                            showEmptyInReadOnly="true"
+                            text="\{comparisonChapter1Topic3Option3} - Yes — flexible spending account (FSA)"
+                            valueType="boolean"/>
+                        <_x0031_586295093903
+                            jcr:primaryType="nt:unstructured"
+                            sling:resourceType="granite/ui/components/coral/foundation/form/checkbox"
+                            listOrder="4"
+                            metaType="boolean"
+                            name="comparisonChapter1Topic3Option4"
+                            renderReadOnly="false"
+                            showEmptyInReadOnly="true"
+                            text="\{comparisonChapter1Topic3Option4} - No"
+                            valueType="boolean"/>
+                        <_x0031_585601757208
+                            jcr:primaryType="nt:unstructured"
+                            sling:resourceType="granite/ui/components/coral/foundation/form/checkbox"
+                            listOrder="4"
+                            metaType="boolean"
+                            name="servicesCovered"
+                            renderReadOnly="false"
+                            showEmptyInReadOnly="true"
+                            text="Services Covered?"
+                            valueType="boolean"/>
+                        <_x0031_586382843456
+                            jcr:primaryType="nt:unstructured"
+                            sling:resourceType="granite/ui/components/coral/foundation/form/checkbox"
+                            checked="{Boolean}true"
+                            listOrder="4"
+                            metaType="boolean"
+                            name="providersComparisonSearchCoverageLinkText"
+                            renderReadOnly="false"
+                            showEmptyInReadOnly="true"
+                            text="\{providersComparisonSearchCoverageLinkText} - Search this plans network providers"
+                            valueType="boolean"/>
+                        <_x0031_586382843471
+                            jcr:primaryType="nt:unstructured"
+                            sling:resourceType="granite/ui/components/coral/foundation/form/textfield"
+                            fieldLabel="Comparison Provider Link"
+                            listOrder="1"
+                            metaType="text-single"
+                            name="comparisonProviderLink"
+                            renderReadOnly="false"
+                            showEmptyInReadOnly="true"
+                            valueType="string"/>
+                        <_x0031_594206714825
+                            jcr:primaryType="nt:unstructured"
+                            sling:resourceType="granite/ui/components/coral/foundation/form/checkbox"
+                            checked="{Boolean}true"
+                            listOrder="4"
+                            metaType="boolean"
+                            name="prescriptionsComparisonSearchCoverageLinkText"
+                            renderReadOnly="false"
+                            showEmptyInReadOnly="true"
+                            text="\{prescriptionsComparisonSearchCoverageLinkText} - Search this plans covered prescriptions"
+                            valueType="boolean"/>
+                        <_x0031_586382843472
+                            jcr:primaryType="nt:unstructured"
+                            sling:resourceType="granite/ui/components/coral/foundation/form/textfield"
+                            fieldLabel="Comparison Prescription Link"
+                            listOrder="1"
+                            metaType="text-single"
+                            name="comparisonPrescriptionLink"
+                            renderReadOnly="false"
+                            showEmptyInReadOnly="true"
+                            valueType="string"/>
+                        <_x0031_586382843473
+                            jcr:primaryType="nt:unstructured"
+                            sling:resourceType="granite/ui/components/coral/foundation/form/checkbox"
+                            checked="{Boolean}true"
+                            listOrder="4"
+                            metaType="boolean"
+                            name="comparisonFullBenefitsLinkText"
+                            renderReadOnly="false"
+                            showEmptyInReadOnly="true"
+                            text="\{comparisonFullBenefitsLinkText} - View all benefits for this plan"
+                            valueType="boolean"/>
+                        <_x0031_622819707439
+                                jcr:primaryType="nt:unstructured"
+                                sling:resourceType="granite/ui/components/coral/foundation/form/checkbox"
+                                checked="{Boolean}false"
+                                listOrder="4"
+                                metaType="boolean"
+                                name="hideHighlightIcon1"
+                                renderReadOnly="false"
+                                showEmptyInReadOnly="true"
+                                text="Hide Highlights Icon Block 1"
+                                valueType="boolean"/>
+                        <_x0031_622819707539
+                                jcr:primaryType="nt:unstructured"
+                                sling:resourceType="granite/ui/components/coral/foundation/form/checkbox"
+                                checked="{Boolean}false"
+                                listOrder="4"
+                                metaType="boolean"
+                                name="hideHighlightIcon2"
+                                renderReadOnly="false"
+                                showEmptyInReadOnly="true"
+                                text="Hide Highlights Icon Block 2"
+                                valueType="boolean"/>
+                        <_x0031_622819707839
+                                jcr:primaryType="nt:unstructured"
+                                sling:resourceType="granite/ui/components/coral/foundation/form/checkbox"
+                                checked="{Boolean}false"
+                                listOrder="4"
+                                metaType="boolean"
+                                name="hideHighlightIcon3"
+                                renderReadOnly="false"
+                                showEmptyInReadOnly="true"
+                                text="Hide Highlights Icon Block 3"
+                                valueType="boolean"/>
+                        <_x0031_622819707339
+                                jcr:primaryType="nt:unstructured"
+                                sling:resourceType="granite/ui/components/coral/foundation/form/checkbox"
+                                checked="{Boolean}false"
+                                listOrder="4"
+                                metaType="boolean"
+                                name="hideHighlightIcon4"
+                                renderReadOnly="false"
+                                showEmptyInReadOnly="true"
+                                text="Hide Highlights Icon Block 4"
+                                valueType="boolean"/>
+                        <_x0031_622819707139
+                                jcr:primaryType="nt:unstructured"
+                                sling:resourceType="granite/ui/components/coral/foundation/form/checkbox"
+                                checked="{Boolean}false"
+                                listOrder="4"
+                                metaType="boolean"
+                                name="hideHighlightIcon5"
+                                renderReadOnly="false"
+                                showEmptyInReadOnly="true"
+                                text="Hide Highlights Icon Block 5"
+                                valueType="boolean"/>
+                        <_x0031_622819707639
+                                jcr:primaryType="nt:unstructured"
+                                sling:resourceType="granite/ui/components/coral/foundation/form/checkbox"
+                                checked="{Boolean}true"
+                                listOrder="4"
+                                metaType="boolean"
+                                name="showSummaryTopicFSA"
+                                renderReadOnly="false"
+                                showEmptyInReadOnly="true"
+                                text="Hide Highlights Icon Block 1"
+                                valueType="boolean"/>
+                        <_x0031_622819600580
+                            jcr:primaryType="nt:unstructured"
+                            sling:resourceType="granite/ui/components/coral/foundation/form/checkbox"
+                            checked="{Boolean}true"
+                            listOrder="4"
+                            metaType="boolean"
+                            name="showSummaryTopicHSA"
+                            renderReadOnly="false"
+                            showEmptyInReadOnly="true"
+                            text="Summary Topic HSA"
+                            valueType="boolean"/>
+                        <_x0031_622819707647
+                            jcr:primaryType="nt:unstructured"
+                            sling:resourceType="granite/ui/components/coral/foundation/form/checkbox"
+                            checked="{Boolean}true"
+                            listOrder="4"
+                            metaType="boolean"
+                            name="showSummaryTopicFSA"
+                            renderReadOnly="false"
+                            showEmptyInReadOnly="true"
+                            text="Summary Topic FSA"
+                            valueType="boolean"/>
+                        <_x0031_585601860528
+                            jcr:primaryType="nt:unstructured"
+                            sling:resourceType="dam/cfm/admin/components/authoring/contenteditor/multieditor"
+                            cfm-element="Disclaimers"
+                            default-mime-type="text/html"
+                            listOrder="2"
+                            metaType="text-multi"
+                            name="disclaimers"
+                            renderReadOnly="false"
+                            showEmptyInReadOnly="true"
+                            valueType="string"/>
+                    </items>
+                </content>
+            </cq:dialog>
+        </model>
+    </jcr:content>
+</jcr:root>

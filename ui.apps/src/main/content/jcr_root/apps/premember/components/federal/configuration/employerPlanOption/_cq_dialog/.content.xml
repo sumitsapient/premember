@@ -1,0 +1,130 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<jcr:root xmlns:sling="http://sling.apache.org/jcr/sling/1.0" xmlns:granite="http://www.adobe.com/jcr/granite/1.0" xmlns:cq="http://www.day.com/jcr/cq/1.0" xmlns:jcr="http://www.jcp.org/jcr/1.0" xmlns:nt="http://www.jcp.org/jcr/nt/1.0"
+    jcr:primaryType="nt:unstructured"
+    jcr:title="Federal - Plan"
+    sling:resourceType="cq/gui/components/authoring/dialog"
+    extraClientlibs="[premember.configuration.federa.planOption.dialog]">
+    <content
+        granite:class="cmp-healthPlan__editor"
+        jcr:primaryType="nt:unstructured"
+        sling:resourceType="granite/ui/components/coral/foundation/container">
+        <granite:data
+            jcr:primaryType="nt:unstructured"
+            component-path="${requestPathInfo.suffix}"/>
+        <items jcr:primaryType="nt:unstructured">
+            <tabs
+                jcr:primaryType="nt:unstructured"
+                sling:resourceType="granite/ui/components/coral/foundation/tabs"
+                maximized="{Boolean}true">
+                <items jcr:primaryType="nt:unstructured">
+                    <general
+                        granite:class="generalEmployerPlanTab"
+                        jcr:primaryType="nt:unstructured"
+                        jcr:title="General"
+                        sling:resourceType="granite/ui/components/coral/foundation/container"
+                        margin="{Boolean}true">
+                        <items jcr:primaryType="nt:unstructured">
+                            <id
+                                jcr:primaryType="nt:unstructured"
+                                sling:resourceType="granite/ui/components/coral/foundation/form/select"
+                                emptyOption="{Boolean}true"
+                                fieldLabel="Name"
+                                name="./id"
+                                required="{Boolean}true"
+                                valueType="string"/>
+                            <featuredText
+                                jcr:primaryType="nt:unstructured"
+                                sling:resourceType="cq/gui/components/authoring/dialog/richtext"
+                                fieldLabel="Featured Text"
+                                name="./featuredText"
+                                useFixedInlineToolbar="{Boolean}true"/>
+                            <description
+                                jcr:primaryType="nt:unstructured"
+                                sling:resourceType="cq/gui/components/authoring/dialog/richtext"
+                                fieldLabel="Plan Overview Description"
+                                name="./description"
+                                required="{Boolean}true"
+                                useFixedInlineToolbar="{Boolean}true"/>
+							<detailsDescription
+								jcr:primaryType="nt:unstructured"
+								sling:resourceType="cq/gui/components/authoring/dialog/richtext"
+								fieldLabel="Plan Details Description"
+								name="./detailsDescription"
+								required="{Boolean}true"
+								useFixedInlineToolbar="{Boolean}true"/>
+							<planBenefitsSummaryPdf
+								jcr:primaryType="nt:unstructured"
+								sling:resourceType="granite/ui/components/coral/foundation/form/pathfield"
+								fieldLabel="Plan Benefits Summary Pdf"
+								name="./planBenefitsSummaryPdf"
+								rootPath="/content/dam/premember/documents"/>
+                        </items>
+                    </general>
+					<planBenefitsSummary
+						jcr:primaryType="nt:unstructured"
+						jcr:title="Plan Benefits Summary"
+						sling:resourceType="granite/ui/components/coral/foundation/container"
+						margin="{Boolean}true">
+						<items jcr:primaryType="nt:unstructured">
+							<columns
+								jcr:primaryType="nt:unstructured"
+								sling:resourceType="granite/ui/components/coral/foundation/fixedcolumns"
+								margin="{Boolean}true">
+								<items jcr:primaryType="nt:unstructured">
+									<column
+										jcr:primaryType="nt:unstructured"
+										sling:resourceType="granite/ui/components/coral/foundation/container">
+										<items jcr:primaryType="nt:unstructured">
+											<showBenefit1
+												jcr:primaryType="nt:unstructured"
+												sling:resourceType="granite/ui/components/coral/foundation/form/checkbox"
+												name="./planBenefitsSummary/showBenefit1"
+												text="Show benefit 1"
+												uncheckedValue="{Boolean}false"
+												value="{Boolean}true"/>
+											<showBenefit2
+												jcr:primaryType="nt:unstructured"
+												sling:resourceType="granite/ui/components/coral/foundation/form/checkbox"
+												name="./planBenefitsSummary/showBenefit2"
+												text="Show benefit 2"
+												uncheckedValue="{Boolean}false"
+												value="{Boolean}true"/>
+											<showBenefit3
+												jcr:primaryType="nt:unstructured"
+												sling:resourceType="granite/ui/components/coral/foundation/form/checkbox"
+												name="./planBenefitsSummary/showBenefit3"
+												text="Show benefit 3"
+												uncheckedValue="{Boolean}false"
+												value="{Boolean}true"/>
+											<showBenefit4
+												jcr:primaryType="nt:unstructured"
+												sling:resourceType="granite/ui/components/coral/foundation/form/checkbox"
+												name="./planBenefitsSummary/showBenefit4"
+												text="Show benefit 4"
+												uncheckedValue="{Boolean}false"
+												value="{Boolean}true"/>
+											<showBenefit5
+												jcr:primaryType="nt:unstructured"
+												sling:resourceType="granite/ui/components/coral/foundation/form/checkbox"
+												name="./planBenefitsSummary/showBenefit5"
+												text="Show benefit 5"
+												uncheckedValue="{Boolean}false"
+												value="{Boolean}true"/>
+											<showBenefit6
+												jcr:primaryType="nt:unstructured"
+												sling:resourceType="granite/ui/components/coral/foundation/form/checkbox"
+												name="./planBenefitsSummary/showBenefit6"
+												text="Show Benefit 6"
+												uncheckedValue="{Boolean}false"
+												value="{Boolean}true"/>
+										</items>
+									</column>
+								</items>
+							</columns>
+						</items>
+					</planBenefitsSummary>
+                </items>
+            </tabs>
+        </items>
+    </content>
+</jcr:root>

@@ -1,0 +1,53 @@
+<div data-sly-use.templates="core/wcm/components/commons/v1/templates.html"
+	 class="o-container" style="padding-top: 32px;">
+	<div class="o-grid o-grid--aem-container">
+		<div class="o-grid__item o-grid__item-8@lg">
+			<h1 class="unity-type-h1 u-text-bold" data-sly-test="${!currentPage.parent.listChildren}">${currentPage.properties['planTitle']}</h1>
+			<label data-sly-test="${currentPage.parent.listChildren}" for="plan-picker-select" class="plan-picker__label u-text-uppercase u-text-bold">View a plan</label>
+			<div data-sly-test="${currentPage.parent.listChildren}">
+				<div class="plan-picker__field u-d-inline-block">
+					<h1 class="plan-picker__value u-text-bold">
+						${currentPage.properties['planTitle']}
+					</h1>
+					<select id="generic-plan-picker-select" class="plan-picker__select u-d-block u-w-100 u-h-100 u-b-0 u-text-bold"
+							aria-label="View a plan (redirects to selected plan details page)"
+							data-sly-list.option="${currentPage.parent.listChildren}">
+						<option value="${option.name}.html" selected="${currentPage.name in option.path}">${option.properties['planTitle']}</option>
+					</select>
+					<span class="plan-picker__dropdown-icon">
+            <svg
+					xmlns="http://www.w3.org/2000/svg"
+					xmlns:xlink="http://www.w3.org/1999/xlink"
+					viewBox="0 0 48 48"
+					role="presentation"
+					focusable="false"
+					class="plan-picker__select-icon">
+              <path d=" M 38.688 12.407 L 24 26.738 L 9.312 12.407 L 4.8 16.819 L 24 35.593 L 43.2 16.819 L 38.688 12.407 Z "
+					fill="currentColor"/>
+            </svg>
+          </span>
+				</div>
+			</div>
+		</div>
+		<sly data-sly-use.planPicker="com.mirumagency.uhc.premember.core.models.GenericPlanPicker">
+			<div class="u-m-t" data-sly-test="${planPicker.isShowButton}" data-sly-resource="${'button' @ resourceType='premember/components/content/button'}">
+			</div>
+		</sly>
+	</div>
+	<div class="container responsivegrid">
+		<div class="cmp-container">
+			<div class="container responsivegrid">
+				<div class="cmp-container">
+					<div class="o-grid o-grid--aem-container">
+						<div class="o-grid__item o-grid__item-12 o-grid__item-12@sm o-grid__item-8@md o-grid__item-8@lg">
+							<div class="text aem-component-rte initialized-uhc--text"><div class="cmp-text" id="text-1142861027">
+								<p>${currentPage.properties['planDescription']}</p>
+							</div>
+							</div>
+						</div>
+					</div>
+				</div>
+			</div>
+		</div>
+	</div>
+</div>

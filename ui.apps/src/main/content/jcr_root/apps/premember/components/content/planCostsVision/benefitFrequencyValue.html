@@ -1,0 +1,11 @@
+<template data-sly-template.benefitFrequencyValue="${@ name='Benefit name', info='Benefit info', frequency='Benefit frequency'}">
+    <div class="plan-costs__values-wrapper u-d-flex u-f-align-start u-f-justify-center">
+        <p class="plan-costs__names">
+            ${name}
+            <sly data-sly-test="${info}">
+                <span class="plan-costs__info">${info}</span>
+            </sly>
+        </p>
+        <p class="plan-costs__text">Once every ${frequency} months</p>
+    </div>
+</template>

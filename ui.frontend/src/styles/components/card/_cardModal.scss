@@ -1,0 +1,17 @@
+.c-card--modal {
+	.c-card__header {
+		position: relative;
+		padding-right: $g-spacing-xl;
+	}
+}
+
+.c-card--modal__close {
+	position: absolute;
+	top: 10px;
+	right: 12px;
+
+	@include mq($until: sm) {
+		top: -6px;
+		right: 4px;
+	}
+}

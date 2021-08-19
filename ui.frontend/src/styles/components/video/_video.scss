@@ -1,0 +1,116 @@
+.c-video-block {
+	.brightcove-container {
+		width: 100% !important;
+		margin: 0 !important;
+	}
+
+	.vjs-menu-button-popup .vjs-menu .vjs-menu-item.vjs-selected {
+		background-color: #151b17;
+	}
+
+	.c-card__body {
+		.cmp-text p {
+			@include mq(md) {
+				@include unity-type('body', 'large');
+			}
+		}
+	}
+}
+
+.c-video-block__transcript-button {
+	.c-inline-icon__link {
+		text-decoration: underline;
+	}
+
+	.o-svg-icon {
+		vertical-align: top;
+		margin-left: 0.25em;
+
+		svg {
+			width: 1.6em;
+			height: 1.6em;
+		}
+	}
+}
+
+// Bright Cove Inserted Overrides.
+//
+// !important everything for runtime JS (in absence of having)
+// hooked into the API.
+.video-js {
+	.vjs-poster {
+		background-color: unity-color('white') !important;
+	}
+
+	.vjs-big-play-button {
+		@include unity-transition('opacity');
+
+		width: $g-spacing-xxxl !important;
+		height: $g-spacing-xxxl !important;
+		position: absolute !important;
+		left: 50% !important;
+		margin: 0 !important;
+		top: 50% !important;
+		transform: translate(-50%, -50%) !important;
+		border-radius: 50% !important;
+		background-color: unity-color('blue') !important;
+		color: unity-color('white') !important;
+
+		// Set to display none so there isn't a duplicate title and text node.
+		.vjs-control-text {
+			display: none !important;
+		}
+
+		&::before {
+			$local-margin: ($g-spacing - 0.125rem);
+
+			height: $g-spacing-xl !important;
+			width: $g-spacing-xl !important;
+			font-size: $g-spacing-xl !important;
+			margin: $local-margin auto $local-margin 0.55em !important;
+			opacity: 1 !important;
+			line-height: 1 !important;
+		}
+
+		&:hover,
+		&:focus {
+			background-color: unity-color('blue', 'digital') !important;
+			box-shadow: none !important;
+		}
+
+		&:focus {
+			@include unity-focus($focus: 'false');
+		}
+	}
+
+	.vjs-control-bar {
+		color: unity-color('white') !important;
+		background-color: rgba(unity-color('black'), 0.8) !important;
+		display: none !important;
+		border-top: 0 !important;
+	}
+
+	.vjs-control {
+		&:focus,
+		&:hover {
+			background: unity-color('blue', 'digital') !important;
+
+			&::before {
+				text-shadow: none !important;
+			}
+		}
+
+		&.vjs-time-control {
+			&:focus,
+			&:hover {
+				background: none !important;
+			}
+		}
+	}
+}
+
+.vjs-has-started {
+	.vjs-control-bar {
+		display: flex !important; // Needs flex.
+	}
+}

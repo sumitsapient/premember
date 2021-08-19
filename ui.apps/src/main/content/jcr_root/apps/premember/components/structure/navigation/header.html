@@ -1,0 +1,89 @@
+<template data-sly-template.employerConfig="${@ config='Employer config', data='Employer plan data'}">
+	<div class="c-navigation__header o-container">
+		<!--/* UHC Logo */-->
+		<a
+			href="${config.homePagePath}"
+			class="c-navigation__logo"
+			data-event-type="globalnav"
+			data-event-name="home_logo"
+		>
+			<img
+				src="${config.uhcLogoPath}"
+				alt="UnitedHealthcare"
+			>
+		</a>
+		<!--/* Employer Logo */-->
+		<div
+			data-sly-test="${config.isEmployerLogoAdded}"
+			class="c-navigation__logo"
+		>
+			<img
+				src="${config.employerLogoPath}"
+				alt="${config.employerLogoDescription}"
+			>
+		</div>
+		<!--/* No Employer Logo Message */-->
+		<div data-sly-test="${!config.isEmployerLogoAdded && wcmmode.edit}">
+			<p>Please configure employer logo</p>
+		</div>
+		<!--/* Zip Code */-->
+		<button
+			data-sly-test="${data.showZipCodeOption}"
+			aria-label="Toggle zip menu"
+			aria-haspopup="true"
+			aria-expanded="false"
+			aria-controls="zip-menu"
+			class="c-navigation__toggle c-navigation__toggle--zip"
+		>
+			<!--/* Pin icon */-->
+			<span class="c-tempo-icon">
+				<svg
+					xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink"
+					x="0px"
+					y="0px"
+					viewBox="0 0 48 48"
+					aria-labelledby="tempo-icon-location-pin--title"
+					aria-hidden="true"
+					focusable="false"
+				>
+					<title id="tempo-icon-location-pin--title">Location Pin Icon</title>
+					<circle class="c-tempo-icon__circle" fill="transparent" fill-opacity="0" cx="24" cy="24" r="24"/>
+					<path class="c-tempo-icon__base" fill="currentColor" d="M36.36,19.36C36.36,12.54,30.83,7,24,7s-12.36,5.54-12.36,12.36c0,2.56,0.78,4.93,2.11,6.9h0L24,41l10.25-14.73l0-0.01h0 C35.59,24.3,36.36,21.92,36.36,19.36z M24,26.57c-3.98,0-7.21-3.23-7.21-7.21c0-3.98,3.23-7.21,7.21-7.21s7.21,3.23,7.21,7.21 C31.21,23.34,27.98,26.57,24,26.57z"/>
+					<path class="c-tempo-icon__accent c-tempo-icon__2c-only" fill="currentColor" d="M31.21,19.35c0,3.98-3.23,7.21-7.21,7.21c-3.98,0-7.21-3.23-7.21-7.21c0-3.98,3.23-7.21,7.21-7.21 C27.98,12.14,31.21,15.37,31.21,19.35z" style="display: none;"/>
+				</svg>
+			</span>
+			<strong class="c-navigation__toggle-text c-navigation__zip-label">Enter ZIP</strong>
+		</button>
+		<!--/* Toggle Nav (Mobile) */-->
+		<button
+			aria-label="Toggle navigation"
+			aria-haspopup="true"
+			aria-expanded="false"
+			aria-controls="main-menu"
+			class="c-navigation__toggle"
+		>
+			<span class="c-navigation__toggle-icon"></span>
+			<strong class="c-navigation__toggle-text">Menu</strong>
+		</button>
+		<!--/* Member Login */-->
+		<a
+			data-sly-test="${data.memberLoginLink.showMemberLoginOption}"
+			href="${data.memberLoginLink.memberLoginLink}"
+			target="_blank"
+			class="c-button c-button--secondary c-button--small"
+		>
+			${data.memberLoginLink.memberLoginLinkText}
+			<span class="o-svg-icon o-svg-icon--lg u-m-l-xs">
+				<svg
+					viewBox="0, 0, 24, 24"
+					focusable="false"
+					shape-rendering="geometricPrecision"
+				>
+					<path
+						d="M20.385,20.385 L3.615,20.385 L3.615,3.615 L12,3.615 L12,1.219 L3.615,1.219 C2.285,1.219 1.219,2.297 1.219,3.615 L1.219,20.385 C1.219,21.703 2.285,22.781 3.615,22.781 L20.385,22.781 C21.703,22.781 22.781,21.703 22.781,20.385 L22.781,12 L20.385,12 L20.385,20.385 z M14.396,1.219 L14.396,3.615 L18.696,3.615 L6.921,15.39 L8.61,17.079 L20.385,5.304 L20.385,9.604 L22.781,9.604 L22.781,1.219 L14.396,1.219 z"
+						fill="currentColor"/>
+				</svg>
+			</span>
+		</a>
+	</div>
+</template>

@@ -1,0 +1,41 @@
+<sly data-sly-use.plan="com.mirumagency.uhc.premember.core.models.PlanModel"></sly>
+<div
+	class="c-card c-card--plan-costs"
+	data-sly-use.planCostValue="planCostValue.html"
+	data-sly-use.templates="core/wcm/components/commons/v1/templates.html"
+>
+	<div class="c-card__body">
+		<table>
+			<caption>
+				Plan Details
+			</caption>
+			<thead>
+			<tr>
+				<td></td>
+				<th scope="col">Individual</th>
+				<th scope="col">Family</th>
+			</tr>
+			</thead>
+			<tbody>
+			<tr>
+				<th scope="row">
+					${plan.tokens['copy.summaryTopic5']}
+				</th>
+				<!--/* Individual */-->
+				<sly data-sly-call="${planCostValue.planCostValue @ value=plan.tokens['selectedOption.deductibleIndividual']}"></sly>
+				<!--/* Family */-->
+				<sly data-sly-call="${planCostValue.planCostValue @ value=plan.tokens['selectedOption.deductibleFamily']}"></sly>
+			</tr>
+			<tr>
+				<th scope="row">
+					${plan.tokens['copy.summaryTopic6']}
+				</th>
+				<!--/* Individual */-->
+				<sly data-sly-call="${planCostValue.planCostValue @ value=plan.tokens['selectedOption.outOfPocketLimitIndividual']}"></sly>
+				<!--/* Family */-->
+				<sly data-sly-call="${planCostValue.planCostValue @ value=plan.tokens['selectedOption.outOfPocketLimitFamily']}"></sly>
+			</tr>
+			</tbody>
+		</table>
+	</div>
+</div>

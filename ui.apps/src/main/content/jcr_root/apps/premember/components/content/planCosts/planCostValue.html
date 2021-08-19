@@ -1,0 +1,11 @@
+<template data-sly-template.planCostValue="${@ value='Cost value'}">
+	<td
+		data-sly-set.isEmpty="${!value}"
+		data-sly-attribute.class="${!isEmpty ? 'c-card__table--has-value' : ''}"
+	>
+		<sly data-sly-test="${isEmpty}">N/A</sly>
+		<sly data-sly-test="${!isEmpty}">
+			$${',###' @ format=value, type='number'}
+		</sly>
+	</td>
+</template>

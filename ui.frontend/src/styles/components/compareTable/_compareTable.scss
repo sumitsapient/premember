@@ -1,0 +1,262 @@
+$plan-compare-card-border-color: unity-color('gray', 'medium');
+$plan-compare-card-border-radius: $g-spacing-sm;
+
+.c-card--compare-table {
+	border: 1px solid $plan-compare-card-border-color;
+	border-radius: $plan-compare-card-border-radius;
+	margin-bottom: $g-spacing;
+	overflow: hidden;
+
+	&.c-card--section-heading {
+		border-bottom-left-radius: 0;
+		border-bottom-right-radius: 0;
+		border-bottom: none;
+		margin-bottom: 0;
+	}
+
+	&.c-card--section-sub {
+		border-top-left-radius: 0;
+		border-top-right-radius: 0;
+		border-top: none;
+	}
+
+	&.c-card--section-no-title {
+		border-top-left-radius: 0;
+		border-top-right-radius: 0;
+	}
+
+	.c-card__header {
+		background-color: unity-color('blue');
+		color: unity-color('white');
+		margin-bottom: 0;
+		padding: $g-spacing-sm $g-spacing;
+
+		&--subtitle {
+			background-color: unity-color('gray', 'dark');
+
+			.c-card__title {
+				@include unity-type('heading', 'h6', 'medium', false);
+
+				color: unity-color('gray');
+			}
+		}
+	}
+
+	.c-card__title {
+		@include unity-type('heading', 'h4', 'medium');
+
+		color: unity-color('white');
+		display: inline-block;
+		margin-bottom: 0;
+
+		& + .c-card__title {
+			&::before {
+				content: '-';
+				display: inline-block;
+				margin: 0 1rem;
+				opacity: 0.75;
+				transform: scaleX(3);
+			}
+		}
+	}
+
+	.c-card__body {
+		padding: 0;
+
+		.c-card__table > [class*="o-grid__item"] {
+			margin-bottom: 0;
+		}
+	}
+
+	.c-card__table {
+		&:not(:first-child) {
+			border-top: 1px solid $plan-compare-card-border-color;
+		}
+
+		&--sub-group {
+			&:not(:first-child) {
+				border-top: none;
+			}
+
+			// hide headers in mobile view
+			@include mq($until: md) {
+				[role="rowheader"] {
+					display: none;
+				}
+			}
+		}
+
+		// Grid spacing fixes
+		@include mq(md) {
+			> * {
+				&:first-child {
+					padding-right: 0;
+				}
+
+				&:last-child {
+					padding-left: 0;
+				}
+
+				&:not(:first-child):not(:last-child) {
+					padding-left: 0;
+					padding-right: 0;
+				}
+			}
+		}
+
+		// hide third column in mobile view
+		@include mq($until: md) {
+			> [role="cell"]:nth-child(n + 4) {
+				display: none;
+			}
+		}
+	}
+
+	.c-card__table-item {
+		height: 100%;
+		padding: $g-spacing-sm $g-spacing;
+
+		> *:not(:first-child) {
+			margin-top: $g-spacing-sm;
+		}
+
+		p:last-child {
+			margin-bottom: 0;
+		}
+
+		&--heading {
+			background-color: unity-color('gray');
+
+			p {
+				margin-bottom: 0;
+			}
+		}
+
+		.c-button {
+			font-size: 14px;
+			padding-left: 0;
+			text-align: left;
+
+			.o-svg-icon-pdf svg {
+				position: relative;
+				top: -3px;
+				width: 2rem;
+			}
+		}
+	}
+
+	.c-card__table-cost-title {
+		&:not(:first-child) {
+			padding-top: $g-spacing-sm;
+			border-top: 1px solid $plan-compare-card-border-color;
+		}
+	}
+}
+
+#compare-table,
+.federal-compare-table {
+	.compare-table__headers {
+		display: flex;
+	}
+
+	.compare-table__select,
+	.compare-table__filter {
+		width: 152px;
+		min-height: 104px;
+		padding: 14px;
+
+		@include mq(md) {
+			width: 184px;
+			margin-right: $g-spacing-lg;
+		}
+
+		@include mq(xl) {
+			width: 214px;
+		}
+	}
+
+	.compare-table__header-row,
+	.compare-table__headers,
+	.compare-table__body {
+		@include mq($until: lg) {
+			width: 100%;
+		}
+	}
+
+	.compare-table__filter {
+		@include mq($until: md) {
+			display: none;
+		}
+	}
+
+	.compare-table__select {
+		display: flex;
+		flex-flow: column wrap;
+		justify-content: space-between;
+
+		@include mq($until: lg) {
+			flex: 1;
+		}
+
+		&:nth-child(2) {
+			@include mq($until: md) {
+				margin-right: $g-spacing-sm;
+			}
+		}
+
+		&:nth-child(4) {
+			display: flex;
+
+			@include mq($until: md) {
+				display: none;
+			}
+		}
+
+		&:last-child {
+			@include mq(md) {
+				margin-right: 0;
+			}
+		}
+
+		.compare-table__dropdown {
+			position: relative;
+		}
+
+		a {
+			color: unity-color('blue');
+			font-size: 16px;
+			font-weight: 600;
+			line-height: 1.21;
+		}
+	}
+
+	@include mq($until: md) {
+		.c-compare-table-header {
+			.o-grid {
+				> *:first-child {
+					margin-bottom: $g-spacing-sm;
+				}
+
+				// hide 3rd input on mobile
+				> *:nth-child(4) {
+					display: none;
+				}
+			}
+		}
+	}
+
+	@import 'compareTableExtendedCostsTile';
+	@import 'compareTableSimpleCostsTile';
+
+	.compare-table__tile-care-services {
+		.compare-table__copay-value,
+		.compare-table__coinsurance-value {
+			font-size: 24px;
+		}
+
+		.compare-table__copay-title,
+		.compare-table__coinsurance-title {
+			padding-top: 6px;
+		}
+	}
+}

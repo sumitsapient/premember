@@ -1,0 +1,134 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<jcr:root xmlns:dam="http://www.day.com/dam/1.0" xmlns:cq="http://www.day.com/jcr/cq/1.0" xmlns:jcr="http://www.jcp.org/jcr/1.0" xmlns:mix="http://www.jcp.org/jcr/mix/1.0" xmlns:nt="http://www.jcp.org/jcr/nt/1.0"
+    jcr:mixinTypes="[mix:referenceable]"
+    jcr:primaryType="dam:Asset">
+    <jcr:content
+        cq:name="dental-ppo"
+        cq:parentPath="/content/dam/premember/plans/options/dental"
+        jcr:description=""
+        jcr:primaryType="dam:AssetContent"
+        jcr:title="Dental PPO"
+        contentFragment="{Boolean}true"
+        lastFragmentSave="{Date}2020-06-25T05:32:34.643Z">
+        <data
+            cq:model="/conf/premember/dental-option/settings/dam/cfm/models/dental-plan-option"
+            jcr:primaryType="nt:unstructured">
+            <master
+                jcr:mixinTypes="[cq:Taggable]"
+                jcr:primaryType="nt:unstructured"
+                comparisonCleaningBenefitOutOfNetwork="{Boolean}true"
+                comparisonDenturesAndRemovableProstheticsBenefitOutOfNetwork="{Boolean}true"
+                comparisonDiagnoseMisalignmentBenefitOutOfNetwork="{Boolean}false"
+                comparisonEmergencyTreatmentBenefitOutOfNetwork="{Boolean}false"
+                comparisonEndodonticsBenefitOutOfNetwork="{Boolean}false"
+                comparisonFixedPartialDenturesBenefitOutOfNetwork="{Boolean}true"
+                comparisonFlourideTreatmentBenefitOutOfNetwork="{Boolean}false"
+                comparisonInlaysOnlaysCrownsBenefitOutOfNetwork="{Boolean}false"
+                comparisonLabDiagnosticTestsBenefitOutOfNetwork="{Boolean}false"
+                comparisonNetworkBenefits="\{comparisonChapter1Topic1Option1} - Yes - search network and out-of-network dental providers"
+                comparisonOralSurgeryBenefitOutOfNetwork="{Boolean}true"
+                comparisonPeriodonticsBenefitOutOfNetwork="{Boolean}false"
+                comparisonPreventiveCare="\{comparisonChapter1Topic2Option1} - Yes, X cleaning every XX months"
+                comparisonRadiographsBenefitOutOfNetwork="{Boolean}true"
+                comparisonRestorationsBenefitOutOfNetwork="{Boolean}false"
+                comparisonRoutineExamsBenefitOutOfNetwork="{Boolean}true"
+                comparisonSealantsBenefitOutOfNetwork="{Boolean}true"
+                comparisonSearchCoverageLinkText="{Boolean}true"
+                comparisonFullBenefitsLinkText="{Boolean}true"
+                comparisonSimpleExtractionsBenefitOutOfNetwork="{Boolean}false"
+                comparisonSpaceMaintainersBenefitOutOfNetwork="{Boolean}true"
+                costSharingOption="Option 2"
+                coveragePlanBenefits="\{coverageHighlightsTopic2Option1} - Get coverage on hundreds of services including crowns, braces, silver fillings and more. Preventive care, including routine exams, cleanings and fluoride treatment is covered 100% in the network. In addition, expectant mothers get extra coverage for cleanings both during pregnancy and three months following delivery (benefit not available in all states). Oral cancer screenings are covered for adults age 18 and older"
+                coverageProviderNetwork="\{coverageHighlightsTopic1Option1} - Select any dentist you want, anywhere across the country. When you choose a dentist who is part of this plan’s large national network, you receive discounted rates only available to members. To see a specialist, you do not need a referral"
+                disclaimers="&lt;p>UnitedHealthcare dental coverage underwritten by UnitedHealthcare Insurance Company, located in Hartford, Connecticut, UnitedHealthcare Insurance Company of New York, located in Islandia, New York, or their affiliates.&amp;nbsp;&lt;/p>&#xa;&lt;p>Administrative services provided by Dental Benefit Providers, Inc., Dental Benefit Administrative Services (CA only), DBP Services (NY only), United HealthCare Services, Inc. or their affiliates. Plans sold in Texas use policy form number DPOL.06.TX, DPOL.12.TX and DPOL.12.TX (Rev. 9/16) and associated COC form numbers DCOC.CER.06, DCOC.CER.IND.12. TX and DCERT.IND.12.TX. Plans sold in Virginia use policy form number DPOL.06.VA with associated COC form number DCOC.CER.06.VA and policy form number DPOL.12.VA with&lt;/p>&#xa;&lt;p>associated COC form number DCOC.CER.12.VA&lt;/p>&#xa;"
+                hasStateSpecificProvider="{Boolean}false"
+                planDescription="&lt;p>You can see any dentist you want, anywhere across the country.&amp;nbsp; When you choose a dentist who is part of the plan’s large national network, you may receive discounted rates only available to members. Referrals are not needed to see a specialist. Preventive care, including routine exams and cleanings, is covered 100% in the network.&lt;/p>&#xa;"
+                planId="DP01"
+                planName="Dental PPO"
+                providerSearchLink="http://www.yourdentalplan.com/dentistsearch"
+                showProgramsSection="{Boolean}true"
+                showProgramsTopic1="{Boolean}true"
+                showProgramsTopic2="{Boolean}true"
+                showProgramsTopic3="{Boolean}true"
+                showProgramsTopic4="{Boolean}true"
+                summaryAnnualMaximum="\{summaryTopic3Option1} - This plan includes an annual maximum which is the most the plan will pay for the plan year"
+                summaryCopays="\{summaryTopic4Option2} - No copay on services"
+                summaryNetworkCoverage="\{summaryTopic1Option2} - Network dentists recommended, out of network dentists allowed"
+                summaryPreventiveCare="\{summaryTopic2Option1} - Preventive care provided by a network dentist is covered at 100%"
+                summaryPrimaryCareDentistReferrals="\{summaryTopic5Option3} - No primary care dentist or referral to see a specialist required"
+                summaryReferrals="\{summaryTopic6Option2} - Referrals are not needed to see a specialist"/>
+            <dental_ppo_-_co
+                jcr:mixinTypes="[cq:Taggable]"
+                jcr:primaryType="nt:unstructured"
+                comparisonNetworkBenefits="\{comparisonChapter1Topic1Option1} - Yes - search network and out-of-network dental providers"
+                comparisonPreventiveCare="\{comparisonChapter1Topic2Option1} - Yes, X cleaning every XX months"
+                comparisonSearchCoverageLinkText="{Boolean}true"
+                comparisonFullBenefitsLinkText="{Boolean}true"
+                costSharingOption="Option 2"
+                coveragePlanBenefits="\{coverageHighlightsTopic2Option1} - Get coverage on hundreds of services including crowns, braces, silver fillings and more. Preventive care, including routine exams, cleanings and fluoride treatment is covered 100% in the network. In addition, expectant mothers get extra coverage for cleanings both during pregnancy and three months following delivery (benefit not available in all states). Oral cancer screenings are covered for adults age 18 and older"
+                coverageProviderNetwork="\{coverageHighlightsTopic1Option1} - Select any dentist you want, anywhere across the country. When you choose a dentist who is part of this plan’s large national network, you receive discounted rates only available to members. To see a specialist, you do not need a referral"
+                disclaimers="&lt;p>UnitedHealthcare dental coverage underwritten by UnitedHealthcare Insurance Company, located in Hartford, Connecticut, UnitedHealthcare Insurance Company of New York, located in Islandia, New York, or their affiliates.&amp;nbsp;&lt;/p>&#xa;&lt;p>Administrative services provided by Dental Benefit Providers, Inc., Dental Benefit Administrative Services (CA only), DBP Services (NY only), United HealthCare Services, Inc. or their affiliates. Plans sold in Texas use policy form number DPOL.06.TX, DPOL.12.TX and DPOL.12.TX (Rev. 9/16) and associated COC form numbers DCOC.CER.06, DCOC.CER.IND.12. TX and DCERT.IND.12.TX. Plans sold in Virginia use policy form number DPOL.06.VA with associated COC form number DCOC.CER.06.VA and policy form number DPOL.12.VA with&lt;/p>&#xa;&lt;p>associated COC form number DCOC.CER.12.VA.&lt;/p>&#xa;&lt;p>This policy DOES NOT include coverage of pediatric dental services as required under federal law. Coverage of pediatric dental services is available for purchase in the State of Colorado, and can be purchased as a stand-alone plan, or as a covered benefit in another health plan. Please contact your insurance carrier, agent, or Connect for Health Colorado to purchase either a plan that includes pediatric dental coverage, or an Exchange-qualified stand- alone dental plan that includes pediatric dental coverage.&lt;/p>&#xa;"
+                hasStateSpecificProvider="{Boolean}false"
+                planDescription="&lt;p>You can see any dentist you want, anywhere across the country.&amp;nbsp; When you choose a dentist who is part of the plan’s large national network, you may receive discounted rates only available to members. Referrals are not needed to see a specialist. Preventive care, including routine exams and cleanings, is covered 100% in the network.&lt;/p>&#xa;"
+                planId="DP01"
+                planName="Dental PPO"
+                providerSearchLink="http://www.yourdentalplan.com/dentistsearch"
+                summaryAnnualMaximum="\{summaryTopic3Option1} - This plan includes an annual maximum which is the most the plan will pay for the plan year"
+                summaryCopays="\{summaryTopic4Option2} - No copay on services"
+                summaryNetworkCoverage="\{summaryTopic1Option2} - Network dentists recommended, out of network dentists allowed"
+                summaryPreventiveCare="\{summaryTopic2Option1} - Preventive care provided by a network dentist is covered at 100%"
+                summaryPrimaryCareDentistReferrals="\{summaryTopic5Option3} - No primary care dentist or referral to see a specialist required"
+                summaryReferrals="\{summaryTopic6Option2} - Referrals are not needed to see a specialist"/>
+            <dental_ppo_-_20
+                jcr:mixinTypes="[cq:Taggable]"
+                jcr:primaryType="nt:unstructured"
+                comparisonNetworkBenefits="\{comparisonChapter1Topic1Option1} - Yes - search network and out-of-network dental providers"
+                comparisonPreventiveCare="\{comparisonChapter1Topic2Option1} - Yes, X cleaning every XX months"
+                comparisonSearchCoverageLinkText="{Boolean}true"
+                comparisonFullBenefitsLinkText="{Boolean}true"
+                costSharingOption="Option 2"
+                coveragePlanBenefits="\{coverageHighlightsTopic2Option1} - Get coverage on hundreds of services including crowns, braces, silver fillings and more. Preventive care, including routine exams, cleanings and fluoride treatment is covered 100% in the network. In addition, expectant mothers get extra coverage for cleanings both during pregnancy and three months following delivery (benefit not available in all states). Oral cancer screenings are covered for adults age 18 and older"
+                coverageProviderNetwork="\{coverageHighlightsTopic1Option1} - Select any dentist you want, anywhere across the country. When you choose a dentist who is part of this plan’s large national network, you receive discounted rates only available to members. To see a specialist, you do not need a referral"
+                disclaimers="&lt;p>UnitedHealthcare dental coverage underwritten by UnitedHealthcare Insurance Company, located in Hartford, Connecticut, UnitedHealthcare Insurance Company of New York, located in Islandia, New York, or their affiliates.&amp;nbsp;&lt;/p>&#xa;&lt;p>Administrative services provided by Dental Benefit Providers, Inc., Dental Benefit Administrative Services (CA only), DBP Services (NY only), United HealthCare Services, Inc. or their affiliates. Plans sold in Texas use policy form number DPOL.06.TX, DPOL.12.TX and DPOL.12.TX (Rev. 9/16) and associated COC form numbers DCOC.CER.06, DCOC.CER.IND.12. TX and DCERT.IND.12.TX. Plans sold in Virginia use policy form number DPOL.06.VA with associated COC form number DCOC.CER.06.VA and policy form number DPOL.12.VA with&lt;/p>&#xa;&lt;p>associated COC form number DCOC.CER.12.VA&lt;/p>&#xa;"
+                hasStateSpecificProvider="{Boolean}false"
+                planDescription="&lt;p>You can see any dentist you want, anywhere across the country.&amp;nbsp; When you choose a dentist who is part of the plan’s large national network, you may receive discounted rates only available to members. Referrals are not needed to see a specialist. Preventive care, including routine exams and cleanings, is covered 100% in the network.&lt;/p>&#xa;"
+                planId="DP01"
+                planName="Dental PPO"
+                providerSearchLink="http://www.yourdentalplan.com/dentistsearch11 "
+                summaryAnnualMaximum="\{summaryTopic3Option1} - This plan includes an annual maximum which is the most the plan will pay for the plan year"
+                summaryCopays="\{summaryTopic4Option2} - No copay on services"
+                summaryNetworkCoverage="\{summaryTopic1Option2} - Network dentists recommended, out of network dentists allowed"
+                summaryPreventiveCare="\{summaryTopic2Option1} - Preventive care provided by a network dentist is covered at 100%"
+                summaryPrimaryCareDentistReferrals="\{summaryTopic5Option3} - No primary care dentist or referral to see a specialist required"
+                summaryReferrals="\{summaryTopic6Option2} - Referrals are not needed to see a specialist"/>
+        </data>
+        <metadata
+            jcr:mixinTypes="[cq:Taggable]"
+            jcr:primaryType="nt:unstructured"/>
+        <model jcr:primaryType="nt:unstructured">
+            <variations jcr:primaryType="nt:unstructured">
+                <dental_ppo_-_co
+                    jcr:description=""
+                    jcr:mixinTypes="[cq:Taggable]"
+                    jcr:primaryType="nt:unstructured"
+                    jcr:title="Dental PPO - CO"
+                    name="dental_ppo_-_co">
+                    <properties
+                        jcr:primaryType="nt:unstructured"
+                        synchronizeWithVersion="[planName:968b049f-bd27-4fe8-8b78-a8a2db19bb00,planId:968b049f-bd27-4fe8-8b78-a8a2db19bb00,planDescription:968b049f-bd27-4fe8-8b78-a8a2db19bb00,providerSearchLink:968b049f-bd27-4fe8-8b78-a8a2db19bb00,summaryNetworkCoverage:968b049f-bd27-4fe8-8b78-a8a2db19bb00,summaryPreventiveCare:968b049f-bd27-4fe8-8b78-a8a2db19bb00,summaryAnnualMaximum:968b049f-bd27-4fe8-8b78-a8a2db19bb00,summaryCopays:968b049f-bd27-4fe8-8b78-a8a2db19bb00,summaryPrimaryCareDentistReferrals:968b049f-bd27-4fe8-8b78-a8a2db19bb00,summaryReferrals:968b049f-bd27-4fe8-8b78-a8a2db19bb00,coverageProviderNetwork:968b049f-bd27-4fe8-8b78-a8a2db19bb00,coveragePlanBenefits:968b049f-bd27-4fe8-8b78-a8a2db19bb00,costSharingOption:968b049f-bd27-4fe8-8b78-a8a2db19bb00,hasStateSpecificProvider:968b049f-bd27-4fe8-8b78-a8a2db19bb00,stateSpecificProviderDescription:968b049f-bd27-4fe8-8b78-a8a2db19bb00,stateSpecificProviderLinkText:968b049f-bd27-4fe8-8b78-a8a2db19bb00,stateSpecificProviderLink:968b049f-bd27-4fe8-8b78-a8a2db19bb00,comparisonNetworkBenefits:968b049f-bd27-4fe8-8b78-a8a2db19bb00,comparisonPreventiveCare:968b049f-bd27-4fe8-8b78-a8a2db19bb00,comparisonOrthodontia:968b049f-bd27-4fe8-8b78-a8a2db19bb00,comparisonProviderSearchLink:968b049f-bd27-4fe8-8b78-a8a2db19bb00,comparisonNonOrthodonticsIndividualNoDeductible:968b049f-bd27-4fe8-8b78-a8a2db19bb00,comparisonNonOrthodonticsFamilyNoDeductible:968b049f-bd27-4fe8-8b78-a8a2db19bb00,comparisonNonOrthodonticsIndividualNoAnnualMaximum:968b049f-bd27-4fe8-8b78-a8a2db19bb00,comparisonNonOrthodonticsFamilyNoAnnualMaximum:968b049f-bd27-4fe8-8b78-a8a2db19bb00,comparisonOrthodonticsIndividualNoDeductible:968b049f-bd27-4fe8-8b78-a8a2db19bb00,comparisonOrthodonticsFamilyNoDeductible:968b049f-bd27-4fe8-8b78-a8a2db19bb00,comparisonOrthodonticsIndividualNoAnnualMaximum:968b049f-bd27-4fe8-8b78-a8a2db19bb00,comparisonOrthodonticsFamilyNoAnnualMaximum:968b049f-bd27-4fe8-8b78-a8a2db19bb00,comparisonRoutineExamsOutOfNetwork:968b049f-bd27-4fe8-8b78-a8a2db19bb00,comparisonRadiographsOutOfNetwork:968b049f-bd27-4fe8-8b78-a8a2db19bb00,comparisonLabDiagnosticTestsOutOfNetwork:968b049f-bd27-4fe8-8b78-a8a2db19bb00,comparisonCleaningOutOfNetwork:968b049f-bd27-4fe8-8b78-a8a2db19bb00,comparisonFlourideTreatmentOutOfNetwork:968b049f-bd27-4fe8-8b78-a8a2db19bb00,comparisonSealantsOutOfNetwork:968b049f-bd27-4fe8-8b78-a8a2db19bb00,comparisonSpaceMaintainersOutOfNetwork:968b049f-bd27-4fe8-8b78-a8a2db19bb00,comparisonRestorationsBenefit:968b049f-bd27-4fe8-8b78-a8a2db19bb00,comparisonRestorationsOutOfNetwork:968b049f-bd27-4fe8-8b78-a8a2db19bb00,comparisonEmergencyTreatmentBenefit:968b049f-bd27-4fe8-8b78-a8a2db19bb00,comparisonEmergencyTreatmentOutOfNetwork:968b049f-bd27-4fe8-8b78-a8a2db19bb00,comparisonSimpleExtractionsBenefit:968b049f-bd27-4fe8-8b78-a8a2db19bb00,comparisonSimpleExtractionsOutOfNetwork:968b049f-bd27-4fe8-8b78-a8a2db19bb00,comparisonOralSurgeryBenefit:968b049f-bd27-4fe8-8b78-a8a2db19bb00,comparisonOralSurgeryOutOfNetwork:968b049f-bd27-4fe8-8b78-a8a2db19bb00,comparisonPeriodonticsBenefit:968b049f-bd27-4fe8-8b78-a8a2db19bb00,comparisonPeriodonticsOutOfNetwork:968b049f-bd27-4fe8-8b78-a8a2db19bb00,comparisonEndodonticsBenefit:968b049f-bd27-4fe8-8b78-a8a2db19bb00,comparisonEndodonticsOutOfNetwork:968b049f-bd27-4fe8-8b78-a8a2db19bb00,comparisonInlaysOnlaysCrownsBenefit:968b049f-bd27-4fe8-8b78-a8a2db19bb00,comparisonInlaysOnlaysCrownsOutOfNetwork:968b049f-bd27-4fe8-8b78-a8a2db19bb00,comparisonDenturesAndRemovableProstheticsBenefit:968b049f-bd27-4fe8-8b78-a8a2db19bb00,comparisonDenturesAndRemovableProstheticsOutOfNetwork:968b049f-bd27-4fe8-8b78-a8a2db19bb00,comparisonFixedPartialDenturesBenefit:968b049f-bd27-4fe8-8b78-a8a2db19bb00,comparisonFixedPartialDenturesOutOfNetwork:968b049f-bd27-4fe8-8b78-a8a2db19bb00,comparisonDiagnoseMisalignmentBenefit:968b049f-bd27-4fe8-8b78-a8a2db19bb00,comparisonDiagnoseMisalignmentOutOfNetwork:968b049f-bd27-4fe8-8b78-a8a2db19bb00,comparisonSearchCoverageLinkText:968b049f-bd27-4fe8-8b78-a8a2db19bb00,disclaimers:968b049f-bd27-4fe8-8b78-a8a2db19bb00]"/>
+                </dental_ppo_-_co>
+                <dental_ppo_-_20
+                    jcr:description="Dental PPO 20 plan for all states except CO"
+                    jcr:mixinTypes="[cq:Taggable]"
+                    jcr:primaryType="nt:unstructured"
+                    jcr:title="Dental PPO - 20"
+                    name="dental_ppo_-_20">
+                    <properties
+                        jcr:primaryType="nt:unstructured"
+                        synchronizeWithVersion="[planName:5b94288c-e498-4a56-a0cd-e04b599915d1,planId:5b94288c-e498-4a56-a0cd-e04b599915d1,planDescription:5b94288c-e498-4a56-a0cd-e04b599915d1,providerSearchLink:5b94288c-e498-4a56-a0cd-e04b599915d1,summaryNetworkCoverage:5b94288c-e498-4a56-a0cd-e04b599915d1,summaryPreventiveCare:5b94288c-e498-4a56-a0cd-e04b599915d1,summaryAnnualMaximum:5b94288c-e498-4a56-a0cd-e04b599915d1,summaryCopays:5b94288c-e498-4a56-a0cd-e04b599915d1,summaryPrimaryCareDentistReferrals:5b94288c-e498-4a56-a0cd-e04b599915d1,summaryReferrals:5b94288c-e498-4a56-a0cd-e04b599915d1,coverageProviderNetwork:5b94288c-e498-4a56-a0cd-e04b599915d1,coveragePlanBenefits:5b94288c-e498-4a56-a0cd-e04b599915d1,costSharingOption:5b94288c-e498-4a56-a0cd-e04b599915d1,hasStateSpecificProvider:5b94288c-e498-4a56-a0cd-e04b599915d1,stateSpecificProviderDescription:5b94288c-e498-4a56-a0cd-e04b599915d1,stateSpecificProviderLinkText:5b94288c-e498-4a56-a0cd-e04b599915d1,stateSpecificProviderLink:5b94288c-e498-4a56-a0cd-e04b599915d1,comparisonNetworkBenefits:5b94288c-e498-4a56-a0cd-e04b599915d1,comparisonPreventiveCare:5b94288c-e498-4a56-a0cd-e04b599915d1,comparisonOrthodontia:5b94288c-e498-4a56-a0cd-e04b599915d1,comparisonProviderSearchLink:5b94288c-e498-4a56-a0cd-e04b599915d1,comparisonNonOrthodonticsIndividualNoDeductible:5b94288c-e498-4a56-a0cd-e04b599915d1,comparisonNonOrthodonticsFamilyNoDeductible:5b94288c-e498-4a56-a0cd-e04b599915d1,comparisonNonOrthodonticsIndividualNoAnnualMaximum:5b94288c-e498-4a56-a0cd-e04b599915d1,comparisonNonOrthodonticsFamilyNoAnnualMaximum:5b94288c-e498-4a56-a0cd-e04b599915d1,comparisonOrthodonticsIndividualNoDeductible:5b94288c-e498-4a56-a0cd-e04b599915d1,comparisonOrthodonticsFamilyNoDeductible:5b94288c-e498-4a56-a0cd-e04b599915d1,comparisonOrthodonticsIndividualNoAnnualMaximum:5b94288c-e498-4a56-a0cd-e04b599915d1,comparisonOrthodonticsFamilyNoAnnualMaximum:5b94288c-e498-4a56-a0cd-e04b599915d1,comparisonRoutineExamsOutOfNetwork:5b94288c-e498-4a56-a0cd-e04b599915d1,comparisonRadiographsOutOfNetwork:5b94288c-e498-4a56-a0cd-e04b599915d1,comparisonLabDiagnosticTestsOutOfNetwork:5b94288c-e498-4a56-a0cd-e04b599915d1,comparisonCleaningOutOfNetwork:5b94288c-e498-4a56-a0cd-e04b599915d1,comparisonFlourideTreatmentOutOfNetwork:5b94288c-e498-4a56-a0cd-e04b599915d1,comparisonSealantsOutOfNetwork:5b94288c-e498-4a56-a0cd-e04b599915d1,comparisonSpaceMaintainersOutOfNetwork:5b94288c-e498-4a56-a0cd-e04b599915d1,comparisonRestorationsBenefit:5b94288c-e498-4a56-a0cd-e04b599915d1,comparisonRestorationsOutOfNetwork:5b94288c-e498-4a56-a0cd-e04b599915d1,comparisonEmergencyTreatmentBenefit:5b94288c-e498-4a56-a0cd-e04b599915d1,comparisonEmergencyTreatmentOutOfNetwork:5b94288c-e498-4a56-a0cd-e04b599915d1,comparisonSimpleExtractionsBenefit:5b94288c-e498-4a56-a0cd-e04b599915d1,comparisonSimpleExtractionsOutOfNetwork:5b94288c-e498-4a56-a0cd-e04b599915d1,comparisonOralSurgeryBenefit:5b94288c-e498-4a56-a0cd-e04b599915d1,comparisonOralSurgeryOutOfNetwork:5b94288c-e498-4a56-a0cd-e04b599915d1,comparisonPeriodonticsBenefit:5b94288c-e498-4a56-a0cd-e04b599915d1,comparisonPeriodonticsOutOfNetwork:5b94288c-e498-4a56-a0cd-e04b599915d1,comparisonEndodonticsBenefit:5b94288c-e498-4a56-a0cd-e04b599915d1,comparisonEndodonticsOutOfNetwork:5b94288c-e498-4a56-a0cd-e04b599915d1,comparisonInlaysOnlaysCrownsBenefit:5b94288c-e498-4a56-a0cd-e04b599915d1,comparisonInlaysOnlaysCrownsOutOfNetwork:5b94288c-e498-4a56-a0cd-e04b599915d1,comparisonDenturesAndRemovableProstheticsBenefit:5b94288c-e498-4a56-a0cd-e04b599915d1,comparisonDenturesAndRemovableProstheticsOutOfNetwork:5b94288c-e498-4a56-a0cd-e04b599915d1,comparisonFixedPartialDenturesBenefit:5b94288c-e498-4a56-a0cd-e04b599915d1,comparisonFixedPartialDenturesOutOfNetwork:5b94288c-e498-4a56-a0cd-e04b599915d1,comparisonDiagnoseMisalignmentBenefit:5b94288c-e498-4a56-a0cd-e04b599915d1,comparisonDiagnoseMisalignmentOutOfNetwork:5b94288c-e498-4a56-a0cd-e04b599915d1,comparisonSearchCoverageLinkText:5b94288c-e498-4a56-a0cd-e04b599915d1,disclaimers:5b94288c-e498-4a56-a0cd-e04b599915d1]"/>
+                </dental_ppo_-_20>
+            </variations>
+        </model>
+        <related jcr:primaryType="nt:unstructured"/>
+    </jcr:content>
+</jcr:root>

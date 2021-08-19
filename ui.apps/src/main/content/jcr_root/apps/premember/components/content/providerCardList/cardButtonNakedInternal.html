@@ -1,0 +1,11 @@
+<template
+    data-sly-template.cardButton="${@ link='Card link', linkTitle='Card link title', futureLink='Is it a future link', eventName='Analytics event name'}">
+  <a data-sly-test="${link}"
+     class="provider-card__button c-button c-button--primary c-button--naked c-text--leftAlign u-w-100${futureLink ? ' u-m-t-xs' : ''}"
+     href="${link}"
+     data-event-type="provider_card"
+     data-event-name="${eventName}|view_pdl">
+     <sly data-sly-test="${!futureLink}">${linkTitle ? linkTitle : 'View PDL'}</sly>
+     <sly data-sly-test="${futureLink}">${linkTitle ? linkTitle : 'View Future PDL'}</sly>
+  </a>
+</template>

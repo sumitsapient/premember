@@ -1,0 +1,97 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<jcr:root xmlns:sling="http://sling.apache.org/jcr/sling/1.0" xmlns:cq="http://www.day.com/jcr/cq/1.0" xmlns:jcr="http://www.jcp.org/jcr/1.0" xmlns:nt="http://www.jcp.org/jcr/nt/1.0"
+    jcr:primaryType="cq:Page">
+    <jcr:content
+        cq:template="/conf/premember/settings/wcm/templates/component-page-template"
+        jcr:primaryType="cq:PageContent"
+        jcr:title="AC01: Header"
+        sling:resourceType="premember/components/structure/page"
+        hideAnchorNavigation="true">
+        <root
+            jcr:primaryType="nt:unstructured"
+            sling:resourceType="wcm/foundation/components/responsivegrid">
+            <responsivegrid
+                jcr:primaryType="nt:unstructured"
+                sling:resourceType="wcm/foundation/components/responsivegrid">
+                <container
+                    jcr:primaryType="nt:unstructured"
+                    sling:resourceType="premember/components/structure/layout/container">
+                    <grid
+                        jcr:primaryType="nt:unstructured"
+                        sling:resourceType="premember/components/structure/layout/grid">
+                        <column
+                            cq:styleIds="1535504120544"
+                            jcr:primaryType="nt:unstructured"
+                            sling:resourceType="premember/components/structure/layout/column">
+                            <title
+                                cq:styleIds="1535476288921"
+                                jcr:primaryType="nt:unstructured"
+                                jcr:title="Standard"
+                                sling:resourceType="premember/components/content/title"
+                                type="h3"/>
+                            <text
+                                jcr:primaryType="nt:unstructured"
+                                sling:resourceType="premember/components/content/text"
+                                text="&lt;p>This is text added to the page to allow for scrolling.&lt;/p>&#xd;&#xa;&lt;p>Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum.&lt;/p>&#xd;&#xa;&lt;p>Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum.&lt;/p>&#xd;&#xa;&lt;p>Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum.&lt;/p>&#xd;&#xa;&lt;p>Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum.&lt;/p>&#xd;&#xa;&lt;p>Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum.&lt;/p>&#xd;&#xa;&lt;p>Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum.&lt;/p>&#xd;&#xa;&lt;p>Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum.&lt;/p>&#xd;&#xa;&lt;p>Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum.&lt;/p>&#xd;&#xa;&lt;p>Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum.&lt;/p>&#xd;&#xa;&lt;p>Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum.&lt;/p>&#xd;&#xa;&lt;p>Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum.&lt;/p>&#xd;&#xa;&lt;p>Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum.&lt;/p>&#xd;&#xa;&lt;p>Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum.&lt;/p>&#xd;&#xa;"
+                                textIsRich="true"/>
+                        </column>
+                    </grid>
+                </container>
+                <navigation
+                    jcr:primaryType="nt:unstructured"
+                    sling:resourceType="premember/components/structure/navigation"
+                    collectAllPages="true"
+                    navigationRoot="/content/premember/employer-blueprint/en/home"
+                    structureStart="1"/>
+            </responsivegrid>
+            <siteexitmodal
+                jcr:primaryType="nt:unstructured"
+                sling:resourceType="premember/components/content/siteExitModal"
+                buttonText="Continue"
+                includeCancelButton="true"
+                titleText="You're leaving the site."/>
+            <container
+                jcr:primaryType="nt:unstructured"
+                sling:resourceType="premember/components/structure/layout/container">
+                <grid
+                    jcr:primaryType="nt:unstructured"
+                    sling:resourceType="premember/components/structure/layout/grid">
+                    <column_1858863830
+                        jcr:primaryType="nt:unstructured"
+                        sling:resourceType="premember/components/structure/layout/column"/>
+                </grid>
+            </container>
+            <container_1022714131
+                jcr:primaryType="nt:unstructured"
+                sling:resourceType="premember/components/structure/layout/container">
+                <grid
+                    jcr:primaryType="nt:unstructured"
+                    sling:resourceType="premember/components/structure/layout/grid">
+                    <column
+                        cq:styleIds="[1535504120544,1536104009181]"
+                        jcr:primaryType="nt:unstructured"
+                        sling:resourceType="premember/components/structure/layout/column">
+                        <text
+                            jcr:primaryType="nt:unstructured"
+                            sling:resourceType="premember/components/content/text"
+                            text="&lt;p>The header appears at the top of all site pages and contains the navigation menu and UHC/employer logos.&lt;/p>&#xd;&#xa;"
+                            textIsRich="true"/>
+                        <button
+                            jcr:primaryType="nt:unstructured"
+                            sling:resourceType="premember/components/content/button"
+                            fullWidth="false"
+                            fullWidthMobile="false"
+                            hiddenText="button"
+                            href="https://confluence.uhub.biz/display/MIRMINUPMR/AC01%3A+Header"
+                            inverse="false"
+                            naked="false"
+                            newTab="true"
+                            siteExitModalTrigger="false"
+                            text="Confluence Page"
+                            type="c-button--primary"/>
+                    </column>
+                </grid>
+            </container_1022714131>
+        </root>
+    </jcr:content>
+</jcr:root>

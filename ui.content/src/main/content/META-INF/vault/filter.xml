@@ -1,0 +1,15 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<workspaceFilter version="1.0">
+
+	<filter root="/conf/premember"/>
+	<filter root="/content/premember" mode="merge"/>
+	<filter root="/content/dam/premember" mode="update"/>
+	<filter root="/content/experience-fragments/premember" mode="merge"/>
+
+	<!--  BEGIN Brightcove -->
+	<filter root="/content/brightcovetools" mode="merge"/>
+	<!--  END Brightcove  -->
+
+    <filter root="/etc/acs-commons/lists/federal" mode="merge"/>
+	<filter root="/etc/acs-commons/lists/authoring-dialogs" mode="merge"/>
+</workspaceFilter>

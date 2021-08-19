@@ -1,0 +1,44 @@
+.hyperlink--external,
+.hyperlink--pdf {
+	> a {
+		white-space: nowrap;
+		text-decoration: none;
+		color: unity-color('blue');
+
+		@include hover-focus {
+			color: unity-color('blue', 'digital'); //update to digital for new unity
+		}
+	}
+}
+
+.hyperlink--external {
+	> a {
+		&::after {
+			content: "";
+			display: inline-block;
+			position: relative;
+			top: 0.175em;
+			width: 1em;
+			height: 1em;
+			margin-left: $g-spacing-xs;
+			background-image: url('#{$icons-path}/hyperlink-external.svg');
+		}
+
+		&:hover::after,
+		&:focus::after {
+			background-image: url('#{$icons-path}/hyperlink-external-hover.svg');
+		}
+	}
+}
+
+.hyperlink--pdf {
+	> a::after {
+		content: "";
+		display: inline-block;
+		width: $g-spacing;
+		height: 0.75rem;
+		margin-left: $g-spacing-xs;
+		background-image: url('#{$icons-path}/hyperlink-pdf.svg');
+		background-position-y: center;
+	}
+}

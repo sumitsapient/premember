@@ -1,0 +1,6 @@
+<div data-sly-use.model="com.mirumagency.uhc.premember.core.models.federal.PlanBenefitsDescription"
+     data-sly-use.templates="core/wcm/components/commons/v1/templates.html"
+     data-sly-test.hasContent="${!model.empty}">
+    ${model.description @ context = 'html'}
+</div>
+<sly data-sly-call="${templates.placeholder @ isEmpty = !hasContent}"></sly>

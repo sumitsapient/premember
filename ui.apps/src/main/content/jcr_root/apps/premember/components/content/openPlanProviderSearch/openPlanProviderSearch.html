@@ -1,0 +1,45 @@
+<div
+	class="open-plan-provider-search"
+	data-sly-use.employerData="com.mirumagency.uhc.premember.core.models.PlanModel"
+	data-sly-use.templates="core/wcm/components/commons/v1/templates.html"
+	data-container="Employer Data Configuration"
+>
+	<!--/* Inline Select Input */-->
+	<div class="c-select-inline">
+		<label
+			for="plan-selector"
+			class="c-select-inline__label"
+		>
+			Search Provider Networks by:
+		</label>
+		<div class="c-select-inline__wrapper">
+			<div class="c-select-inline__selected" aria-hidden="true"></div>
+			<select
+				id="plan-selector"
+				class="c-select-inline__select"
+				data-sly-list.option="${employerData.plan.options}"
+			>
+				<option value="${option.id}">${option.data.planName}</option>
+			</select>
+		</div>
+	</div>
+
+	<!--/* Content */-->
+	<div
+		data-sly-list.option="${employerData.plan.options}"
+		class="u-p-vert-lg"
+		role="region"
+		aria-live="polite"
+	>
+		<div data-sly-test="${wcmmode.edit}">
+			<p class="u-text-bold">${option.data.planName}</p>
+		</div>
+
+		<div
+			id="${option.id}"
+			class="open-plan-provider-search__item"
+			aria-hidden="${wcmmode.edit ? 'false' : 'true'}"
+			data-sly-resource="${option.id @ resourceType='wcm/foundation/components/parsys'}"
+		></div>
+	</div>
+</div>

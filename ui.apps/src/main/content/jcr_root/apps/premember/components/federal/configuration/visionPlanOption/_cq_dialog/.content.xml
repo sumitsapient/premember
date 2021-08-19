@@ -1,0 +1,874 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<jcr:root xmlns:sling="http://sling.apache.org/jcr/sling/1.0" xmlns:granite="http://www.adobe.com/jcr/granite/1.0" xmlns:cq="http://www.day.com/jcr/cq/1.0" xmlns:jcr="http://www.jcp.org/jcr/1.0" xmlns:nt="http://www.jcp.org/jcr/nt/1.0"
+    jcr:primaryType="nt:unstructured"
+    jcr:title="Vision Plan Option"
+    sling:resourceType="cq/gui/components/authoring/dialog"
+    extraClientlibs="[premember.configuration.federa.planOption.dialog]">
+    <content
+        granite:class="cmp-contentfragment__editor"
+        jcr:primaryType="nt:unstructured"
+        sling:resourceType="granite/ui/components/coral/foundation/container">
+        <granite:data
+            jcr:primaryType="nt:unstructured"
+            component-path="${requestPathInfo.suffix}"/>
+        <items jcr:primaryType="nt:unstructured">
+            <tabs
+                jcr:primaryType="nt:unstructured"
+                sling:resourceType="granite/ui/components/coral/foundation/tabs"
+                maximized="{Boolean}true">
+                <items jcr:primaryType="nt:unstructured">
+                    <general
+                        granite:class="generalEmployerPlanTab"
+                        jcr:primaryType="nt:unstructured"
+                        jcr:title="General"
+                        sling:resourceType="granite/ui/components/coral/foundation/container"
+                        margin="{Boolean}true">
+                        <items jcr:primaryType="nt:unstructured">
+                            <id
+                                jcr:primaryType="nt:unstructured"
+                                sling:resourceType="granite/ui/components/coral/foundation/form/select"
+                                emptyOption="{Boolean}true"
+                                fieldLabel="Name"
+                                name="./id"
+                                required="{Boolean}true"
+                                valueType="string">
+                                <datasource
+                                    jcr:primaryType="nt:unstructured"
+                                    sling:resourceType="acs-commons/components/utilities/genericlist/datasource"
+                                    path="/etc/acs-commons/lists/federal/plan-names/vision-plan-names"/>
+                            </id>
+                        </items>
+                    </general>
+                    <premiumRates
+                            jcr:primaryType="nt:unstructured"
+                            jcr:title="Premium Rates"
+                            sling:resourceType="granite/ui/components/coral/foundation/container"
+                            margin="{Boolean}true">
+                        <items jcr:primaryType="nt:unstructured">
+                            <selfOnlyBiWeekly
+                                    jcr:primaryType="nt:unstructured"
+                                    sling:resourceType="granite/ui/components/coral/foundation/form/numberfield"
+                                    fieldLabel="Self only - Bi-weekly ($)"
+                                    metaType="number"
+                                    min="0"
+                                    name="./premiumRates/selfOnlyBiWeekly"
+                                    required="{Boolean}true"
+                                    step="any"
+                                    typeHint="long"
+                                    valueType="long"/>
+                            <selfOnlyMonthly
+                                    jcr:primaryType="nt:unstructured"
+                                    sling:resourceType="granite/ui/components/coral/foundation/form/numberfield"
+                                    fieldLabel="Self only - Monthly ($)"
+                                    metaType="number"
+                                    min="0"
+                                    name="./premiumRates/selfOnlyMonthly"
+                                    required="{Boolean}true"
+                                    step="any"
+                                    typeHint="long"
+                                    valueType="long"/>
+                            <selfPlusOneBiWeekly
+                                    jcr:primaryType="nt:unstructured"
+                                    sling:resourceType="granite/ui/components/coral/foundation/form/numberfield"
+                                    fieldLabel="Self + 1 - Bi-weekly ($)"
+                                    metaType="number"
+                                    min="0"
+                                    name="./premiumRates/selfPlusOneBiWeekly"
+                                    required="{Boolean}true"
+                                    step="any"
+                                    typeHint="long"
+                                    valueType="long"/>
+                            <selfPlusOneMonthly
+                                    jcr:primaryType="nt:unstructured"
+                                    sling:resourceType="granite/ui/components/coral/foundation/form/numberfield"
+                                    fieldLabel="Self + 1 - Monthly ($)"
+                                    metaType="number"
+                                    min="0"
+                                    name="./premiumRates/selfPlusOneMonthly"
+                                    required="{Boolean}true"
+                                    step="any"
+                                    typeHint="long"
+                                    valueType="long"/>
+                            <selfPlusFamilyBiWeekly
+                                    jcr:primaryType="nt:unstructured"
+                                    sling:resourceType="granite/ui/components/coral/foundation/form/numberfield"
+                                    fieldLabel="Self + family - Bi-weekly ($)"
+                                    metaType="number"
+                                    min="0"
+                                    name="./premiumRates/selfPlusFamilyBiWeekly"
+                                    required="{Boolean}true"
+                                    step="any"
+                                    typeHint="long"
+                                    valueType="long"/>
+                            <selfPlusFamilyMonthly
+                                    jcr:primaryType="nt:unstructured"
+                                    sling:resourceType="granite/ui/components/coral/foundation/form/numberfield"
+                                    fieldLabel="Self + family - Monthly ($)"
+                                    metaType="number"
+                                    min="0"
+                                    name="./premiumRates/selfPlusFamilyMonthly"
+                                    required="{Boolean}true"
+                                    step="any"
+                                    typeHint="long"
+                                    valueType="long"/>
+                        </items>
+                    </premiumRates>
+                    <benefits
+                        jcr:primaryType="nt:unstructured"
+                        jcr:title="Benefits"
+                        sling:resourceType="granite/ui/components/coral/foundation/container"
+                        margin="{Boolean}true">
+                        <items jcr:primaryType="nt:unstructured">
+                            <tabs
+                                jcr:primaryType="nt:unstructured"
+                                sling:resourceType="granite/ui/components/coral/foundation/tabs">
+                                <items jcr:primaryType="nt:unstructured">
+                                    <copays
+                                        jcr:primaryType="nt:unstructured"
+                                        jcr:title="Copays"
+                                        sling:resourceType="granite/ui/components/coral/foundation/container"
+                                        margin="{Boolean}true">
+                                        <items jcr:primaryType="nt:unstructured">
+                                            <annualEyeExam
+                                                jcr:primaryType="nt:unstructured"
+                                                sling:resourceType="granite/ui/components/coral/foundation/container">
+                                                <items jcr:primaryType="nt:unstructured">
+                                                    <heading
+                                                        granite:class="coral-Heading coral-Heading--4"
+                                                        jcr:primaryType="nt:unstructured"
+                                                        sling:resourceType="granite/ui/components/coral/foundation/heading"
+                                                        level="{Long}4"
+                                                        text="Annual Eye Exam"/>
+                                                    <well
+                                                        granite:class="cmp-healthPlan__editor-row cmp-employerPlanOption__generalAmount-editor-row"
+                                                        jcr:primaryType="nt:unstructured"
+                                                        sling:resourceType="granite/ui/components/coral/foundation/well">
+                                                        <items jcr:primaryType="nt:unstructured">
+                                                            <amount
+                                                                jcr:primaryType="nt:unstructured"
+                                                                sling:resourceType="granite/ui/components/coral/foundation/form/numberfield"
+                                                                fieldLabel="Amount ($)"
+                                                                metaType="number"
+                                                                min="0"
+                                                                name="./copays/annualEyeExam"
+                                                                required="{Boolean}true"
+                                                                typeHint="long"
+                                                                valueType="long"/>
+                                                            <prefix
+                                                                jcr:primaryType="nt:unstructured"
+                                                                sling:resourceType="granite/ui/components/foundation/form/select"
+                                                                emptyOption="{Boolean}true"
+                                                                fieldLabel="Prefix"
+                                                                name="./copays/annualEyeExamPrefix">
+                                                                <datasource
+                                                                    jcr:primaryType="nt:unstructured"
+                                                                    sling:resourceType="acs-commons/components/utilities/genericlist/datasource"
+                                                                    path="/etc/acs-commons/lists/federal/plans-dialog-options"/>
+                                                            </prefix>
+                                                            <coveredInFull
+                                                                jcr:primaryType="nt:unstructured"
+                                                                sling:resourceType="granite/ui/components/coral/foundation/form/checkbox"
+                                                                name="./copays/annualEyeExamCoveredInFull"
+                                                                text="Covered in Full"
+                                                                value="{Boolean}true"
+                                                                uncheckedValue="{Boolean}false"/>
+                                                        </items>
+                                                    </well>
+                                                </items>
+                                            </annualEyeExam>
+                                            <eyeGlasses
+                                                jcr:primaryType="nt:unstructured"
+                                                sling:resourceType="granite/ui/components/coral/foundation/container">
+                                                <items jcr:primaryType="nt:unstructured">
+                                                    <heading
+                                                        granite:class="coral-Heading coral-Heading--4"
+                                                        jcr:primaryType="nt:unstructured"
+                                                        sling:resourceType="granite/ui/components/coral/foundation/heading"
+                                                        level="{Long}4"
+                                                        text="Eye Glasses"/>
+                                                    <well
+                                                        granite:class="cmp-healthPlan__editor-row cmp-employerPlanOption__generalAmount-editor-row"
+                                                        jcr:primaryType="nt:unstructured"
+                                                        sling:resourceType="granite/ui/components/coral/foundation/well">
+                                                        <items jcr:primaryType="nt:unstructured">
+                                                            <amount
+                                                                jcr:primaryType="nt:unstructured"
+                                                                sling:resourceType="granite/ui/components/coral/foundation/form/numberfield"
+                                                                fieldLabel="Amount ($)"
+                                                                metaType="number"
+                                                                min="0"
+                                                                name="./copays/eyeGlasses"
+                                                                required="{Boolean}true"
+                                                                typeHint="long"
+                                                                valueType="long"/>
+                                                            <prefix
+                                                                jcr:primaryType="nt:unstructured"
+                                                                sling:resourceType="granite/ui/components/foundation/form/select"
+                                                                emptyOption="{Boolean}true"
+                                                                fieldLabel="Prefix"
+                                                                name="./copays/eyeGlassesPrefix">
+                                                                <datasource
+                                                                    jcr:primaryType="nt:unstructured"
+                                                                    sling:resourceType="acs-commons/components/utilities/genericlist/datasource"
+                                                                    path="/etc/acs-commons/lists/federal/plans-dialog-options"/>
+                                                            </prefix>
+                                                            <coveredInFull
+                                                                jcr:primaryType="nt:unstructured"
+                                                                sling:resourceType="granite/ui/components/coral/foundation/form/checkbox"
+                                                                name="./copays/eyeGlassesCoveredInFull"
+                                                                text="Covered in Full"
+                                                                value="{Boolean}true"
+                                                                uncheckedValue="{Boolean}false"/>
+                                                        </items>
+                                                    </well>
+                                                </items>
+                                            </eyeGlasses>
+                                            <standardScratchResistantCoating
+                                                jcr:primaryType="nt:unstructured"
+                                                sling:resourceType="granite/ui/components/coral/foundation/container">
+                                                <items jcr:primaryType="nt:unstructured">
+                                                    <heading
+                                                        granite:class="coral-Heading coral-Heading--4"
+                                                        jcr:primaryType="nt:unstructured"
+                                                        sling:resourceType="granite/ui/components/coral/foundation/heading"
+                                                        level="{Long}4"
+                                                        text="Standard scratch-resistant coating"/>
+                                                    <well
+                                                        granite:class="cmp-healthPlan__editor-row cmp-employerPlanOption__generalAmount-editor-row"
+                                                        jcr:primaryType="nt:unstructured"
+                                                        sling:resourceType="granite/ui/components/coral/foundation/well">
+                                                        <items jcr:primaryType="nt:unstructured">
+                                                            <amount
+                                                                jcr:primaryType="nt:unstructured"
+                                                                sling:resourceType="granite/ui/components/coral/foundation/form/numberfield"
+                                                                fieldLabel="Amount ($)"
+                                                                metaType="number"
+                                                                min="0"
+                                                                name="./copays/standardScratchResistantCoating"
+                                                                typeHint="long"
+                                                                valueType="long"/>
+                                                            <prefix
+                                                                jcr:primaryType="nt:unstructured"
+                                                                sling:resourceType="granite/ui/components/foundation/form/select"
+                                                                emptyOption="{Boolean}true"
+                                                                fieldLabel="Prefix"
+                                                                name="./copays/standardScratchResistantCoatingPrefix">
+                                                                <datasource
+                                                                    jcr:primaryType="nt:unstructured"
+                                                                    sling:resourceType="acs-commons/components/utilities/genericlist/datasource"
+                                                                    path="/etc/acs-commons/lists/federal/plans-dialog-options"/>
+                                                            </prefix>
+                                                            <coveredInFull
+                                                                jcr:primaryType="nt:unstructured"
+                                                                sling:resourceType="granite/ui/components/coral/foundation/form/checkbox"
+                                                                name="./copays/standardScratchResistantCoatingCoveredInFull"
+                                                                text="Covered in Full"
+                                                                value="{Boolean}true"
+                                                                uncheckedValue="{Boolean}false"/>
+                                                        </items>
+                                                    </well>
+                                                </items>
+                                            </standardScratchResistantCoating>
+                                            <polycarbonateLenses
+                                                jcr:primaryType="nt:unstructured"
+                                                sling:resourceType="granite/ui/components/coral/foundation/container">
+                                                <items jcr:primaryType="nt:unstructured">
+                                                    <heading
+                                                        granite:class="coral-Heading coral-Heading--4"
+                                                        jcr:primaryType="nt:unstructured"
+                                                        sling:resourceType="granite/ui/components/coral/foundation/heading"
+                                                        level="{Long}4"
+                                                        text="Polycarbonate lenses"/>
+                                                    <well
+                                                        granite:class="cmp-healthPlan__editor-row cmp-employerPlanOption__generalAmount-editor-row"
+                                                        jcr:primaryType="nt:unstructured"
+                                                        sling:resourceType="granite/ui/components/coral/foundation/well">
+                                                        <items jcr:primaryType="nt:unstructured">
+                                                            <amount
+                                                                jcr:primaryType="nt:unstructured"
+                                                                sling:resourceType="granite/ui/components/coral/foundation/form/numberfield"
+                                                                fieldLabel="Amount ($)"
+                                                                metaType="number"
+                                                                min="0"
+                                                                name="./copays/polycarbonateLenses"
+                                                                typeHint="long"
+                                                                valueType="long"/>
+                                                            <prefix
+                                                                jcr:primaryType="nt:unstructured"
+                                                                sling:resourceType="granite/ui/components/foundation/form/select"
+                                                                emptyOption="{Boolean}true"
+                                                                fieldLabel="Prefix"
+                                                                name="./copays/polycarbonateLensesPrefix">
+                                                                <datasource
+                                                                    jcr:primaryType="nt:unstructured"
+                                                                    sling:resourceType="acs-commons/components/utilities/genericlist/datasource"
+                                                                    path="/etc/acs-commons/lists/federal/plans-dialog-options"/>
+                                                            </prefix>
+                                                            <coveredInFull
+                                                                jcr:primaryType="nt:unstructured"
+                                                                sling:resourceType="granite/ui/components/coral/foundation/form/checkbox"
+                                                                name="./copays/polycarbonateLensesCoveredInFull"
+                                                                text="Covered in Full"
+                                                                value="{Boolean}true"
+                                                                uncheckedValue="{Boolean}false"/>
+                                                        </items>
+                                                    </well>
+                                                </items>
+                                            </polycarbonateLenses>
+                                            <transitionLenses
+                                                jcr:primaryType="nt:unstructured"
+                                                sling:resourceType="granite/ui/components/coral/foundation/container">
+                                                <items jcr:primaryType="nt:unstructured">
+                                                    <heading
+                                                        granite:class="coral-Heading coral-Heading--4"
+                                                        jcr:primaryType="nt:unstructured"
+                                                        sling:resourceType="granite/ui/components/coral/foundation/heading"
+                                                        level="{Long}4"
+                                                        text="Transition lenses"/>
+                                                    <well
+                                                        granite:class="cmp-healthPlan__editor-row cmp-employerPlanOption__generalAmount-editor-row"
+                                                        jcr:primaryType="nt:unstructured"
+                                                        sling:resourceType="granite/ui/components/coral/foundation/well">
+                                                        <items jcr:primaryType="nt:unstructured">
+                                                            <amount
+                                                                jcr:primaryType="nt:unstructured"
+                                                                sling:resourceType="granite/ui/components/coral/foundation/form/numberfield"
+                                                                fieldLabel="Amount ($)"
+                                                                metaType="number"
+                                                                min="0"
+                                                                name="./copays/transitionLenses"
+                                                                typeHint="long"
+                                                                valueType="long"/>
+                                                            <prefix
+                                                                jcr:primaryType="nt:unstructured"
+                                                                sling:resourceType="granite/ui/components/foundation/form/select"
+                                                                emptyOption="{Boolean}true"
+                                                                fieldLabel="Prefix"
+                                                                name="./copays/transitionLensesPrefix">
+                                                                <datasource
+                                                                    jcr:primaryType="nt:unstructured"
+                                                                    sling:resourceType="acs-commons/components/utilities/genericlist/datasource"
+                                                                    path="/etc/acs-commons/lists/federal/plans-dialog-options"/>
+                                                            </prefix>
+                                                            <coveredInFull
+                                                                jcr:primaryType="nt:unstructured"
+                                                                sling:resourceType="granite/ui/components/coral/foundation/form/checkbox"
+                                                                name="./copays/transitionLensesCoveredInFull"
+                                                                text="Covered in Full"
+                                                                value="{Boolean}true"
+                                                                uncheckedValue="{Boolean}false"/>
+                                                        </items>
+                                                    </well>
+                                                </items>
+                                            </transitionLenses>
+                                            <tierOneAntiReflectiveCoating
+                                                jcr:primaryType="nt:unstructured"
+                                                sling:resourceType="granite/ui/components/coral/foundation/container">
+                                                <items jcr:primaryType="nt:unstructured">
+                                                    <heading
+                                                        granite:class="coral-Heading coral-Heading--4"
+                                                        jcr:primaryType="nt:unstructured"
+                                                        sling:resourceType="granite/ui/components/coral/foundation/heading"
+                                                        level="{Long}4"
+                                                        text="Tier 1 anti-reflective coating"/>
+                                                    <well
+                                                        granite:class="cmp-healthPlan__editor-row cmp-employerPlanOption__generalAmount-editor-row"
+                                                        jcr:primaryType="nt:unstructured"
+                                                        sling:resourceType="granite/ui/components/coral/foundation/well">
+                                                        <items jcr:primaryType="nt:unstructured">
+                                                            <amount
+                                                                jcr:primaryType="nt:unstructured"
+                                                                sling:resourceType="granite/ui/components/coral/foundation/form/numberfield"
+                                                                fieldLabel="Amount ($)"
+                                                                metaType="number"
+                                                                min="0"
+                                                                name="./copays/tierOneAntiReflectiveCoating"
+                                                                typeHint="long"
+                                                                valueType="long"/>
+                                                            <prefix
+                                                                jcr:primaryType="nt:unstructured"
+                                                                sling:resourceType="granite/ui/components/foundation/form/select"
+                                                                emptyOption="{Boolean}true"
+                                                                fieldLabel="Prefix"
+                                                                name="./copays/tierOneAntiReflectiveCoatingPrefix">
+                                                                <datasource
+                                                                    jcr:primaryType="nt:unstructured"
+                                                                    sling:resourceType="acs-commons/components/utilities/genericlist/datasource"
+                                                                    path="/etc/acs-commons/lists/federal/plans-dialog-options"/>
+                                                            </prefix>
+                                                            <coveredInFull
+                                                                jcr:primaryType="nt:unstructured"
+                                                                sling:resourceType="granite/ui/components/coral/foundation/form/checkbox"
+                                                                name="./copays/tierOneAntiReflectiveCoatingCoveredInFull"
+                                                                text="Covered in Full"
+                                                                value="{Boolean}true"
+                                                                uncheckedValue="{Boolean}false"/>
+                                                        </items>
+                                                    </well>
+                                                </items>
+                                            </tierOneAntiReflectiveCoating>
+                                            <tintedLenses
+                                                jcr:primaryType="nt:unstructured"
+                                                sling:resourceType="granite/ui/components/coral/foundation/container">
+                                                <items jcr:primaryType="nt:unstructured">
+                                                    <heading
+                                                        granite:class="coral-Heading coral-Heading--4"
+                                                        jcr:primaryType="nt:unstructured"
+                                                        sling:resourceType="granite/ui/components/coral/foundation/heading"
+                                                        level="{Long}4"
+                                                        text="Tinted lenses"/>
+                                                    <well
+                                                        granite:class="cmp-healthPlan__editor-row cmp-employerPlanOption__generalAmount-editor-row"
+                                                        jcr:primaryType="nt:unstructured"
+                                                        sling:resourceType="granite/ui/components/coral/foundation/well">
+                                                        <items jcr:primaryType="nt:unstructured">
+                                                            <amount
+                                                                jcr:primaryType="nt:unstructured"
+                                                                sling:resourceType="granite/ui/components/coral/foundation/form/numberfield"
+                                                                fieldLabel="Amount ($)"
+                                                                metaType="number"
+                                                                min="0"
+                                                                name="./copays/tintedLenses"
+                                                                typeHint="long"
+                                                                valueType="long"/>
+                                                            <prefix
+                                                                jcr:primaryType="nt:unstructured"
+                                                                sling:resourceType="granite/ui/components/foundation/form/select"
+                                                                emptyOption="{Boolean}true"
+                                                                fieldLabel="Prefix"
+                                                                name="./copays/tintedLensesPrefix">
+                                                                <datasource
+                                                                    jcr:primaryType="nt:unstructured"
+                                                                    sling:resourceType="acs-commons/components/utilities/genericlist/datasource"
+                                                                    path="/etc/acs-commons/lists/federal/plans-dialog-options"/>
+                                                            </prefix>
+                                                            <coveredInFull
+                                                                jcr:primaryType="nt:unstructured"
+                                                                sling:resourceType="granite/ui/components/coral/foundation/form/checkbox"
+                                                                name="./copays/tintedLensesCoveredInFull"
+                                                                text="Covered in Full"
+                                                                value="{Boolean}true"
+                                                                uncheckedValue="{Boolean}false"/>
+                                                        </items>
+                                                    </well>
+                                                </items>
+                                            </tintedLenses>
+                                            <uvCoating
+                                                jcr:primaryType="nt:unstructured"
+                                                sling:resourceType="granite/ui/components/coral/foundation/container">
+                                                <items jcr:primaryType="nt:unstructured">
+                                                    <heading
+                                                        granite:class="coral-Heading coral-Heading--4"
+                                                        jcr:primaryType="nt:unstructured"
+                                                        sling:resourceType="granite/ui/components/coral/foundation/heading"
+                                                        level="{Long}4"
+                                                        text="UV Coating"/>
+                                                    <well
+                                                        granite:class="cmp-healthPlan__editor-row cmp-employerPlanOption__generalAmount-editor-row"
+                                                        jcr:primaryType="nt:unstructured"
+                                                        sling:resourceType="granite/ui/components/coral/foundation/well">
+                                                        <items jcr:primaryType="nt:unstructured">
+                                                            <amount
+                                                                jcr:primaryType="nt:unstructured"
+                                                                sling:resourceType="granite/ui/components/coral/foundation/form/numberfield"
+                                                                fieldLabel="Amount ($)"
+                                                                metaType="number"
+                                                                min="0"
+                                                                name="./copays/uvCoating"
+                                                                typeHint="long"
+                                                                valueType="long"/>
+                                                            <prefix
+                                                                jcr:primaryType="nt:unstructured"
+                                                                sling:resourceType="granite/ui/components/foundation/form/select"
+                                                                emptyOption="{Boolean}true"
+                                                                fieldLabel="Prefix"
+                                                                name="./copays/uvCoatingPrefix">
+                                                                <datasource
+                                                                    jcr:primaryType="nt:unstructured"
+                                                                    sling:resourceType="acs-commons/components/utilities/genericlist/datasource"
+                                                                    path="/etc/acs-commons/lists/federal/plans-dialog-options"/>
+                                                            </prefix>
+                                                            <coveredInFull
+                                                                jcr:primaryType="nt:unstructured"
+                                                                sling:resourceType="granite/ui/components/coral/foundation/form/checkbox"
+                                                                name="./copays/uvCoatingCoveredInFull"
+                                                                text="Covered in Full"
+                                                                value="{Boolean}true"
+                                                                uncheckedValue="{Boolean}false"/>
+                                                        </items>
+                                                    </well>
+                                                </items>
+                                            </uvCoating>
+                                            <tierOneProgressive
+                                                jcr:primaryType="nt:unstructured"
+                                                sling:resourceType="granite/ui/components/coral/foundation/container">
+                                                <items jcr:primaryType="nt:unstructured">
+                                                    <heading
+                                                        granite:class="coral-Heading coral-Heading--4"
+                                                        jcr:primaryType="nt:unstructured"
+                                                        sling:resourceType="granite/ui/components/coral/foundation/heading"
+                                                        level="{Long}4"
+                                                        text="Tier 1 progressive"/>
+                                                    <well
+                                                        granite:class="cmp-healthPlan__editor-row cmp-employerPlanOption__generalAmount-editor-row"
+                                                        jcr:primaryType="nt:unstructured"
+                                                        sling:resourceType="granite/ui/components/coral/foundation/well">
+                                                        <items jcr:primaryType="nt:unstructured">
+                                                            <amount
+                                                                jcr:primaryType="nt:unstructured"
+                                                                sling:resourceType="granite/ui/components/coral/foundation/form/numberfield"
+                                                                fieldLabel="Amount ($)"
+                                                                metaType="number"
+                                                                min="0"
+                                                                name="./copays/tierOneProgressive"
+                                                                typeHint="long"
+                                                                valueType="long"/>
+                                                            <prefix
+                                                                jcr:primaryType="nt:unstructured"
+                                                                sling:resourceType="granite/ui/components/foundation/form/select"
+                                                                emptyOption="{Boolean}true"
+                                                                fieldLabel="Prefix"
+                                                                name="./copays/tierOneProgressivePrefix">
+                                                                <datasource
+                                                                    jcr:primaryType="nt:unstructured"
+                                                                    sling:resourceType="acs-commons/components/utilities/genericlist/datasource"
+                                                                    path="/etc/acs-commons/lists/federal/plans-dialog-options"/>
+                                                            </prefix>
+                                                            <coveredInFull
+                                                                jcr:primaryType="nt:unstructured"
+                                                                sling:resourceType="granite/ui/components/coral/foundation/form/checkbox"
+                                                                name="./copays/tierOneProgressiveCoveredInFull"
+                                                                text="Covered in Full"
+                                                                value="{Boolean}true"
+                                                                uncheckedValue="{Boolean}false"/>
+                                                        </items>
+                                                    </well>
+                                                </items>
+                                            </tierOneProgressive>
+                                            <highEndTierTwoFourProgressive
+                                                jcr:primaryType="nt:unstructured"
+                                                sling:resourceType="granite/ui/components/coral/foundation/container">
+                                                <items jcr:primaryType="nt:unstructured">
+                                                    <heading
+                                                        granite:class="coral-Heading coral-Heading--4"
+                                                        jcr:primaryType="nt:unstructured"
+                                                        sling:resourceType="granite/ui/components/coral/foundation/heading"
+                                                        level="{Long}4"
+                                                        text="High-end (Tier 2-4) progressive"/>
+                                                    <well
+                                                        granite:class="cmp-healthPlan__editor-row cmp-employerPlanOption__generalAmount-editor-row"
+                                                        jcr:primaryType="nt:unstructured"
+                                                        sling:resourceType="granite/ui/components/coral/foundation/well">
+                                                        <items jcr:primaryType="nt:unstructured">
+                                                            <amount
+                                                                jcr:primaryType="nt:unstructured"
+                                                                sling:resourceType="granite/ui/components/coral/foundation/form/numberfield"
+                                                                fieldLabel="Amount ($)"
+                                                                metaType="number"
+                                                                min="0"
+                                                                name="./copays/highEndTierTwoFourProgressive"
+                                                                typeHint="long"
+                                                                valueType="long"/>
+                                                            <prefix
+                                                                jcr:primaryType="nt:unstructured"
+                                                                sling:resourceType="granite/ui/components/foundation/form/select"
+                                                                emptyOption="{Boolean}true"
+                                                                fieldLabel="Prefix"
+                                                                name="./copays/highEndTierTwoFourProgressivePrefix">
+                                                                <datasource
+                                                                    jcr:primaryType="nt:unstructured"
+                                                                    sling:resourceType="acs-commons/components/utilities/genericlist/datasource"
+                                                                    path="/etc/acs-commons/lists/federal/plans-dialog-options"/>
+                                                            </prefix>
+                                                            <coveredInFull
+                                                                jcr:primaryType="nt:unstructured"
+                                                                sling:resourceType="granite/ui/components/coral/foundation/form/checkbox"
+                                                                name="./copays/highEndTierTwoFourProgressiveCoveredInFull"
+                                                                text="Covered in Full"
+                                                                value="{Boolean}true"
+                                                                uncheckedValue="{Boolean}false"/>
+                                                        </items>
+                                                    </well>
+                                                </items>
+                                            </highEndTierTwoFourProgressive>
+                                            <highEndPlasticUpToOnePointSeventyThree
+                                                jcr:primaryType="nt:unstructured"
+                                                sling:resourceType="granite/ui/components/coral/foundation/container">
+                                                <items jcr:primaryType="nt:unstructured">
+                                                    <heading
+                                                        granite:class="coral-Heading coral-Heading--4"
+                                                        jcr:primaryType="nt:unstructured"
+                                                        sling:resourceType="granite/ui/components/coral/foundation/heading"
+                                                        level="{Long}4"
+                                                        text="High-end plastic up to 1.73"/>
+                                                    <well
+                                                        granite:class="cmp-healthPlan__editor-row cmp-employerPlanOption__generalAmount-editor-row"
+                                                        jcr:primaryType="nt:unstructured"
+                                                        sling:resourceType="granite/ui/components/coral/foundation/well">
+                                                        <items jcr:primaryType="nt:unstructured">
+                                                            <amount
+                                                                jcr:primaryType="nt:unstructured"
+                                                                sling:resourceType="granite/ui/components/coral/foundation/form/numberfield"
+                                                                fieldLabel="Amount ($)"
+                                                                metaType="number"
+                                                                min="0"
+                                                                name="./copays/highEndPlasticUpToOnePointSeventyThree"
+                                                                typeHint="long"
+                                                                valueType="long"/>
+                                                            <prefix
+                                                                jcr:primaryType="nt:unstructured"
+                                                                sling:resourceType="granite/ui/components/foundation/form/select"
+                                                                emptyOption="{Boolean}true"
+                                                                fieldLabel="Prefix"
+                                                                name="./copays/highEndPlasticUpToOnePointSeventyThreePrefix">
+                                                                <datasource
+                                                                    jcr:primaryType="nt:unstructured"
+                                                                    sling:resourceType="acs-commons/components/utilities/genericlist/datasource"
+                                                                    path="/etc/acs-commons/lists/federal/plans-dialog-options"/>
+                                                            </prefix>
+                                                            <coveredInFull
+                                                                jcr:primaryType="nt:unstructured"
+                                                                sling:resourceType="granite/ui/components/coral/foundation/form/checkbox"
+                                                                name="./copays/highEndPlasticUpToOnePointSeventyThreeCoveredInFull"
+                                                                text="Covered in Full"
+                                                                value="{Boolean}true"
+                                                                uncheckedValue="{Boolean}false"/>
+                                                        </items>
+                                                    </well>
+                                                </items>
+                                            </highEndPlasticUpToOnePointSeventyThree>
+                                        </items>
+                                    </copays>
+                                    <allowances
+                                        jcr:primaryType="nt:unstructured"
+                                        jcr:title="Allowances"
+                                        sling:resourceType="granite/ui/components/coral/foundation/container"
+                                        margin="{Boolean}true">
+                                        <items jcr:primaryType="nt:unstructured">
+                                            <frames
+                                                jcr:primaryType="nt:unstructured"
+                                                sling:resourceType="granite/ui/components/coral/foundation/container">
+                                                <items jcr:primaryType="nt:unstructured">
+                                                    <heading
+                                                        granite:class="coral-Heading coral-Heading--4"
+                                                        jcr:primaryType="nt:unstructured"
+                                                        sling:resourceType="granite/ui/components/coral/foundation/heading"
+                                                        level="{Long}4"
+                                                        text="Annual Eye Exam"/>
+                                                    <well
+                                                        granite:class="cmp-healthPlan__editor-row cmp-employerPlanOption__generalAmount-editor-row"
+                                                        jcr:primaryType="nt:unstructured"
+                                                        sling:resourceType="granite/ui/components/coral/foundation/well">
+                                                        <items jcr:primaryType="nt:unstructured">
+                                                            <amount
+                                                                jcr:primaryType="nt:unstructured"
+                                                                sling:resourceType="granite/ui/components/coral/foundation/form/numberfield"
+                                                                fieldLabel="Amount ($)"
+                                                                metaType="number"
+                                                                min="0"
+                                                                name="./allowances/frames"
+                                                                typeHint="long"
+                                                                valueType="long"/>
+                                                            <prefix
+                                                                jcr:primaryType="nt:unstructured"
+                                                                sling:resourceType="granite/ui/components/foundation/form/select"
+                                                                emptyOption="{Boolean}true"
+                                                                fieldLabel="Prefix"
+                                                                name="./allowances/framesPrefix">
+                                                                <datasource
+                                                                    jcr:primaryType="nt:unstructured"
+                                                                    sling:resourceType="acs-commons/components/utilities/genericlist/datasource"
+                                                                    path="/etc/acs-commons/lists/federal/plans-dialog-options"/>
+                                                            </prefix>
+                                                            <coveredInFull
+                                                                jcr:primaryType="nt:unstructured"
+                                                                sling:resourceType="granite/ui/components/coral/foundation/form/checkbox"
+                                                                name="./allowances/framesCoveredInFull"
+                                                                text="Covered in Full"
+                                                                value="{Boolean}true"
+                                                                uncheckedValue="{Boolean}false"/>
+                                                        </items>
+                                                    </well>
+                                                </items>
+                                            </frames>
+                                            <contactLenses
+                                                jcr:primaryType="nt:unstructured"
+                                                sling:resourceType="granite/ui/components/coral/foundation/container">
+                                                <items jcr:primaryType="nt:unstructured">
+                                                    <heading
+                                                        granite:class="coral-Heading coral-Heading--4"
+                                                        jcr:primaryType="nt:unstructured"
+                                                        sling:resourceType="granite/ui/components/coral/foundation/heading"
+                                                        level="{Long}4"
+                                                        text="Contact lenses"/>
+                                                    <well
+                                                        granite:class="cmp-healthPlan__editor-row cmp-employerPlanOption__generalAmount-editor-row"
+                                                        jcr:primaryType="nt:unstructured"
+                                                        sling:resourceType="granite/ui/components/coral/foundation/well">
+                                                        <items jcr:primaryType="nt:unstructured">
+                                                            <amount
+                                                                jcr:primaryType="nt:unstructured"
+                                                                sling:resourceType="granite/ui/components/coral/foundation/form/numberfield"
+                                                                fieldLabel="Amount ($)"
+                                                                metaType="number"
+                                                                min="0"
+                                                                name="./allowances/contactLenses"
+                                                                typeHint="long"
+                                                                valueType="long"/>
+                                                            <prefix
+                                                                jcr:primaryType="nt:unstructured"
+                                                                sling:resourceType="granite/ui/components/foundation/form/select"
+                                                                emptyOption="{Boolean}true"
+                                                                fieldLabel="Prefix"
+                                                                name="./allowances/contactLensesPrefix">
+                                                                <datasource
+                                                                    jcr:primaryType="nt:unstructured"
+                                                                    sling:resourceType="acs-commons/components/utilities/genericlist/datasource"
+                                                                    path="/etc/acs-commons/lists/federal/plans-dialog-options"/>
+                                                            </prefix>
+                                                            <coveredInFull
+                                                                jcr:primaryType="nt:unstructured"
+                                                                sling:resourceType="granite/ui/components/coral/foundation/form/checkbox"
+                                                                name="./allowances/contactLensesCoveredInFull"
+                                                                text="Covered in Full"
+                                                                value="{Boolean}true"
+                                                                uncheckedValue="{Boolean}false"/>
+                                                        </items>
+                                                    </well>
+                                                </items>
+                                            </contactLenses>
+                                            <contactLensFittingEvaluation
+                                                jcr:primaryType="nt:unstructured"
+                                                sling:resourceType="granite/ui/components/coral/foundation/container">
+                                                <items jcr:primaryType="nt:unstructured">
+                                                    <heading
+                                                        granite:class="coral-Heading coral-Heading--4"
+                                                        jcr:primaryType="nt:unstructured"
+                                                        sling:resourceType="granite/ui/components/coral/foundation/heading"
+                                                        level="{Long}4"
+                                                        text="Contact lens fitting/evaluation"/>
+                                                    <well
+                                                        granite:class="cmp-healthPlan__editor-row cmp-employerPlanOption__generalAmount-editor-row"
+                                                        jcr:primaryType="nt:unstructured"
+                                                        sling:resourceType="granite/ui/components/coral/foundation/well">
+                                                        <items jcr:primaryType="nt:unstructured">
+                                                            <amount
+                                                                jcr:primaryType="nt:unstructured"
+                                                                sling:resourceType="granite/ui/components/coral/foundation/form/numberfield"
+                                                                fieldLabel="Amount ($)"
+                                                                metaType="number"
+                                                                min="0"
+                                                                name="./allowances/contactLensFittingEvaluation"
+                                                                typeHint="long"
+                                                                valueType="long"/>
+                                                            <prefix
+                                                                jcr:primaryType="nt:unstructured"
+                                                                sling:resourceType="granite/ui/components/foundation/form/select"
+                                                                emptyOption="{Boolean}true"
+                                                                fieldLabel="Prefix"
+                                                                name="./allowances/contactLensFittingEvaluationPrefix">
+                                                                <datasource
+                                                                    jcr:primaryType="nt:unstructured"
+                                                                    sling:resourceType="acs-commons/components/utilities/genericlist/datasource"
+                                                                    path="/etc/acs-commons/lists/federal/plans-dialog-options"/>
+                                                            </prefix>
+                                                            <coveredInFull
+                                                                jcr:primaryType="nt:unstructured"
+                                                                sling:resourceType="granite/ui/components/coral/foundation/form/checkbox"
+                                                                name="./allowances/contactLensFittingEvaluationCoveredInFull"
+                                                                text="Covered in Full"
+                                                                value="{Boolean}true"
+                                                                uncheckedValue="{Boolean}false"/>
+                                                        </items>
+                                                    </well>
+                                                </items>
+                                            </contactLensFittingEvaluation>
+                                        </items>
+                                    </allowances>
+                                    <brochures
+                                        jcr:primaryType="nt:unstructured"
+                                        jcr:title="Brochures"
+                                        sling:resourceType="granite/ui/components/coral/foundation/container"
+                                        margin="{Boolean}true">
+                                        <items jcr:primaryType="nt:unstructured">
+                                            <columns
+                                                jcr:primaryType="nt:unstructured"
+                                                sling:resourceType="granite/ui/components/coral/foundation/fixedcolumns"
+                                                margin="{Boolean}true">
+                                                <items jcr:primaryType="nt:unstructured">
+                                                    <brochuresList
+                                                        jcr:primaryType="nt:unstructured"
+                                                        sling:resourceType="granite/ui/components/coral/foundation/container">
+                                                        <items jcr:primaryType="nt:unstructured">
+                                                            <heading
+                                                                granite:class="coral-Heading coral-Heading--4"
+                                                                jcr:primaryType="nt:unstructured"
+                                                                sling:resourceType="granite/ui/components/coral/foundation/heading"
+                                                                level="{Long}4"
+                                                                text="Brochures List"/>
+                                                            <well
+                                                                jcr:primaryType="nt:unstructured"
+                                                                sling:resourceType="granite/ui/components/coral/foundation/well">
+                                                                <items jcr:primaryType="nt:unstructured">
+                                                                    <sectionTitle
+                                                                        jcr:primaryType="nt:unstructured"
+                                                                        sling:resourceType="granite/ui/components/coral/foundation/form/textfield"
+                                                                        fieldLabel="Section Title"
+                                                                        name="./brochures/sectionTitle"/>
+                                                                    <links
+                                                                        jcr:primaryType="nt:unstructured"
+                                                                        sling:resourceType="granite/ui/components/coral/foundation/form/multifield"
+                                                                        composite="{Boolean}true"
+                                                                        fieldLabel="Brochure Files">
+                                                                        <field
+                                                                            jcr:primaryType="nt:unstructured"
+                                                                            sling:resourceType="granite/ui/components/coral/foundation/container"
+                                                                            name="./brochures/items">
+                                                                            <items jcr:primaryType="nt:unstructured">
+                                                                                <title
+                                                                                    jcr:primaryType="nt:unstructured"
+                                                                                    sling:resourceType="granite/ui/components/coral/foundation/form/textfield"
+                                                                                    fieldLabel="Title"
+                                                                                    name="title"
+                                                                                    required="{Boolean}true"/>
+                                                                                <link
+                                                                                    jcr:primaryType="nt:unstructured"
+                                                                                    sling:resourceType="granite/ui/components/coral/foundation/form/pathfield"
+                                                                                    fieldLabel="Path"
+                                                                                    name="path"
+                                                                                    required="{Boolean}true"
+                                                                                    rootPath="/content/dam/premember/documents"/>
+                                                                            </items>
+                                                                        </field>
+                                                                    </links>
+                                                                </items>
+                                                            </well>
+                                                        </items>
+                                                    </brochuresList>
+                                                </items>
+                                            </columns>
+                                        </items>
+                                    </brochures>
+                                </items>
+                            </tabs>
+                        </items>
+                    </benefits>
+                    <benefitsDescriptions
+                        jcr:primaryType="nt:unstructured"
+                        jcr:title="Benefits Description"
+                        sling:resourceType="granite/ui/components/coral/foundation/container"
+                        margin="{Boolean}true">
+                        <items jcr:primaryType="nt:unstructured">
+                            <general
+                                jcr:primaryType="nt:unstructured"
+                                sling:resourceType="cq/gui/components/authoring/dialog/richtext"
+                                fieldLabel="General"
+                                name="./benefitsDescriptions/general"
+                                useFixedInlineToolbar="{Boolean}true"/>
+                        </items>
+                    </benefitsDescriptions>
+                </items>
+            </tabs>
+        </items>
+    </content>
+</jcr:root>

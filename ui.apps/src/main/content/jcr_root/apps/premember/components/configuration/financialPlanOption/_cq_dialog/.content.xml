@@ -1,0 +1,395 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<jcr:root xmlns:sling="http://sling.apache.org/jcr/sling/1.0"
+          xmlns:jcr="http://www.jcp.org/jcr/1.0"
+          xmlns:nt="http://www.jcp.org/jcr/nt/1.0"
+          xmlns:granite="http://www.adobe.com/jcr/granite/1.0"
+          jcr:primaryType="nt:unstructured"
+          jcr:title="Financial Plan Option"
+          sling:resourceType="cq/gui/components/authoring/dialog"
+          extraClientlibs="[premember.components.configuration.employerPlans.dialog]">
+    <content
+            jcr:primaryType="nt:unstructured"
+            sling:resourceType="granite/ui/components/coral/foundation/container"
+            granite:class="cmp-contentfragment__editor">
+        <granite:data
+                jcr:primaryType="nt:unstructured"
+                component-path="${requestPathInfo.suffix}"/>
+        <items jcr:primaryType="nt:unstructured">
+            <tabs jcr:primaryType="nt:unstructured"
+                  sling:resourceType="granite/ui/components/coral/foundation/tabs"
+                  maximized="{Boolean}true">
+                <items jcr:primaryType="nt:unstructured">
+                    <general jcr:primaryType="nt:unstructured"
+                             jcr:title="General"
+                             sling:resourceType="granite/ui/components/coral/foundation/container"
+                             granite:class="generalEmployerPlanTab"
+                             margin="{Boolean}true">
+                        <items jcr:primaryType="nt:unstructured">
+                            <fragmentPath
+                              jcr:primaryType="nt:unstructured"
+                              sling:resourceType="granite/ui/components/coral/foundation/form/pathfield"
+                              name="./fragmentPath"
+                              fieldDescription="Path to the Content Fragment with employer plan."
+                              fieldLabel="Content Fragment"
+                              emptyText="Enter or select Content Fragment with employer plan"
+                              pickerTitle="Select Content Fragment"
+                              forceSelection="{Boolean}true"
+                              rootPath="/content/dam/premember/plans/options/financial"/>
+                            <variationName
+                                    jcr:primaryType="nt:unstructured"
+                                    sling:resourceType="granite/ui/components/coral/foundation/form/select"
+                                    name="./variationName"
+                                    fieldLabel="Variation"
+                                    fieldDescription="Specify which variation to display">
+                                <datasource
+                                        jcr:primaryType="nt:unstructured"
+                                        sling:resourceType="core/wcm/components/contentfragment/v1/datasource/variations"
+                                        componentPath="${requestPathInfo.suffix}"
+                                        fragmentPath="${param.fragmentPath}"/>
+                                <granite:data
+                                        jcr:primaryType="nt:unstructured"
+                                        field-path="${requestPathInfo.resourcePath}"/>
+                            </variationName>
+                        </items>
+                    </general>
+                    <lifeInsurance jcr:primaryType="nt:unstructured"
+                                   jcr:title="Life Insurance"
+                                   sling:resourceType="granite/ui/components/coral/foundation/container"
+                                   margin="{Boolean}true">
+                        <items jcr:primaryType="nt:unstructured">
+                            <showLifeInsurance
+                                    jcr:primaryType="nt:unstructured"
+                                    sling:resourceType="granite/ui/components/coral/foundation/form/checkbox"
+                                    text="Show Life Insurance"
+                                    uncheckedValue="{Boolean}false"
+                                    value="{Boolean}true"
+                                    name="./showLifeInsurance"/>
+                            <highlightsBasicLifeInsurance
+                                    jcr:primaryType="nt:unstructured"
+                                    sling:resourceType="granite/ui/components/coral/foundation/form/checkbox"
+                                    text="Highlights - Basic Life insurance coverage"
+                                    uncheckedValue="{Boolean}false"
+                                    value="{Boolean}true"
+                                    name="./highlightsBasicLifeInsurance"/>
+                            <highlightsSupplementalLifeInsurance
+                                    jcr:primaryType="nt:unstructured"
+                                    sling:resourceType="granite/ui/components/coral/foundation/form/checkbox"
+                                    text="Highlights - Supplemental Life insurance"
+                                    uncheckedValue="{Boolean}false"
+                                    value="{Boolean}true"
+                                    name="./highlightsSupplementalLifeInsurance"/>
+                            <highlightsAccidentalDeathLifeInsurance
+                                    jcr:primaryType="nt:unstructured"
+                                    sling:resourceType="granite/ui/components/coral/foundation/form/checkbox"
+                                    text="Highlights - Accidental Death n Dismemberment (ADnD)"
+                                    uncheckedValue="{Boolean}false"
+                                    value="{Boolean}true"
+                                    name="./highlightsAccidentalDeathLifeInsurance"/>
+                            <showGriefBenefitsLifeInsurance
+                                    jcr:primaryType="nt:unstructured"
+                                    sling:resourceType="granite/ui/components/coral/foundation/form/checkbox"
+                                    text="Grief Benefits"
+                                    uncheckedValue="{Boolean}false"
+                                    value="{Boolean}true"
+                                    name="./showGriefBenefitsLifeInsurance"/>
+                            <showBeneficiaryCompanionProgramLifeInsurance
+                                    jcr:primaryType="nt:unstructured"
+                                    sling:resourceType="granite/ui/components/coral/foundation/form/checkbox"
+                                    text="Beneficiary Companion Program"
+                                    uncheckedValue="{Boolean}false"
+                                    value="{Boolean}true"
+                                    name="./showBeneficiaryCompanionProgramLifeInsurance"/>
+                            <showLiveandworkwellComLifeInsurance
+                                    jcr:primaryType="nt:unstructured"
+                                    sling:resourceType="granite/ui/components/coral/foundation/form/checkbox"
+                                    text="Liveandworkwell.com"
+                                    uncheckedValue="{Boolean}false"
+                                    value="{Boolean}true"
+                                    name="./showLiveandworkwellComLifeInsurance"/>
+                            <showFinancialnLegalSupportLifeInsurance
+                                    jcr:primaryType="nt:unstructured"
+                                    sling:resourceType="granite/ui/components/coral/foundation/form/checkbox"
+                                    text="Financial and Legal Support"
+                                    uncheckedValue="{Boolean}false"
+                                    value="{Boolean}true"
+                                    name="./showFinancialnLegalSupportLifeInsurance"/>
+                            <lifeInsuranceBenefitSummaryPdf
+                                    jcr:primaryType="nt:unstructured"
+                                    sling:resourceType="granite/ui/components/coral/foundation/form/pathfield"
+                                    fieldLabel="Benefit Summary PDF"
+                                    rootPath="/content/dam/premember/documents/financial-plan-benefits-pdf"
+                                    name="./lifeInsuranceBenefitSummaryPdf"/>
+                        </items>
+                    </lifeInsurance>
+                    <disabilityInsurance jcr:primaryType="nt:unstructured"
+                                         jcr:title="Disability Insurance"
+                                         sling:resourceType="granite/ui/components/coral/foundation/container"
+                                         margin="{Boolean}true">
+                        <items jcr:primaryType="nt:unstructured">
+                            <showDisabilityInsurance
+                                    jcr:primaryType="nt:unstructured"
+                                    sling:resourceType="granite/ui/components/coral/foundation/form/checkbox"
+                                    text="Show Disability Insurance"
+                                    uncheckedValue="{Boolean}false"
+                                    value="{Boolean}true"
+                                    name="./showDisabilityInsurance"/>
+                            <showShortTermDisabilityInsuranceList
+                                    jcr:primaryType="nt:unstructured"
+                                    sling:resourceType="granite/ui/components/coral/foundation/form/nestedcheckboxlist">
+                                <items jcr:primaryType="nt:unstructured">
+                                    <showShortTermDisabilityInsurance
+                                            jcr:primaryType="nt:unstructured"
+                                            sling:resourceType="granite/ui/components/coral/foundation/form/checkbox"
+                                            text="Short-Term Disability"
+                                            uncheckedValue="{Boolean}false"
+                                            value="{Boolean}true"
+                                            name="./showShortTermDisabilityInsurance">
+                                        <sublist
+                                                jcr:primaryType="nt:unstructured"
+                                                sling:resourceType="granite/ui/components/coral/foundation/form/nestedcheckboxlist">
+                                            <items jcr:primaryType="nt:unstructured">
+                                                <showShortTermDisabilityInsurancePortable
+                                                        jcr:primaryType="nt:unstructured"
+                                                        sling:resourceType="granite/ui/components/coral/foundation/form/checkbox"
+                                                        text="Show Coverage is portable - bullet"
+                                                        uncheckedValue="{Boolean}false"
+                                                        value="{Boolean}true"
+                                                        name="./showShortTermDisabilityInsurancePortable"/>
+                                            </items>
+                                        </sublist>
+                                    </showShortTermDisabilityInsurance>
+                                </items>
+                            </showShortTermDisabilityInsuranceList>
+                            <showLongTermDisabilityInsuranceList
+                                    jcr:primaryType="nt:unstructured"
+                                    sling:resourceType="granite/ui/components/coral/foundation/form/nestedcheckboxlist">
+                                <items jcr:primaryType="nt:unstructured">
+                                    <showLongTermDisabilityInsurance
+                                            jcr:primaryType="nt:unstructured"
+                                            sling:resourceType="granite/ui/components/coral/foundation/form/checkbox"
+                                            text="Long-term Disability"
+                                            uncheckedValue="{Boolean}false"
+                                            value="{Boolean}true"
+                                            checked="{Boolean}false"
+                                            name="./showLongTermDisabilityInsurance">
+                                        <sublist
+                                                jcr:primaryType="nt:unstructured"
+                                                sling:resourceType="granite/ui/components/coral/foundation/form/nestedcheckboxlist">
+                                            <items jcr:primaryType="nt:unstructured">
+                                                <showLongTermDisabilityInsurancePortable
+                                                        jcr:primaryType="nt:unstructured"
+                                                        sling:resourceType="granite/ui/components/coral/foundation/form/checkbox"
+                                                        text="Show Coverage is portable - bullet"
+                                                        uncheckedValue="{Boolean}false"
+                                                        value="{Boolean}true"
+                                                        checked="{Boolean}false"
+                                                        name="./showLongTermDisabilityInsurancePortable"/>
+                                            </items>
+                                        </sublist>
+                                    </showLongTermDisabilityInsurance>
+                                </items>
+                            </showLongTermDisabilityInsuranceList>
+                            <showMemberAssistanceProgramDisabilityInsurance
+                                    jcr:primaryType="nt:unstructured"
+                                    sling:resourceType="granite/ui/components/coral/foundation/form/checkbox"
+                                    text="Member Assistance Program (EAP)"
+                                    uncheckedValue="{Boolean}false"
+                                    value="{Boolean}true"
+                                    name="./showMemberAssistanceProgramDisabilityInsurance"/>
+                            <shortTermDisabilityBenefitSummaryPdf
+                                      jcr:primaryType="nt:unstructured"
+                                      sling:resourceType="granite/ui/components/coral/foundation/form/pathfield"
+                                      rootPath="/content/dam/premember/documents/financial-plan-benefits-pdf"
+                                    fieldLabel="Short Term Disability Benefit Summary PDF"
+                                    name="./shortTermDisabilityBenefitSummaryPdf"/>
+                            <longTermDisabilityBenefitSummaryPdf
+                                      jcr:primaryType="nt:unstructured"
+                                      sling:resourceType="granite/ui/components/coral/foundation/form/pathfield"
+                                      rootPath="/content/dam/premember/documents/financial-plan-benefits-pdf"
+                                    fieldLabel="Long Term Disability Benefit Summary PDF"
+                                    name="./longTermDisabilityBenefitSummaryPdf"/>
+                        </items>
+                    </disabilityInsurance>
+                    <hospitalIndemnityProtection jcr:primaryType="nt:unstructured"
+                                                 jcr:title="Hospital Indemnity"
+                                                 sling:resourceType="granite/ui/components/coral/foundation/container"
+                                                 margin="{Boolean}true">
+                        <items jcr:primaryType="nt:unstructured">
+                            <showHospitalIndemnityProtectionPlan
+                                    jcr:primaryType="nt:unstructured"
+                                    sling:resourceType="granite/ui/components/coral/foundation/form/checkbox"
+                                    text="Show Hospital Indemnity Protection Plan"
+                                    uncheckedValue="{Boolean}false"
+                                    value="{Boolean}true"
+                                    name="./showHospitalIndemnityProtectionPlan"/>
+                            <showClaimAdvocateHelpBulletHip
+                                    jcr:primaryType="nt:unstructured"
+                                    sling:resourceType="granite/ui/components/coral/foundation/form/checkbox"
+                                    text="Claim Advocate can help - bullet"
+                                    uncheckedValue="{Boolean}false"
+                                    value="{Boolean}true"
+                                    name="./showClaimAdvocateHelpBulletHip"/>
+                            <showPortableCoverageBulletHip
+                                    jcr:primaryType="nt:unstructured"
+                                    sling:resourceType="granite/ui/components/coral/foundation/form/checkbox"
+                                    text="Coverage is portable - bullet"
+                                    uncheckedValue="{Boolean}false"
+                                    value="{Boolean}true"
+                                    name="./showPortableCoverageBulletHip"/>
+                            <selectedOptionHip
+                                    jcr:primaryType="nt:unstructured"
+                                    sling:resourceType="granite/ui/components/foundation/form/select"
+                                    fieldLabel="Hospital Indemnity Protection - Plan Option"
+                                    name="./selectedOptionHip">
+                                <items jcr:primaryType="nt:unstructured">
+                                    <basePlan
+                                            jcr:primaryType="nt:unstructured"
+                                            text="Base Plan"
+                                            value="Base Plan"/>
+                                    <baseEnhancedPlan
+                                            jcr:primaryType="nt:unstructured"
+                                            text="Base + Enhanced Plan"
+                                            value="Base + Enhanced Plan"/>
+                                    <planBenefits
+                                            jcr:primaryType="nt:unstructured"
+                                            text="Plan Benefits"
+                                            value="Plan Benefits"/>
+                                </items>
+                            </selectedOptionHip>
+                            <showGetPaidForReceivingHealthScreeningsHip
+                                    jcr:primaryType="nt:unstructured"
+                                    sling:resourceType="granite/ui/components/coral/foundation/form/checkbox"
+                                    text="Get paid for receiving health screenings"
+                                    uncheckedValue="{Boolean}false"
+                                    value="{Boolean}true"
+                                    name="./showGetPaidForReceivingHealthScreeningsHip"/>
+                            <hostpitalIndemnityBenefitSummaryPdf
+                                      jcr:primaryType="nt:unstructured"
+                                      sling:resourceType="granite/ui/components/coral/foundation/form/pathfield"
+                                      rootPath="/content/dam/premember/documents/financial-plan-benefits-pdf"
+                                    fieldLabel="Benefit Summary PDF"
+                                    name="./hospitalIndemnityBenefitSummaryPdf"/>
+                        </items>
+                    </hospitalIndemnityProtection>
+                    <criticalIllness jcr:primaryType="nt:unstructured"
+                                     jcr:title="Critical Illness"
+                                     sling:resourceType="granite/ui/components/coral/foundation/container"
+                                     margin="{Boolean}true">
+                        <items jcr:primaryType="nt:unstructured">
+                            <showCriticalIllnessProtectionPlan
+                                    jcr:primaryType="nt:unstructured"
+                                    sling:resourceType="granite/ui/components/coral/foundation/form/checkbox"
+                                    text="Show Critical Illness Protection Plan"
+                                    uncheckedValue="{Boolean}false"
+                                    value="{Boolean}true"
+                                    name="./showCriticalIllnessProtectionPlan"/>
+                            <showClaimAdvocateHelpBulletCip
+                                    jcr:primaryType="nt:unstructured"
+                                    sling:resourceType="granite/ui/components/coral/foundation/form/checkbox"
+                                    text="Claim Advocate can help - bullet"
+                                    uncheckedValue="{Boolean}false"
+                                    value="{Boolean}true"
+                                    name="./showClaimAdvocateHelpBulletCip"/>
+                            <showPortableCoverageBulletCip
+                                    jcr:primaryType="nt:unstructured"
+                                    sling:resourceType="granite/ui/components/coral/foundation/form/checkbox"
+                                    text="Coverage is portable - bullet"
+                                    uncheckedValue="{Boolean}false"
+                                    value="{Boolean}true"
+                                    name="./showPortableCoverageBulletCip"/>
+                            <showAdditionalCoverageCip
+                                    jcr:primaryType="nt:unstructured"
+                                    sling:resourceType="granite/ui/components/coral/foundation/form/checkbox"
+                                    text="Additional Coverage"
+                                    uncheckedValue="{Boolean}false"
+                                    value="{Boolean}true"
+                                    name="./showAdditionalCoverageCip"/>
+                            <showChildOnlyCoverageCip
+                                    jcr:primaryType="nt:unstructured"
+                                    sling:resourceType="granite/ui/components/coral/foundation/form/checkbox"
+                                    text="Child-only Coverage"
+                                    uncheckedValue="{Boolean}false"
+                                    value="{Boolean}true"
+                                    name="./showChildOnlyCoverageCip"/>
+                            <showGetPaidForReceivingHealthScreeningsCip
+                                    jcr:primaryType="nt:unstructured"
+                                    sling:resourceType="granite/ui/components/coral/foundation/form/checkbox"
+                                    text="Get paid for receiving health screenings"
+                                    uncheckedValue="{Boolean}false"
+                                    value="{Boolean}true"
+                                    name="./showGetPaidForReceivingHealthScreeningsCip"/>
+                            <criticalIllnessBenefitSummaryPdf
+                              jcr:primaryType="nt:unstructured"
+                              sling:resourceType="granite/ui/components/coral/foundation/form/pathfield"
+                              fieldLabel="Benefit Summary PDF"
+                              rootPath="/content/dam/premember/documents/financial-plan-benefits-pdf"
+                                    name="./criticalIllnessBenefitSummaryPdf"/>
+                        </items>
+                    </criticalIllness>
+                    <accidentProtectionPlan
+                            jcr:primaryType="nt:unstructured"
+                            jcr:title="Accident Protection"
+                            sling:resourceType="granite/ui/components/coral/foundation/container"
+                            margin="{Boolean}true">
+                        <items jcr:primaryType="nt:unstructured">
+                            <showAccidentProtectionPlan
+                                    jcr:primaryType="nt:unstructured"
+                                    sling:resourceType="granite/ui/components/coral/foundation/form/checkbox"
+                                    text="Show Accident Protection Plan"
+                                    uncheckedValue="{Boolean}false"
+                                    value="{Boolean}true"
+                                    name="./showAccidentProtectionPlan"/>
+                            <showClaimAdvocateHelpBulletApp
+                                    jcr:primaryType="nt:unstructured"
+                                    sling:resourceType="granite/ui/components/coral/foundation/form/checkbox"
+                                    text="Claim Advocate can help - bullet"
+                                    uncheckedValue="{Boolean}false"
+                                    value="{Boolean}true"
+                                    name="./showClaimAdvocateHelpBulletApp"/>
+                            <showPortableCoverageBulletApp
+                                    jcr:primaryType="nt:unstructured"
+                                    sling:resourceType="granite/ui/components/coral/foundation/form/checkbox"
+                                    text="Coverage is portable - bullet"
+                                    uncheckedValue="{Boolean}false"
+                                    value="{Boolean}true"
+                                    name="./showPortableCoverageBulletApp"/>
+                            <selectedOptionApp
+                                    jcr:primaryType="nt:unstructured"
+                                    sling:resourceType="granite/ui/components/foundation/form/select"
+                                    fieldLabel="Accident Protection - Plan Option"
+                                    name="./selectedOptionApp">
+                                <items jcr:primaryType="nt:unstructured">
+                                    <planBenefits
+                                            jcr:primaryType="nt:unstructured"
+                                            text="Plan Benefits"
+                                            value="Plan Benefits"/>
+                                    <baseBenefits
+                                            jcr:primaryType="nt:unstructured"
+                                            text="Base Benefits"
+                                            value="Base Benefits"/>
+                                    <baseEnhancedPlan
+                                            jcr:primaryType="nt:unstructured"
+                                            text="Base plus Enhanced"
+                                            value="Base plus Enhanced"/>
+                                </items>
+                            </selectedOptionApp>
+                            <showGetPaidForReceivingHealthScreeningsApp
+                                    jcr:primaryType="nt:unstructured"
+                                    sling:resourceType="granite/ui/components/coral/foundation/form/checkbox"
+                                    text="Get paid for receiving health screenings"
+                                    uncheckedValue="{Boolean}false"
+                                    value="{Boolean}true"
+                                    name="./showGetPaidForReceivingHealthScreeningsApp"/>
+                            <accidentalBenefitSummaryPdf
+                              jcr:primaryType="nt:unstructured"
+                              sling:resourceType="granite/ui/components/coral/foundation/form/pathfield"
+                              fieldLabel="Benefit Summary PDF"
+                              rootPath="/content/dam/premember/documents/financial-plan-benefits-pdf"
+                                    name="./accidentalBenefitSummaryPdf"/>
+                        </items>
+                    </accidentProtectionPlan>
+                </items>
+            </tabs>
+        </items>
+    </content>
+</jcr:root>

@@ -1,0 +1,26 @@
+.aem-buttons {
+	margin-bottom: -$g-spacing-sm;
+
+	.button {
+		display: inline;
+		margin-right: $g-spacing-sm;
+	}
+
+	.c-button {
+		margin-right: $g-spacing-sm;
+		margin-bottom: $g-spacing-sm;
+	}
+
+	// Override for card footer annoyingness.
+	.c-card__footer & {
+		&:last-child {
+			margin-bottom: -$g-spacing-sm;
+		}
+
+		.c-button {
+			&:last-child {
+				margin-right: 0;
+			}
+		}
+	}
+}

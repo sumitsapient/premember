@@ -1,0 +1,15 @@
+.o-media--stacked {
+	flex-direction: column;
+
+	.o-media__img {
+		margin: 0 auto $g-spacing-xs;
+
+		> * {
+			margin-bottom: 0;
+		}
+	}
+
+	.o-media__body {
+		width: 100%;
+	}
+}

@@ -1,0 +1,128 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<jcr:root xmlns:sling="http://sling.apache.org/jcr/sling/1.0"
+          xmlns:jcr="http://www.jcp.org/jcr/1.0"
+          xmlns:nt="http://www.jcp.org/jcr/nt/1.0"
+          xmlns:granite="http://www.adobe.com/jcr/granite/1.0"
+          jcr:primaryType="nt:unstructured"
+          jcr:title="FSA Plan Option"
+          sling:resourceType="cq/gui/components/authoring/dialog"
+          extraClientlibs="[premember.components.configuration.employerPlans.dialog]">
+    <content
+            jcr:primaryType="nt:unstructured"
+            sling:resourceType="granite/ui/components/coral/foundation/container"
+            granite:class="cmp-contentfragment__editor">
+        <granite:data
+                jcr:primaryType="nt:unstructured"
+                component-path="${requestPathInfo.suffix}"/>
+        <items jcr:primaryType="nt:unstructured">
+            <tabs jcr:primaryType="nt:unstructured"
+                  sling:resourceType="granite/ui/components/coral/foundation/tabs"
+                  maximized="{Boolean}true">
+                <items jcr:primaryType="nt:unstructured">
+                    <general jcr:primaryType="nt:unstructured"
+                      jcr:title="General"
+                      sling:resourceType="granite/ui/components/coral/foundation/container"
+                      granite:class="generalEmployerPlanTab"
+                      margin="{Boolean}true">
+                        <items jcr:primaryType="nt:unstructured">
+                            <fragmentPath
+                              jcr:primaryType="nt:unstructured"
+                              sling:resourceType="granite/ui/components/coral/foundation/form/pathfield"
+                              name="./fragmentPath"
+                              fieldDescription="Path to the Content Fragment with employer plan."
+                              fieldLabel="Content Fragment"
+                              emptyText="Enter or select Content Fragment with employer plan"
+                              pickerTitle="Select Content Fragment"
+                              forceSelection="{Boolean}true"
+                              rootPath="/content/dam/premember/plans/options/fsa"/>
+                            <variationName
+                              jcr:primaryType="nt:unstructured"
+                              sling:resourceType="granite/ui/components/coral/foundation/form/select"
+                              name="./variationName"
+                              fieldLabel="Variation"
+                              fieldDescription="Specify which variation to display">
+                                <datasource
+                                  jcr:primaryType="nt:unstructured"
+                                  sling:resourceType="core/wcm/components/contentfragment/v1/datasource/variations"
+                                  componentPath="${requestPathInfo.suffix}"
+                                  fragmentPath="${param.fragmentPath}"/>
+                                <granite:data
+                                  jcr:primaryType="nt:unstructured"
+                                  field-path="${requestPathInfo.resourcePath}"/>
+                            </variationName>
+                            <fullBenefitsLink
+                              jcr:primaryType="nt:unstructured"
+                              sling:resourceType="granite/ui/components/coral/foundation/form/pathfield"
+                              fieldLabel="Full Benefits Link"
+                              name="./fullBenefitsLink"
+                              rootPath="/content/dam/premember/documents/fsa-plan-benefits-pdf"/>
+                        </items>
+                    </general>
+                    <fsaOptions jcr:primaryType="nt:unstructured"
+                                     jcr:title="Options"
+                                     sling:resourceType="granite/ui/components/coral/foundation/container"
+                                     margin="{Boolean}true">
+                        <items jcr:primaryType="nt:unstructured">
+                            <commuterExpenseReimbursementAccount
+                                    jcr:primaryType="nt:unstructured"
+                                    sling:resourceType="granite/ui/components/coral/foundation/form/checkbox"
+                                    name="./commuterExpenseReimbursementAccount"
+                                    text="Commuter Expense Reimbursement Account"
+                                    uncheckedValue="{Boolean}false"
+                                    value="{Boolean}true"/>
+                            <isDebitCardIncluded
+                                    jcr:primaryType="nt:unstructured"
+                                    sling:resourceType="granite/ui/components/coral/foundation/form/checkbox"
+                                    name="./isDebitCardIncluded"
+                                    text="Debit Card Included"
+                                    uncheckedValue="{Boolean}false"
+                                    value="{Boolean}true"/>
+                            <limitedPurposeFsa
+                                    jcr:primaryType="nt:unstructured"
+                                    sling:resourceType="granite/ui/components/coral/foundation/form/checkbox"
+                                    name="./limitedPurposeFsa"
+                                    text="Limited Purpose FSA"
+                                    uncheckedValue="{Boolean}false"
+                                    value="{Boolean}true"/>
+                            <dependentCareFsa
+                                    jcr:primaryType="nt:unstructured"
+                                    sling:resourceType="granite/ui/components/coral/foundation/form/checkbox"
+                                    name="./dependentCareFsa"
+                                    text="Dependent Care FSA"
+                                    uncheckedValue="{Boolean}false"
+                                    value="{Boolean}true"/>
+                            <healthCareFsa
+                                    jcr:primaryType="nt:unstructured"
+                                    sling:resourceType="granite/ui/components/coral/foundation/form/checkbox"
+                                    name="./healthCareFsa"
+                                    text="Health Care FSA"
+                                    uncheckedValue="{Boolean}false"
+                                    value="{Boolean}true"/>
+                            <howCommuterExpenseReimbursementAccountWorks
+                                    jcr:primaryType="nt:unstructured"
+                                    sling:resourceType="granite/ui/components/coral/foundation/form/checkbox"
+                                    name="./howCommuterExpenseReimbursementAccountWorks"
+                                    text="Commuter Expense Reimbursement Account - How a Commuter Expense Reimbursement Account works?"
+                                    uncheckedValue="{Boolean}false"
+                                    value="{Boolean}true"/>
+                            <payingWithTheOptumCommuterCard
+                                    jcr:primaryType="nt:unstructured"
+                                    sling:resourceType="granite/ui/components/coral/foundation/form/checkbox"
+                                    name="./payingWithTheOptumCommuterCard"
+                                    text="Commuter Expense Reimbursement Account - Paying with the Optum Commuter Card"
+                                    uncheckedValue="{Boolean}false"
+                                    value="{Boolean}true"/>
+                            <benefitForRidingBicycleToWork
+                                    jcr:primaryType="nt:unstructured"
+                                    sling:resourceType="granite/ui/components/coral/foundation/form/checkbox"
+                                    name="./benefitForRidingBicycleToWork"
+                                    text="Benefit for riding a bicycle to work"
+                                    uncheckedValue="{Boolean}false"
+                                    value="{Boolean}true"/>
+                        </items>
+                    </fsaOptions>
+                </items>
+            </tabs>
+        </items>
+    </content>
+</jcr:root>

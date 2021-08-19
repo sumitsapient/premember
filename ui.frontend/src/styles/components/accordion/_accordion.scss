@@ -1,0 +1,261 @@
+// Collapse
+// The actual collapse component styles.
+
+$c-collapse-icon-size: $g-spacing-xl;
+$c-collapse-icon-size-w-spacing: ($c-collapse-icon-size + ($g-spacing-xs * 2));
+
+.c-collapse {
+	align-items: center;
+	background: transparent;
+	border: 0;
+	display: flex;
+	font-weight: $font-weight-bold;
+	justify-content: space-between;
+	padding: $g-spacing-sm 0;
+	position: relative;
+	width: 100%;
+
+	@include unity-type('heading', 'h6');
+
+	// because of the questionable original js implementation
+	// pointer-events: none;
+
+	button {
+		background: none;
+		border: 0;
+	}
+
+	&::after {
+		background: none;
+	}
+
+	&::before {
+		@include unity-transition;
+
+		content: '';
+		border-radius: $g-spacing-xs;
+		position: absolute;
+		right: 50%;
+		transform: translateX(50%);
+		background: unity-color('gray');
+		width: 0;
+		top: -1px;
+		bottom: -1px;
+		z-index: 0;
+	}
+
+	&:focus,
+	&:hover {
+		border-radius: $g-spacing-xs;
+		border: 0;
+		outline: 0 !important;
+		cursor: pointer;
+
+		&::before {
+			box-shadow: 0 0 0 2px unity-color('blue', 'digital');
+			width: 100%;
+			width: calc(100% + #{$g-spacing}); /* stylelint-disable declaration-block-no-duplicate-properties */
+		}
+	}
+
+	&[aria-expanded="true"] {
+		.o-svg-icon {
+			transform: rotate(0deg);
+		}
+	}
+
+	.o-svg-icon {
+		@include unity-transition(transform);
+
+		top: 0;
+		transform: rotate(180deg);
+		margin-left: auto;
+		pointer-events: none;
+
+		svg {
+			fill: currentColor;
+			height: $g-spacing-lg;
+			width: $g-spacing-lg;
+		}
+	}
+}
+
+.c-collapse__button-icon {
+	height: $c-collapse-icon-size;
+	width: $c-collapse-icon-size;
+	position: absolute;
+	top: 50%;
+	left: -$c-collapse-icon-size-w-spacing + $g-spacing-xs;
+	transform: translateY(-50%);
+}
+
+.c-collapse__button-text {
+	z-index: 1;
+	pointer-events: none;
+	text-align: left;
+	padding-right: $g-spacing-sm;
+}
+
+// @TODO: Convert to brand accordions from LPM, general cleanup.
+// The legacy styles.
+// .accordionGroup { }
+
+.accordion-list {
+	list-style: none;
+	margin-left: 0;
+	margin-bottom: 0;
+}
+
+.accordion-item {
+	.accordion-title {
+		border-top: 1px solid unity-color('gray', 'dark');
+	}
+
+	&:last-child {
+		.accordion-title {
+			border-bottom: 1px solid unity-color('gray', 'dark');
+		}
+	}
+}
+
+.accordion-title {
+	&--icon {
+		margin-left: $c-collapse-icon-size-w-spacing;
+
+		+ .accordion-body {
+			margin-left: $c-collapse-icon-size-w-spacing;
+		}
+	}
+}
+
+// @todo destroy most if not all of this.
+.accordion-body {
+	@include unity-transition('height', 'slow');
+
+	margin-bottom: 0;
+	height: 0;
+	overflow: hidden;
+
+	&.show {
+		height: auto;
+	}
+
+	.accordion-view-less {
+		background-color: transparent;
+		border: 0;
+		font-weight: 600;
+		text-decoration: none;
+		margin-bottom: $g-spacing-sm;
+		text-align: right;
+		float: right;
+		color: unity-color('blue');
+		width: 60%;
+
+		span {
+			margin-left: $g-spacing-xs;
+			padding: 14px;
+
+			svg {
+				border: 1px solid unity-color('blue');
+				border-radius: 50%;
+			}
+		}
+
+		&:focus {
+			outline: 3px solid unity-color('blue', 'digital');
+			outline-offset: 1px;
+		}
+
+		@include mq(md) {
+			display: none;
+		}
+	}
+}
+
+.accordion-content {
+	padding: $g-spacing-sm 0;
+}
+// variant with accordion styles only on mobile
+.accordion-mobile-only {
+	@include mq(md) {
+		border-bottom: none !important;
+		border-top: none !important;
+		margin-bottom: 10px !important;
+
+		.accordion-item {
+			border: 0 !important; // override :last-child with one selector
+
+			&:last-child {
+				.accordion-title {
+					border: none;
+				}
+			}
+		}
+
+		// Force display of the body content.
+		.accordion-body {
+			display: block;
+			height: 100%;
+		}
+
+		.accordion-content {
+			padding: 0;
+		}
+
+		.c-collapse {
+			@include mq(md) {
+				padding: 0;
+				pointer-events: none;
+			}
+		}
+
+		.c-collapse__button-icon {
+			display: none;
+		}
+
+		.accordion-title {
+			border: none;
+			margin-bottom: $g-spacing-xs !important;
+
+			&--icon {
+				margin-left: 0;
+
+				+ .accordion-body {
+					margin-left: 0;
+				}
+			}
+		}
+	}
+
+	.active .c-icon-box,
+	.c-icon-box,
+	.o-svg-icon {
+		@include mq(md) {
+			display: none;
+		}
+	}
+
+	.c-card.c-card--teal-blue {
+		border-left-width: 10px;
+
+		@include mq($until: md) {
+			border-left: none;
+		}
+	}
+
+	.c-card__body {
+		padding-left: $g-spacing;
+		padding-bottom: 0;
+		padding-right: 0;
+
+		@include mq($until: md) {
+			padding-left: 0;
+		}
+
+		p {
+			@include mq(md) {
+				margin-bottom: 6px;
+			}
+		}
+	}
+}

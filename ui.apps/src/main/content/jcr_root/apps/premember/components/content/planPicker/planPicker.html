@@ -1,0 +1,39 @@
+<div data-sly-use.templates="core/wcm/components/commons/v1/templates.html"
+  class="o-container">
+  <sly data-sly-use.plan="com.mirumagency.uhc.premember.core.models.PlanModel"></sly>
+  <div class="o-grid o-grid--aem-container">
+    <div class="o-grid__item o-grid__item-8@lg">
+      <h1 class="unity-type-h1 u-text-bold" data-sly-test="${!plan.hasMultipleOptions}">${plan.tokens['selectedOption.planName']}</h1>
+      <label data-sly-test="${plan.hasMultipleOptions}" for="plan-picker-select" class="plan-picker__label u-text-uppercase u-text-bold">View a plan</label>
+      <div data-sly-test="${plan.hasMultipleOptions}">
+        <div class="plan-picker__field u-d-inline-block">
+          <h1 class="plan-picker__value u-text-bold">
+            ${plan.tokens['selectedOption.planName']}
+          </h1>
+          <select id="plan-picker-select" class="plan-picker__select u-d-block u-w-100 u-h-100 u-b-0 u-text-bold"
+            aria-label="View a plan (redirects to selected plan details page)"
+            data-sly-list.option="${plan.options}">
+            <option value="plan-details.${option.id}.html" selected="${plan.selectedId == option.id}">${option.tokens['planName']}</option>
+          </select>
+          <span class="plan-picker__dropdown-icon">
+            <svg
+              xmlns="http://www.w3.org/2000/svg"
+              xmlns:xlink="http://www.w3.org/1999/xlink"
+              viewBox="0 0 48 48"
+              role="presentation"
+              focusable="false"
+              class="plan-picker__select-icon">
+              <path d=" M 38.688 12.407 L 24 26.738 L 9.312 12.407 L 4.8 16.819 L 24 35.593 L 43.2 16.819 L 38.688 12.407 Z "
+                fill="currentColor"/>
+            </svg>
+          </span>
+        </div>
+      </div>
+    </div>
+    <div data-sly-test="${plan.tokens['selectedOption.fullBenefitsLink']}" class="o-grid__item o-grid__item-12 o-grid__item-4@lg u-d-flex@lg u-f-align-end">
+      <a href="${plan.tokens['selectedOption.fullBenefitsLink']}" class="plan-picker__link c-button c-button--primary c-button--naked" data-event-type="download" data-event-name="view_full_benefits" x-cq-linkchecker="valid">
+        View full benefits PDF
+      </a>
+    </div>
+  </div>
+</div>

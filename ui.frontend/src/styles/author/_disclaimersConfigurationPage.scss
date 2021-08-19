@@ -1,0 +1,11 @@
+.cq-Editable-dom {
+	&.disclaimer-list {
+		width: 100% !important;
+		border: none;
+
+		.disclaimer-list-item {
+			padding-top: 1rem;
+			padding-bottom: 1px;
+		}
+	}
+}

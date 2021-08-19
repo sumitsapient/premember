@@ -1,0 +1,267 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<jcr:root xmlns:sling="http://sling.apache.org/jcr/sling/1.0" xmlns:cq="http://www.day.com/jcr/cq/1.0" xmlns:jcr="http://www.jcp.org/jcr/1.0" xmlns:nt="http://www.jcp.org/jcr/nt/1.0"
+    jcr:primaryType="cq:Page">
+    <jcr:content
+        cq:template="/conf/premember/settings/wcm/templates/component-page-template"
+        jcr:primaryType="cq:PageContent"
+        jcr:title="AC09: Tabbed Content"
+        sling:resourceType="premember/components/structure/page"
+        hideAnchorNavigation="true">
+        <root
+            jcr:primaryType="nt:unstructured"
+            sling:resourceType="wcm/foundation/components/responsivegrid">
+            <responsivegrid
+                jcr:primaryType="nt:unstructured"
+                sling:resourceType="wcm/foundation/components/responsivegrid">
+                <container
+                    jcr:primaryType="nt:unstructured"
+                    sling:resourceType="premember/components/structure/layout/container">
+                    <grid
+                        jcr:primaryType="nt:unstructured"
+                        sling:resourceType="premember/components/structure/layout/grid">
+                        <column
+                            cq:styleIds="1535504120544"
+                            jcr:primaryType="nt:unstructured"
+                            sling:resourceType="premember/components/structure/layout/column">
+                            <title
+                                cq:styleIds="1535476288921"
+                                jcr:primaryType="nt:unstructured"
+                                jcr:title="Standard"
+                                sling:resourceType="premember/components/content/title"
+                                type="h3"/>
+                            <tabs
+                                jcr:primaryType="nt:unstructured"
+                                sling:resourceType="premember/components/content/tabs">
+                                <item_1
+                                    jcr:primaryType="nt:unstructured"
+                                    jcr:title="Tab 1"
+                                    sling:resourceType="premember/components/structure/layout/grid">
+                                    <column
+                                        jcr:primaryType="nt:unstructured"
+                                        sling:resourceType="premember/components/structure/layout/column">
+                                        <text
+                                            jcr:primaryType="nt:unstructured"
+                                            sling:resourceType="premember/components/content/text"
+                                            text="&lt;p>Tab 1 content ...&lt;/p>&#xa;&lt;p>Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat.&lt;/p>&#xa;"
+                                            textIsRich="true"/>
+                                    </column>
+                                </item_1>
+                                <item_2
+                                    jcr:primaryType="nt:unstructured"
+                                    jcr:title="Tab 2"
+                                    sling:resourceType="premember/components/structure/layout/grid">
+                                    <column
+                                        jcr:primaryType="nt:unstructured"
+                                        sling:resourceType="premember/components/structure/layout/column">
+                                        <text
+                                            jcr:primaryType="nt:unstructured"
+                                            sling:resourceType="premember/components/content/text"
+                                            text="&lt;p>Tab 2 content ...&lt;/p>&#xd;&#xa;&lt;p>Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat.&lt;/p>&#xd;&#xa;"
+                                            textIsRich="true"/>
+                                    </column>
+                                </item_2>
+                            </tabs>
+                        </column>
+                    </grid>
+                    <grid_copy
+                        jcr:primaryType="nt:unstructured"
+                        sling:resourceType="premember/components/structure/layout/grid">
+                        <column
+                            cq:styleIds="1535504120544"
+                            jcr:primaryType="nt:unstructured"
+                            sling:resourceType="premember/components/structure/layout/column">
+                            <separator
+                                jcr:primaryType="nt:unstructured"
+                                sling:resourceType="premember/components/content/separator"/>
+                            <title
+                                cq:styleIds="[1535476288921]"
+                                jcr:primaryType="nt:unstructured"
+                                jcr:title="Active Item"
+                                sling:resourceType="premember/components/content/title"
+                                type="h3"/>
+                            <text_copy
+                                jcr:primaryType="nt:unstructured"
+                                sling:resourceType="premember/components/content/text"
+                                text="&lt;p>&lt;span class=&quot;unity-type-small&quot;>* tab 2 should be selected by default&lt;/span>&lt;/p>&#xd;&#xa;"
+                                textIsRich="true"/>
+                            <tabs
+                                jcr:primaryType="nt:unstructured"
+                                sling:resourceType="premember/components/content/tabs"
+                                activeItem="item_2">
+                                <item_1
+                                    cq:panelTitle="Tab 1"
+                                    jcr:primaryType="nt:unstructured"
+                                    jcr:title="Tab 1"
+                                    sling:resourceType="premember/components/structure/layout/grid">
+                                    <column
+                                        jcr:primaryType="nt:unstructured"
+                                        sling:resourceType="premember/components/structure/layout/column">
+                                        <text
+                                            jcr:primaryType="nt:unstructured"
+                                            sling:resourceType="premember/components/content/text"
+                                            text="&lt;p>Tab 1 content ...&lt;/p>&#xa;&lt;p>Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat.&lt;/p>&#xa;"
+                                            textIsRich="true"/>
+                                    </column>
+                                </item_1>
+                                <item_2
+                                    cq:panelTitle="Tab 2"
+                                    jcr:primaryType="nt:unstructured"
+                                    jcr:title="Tab 2"
+                                    sling:resourceType="premember/components/structure/layout/grid">
+                                    <column
+                                        jcr:primaryType="nt:unstructured"
+                                        sling:resourceType="premember/components/structure/layout/column">
+                                        <text
+                                            jcr:primaryType="nt:unstructured"
+                                            sling:resourceType="premember/components/content/text"
+                                            text="&lt;p>Tab 2 content ...&lt;/p>&#xd;&#xa;&lt;p>Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat.&lt;/p>&#xd;&#xa;"
+                                            textIsRich="true"/>
+                                    </column>
+                                </item_2>
+                                <item_1586200771081
+                                    cq:panelTitle="Tab 3"
+                                    jcr:primaryType="nt:unstructured"
+                                    sling:resourceType="premember/components/structure/layout/grid">
+                                    <column
+                                        jcr:primaryType="nt:unstructured"
+                                        sling:resourceType="premember/components/structure/layout/column">
+                                        <text_copy
+                                            jcr:primaryType="nt:unstructured"
+                                            sling:resourceType="premember/components/content/text"
+                                            text="&lt;p>Tab 3 content ...&lt;/p>&#xd;&#xa;&lt;p>Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat.&lt;/p>&#xd;&#xa;"
+                                            textIsRich="true"/>
+                                    </column>
+                                </item_1586200771081>
+                                <item_1586200776565
+                                    cq:panelTitle="Tab 4"
+                                    jcr:primaryType="nt:unstructured"
+                                    sling:resourceType="premember/components/structure/layout/grid">
+                                    <column
+                                        jcr:primaryType="nt:unstructured"
+                                        sling:resourceType="premember/components/structure/layout/column">
+                                        <text_copy_copy
+                                            jcr:primaryType="nt:unstructured"
+                                            sling:resourceType="premember/components/content/text"
+                                            text="&lt;p>Tab 4 content ...&lt;/p>&#xd;&#xa;&lt;p>Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat.&lt;/p>&#xd;&#xa;"
+                                            textIsRich="true"/>
+                                    </column>
+                                </item_1586200776565>
+                            </tabs>
+                        </column>
+                    </grid_copy>
+                    <grid_422228399
+                        jcr:primaryType="nt:unstructured"
+                        sling:resourceType="premember/components/structure/layout/grid">
+                        <column
+                            cq:styleIds="[1535504120544]"
+                            jcr:primaryType="nt:unstructured"
+                            sling:resourceType="premember/components/structure/layout/column">
+                            <separator
+                                jcr:primaryType="nt:unstructured"
+                                sling:resourceType="premember/components/content/separator"/>
+                            <title
+                                cq:styleIds="[1535476288921]"
+                                jcr:primaryType="nt:unstructured"
+                                jcr:title="Accessibility"
+                                sling:resourceType="premember/components/content/title"
+                                type="h3"/>
+                        </column>
+                        <column_copy
+                            cq:styleIds="1535504120544"
+                            jcr:primaryType="nt:unstructured"
+                            sling:resourceType="premember/components/structure/layout/column">
+                            <text
+                                jcr:primaryType="nt:unstructured"
+                                sling:resourceType="premember/components/content/text"
+                                text="&lt;p>&lt;span class=&quot;unity-type-small&quot;>* adds aria attribute to describe tabs&lt;/span>&lt;/p>&#xd;&#xa;"
+                                textIsRich="true"/>
+                            <tabs
+                                jcr:primaryType="nt:unstructured"
+                                sling:resourceType="premember/components/content/tabs"
+                                accessibilityLabel="This label describes the purpose of this tab set">
+                                <item_1
+                                    cq:panelTitle="Tab 1"
+                                    jcr:primaryType="nt:unstructured"
+                                    jcr:title="Tab 1"
+                                    sling:resourceType="premember/components/structure/layout/grid">
+                                    <column
+                                        jcr:primaryType="nt:unstructured"
+                                        sling:resourceType="premember/components/structure/layout/column">
+                                        <text
+                                            jcr:primaryType="nt:unstructured"
+                                            sling:resourceType="premember/components/content/text"
+                                            text="&lt;p>Tab 1 content ...&lt;/p>&#xa;&lt;p>Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat.&lt;/p>&#xa;"
+                                            textIsRich="true"/>
+                                    </column>
+                                </item_1>
+                                <item_2
+                                    cq:panelTitle="Tab 2"
+                                    jcr:primaryType="nt:unstructured"
+                                    jcr:title="Tab 2"
+                                    sling:resourceType="premember/components/structure/layout/grid">
+                                    <column
+                                        jcr:primaryType="nt:unstructured"
+                                        sling:resourceType="premember/components/structure/layout/column">
+                                        <text
+                                            jcr:primaryType="nt:unstructured"
+                                            sling:resourceType="premember/components/content/text"
+                                            text="&lt;p>Tab 2 content ...&lt;/p>&#xd;&#xa;&lt;p>Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat.&lt;/p>&#xd;&#xa;"
+                                            textIsRich="true"/>
+                                    </column>
+                                </item_2>
+                            </tabs>
+                        </column_copy>
+                    </grid_422228399>
+                </container>
+            </responsivegrid>
+            <siteexitmodal
+                jcr:primaryType="nt:unstructured"
+                sling:resourceType="premember/components/content/siteExitModal"
+                buttonText="Continue"
+                includeCancelButton="true"
+                titleText="You're leaving the site."/>
+            <container
+                jcr:primaryType="nt:unstructured"
+                sling:resourceType="premember/components/structure/layout/container">
+                <grid
+                    jcr:primaryType="nt:unstructured"
+                    sling:resourceType="premember/components/structure/layout/grid">
+                    <column_1858863830
+                        jcr:primaryType="nt:unstructured"
+                        sling:resourceType="premember/components/structure/layout/column"/>
+                </grid>
+            </container>
+            <container_1022714131
+                jcr:primaryType="nt:unstructured"
+                sling:resourceType="premember/components/structure/layout/container">
+                <grid
+                    jcr:primaryType="nt:unstructured"
+                    sling:resourceType="premember/components/structure/layout/grid">
+                    <column
+                        cq:styleIds="[1535504120544,1536104009181]"
+                        jcr:primaryType="nt:unstructured"
+                        sling:resourceType="premember/components/structure/layout/column">
+                        <text
+                            jcr:primaryType="nt:unstructured"
+                            sling:resourceType="premember/components/content/text"
+                            text="&lt;p>This is a container that splits content into multiple &amp;quot;tabs&amp;quot;.&lt;/p>&#xd;&#xa;"
+                            textIsRich="true"/>
+                        <button
+                            jcr:primaryType="nt:unstructured"
+                            sling:resourceType="premember/components/content/button"
+                            fullWidth="false"
+                            fullWidthMobile="false"
+                            hiddenText="button"
+                            href="https://confluence.uhub.biz/display/MIRMINUPMR/AC09%3A+Tabbed+Content"
+                            inverse="false"
+                            naked="false"
+                            newTab="true"
+                            siteExitModalTrigger="false"
+                            text="Confluence Page"
+                            type="c-button--primary"/>
+                    </column>
+                </grid>
+            </container_1022714131>
+        </root>
+    </jcr:content>
+</jcr:root>

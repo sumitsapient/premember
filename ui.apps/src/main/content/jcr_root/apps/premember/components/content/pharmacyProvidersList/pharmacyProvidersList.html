@@ -1,0 +1,18 @@
+<p data-sly-test="${wcmmode.edit}">Pharmacy Provider List Component</p>
+<div class="aem-component"
+     data-sly-use.templates="core/wcm/components/commons/v1/templates.html"
+    data-sly-use.model="com.mirumagency.uhc.premember.core.models.PharmacyProviderList">
+
+    <div>
+        <div data-sly-use.template="pharmacyProviderButton.html"
+             data-sly-call="${template.pharmacyProviderButton @ link=model.tokens['selectedOption.pharmacyLink'], text=model.tokens['selectedOption.pharmacyLinkLabel']}"></div>
+        <div data-sly-use.template="pharmacyProviderButton.html"
+             data-sly-call="${template.pharmacyProviderButton @ link=model.tokens['selectedOption.pharmacyLinkTwo'], text=model.tokens['selectedOption.pharmacyLinkLabelTwo']}"></div>
+        <div data-sly-use.template="pharmacyProviderButton.html"
+             data-sly-call="${template.pharmacyProviderButton @ link=model.tokens['selectedOption.pharmacyLinkThree'], text=model.tokens['selectedOption.pharmacyLinkLabelThree']}"></div>
+        <div data-sly-use.template="pharmacyProviderButton.html"
+             data-sly-call="${template.pharmacyProviderButton @ link=model.tokens['selectedOption.pharmacyLinkFour'], text=model.tokens['selectedOption.pharmacyLinkLabelFour']}"></div>
+        <div data-sly-use.template="pharmacyProviderButton.html"
+             data-sly-call="${template.pharmacyProviderButton @ link=model.tokens['selectedOption.pharmacyLinkFive'], text=model.tokens['selectedOption.pharmacyLinkLabelFive']}"></div>
+    </div>
+</div>

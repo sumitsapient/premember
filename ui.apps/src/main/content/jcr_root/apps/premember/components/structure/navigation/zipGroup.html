@@ -1,0 +1,37 @@
+<div class="c-navigation__menu u-p-horiz-sm u-d-none" id="zip-menu">
+	<div class="c-navigation__menu-actions">
+		<!--/* Close Button	*/-->
+		<button class="c-button-close">
+			<span class="o-svg-icon o-svg-icon--lg">
+				<svg viewBox="0, 0, 24, 24" focusable="false" shape-rendering="geometricPrecision">
+					<path d="M22.792,3.382 L20.618,1.208 L12,9.826 L3.382,1.208 L1.208,3.382 L9.826,12 L1.208,20.618 L3.382,22.792 L12,14.174 L20.618,22.792 L22.792,20.618 L14.174,12 z" fill="currentColor"></path>
+				</svg>
+			</span>
+			<span class="u-visually-hidden">${'Close' @ i18n}</span>
+		</button>
+	</div>
+	<!--/* Zip Form */-->
+	<form id="zip-menu-form">
+		<h2 class="unity-type-h2 u-m-b-xxs">
+			Enter your ZIP Code for local benefits
+		</h2>
+		<p>
+			If you're located outside of the Contiguous United States enter 99999.
+		</p>
+		<div class="c-input-group c-navigation__zip-form">
+			<label for="zip-menu-input">ZIP Code</label>
+			<input id="zip-menu-input" name="zip-code" class="c-input c-input-group__input c-zip-code-input" type="text">
+			<div class="c-input-group__append">
+				<button class="c-button" type="submit">
+					Submit
+				</button>
+			</div>
+		</div>
+		<div
+			id="zipSearch__error"
+			role="alert"
+			aria-live="assertive"
+			class="zipSearch__error js-zip-search__error u-color-red"
+		></div>
+	</form>
+</div>

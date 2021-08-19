@@ -1,0 +1,294 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<jcr:root xmlns:sling="http://sling.apache.org/jcr/sling/1.0"
+          xmlns:jcr="http://www.jcp.org/jcr/1.0"
+          xmlns:nt="http://www.jcp.org/jcr/nt/1.0"
+          xmlns:granite="http://www.adobe.com/jcr/granite/1.0"
+          jcr:primaryType="nt:unstructured"
+          jcr:title="Plan Type"
+          sling:resourceType="cq/gui/components/authoring/dialog">
+    <content
+        jcr:primaryType="nt:unstructured"
+        sling:resourceType="granite/ui/components/coral/foundation/container">
+        <items jcr:primaryType="nt:unstructured">
+            <tabs
+                jcr:primaryType="nt:unstructured"
+                sling:resourceType="granite/ui/components/coral/foundation/tabs"
+                maximized="{Boolean}true">
+                <items jcr:primaryType="nt:unstructured">
+                    <labels
+                        jcr:primaryType="nt:unstructured"
+                        jcr:title="Plan Comparison Labels"
+                        sling:resourceType="granite/ui/components/coral/foundation/container"
+                        margin="{Boolean}true">
+                        <items jcr:primaryType="nt:unstructured">
+                            <columns
+                                jcr:primaryType="nt:unstructured"
+                                sling:resourceType="granite/ui/components/coral/foundation/fixedcolumns"
+                                margin="{Boolean}true">
+                                <items jcr:primaryType="nt:unstructured">
+                                    <planCosts
+                                        jcr:primaryType="nt:unstructured"
+                                        margin="{Boolean}true"
+                                        sling:resourceType="granite/ui/components/coral/foundation/container">
+                                        <items jcr:primaryType="nt:unstructured">
+                                            <heading
+                                                granite:class="coral-Heading coral-Heading--4"
+                                                jcr:primaryType="nt:unstructured"
+                                                sling:resourceType="granite/ui/components/coral/foundation/heading"
+                                                level="{Long}4"
+                                                text="Plan Costs"/>
+                                            <well
+                                                granite:class="cmp-healthPlan__editor-row"
+                                                jcr:primaryType="nt:unstructured"
+                                                sling:resourceType="granite/ui/components/coral/foundation/well">
+                                                <items jcr:primaryType="nt:unstructured">
+                                                    <planCostsTitle
+                                                        jcr:primaryType="nt:unstructured"
+                                                        sling:resourceType="granite/ui/components/coral/foundation/form/textfield"
+                                                        fieldLabel="Title"
+                                                        maxlength="255"
+                                                        name="./labels/planCostsTitle"
+                                                        value="Health Plant Costs"/>
+                                                    <planCostsSubtitle
+                                                        jcr:primaryType="nt:unstructured"
+                                                        sling:resourceType="granite/ui/components/coral/foundation/form/textfield"
+                                                        fieldLabel="Subtitle"
+                                                        maxlength="255"
+                                                        name="./labels/planCostsSubtitle"
+                                                        value="Amounts You Pay"/>
+                                                    <planCostsDeductibleTitle
+                                                        jcr:primaryType="nt:unstructured"
+                                                        sling:resourceType="granite/ui/components/coral/foundation/form/textfield"
+                                                        fieldLabel="Deductible"
+                                                        maxlength="255"
+                                                        name="./labels/planCostsDeductibleTitle"
+                                                        value="Deductible"/>
+                                                    <planCostsDeductibleDescription
+                                                        jcr:primaryType="nt:unstructured"
+                                                        sling:resourceType="granite/ui/components/coral/foundation/form/textfield"
+                                                        fieldLabel="Deductible Description"
+                                                        name="./labels/planCostsDeductibleDescription"
+                                                        value="Amount you pay before your plan starts sharing costs."/>
+                                                    <planCostsAnnualMaximumTitle
+                                                        jcr:primaryType="nt:unstructured"
+                                                        sling:resourceType="granite/ui/components/coral/foundation/form/textfield"
+                                                        fieldLabel="Annual Maximum"
+                                                        maxlength="255"
+                                                        metaType="text-single"
+                                                        name="./labels/planCostsAnnualMaximumTitle"
+                                                        value="Annual Maximum"
+                                                        valueType="string"/>
+                                                    <planCostsAnnualMaximumDescription
+                                                        jcr:primaryType="nt:unstructured"
+                                                        sling:resourceType="granite/ui/components/coral/foundation/form/textfield"
+                                                        fieldLabel="Annual Maximum Description"
+                                                        name="./labels/planCostsAnnualMaximumDescription"
+                                                        value="The maximum dollar amount your plan will cover each plan year."/>
+                                                </items>
+                                            </well>
+                                        </items>
+                                    </planCosts>
+                                    <preventiveCare
+                                            jcr:primaryType="nt:unstructured"
+                                            margin="{Boolean}true"
+                                            sling:resourceType="granite/ui/components/coral/foundation/container">
+                                        <items jcr:primaryType="nt:unstructured">
+                                            <heading
+                                                granite:class="coral-Heading coral-Heading--4"
+                                                jcr:primaryType="nt:unstructured"
+                                                sling:resourceType="granite/ui/components/coral/foundation/heading"
+                                                level="{Long}4"
+                                                text="Preventive Care"/>
+                                            <well
+                                                granite:class="cmp-healthPlan__editor-row"
+                                                jcr:primaryType="nt:unstructured"
+                                                sling:resourceType="granite/ui/components/coral/foundation/well">
+                                                <items jcr:primaryType="nt:unstructured">
+                                                    <preventiveCareTitle
+                                                        jcr:primaryType="nt:unstructured"
+                                                        sling:resourceType="granite/ui/components/coral/foundation/form/textfield"
+                                                        fieldLabel="Title"
+                                                        maxlength="255"
+                                                        metaType="text-single"
+                                                        name="./labels/preventiveCareTitle"
+                                                        value="Preventive Care"
+                                                        valueType="string"/>
+                                                    <preventiveCareSubtitle
+                                                        jcr:primaryType="nt:unstructured"
+                                                        sling:resourceType="granite/ui/components/coral/foundation/form/textfield"
+                                                        fieldLabel="Subtitle"
+                                                        maxlength="255"
+                                                        metaType="text-single"
+                                                        name="./labels/preventiveCareSubtitle"
+                                                        value="What Your Plan Pays"
+                                                        valueType="string"/>
+                                                </items>
+                                            </well>
+                                        </items>
+                                    </preventiveCare>
+                                    <medicalCare
+                                        jcr:primaryType="nt:unstructured"
+                                        margin="{Boolean}true"
+                                        sling:resourceType="granite/ui/components/coral/foundation/container">
+                                        <items jcr:primaryType="nt:unstructured">
+                                            <heading
+                                                granite:class="coral-Heading coral-Heading--4"
+                                                jcr:primaryType="nt:unstructured"
+                                                sling:resourceType="granite/ui/components/coral/foundation/heading"
+                                                level="{Long}4"
+                                                text="Medical Care"/>
+                                             <well
+                                                granite:class="cmp-healthPlan__editor-row"
+                                                jcr:primaryType="nt:unstructured"
+                                                sling:resourceType="granite/ui/components/coral/foundation/well">
+                                                <items jcr:primaryType="nt:unstructured">
+                                                    <medicalCareTitle
+                                                        jcr:primaryType="nt:unstructured"
+                                                        sling:resourceType="granite/ui/components/coral/foundation/form/textfield"
+                                                        fieldLabel="Title"
+                                                        maxlength="255"
+                                                        metaType="text-single"
+                                                        name="./labels/medicalCareTitle"
+                                                        value="Medical Care"
+                                                        valueType="string"/>
+                                                    <medicalCareSubtitle
+                                                        jcr:primaryType="nt:unstructured"
+                                                        sling:resourceType="granite/ui/components/coral/foundation/form/textfield"
+                                                        fieldLabel="Subtitle"
+                                                        maxlength="255"
+                                                        metaType="text-single"
+                                                        name="./labels/medicalCareSubtitle"
+                                                        value="What Your Plan Pays"
+                                                        valueType="string"/>
+                                                    <medicalCareDiagnosticServices
+                                                        jcr:primaryType="nt:unstructured"
+                                                        sling:resourceType="granite/ui/components/coral/foundation/form/textfield"
+                                                        fieldLabel="Diagnostic Services"
+                                                        maxlength="255"
+                                                        metaType="text-single"
+                                                        name="./labels/medicalCareDiagnosticServices"
+                                                        value="Diagnostic Services"
+                                                        valueType="string"/>
+                                                    <medicalCarePreventiveServices
+                                                        jcr:primaryType="nt:unstructured"
+                                                        sling:resourceType="granite/ui/components/coral/foundation/form/textfield"
+                                                        fieldLabel="Preventive Services"
+                                                        maxlength="255"
+                                                        metaType="text-single"
+                                                        name="./labels/medicalCarePreventiveServices"
+                                                        value="Preventive Services"
+                                                        valueType="string"/>
+                                                    <medicalCareIntermediateServices
+                                                        jcr:primaryType="nt:unstructured"
+                                                        sling:resourceType="granite/ui/components/coral/foundation/form/textfield"
+                                                        fieldLabel="Intermediate Services"
+                                                        maxlength="255"
+                                                        metaType="text-single"
+                                                        name="./labels/medicalCareIntermediateServices"
+                                                        value="Intermediate Services"
+                                                        valueType="string"/>
+                                                    <medicalCareMayorServices
+                                                        jcr:primaryType="nt:unstructured"
+                                                        sling:resourceType="granite/ui/components/coral/foundation/form/textfield"
+                                                        fieldLabel="Mayor Services"
+                                                        maxlength="255"
+                                                        metaType="text-single"
+                                                        name="./labels/medicalCareMayorServices"
+                                                        value="Mayor Services"
+                                                        valueType="string"/>
+                                                    <medicalCareAnnualMaximumsForA
+                                                        jcr:primaryType="nt:unstructured"
+                                                        sling:resourceType="granite/ui/components/coral/foundation/form/textfield"
+                                                        fieldLabel="Annual Maximums For A ($)"
+                                                        maxlength="255"
+                                                        metaType="text-single"
+                                                        name="./labels/medicalCareAnnualMaximumsForA"
+                                                        value="Annual Maximums For A ($)"
+                                                        valueType="string"/>
+                                                    <medicalCareAnnualMaximumsForB
+                                                        jcr:primaryType="nt:unstructured"
+                                                        sling:resourceType="granite/ui/components/coral/foundation/form/textfield"
+                                                        fieldLabel="Annual Maximums For B ($)"
+                                                        maxlength="255"
+                                                        metaType="text-single"
+                                                        name="./labels/medicalCareAnnualMaximumsForB"
+                                                        value="Annual Maximums For B ($)"
+                                                        valueType="string"/>
+                                                    <medicalCareAnnualMaximumsForC
+                                                        jcr:primaryType="nt:unstructured"
+                                                        sling:resourceType="granite/ui/components/coral/foundation/form/textfield"
+                                                        fieldLabel="Annual Maximums For C ($)"
+                                                        maxlength="255"
+                                                        metaType="text-single"
+                                                        name="./labels/medicalCareAnnualMaximumsForC"
+                                                        value="Annual Maximums For C ($)"
+                                                        valueType="string"/>
+                                                    <medicalCareAnnualMaximumsForD
+                                                            jcr:primaryType="nt:unstructured"
+                                                            sling:resourceType="granite/ui/components/coral/foundation/form/textfield"
+                                                            fieldLabel="Annual Maximums For D ($)"
+                                                            maxlength="255"
+                                                            metaType="text-single"
+                                                            name="./labels/medicalCareAnnualMaximumsForD"
+                                                            value="Annual Maximums For D * ($)"
+                                                            valueType="string"/>
+                                                    <medicalCareOrthodonticServices
+                                                        jcr:primaryType="nt:unstructured"
+                                                        sling:resourceType="granite/ui/components/coral/foundation/form/textfield"
+                                                        fieldLabel="Orthodontic Services"
+                                                        maxlength="255"
+                                                        metaType="text-single"
+                                                        name="./labels/medicalCareOrthodonticServices"
+                                                        value="Orthodontic Services"
+                                                        valueType="string"/>
+                                                </items>
+                                             </well>
+                                        </items>
+                                    </medicalCare>
+                                    <morePlanInfo
+                                        jcr:primaryType="nt:unstructured"
+                                        margin="{Boolean}true"
+                                        sling:resourceType="granite/ui/components/coral/foundation/container">
+                                        <items jcr:primaryType="nt:unstructured">
+                                            <heading
+                                                granite:class="coral-Heading coral-Heading--4"
+                                                jcr:primaryType="nt:unstructured"
+                                                sling:resourceType="granite/ui/components/coral/foundation/heading"
+                                                level="{Long}4"
+                                                text="More Plan Information"/>
+                                            <well
+                                                granite:class="cmp-healthPlan__editor-row"
+                                                jcr:primaryType="nt:unstructured"
+                                                sling:resourceType="granite/ui/components/coral/foundation/well">
+                                                <items jcr:primaryType="nt:unstructured">
+                                                    <meorePlanInfoTitle
+                                                        jcr:primaryType="nt:unstructured"
+                                                        sling:resourceType="granite/ui/components/coral/foundation/form/textfield"
+                                                        fieldLabel="Title"
+                                                        maxlength="255"
+                                                        metaType="text-single"
+                                                        name="./labels/morePlanInfoTitle"
+                                                        value="More Plan Information"
+                                                        valueType="string"/>
+                                                    <morePlanInfoBenefits
+                                                        jcr:primaryType="nt:unstructured"
+                                                        sling:resourceType="granite/ui/components/coral/foundation/form/textfield"
+                                                        fieldLabel="Benefits"
+                                                        maxlength="255"
+                                                        metaType="text-single"
+                                                        name="./labels/morePlanInfoBenefits"
+                                                        value="More benefits information"
+                                                        valueType="string"/>
+                                                </items>
+                                            </well>
+                                        </items>
+                                    </morePlanInfo>
+                                </items>
+                            </columns>
+                        </items>
+                    </labels>
+                </items>
+            </tabs>
+        </items>
+    </content>
+</jcr:root>

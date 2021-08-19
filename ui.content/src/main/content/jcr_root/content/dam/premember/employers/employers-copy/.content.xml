@@ -1,0 +1,55 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<jcr:root xmlns:dam="http://www.day.com/dam/1.0" xmlns:cq="http://www.day.com/jcr/cq/1.0" xmlns:jcr="http://www.jcp.org/jcr/1.0" xmlns:mix="http://www.jcp.org/jcr/mix/1.0" xmlns:nt="http://www.jcp.org/jcr/nt/1.0"
+    jcr:mixinTypes="[mix:referenceable]"
+    jcr:primaryType="dam:Asset">
+    <jcr:content
+        cq:name="employers-copy"
+        cq:parentPath="/content/dam/premember/employers"
+        jcr:description=""
+        jcr:primaryType="dam:AssetContent"
+        jcr:title="Employers Copy"
+        contentFragment="{Boolean}true"
+        lastFragmentSave="{Date}2020-06-26T16:18:58.465Z">
+        <data
+            cq:model="/conf/premember/employers-copy/settings/dam/cfm/models/employers-copy"
+            jcr:primaryType="nt:unstructured">
+            <master
+                jcr:mixinTypes="[cq:Taggable]"
+                jcr:primaryType="nt:unstructured"
+                healthcare101Option1Description="&lt;p>Learn the basics on how health plans work — from often-seen terms to frequently-used services.&lt;/p>&#xa;"
+                healthcare101Option1Link="/content/premember/employer-blueprint/en/home/benefits.html#health_care_101-tab"
+                healthcare101Option1LinkCopy="See the Video"
+                healthcare101Option1Title="Want to polish up your health plan knowledge?"
+                healthcare101Option2Description="&lt;p>Take a few minutes to learn about the plans&amp;nbsp;that are being made&amp;nbsp;available to you.&lt;/p>&#xa;"
+                healthcare101Option2Link="https://example.com/some-video-pdf"
+                healthcare101Option2LinkCopy="See the (Video/PDF)"
+                healthcare101Option2Title="Want an introduction to the plan(s) being offered?"
+                homePageHeroOption1Description="&lt;p>This website is a simple way to learn about the benefits and services offered through (employer name)&amp;nbsp;and (UnitedHealthcare / Oxford). We hope the information will help you as you think about your health care needs and make your benefit decisions.&lt;/p>&#xa;"
+                homePageHeroOption1Link="/content/premember/employers/demo/basic-employer/en/home"
+                homePageHeroOption1LinkCopy="Click here (1)"
+                homePageHeroOption2Description="&lt;p>{employerData.employerName} is offering benefits to help you prepare for every part of your life — to help you&amp;nbsp;live healthier, save for the future and live life to the fullest. UnitedHealthcare created this site to offer an overview of the&amp;nbsp;&lt;i>{homePageHero.planList}&amp;nbsp;&lt;/i>benefits and wellness services offered to you.&lt;/p>&#xa;"
+                homePageHeroOption2Link="/content/premember/employers/demo/basic-employer/en/home"
+                homePageHeroOption2LinkCopy="Click here (2)"
+                promotionalSpace1Option1Description="&lt;p>Learn the basics on how health plans work —&amp;nbsp;from often-seen terms to frequently-used services.&lt;/p>&#xa;"
+                promotionalSpace1Option1Link="https://uhc.com"
+                promotionalSpace1Option1LinkCopy="See the Video"
+                promotionalSpace1Option1Title="Want to polish up your health plan knowledge?"
+                promotionalSpace1Option2Description="&lt;p>Take a few minutes to learn about the plans (your employer) is making available to you.&lt;/p>&#xa;"
+                promotionalSpace1Option2Link="https://uhc.com"
+                promotionalSpace1Option2LinkCopy="See the Video"
+                promotionalSpace1Option2Title="Want an introduction to the plan(s) being offered?"
+                promotionalSpace2Option1Description="&lt;p>You'll have access to personal services and clinical support - whether you're simply looking for information or are trying to manage a health condition.&lt;/p>&#xa;"
+                promotionalSpace2Option1Link="https://uhc.com"
+                promotionalSpace2Option1LinkCopy="Explore manage your care"
+                promotionalSpace2Option1Title="UnitedHealthcare care and support services"
+                promotionalSpace2Option2Description="&lt;p>Stay connected to your health anywhere you go with your personal website,&amp;nbsp;myuhc.com®, and the&amp;nbsp;UnitedHealthcare®&amp;nbsp;app, your mobile home for on-the-go info.&lt;/p>&#xa;"
+                promotionalSpace2Option2Link="https://uhc.com"
+                promotionalSpace2Option2LinkCopy="Explore manage your plan"
+                promotionalSpace2Option2Title="UnitedHealthcare digital tools"/>
+        </data>
+        <metadata
+            jcr:mixinTypes="[cq:Taggable]"
+            jcr:primaryType="nt:unstructured"/>
+        <related jcr:primaryType="nt:unstructured"/>
+    </jcr:content>
+</jcr:root>

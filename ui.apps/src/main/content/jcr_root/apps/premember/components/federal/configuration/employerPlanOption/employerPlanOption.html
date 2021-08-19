@@ -1,0 +1,10 @@
+<sly data-sly-use.employerPlan="com.mirumagency.uhc.premember.core.models.federal.EmployerPlanOption">
+  <div data-sly-test="${employerPlan.id}">
+		<p><strong>Plan Type:</strong> ${employerPlan.name}</p>
+		<p><strong>ID:</strong> ${employerPlan.id}</p>
+  </div>
+  <div data-sly-test="${!employerPlan.id}">
+		<p>Plan Type is not configured</p>
+  </div>
+</sly>
+

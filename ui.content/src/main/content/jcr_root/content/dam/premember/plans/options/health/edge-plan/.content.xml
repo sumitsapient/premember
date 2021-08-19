@@ -1,0 +1,61 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<jcr:root xmlns:dam="http://www.day.com/dam/1.0" xmlns:cq="http://www.day.com/jcr/cq/1.0" xmlns:jcr="http://www.jcp.org/jcr/1.0" xmlns:mix="http://www.jcp.org/jcr/mix/1.0" xmlns:nt="http://www.jcp.org/jcr/nt/1.0"
+    jcr:mixinTypes="[mix:referenceable]"
+    jcr:primaryType="dam:Asset">
+    <jcr:content
+        cq:name="edge-plan"
+        cq:parentPath="/content/dam/premember/plans/options/health"
+        jcr:description=""
+        jcr:primaryType="dam:AssetContent"
+        jcr:title="Edge Plan"
+        contentFragment="{Boolean}true"
+        lastFragmentSave="{Date}2020-06-25T05:50:35.721Z">
+        <data
+            cq:model="/conf/premember/health-option/settings/dam/cfm/models/health-plan-option"
+            jcr:primaryType="nt:unstructured">
+            <master
+                jcr:mixinTypes="[cq:Taggable]"
+                jcr:primaryType="nt:unstructured"
+                catalystPlanAdditionalInfo="{Boolean}false"
+                comparisonChapter1Topic3Option1="{Boolean}false"
+                comparisonChapter1Topic3Option2="{Boolean}false"
+                comparisonChapter1Topic3Option3="{Boolean}false"
+                comparisonChapter1Topic3Option4="{Boolean}true"
+                comparisonNetworkCoverage="\{comparisonChapter1Topic1Option2} - No — Search network doctors and facilities"
+                comparisonPcpRequirement="\{comparisonChapter1Topic2Option2} - No — while this plan doesn't require a PCP, choosing one for yourself and each covered member is highly recommended"
+                comparisonPrescriptionLink="https://www.uhc.com/"
+                comparisonProviderLink="https://connect.werally.com/guest/eyJwbGFuTmFtZSI6IkNob2ljZS9DaG9pY2UgUGx1cyIsImRlbHN5cyI6IjUyIiwicGFydG5lcklkIjoidWhjIiwibGFuZ3VhZ2UiOiJlbiIsImFjY291bnRQb2xpY3lOdW1iZXIiOiI5MDQ4NzEiLCJwbGFuVmFyaWF0aW9uIjoiMDA2NyJ9tPjuyNCP6-IXlP_LnZzskwW_XQWJnyq-F9HwWvOlH"
+                comparisonSearchCoverageLinkText="{Boolean}true"
+                comparisonFullBenefitsLinkText="{Boolean}true"
+                hasStateSpecificProvider="{Boolean}false"
+                hsaWithOptumBank="{Boolean}false"
+                planDescription="&lt;p>With this plan, you can use any doctor, clinic, hospital or health care facility in the national network, which helps save you money.&amp;nbsp;&lt;/p>&#xa;&lt;p>You may pay less when you use Tier 1 providers. Tier 1 providers are doctors and specialists that are recognized for providing the greatest value from your health benefits. Our Tier 1 lists are updated annually so it’s important to check your provider’s status before accessing care. You can also use freestanding facilities for certain services to help with additional cost savings.&lt;/p>&#xa;&lt;p>&amp;nbsp;&lt;/p>&#xa;&lt;p>If you don’t use a provider from our network, you’ll have to pay for all of the costs. If you need to see a specialist, a referral is not required.&amp;nbsp;&amp;nbsp;&lt;/p>&#xa;&lt;p>&amp;nbsp;&amp;nbsp;&lt;/p>&#xa;&lt;p>Preventive care is covered 100 percent in the network. You don't have to pay any out-of-pocket costs for age appropriate preventive care as long as you use a network doctor.&lt;/p>&#xa;"
+                planDetailPagePrimaryCarePhysicianTopic1Option="\{planDetailPagePrimaryCarePhysicianTopic1Option2} - This plan does not require you to have a primary care physician (PCP)"
+                planName="EDGE® Plan"
+                prescriptionSearchLink="{Boolean}true"
+                primaryCarePhysician="\{summaryTopic2Option2} - Primary care provider not required"
+                prescriptionsComparisonSearchCoverageLinkText="{Boolean}true"
+                prescriptionsComparisonSearchCoverageLinkText_x0040_LastModified="{Date}2020-07-08T16:31:08.544+02:00"
+                providerSearchLink="https://connect.werally.com/guest/eyJwbGFuTmFtZSI6IkNob2ljZS9DaG9pY2UgUGx1cyIsImRlbHN5cyI6IjUyIiwicGFydG5lcklkIjoidWhjIiwibGFuZ3VhZ2UiOiJlbiIsImFjY291bnRQb2xpY3lOdW1iZXIiOiI5MDQ4NzEiLCJwbGFuVmFyaWF0aW9uIjoiMDA2NyJ9tPjuyNCP6-IXlP_LnZzskwW_XQWJnyq-F9HwWvOlHgA"
+                providersComparisonSearchCoverageLinkText="{Boolean}true"
+                providersComparisonSearchCoverageLinkText_x0040_LastModified="{Date}2020-07-08T16:31:08.543+02:00"
+                servicesCovered="{Boolean}true"
+                showPlanDetailPageNetworkCoverageTopic1Option1="{Boolean}true"
+                showPlanDetailPageNetworkCoverageTopic1Option2="{Boolean}false"
+                showPlanDetailPageNetworkCoverageTopic1Option3="{Boolean}false"
+                showPlanDetailPageNetworkCoverageTopic1Option4="{Boolean}true"
+                showPlanDetailPageNetworkCoverageTopic1Option5="{Boolean}false"
+                summaryCopays="\{summaryTopic3Option1} - Copay due for certain services, prescriptions and locations"
+                summaryNetworkCoverage="\{summaryTopic1Option3} - Only network providers covered, including Tier 1 providers"
+                summaryTopic4Option1="{Boolean}false"
+                summaryTopic4Option2="{Boolean}false"
+                summaryTopic4Option3="{Boolean}false"
+                summaryTopic4Option4="{Boolean}true"
+                suppressPrescriptionCoverage="{Boolean}true"/>
+        </data>
+        <metadata
+            jcr:mixinTypes="[cq:Taggable]"
+            jcr:primaryType="nt:unstructured"/>
+        <related jcr:primaryType="nt:unstructured"/>
+    </jcr:content>
+</jcr:root>

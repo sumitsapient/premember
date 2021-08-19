@@ -1,0 +1,26 @@
+<sly data-sly-use.clientLib="/libs/granite/sightly/templates/clientlib.html"
+     data-sly-call="${clientlib.css @ categories='premember.css.base'}"/>
+<link rel="icon" sizes="192x192" href="/content/dam/premember/favicon.ico">
+<link rel="shortcut icon" href="/content/dam/premember/favicon.ico">
+<sly data-sly-use.runmode="com.mirumagency.uhc.premember.core.services.RunmodeService"
+     data-sly-test="${!runmode.isAuthor}"
+     data-sly-use.analytics="com.mirumagency.uhc.premember.core.models.analytics.DataLayerModel">
+
+    <script id="analytics-data" data-digital-data="${analytics.dataLayer}" type="text/template">
+        Analytics Data Layer
+    </script>
+    <script>
+        var analyticsElement = document.getElementById("analytics-data");
+        window.digitalData = JSON.parse(analyticsElement.dataset.digitalData);
+    </script>
+
+
+    <sly data-sly-test="${!runmode.isProduction}">
+        <script src="//assets.adobedtm.com/512027f42d3c/3850d0347c1a/launch-8be555f8c1d1-development.min.js" async></script>
+    </sly>
+
+    <sly data-sly-test="${runmode.isProduction}">
+        <script src="//assets.adobedtm.com/512027f42d3c/3850d0347c1a/launch-d90fb9cd1ca8.min.js" async></script>
+    </sly>
+
+</sly>

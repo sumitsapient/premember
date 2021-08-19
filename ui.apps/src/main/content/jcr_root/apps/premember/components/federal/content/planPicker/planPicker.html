@@ -1,0 +1,77 @@
+<sly data-sly-use.templates="core/wcm/components/commons/v1/templates.html">
+		<div class="plan-picker__tools"
+			data-sly-resource="${'planPickerTools' @ resourceType='premember/components/federal/content/planTools'}">
+		</div>
+		<div class="o-grid" data-sly-use.plan="com.mirumagency.uhc.premember.core.models.federal.PlanPicker">
+				<div class="o-grid__item-12 o-grid__item-8@md o-grid__item-6@lg plan-picker__content">
+						<!--/* Only one plan available */-->
+						<sly data-sly-test="${!plan.hasMultipleOptions}">
+							<h1 class="u-text-h1 u-text-serif u-color-blue">
+								${plan.selectedOption.name}
+							</h1>
+						</sly>
+						<!--/* More than one plan available */-->
+						<sly data-sly-test="${plan.hasMultipleOptions}">
+							<!--/* Plan picker input */-->
+							<h1 class="u-text-bold u-visually-hidden">
+								${plan.selectedOption.name}
+							</h1>
+							<!--/* Label for select */-->
+							<label for="plan-picker-select"
+								class="u-text-h1 u-text-serif u-color-blue u-m-0">
+								Plan details for:
+							</label>
+							<!--/* Plan select input */-->
+							<div class="u-d-block u-m-b-sm">
+								<div class="plan-picker__field plan-picker__field--federal">
+									<p class="plan-picker__value">
+										${plan.selectedOption.name}
+									</p>
+									<select
+										id="plan-picker-select"
+										class="plan-picker__select"
+										data-sly-list.option="${plan.options}">
+										<option
+											value="plan-details.${option.id}.html"
+											selected="${plan.selectedOption.id == option.id}">
+											${option.name}
+										</option>
+									</select>
+									<span class="plan-picker__dropdown-icon">
+										<svg
+											xmlns="http://www.w3.org/2000/svg"
+											xmlns:xlink="http://www.w3.org/1999/xlink"
+											viewBox="0 0 48 48"
+											role="presentation"
+											focusable="false"
+											class="plan-picker__select-icon">
+											<path d=" M 38.688 12.407 L 24 26.738 L 9.312 12.407 L 4.8 16.819 L 24 35.593 L 43.2 16.819 L 38.688 12.407 Z "
+												fill="currentColor"/>
+										</svg>
+									</span>
+								</div>
+							</div>
+							<!--/* Featured text */-->
+							<div
+								data-sly-test="${plan.selectedOption.featuredText}"
+								class="u-text-bold u-color-blue">
+								${plan.selectedOption.featuredText @ context='html'}
+							</div>
+							<!--/* Description */-->
+							<div data-sly-test="${plan.selectedOption.description}">
+								${plan.selectedOption.description  @ context='html'}
+							</div>
+						</sly>
+						<!--/* Button */-->
+						<div data-sly-test="${wcmmode.edit || !plan.buttonEmpty}"
+							class="u-m-t"
+							data-sly-resource="${'button' @ resourceType='premember/components/content/button'}">
+						</div>
+				</div>
+				<!--/* Image */-->
+				<div class="o-grid__item-8 o-grid__item-4@md plan-picker__img u-d-none u-d-flex@md"
+					data-sly-test="${wcmmode.edit || !plan.imageEmpty}">
+						<sly data-sly-resource="${'image' @ resourceType='premember/components/content/image'}"></sly>
+				</div>
+		</div>
+</sly>

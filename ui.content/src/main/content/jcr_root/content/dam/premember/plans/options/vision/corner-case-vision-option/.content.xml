@@ -1,0 +1,54 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<jcr:root xmlns:dam="http://www.day.com/dam/1.0" xmlns:cq="http://www.day.com/jcr/cq/1.0" xmlns:jcr="http://www.jcp.org/jcr/1.0" xmlns:mix="http://www.jcp.org/jcr/mix/1.0" xmlns:nt="http://www.jcp.org/jcr/nt/1.0"
+    jcr:mixinTypes="[mix:referenceable]"
+    jcr:primaryType="dam:Asset">
+    <jcr:content
+        cq:name="corner-case-vision-option"
+        cq:parentPath="/content/dam/premember/plans/options/vision"
+        jcr:description=""
+        jcr:primaryType="dam:AssetContent"
+        jcr:title="Corner Case Vision Option"
+        contentFragment="{Boolean}true"
+        lastFragmentSave="{Date}2020-06-18T12:37:42.264Z">
+        <data
+            cq:model="/conf/premember/vision-option/settings/dam/cfm/models/vision-plan-option"
+            jcr:primaryType="nt:unstructured">
+            <master
+                jcr:mixinTypes="[cq:Taggable]"
+                jcr:primaryType="nt:unstructured"
+                comparisonChapter5SubSection2Topic2Option1="{Boolean}false"
+                comparisonChapter5SubSection2Topic2Option2="{Boolean}false"
+                comparisonChapter5SubSection2Topic2Option3="{Boolean}false"
+                comparisonChapter5SubSection2Topic2Option4="{Boolean}false"
+                comparisonChapter5SubSection2Topic3Option1="{Boolean}false"
+                comparisonChapter5SubSection2Topic3Option2="{Boolean}false"
+                comparisonProviderLink="https://www.uhc.com/"
+                comparisonSearchCoverageLinkText="{Boolean}true"
+                comparisonFullBenefitsLinkText="{Boolean}true"
+                discountsTopic3Offered="{Boolean}false"
+                discountsTopic4Offered="{Boolean}false"
+                hasStateSpecificProvider="{Boolean}false"
+                hideDiscountsAvailable="{Boolean}false"
+                planHighlightsTopic2Option="\{planHighlightsTopic2Option1}"
+                planHighlightsTopic3Offered="{Boolean}false"
+                planHighlightsTopic4Offered="{Boolean}false"
+                planHighlightsTopic5Offered="{Boolean}false"
+                planName="Corner Case Vision Option"
+                summaryTopic1Option="\{summaryTopic1Option1} - Network providers only"
+                summaryTopic2Option="\{summaryTopic2Option1} - Annual eye exams, flexible frame coverage, popular lens options, and more"
+                summaryTopic3Option="\{summaryTopic3Option1} - From lenses and contacts to laser correction procedures, plus more"
+                summaryTopic5Option1Offered="{Boolean}false"
+                summaryTopic5Option2Offered="{Boolean}false"
+                summaryTopic5Option3Offered="{Boolean}false"
+                summaryTopic5Option4Offered="{Boolean}false"
+                summaryTopic6Option2Offered="{Boolean}false"
+                summaryTopic6Option3Offered="{Boolean}false"
+                summaryTopic6Option4Offered="{Boolean}false"
+                suppressSummaryTopic5="{Boolean}false"/>
+        </data>
+        <metadata
+            jcr:mixinTypes="[cq:Taggable]"
+            jcr:primaryType="nt:unstructured"/>
+        <related jcr:primaryType="nt:unstructured"/>
+    </jcr:content>
+</jcr:root>

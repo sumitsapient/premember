@@ -1,0 +1,34 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<jcr:root xmlns:dam="http://www.day.com/dam/1.0" xmlns:cq="http://www.day.com/jcr/cq/1.0" xmlns:jcr="http://www.jcp.org/jcr/1.0" xmlns:mix="http://www.jcp.org/jcr/mix/1.0" xmlns:nt="http://www.jcp.org/jcr/nt/1.0"
+    jcr:mixinTypes="[mix:referenceable]"
+    jcr:primaryType="dam:Asset">
+    <jcr:content
+        cq:name="corner-case-dental-option"
+        cq:parentPath="/content/dam/premember/plans/options/dental"
+        jcr:description=""
+        jcr:primaryType="dam:AssetContent"
+        jcr:title="Corner Case Dental Option"
+        contentFragment="{Boolean}true"
+        lastFragmentSave="{Date}2020-06-05T12:24:30.055Z">
+        <data
+            cq:model="/conf/premember/dental-option/settings/dam/cfm/models/dental-plan-option"
+            jcr:primaryType="nt:unstructured">
+            <master
+                jcr:mixinTypes="[cq:Taggable]"
+                jcr:primaryType="nt:unstructured"
+                comparisonFullBenefitsLinkText="{Boolean}true"
+                coveragePlanBenefits="\{coverageHighlightsTopic2Option1} - Get coverage on hundreds of services including crowns, braces, silver fillings and more. Preventive care, including routine exams, cleanings and fluoride treatment is covered 100% in the network. In addition, expectant mothers get extra coverage for cleanings both during pregnancy and three months following delivery (benefit not available in all states). Oral cancer screenings are covered for adults age 18 and older"
+                coverageProviderNetwork="\{coverageHighlightsTopic1Option1} - Select any dentist you want, anywhere across the country. When you choose a dentist who is part of this plan’s large national network, you receive discounted rates only available to members. To see a specialist, you do not need a referral"
+                hasStateSpecificProvider="{Boolean}false"
+                planName="Corner Case Dental Option"
+                summaryCopays="\{summaryTopic4Option1} - Copay due for certain services"
+                summaryNetworkCoverage="\{summaryTopic1Option1} - Network dentists only"
+                summaryPreventiveCare="\{summaryTopic2Option1} - Preventive care provided by a network dentist is covered at 100%"
+                summaryPrimaryCareDentistReferrals="\{summaryTopic5Option1} - Yes, a primary care dentist and a referral to see a specialist is required"/>
+        </data>
+        <metadata
+            jcr:mixinTypes="[cq:Taggable]"
+            jcr:primaryType="nt:unstructured"/>
+        <related jcr:primaryType="nt:unstructured"/>
+    </jcr:content>
+</jcr:root>

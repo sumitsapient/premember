@@ -1,0 +1,38 @@
+<sly data-sly-use.card="com.mirumagency.uhc.premember.core.models.Card"></sly>
+<div class="o-media u-f-align-center">
+  <div class="o-media__img"
+       data-sly-test="${card.showImage && (wcmmode.edit || card.isImageNotEmpty)}">
+      <div class="o-ar o-ar--1:1">
+            <div class="o-ar__item" data-sly-resource="${'image' @ resourceType='premember/components/content/image'}"></div>
+      </div>
+  </div>
+  <div class="o-media__body">
+      <div class="c-card__header"
+            data-sly-test="${wcmmode.edit || card.showHeader}">
+            <div data-sly-test.showIcon="${card.showIcon}"
+                 data-sly-test="${wcmmode.edit || card.isIconNotEmpty}"
+                 data-sly-resource="${'icon' @ resourceType='premember/components/content/icon', decoration='true'}">
+            </div>
+            <h3
+              data-sly-test="${card.isTitleNotEmpty}"
+              data-sly-element="${card.titleType}"
+              data-sly-set.headingClass="${'unity-type-{0}' @ format=[card.titleStyle || 'h2']}"
+              class="c-card__title ${headingClass}">
+              ${card.title}
+            </h3>
+            <p class="c-card__subtitle u-visually-hidden"
+               data-sly-test="${card.isSubtitleNotEmpty}">
+                ${card.subtitle}
+            </p>
+      </div>
+      <div class="c-card__body"
+           data-sly-test="${wcmmode.edit || card.isBodyNotEmpty}"
+           data-sly-resource="${'bodyPar' @ resourceType='wcm/foundation/components/parsys'}">
+      </div>
+      <div class="c-card__footer" data-sly-test="${wcmmode.edit || card.isFooterNotEmpty}">
+            <div class="aem-buttons"
+                 data-sly-resource="${'footerPar' @ resourceType='wcm/foundation/components/parsys'}">
+            </div>
+      </div>
+  </div>
+</div>

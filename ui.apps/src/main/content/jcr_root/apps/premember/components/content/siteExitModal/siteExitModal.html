@@ -1,0 +1,93 @@
+<div
+  data-sly-use.modal="com.mirumagency.uhc.premember.core.models.SiteExitModal"
+  data-sly-attribute.class="${wcmmode.edit ? '' : 'o-modal fade'}"
+  role="dialog"
+  tabindex="-1"
+  aria-modal="true"
+  aria-describedby="language-exit-modal-title"
+>
+  <div class="o-modal__dialog modal-dialog" role="document">
+    <div class="o-modal__container c-card c-card--modal u-w-m640">
+      <!--/* Close Button */-->
+      <div class="o-modal__close">
+        <button
+          class="c-button-close c-card--modal__close"
+          data-dismiss="modal"
+          tabindex="0"
+        >
+          <span class="o-svg-icon">
+            <svg viewBox="0, 0, 24, 24" focusable="false" shape-rendering="geometricPrecision">
+                <path d="M22.792,3.382 L20.618,1.208 L12,9.826 L3.382,1.208 L1.208,3.382 L9.826,12 L1.208,20.618 L3.382,22.792 L12,14.174 L20.618,22.792 L22.792,20.618 L14.174,12 z" fill="currentColor"></path>
+            </svg>
+          </span>
+          <span class="u-visually-hidden">${'Close' @ i18n}</span>
+        </button>
+      </div>
+
+      <!--/* Header */-->
+      <div class="c-card__header u-p-t-xl">
+        <!--/* Author only text */-->
+        <p
+          data-sly-test="${wcmmode.edit}"
+          style="border:0.1rem solid #CCC; padding: 1rem; margin-bottom: 1rem;"
+        >
+          NOTE: This modal will be only visible when triggered via a Button that has the "Trigger Site Exit Modal" option checked.
+        </p>
+
+        <!--/* Title */-->
+        <h2 class="c-card__title unity-type-h2" id="language-exit-modal-title">
+          You are now leaving our website.
+        </h2>
+      </div>
+
+      <!--/* Body */-->
+      <div class="c-card__body" data-sly-test="${modal.titleText}">
+        <p id="language-exit-modal-message">${modal.titleText}</p>
+      </div>
+
+      <!--/* Footer */-->
+      <div class="c-card__footer">
+        <div class="o-list-pack">
+          <ul class="o-list-pack__list">
+            <!--/* Close Button */-->
+            <li class="o-list-pack__item" data-sly-test="${modal.includeCancelButton}">
+              <a href="#" class="c-button c-button--secondary c-button--full-width-mobile c-button-cancel">
+                ${'Close' @ i18n}
+              </a>
+            </li>
+
+            <!--/* Continue Button */-->
+            <li class="o-list-pack__item">
+              <a
+                data-sly-use.button="com.mirumagency.uhc.premember.core.models.Button"
+                href="#"
+                rel="noopener noreferrer"
+                class="c-button c-button--primary c-button--full-width-mobile js-language-exit-modal-button js-track-event"
+                target="_blank"
+                data-asset-container=""
+                data-event-name="cta engaged"
+                data-event-type="CTA_ENGAGED"
+                data-sly-attribute.data-cta-description="${modal.buttonText}"
+                data-sly-attribute.data-asset-id="${button.id}"
+                data-sly-attribute.id="${button.id}"
+              >
+                <!--/* Confirm Text */-->
+                ${modal.buttonText}
+
+                <!--/* Icon */-->
+                <span class="o-svg-icon o-svg-icon--lg u-m-l-xs">
+                  <svg viewBox="0, 0, 24, 24" focusable="false" role="presentation" shape-rendering="geometricPrecision">
+                    <path d="M20.385,20.385 L3.615,20.385 L3.615,3.615 L12,3.615 L12,1.219 L3.615,1.219 C2.285,1.219 1.219,2.297 1.219,3.615 L1.219,20.385 C1.219,21.703 2.285,22.781 3.615,22.781 L20.385,22.781 C21.703,22.781 22.781,21.703 22.781,20.385 L22.781,12 L20.385,12 L20.385,20.385 z M14.396,1.219 L14.396,3.615 L18.696,3.615 L6.921,15.39 L8.61,17.079 L20.385,5.304 L20.385,9.604 L22.781,9.604 L22.781,1.219 L14.396,1.219 z" fill="currentColor"></path>
+                  </svg>
+                </span>
+
+                <!--/* Visually Hidden Text */-->
+                <span class="u-visually-hidden">${'Opens in a new tab' @ i18n}</span>
+              </a>
+            </li>
+          </ul>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>

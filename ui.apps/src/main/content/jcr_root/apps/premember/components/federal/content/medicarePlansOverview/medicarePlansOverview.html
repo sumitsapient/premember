@@ -1,0 +1,10 @@
+<div data-sly-use.model="com.mirumagency.uhc.premember.core.models.federal.medicare.MedicarePlansOverview"
+     data-sly-use.templates="core/wcm/components/commons/v1/templates.html"
+     data-sly-test.hasContent="${!model.empty}"
+     id="federal-plans-overview"
+     data-plans="${model.plansAsJson}"
+     data-plan-type="medicare"
+     data-plans-url="${resource.path}.model.json">
+    <p data-sly-test="${wcmmode.edit}">Medicare Plans Overview</p>
+</div>
+<sly data-sly-call="${templates.placeholder @ isEmpty = !hasContent}"></sly>

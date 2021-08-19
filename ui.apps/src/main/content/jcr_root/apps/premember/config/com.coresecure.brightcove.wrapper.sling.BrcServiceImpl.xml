@@ -1,0 +1,17 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<jcr:root xmlns:sling="http://sling.apache.org/jcr/sling/1.0" xmlns:jcr="http://www.jcp.org/jcr/1.0"
+  jcr:primaryType="sling:OsgiConfig"
+  accountAlias="UnitedHealthcare"
+  client_id="82532d83-a1bb-4975-8d6a-db7b17e0120c"
+  client_secret="DqdwkhWRc3G8DcBMHqc7bdxMjzKCxR0Gm6sL2NKfmcC67cqx9AP1F9HDu3KKBcf06fb357h3EHQ0pHqGiF3A0A"
+  defVideoPlayerID="default"
+  allowed_groups="[everyone]"
+  proxy=""
+  defPlaylistPlayerID="default"
+  ingest_profile=""
+  key="2418587620001"
+  asset_integration_path="/content/dam/premember/brightcove_assets"
+  defPlaylistPlayerKey=""
+  playersstore="/content/brightcovetools/players"
+  defVideoPlayerKey=""
+/>

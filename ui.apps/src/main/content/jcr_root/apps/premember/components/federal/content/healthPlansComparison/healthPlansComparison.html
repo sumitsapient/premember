@@ -1,0 +1,11 @@
+<div data-sly-use.model="com.mirumagency.uhc.premember.core.models.federal.health.HealthPlansComparison"
+     data-sly-use.templates="core/wcm/components/commons/v1/templates.html"
+     data-sly-test.hasContent="${!model.empty}"
+     id="federal-health-plans-comparison-table"
+     class="federal-compare-table"
+     data-plans="${model.plansAsJson}"
+     data-type="HEALTH">
+    <p data-sly-test="${wcmmode.edit}">Health Plans Comparison</p>
+</div>
+<sly data-sly-call="${templates.placeholder @ isEmpty = !hasContent}">
+</sly>

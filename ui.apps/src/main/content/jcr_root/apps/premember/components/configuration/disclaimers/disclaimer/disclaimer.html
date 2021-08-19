@@ -1,0 +1,7 @@
+<sly data-sly-use.model="com.mirumagency.uhc.premember.core.models.disclaimers.DisclaimerModel">
+  <div><b>Type: </b>${model.disclaimer.type.name}</div>
+  <div><b>Funding: </b>${model.disclaimer.fundingMethod.name}</div>
+  <div><b>State: </b>${model.disclaimer.state.name}</div>
+  <div class="u-m-b-xs"><b>Pages Concerned: </b>${model.disclaimer.pagesConcerned.name}</div>
+  <div><b>Text: </b>${model.disclaimer.text @ context='html'}</div>
+</sly>

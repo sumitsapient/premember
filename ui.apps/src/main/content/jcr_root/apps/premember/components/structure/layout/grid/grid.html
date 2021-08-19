@@ -1,0 +1,21 @@
+<sly data-sly-use.grid="com.mirumagency.uhc.premember.core.models.Grid">
+    <sly data-sly-test="${wcmmode.edit}" data-sly-use.allowed="com.day.cq.wcm.foundation.AllowedComponentList"></sly>
+    <div data-sly-test.isAllowedApplicable="${allowed.isApplicable}"
+         data-sly-test="${isAllowedApplicable}"
+         class="${allowed.cssClass}"
+         data-sly-use.allowedTemplate="/libs/wcm/foundation/components/parsys/allowedcomponents/allowedcomponents-tpl.html"
+         data-sly-call="${allowedTemplate.allowedcomponents @ title=allowed.title, components=allowed.components}"></div>
+    <sly data-sly-test="${!isAllowedApplicable}" data-sly-use.parsysComponent="parsys.js"
+         data-sly-list.paragraph="${parsysComponent.renderInfo}">
+        <div data-sly-test="${paragraph.columns}" data-sly-list.column="${paragraph.items}" class="${paragraph.columnsContainerCss}">
+            <div class="${column.cssClasses}" data-sly-list.columnItem="${column.children}">
+                <sly data-sly-test="${columnItem.resourceType}"
+                     data-sly-resource="${columnItem.resourcePath @ resourceType=columnItem.resourceType, decoration='true', cssClassName=columnItem.cssClasses}" />
+            </div>
+        </div>
+        <div data-sly-test="${paragraph.columns}" style='clear:both'></div>
+        <sly data-sly-test.cssClasses="${grid.sameHeight ? [paragraph.cssClasses, 'o-grid__item--grow-height'] : [paragraph.cssClasses] @ join = ' ' }"/>
+        <sly data-sly-test="${!paragraph.columns && paragraph.resourceType}"
+             data-sly-resource="${paragraph.resourcePath @ resourceType=paragraph.resourceType, decoration='true', cssClassName=cssClasses}" />
+    </sly>
+</sly>

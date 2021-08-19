@@ -1,0 +1,158 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<jcr:root xmlns:sling="http://sling.apache.org/jcr/sling/1.0" xmlns:cq="http://www.day.com/jcr/cq/1.0" xmlns:jcr="http://www.jcp.org/jcr/1.0" xmlns:nt="http://www.jcp.org/jcr/nt/1.0"
+    jcr:primaryType="cq:Template"
+    allowedPaths="[/content/entities(/.*)?]"
+    ranking="{Long}100">
+    <jcr:content
+        cq:lastModified="{Date}2021-01-27T08:17:23.134-06:00"
+        cq:lastModifiedBy="admin"
+        cq:scaffolding="/conf/premember/premium-rate/settings/dam/cfm/models/health-benefits-officers/jcr:content/model"
+        cq:templateType="/libs/settings/dam/cfm/model-types/fragment"
+        jcr:description="Health benefits officers information to which employees will contact in case of any questions."
+        jcr:primaryType="cq:PageContent"
+        jcr:title="Health Benefits Officers"
+        sling:resourceSuperType="dam/cfm/models/console/components/data/entity"
+        sling:resourceType="dam/cfm/models/console/components/data/entity/default">
+        <model
+            cq:targetPath="/content/entities"
+            jcr:primaryType="cq:PageContent"
+            sling:resourceType="wcm/scaffolding/components/scaffolding"
+            dataTypesConfig="/mnt/overlay/settings/dam/cfm/models/formbuilderconfig/datatypes"
+            maxGeneratedOrder="20">
+            <cq:dialog
+                jcr:primaryType="nt:unstructured"
+                sling:resourceType="cq/gui/components/authoring/dialog">
+                <content
+                    jcr:lastModified="{Date}2021-01-27T08:17:23.134-06:00"
+                    jcr:lastModifiedBy="admin"
+                    jcr:primaryType="nt:unstructured"
+                    sling:resourceType="granite/ui/components/coral/foundation/fixedcolumns">
+                    <items
+                        jcr:primaryType="nt:unstructured"
+                        maxGeneratedOrder="20">
+                        <_x0031_610639701133
+                            jcr:primaryType="nt:unstructured"
+                            sling:resourceType="granite/ui/components/coral/foundation/form/textfield"
+                            fieldLabel="Officer One - Name"
+                            listOrder="1"
+                            maxlength="255"
+                            metaType="text-single"
+                            name="officerOneName"
+                            renderReadOnly="false"
+                            required="on"
+                            showEmptyInReadOnly="true"
+                            valueType="string"/>
+                        <_x0031_610639874862
+                            jcr:primaryType="nt:unstructured"
+                            sling:resourceType="granite/ui/components/coral/foundation/form/textfield"
+                            fieldLabel="Officer One - Description"
+                            listOrder="1"
+                            maxlength="255"
+                            metaType="text-single"
+                            name="officerOneDescription"
+                            renderReadOnly="false"
+                            required="on"
+                            showEmptyInReadOnly="true"
+                            valueType="string"/>
+                        <_x0031_610639891615
+                            jcr:primaryType="nt:unstructured"
+                            sling:resourceType="granite/ui/components/coral/foundation/form/textfield"
+                            fieldLabel="Officer One - Email"
+                            listOrder="1"
+                            maxlength="255"
+                            metaType="text-single"
+                            name="officerOneEmail"
+                            renderReadOnly="false"
+                            required="on"
+                            showEmptyInReadOnly="true"
+                            valueType="string"/>
+                        <_x0031_610639920430
+                            jcr:primaryType="nt:unstructured"
+                            sling:resourceType="granite/ui/components/coral/foundation/form/textfield"
+                            fieldLabel="Officer One - Phone Number"
+                            listOrder="1"
+                            maxlength="255"
+                            metaType="text-single"
+                            name="officerOnePhoneNumber"
+                            renderReadOnly="false"
+                            showEmptyInReadOnly="true"
+                            valueType="string"/>
+                        <_x0031_610639980598
+                            jcr:primaryType="nt:unstructured"
+                            sling:resourceType="dam/cfm/models/editor/components/contentreference"
+                            fieldLabel="Officer One - Photo"
+                            filter="hierarchy"
+                            listOrder="8"
+                            metaType="reference"
+                            name="officerOnePhotoPath"
+                            nameSuffix="contentReference"
+                            renderReadOnly="false"
+                            rootPath="/content/dam/premember"
+                            showEmptyInReadOnly="true"
+                            valueType="string"/>
+                        <_x0031_610641446513
+                            jcr:primaryType="nt:unstructured"
+                            sling:resourceType="granite/ui/components/coral/foundation/form/textfield"
+                            fieldLabel="Officer Two - Name"
+                            listOrder="1"
+                            maxlength="255"
+                            metaType="text-single"
+                            name="officerTwoName"
+                            renderReadOnly="false"
+                            required="on"
+                            showEmptyInReadOnly="true"
+                            valueType="string"/>
+                        <_x0031_610641478676
+                            jcr:primaryType="nt:unstructured"
+                            sling:resourceType="granite/ui/components/coral/foundation/form/textfield"
+                            fieldLabel="Officer Two - Description"
+                            listOrder="1"
+                            maxlength="255"
+                            metaType="text-single"
+                            name="officerTwoDescription"
+                            renderReadOnly="false"
+                            required="on"
+                            showEmptyInReadOnly="true"
+                            valueType="string"/>
+                        <_x0031_610641539139
+                            jcr:primaryType="nt:unstructured"
+                            sling:resourceType="granite/ui/components/coral/foundation/form/textfield"
+                            fieldLabel="Officer Two - Email"
+                            listOrder="1"
+                            maxlength="255"
+                            metaType="text-single"
+                            name="officerTwoEmail"
+                            renderReadOnly="false"
+                            required="on"
+                            showEmptyInReadOnly="true"
+                            valueType="string"/>
+                        <_x0031_610641618985
+                            jcr:primaryType="nt:unstructured"
+                            sling:resourceType="granite/ui/components/coral/foundation/form/textfield"
+                            fieldLabel="Officer Two - Phone Number"
+                            listOrder="1"
+                            maxlength="255"
+                            metaType="text-single"
+                            name="officerTwoPhoneNumber"
+                            renderReadOnly="false"
+                            showEmptyInReadOnly="true"
+                            valueType="string"/>
+                        <_x0031_610641570243
+                            jcr:primaryType="nt:unstructured"
+                            sling:resourceType="dam/cfm/models/editor/components/contentreference"
+                            fieldLabel="Officer Two - Photo"
+                            filter="hierarchy"
+                            listOrder="8"
+                            metaType="reference"
+                            name="officerTwoPhotoPath"
+                            nameSuffix="contentReference"
+                            renderReadOnly="false"
+                            rootPath="/content/dam/premember"
+                            showEmptyInReadOnly="true"
+                            valueType="string"/>
+                    </items>
+                </content>
+            </cq:dialog>
+        </model>
+    </jcr:content>
+</jcr:root>

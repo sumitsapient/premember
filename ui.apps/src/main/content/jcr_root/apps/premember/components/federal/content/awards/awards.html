@@ -1,0 +1,31 @@
+<sly data-sly-use.model="com.mirumagency.uhc.premember.core.models.federal.Awards"
+	 data-sly-use.templates="core/wcm/components/commons/v1/templates.html"
+	 data-sly-test.hasContent="${!model.empty}">
+	<div class="o-grid c-awards">
+		<div
+			data-sly-repeat="${model.awards}"
+			class="o-grid__item-12 ${model.awards.size == 2 ? 'o-grid__item-6@lg' : ''}${model.awards.size == 3 ? 'o-grid__item-4@lg' : ''}"
+		>
+			<div class="c-awards__item o-media u-f-align-center">
+				<!--/* Image */-->
+				<img class="o-media__img c-awards__img" src="${item.imagePath}" alt="">
+
+				<div class="o-media__body">
+					<!--/* Title */-->
+					<h3 data-sly-use.heading="com.mirumagency.uhc.premember.core.models.federal.HeadingConfig"
+						data-sly-element="${heading.titleTypeSize}"
+						data-sly-set.headingClass="${'unity-type-{0}' @ format=[heading.titleSizeStyle]}"
+						class="${['u-text-serif', heading.titleSizeStyle ? headingClass : ''] @ join=' '}"
+						data-sly-test="${item.title}"
+					>
+						${item.title}
+					</h3>
+
+					<!--/* Description */-->
+					${item.description @ context='html'}
+				</div>
+			</div>
+		</div>
+	</div>
+</sly>
+<sly data-sly-call="${templates.placeholder @ isEmpty = !hasContent}"></sly>

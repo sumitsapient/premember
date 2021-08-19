@@ -1,0 +1,79 @@
+{
+    "env": {
+        "browser": true,
+        "es6": true
+    },
+    "extends": [
+        "airbnb",
+        "plugin:react/recommended"
+    ],
+    "plugins": ["react"],
+    "parser": "babel-eslint",
+    "parserOptions": {
+        "ecmaFeatures": {
+            "jsx": true
+        }
+    },
+    "rules": {
+        "react/jsx-filename-extension": [1, { "extensions": [".js", ".jsx"] }],
+        "react/jsx-indent": [2, "tab"],
+        "react/no-array-index-key": 0,
+        "react/jsx-indent-props": ["error", "tab"],
+        "react/jsx-curly-spacing": [
+            2,
+            {
+                "when": "always",
+                "spacing": {
+                "objectLiterals": "always",
+                "allowMultiline": true
+                }
+            }
+        ],
+        "react/jsx-closing-bracket-location": [
+            "error",
+            {
+              "nonEmpty": false,
+              "selfClosing": "tag-aligned"
+            }
+        ],
+        "jsx-a11y/label-has-for": [ 2, {
+            "required": {
+                "some": ["nesting", "id"]
+            }
+        }],
+        "linebreak-style": 0,
+        "max-len": [
+            2,
+            {
+                "code": 130,
+                "ignoreTemplateLiterals": true,
+                "ignoreStrings": true
+            }
+        ],
+        "lines-between-class-members": 0,
+        "class-methods-use-this": 0,
+        "import/prefer-default-export": 0,
+        "import/no-cycle": 0,
+        "no-underscore-dangle": 0,
+        "no-console": 0,
+        "no-tabs": 0,
+        "indent": [
+            "error",
+            "tab",
+            {
+                "SwitchCase": 1
+            }
+        ],
+        "array-callback-return": 0
+    },
+    "settings": {
+        "react": {
+          "version": "16.4"
+        },
+        "import/resolver": {
+            "webpack": {
+                "config": "./webpack.common.js"
+            }
+        }
+    }
+}

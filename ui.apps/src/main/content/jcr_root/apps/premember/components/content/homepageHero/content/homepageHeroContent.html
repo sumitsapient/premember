@@ -1,0 +1,227 @@
+<sly data-sly-use.homepageHero="com.mirumagency.uhc.premember.core.models.HomepageHero">
+	<div class="u-d-flex u-f-column-full">
+		<!--/* Hero Content */-->
+		<div class="hero--home">
+			<div class="o-container">
+				<div class="u-d-flex u-f-column-full">
+					<div class="o-grid u-f-align-center hero-static__content">
+						<div class="o-grid__item-12 ${hero.textAlignment == 'center' ? 'o-grid__item-4@md o-grid__item--offset-1@md' : 'o-grid__item-5@md'} ${hero.imageDisplayLeft ? 'u-m-l-auto' : ''}">
+							<!--/* Title */-->
+							<h3
+								class="hero__title u-text-bold"
+								data-sly-test="${homepageHero.isTitleNotEmpty}"
+								data-sly-element="${homepageHero.titleType}"
+							>
+								${homepageHero.title}
+							</h3>
+							<!--/* Body */-->
+							<div
+								class="hero-static__text"
+								data-sly-test="${wcmmode.edit || homepageHero.isTextNotEmpty}"
+								data-sly-resource="${'text' @ resourceType='premember/components/content/text'}"
+							></div>
+							<!--/* Button */-->
+							<div
+								data-sly-test="${homepageHero.isShowButton}"
+								data-sly-resource="${'button' @ resourceType='premember/components/content/button'}"
+							></div>
+						</div>
+					</div>
+				</div>
+				<!--/* Image */-->
+				<div class="hero-static__image u-d-none u-d-block@md">
+					<div class="u-w-100% u-h-100%">
+						<div class="hero__image--main" style="background-image:url(${homepageHero.imagePath @ context='styleString'});">
+							<img class="${wcmmode.edit ? '' : 'u-visually-hidden'}" src="${homepageHero.imagePath}" alt="homepage hero image"/>
+						</div>
+					</div>
+				</div>
+			</div>
+		</div>
+		<!--/* Hero Additional Information */-->
+		<div
+			class="hero--home u-bg-white"
+			data-sly-test="${homepageHero.additionalInfoTitle}"
+		>
+			<div class="o-container hero-static__content">
+				<div class="o-grid u-f-align-center">
+					<div class="o-grid__item-12 ${hero.textAlignment == 'center' ? 'o-grid__item-4@md o-grid__item--offset-1@md' : 'o-grid__item-5@md'} ${hero.imageDisplayLeft ? 'u-m-l-auto' : ''}">
+						<!--/* Title */-->
+						<h3
+							class="unity-type-h3 u-text-serif u-m-b-sm"
+							data-sly-element="${homepageHero.additionalInfoTitleType}"
+						>
+							${homepageHero.additionalInfoTitle}
+						</h3>
+						<!--/* Body */-->
+						${homepageHero.additionalInfoDescription @ context='html'}
+						<sly data-sly-test="${wcmmode.edit || homepageHero.isAdditionalTextNotEmpty}">
+							<div class="hero__text" data-sly-resource="${'additionalInfoDescription' @ resourceType='premember/components/content/text'}"></div>
+						</sly>
+						<!--/* Link 1 */
+						<div
+							class="hero__text"
+							data-sly-test="${homepageHero.isShowAdditionalInfoLinkOne}"
+							data-sly-resource="${'additionalInfoLinkOne' @ resourceType='premember/components/content/button'}"
+						></div>*/-->
+						<!--/* Link 2
+						<div
+							class="hero__text"
+							data-sly-test="${homepageHero.isShowAdditionalInfoLinkTwo}"
+							data-sly-resource="${'additionalInfoLinkTwo' @ resourceType='premember/components/content/button'}"
+						></div>*/-->
+					</div>
+				</div>
+				<!--/* Image */-->
+				<div class="hero-static__image u-d-none u-d-block@md">
+					<div class="u-w-100% u-h-100%">
+						<div
+							class="hero__image--secondary"
+							style="background-image:url(${homepageHero.additionalInfoImagePath @ context='styleString'});"
+						>
+							<img class="${wcmmode.edit ? '' : 'u-visually-hidden'}" src="${homepageHero.additionalInfoImagePath}" alt="Home hero image"/>
+						</div>
+					</div>
+				</div>
+			</div>
+		</div>
+		<!--/* Find Plan Section */-->
+		<div class="hero--home u-bg-white" data-sly-use.data="com.mirumagency.uhc.premember.core.models.EmployerData"
+			 data-sly-test="${!data.employer.hidePlanOptions.hidePlanOptions}">
+			<div class="o-container hero-static__content">
+				<div
+					class="o-grid"
+					data-sly-use.planOptions="com.mirumagency.uhc.premember.core.models.EmployerConfig"
+				>
+
+					<div class="o-grid__item-12 o-grid__item-8@md">
+						<!--/* Title */-->
+						<h3 class="unity-type-h3 u-text-serif u-m-b-sm u-d-none u-d-block@md">
+							${data.planOptionsTitle || "Find the plan that fits you best" }
+						</h3>
+						<!--/* Plan types / icons */-->
+						<div class="o-grid">
+							<sly data-sly-list.plan="${planOptions.mainPlans}">
+								<div class="o-grid__item-6">
+									<div class="iconBlock">
+										<div class="c-icon-block o-media">
+											<!--/* Icon */-->
+											<div class="o-media__img u-m-b-sm">
+												<div class="c-tempo-icon c-tempo-icon--2c c-tempo-icon--md">
+													<div class="cmp-icon" id="iconTempo-186135718">
+														${plan.iconContent @ context='unsafe'}
+													</div>
+												</div>
+											</div>
+											<div class="o-media__body">
+												<div class="c-icon-block__text">
+													<!--/* Plan link */-->
+													<a
+														aria-label="${plan.optionsCount} ${plan.name} available"
+														class="c-button js-track-event c-button--primary c-button--naked"
+														data-sly-use.eventName="${'/apps/premember/components/analytics/eventName.js' @ text=plan.typeName}"
+														data-event-name="${eventName}"
+														data-event-type="home_hero"
+														href="${plan.summaryPageUrl}.html"
+														x-cq-linkchecker="valid"
+													>
+														${plan.name}
+														<!--/* Arrow icon */-->
+														<span class="o-svg-icon o-svg-icon--xl u-m-l-xs">
+															<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" focusable="false">
+																<path d="M0 0h24v24H0V0z" fill="none"></path>
+																<path d="M12 4l-1.41 1.41L16.17 11H4v2h12.17l-5.58 5.59L12 20l8-8-8-8z" fill="currentColor"></path>
+															</svg>
+														</span>
+													</a>
+												</div>
+											</div>
+										</div>
+									</div>
+								</div>
+							</sly>
+						</div>
+					</div>
+					<!--/* Enrollment dates */-->
+					<div
+						class="o-grid__item u-anim-fade-in ${wcmmode.edit ? '' : 'u-visually-hidden'}"
+						data-sly-test="${!homepageHero.hideEnrollmentDatesSection}"
+						id="hero-enrollment-container"
+					>
+						<div class="c-card u-bg-gray">
+							<!--/* Title */-->
+							<div class="c-card__header">
+								<h4 class="unity-type-h4 u-text-serif">
+									${homepageHero.openEnrollmentDateHeading || "Open Enrollment starts"}
+								</h4>
+							</div>
+							<!--/* Enrollment text */-->
+							<div class="c-card__body">
+								<!--/* No enrollment dates */-->
+								<span
+									data-sly-test="${homepageHero.noEnrollmentDatesText}"
+									id="hero-enrollment-no-dates"
+								>
+									${homepageHero.noEnrollmentDatesText @ context='html'}
+								</span>
+								<!--/* Enrollment dates exist */-->
+								<sly data-sly-test="${!homepageHero.noEnrollmentDatesText}">
+									<ul class="o-list-bare">
+										<!--/* Enrollment date 1 */-->
+										<li
+											class="o-list-bare__item u-m-b"
+											data-sly-test="${homepageHero.startDate.monthFull || homepageHero.startDate.day}"
+											data-show-enrollment-from="${homepageHero.showEnrollmentDatesFrom}"
+											data-hide-enrollment-after="${homepageHero.hideEnrollmentDatesAfter}"
+											id="hero-enrollment-one"
+										>
+											<div class="unity-type-h6">
+												${homepageHero.startDate.monthFull} ${homepageHero.startDate.day}
+												<sly data-sly-test="${homepageHero.endDate.day}">to ${homepageHero.endDate.monthFull} ${homepageHero.endDate.day}</sly>
+											</div>
+											<div data-sly-test="${homepageHero.enrollmentDescription}">
+												${homepageHero.enrollmentDescription @ context='html'}
+											</div>
+										</li>
+										<!--/* Enrollment date 2 */-->
+										<li
+											class="o-list-bare__item u-m-b"
+											data-sly-test="${homepageHero.startDate2.monthFull || homepageHero.startDate2.day}"
+											data-show-enrollment-from="${homepageHero.showEnrollmentDatesFrom2}"
+											data-hide-enrollment-after="${homepageHero.hideEnrollmentDatesAfter2}"
+											id="hero-enrollment-two"
+										>
+											<div class="unity-type-h6">
+												${homepageHero.startDate2.monthFull} ${homepageHero.startDate2.day}
+												<sly data-sly-test="${homepageHero.endDate2.day}">to ${homepageHero.endDate2.monthFull} ${homepageHero.endDate2.day}</sly>
+											</div>
+											<div data-sly-test="${homepageHero.enrollmentDescription2}">
+												${homepageHero.enrollmentDescription2 @ context='html'}
+											</div>
+										</li>
+										<!--/* Enrollment date 3 */-->
+										<li
+											class="o-list-bare__item u-m-b"
+											data-sly-test="${homepageHero.startDate3.monthFull || homepageHero.startDate3.day}"
+											data-show-enrollment-from="${homepageHero.showEnrollmentDatesFrom3}"
+											data-hide-enrollment-after="${homepageHero.hideEnrollmentDatesAfter3}"
+											id="hero-enrollment-three"
+										>
+											<div class="unity-type-h6">
+												${homepageHero.startDate3.monthFull} ${homepageHero.startDate3.day}
+												<sly data-sly-test="${homepageHero.endDate3.day}">to ${homepageHero.endDate3.monthFull} ${homepageHero.endDate3.day}</sly>
+											</div>
+											<div data-sly-test="${homepageHero.enrollmentDescription3}">
+												${homepageHero.enrollmentDescription3 @ context='html'}
+											</div>
+										</li>
+									</ul>
+								</sly>
+							</div>
+						</div>
+					</div>
+				</div>
+			</div>
+		</div>
+	</div>
+</sly>

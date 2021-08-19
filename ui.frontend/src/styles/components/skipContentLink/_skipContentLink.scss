@@ -1,0 +1,24 @@
+.skipContentLink {
+	position: absolute;
+	top: 0;
+	left: $g-spacing-xs;
+	z-index: 21;
+
+	&.no-pointer {
+		pointer-events: none;
+	}
+
+	a {
+		@include unity-transition('transform', 'slow');
+
+		background: unity-color('white');
+		padding-right: 10px;
+		padding-left: 10px;
+		transform: translateY(-100%);
+
+		&:focus {
+			background: unity-color('white');
+			transform: translateY(5%);
+		}
+	}
+}

@@ -1,0 +1,128 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<jcr:root xmlns:sling="http://sling.apache.org/jcr/sling/1.0"
+  xmlns:granite="http://www.adobe.com/jcr/granite/1.0" xmlns:jcr="http://www.jcp.org/jcr/1.0"
+  xmlns:nt="http://www.jcp.org/jcr/nt/1.0"
+  jcr:primaryType="nt:unstructured"
+  jcr:title="Footer"
+  sling:resourceType="granite/ui/components/coral/foundation/fixedcolumns">
+  <items jcr:primaryType="nt:unstructured">
+    <column
+      jcr:primaryType="nt:unstructured"
+      sling:resourceType="granite/ui/components/coral/foundation/container"
+      margin="{Boolean}true">
+      <items jcr:primaryType="nt:unstructured">
+				<logoPath
+					jcr:primaryType="nt:unstructured"
+					sling:resourceType="granite/ui/components/coral/foundation/form/pathfield"
+					fieldLabel="Footer Logo"
+					name="./footerLogo"
+					rootPath="/content/dam/premember/logos"/>
+        <contactUsTitle
+          jcr:primaryType="nt:unstructured"
+          sling:resourceType="granite/ui/components/coral/foundation/form/textfield"
+          fieldLabel="Contact Us Title"
+          required="{Boolean}false"
+          name="./contactUsTitle"/>
+        <contactUsTile1Override
+          jcr:primaryType="nt:unstructured"
+          sling:resourceType="granite/ui/components/coral/foundation/form/checkbox"
+          text="Override Contact Us Tile 1"
+          fieldDescription="Select if want to override the default content."
+          required="{Boolean}false"
+          value="{Boolean}true"
+          uncheckedValue="{Boolean}false"
+          name="./contactUsTile1Override"/>
+        <contactUsTile1Title
+          jcr:primaryType="nt:unstructured"
+          sling:resourceType="granite/ui/components/coral/foundation/form/textfield"
+          fieldLabel="Contact Us Tile 1 Title"
+          required="{Boolean}false"
+          name="./contactUsTile1Title"/>
+        <contactUsTile1Description
+          jcr:primaryType="nt:unstructured"
+          sling:resourceType="cq/gui/components/authoring/dialog/richtext"
+          fieldLabel="Contact Us Tile 1 Description"
+          required="{Boolean}false"
+          useFixedInlineToolbar="{Boolean}true"
+          name="./contactUsTile1Description">
+          <rtePlugins jcr:primaryType="nt:unstructured">
+            <format jcr:primaryType="nt:unstructured" features="bold"/>
+            <justify jcr:primaryType="nt:unstructured" features=""/>
+            <lists jcr:primaryType="nt:unstructured" features=""/>
+            <links jcr:primaryType="nt:unstructured" features="modifylink,unlink"/>
+          </rtePlugins>
+          <htmlRules jcr:primaryType="nt:unstructured">
+            <blockHandling
+              jcr:primaryType="nt:unstructured"
+              removeSingleParagraphContainer="{Boolean}true"/>
+          </htmlRules>
+        </contactUsTile1Description>
+        <contactUsTile2Title
+          jcr:primaryType="nt:unstructured"
+          sling:resourceType="granite/ui/components/coral/foundation/form/textfield"
+          fieldLabel="Tile 2 Title"
+          fieldDescription="Enter here each Page link that will display on the Disclaimer Navigation"
+          required="{Boolean}false"
+          name="./contactUsTile2Title"/>
+        <contactUsTile2Description
+          jcr:primaryType="nt:unstructured"
+          sling:resourceType="granite/ui/components/coral/foundation/form/textfield"
+          fieldLabel="Tile 2 Description"
+          fieldDescription="Enter here each Page link that will display on the Disclaimer Navigation"
+          required="{Boolean}false"
+          name="./contactUsTile2Description"/>
+        <contactUsTile3Title
+          jcr:primaryType="nt:unstructured"
+          sling:resourceType="granite/ui/components/coral/foundation/form/textfield"
+          fieldLabel="Tile 3 Title"
+          required="{Boolean}false"
+          name="./contactUsTile3Title"/>
+        <heading
+          jcr:primaryType="nt:unstructured"
+          sling:resourceType="granite/ui/components/coral/foundation/heading"
+          class="coral-Heading coral-Heading--4"
+          level="{Long}4"
+          text="Navigation Links"/>
+        <well
+          jcr:primaryType="nt:unstructured"
+          sling:resourceType="granite/ui/components/coral/foundation/container">
+          <layout
+            jcr:primaryType="nt:unstructured"
+            sling:resourceType="granite/ui/components/coral/foundation/layouts/well"/>
+          <items jcr:primaryType="nt:unstructured">
+            <navigationItems
+              jcr:primaryType="nt:unstructured"
+              sling:resourceType="granite/ui/components/coral/foundation/form/multifield"
+              class="foundation-layout-util-maximized-alt"
+              composite="{Boolean}true">
+              <field
+                jcr:primaryType="nt:unstructured"
+                sling:resourceType="granite/ui/components/coral/foundation/container"
+                name="./navigationItems">
+                <items jcr:primaryType="nt:unstructured">
+                  <url
+                    jcr:primaryType="nt:unstructured"
+                    sling:resourceType="granite/ui/components/coral/foundation/form/textfield"
+                    fieldLabel="URL"
+                    name="url"/>
+                  <displayText
+                    jcr:primaryType="nt:unstructured"
+                    sling:resourceType="granite/ui/components/coral/foundation/form/textfield"
+                    fieldLabel="Display Text"
+                    name="displayText"/>
+                  <openInNewTab
+                    jcr:primaryType="nt:unstructured"
+                    sling:resourceType="granite/ui/components/coral/foundation/form/checkbox"
+                    text="Open in new tab"
+                    value="{Boolean}true"
+                    uncheckedValue="{Boolean}false"
+                    name="openInNewTab"/>
+                </items>
+              </field>
+            </navigationItems>
+          </items>
+        </well>
+      </items>
+    </column>
+  </items>
+</jcr:root>

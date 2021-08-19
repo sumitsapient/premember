@@ -1,0 +1,135 @@
+.compare-table__tile--costs,
+.compare-table__tile--costs-text {
+	padding: 0;
+	position: relative;
+	overflow: hidden;
+	z-index: 1;
+
+	.compare-table__tile-content {
+		flex-direction: column;
+		height: 100%;
+	}
+
+	p {
+		margin: 0;
+	}
+
+	.compare-table__tile-copay,
+	.compare-table__tile-in-network {
+		padding: 14px 14px 0;
+
+		p {
+			text-align: left;
+		}
+
+		sup {
+			position: relative;
+			top: -10px;
+			left: -4px;
+
+			@include mq(md) {
+				top: -12px;
+			}
+		}
+	}
+
+	.compare-table__tile-in-network sup {
+		position: relative;
+		top: -10px;
+		left: 4px;
+
+		@include mq(md) {
+			top: -12px;
+		}
+	}
+
+	.compare-table__tile-coinsurance,
+	.compare-table__tile-out-network {
+		padding: 30px 14px 14px;
+
+		@include mq(md) {
+			padding-top: 14px;
+		}
+
+		sup {
+			position: relative;
+			top: -10px;
+			right: -4px;
+
+			@include mq(md) {
+				top: -12px;
+			}
+		}
+	}
+
+	.compare-table__copay-title,
+	.compare-table__coinsurance-title,
+	.compare-table__in-network-title,
+	.compare-table__out-network-title,
+	.compare-table__copay-value sup,
+	.compare-table__coinsurance-value sup,
+	.compare-table__in-network-value sup,
+	.compare-table__out-network-value sup {
+		font-size: 14px;
+		font-weight: 500;
+		line-height: 1.21;
+	}
+
+	.compare-table__copay-value,
+	.compare-table__coinsurance-value,
+	.compare-table__in-network-value,
+	.compare-table__out-network-value {
+		font-size: 28px;
+		font-weight: 700;
+		line-height: 1.18;
+
+		@include mq(md) {
+			font-size: 34px;
+		}
+	}
+
+	.compare-table__in-network-value,
+	.compare-table__out-network-value {
+		.compare-table__tile-value--price sup {
+			margin-left: 5px;
+			left: -4px;
+		}
+	}
+
+	.compare-table__info {
+		font-size: 12px;
+		font-weight: 300;
+		line-height: 1.17;
+	}
+
+	.compare-table__out-network-value .compare-table__out-network-text {
+		display: flex;
+		justify-content: flex-end;
+
+		p {
+			display: inline-block;
+			font-size: 1rem;
+			font-weight: 700;
+			line-height: 1.25;
+			margin-right: -5px;
+			padding: 12px 0 5px;
+			width: 90%;
+
+			@include mq(sm) {
+				width: 85%;
+			}
+
+			@include mq(xl) {
+				width: 80%;
+			}
+		}
+	}
+}
+
+.compare-table__tile--text {
+	padding: 0;
+
+	p {
+		padding: 14px;
+	}
+}

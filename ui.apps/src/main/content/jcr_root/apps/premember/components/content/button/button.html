@@ -1,0 +1,38 @@
+<sly data-sly-use.button="com.mirumagency.uhc.premember.core.models.Button"></sly>
+<sly data-sly-use.eventName="${'/apps/premember/components/analytics/eventName.js' @ text=button.text}"/>
+<a
+    class="${button.siteExitModalTrigger ? 'c-button js-track-event js-language-exit-modal-trigger' : 'c-button js-track-event'} ${button.styleString}"
+    x-cq-linkchecker="valid"
+    href="${button.href @ context = 'uri'}"
+    data-sly-attribute.rel="${button.newTab ? 'noopener noreferrer' : ''}"
+    data-sly-attribute.target="${button.newTab ? '_blank' : ''}"
+    data-sly-attribute.role="${button.siteExitModalTrigger ? 'button' : ''}"
+    data-sly-attribute.id="${button.id}"
+    data-asset-container=""
+    data-asset-id="${button.id}"
+    data-cta-description="${button.text}"
+    data-event-name="${eventName}"
+    data-event-type="button"
+    data-sly-attribute.data-toggle="${button.siteExitModalTrigger ? 'modal' : ''}"
+    data-sly-attribute.data-target="${button.siteExitModalTrigger ? '#language-exit-modal' : ''}"
+    tabindex="${button.href ? '' : '0'}">
+    ${button.text}
+    <span data-sly-test.hiddenText="${button.hiddenText}"
+          class="u-visually-hidden">
+        ${button.hiddenText}
+    </span>
+    <sly data-sly-test.newTab="${button.newTab || button.siteExitModalTrigger}">
+      <span class="o-svg-icon o-svg-icon--lg u-m-l-xs">
+        <svg viewBox="0, 0, 24, 24" focusable="false" role="presentation" shape-rendering="geometricPrecision">
+            <path d="M20.385,20.385 L3.615,20.385 L3.615,3.615 L12,3.615 L12,1.219 L3.615,1.219 C2.285,1.219 1.219,2.297 1.219,3.615 L1.219,20.385 C1.219,21.703 2.285,22.781 3.615,22.781 L20.385,22.781 C21.703,22.781 22.781,21.703 22.781,20.385 L22.781,12 L20.385,12 L20.385,20.385 z M14.396,1.219 L14.396,3.615 L18.696,3.615 L6.921,15.39 L8.61,17.079 L20.385,5.304 L20.385,9.604 L22.781,9.604 L22.781,1.219 L14.396,1.219 z" fill="currentColor" />
+        </svg>
+      </span>
+      <span class="u-visually-hidden">${'Opens in a new tab' @ i18n}</span>
+    </sly>
+    <span class="o-svg-icon o-svg-icon--xl u-m-l-xs" data-sly-test="${button.isSetIcon && !newTab}">
+      <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" focusable="false">
+        <path d="M0 0h24v24H0V0z" fill="none"/>
+        <path d="M12 4l-1.41 1.41L16.17 11H4v2h12.17l-5.58 5.59L12 20l8-8-8-8z" fill="currentColor"/>
+      </svg>
+    </span>
+</a>

@@ -1,0 +1,141 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<jcr:root xmlns:sling="http://sling.apache.org/jcr/sling/1.0" xmlns:jcr="http://www.jcp.org/jcr/1.0"
+  xmlns:nt="http://www.jcp.org/jcr/nt/1.0"
+  xmlns:granite="http://www.adobe.com/jcr/granite/1.0"
+  jcr:primaryType="nt:unstructured"
+  jcr:title="Hero"
+  sling:resourceType="cq/gui/components/authoring/dialog">
+  <content
+    jcr:primaryType="nt:unstructured"
+    sling:resourceType="granite/ui/components/coral/foundation/container">
+    <items jcr:primaryType="nt:unstructured">
+      <tabs
+        jcr:primaryType="nt:unstructured"
+        sling:resourceType="granite/ui/components/coral/foundation/tabs">
+        <items jcr:primaryType="nt:unstructured">
+          <headerProperties
+            jcr:primaryType="nt:unstructured"
+            jcr:title="Content"
+            sling:resourceType="granite/ui/components/coral/foundation/container"
+            margin="{Boolean}true">
+            <items jcr:primaryType="nt:unstructured">
+              <columns
+                jcr:primaryType="nt:unstructured"
+                sling:resourceType="granite/ui/components/coral/foundation/fixedcolumns"
+                margin="{Boolean}true">
+                <items jcr:primaryType="nt:unstructured">
+                  <column
+                    jcr:primaryType="nt:unstructured"
+                    sling:resourceType="granite/ui/components/coral/foundation/container">
+                    <items jcr:primaryType="nt:unstructured">
+                      <title
+                        jcr:primaryType="nt:unstructured"
+                        sling:resourceType="granite/ui/components/coral/foundation/form/textfield"
+                        fieldLabel="Title"
+                        name="./title"/>
+                      <titleType
+                        granite:class="core-title-sizes"
+                        jcr:primaryType="nt:unstructured"
+                        sling:resourceType="granite/ui/components/coral/foundation/form/select"
+                        fieldLabel="Title Type"
+                        fieldDescription="HTML tag for title"
+                        name="./titleType">
+                        <items jcr:primaryType="nt:unstructured">
+                          <h1
+                            jcr:primaryType="nt:unstructured"
+                            text="h1"
+                            value="h1"/>
+                          <h2
+                            jcr:primaryType="nt:unstructured"
+                            text="h2"
+                            value="h2"/>
+                          <h3
+                            jcr:primaryType="nt:unstructured"
+                            text="h3"
+                            value="h3"
+                            selected="{Boolean}true"/>
+                          <h4
+                            jcr:primaryType="nt:unstructured"
+                            text="h4"
+                            value="h4"/>
+                          <h5
+                            jcr:primaryType="nt:unstructured"
+                            text="h5"
+                            value="h5"/>
+                          <h6
+                            jcr:primaryType="nt:unstructured"
+                            text="h6"
+                            value="h6"/>
+                        </items>
+                      </titleType>
+                      <titleSize
+                        jcr:primaryType="nt:unstructured"
+                        sling:resourceType="granite/ui/components/coral/foundation/form/select"
+                        fieldLabel="Text Alignment"
+                        name="./titleSize">
+                        <items jcr:primaryType="nt:unstructured">
+                          <default
+                            jcr:primaryType="nt:unstructured"
+                            text="H1 (Default)"
+                            value="default"
+                            selected="{Boolean}true"/>
+                          <h2
+                            jcr:primaryType="nt:unstructured"
+                            text="H2"
+                            value="h2"/>
+                        </items>
+                      </titleSize>
+                      <textAlignment
+                        jcr:primaryType="nt:unstructured"
+                        sling:resourceType="granite/ui/components/coral/foundation/form/select"
+                        fieldLabel="Text Alignment"
+                        name="./textAlignment"
+                      >
+                        <items jcr:primaryType="nt:unstructured">
+                          <center
+                            jcr:primaryType="nt:unstructured"
+                            text="Center"
+                            value="center"
+                            selected="{Boolean}true"/>
+                          <left
+                            jcr:primaryType="nt:unstructured"
+                            text="Left"
+                            value="left"/>
+                        </items>
+                      </textAlignment>
+                      <imageDisplayLeft
+                        jcr:primaryType="nt:unstructured"
+                        sling:resourceType="granite/ui/components/coral/foundation/form/checkbox"
+                        name="./imageDisplayLeft"
+                        text="Display image on left"
+                        uncheckedValue="false"
+                        value="{Boolean}true"
+                        checked="{Boolean}false"
+                      />
+                      <imageAlignedBottom
+                        jcr:primaryType="nt:unstructured"
+                        sling:resourceType="granite/ui/components/coral/foundation/form/checkbox"
+                        name="./imageAlignedBottom"
+                        text="Image aligned to the bottom"
+                        uncheckedValue="false"
+                        value="{Boolean}true"
+                        checked="{Boolean}false"/>
+                      <showButton
+                        jcr:primaryType="nt:unstructured"
+                        sling:resourceType="granite/ui/components/coral/foundation/form/checkbox"
+                        name="./showButton"
+                        text="Show Button"
+                        uncheckedValue="false"
+                        value="{Boolean}true"
+                        checked="{Boolean}false"/>
+                    </items>
+                  </column>
+                </items>
+              </columns>
+            </items>
+          </headerProperties>
+        </items>
+      </tabs>
+    </items>
+  </content>
+</jcr:root>

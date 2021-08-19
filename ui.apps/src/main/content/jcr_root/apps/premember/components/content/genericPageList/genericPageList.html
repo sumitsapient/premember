@@ -1,0 +1,69 @@
+<div class="o-container u-p-vert-lg">
+	<sly
+		data-sly-repeat.child="${currentPage.listChildren}"
+		data-sly-use.template="core/wcm/components/commons/v1/templates.html"
+	>
+		<div
+			class="c-card c-card--plan"
+			data-sly-test.hasContent="${currentPage.listChildren}"
+		>
+			<div class="c-card__title">
+				<!--/* Plan title */-->
+				<h2 class="unity-type-h3 u-text-serif u-m-b-0">
+					${child.properties['planTitle']}
+				</h2>
+				<a class="c-button c-button--small" href="${child.path}.html" data-event-type="plan_card" data-event-name="select_plan_(west)|link|${child.properties['planTitle']}">Plan Details<span class="o-svg-icon o-svg-icon--lg u-m-l-xxs"><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="currentColor" focusable="false"><path d="M0 0h24v24H0z" fill="none"></path><path d="M10 6L8.59 7.41 13.17 12l-4.58 4.59L10 18l6-6z"></path></svg></span></a>
+			</div>
+			<div class="c-card__body">
+				<div class="c-card__plan-main o-grid">
+					<!--/* Plan description */-->
+					<div class="o-grid__item-12 o-grid__item-6@md">
+						<p>${child.properties['planDescription']}</p>
+					</div>
+					<div class="o-grid__item-12 o-grid__item-6@md">
+						<div class="o-media">
+							<!--/* Media icon */-->
+							<div class="o-media__img u-m-r">
+								<div class="c-tempo-icon c-tempo-icon--md c-tempo-icon--2c">
+									<img
+										alt=""
+										src="${child.properties['path']}"
+									/>
+								</div>
+							</div>
+							<div class="o-media__body">
+								<!--/* Media title */-->
+								<h3 class="unity-type-h6">${child.properties['title']}</h3>
+								<!--/* Media description */-->
+								<small class="u-color-gray-dark u-d-block">${child.properties['description']}</small>
+								<!--/* Media link */-->
+								<a
+									class="c-button c-button--naked u-text-left"
+									href="${child.properties['link']}"
+								>
+									${child.properties['linkTitle']}
+									<span class="o-svg-icon o-svg-icon--lg u-m-l-xxs">
+										<svg
+											xmlns="http://www.w3.org/2000/svg"
+											viewBox="0 0 24 24"
+											fill="currentColor"
+											focusable="false"
+										>
+											<path d="M0 0h24v24H0z" fill="none"></path>
+											<path d="M10 6L8.59 7.41 13.17 12l-4.58 4.59L10 18l6-6z"></path>
+										</svg>
+									</span>
+								</a>
+							</div>
+						</div>
+					</div>
+				</div>
+			</div>
+		</div>
+	</sly>
+</div>
+<section data-sly-test="${!currentPage.listChildren}" class="o-box u-m-t-lg u-p-vert-xl c-alert--error" role="alert">
+	<div>
+		<h3 data-sly-text="The Generic Page List component requires child pages of the sling:resourceType 'premember/components/structure/genericpage'"></h3>
+	</div>
+</section>

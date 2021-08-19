@@ -1,0 +1,27 @@
+/**
+ * TITLE - AEM CORE COMPONENT
+ */
+
+//Overide default heading inheritance in the Title core component.
+h1,
+h2,
+h3,
+h4,
+h5,
+h6 {
+	&.cmp-title__text {
+		line-height: inherit;
+		font-weight: inherit;
+		font-size: inherit;
+	}
+}
+
+[class*="o-grid__item"] > .title + .text {
+	margin-top: -$g-spacing;
+}
+
+// @TODO: The authoring variations on titles is too darn high.
+// Another hacky fix that needs to be rectified in brand refresh.
+[class*="o-grid__item"] > .title.u-m-b-0 + .text {
+	margin-top: 0;
+}

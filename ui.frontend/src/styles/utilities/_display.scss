@@ -1,0 +1,9 @@
+.u-d-none\@sm-only {
+	@media (max-width: 759px) {
+		display: none;
+	}
+}
+
+.u-f-column {
+	flex-direction: column;
+}

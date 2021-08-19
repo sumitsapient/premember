@@ -1,0 +1,24 @@
+<template data-sly-template.contactPerson="${@ contactPerson='Contact person'}">
+  <div class="c-card__person o-grid__item o-grid__item-6" data-sly-test="${contactPerson.firstAndLastName}">
+    <h4 class="c-card__person-name u-m-b-0 u-text-bold">${contactPerson.firstAndLastName}</h4>
+    <div class="c-card__person-title u-m-b-xxs unity-type-small" data-sly-test=${contactPerson.jobTitle}>${contactPerson.jobTitle}</div>
+    <div data-sly-test="${contactPerson.contactLink.link}">
+      <sly data-sly-use.contactEventName="${'/apps/premember/components/analytics/eventName.js' @ text=contactPerson.contactText}"/>
+      <a href="${contactPerson.contactLink.link}"
+          class="c-button c-button--naked u-text-left"
+          x-cq-linkchecker="valid"
+          data-event-type="button"
+          data-event-name="${contactEventName}">${contactPerson.contactText}</a>
+    </div>
+    <div data-sly-test="${contactPerson.phoneNumber.number}">
+      <sly data-sly-use.phoneEventName="${'/apps/premember/components/analytics/eventName.js' @ text=contactPerson.phoneNumber.label}"/>
+      <a href="tel:${contactPerson.phoneNumber.number}"
+         class="c-button c-button--naked u-text-left u-text-nowrap"
+         x-cq-linkchecker="valid"
+         data-event-type="button"
+         data-event-name="${phoneEventName}">
+        ${contactPerson.phoneNumber.label}
+      </a>
+    </div>
+  </div>
+</template>

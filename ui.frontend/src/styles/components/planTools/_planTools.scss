@@ -1,0 +1,23 @@
+.c-plan-tools {
+	display: block;
+	width: 100%;
+	text-align: right;
+}
+
+// inherit c-button--secondary
+// @TODO: should probably be a c-button modifier instead.
+.c-plan-tools__button {
+	padding-left: ($g-spacing-sm - $g-spacing-xxs);
+	padding-right: ($g-spacing-sm - $g-spacing-xxs);
+	min-width: 0;
+	border-width: 1px;
+
+	+ #{&} {
+		margin-left: 0.5rem;
+	}
+}
+
+.c-plan-tools__icon {
+	display: block;
+	width: 1.75rem;
+}

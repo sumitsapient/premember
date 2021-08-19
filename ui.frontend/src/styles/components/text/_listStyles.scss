@@ -1,0 +1,35 @@
+.aem-component-rte--violet-list > .cmp-text {
+	ol,
+	ul {
+		list-style: none;
+		counter-reset: my-awesome-counter;
+		margin-left: $g-spacing-sm;
+		margin-right: $g-spacing;
+
+		li {
+			counter-increment: my-awesome-counter;
+			position: relative;
+			padding-left: 14px;
+			margin-bottom: 0.75rem;
+
+			&::before {
+				content: counter(my-awesome-counter);
+				color: $colors-violet-base;
+				font-weight: 700;
+				margin-right: 6px;
+				position: absolute;
+				left: 0;
+			}
+		}
+	}
+
+	ul {
+		padding-left: 0;
+
+		li::before {
+			content: "\2022";
+			top: 0.25em;
+			font-size: 0.7em;
+		}
+	}
+}

@@ -1,0 +1,25 @@
+.c-rates-table__outofpocket {
+	@include mq(md) {
+		border-left: 1px solid unity-color('gray', 'medium');
+		border-right: 1px solid unity-color('gray', 'medium');
+	}
+
+	@include mq($until: md) {
+		.o-grid__item {
+			margin-bottom: $g-spacing-sm;
+		}
+	}
+}
+
+.rate-comparison-filter {
+	@include mq($until: md) {
+		div[role="group"] {
+			display: block !important;
+		}
+
+		.o-grid__item-auto {
+			width: 100%;
+			margin-bottom: $g-spacing-xs;
+		}
+	}
+}

@@ -1,0 +1,89 @@
+.cq-Editable-dom {
+	.employer-container {
+		padding: 25px 0;
+
+		p {
+			margin: 0;
+		}
+	}
+
+	.container-main-title {
+		color: black;
+		width: 100%;
+		text-align: center;
+	}
+
+	.container-section-title {
+		margin-left: 20px;
+		padding-top: 20px;
+
+		h4 {
+			font-weight: 700;
+		}
+	}
+
+	.container-logo {
+		margin-left: 20px;
+
+		.c-icon-box {
+			margin: 0;
+		}
+	}
+
+	.container-enrollment-dates-wrapper {
+		display: flex;
+		flex-wrap: wrap;
+		margin-left: 20px;
+	}
+
+	.container-enrollment-dates--start,
+	.container-enrollment-dates--end,
+	.container-enrollment-dates--showFrom,
+	.container-enrollment-dates--description,
+	.container--error {
+		margin-right: 25px;
+	}
+
+	.container--error {
+		color: unity-color('red', 'dark'); //update red to unity red
+		width: 100%;
+	}
+
+	.container-help-contact {
+		display: flex;
+	}
+
+	.container-basic-info,
+	.container-contact-person {
+		flex: 1;
+		margin: 5px 0 10px 20px;
+		border-left: 1px solid unity-color('gray', 'dark');
+		padding-left: 20px;
+	}
+
+	.container-contact-person h5 {
+		font-weight: 700;
+		text-align: center;
+	}
+
+	.container-basic-info--time {
+		margin-bottom: 15px;
+	}
+
+	&.footerConfig .container-main-setion {
+		margin-left: 20px;
+	}
+
+	&.plan-list {
+		width: 33.333% !important;
+		border: 1px solid unity-color('black');
+
+		.plan-list-item {
+			padding: 10px 10px 0;
+		}
+
+		.plan-list-item:nth-child(even) {
+			background-color: unity-color('gray', 'light');
+		}
+	}
+}

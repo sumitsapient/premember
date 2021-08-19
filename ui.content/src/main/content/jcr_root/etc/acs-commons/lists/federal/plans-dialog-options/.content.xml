@@ -1,0 +1,63 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<jcr:root xmlns:sling="http://sling.apache.org/jcr/sling/1.0" xmlns:cq="http://www.day.com/jcr/cq/1.0" xmlns:jcr="http://www.jcp.org/jcr/1.0" xmlns:mix="http://www.jcp.org/jcr/mix/1.0" xmlns:nt="http://www.jcp.org/jcr/nt/1.0"
+    jcr:primaryType="cq:Page">
+    <jcr:content
+        cq:lastModified="{Date}2020-11-25T09:03:41.534-06:00"
+        cq:lastModifiedBy="admin"
+        jcr:isCheckedOut="{Boolean}true"
+        jcr:mixinTypes="[mix:versionable]"
+        jcr:primaryType="nt:unstructured"
+        jcr:title="Plans Dialog Options"
+        jcr:uuid="857b324b-380f-4c38-8ad6-c8f945be454c"
+        sling:resourceType="acs-commons/components/utilities/genericlist">
+        <image
+            jcr:primaryType="nt:unstructured"
+            fileReference="/apps/acs-commons/components/utilities/genericlist/generic-list.png"/>
+        <list jcr:primaryType="nt:unstructured">
+            <item0
+                jcr:primaryType="nt:unstructured"
+                jcr:title="after deductible"
+                value="after deductible"/>
+            <item1
+                jcr:primaryType="nt:unstructured"
+                jcr:title="after deductible (waived if admitted)"
+                value="after deductible (waived if admitted)"/>
+            <item2
+                jcr:primaryType="nt:unstructured"
+                jcr:title="copayment"
+                value="copayment"/>
+            <item3
+                jcr:primaryType="nt:unstructured"
+                jcr:title="copayment (waived if admitted)"
+                value="copayment (waived if admitted)"/>
+            <item4
+                jcr:primaryType="nt:unstructured"
+                jcr:title="copayment after deductible"
+                value="copayment after deductible"/>
+            <item5
+                jcr:primaryType="nt:unstructured"
+                jcr:title="copayment after deductible (waived if admitted)"
+                value="copayment after deductible (waived if admitted)"/>
+            <item6
+                jcr:primaryType="nt:unstructured"
+                jcr:title="copayment at a preferred provider"
+                value="copayment at a preferred provider"/>
+            <item7
+                jcr:primaryType="nt:unstructured"
+                jcr:title="copayment per admission after deductible"
+                value="copayment per admission after deductible"/>
+            <item8
+                jcr:primaryType="nt:unstructured"
+                jcr:title="copayment per specialist"
+                value="copayment per specialist"/>
+            <item9
+                jcr:primaryType="nt:unstructured"
+                jcr:title="not subject to deductible"
+                value="not subject to deductible"/>
+            <item10
+                jcr:primaryType="nt:unstructured"
+                jcr:title="up to"
+                value="up to"/>
+        </list>
+    </jcr:content>
+</jcr:root>

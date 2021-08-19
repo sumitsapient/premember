@@ -1,0 +1,12 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<jcr:root xmlns:sling="http://sling.apache.org/jcr/sling/1.0" xmlns:jcr="http://www.jcp.org/jcr/1.0" xmlns:nt="http://www.jcp.org/jcr/nt/1.0"
+    jcr:primaryType="sling:OrderedFolder">
+    <FSA_CommuterExpense_01.jpg/>
+    <FSA_DependantCare_01.jpg/>
+    <FSA_HealthCare_01.jpg/>
+    <FSA_LimitedPurpose_01.jpg/>
+    <FinancialProtection_01.jpg/>
+    <jcr:content jcr:primaryType="nt:unstructured">
+        <folderThumbnail/>
+    </jcr:content>
+</jcr:root>

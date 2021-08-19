@@ -1,0 +1,31 @@
+<!--/* NOTE: No longer being used */-->
+<template data-sly-template.planCostsValues="${@ indNetwork='0', indOutNetwork='0', famNetwork='0', famOutNetwork='0'}">
+    <div class="plan-costs__column">
+        <p class="plan-costs__subtitle">Network</p>
+        <p class="plan-costs__subtitle">Out-of-Network</p>
+        <div class="plan-costs__values u-d-flex u-f-wrap">
+            <div class="plan-costs__values-wrapper u-d-flex u-f-align-start u-f-justify-center">
+                <p class="plan-costs__names">Individual</p>
+                <p data-sly-test.isEmpty="${!indNetwork}"><span class="plan-costs__not-available">N/A</span></p>
+                <sly data-sly-test="${!isEmpty}">
+                    <p><sup>$</sup>${',###' @ format=indNetwork, type='number'}</p>
+                </sly>
+                <p data-sly-test.isEmpty="${!indOutNetwork}"><span class="plan-costs__not-available">N/A</span></p>
+                <sly data-sly-test="${!isEmpty}">
+                    <p><sup>$</sup>${',###' @ format=indOutNetwork, type='number'}</p>
+                </sly>
+            </div>
+            <div class="plan-costs__values-wrapper u-d-flex u-f-align-start u-f-justify-center">
+                <p class="plan-costs__names">Family</p>
+                <p data-sly-test.isEmpty="${!famNetwork}"><span class="plan-costs__not-available">N/A</span></p>
+                <sly data-sly-test="${!isEmpty}">
+                    <p><sup>$</sup>${',###' @ format=famNetwork, type='number'}</p>
+                </sly>
+                <p data-sly-test.isEmpty="${!famOutNetwork}"><span class="plan-costs__not-available">N/A</span></p>
+                <sly data-sly-test="${!isEmpty}">
+                    <p><sup>$</sup>${',###' @ format=famOutNetwork, type='number'}</p>
+                </sly>
+            </div>
+        </div>
+    </div>
+</template>

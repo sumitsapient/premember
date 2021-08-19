@@ -1,0 +1,172 @@
+.c-tempo-icon {
+	align-self: flex-start; // when used in flex contents, no growing.
+	color: unity-color('blue');
+	margin-bottom: $g-spacing-sm;
+	max-width: 100%;
+	position: relative;
+	width: $tempo-icon-dimension;
+	height: $tempo-icon-dimension;
+
+	svg {
+		display: block;
+		width: 100%;
+	}
+
+	.cmp-icon {
+		width: 100%;
+		height: 100%;
+	}
+
+	.c-tempo-icon__circle {
+		fill: transparent;
+	}
+
+	.c-tempo-icon__base {
+		fill: currentColor;
+	}
+
+	// Sizing
+	&.c-tempo-icon--sm {
+		width: $tempo-icon-dimension * 0.75;
+		height: $tempo-icon-dimension * 0.75;
+	}
+
+	&.c-tempo-icon--md {
+		width: $g-spacing-xxl; // 64px
+		height: $g-spacing-xxl; // 64px
+	}
+
+	&.c-tempo-icon--lg {
+		width: $tempo-icon-dimension * 2;
+		height: $tempo-icon-dimension * 2;
+	}
+
+	&.c-tempo-icon--xl {
+		width: $tempo-icon-dimension * 4;
+		height: $tempo-icon-dimension * 4;
+	}
+
+	&.c-tempo-icon--xxl {
+		width: $tempo-icon-dimension * 8;
+		height: $tempo-icon-dimension * 8;
+	}
+
+	// Base Styles
+
+	/* 1 Color Blue Circle */
+	&.c-tempo-icon--blue {
+		color: unity-color('white');
+	}
+
+	&.c-tempo-icon--blue .c-tempo-icon__circle {
+		fill: unity-color('blue');
+		fill-opacity: 1;
+	}
+
+	/* 2 Color */
+	&.c-tempo-icon--2c {
+		fill: unity-color('blue');
+	}
+
+	&.c-tempo-icon--2c .c-tempo-icon__circle {
+		fill: unity-color('white');
+		fill-opacity: 1;
+	}
+
+	&.c-tempo-icon--2c .c-tempo-icon__base {
+		fill: currentColor;
+	}
+
+	&.c-tempo-icon--2c .c-tempo-icon__accent {
+		fill: unity-color('blue', 'bright');
+	}
+
+	/* 2 Color Blue */
+	&.c-tempo-icon--2c-blue {
+		color: unity-color('white');
+	}
+
+	&.c-tempo-icon--2c-blue .c-tempo-icon__circle {
+		fill: unity-color('blue');
+		fill-opacity: 1;
+	}
+
+	// Helpers
+
+	/* 1c Blue Only */
+	.c-tempo-icon__1c-blue-only {
+		display: none !important;
+	}
+
+	&.c-tempo-icon--blue .c-tempo-icon__1c-blue-only {
+		display: block !important;
+	}
+
+	/* 1c Only */
+	.c-tempo-icon__1c-only {
+		display: block !important;
+	}
+
+	&.c-tempo-icon--2c-blue .c-tempo-icon__1c-only,
+	&.c-tempo-icon--2c .c-tempo-icon__1c-only {
+		display: none !important;
+	}
+
+	/* Blue Circle Only */
+	.c-tempo-icon__blue-only {
+		display: none !important;
+	}
+
+	&.c-tempo-icon--blue .c-tempo-icon__blue-only,
+	&.c-tempo-icon--2c-blue .c-tempo-icon__blue-only {
+		display: block !important;
+	}
+
+	/* 2c Only */
+	.c-tempo-icon__2c-only {
+		display: none !important;
+	}
+
+	&.c-tempo-icon--2c .c-tempo-icon__2c-only,
+	&.c-tempo-icon--2c-blue .c-tempo-icon__2c-only {
+		display: block !important;
+	}
+
+	/* 2c Blue Circle Only */
+	&.c-tempo-icon--2c-blue .c-tempo-icon__2c-blue-only {
+		display: block !important;
+	}
+
+	/* No Blue Circle Only */
+	&.c-tempo-icon--blue .c-tempo-icon__noblue-only,
+	&.c-tempo-icon--2c-blue .c-tempo-icon__noblue-only {
+		display: none !important;
+	}
+
+	/* No 1c Blue Circle Only */
+	&.c-tempo-icon--blue .c-tempo-icon__1c-noblue-only {
+		display: none !important;
+	}
+
+	/* Always (Sort Of) */
+	.c-tempo-icon__always-blue {
+		fill: unity-color('blue') !important;
+	}
+
+	.c-tempo-icon__always-white {
+		fill: unity-color('white') !important;
+	}
+
+	/* Color Swaps */
+	&.c-tempo-icon--2c-blue .c-tempo-icon__base-swap-accent {
+		fill: unity-color('blue', 'bright') !important;
+	}
+
+	&.c-tempo-icon--2c-blue .c-tempo-icon__accent-swap-blue {
+		fill: unity-color('blue') !important;
+	}
+
+	&.c-tempo-icon--2c-blue .c-tempo-icon__accent-swap-white {
+		fill: unity-color('white') !important;
+	}
+}

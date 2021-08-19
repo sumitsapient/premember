@@ -1,0 +1,155 @@
+$plan-card-border-color: unity-color('gray', 'medium');
+$plan-card-border-radius: $g-spacing-sm;
+
+.c-card.c-card--plan {
+	border: 1px solid $plan-card-border-color;
+	border-radius: $plan-card-border-radius;
+	margin-bottom: $g-spacing-lg;
+
+	@include mq(lg) {
+		margin-bottom: $g-spacing-xl;
+	}
+
+	.c-card__title {
+		align-items: center;
+		background-color: unity-color('blue', 'light');
+		border-bottom: 1px solid $plan-card-border-color;
+		border-top-left-radius: $plan-card-border-radius;
+		border-top-right-radius: $plan-card-border-radius;
+		display: flex;
+		justify-content: space-between;
+		padding: $g-spacing-sm;
+
+		.c-button {
+			font-family: 'UHC Sans', 'Helvetica Neue', 'Helvetica', 'Arial', sans-serif;
+			font-size: 1rem;
+			font-weight: 500;
+			margin-left: $g-spacing-sm;
+			white-space: nowrap;
+			flex-shrink: 0;
+		}
+
+		@include mq($until: sm) {
+			flex-direction: column;
+
+			.c-button {
+				margin-top: $g-spacing-sm;
+				margin-left: 0;
+			}
+		}
+	}
+
+	.c-card__plan-main {
+		justify-content: space-evenly;
+
+		&--generic {
+			justify-content: flex-start;
+		}
+
+		// ie11 fix
+		@include ie11SpecificFix {
+			justify-content: space-around;
+		}
+
+		// grid item spacing fixes
+		> *:last-child {
+			margin-bottom: 0;
+		}
+
+		@include mq(sm) {
+			> * {
+				margin-bottom: 0;
+			}
+		}
+	}
+
+	.c-card__plan-costs {
+		display: flex;
+		flex-direction: column;
+		height: 100%;
+		justify-content: space-between;
+		text-align: center;
+
+		@include mq(sm) {
+			justify-content: flex-start;
+		}
+	}
+
+	.c-card__plan-cost-items {
+		justify-content: space-evenly;
+
+		@include ie11SpecificFix {
+			justify-content: space-around;
+		}
+
+		@include mq(xl) {
+			justify-content: flex-start;
+		}
+
+		.o-grid__item-auto {
+			margin-bottom: 0;
+
+			@include mq(sm) {
+				&:first-child {
+					margin-bottom: $g-spacing-sm;
+				}
+			}
+
+			p {
+				margin-bottom: 0;
+			}
+		}
+	}
+
+	.c-card__collapse {
+		@include unity-transition();
+
+		overflow: hidden;
+
+		.c-card__body {
+			border-top: 1px solid $plan-card-border-color;
+		}
+
+		// hide redundant benefit item on non-mobile views
+		@include mq(md) {
+			.o-media:first-child {
+				display: none;
+			}
+		}
+
+		.o-grid {
+			> *:last-child {
+				margin-bottom: 0;
+			}
+
+			@include mq(md) {
+				> * {
+					margin-bottom: 0;
+				}
+			}
+		}
+	}
+
+	.c-card__footer {
+		border-top: 1px solid $plan-card-border-color;
+		padding: 0;
+
+		.c-button {
+			border-radius: 0 0 $plan-card-border-radius $plan-card-border-radius;
+			display: flex;
+			width: 100%;
+			justify-content: center;
+			align-items: center;
+
+			.o-svg-icon {
+				@include unity-transition();
+			}
+
+			&[aria-expanded="true"] {
+				.o-svg-icon {
+					transform: rotate(180deg);
+				}
+			}
+		}
+	}
+}

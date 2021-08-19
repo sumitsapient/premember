@@ -1,0 +1,16 @@
+$minHeroHeight: 290px;
+
+$g-spacing-md: $g-spacing;
+
+$tempo-icon-dimension: $g-spacing-xl;
+
+.aem-component--grow-height {
+	width: 100%;
+
+	&.card,
+	&.image {
+		display: flex;
+		flex: 1 0 auto;
+		flex-flow: column nowrap;
+	}
+}

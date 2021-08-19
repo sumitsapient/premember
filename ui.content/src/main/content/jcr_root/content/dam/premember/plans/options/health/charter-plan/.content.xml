@@ -1,0 +1,105 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<jcr:root xmlns:dam="http://www.day.com/dam/1.0" xmlns:cq="http://www.day.com/jcr/cq/1.0" xmlns:jcr="http://www.jcp.org/jcr/1.0" xmlns:mix="http://www.jcp.org/jcr/mix/1.0" xmlns:nt="http://www.jcp.org/jcr/nt/1.0"
+    jcr:mixinTypes="[mix:referenceable]"
+    jcr:primaryType="dam:Asset">
+    <jcr:content
+        cq:name="charter-plan"
+        cq:parentPath="/content/dam/premember/plans/options/health"
+        cq:versionCreator="admin"
+        jcr:description=""
+        jcr:primaryType="dam:AssetContent"
+        jcr:title="Charter Plan"
+        contentFragment="{Boolean}true"
+        lastFragmentSave="{Date}2020-07-01T19:17:26.122Z">
+        <data
+            cq:model="/conf/premember/health-option/settings/dam/cfm/models/health-plan-option"
+            jcr:primaryType="nt:unstructured">
+            <master
+                jcr:mixinTypes="[cq:Taggable]"
+                jcr:primaryType="nt:unstructured"
+                catalystPlanAdditionalInfo="{Boolean}false"
+                comparisonChapter1Topic3Option1="{Boolean}false"
+                comparisonChapter1Topic3Option2="{Boolean}false"
+                comparisonChapter1Topic3Option3="{Boolean}false"
+                comparisonChapter1Topic3Option4="{Boolean}true"
+                comparisonNetworkCoverage="\{comparisonChapter1Topic1Option2} - No — Search network doctors and facilities"
+                comparisonPcpRequirement="\{comparisonChapter1Topic2Option1} - Yes — you'll need to choose a PCP to help provide and coordinate your care"
+                comparisonProviderLink="eyJwbGFuTmFtZSI6IkNoYXJ0ZXIgSE1PIiwiZGVsc3lzIjoiMTAwMTgiLCJjb3ZlcmFnZVR5cGUiOiJtZWRpY2FsIiwicGFydG5lcklkIjoidWhjIiwic2hvd0Nvc3RzIjp0cnVlfQz0NJLUBAzesWm9s0nLv0D29b9uIlY9FThez3SJjdYXk"
+                comparisonSearchCoverageLinkText="{Boolean}true"
+                comparisonFullBenefitsLinkText="{Boolean}true"
+                hasStateSpecificProvider="{Boolean}false"
+                hsaWithOptumBank="{Boolean}false"
+                planDescription="&lt;p>With this health plan, you’ll need to select a primary care physician (PCP) from our network. Your PCP will perform a key role in guiding your health care by helping you avoid duplicating tests and services, connecting you with a specialist if needed, and supporting you in achieving your best health.&amp;nbsp;&amp;nbsp;&lt;/p>&#xa;&lt;p>&amp;nbsp;&lt;/p>&#xa;&lt;p>There is no coverage if you use an out-of-network provider or if you see a specialist without an online referral from your PCP.&amp;nbsp;&amp;nbsp;&lt;/p>&#xa;&lt;p>&amp;nbsp;&lt;/p>&#xa;&lt;p>Preventive care is covered 100 percent in the network. You don't have to pay any out-of-pocket costs for age appropriate preventive care as long as you use a network doctor.&lt;/p>&#xa;"
+                planDetailPagePrimaryCarePhysicianTopic1Option="\{planDetailPagePrimaryCarePhysicianTopic1Option1} - With this plan, you'll need to select a primary care physician (PCP)"
+                planName="The Charter® Plan "
+                prescriptionSearchLink="{Boolean}true"
+                primaryCarePhysician="\{summaryTopic2Option1} - Primary care provider required"
+                providerSearchLink="eyJwbGFuTmFtZSI6IkNoYXJ0ZXIgSE1PIiwiZGVsc3lzIjoiMTAwMTgiLCJjb3ZlcmFnZVR5cGUiOiJtZWRpY2FsIiwicGFydG5lcklkIjoidWhjIiwic2hvd0Nvc3RzIjp0cnVlfQz0NJLUBAzesWm9s0nLv0D29b9uIlY9FThez3SJjdYXk"
+                servicesCovered="{Boolean}true"
+                showPlanDetailPageNetworkCoverageTopic1Option1="{Boolean}false"
+                showPlanDetailPageNetworkCoverageTopic1Option2="{Boolean}false"
+                showPlanDetailPageNetworkCoverageTopic1Option3="{Boolean}true"
+                showPlanDetailPageNetworkCoverageTopic1Option4="{Boolean}false"
+                showPlanDetailPageNetworkCoverageTopic1Option5="{Boolean}false"
+                summaryCopays="\{summaryTopic3Option1} - Copay due for certain services, prescriptions and locations"
+                summaryNetworkCoverage="\{summaryTopic1Option2} - Only network providers covered"
+                summaryTopic4Option1="{Boolean}false"
+                summaryTopic4Option2="{Boolean}false"
+                summaryTopic4Option3="{Boolean}false"
+                summaryTopic4Option4="{Boolean}true"
+                suppressPrescriptionCoverage="{Boolean}true"/>
+            <charter_plan_-_ca
+                jcr:mixinTypes="[cq:Taggable]"
+                jcr:primaryType="nt:unstructured"
+                catalystPlanAdditionalInfo="{Boolean}false"
+                comparisonChapter1Topic3Option1="{Boolean}false"
+                comparisonChapter1Topic3Option2="{Boolean}false"
+                comparisonChapter1Topic3Option3="{Boolean}false"
+                comparisonChapter1Topic3Option4="{Boolean}true"
+                comparisonNetworkCoverage="\{comparisonChapter1Topic1Option2} - No — Search network doctors and facilities"
+                comparisonPcpRequirement="\{comparisonChapter1Topic2Option1} - Yes — you'll need to choose a PCP to help provide and coordinate your care"
+                comparisonProviderLink="eyJwbGFuTmFtZSI6IkNoYXJ0ZXIgSE1PIiwiZGVsc3lzIjoiMTAwMTgiLCJjb3ZlcmFnZVR5cGUiOiJtZWRpY2FsIiwicGFydG5lcklkIjoidWhjIiwic2hvd0Nvc3RzIjp0cnVlfQz0NJLUBAzesWm9s0nLv0D29b9uIlY9FThez3SJjdYXk"
+                comparisonSearchCoverageLinkText="{Boolean}true"
+                comparisonFullBenefitsLinkText="{Boolean}true"
+                hasStateSpecificProvider="{Boolean}false"
+                hsaWithOptumBank="{Boolean}false"
+                planDescription="&lt;p>With this health plan, you’ll need to select a primary care physician (PCP) from our network. Your PCP will perform a key role in guiding your health care by helping you avoid duplicating tests and services, connecting you with a specialist if needed, and supporting you in achieving your best health.&amp;nbsp;&amp;nbsp;&lt;/p>&#xa;&lt;p>&amp;nbsp;&lt;/p>&#xa;&lt;p>There is no coverage if you use an out-of-network provider or if you see a specialist without an online referral from your PCP.&amp;nbsp;&amp;nbsp;&lt;/p>&#xa;&lt;p>&amp;nbsp;&lt;/p>&#xa;&lt;p>Preventive care is covered 100 percent in the network. You don't have to pay any out-of-pocket costs for age appropriate preventive care as long as you use a network doctor.&lt;/p>&#xa;"
+                planDetailPagePrimaryCarePhysicianTopic1Option="\{planDetailPagePrimaryCarePhysicianTopic1Option1} - With this plan, you'll need to select a primary care physician (PCP)"
+                planName="The Charter® Plan - California"
+                prescriptionSearchLink="{Boolean}true"
+                primaryCarePhysician="\{summaryTopic2Option1} - Primary care provider required"
+                providerSearchLink="eyJwbGFuTmFtZSI6IkNoYXJ0ZXIgSE1PIiwiZGVsc3lzIjoiMTAwMTgiLCJjb3ZlcmFnZVR5cGUiOiJtZWRpY2FsIiwicGFydG5lcklkIjoidWhjIiwic2hvd0Nvc3RzIjp0cnVlfQz0NJLUBAzesWm9s0nLv0D29b9uIlY9FThez3SJjdYXk"
+                servicesCovered="{Boolean}true"
+                showPlanDetailPageNetworkCoverageTopic1Option1="{Boolean}false"
+                showPlanDetailPageNetworkCoverageTopic1Option2="{Boolean}false"
+                showPlanDetailPageNetworkCoverageTopic1Option3="{Boolean}true"
+                showPlanDetailPageNetworkCoverageTopic1Option4="{Boolean}false"
+                showPlanDetailPageNetworkCoverageTopic1Option5="{Boolean}false"
+                summaryCopays="\{summaryTopic3Option1} - Copay due for certain services, prescriptions and locations"
+                summaryNetworkCoverage="\{summaryTopic1Option2} - Only network providers covered"
+                summaryTopic4Option1="{Boolean}false"
+                summaryTopic4Option2="{Boolean}false"
+                summaryTopic4Option3="{Boolean}false"
+                summaryTopic4Option4="{Boolean}true"
+                suppressPrescriptionCoverage="{Boolean}true"/>
+        </data>
+        <metadata
+            jcr:mixinTypes="[cq:Taggable]"
+            jcr:primaryType="nt:unstructured"/>
+        <model jcr:primaryType="nt:unstructured">
+            <variations jcr:primaryType="nt:unstructured">
+                <charter_plan_-_ca
+                    jcr:description="For CA markets"
+                    jcr:mixinTypes="[cq:Taggable]"
+                    jcr:primaryType="nt:unstructured"
+                    jcr:title="Charter Plan - CA"
+                    name="charter_plan_-_ca">
+                    <properties
+                        jcr:primaryType="nt:unstructured"
+                        synchronizeWithVersion="[planName:52f128c2-8305-4721-b499-592316ab26fc,planId:52f128c2-8305-4721-b499-592316ab26fc,planDescription:52f128c2-8305-4721-b499-592316ab26fc,providerSearchLink:52f128c2-8305-4721-b499-592316ab26fc,prescriptionSearchLink:52f128c2-8305-4721-b499-592316ab26fc,hasStateSpecificProvider:52f128c2-8305-4721-b499-592316ab26fc,stateSpecificProviderDescription:52f128c2-8305-4721-b499-592316ab26fc,stateSpecificProviderLinkText:52f128c2-8305-4721-b499-592316ab26fc,stateSpecificProviderLink:52f128c2-8305-4721-b499-592316ab26fc,summaryNetworkCoverage:52f128c2-8305-4721-b499-592316ab26fc,primaryCarePhysician:52f128c2-8305-4721-b499-592316ab26fc,summaryCopays:52f128c2-8305-4721-b499-592316ab26fc,summaryTopic4Option1:52f128c2-8305-4721-b499-592316ab26fc,summaryTopic4Option2:52f128c2-8305-4721-b499-592316ab26fc,summaryTopic4Option3:52f128c2-8305-4721-b499-592316ab26fc,summaryTopic4Option4:52f128c2-8305-4721-b499-592316ab26fc,suppressPrescriptionCoverage:52f128c2-8305-4721-b499-592316ab26fc,showPlanDetailPageNetworkCoverageTopic1Option1:52f128c2-8305-4721-b499-592316ab26fc,showPlanDetailPageNetworkCoverageTopic1Option2:52f128c2-8305-4721-b499-592316ab26fc,showPlanDetailPageNetworkCoverageTopic1Option3:52f128c2-8305-4721-b499-592316ab26fc,showPlanDetailPageNetworkCoverageTopic1Option4:52f128c2-8305-4721-b499-592316ab26fc,showPlanDetailPageNetworkCoverageTopic1Option5:52f128c2-8305-4721-b499-592316ab26fc,planDetailPagePrimaryCarePhysicianTopic1Option:52f128c2-8305-4721-b499-592316ab26fc,catalystPlanAdditionalInfo:52f128c2-8305-4721-b499-592316ab26fc,hsaWithOptumBank:52f128c2-8305-4721-b499-592316ab26fc,hraOption:52f128c2-8305-4721-b499-592316ab26fc,comparisonNetworkCoverage:52f128c2-8305-4721-b499-592316ab26fc,comparisonPcpRequirement:52f128c2-8305-4721-b499-592316ab26fc,comparisonChapter1Topic3Option1:52f128c2-8305-4721-b499-592316ab26fc,comparisonChapter1Topic3Option2:52f128c2-8305-4721-b499-592316ab26fc,comparisonChapter1Topic3Option3:52f128c2-8305-4721-b499-592316ab26fc,comparisonChapter1Topic3Option4:52f128c2-8305-4721-b499-592316ab26fc,servicesCovered:52f128c2-8305-4721-b499-592316ab26fc,comparisonSearchCoverageLinkText:52f128c2-8305-4721-b499-592316ab26fc,comparisonProviderLink:52f128c2-8305-4721-b499-592316ab26fc,comparisonPrescriptionLink:52f128c2-8305-4721-b499-592316ab26fc,disclaimers:52f128c2-8305-4721-b499-592316ab26fc]"/>
+                </charter_plan_-_ca>
+            </variations>
+        </model>
+        <related jcr:primaryType="nt:unstructured"/>
+    </jcr:content>
+</jcr:root>

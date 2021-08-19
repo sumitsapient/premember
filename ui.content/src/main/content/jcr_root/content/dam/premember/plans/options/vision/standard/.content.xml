@@ -1,0 +1,63 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<jcr:root xmlns:dam="http://www.day.com/dam/1.0" xmlns:cq="http://www.day.com/jcr/cq/1.0" xmlns:jcr="http://www.jcp.org/jcr/1.0" xmlns:mix="http://www.jcp.org/jcr/mix/1.0" xmlns:nt="http://www.jcp.org/jcr/nt/1.0"
+    jcr:mixinTypes="[mix:referenceable]"
+    jcr:primaryType="dam:Asset">
+    <jcr:content
+        cq:name="standard"
+        cq:parentPath="/content/dam/premember/plans/options/vision"
+        cq:versionCreator="admin"
+        jcr:description=""
+        jcr:primaryType="dam:AssetContent"
+        jcr:title="Standard"
+        contentFragment="{Boolean}true"
+        lastFragmentSave="{Date}2020-06-25T06:08:43.103Z">
+        <data
+            cq:model="/conf/premember/vision-option/settings/dam/cfm/models/vision-plan-option"
+            jcr:primaryType="nt:unstructured">
+            <master
+                jcr:mixinTypes="[cq:Taggable]"
+                jcr:primaryType="nt:unstructured"
+                comparisonChapter5SubSection2Topic2Option1="{Boolean}true"
+                comparisonChapter5SubSection2Topic2Option2="{Boolean}true"
+                comparisonChapter5SubSection2Topic2Option3="{Boolean}true"
+                comparisonChapter5SubSection2Topic2Option4="{Boolean}true"
+                comparisonChapter5SubSection2Topic3Option1="{Boolean}true"
+                comparisonChapter5SubSection2Topic3Option2="{Boolean}true"
+                comparisonChapter5SubSection3Topic2Option1="{Boolean}true"
+                comparisonChapter5SubSection3Topic2Option2="{Boolean}true"
+                comparisonProviderLink="https://www.uhc.com/"
+                comparisonSearchCoverageLinkText="{Boolean}true"
+                comparisonFullBenefitsLinkText="{Boolean}true"
+                discountsTopic3Offered="{Boolean}false"
+                discountsTopic4Offered="{Boolean}false"
+                fullBenefitsLink="/content/dam/premember/documents/lorem-ipsum.pdf"
+                hasStateSpecificProvider="{Boolean}false"
+                hideDiscountsAvailable="{Boolean}false"
+                planDescription="&lt;p>Eye health is important to you and your family’s overall health. A vision plan from UnitedHealthcare helps make it easy to maintain healthier eyes and good sight while helping you save money. Our vision plan provides eye exams and eyeglasses or contacts as well as discounts on popular lens options, laser vision correction, and extra pairs of eyewear. You’ll have access to a national network of providers that includes a mix of ophthalmologists and optometrists in both private practice and retail settings.&lt;/p>&#xa;"
+                planHighlightsTopic2Option="\{planHighlightsTopic2Option2}"
+                planHighlightsTopic3Offered="{Boolean}false"
+                planHighlightsTopic4Offered="{Boolean}false"
+                planHighlightsTopic5Offered="{Boolean}true"
+                planId="SV10"
+                planName="Standard Vision Plan"
+                providerSearchLink="https://wf.myuhcvision.com"
+                summaryTopic1Option="\{summaryTopic1Option1} - Network providers only"
+                summaryTopic2Option="\{summaryTopic2Option1} - Annual eye exams, flexible frame coverage, popular lens options, and more"
+                summaryTopic3Option="\{summaryTopic3Option1} - From lenses and contacts to laser correction procedures, plus more"
+                summaryTopic7Option="\{summaryTopic7Option1} - Covers in full standard, scratch resistant coating, polycarbonate lenses. See benefit document for details"
+                summaryTopic5Option1Offered="{Boolean}true"
+                summaryTopic5Option2Offered="{Boolean}true"
+                summaryTopic5Option3Offered="{Boolean}true"
+                summaryTopic5Option4Offered="{Boolean}true"
+                summaryTopic6Option2Offered="{Boolean}true"
+                summaryTopic6Option3Offered="{Boolean}true"
+                summaryTopic6Option4Offered="{Boolean}true"
+                suppressSummaryTopic5="{Boolean}false"
+                suppressSummaryTopic7="{Boolean}false"/>
+        </data>
+        <metadata
+            jcr:mixinTypes="[cq:Taggable]"
+            jcr:primaryType="nt:unstructured"/>
+        <related jcr:primaryType="nt:unstructured"/>
+    </jcr:content>
+</jcr:root>

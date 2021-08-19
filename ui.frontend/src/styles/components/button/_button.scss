@@ -1,0 +1,43 @@
+.c-button {
+	font-weight: $g-font-semibold;
+}
+
+.c-button.c-button--disabled {
+	background-color: unity-color('gray', 'light');
+	border-color: unity-color('gray', 'light');
+	color: $colors-gray-comet;
+
+	&:hover {
+		cursor: not-allowed;
+	}
+
+	@include hover-focus {
+		border-color: unity-color('gray', 'light');
+		color: $colors-gray-comet;
+	}
+
+	&:active {
+		color: $colors-gray-comet;
+	}
+}
+
+.c-button--naked {
+	color: unity-color('blue');
+	padding-left: 0;
+	padding-right: 0;
+
+	&:active {
+		background: transparent;
+		color: unity-color('blue', 'digital'); //update to digital from hover
+	}
+
+	&.c-button--inverse {
+		color: unity-color('white');
+	}
+}
+
+.c-button--full-width-mobile {
+	@include mq($until: sm) {
+		width: 100%;
+	}
+}

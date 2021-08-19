@@ -1,0 +1,17 @@
+<template
+    data-sly-template.card="${@ show='Show or hide flag', name='Card name', link='Card link', linkTitle='Card link title', pdfLink='PDF Link', pdfTitle='PDF Title' , pdl='Card PDL', futureLink='Future Coverage Link', futureLinkTitle='Future Coverage Link Title'}">
+  <div data-sly-test="${show}" class="provider-card o-box u-bg-white">
+    <h4 class="provider-card__title u-text-bold">${name}</h4>
+    <sly
+        data-sly-use.eventName="${'/apps/premember/components/analytics/eventName.js' @ text=name}"></sly>
+    <sly data-sly-use.template="cardButton.html"
+         data-sly-call="${template.cardButton @ link=link, linkTitle=linkTitle, eventName=eventName}"></sly>
+    <sly data-sly-use.template="cardButton.html"
+         data-sly-call="${template.cardButton @ link=pdl, linkTitle=pdfTitle, eventName=eventName}"
+         data-sly-test="${!link}"></sly>
+    <sly data-sly-use.template="cardButtonNaked.html"
+         data-sly-call="${template.cardButton @ link=futureLink, linkTitle=futureLinkTitle, futureLink=true, eventName=eventName}"></sly>
+    <sly data-sly-use.template="cardButtonNakedInternal.html"
+         data-sly-call="${template.cardButton @ link=pdfLink, linkTitle=pdfTitle, eventName=eventName}"></sly>
+  </div>
+</template>

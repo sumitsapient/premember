@@ -1,0 +1,20 @@
+<sly data-sly-use.config="com.mirumagency.uhc.premember.core.models.FooterConfig">
+    <div class="employer-container u-bg-gray-light">
+        <div class="container-main-title" data-sly-test="${wcmmode.edit}">
+            <h3>Footer Configuration</h3>
+        </div>
+        <div class="container-main-setion">
+            <p>Customer Service phone: <strong>${config.customerServicePhone}</strong></p>
+            <p>Hours of operation: <strong>${config.operationHours}</strong></p>
+            <p>Display Member Support: <strong>${config.displayMemberSupport}</strong></p>
+            <p>Project ID:
+                <sly data-sly-test="${config.projectId}"><strong>${config.projectId}</strong></sly>
+                <sly data-sly-test="${!config.projectId}"><i>Default Project ID</i></sly>
+            </p>
+            <p>Asset number:
+                <sly data-sly-test="${config.assetNumber}"><strong>${config.assetNumber}</strong></sly>
+                <sly data-sly-test="${!config.assetNumber}"><i>Default asset number</i></sly>
+            </p>
+        </div>
+    </div>
+</sly>

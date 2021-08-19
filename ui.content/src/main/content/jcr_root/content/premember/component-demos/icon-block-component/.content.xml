@@ -1,0 +1,460 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<jcr:root xmlns:sling="http://sling.apache.org/jcr/sling/1.0" xmlns:cq="http://www.day.com/jcr/cq/1.0" xmlns:jcr="http://www.jcp.org/jcr/1.0" xmlns:nt="http://www.jcp.org/jcr/nt/1.0"
+    jcr:primaryType="cq:Page">
+    <jcr:content
+        cq:template="/conf/premember/settings/wcm/templates/component-page-template"
+        jcr:primaryType="cq:PageContent"
+        jcr:title="AC05: Icon Block"
+        sling:resourceType="premember/components/structure/page"
+        hideAnchorNavigation="true">
+        <root
+            jcr:primaryType="nt:unstructured"
+            sling:resourceType="wcm/foundation/components/responsivegrid">
+            <responsivegrid
+                jcr:primaryType="nt:unstructured"
+                sling:resourceType="wcm/foundation/components/responsivegrid">
+                <container_1114412908
+                    jcr:primaryType="nt:unstructured"
+                    sling:resourceType="premember/components/structure/layout/container">
+                    <grid
+                        jcr:primaryType="nt:unstructured"
+                        sling:resourceType="premember/components/structure/layout/grid">
+                        <column_605470465
+                            cq:styleIds="1535504120544"
+                            jcr:primaryType="nt:unstructured"
+                            sling:resourceType="premember/components/structure/layout/column">
+                            <title
+                                cq:styleIds="[1535476288921]"
+                                jcr:primaryType="nt:unstructured"
+                                jcr:title="Standard"
+                                sling:resourceType="premember/components/content/title"
+                                type="h3"/>
+                            <iconblock
+                                jcr:primaryType="nt:unstructured"
+                                sling:resourceType="premember/components/content/iconBlock"
+                                iconBlockText="Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua."
+                                layoutVariant="default"
+                                title="Lorem Ipsum Title"
+                                titleTag="p">
+                                <icon
+                                    jcr:primaryType="nt:unstructured"
+                                    sling:resourceType="premember/components/content/icon"
+                                    path="/content/dam/premember/icons/ic_dental.svg"/>
+                            </iconblock>
+                        </column_605470465>
+                    </grid>
+                    <grid_1074839902
+                        jcr:primaryType="nt:unstructured"
+                        sling:resourceType="premember/components/structure/layout/grid">
+                        <column_1584602031
+                            cq:styleIds="[1535504120544]"
+                            jcr:primaryType="nt:unstructured"
+                            sling:resourceType="premember/components/structure/layout/column">
+                            <separator
+                                jcr:primaryType="nt:unstructured"
+                                sling:resourceType="premember/components/content/separator"/>
+                            <title_copy
+                                cq:styleIds="[1535476288921]"
+                                jcr:primaryType="nt:unstructured"
+                                jcr:title="Title Tag"
+                                sling:resourceType="premember/components/content/title"
+                                type="h3"/>
+                        </column_1584602031>
+                        <column_1644808586
+                            cq:styleIds="[1535504120544,1535504333677,1536104022030]"
+                            jcr:primaryType="nt:unstructured"
+                            sling:resourceType="premember/components/structure/layout/column">
+                            <title
+                                cq:styleIds="[1535476290097]"
+                                jcr:primaryType="nt:unstructured"
+                                jcr:title="&lt;p> Tag (default)"
+                                sling:resourceType="premember/components/content/title"
+                                type="h4"/>
+                            <iconblock_copy
+                                jcr:primaryType="nt:unstructured"
+                                sling:resourceType="premember/components/content/iconBlock"
+                                iconBlockText="Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua."
+                                layoutVariant="default"
+                                title="Lorem Ipsum Title"
+                                titleTag="p">
+                                <icon
+                                    jcr:primaryType="nt:unstructured"
+                                    sling:resourceType="premember/components/content/icon"
+                                    path="/content/dam/premember/icons/ic_dental.svg"/>
+                            </iconblock_copy>
+                        </column_1644808586>
+                        <column_177025134
+                            cq:styleIds="[1535504120544,1535504333677,1536104022030]"
+                            jcr:primaryType="nt:unstructured"
+                            sling:resourceType="premember/components/structure/layout/column">
+                            <title_copy_540513896
+                                cq:styleIds="[1535476290097]"
+                                jcr:primaryType="nt:unstructured"
+                                jcr:title="&lt;h1> Tag"
+                                sling:resourceType="premember/components/content/title"
+                                type="h4"/>
+                            <iconblock_copy_copy
+                                jcr:primaryType="nt:unstructured"
+                                sling:resourceType="premember/components/content/iconBlock"
+                                iconBlockText="Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua."
+                                layoutVariant="default"
+                                title="Lorem Ipsum Title"
+                                titleTag="h1">
+                                <icon
+                                    jcr:primaryType="nt:unstructured"
+                                    sling:resourceType="premember/components/content/icon"
+                                    path="/content/dam/premember/icons/ic_dental.svg"/>
+                            </iconblock_copy_copy>
+                        </column_177025134>
+                        <column_177025134_cop
+                            cq:styleIds="[1535504120544,1535504333677,1536104022030]"
+                            jcr:primaryType="nt:unstructured"
+                            sling:resourceType="premember/components/structure/layout/column">
+                            <title_copy_540513896
+                                cq:styleIds="[1535476290097]"
+                                jcr:primaryType="nt:unstructured"
+                                jcr:title="&lt;h2> Tag"
+                                sling:resourceType="premember/components/content/title"
+                                type="h4"/>
+                            <iconblock_copy_copy
+                                jcr:primaryType="nt:unstructured"
+                                sling:resourceType="premember/components/content/iconBlock"
+                                iconBlockText="Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua."
+                                layoutVariant="default"
+                                title="Lorem Ipsum Title"
+                                titleTag="h2">
+                                <icon
+                                    jcr:primaryType="nt:unstructured"
+                                    sling:resourceType="premember/components/content/icon"
+                                    path="/content/dam/premember/icons/ic_dental.svg"/>
+                            </iconblock_copy_copy>
+                        </column_177025134_cop>
+                        <column_1443906905
+                            cq:styleIds="[1535504120544,1535504333677,1536104022030]"
+                            jcr:primaryType="nt:unstructured"
+                            sling:resourceType="premember/components/structure/layout/column">
+                            <title_copy_540513896
+                                cq:styleIds="[1535476290097]"
+                                jcr:primaryType="nt:unstructured"
+                                jcr:title="&lt;h3> Tag"
+                                sling:resourceType="premember/components/content/title"
+                                type="h4"/>
+                            <iconblock_copy_copy_
+                                jcr:primaryType="nt:unstructured"
+                                sling:resourceType="premember/components/content/iconBlock"
+                                iconBlockText="Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua."
+                                layoutVariant="default"
+                                title="Lorem Ipsum Title"
+                                titleTag="h3">
+                                <icon
+                                    jcr:primaryType="nt:unstructured"
+                                    sling:resourceType="premember/components/content/icon"
+                                    path="/content/dam/premember/icons/ic_dental.svg"/>
+                            </iconblock_copy_copy_>
+                        </column_1443906905>
+                        <column_409838061
+                            cq:styleIds="[1535504120544,1535504333677,1536104022030]"
+                            jcr:primaryType="nt:unstructured"
+                            sling:resourceType="premember/components/structure/layout/column">
+                            <title_copy_540513896
+                                cq:styleIds="[1535476290097]"
+                                jcr:primaryType="nt:unstructured"
+                                jcr:title="&lt;h4> Tag"
+                                sling:resourceType="premember/components/content/title"
+                                type="h4"/>
+                            <iconblock_copy_copy_
+                                jcr:primaryType="nt:unstructured"
+                                sling:resourceType="premember/components/content/iconBlock"
+                                iconBlockText="Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua."
+                                layoutVariant="default"
+                                title="Lorem Ipsum Title"
+                                titleTag="h4">
+                                <icon
+                                    jcr:primaryType="nt:unstructured"
+                                    sling:resourceType="premember/components/content/icon"
+                                    path="/content/dam/premember/icons/ic_dental.svg"/>
+                            </iconblock_copy_copy_>
+                        </column_409838061>
+                        <column_1198567731
+                            cq:styleIds="[1535504120544,1535504333677,1536104022030]"
+                            jcr:primaryType="nt:unstructured"
+                            sling:resourceType="premember/components/structure/layout/column">
+                            <title_copy_540513896
+                                cq:styleIds="[1535476290097]"
+                                jcr:primaryType="nt:unstructured"
+                                jcr:title="&lt;h5> Tag"
+                                sling:resourceType="premember/components/content/title"
+                                type="h4"/>
+                            <iconblock_copy_copy_
+                                jcr:primaryType="nt:unstructured"
+                                sling:resourceType="premember/components/content/iconBlock"
+                                iconBlockText="Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua."
+                                layoutVariant="default"
+                                title="Lorem Ipsum Title"
+                                titleTag="h5">
+                                <icon
+                                    jcr:primaryType="nt:unstructured"
+                                    sling:resourceType="premember/components/content/icon"
+                                    path="/content/dam/premember/icons/ic_dental.svg"/>
+                            </iconblock_copy_copy_>
+                        </column_1198567731>
+                        <column_209346835
+                            cq:styleIds="[1535504120544,1535504333677,1536104022030]"
+                            jcr:primaryType="nt:unstructured"
+                            sling:resourceType="premember/components/structure/layout/column">
+                            <title_copy_540513896
+                                cq:styleIds="[1535476290097]"
+                                jcr:primaryType="nt:unstructured"
+                                jcr:title="&lt;h6> Tag"
+                                sling:resourceType="premember/components/content/title"
+                                type="h4"/>
+                            <iconblock_copy_copy_
+                                jcr:primaryType="nt:unstructured"
+                                sling:resourceType="premember/components/content/iconBlock"
+                                iconBlockText="Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua."
+                                layoutVariant="default"
+                                title="Lorem Ipsum Title"
+                                titleTag="h6">
+                                <icon
+                                    jcr:primaryType="nt:unstructured"
+                                    sling:resourceType="premember/components/content/icon"
+                                    path="/content/dam/premember/icons/ic_dental.svg"/>
+                            </iconblock_copy_copy_>
+                        </column_209346835>
+                        <column_696059301
+                            cq:styleIds="[1535504120544,1535504333677,1536104022030]"
+                            jcr:primaryType="nt:unstructured"
+                            sling:resourceType="premember/components/structure/layout/column"/>
+                        <column_1220025591
+                            cq:styleIds="[1535504120544,1535504333677,1536104022030]"
+                            jcr:primaryType="nt:unstructured"
+                            sling:resourceType="premember/components/structure/layout/column"/>
+                    </grid_1074839902>
+                    <grid_1395564572
+                        jcr:primaryType="nt:unstructured"
+                        sling:resourceType="premember/components/structure/layout/grid">
+                        <column
+                            cq:styleIds="[1535504120544]"
+                            jcr:primaryType="nt:unstructured"
+                            sling:resourceType="premember/components/structure/layout/column">
+                            <separator_copy
+                                jcr:primaryType="nt:unstructured"
+                                sling:resourceType="premember/components/content/separator"/>
+                            <title_copy_copy
+                                cq:styleIds="[1535476288921]"
+                                jcr:primaryType="nt:unstructured"
+                                jcr:title="Layout"
+                                sling:resourceType="premember/components/content/title"
+                                type="h3"/>
+                        </column>
+                        <column_861635851_cop
+                            cq:styleIds="[1535504120544,1535504333677,1536104022030]"
+                            jcr:primaryType="nt:unstructured"
+                            sling:resourceType="premember/components/structure/layout/column">
+                            <title_copy_540513896
+                                cq:styleIds="[1535476290097]"
+                                jcr:primaryType="nt:unstructured"
+                                jcr:title="Vertical on smaller screens (default)"
+                                sling:resourceType="premember/components/content/title"
+                                type="h4"/>
+                            <iconblock_copy_copy
+                                jcr:primaryType="nt:unstructured"
+                                sling:resourceType="premember/components/content/iconBlock"
+                                iconBlockText="Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua."
+                                layoutVariant="default"
+                                title="Lorem Ipsum Title"
+                                titleTag="p">
+                                <icon
+                                    jcr:primaryType="nt:unstructured"
+                                    sling:resourceType="premember/components/content/icon"
+                                    path="/content/dam/premember/icons/ic_dental.svg"/>
+                            </iconblock_copy_copy>
+                        </column_861635851_cop>
+                        <column_861635851
+                            cq:styleIds="[1535504120544,1535504333677,1536104022030]"
+                            jcr:primaryType="nt:unstructured"
+                            sling:resourceType="premember/components/structure/layout/column">
+                            <title_copy_540513896
+                                cq:styleIds="[1535476290097]"
+                                jcr:primaryType="nt:unstructured"
+                                jcr:title="Vertical on all screens"
+                                sling:resourceType="premember/components/content/title"
+                                type="h4"/>
+                            <iconblock_copy_copy
+                                jcr:primaryType="nt:unstructured"
+                                sling:resourceType="premember/components/content/iconBlock"
+                                iconBlockText="Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua."
+                                layoutVariant="vertical"
+                                title="Lorem Ipsum Title"
+                                titleTag="p">
+                                <icon
+                                    jcr:primaryType="nt:unstructured"
+                                    sling:resourceType="premember/components/content/icon"
+                                    path="/content/dam/premember/icons/ic_dental.svg"/>
+                            </iconblock_copy_copy>
+                        </column_861635851>
+                        <column_1958639838
+                            cq:styleIds="[1535504120544,1535504333677,1536104022030]"
+                            jcr:primaryType="nt:unstructured"
+                            sling:resourceType="premember/components/structure/layout/column">
+                            <title_copy_540513896
+                                cq:styleIds="[1535476290097]"
+                                jcr:primaryType="nt:unstructured"
+                                jcr:title="Side-by-side on all screens"
+                                sling:resourceType="premember/components/content/title"
+                                type="h4"/>
+                            <iconblock_copy_copy_
+                                jcr:primaryType="nt:unstructured"
+                                sling:resourceType="premember/components/content/iconBlock"
+                                iconBlockText="Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua."
+                                layoutVariant="side-by-side"
+                                title="Lorem Ipsum Title"
+                                titleTag="p">
+                                <icon
+                                    jcr:primaryType="nt:unstructured"
+                                    sling:resourceType="premember/components/content/icon"
+                                    path="/content/dam/premember/icons/ic_dental.svg"/>
+                            </iconblock_copy_copy_>
+                        </column_1958639838>
+                        <column_824120453
+                            cq:styleIds="[1535504333677,1536104022030,1535504120544]"
+                            jcr:primaryType="nt:unstructured"
+                            sling:resourceType="premember/components/structure/layout/column">
+                            <title_copy_540513896
+                                cq:styleIds="[1535476290097]"
+                                jcr:primaryType="nt:unstructured"
+                                jcr:title="Side-by-side on all screens with text vertically centered"
+                                sling:resourceType="premember/components/content/title"
+                                type="h4"/>
+                            <iconblock_copy_copy_
+                                jcr:primaryType="nt:unstructured"
+                                sling:resourceType="premember/components/content/iconBlock"
+                                iconBlockText="Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua."
+                                layoutVariant="side-by-side-with-text-centered"
+                                title="Lorem Ipsum Title"
+                                titleTag="p">
+                                <icon
+                                    jcr:primaryType="nt:unstructured"
+                                    sling:resourceType="premember/components/content/icon"
+                                    path="/content/dam/premember/icons/ic_dental.svg"/>
+                            </iconblock_copy_copy_>
+                        </column_824120453>
+                    </grid_1395564572>
+                    <grid_706583936
+                        jcr:primaryType="nt:unstructured"
+                        sling:resourceType="premember/components/structure/layout/grid">
+                        <column
+                            cq:styleIds="[1535504120544]"
+                            jcr:primaryType="nt:unstructured"
+                            sling:resourceType="premember/components/structure/layout/column">
+                            <separator_2055947643
+                                jcr:primaryType="nt:unstructured"
+                                sling:resourceType="premember/components/content/separator"/>
+                            <title_copy_copy_copy
+                                cq:styleIds="[1535476288921]"
+                                jcr:primaryType="nt:unstructured"
+                                jcr:title="Misc."
+                                sling:resourceType="premember/components/content/title"
+                                type="h3"/>
+                        </column>
+                        <column_861635851_cop
+                            cq:styleIds="[1535504120544,1535504333677,1536104022030]"
+                            jcr:primaryType="nt:unstructured"
+                            sling:resourceType="premember/components/structure/layout/column">
+                            <title_copy_540513896
+                                cq:styleIds="[1535476290097]"
+                                jcr:primaryType="nt:unstructured"
+                                jcr:title="Vertical Alignment"
+                                sling:resourceType="premember/components/content/title"
+                                type="h4"/>
+                            <iconblock
+                                jcr:primaryType="nt:unstructured"
+                                sling:resourceType="premember/components/content/iconBlock"
+                                layoutVariant="vertical"
+                                title="Preventive Care"
+                                titleTag="p">
+                                <icon
+                                    cq:styleIds="[1535154547857,1535154557040,1535154589853]"
+                                    jcr:primaryType="nt:unstructured"
+                                    sling:resourceType="premember/components/content/icon"
+                                    path="/content/dam/premember/icons/ic_health-preventive-care.svg"/>
+                            </iconblock>
+                        </column_861635851_cop>
+                        <column_861635851_cop_503599264
+                            cq:styleIds="[1535504120544,1536095501038,1536104014843]"
+                            jcr:primaryType="nt:unstructured"
+                            sling:resourceType="premember/components/structure/layout/column">
+                            <title_copy_540513896
+                                cq:styleIds="[1535476290097]"
+                                jcr:primaryType="nt:unstructured"
+                                jcr:title="Side-by-Side variation"
+                                sling:resourceType="premember/components/content/title"
+                                type="h4"/>
+                            <iconblock
+                                jcr:primaryType="nt:unstructured"
+                                sling:resourceType="premember/components/content/iconBlock"
+                                iconBlockText="Network providers recommended, out-of-network providers allowed"
+                                layoutVariant="side-by-side-with-text-centered"
+                                title="Network Coverage"
+                                titleTag="p">
+                                <icon
+                                    cq:styleIds="[1535154557040,1535154589853]"
+                                    jcr:primaryType="nt:unstructured"
+                                    sling:resourceType="premember/components/content/icon"
+                                    path="/content/dam/premember/icons/ic_work.svg"/>
+                            </iconblock>
+                        </column_861635851_cop_503599264>
+                    </grid_706583936>
+                </container_1114412908>
+            </responsivegrid>
+            <siteexitmodal
+                jcr:primaryType="nt:unstructured"
+                sling:resourceType="premember/components/content/siteExitModal"
+                buttonText="Continue"
+                includeCancelButton="true"
+                titleText="You're leaving the site."/>
+            <container
+                jcr:primaryType="nt:unstructured"
+                sling:resourceType="premember/components/structure/layout/container">
+                <grid
+                    jcr:primaryType="nt:unstructured"
+                    sling:resourceType="premember/components/structure/layout/grid">
+                    <column_1858863830
+                        jcr:primaryType="nt:unstructured"
+                        sling:resourceType="premember/components/structure/layout/column"/>
+                </grid>
+            </container>
+            <container_1022714131
+                jcr:primaryType="nt:unstructured"
+                sling:resourceType="premember/components/structure/layout/container">
+                <grid
+                    jcr:primaryType="nt:unstructured"
+                    sling:resourceType="premember/components/structure/layout/grid">
+                    <column
+                        cq:styleIds="[1535504120544,1536104009181]"
+                        jcr:primaryType="nt:unstructured"
+                        sling:resourceType="premember/components/structure/layout/column">
+                        <text
+                            jcr:primaryType="nt:unstructured"
+                            sling:resourceType="premember/components/content/text"
+                            text="&lt;p>The icon block contains an icon, title, and text.&lt;/p>&#xa;"
+                            textIsRich="true"/>
+                        <button
+                            jcr:primaryType="nt:unstructured"
+                            sling:resourceType="premember/components/content/button"
+                            fullWidth="false"
+                            fullWidthMobile="false"
+                            hiddenText="button"
+                            href="https://confluence.uhub.biz/display/MIRMINUPMR/AC05%3A+Icon+Block"
+                            inverse="false"
+                            naked="false"
+                            newTab="true"
+                            siteExitModalTrigger="false"
+                            text="Confluence Page"
+                            type="c-button--primary"/>
+                    </column>
+                </grid>
+            </container_1022714131>
+        </root>
+    </jcr:content>
+</jcr:root>

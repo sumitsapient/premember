@@ -1,0 +1,9 @@
+<div data-sly-use.model="com.mirumagency.uhc.premember.core.models.federal.dental.DentalPlanDetail"
+     data-sly-use.templates="core/wcm/components/commons/v1/templates.html"
+     data-sly-test.hasContent="${!model.empty}"
+     id="federal-plan-details"
+		 data-plan="${model.planAsJson}"
+		 data-plan-type="dental">
+    <p data-sly-test="${wcmmode.edit}">Dental Plan Details</p>
+</div>
+<sly data-sly-call="${templates.placeholder @ isEmpty = !hasContent}"></sly>

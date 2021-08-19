@@ -1,0 +1,13 @@
+// The amount we want to “pull” to the left and right is half the width of the browser window plus half the width of the parent.
+// Assuming the parent is centered.
+@mixin pullLeftAndRightMargin() {
+	margin-left: calc(-100vw / 2 + 1280px / 2);
+	margin-right: calc(-100vw / 2 + 1280px / 2);
+}
+
+// Used to include ie11 specific fixes
+@mixin ie11SpecificFix() {
+	@media all and (-ms-high-contrast: none), (-ms-high-contrast: active) {
+		@content;
+	}
+}

@@ -1,0 +1,18 @@
+<sly data-sly-use.employerPlan="com.mirumagency.uhc.premember.core.models.EmployerPlan">
+
+  <div data-sly-test="${employerPlan.isFragmentPathNotBlank}">
+    <p><strong>Path:</strong> ${employerPlan.fragmentPath}</p>
+    <p><strong>Name:</strong> ${employerPlan.fragmentTitle}</p>
+  </div>
+  <div data-sly-test="${!employerPlan.isFragmentPathNotBlank}">
+    <p>Path to content fragment is not added</p>
+  </div>
+
+  <div data-sly-test="${employerPlan.isVariationNameNotBlank}">
+    <p><strong>Variation:</strong> ${employerPlan.variationName}</p>
+  </div>
+  <div data-sly-test="${!employerPlan.isVariationNameNotBlank}">
+    <p>Variation name for the content fragment is not selected</p>
+  </div>
+
+</sly>

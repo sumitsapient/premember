@@ -1,0 +1,180 @@
+.cmp-tabs__tablist {
+	margin: 0 (-$g-spacing-sm) 0;
+
+	@include mq(md) {
+		margin: 0;
+		flex-wrap: nowrap;
+	}
+
+	// @TODO: Clean up synced tablist items, duplicate css now. See below.
+	.cmp-tabs__tab {
+		border: 1px solid $colors-blue-base;
+
+		&:hover {
+			border-color: $colors-blue-base;
+			background-color: $colors-blue-base;
+		}
+
+		&::after {
+			background-color: $colors-blue-base;
+		}
+
+		&--active {
+			border-color: $colors-blue-base;
+			background-color: $colors-blue-base;
+			color: unity-color('white');
+		}
+	}
+
+	// TODO: Remove legacy styling when blue tabs have been removed
+	&:not(.cmp-tabs__tablist--blue) {
+		.cmp-tabs__tab {
+			color: unity-color('blue', 'digital');
+			border-color: unity-color('gray', 'medium');
+			box-shadow: none;
+
+			@include mq(md) {
+				border: none;
+				border-bottom: 1px solid unity-color('gray', 'medium');
+			}
+
+			&::after {
+				@include unity-transition();
+
+				background-color: unity-color('blue', 'digital');
+				display: block;
+				height: 0.25rem;
+				transform: scaleY(0);
+				transform-origin: bottom center;
+
+				@include mq(md) {
+					border-top-left-radius: $g-spacing;
+					border-top-right-radius: $g-spacing;
+				}
+			}
+
+			&.cmp-tabs__tab--active {
+				background-color: transparent;
+				color: unity-color('black');
+
+				&::after {
+					background-color: unity-color('black');
+					transform: none;
+				}
+			}
+
+			&:hover {
+				background-color: transparent;
+				color: unity-color('black');
+			}
+		}
+	}
+}
+
+.cmp-tabs__tabpanel {
+	padding: $g-spacing 0 0;
+
+	&:focus {
+		outline: 0;
+	}
+}
+
+.cmp-tabs__tabpanel--blue {
+	background: $colors-blue-base;
+	color: unity-color('white');
+	padding: $g-spacing;
+	margin: 0 (-$g-spacing-sm) 0;
+
+	// Hacky color overides, but they work. Mostly.
+	> .o-grid > [class^="o-grid__item"] {
+		> .title {
+			color: unity-color('white');
+		}
+
+		> .text a,
+		.medicareDocumentsAndResources a {
+			@include unity-focus($inverse: 'inverse');
+
+			color: $colors-teal-base;
+		}
+	}
+
+	@include mq(md) {
+		padding: $g-spacing $g-spacing-xl;
+		margin: 0;
+	}
+
+	@include mq(lg) {
+		padding: $g-spacing-lg $g-spacing-xxl;
+	}
+
+	@include mq(xl) {
+		padding: $g-spacing-xl $g-spacing-xxxl;
+	}
+}
+
+.cmp-tabs__tab {
+	@include unity-transition;
+
+	position: relative;
+	display: flex;
+	align-items: center;
+	justify-content: center;
+	width: 50%;
+	padding: $g-spacing-xs $g-spacing;
+	border: 1px solid $colors-grey-border;
+	box-shadow: inset 0 0 6px 1px rgba($black, 0.02);
+	text-align: center;
+	line-height: 1.75;
+	font-weight: 700;
+	color: unity-color('blue');
+
+	@include mq(md) {
+		box-shadow: none;
+	}
+
+	&:focus {
+		outline: 3px solid $colors-blue-accent;
+		outline-offset: 1px;
+	}
+
+	&:nth-child(2n) {
+		border-left-color: transparent;
+	}
+
+	&:nth-child(4n+3),
+	&:last-child:not(:nth-child(4n+1)) {
+		@include mq(md) {
+			border-left-color: transparent;
+		}
+	}
+
+	&:hover {
+		border-color: unity-color('blue');
+		background-color: unity-color('blue');
+		color: unity-color('white');
+	}
+
+	&::after {
+		content: "";
+		display: none;
+		position: absolute;
+		bottom: 0;
+		left: 0;
+		right: 0;
+		height: size(10);
+		background-color: unity-color('blue');
+	}
+}
+
+.cmp-tabs__tab--active {
+	@include mq($until: md) {
+		border-color: unity-color('blue');
+		background-color: unity-color('blue');
+		color: unity-color('white');
+	}
+
+	&::after {
+		display: block;
+	}
+}

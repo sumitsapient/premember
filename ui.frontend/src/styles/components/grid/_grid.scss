@@ -1,0 +1,31 @@
+// AEM Grid Component
+.o-grid--aem-container > [class*="o-grid__item"],
+.c-card__body .o-grid > [class*="o-grid__item"] {
+	margin-bottom: $g-spacing;
+
+	> div {
+		margin-bottom: $g-spacing;
+	}
+
+	@include mq(md) {
+		margin-bottom: $g-spacing-lg;
+
+		> div {
+			margin-bottom: $g-spacing-lg;
+		}
+	}
+
+	> div:last-child {
+		margin-bottom: 0;
+	}
+}
+
+.o-grid__item--grow-height {
+	display: flex;
+	flex-flow: column nowrap;
+	min-width: 0;
+
+	> * {
+		width: 100%;
+	}
+}

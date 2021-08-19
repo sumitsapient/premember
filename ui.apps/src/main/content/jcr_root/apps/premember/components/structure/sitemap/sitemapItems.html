@@ -1,0 +1,9 @@
+<template data-sly-template.sitemapItems="${@ items}">
+    <ul data-sly-list.sitemapItem="${items}">
+        <li>
+            <a class="c-button js-track-event c-button--primary c-button--naked"
+               href="${sitemapItem.pagePath}.html">${sitemapItem.pageName}</a>
+            <sly data-sly-call="${sitemapItems @ items=sitemapItem.subItems}"/>
+        </li>
+    </ul>
+</template>

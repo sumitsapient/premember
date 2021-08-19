@@ -1,0 +1,5 @@
+<sly data-sly-use.sitemap="com.mirumagency.uhc.premember.core.models.SitemapModel"
+     data-sly-use.template="sitemapItems.html">
+    <p data-sly-test="${wcmmode.edit}">Sitemap component</p>
+    <sly data-sly-call="${template.sitemapItems @ items=sitemap.items}"/>
+</sly>

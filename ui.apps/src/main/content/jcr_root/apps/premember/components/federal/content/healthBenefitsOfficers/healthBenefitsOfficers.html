@@ -1,0 +1,8 @@
+<div data-sly-use.model="com.mirumagency.uhc.premember.core.models.federal.health.HealthBenefitsOfficers"
+     data-sly-use.templates="core/wcm/components/commons/v1/templates.html"
+     data-sly-test.hasContent="${!model.empty}"
+		 id="federal-benefits-officers"
+		 data-plan="${model.officersAsJson}">
+    <p data-sly-test="${wcmmode.edit}">Health Benefits Officers</p>
+</div>
+<sly data-sly-call="${templates.placeholder @ isEmpty = !hasContent}"></sly>

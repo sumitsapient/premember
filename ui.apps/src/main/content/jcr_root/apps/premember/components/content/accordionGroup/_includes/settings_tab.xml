@@ -1,0 +1,67 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<jcr:root xmlns:sling="http://sling.apache.org/jcr/sling/1.0"
+  xmlns:granite="http://www.adobe.com/jcr/granite/1.0" xmlns:jcr="http://www.jcp.org/jcr/1.0"
+  xmlns:nt="http://www.jcp.org/jcr/nt/1.0"
+  jcr:primaryType="nt:unstructured"
+  jcr:title="Settings"
+  sling:resourceType="granite/ui/components/coral/foundation/fixedcolumns">
+  <items jcr:primaryType="nt:unstructured">
+    <column
+      jcr:primaryType="nt:unstructured"
+      sling:resourceType="granite/ui/components/coral/foundation/container"
+      margin="{Boolean}true">
+      <items jcr:primaryType="nt:unstructured">
+        <titleType
+          granite:class="core-title-sizes"
+          jcr:primaryType="nt:unstructured"
+          sling:resourceType="granite/ui/components/coral/foundation/form/select"
+          fieldLabel="Title Type"
+          name="./titleType">
+          <items jcr:primaryType="nt:unstructured">
+            <h1
+              jcr:primaryType="nt:unstructured"
+              text="H1"
+              value="h1"/>
+            <h2
+              jcr:primaryType="nt:unstructured"
+              text="H2"
+              value="h2"/>
+            <h3
+              jcr:primaryType="nt:unstructured"
+              text="H3"
+              value="h3"
+              selected="{Boolean}true"/>
+            <h4
+              jcr:primaryType="nt:unstructured"
+              text="H4"
+              value="h4"/>
+            <h5
+              jcr:primaryType="nt:unstructured"
+              text="H5"
+              value="h5"/>
+            <h6
+              jcr:primaryType="nt:unstructured"
+              text="H6"
+              value="h6"/>
+          </items>
+        </titleType>
+        <expandAsDefault
+          jcr:primaryType="nt:unstructured"
+          sling:resourceType="granite/ui/components/coral/foundation/form/checkbox"
+          text="Expand As Default"
+          required="{Boolean}false"
+          value="{Boolean}true"
+          uncheckedValue="{Boolean}false"
+          name="./expandAsDefault"/>
+        <mobileOnly
+          jcr:primaryType="nt:unstructured"
+          sling:resourceType="granite/ui/components/coral/foundation/form/checkbox"
+          text="Mobile only"
+          required="{Boolean}false"
+          value="{Boolean}true"
+          uncheckedValue="{Boolean}false"
+          name="./mobileOnly"/>
+      </items>
+    </column>
+  </items>
+</jcr:root>

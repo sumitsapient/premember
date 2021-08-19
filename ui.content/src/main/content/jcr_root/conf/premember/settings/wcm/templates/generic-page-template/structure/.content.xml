@@ -1,0 +1,91 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<jcr:root xmlns:sling="http://sling.apache.org/jcr/sling/1.0" xmlns:cq="http://www.day.com/jcr/cq/1.0" xmlns:jcr="http://www.jcp.org/jcr/1.0" xmlns:nt="http://www.jcp.org/jcr/nt/1.0"
+    jcr:primaryType="cq:Page">
+    <jcr:content
+        cq:deviceGroups="[/etc/mobile/groups/responsive]"
+        cq:template="/conf/premember/settings/wcm/templates/generic-page-template"
+        jcr:primaryType="cq:PageContent"
+        sling:resourceType="premember/components/structure/page">
+        <root
+            jcr:primaryType="nt:unstructured"
+            sling:resourceType="wcm/foundation/components/responsivegrid">
+            <skipContentLink
+                jcr:primaryType="nt:unstructured"
+                sling:resourceType="premember/components/content/skipContentLink"/>
+            <navigation
+                jcr:primaryType="nt:unstructured"
+                sling:resourceType="premember/components/structure/navigation"
+                collectAllPages="false"
+                navigationRoot="/content/premember/employer-blueprint/en/home"
+                skipNavigationRoot="true"
+                structureDepth="1"
+                structureStart="1"/>
+            <anchorNavigation
+                jcr:primaryType="nt:unstructured"
+                sling:resourceType="premember/components/content/anchorNavigation"/>
+            <responsivegrid
+                editable="{Boolean}true"
+                jcr:primaryType="nt:unstructured"
+                sling:resourceType="wcm/foundation/components/responsivegrid"/>
+            <footer
+                jcr:primaryType="nt:unstructured"
+                sling:resourceType="premember/components/structure/footer"
+                contactUsTitle="Contact Us"
+                contactUsTile2Title="Member Support"
+                contactUsTile2Description="Are you a current member with a question or looking for help? Call us at the number on your ID card."
+                contactUsTile3Title="For Medical Emergencies, call 911"
+                copyrightInformation="© {dateYear} United Healthcare Services, Inc.">
+                <navigationItems jcr:primaryType="nt:unstructured">
+                    <item0
+                        jcr:primaryType="nt:unstructured"
+                        displayText="myuhc.com"
+                        openInNewTab="true"
+                        url="https://myuhc.com"/>
+                    <item1
+                        jcr:primaryType="nt:unstructured"
+                        displayText="Just Plain Clear Glossary"
+                        openInNewTab="true"
+                        url="http://www.justplainclear.com"/>
+                    <item2
+                        jcr:primaryType="nt:unstructured"
+                        displayText="Privacy"
+                        openInNewTab="true"
+                        url="https://www.uhc.com/privacy"/>
+                    <item3
+                        jcr:primaryType="nt:unstructured"
+                        displayText="Legal"
+                        openInNewTab="true"
+                        url="https://www.uhc.com/legal"/>
+                    <item4
+                        jcr:primaryType="nt:unstructured"
+                        displayText="Accessibility"
+                        openInNewTab="true"
+                        url="https://www.uhc.com/legal/accessibility"/>
+                    <item5
+                        jcr:primaryType="nt:unstructured"
+                        displayText="Sitemap"
+                        openInNewTab="false"
+                        url="${employerHomepage}/sitemap.html"/>
+                </navigationItems>
+            </footer>
+            <siteexitmodal
+								jcr:primaryType="nt:unstructured"
+								sling:resourceType="premember/components/content/siteExitModal"
+								buttonText="Continue"
+								includeCancelButton="true"
+								titleText="Links to other websites are provided for your convenience and we are not responsible for the site’s content. Information is presented without any warranty as to its reliability, accuracy, accessibility or usefulness."/>
+        </root>
+        <cq:responsive jcr:primaryType="nt:unstructured">
+            <breakpoints jcr:primaryType="nt:unstructured">
+                <phone
+                    jcr:primaryType="nt:unstructured"
+                    title="Smaller Screen"
+                    width="{Long}768"/>
+                <tablet
+                    jcr:primaryType="nt:unstructured"
+                    title="Tablet"
+                    width="{Long}1200"/>
+            </breakpoints>
+        </cq:responsive>
+    </jcr:content>
+</jcr:root>

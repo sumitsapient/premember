@@ -1,0 +1,44 @@
+<div class="c-video-block c-card"
+     data-sly-use.video="com.mirumagency.uhc.premember.core.models.Video">
+    <div class="o-ar o-ar--16:9 c-video-block__embed">
+      <div class="o-ar__item"
+        aria-label="${video.accessibility}"
+        tabindex="${video.accessibility ? '0' : '-1'}"
+        data-sly-resource="${'brightcoveplayer' @ resourceType='brightcove/components/content/brightcoveplayer'}"></div>
+    </div>
+    <div data-sly-test=${video.title} class="c-card__header">
+      <h3 class="c-card__title">
+        ${video.title}
+      </h3>
+    </div>
+    <div data-sly-test=${video.description} class="c-card__body">
+      <div class="aem-component-rte">
+        <div class="cmp-text">
+          <p>${video.description}</p>
+        </div>
+      </div>
+  </div>
+  <div class="c-card__footer" data-sly-test="${video.transcript}">
+    <div class="aem-buttons">
+      <div class="button">
+        <a href="${video.transcript}"
+          class="c-video-block__transcript-button c-inline-icon"
+          target="_blank"
+          rel="noopener noreferrer"
+          data-event-type="button"
+          data-event-name="read_transcript">
+					<span class="c-inline-icon__link">${video.transcriptLinkText}</span>
+					<span class="o-svg-icon">
+						<svg focusable="false" viewBox="0 0 36 36" version="1.1" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink">
+							<g stroke="none" stroke-width="1" fill="none" fill-rule="evenodd" font-family="Helvetica-Bold, Helvetica" font-weight="bold">
+								<text fill="#2D2D39">
+									<tspan x="0" y="23">PDF</tspan>
+								</text>
+							</g>
+						</svg>
+					</span>
+        </a>
+      </div>
+    </div>
+  </div>
+</div>

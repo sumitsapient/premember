@@ -1,0 +1,336 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<jcr:root xmlns:sling="http://sling.apache.org/jcr/sling/1.0"
+          xmlns:jcr="http://www.jcp.org/jcr/1.0"
+          xmlns:nt="http://www.jcp.org/jcr/nt/1.0"
+          xmlns:granite="http://www.adobe.com/jcr/granite/1.0"
+          jcr:primaryType="nt:unstructured"
+          jcr:title="Plan Type"
+          sling:resourceType="cq/gui/components/authoring/dialog">
+    <content
+        jcr:primaryType="nt:unstructured"
+        sling:resourceType="granite/ui/components/coral/foundation/container">
+        <items jcr:primaryType="nt:unstructured">
+            <tabs
+                jcr:primaryType="nt:unstructured"
+                sling:resourceType="granite/ui/components/coral/foundation/tabs"
+                maximized="{Boolean}true">
+                <items jcr:primaryType="nt:unstructured">
+                    <labels
+                        jcr:primaryType="nt:unstructured"
+                        jcr:title="Plan Comparison Labels"
+                        sling:resourceType="granite/ui/components/coral/foundation/container"
+                        margin="{Boolean}true">
+                        <items jcr:primaryType="nt:unstructured">
+                            <columns
+                                jcr:primaryType="nt:unstructured"
+                                sling:resourceType="granite/ui/components/coral/foundation/fixedcolumns"
+                                margin="{Boolean}true">
+                                <items jcr:primaryType="nt:unstructured">
+                                    <premiumRates
+                                        jcr:primaryType="nt:unstructured"
+                                        margin="{Boolean}true"
+                                        sling:resourceType="granite/ui/components/coral/foundation/container">
+                                        <items jcr:primaryType="nt:unstructured">
+                                            <heading
+                                                granite:class="coral-Heading coral-Heading--4"
+                                                jcr:primaryType="nt:unstructured"
+                                                sling:resourceType="granite/ui/components/coral/foundation/heading"
+                                                level="{Long}4"
+                                                text="Premium Rates"/>
+                                            <well
+                                                granite:class="cmp-healthPlan__editor-row"
+                                                jcr:primaryType="nt:unstructured"
+                                                sling:resourceType="granite/ui/components/coral/foundation/well">
+                                                <items jcr:primaryType="nt:unstructured">
+                                                    <premiumRatesTitle
+                                                        jcr:primaryType="nt:unstructured"
+                                                        sling:resourceType="granite/ui/components/coral/foundation/form/textfield"
+                                                        fieldLabel="Title"
+                                                        maxlength="255"
+                                                        name="./labels/premiumRatesTitle"
+                                                        value="Premium Rates"/>
+                                                    <premiumRatesSubtitle
+                                                        jcr:primaryType="nt:unstructured"
+                                                        sling:resourceType="granite/ui/components/coral/foundation/form/textfield"
+                                                        fieldLabel="Subtitle"
+                                                        maxlength="255"
+                                                        name="./labels/premiumRatesSubtitle"
+                                                        value="What You Pay"/>
+                                                    <premiumRatesSelfOnlyTitle
+                                                        jcr:primaryType="nt:unstructured"
+                                                        sling:resourceType="granite/ui/components/coral/foundation/form/textfield"
+                                                        fieldLabel="Self Only"
+                                                        maxlength="255"
+                                                        name="./labels/premiumRatesSelfOnly"
+                                                        value="Self Only"/>
+                                                    <premiumRatesSelfPlusOneTitle
+                                                        jcr:primaryType="nt:unstructured"
+                                                        sling:resourceType="granite/ui/components/coral/foundation/form/textfield"
+                                                        fieldLabel="Self + 1"
+                                                        maxlength="255"
+                                                        metaType="text-single"
+                                                        name="./labels/premiumRatesSelfPlusOneTitle"
+                                                        value="Self + 1"
+                                                        valueType="string"/>
+                                                    <premiumRatesSelfPlusFamilyTitle
+                                                        jcr:primaryType="nt:unstructured"
+                                                        sling:resourceType="granite/ui/components/coral/foundation/form/textfield"
+                                                        fieldLabel="Self + Family"
+                                                        maxlength="255"
+                                                        metaType="text-single"
+                                                        name="./labels/premiumRatesSelfPlusFamilyTitle"
+                                                        value="Self + Family"
+                                                        valueType="string"/>
+                                                </items>
+                                            </well>
+                                        </items>
+                                    </premiumRates>
+                                    <copays
+                                        jcr:primaryType="nt:unstructured"
+                                        margin="{Boolean}true"
+                                        sling:resourceType="granite/ui/components/coral/foundation/container">
+                                        <items jcr:primaryType="nt:unstructured">
+                                            <heading
+                                                granite:class="coral-Heading coral-Heading--4"
+                                                jcr:primaryType="nt:unstructured"
+                                                sling:resourceType="granite/ui/components/coral/foundation/heading"
+                                                level="{Long}4"
+                                                text="Copays"/>
+                                             <well
+                                                granite:class="cmp-healthPlan__editor-row"
+                                                jcr:primaryType="nt:unstructured"
+                                                sling:resourceType="granite/ui/components/coral/foundation/well">
+                                                <items jcr:primaryType="nt:unstructured">
+                                                    <copaysTitle
+                                                        jcr:primaryType="nt:unstructured"
+                                                        sling:resourceType="granite/ui/components/coral/foundation/form/textfield"
+                                                        fieldLabel="Title"
+                                                        maxlength="255"
+                                                        metaType="text-single"
+                                                        name="./labels/copaysTitle"
+                                                        value="Copays"
+                                                        valueType="string"/>
+                                                    <copaysSubtitle
+                                                        jcr:primaryType="nt:unstructured"
+                                                        sling:resourceType="granite/ui/components/coral/foundation/form/textfield"
+                                                        fieldLabel="Subtitle"
+                                                        maxlength="255"
+                                                        metaType="text-single"
+                                                        name="./labels/copaysSubtitle"
+                                                        value="What You Pay"
+                                                        valueType="string"/>
+                                                    <copaysAnnualEyeExam
+                                                        jcr:primaryType="nt:unstructured"
+                                                        sling:resourceType="granite/ui/components/coral/foundation/form/textfield"
+                                                        fieldLabel="Annual Eye Exam"
+                                                        maxlength="255"
+                                                        metaType="text-single"
+                                                        name="./labels/copaysAnnualEyeExam"
+                                                        value="Annual Eye Exam"
+                                                        valueType="string"/>
+                                                    <copaysEyeGlasses
+                                                        jcr:primaryType="nt:unstructured"
+                                                        sling:resourceType="granite/ui/components/coral/foundation/form/textfield"
+                                                        fieldLabel="Eye Glasses"
+                                                        maxlength="255"
+                                                        metaType="text-single"
+                                                        name="./labels/copaysEyeGlasses"
+                                                        value="Eye Glasses"
+                                                        valueType="string"/>
+                                                    <copaysStandardScratchResistantCoating
+                                                        jcr:primaryType="nt:unstructured"
+                                                        sling:resourceType="granite/ui/components/coral/foundation/form/textfield"
+                                                        fieldLabel="Standard Scratch Resistant Coating"
+                                                        maxlength="255"
+                                                        metaType="text-single"
+                                                        name="./labels/copaysStandardScratchResistantCoating"
+                                                        value="Standard Scratch Resistant Coating"
+                                                        valueType="string"/>
+                                                    <copaysPolycarbonateLenses
+                                                        jcr:primaryType="nt:unstructured"
+                                                        sling:resourceType="granite/ui/components/coral/foundation/form/textfield"
+                                                        fieldLabel="Polycarbonate Lenses"
+                                                        maxlength="255"
+                                                        metaType="text-single"
+                                                        name="./labels/copaysPolycarbonateLenses"
+                                                        value="Polycarbonate Lenses"
+                                                        valueType="string"/>
+                                                    <copaysTransitionLenses
+                                                        jcr:primaryType="nt:unstructured"
+                                                        sling:resourceType="granite/ui/components/coral/foundation/form/textfield"
+                                                        fieldLabel="Transition Lenses"
+                                                        maxlength="255"
+                                                        metaType="text-single"
+                                                        name="./labels/copaysTransitionLenses"
+                                                        value="Transition Lenses"
+                                                        valueType="string"/>
+                                                    <copaysTier1AntiReflectiveCoating
+                                                        jcr:primaryType="nt:unstructured"
+                                                        sling:resourceType="granite/ui/components/coral/foundation/form/textfield"
+                                                        fieldLabel="Tier 1 anti-reflective coating"
+                                                        maxlength="255"
+                                                        metaType="text-single"
+                                                        name="./labels/copaysTier1AntiReflectiveCoating"
+                                                        value="Tier 1 anti-reflective coating"
+                                                        valueType="string"/>
+                                                    <copaysTintedLenses
+                                                        jcr:primaryType="nt:unstructured"
+                                                        sling:resourceType="granite/ui/components/coral/foundation/form/textfield"
+                                                        fieldLabel="Tinted Lenses"
+                                                        maxlength="255"
+                                                        metaType="text-single"
+                                                        name="./labels/copaysTintedLenses"
+                                                        value="Tinted Lenses"
+                                                        valueType="string"/>
+                                                    <copaysUVCoating
+                                                        jcr:primaryType="nt:unstructured"
+                                                        sling:resourceType="granite/ui/components/coral/foundation/form/textfield"
+                                                        fieldLabel="UV Coating"
+                                                        maxlength="255"
+                                                        metaType="text-single"
+                                                        name="./labels/copaysUVCoating"
+                                                        value="UV Coating"
+                                                        valueType="string"/>
+                                                    <copaysTier1Progressive
+                                                        jcr:primaryType="nt:unstructured"
+                                                        sling:resourceType="granite/ui/components/coral/foundation/form/textfield"
+                                                        fieldLabel="Tier 1 Progressive"
+                                                        maxlength="255"
+                                                        metaType="text-single"
+                                                        name="./labels/copaysTier1Progressive"
+                                                        value="Tier 1 Progressive"
+                                                        valueType="string"/>
+                                                    <copaysHighEndTier2To4Progressive
+                                                        jcr:primaryType="nt:unstructured"
+                                                        sling:resourceType="granite/ui/components/coral/foundation/form/textfield"
+                                                        fieldLabel="High-end (Tier 2-4) progressive"
+                                                        maxlength="255"
+                                                        metaType="text-single"
+                                                        name="./labels/copaysHighEndTier2To4Progressive"
+                                                        value="High-end (Tier 2-4) progressive"
+                                                        valueType="string"/>
+                                                    <copaysHighEndPlasticUpTo173
+                                                        jcr:primaryType="nt:unstructured"
+                                                        sling:resourceType="granite/ui/components/coral/foundation/form/textfield"
+                                                        fieldLabel="High-end plastic up to 1.73"
+                                                        maxlength="255"
+                                                        metaType="text-single"
+                                                        name="./labels/copaysHighEndPlasticUpTo173"
+                                                        value="High-end plastic up to 1.73"
+                                                        valueType="string"/>
+                                                </items>
+                                             </well>
+                                        </items>
+                                    </copays>
+                                    <allowances
+                                        jcr:primaryType="nt:unstructured"
+                                        margin="{Boolean}true"
+                                        sling:resourceType="granite/ui/components/coral/foundation/container">
+                                        <items jcr:primaryType="nt:unstructured">
+                                            <heading
+                                                granite:class="coral-Heading coral-Heading--4"
+                                                jcr:primaryType="nt:unstructured"
+                                                sling:resourceType="granite/ui/components/coral/foundation/heading"
+                                                level="{Long}4"
+                                                text="Allowances"/>
+                                            <well
+                                                granite:class="cmp-healthPlan__editor-row"
+                                                jcr:primaryType="nt:unstructured"
+                                                sling:resourceType="granite/ui/components/coral/foundation/well">
+                                                <items jcr:primaryType="nt:unstructured">
+                                                    <allowancesTitle
+                                                        jcr:primaryType="nt:unstructured"
+                                                        sling:resourceType="granite/ui/components/coral/foundation/form/textfield"
+                                                        fieldLabel="Title"
+                                                        maxlength="255"
+                                                        metaType="text-single"
+                                                        name="./labels/allowancesTitle"
+                                                        value="Allowances"
+                                                        valueType="string"/>
+                                                    <allowancesSubtitle
+                                                        jcr:primaryType="nt:unstructured"
+                                                        sling:resourceType="granite/ui/components/coral/foundation/form/textfield"
+                                                        fieldLabel="Subtitle"
+                                                        maxlength="255"
+                                                        metaType="text-single"
+                                                        name="./labels/allowancesSubtitle"
+                                                        value="What Your Plan Pays"
+                                                        valueType="string"/>
+                                                    <allowancesAnnualEyeExam
+                                                        jcr:primaryType="nt:unstructured"
+                                                        sling:resourceType="granite/ui/components/coral/foundation/form/textfield"
+                                                        fieldLabel="Annual Eye Exam"
+                                                        maxlength="255"
+                                                        metaType="text-single"
+                                                        name="./labels/allowancesAnnualEyeExam"
+                                                        value="Annual Eye Exam"
+                                                        valueType="string"/>
+                                                    <allowancesContactLenses
+                                                        jcr:primaryType="nt:unstructured"
+                                                        sling:resourceType="granite/ui/components/coral/foundation/form/textfield"
+                                                        fieldLabel="Contact Lenses"
+                                                        maxlength="255"
+                                                        metaType="text-single"
+                                                        name="./labels/allowancesContactLenses"
+                                                        value="Contact Lenses"
+                                                        valueType="string"/>
+                                                    <allowancesContactLensFittingEvaluation
+                                                        jcr:primaryType="nt:unstructured"
+                                                        sling:resourceType="granite/ui/components/coral/foundation/form/textfield"
+                                                        fieldLabel="Contact Lens Fitting/Evaluation"
+                                                        maxlength="255"
+                                                        metaType="text-single"
+                                                        name="./labels/allowancesContactLensFittingEvaluation"
+                                                        value="Contact Lens Fitting/Evaluation"
+                                                        valueType="string"/>
+                                                </items>
+                                            </well>
+                                        </items>
+                                    </allowances>
+                                    <morePlanInfo
+                                        jcr:primaryType="nt:unstructured"
+                                        margin="{Boolean}true"
+                                        sling:resourceType="granite/ui/components/coral/foundation/container">
+                                        <items jcr:primaryType="nt:unstructured">
+                                            <heading
+                                                granite:class="coral-Heading coral-Heading--4"
+                                                jcr:primaryType="nt:unstructured"
+                                                sling:resourceType="granite/ui/components/coral/foundation/heading"
+                                                level="{Long}4"
+                                                text="More Plan Information"/>
+                                            <well
+                                                granite:class="cmp-healthPlan__editor-row"
+                                                jcr:primaryType="nt:unstructured"
+                                                sling:resourceType="granite/ui/components/coral/foundation/well">
+                                                <items jcr:primaryType="nt:unstructured">
+                                                    <meorePlanInfoTitle
+                                                        jcr:primaryType="nt:unstructured"
+                                                        sling:resourceType="granite/ui/components/coral/foundation/form/textfield"
+                                                        fieldLabel="Title"
+                                                        maxlength="255"
+                                                        metaType="text-single"
+                                                        name="./labels/morePlanInfoTitle"
+                                                        value="More Plan Information"
+                                                        valueType="string"/>
+                                                    <morePlanInfoBenefits
+                                                        jcr:primaryType="nt:unstructured"
+                                                        sling:resourceType="granite/ui/components/coral/foundation/form/textfield"
+                                                        fieldLabel="Benefits"
+                                                        maxlength="255"
+                                                        metaType="text-single"
+                                                        name="./labels/morePlanInfoBenefits"
+                                                        value="More benefits information"
+                                                        valueType="string"/>
+                                                </items>
+                                            </well>
+                                        </items>
+                                    </morePlanInfo>
+                                </items>
+                            </columns>
+                        </items>
+                    </labels>
+                </items>
+            </tabs>
+        </items>
+    </content>
+</jcr:root>

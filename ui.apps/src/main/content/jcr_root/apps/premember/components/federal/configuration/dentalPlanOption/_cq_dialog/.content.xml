@@ -1,0 +1,985 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<jcr:root xmlns:sling="http://sling.apache.org/jcr/sling/1.0" xmlns:granite="http://www.adobe.com/jcr/granite/1.0" xmlns:cq="http://www.day.com/jcr/cq/1.0" xmlns:jcr="http://www.jcp.org/jcr/1.0" xmlns:nt="http://www.jcp.org/jcr/nt/1.0"
+    jcr:primaryType="nt:unstructured"
+    jcr:title="Federal - Dental Plan"
+    sling:resourceType="cq/gui/components/authoring/dialog"
+    extraClientlibs="[premember.configuration.federa.planOption.dialog]">
+    <content
+        granite:class="cmp-dentalPlan__editor"
+        jcr:primaryType="nt:unstructured"
+        sling:resourceType="granite/ui/components/coral/foundation/container">
+        <granite:data
+            jcr:primaryType="nt:unstructured"
+            component-path="${requestPathInfo.suffix}"/>
+        <items jcr:primaryType="nt:unstructured">
+            <tabs
+                jcr:primaryType="nt:unstructured"
+                sling:resourceType="granite/ui/components/coral/foundation/tabs"
+                maximized="{Boolean}true">
+                <items jcr:primaryType="nt:unstructured">
+					<general
+						granite:class="generalEmployerPlanTab"
+						jcr:primaryType="nt:unstructured"
+						jcr:title="General"
+						sling:resourceType="granite/ui/components/coral/foundation/container"
+						margin="{Boolean}true">
+						<items jcr:primaryType="nt:unstructured">
+							<id
+								jcr:primaryType="nt:unstructured"
+								sling:resourceType="granite/ui/components/coral/foundation/form/select"
+								emptyOption="{Boolean}true"
+								fieldLabel="Name"
+								name="./id"
+								required="{Boolean}true"
+								valueType="string">
+								<datasource
+									jcr:primaryType="nt:unstructured"
+									sling:resourceType="acs-commons/components/utilities/genericlist/datasource"
+									path="/etc/acs-commons/lists/federal/plan-names/dental-plan-names"/>
+							</id>
+						</items>
+					</general>
+                    <planCosts
+                        jcr:primaryType="nt:unstructured"
+                        jcr:title="Plan Costs"
+                        sling:resourceType="granite/ui/components/coral/foundation/container"
+                        margin="{Boolean}true">
+                        <items jcr:primaryType="nt:unstructured">
+							<deductibleIndividual
+								jcr:primaryType="nt:unstructured"
+								sling:resourceType="granite/ui/components/coral/foundation/form/numberfield"
+								fieldLabel="Deductible - In Network ($)"
+								metaType="number"
+								min="0"
+								name="./planCosts/deductibleIndividual"
+								required="{Boolean}true"
+								step="any"
+								typeHint="long"
+								valueType="long"/>
+							<deductibleFamily
+								jcr:primaryType="nt:unstructured"
+								sling:resourceType="granite/ui/components/coral/foundation/form/numberfield"
+								fieldLabel="Deductible - Out of Network ($)"
+								metaType="number"
+								min="0"
+								name="./planCosts/deductibleFamily"
+								required="{Boolean}true"
+								step="any"
+								typeHint="long"
+								valueType="long"/>
+							<annualMaximumIndividual
+								jcr:primaryType="nt:unstructured"
+								sling:resourceType="granite/ui/components/coral/foundation/form/textfield"
+								fieldLabel="Annual Maximum - In Network"
+								name="./planCosts/annualMaximumIndividual"
+								required="{Boolean}true"/>
+							<annualMaximumFamily
+								jcr:primaryType="nt:unstructured"
+								sling:resourceType="granite/ui/components/coral/foundation/form/textfield"
+								fieldLabel="Annual Maximum - Out of Network"
+								name="./planCosts/annualMaximumFamily"
+								required="{Boolean}true"/>
+						</items>
+					</planCosts>
+					<deductibles
+						jcr:primaryType="nt:unstructured"
+						jcr:title="Deductibles"
+						sling:resourceType="granite/ui/components/coral/foundation/container"
+						margin="{Boolean}true">
+						<items jcr:primaryType="nt:unstructured">
+							<inDeductibles
+								jcr:primaryType="nt:unstructured"
+								sling:resourceType="granite/ui/components/coral/foundation/container">
+								<items jcr:primaryType="nt:unstructured">
+									<heading
+										granite:class="coral-Heading coral-Heading--4"
+										jcr:primaryType="nt:unstructured"
+										sling:resourceType="granite/ui/components/coral/foundation/heading"
+										level="{Long}4"
+										text="In Network"/>
+									<well
+									granite:class="cmp-dentalPlan__editor-row"
+									jcr:primaryType="nt:unstructured"
+									sling:resourceType="granite/ui/components/coral/foundation/well">
+									<items jcr:primaryType="nt:unstructured">
+										<inDeductible
+											granite:class="cmp-healthPlan__editor-Field"
+											jcr:primaryType="nt:unstructured"
+											sling:resourceType="granite/ui/components/coral/foundation/form/numberfield"
+											fieldLabel="Deductible"
+											metaType="number"
+											min="0"
+											name="./deductibles/inDeductible"
+											step="any"
+											typeHint="long"
+											valueType="long"/>
+									</items>
+									</well>
+								</items>
+							</inDeductibles>
+							<oonDeductibles
+								jcr:primaryType="nt:unstructured"
+								sling:resourceType="granite/ui/components/coral/foundation/container">
+								<items jcr:primaryType="nt:unstructured">
+									<heading
+										granite:class="coral-Heading coral-Heading--4"
+										jcr:primaryType="nt:unstructured"
+										sling:resourceType="granite/ui/components/coral/foundation/heading"
+										level="{Long}4"
+										text="Out of Network"/>
+									<well
+										granite:class="cmp-dentalPlan__editor-row"
+										jcr:primaryType="nt:unstructured"
+										sling:resourceType="granite/ui/components/coral/foundation/well">
+										<items jcr:primaryType="nt:unstructured">
+											<oonDeductibleSelfOnly
+												granite:class="cmp-healthPlan__editor-Field"
+												jcr:primaryType="nt:unstructured"
+												sling:resourceType="granite/ui/components/coral/foundation/form/numberfield"
+												fieldLabel="Self Only ($)"
+												metaType="number"
+												min="0"
+												name="./deductibles/oonSelfOnly"
+												step="any"
+												typeHint="long"
+												valueType="long"/>
+											<oonDeductibleSelfPlusOne
+												jcr:primaryType="nt:unstructured"
+												sling:resourceType="granite/ui/components/coral/foundation/form/numberfield"
+												fieldLabel="Self Plus One ($)"
+												metaType="number"
+												min="0"
+												name="./deductibles/oonSelfPlusOne"
+												step="any"
+												typeHint="long"
+												valueType="long"/>
+											<oonDeductibleSelfPlusFamily
+												jcr:primaryType="nt:unstructured"
+												sling:resourceType="granite/ui/components/coral/foundation/form/numberfield"
+												fieldLabel="Self Plus Family ($)"
+												metaType="number"
+												min="0"
+												name="./deductibles/oonSelfPlusFamily"
+												step="any"
+												typeHint="long"
+												valueType="long"/>
+										</items>
+									</well>
+								</items>
+							</oonDeductibles>
+						</items>
+					</deductibles>
+					<preventiveCareTab
+						jcr:primaryType="nt:unstructured"
+						jcr:title="Preventive Care"
+						sling:resourceType="granite/ui/components/coral/foundation/container"
+						margin="{Boolean}true">
+						<items jcr:primaryType="nt:unstructured">
+							<preventiveCare
+								jcr:primaryType="nt:unstructured"
+								sling:resourceType="granite/ui/components/coral/foundation/container">
+								<items jcr:primaryType="nt:unstructured">
+									<heading
+										granite:class="coral-Heading coral-Heading--4"
+										jcr:primaryType="nt:unstructured"
+										sling:resourceType="granite/ui/components/coral/foundation/heading"
+										level="{Long}4"
+										text="Preventive Care"/>
+									<well
+										granite:class="cmp-dentalPlan__editor-row"
+										jcr:primaryType="nt:unstructured"
+										sling:resourceType="granite/ui/components/coral/foundation/well">
+										<items jcr:primaryType="nt:unstructured">
+											<inRow jcr:primaryType="nt:unstructured"
+												   granite:class="cmp-employerPlanOption__generalAmount-editor-row "
+												   sling:resourceType="granite/ui/components/coral/foundation/container">
+												<items jcr:primaryType="nt:unstructured">
+													<inPreventiveCare
+														granite:class="cmp-healthPlan__editor-Field"
+														jcr:primaryType="nt:unstructured"
+														sling:resourceType="granite/ui/components/coral/foundation/form/numberfield"
+														fieldLabel="In Network"
+														metaType="number"
+														min="0"
+														name="./preventiveCare/inPreventiveCare"
+														step="any"
+														typeHint="long"
+														valueType="long"/>
+													<inPreventiveCareIsPercentage
+														jcr:primaryType="nt:unstructured"
+														sling:resourceType="granite/ui/components/coral/foundation/form/checkbox"
+														name="./preventiveCare/inPreventiveCareIsPercentage"
+														text="%"
+														value="{Boolean}true"
+														uncheckedValue="{Boolean}false"/>
+												</items>
+											</inRow>
+											<ooRow jcr:primaryType="nt:unstructured"
+												   granite:class="cmp-employerPlanOption__generalAmount-editor-row "
+												   sling:resourceType="granite/ui/components/coral/foundation/container">
+												<items jcr:primaryType="nt:unstructured">
+													<oonPreventiveCare
+														granite:class="cmp-healthPlan__editor-Field"
+														jcr:primaryType="nt:unstructured"
+														sling:resourceType="granite/ui/components/coral/foundation/form/numberfield"
+														fieldLabel="Out Of Network"
+														metaType="number"
+														min="0"
+														name="./preventiveCare/oonDiagnosticServices"
+														step="any"
+														typeHint="long"
+														valueType="long"/>
+													<oonPreventiveCareIsPercentage
+														jcr:primaryType="nt:unstructured"
+														sling:resourceType="granite/ui/components/coral/foundation/form/checkbox"
+														name="./preventiveCare/oonDiagnosticServicesIsPercentage"
+														text="%"
+														value="{Boolean}true"
+														uncheckedValue="{Boolean}false"/>
+												</items>
+											</ooRow>
+										</items>
+									</well>
+								</items>
+							</preventiveCare>
+							<waitingPeriods
+									jcr:primaryType="nt:unstructured"
+									sling:resourceType="granite/ui/components/coral/foundation/container">
+								<items jcr:primaryType="nt:unstructured">
+								<waitingPeriodsTitle
+									granite:class="coral-Heading coral-Heading--4"
+									jcr:primaryType="nt:unstructured"
+									sling:resourceType="granite/ui/components/coral/foundation/heading"
+									level="{Long}4"
+									text="Waiting Periods"/>
+								<well
+									granite:class="cmp-healthPlan__editor-row"
+									jcr:primaryType="nt:unstructured"
+									sling:resourceType="granite/ui/components/coral/foundation/well">
+									<items jcr:primaryType="nt:unstructured">
+										<waitingPeriodsClassA
+											jcr:primaryType="nt:unstructured"
+											sling:resourceType="granite/ui/components/coral/foundation/container">
+											<items jcr:primaryType="nt:unstructured">
+												<heading
+													granite:class="coral-Heading coral-Heading--4"
+													jcr:primaryType="nt:unstructured"
+													sling:resourceType="granite/ui/components/coral/foundation/heading"
+													level="{Long}4"
+													text="Class A"/>
+												<well
+													granite:class="cmp-healthPlan__editor-row"
+													jcr:primaryType="nt:unstructured"
+													sling:resourceType="granite/ui/components/coral/foundation/well">
+													<items jcr:primaryType="nt:unstructured">
+														<inWaitingPeriodClassA
+															granite:class="cmp-healthPlan__editor-Field"
+															jcr:primaryType="nt:unstructured"
+															sling:resourceType="granite/ui/components/coral/foundation/form/checkbox"
+															value="true"
+															name="./preventiveCare/inWaitingPeriodClassA"
+															text="In Network"
+															uncheckedValue="false"/>
+														<oonWaitingPeriodClassA
+															granite:class="cmp-healthPlan__editor-Field"
+															jcr:primaryType="nt:unstructured"
+															sling:resourceType="granite/ui/components/coral/foundation/form/checkbox"
+															value="true"
+															name="./preventiveCare/oonWaitingPeriodClassA"
+															text="Out of Network"
+															uncheckedValue="false"/>
+													</items>
+												</well>
+											</items>
+										</waitingPeriodsClassA>
+										<waitingPeriodsClassB
+											jcr:primaryType="nt:unstructured"
+											sling:resourceType="granite/ui/components/coral/foundation/container">
+											<items jcr:primaryType="nt:unstructured">
+												<heading
+													granite:class="coral-Heading coral-Heading--4"
+													jcr:primaryType="nt:unstructured"
+													sling:resourceType="granite/ui/components/coral/foundation/heading"
+													level="{Long}4"
+													text="Class B"/>
+												<well
+													granite:class="cmp-healthPlan__editor-row"
+													jcr:primaryType="nt:unstructured"
+													sling:resourceType="granite/ui/components/coral/foundation/well">
+													<items jcr:primaryType="nt:unstructured">
+														<inWaitingPeriodClassB
+															granite:class="cmp-healthPlan__editor-Field"
+															jcr:primaryType="nt:unstructured"
+															sling:resourceType="granite/ui/components/coral/foundation/form/checkbox"
+															value="true"
+															name="./preventiveCare/inWaitingPeriodClassB"
+															text="In Network"
+															uncheckedValue="false"/>
+														<oonWaitingPeriodClassB
+															granite:class="cmp-healthPlan__editor-Field"
+															jcr:primaryType="nt:unstructured"
+															sling:resourceType="granite/ui/components/coral/foundation/form/checkbox"
+															value="true"
+															name="./preventiveCare/oonWaitingPeriodClassB"
+															text="Out of Network"
+															uncheckedValue="false"/>
+													</items>
+												</well>
+											</items>
+										</waitingPeriodsClassB>
+										<waitingPeriodsClassC
+											jcr:primaryType="nt:unstructured"
+											sling:resourceType="granite/ui/components/coral/foundation/container">
+											<items jcr:primaryType="nt:unstructured">
+												<heading
+													granite:class="coral-Heading coral-Heading--4"
+													jcr:primaryType="nt:unstructured"
+													sling:resourceType="granite/ui/components/coral/foundation/heading"
+													level="{Long}4"
+													text="Class C"/>
+												<well
+													granite:class="cmp-healthPlan__editor-row"
+													jcr:primaryType="nt:unstructured"
+													sling:resourceType="granite/ui/components/coral/foundation/well">
+													<items jcr:primaryType="nt:unstructured">
+														<inWaitingPeriodClassC
+															granite:class="cmp-healthPlan__editor-Field"
+															jcr:primaryType="nt:unstructured"
+															sling:resourceType="granite/ui/components/coral/foundation/form/checkbox"
+															value="true"
+															name="./preventiveCare/inWaitingPeriodClassC"
+															text="In Network"
+															uncheckedValue="false"/>
+														<oonWaitingPeriodClassC
+															granite:class="cmp-healthPlan__editor-Field"
+															jcr:primaryType="nt:unstructured"
+															sling:resourceType="granite/ui/components/coral/foundation/form/checkbox"
+															value="true"
+															name="./preventiveCare/oonWaitingPeriodClassC"
+															text="Out of Network"
+															uncheckedValue="false"/>
+													</items>
+												</well>
+											</items>
+										</waitingPeriodsClassC>
+										<waitingPeriodsClassD
+											jcr:primaryType="nt:unstructured"
+											sling:resourceType="granite/ui/components/coral/foundation/container">
+											<items jcr:primaryType="nt:unstructured">
+												<heading
+													granite:class="coral-Heading coral-Heading--4"
+													jcr:primaryType="nt:unstructured"
+													sling:resourceType="granite/ui/components/coral/foundation/heading"
+													level="{Long}4"
+													text="Class D"/>
+												<well
+													granite:class="cmp-healthPlan__editor-row"
+													jcr:primaryType="nt:unstructured"
+													sling:resourceType="granite/ui/components/coral/foundation/well">
+													<items jcr:primaryType="nt:unstructured">
+														<inWaitingPeriodClassD
+															granite:class="cmp-healthPlan__editor-Field"
+															jcr:primaryType="nt:unstructured"
+															sling:resourceType="granite/ui/components/coral/foundation/form/checkbox"
+															value="true"
+															name="./preventiveCare/inWaitingPeriodClassD"
+															text="In Network"
+															uncheckedValue="false"/>
+														<oonWaitingPeriodClassD
+															granite:class="cmp-healthPlan__editor-Field"
+															jcr:primaryType="nt:unstructured"
+															sling:resourceType="granite/ui/components/coral/foundation/form/checkbox"
+															value="true"
+															name="./preventiveCare/oonWaitingPeriodClassD"
+															text="Out of Network"
+															uncheckedValue="false"/>
+													</items>
+												</well>
+											</items>
+										</waitingPeriodsClassD>
+									</items>
+								</well>
+								</items>
+							</waitingPeriods>
+						</items>
+					</preventiveCareTab>
+					<medicalCareTab
+						jcr:primaryType="nt:unstructured"
+						jcr:title="Medical Care"
+						sling:resourceType="granite/ui/components/coral/foundation/container"
+						margin="{Boolean}true">
+						<items jcr:primaryType="nt:unstructured">
+							<diagnosticServices
+								jcr:primaryType="nt:unstructured"
+								sling:resourceType="granite/ui/components/coral/foundation/container">
+								<items jcr:primaryType="nt:unstructured">
+									<heading
+										granite:class="coral-Heading coral-Heading--4"
+										jcr:primaryType="nt:unstructured"
+										sling:resourceType="granite/ui/components/coral/foundation/heading"
+										level="{Long}4"
+										text="Diagnostic Services ($)"/>
+									<well
+										granite:class="cmp-dentalPlan__editor-row"
+										jcr:primaryType="nt:unstructured"
+										sling:resourceType="granite/ui/components/coral/foundation/well">
+										<items jcr:primaryType="nt:unstructured">
+											<inDiagnosticServices
+												granite:class="cmp-healthPlan__editor-Field"
+												jcr:primaryType="nt:unstructured"
+												sling:resourceType="granite/ui/components/coral/foundation/form/numberfield"
+												fieldLabel="In Network"
+												metaType="number"
+												min="0"
+												name="./medicalCare/inDiagnosticServices"
+												step="any"
+												typeHint="long"
+												valueType="long"/>
+											<inDiagnosticServicesIsPercentage
+													jcr:primaryType="nt:unstructured"
+													sling:resourceType="granite/ui/components/coral/foundation/form/checkbox"
+													name="./medicalCare/inDiagnosticServicesIsPercentage"
+													text="%"
+													value="{Boolean}true"
+													uncheckedValue="{Boolean}false"/>
+											<oonDiagnosticServices
+												granite:class="cmp-healthPlan__editor-Field"
+												jcr:primaryType="nt:unstructured"
+												sling:resourceType="granite/ui/components/coral/foundation/form/numberfield"
+												fieldLabel="Out Of Network"
+												metaType="number"
+												min="0"
+												name="./medicalCare/oonDiagnosticServices"
+												step="any"
+												typeHint="long"
+												valueType="long"/>
+											<oonDiagnosticServicesIsPercentage
+													jcr:primaryType="nt:unstructured"
+													sling:resourceType="granite/ui/components/coral/foundation/form/checkbox"
+													name="./medicalCare/oonDiagnosticServicesIsPercentage"
+													text="%"
+													value="{Boolean}true"
+													uncheckedValue="{Boolean}false"/>
+										</items>
+									</well>
+								</items>
+							</diagnosticServices>
+							<preventiveServices
+								jcr:primaryType="nt:unstructured"
+								sling:resourceType="granite/ui/components/coral/foundation/container">
+								<items jcr:primaryType="nt:unstructured">
+									<heading
+										granite:class="coral-Heading coral-Heading--4"
+										jcr:primaryType="nt:unstructured"
+										sling:resourceType="granite/ui/components/coral/foundation/heading"
+										level="{Long}4"
+										text="Preventive Services ($)"/>
+									<well
+										granite:class="cmp-dentalPlan__editor-row"
+										jcr:primaryType="nt:unstructured"
+										sling:resourceType="granite/ui/components/coral/foundation/well">
+										<items jcr:primaryType="nt:unstructured">
+											<inPreventiveServices
+												granite:class="cmp-healthPlan__editor-Field"
+												jcr:primaryType="nt:unstructured"
+												sling:resourceType="granite/ui/components/coral/foundation/form/numberfield"
+												fieldLabel="In Network"
+												metaType="number"
+												min="0"
+												name="./medicalCare/inPreventiveServices"
+												step="any"
+												typeHint="long"
+												valueType="long"/>
+											<inPreventiveServicesIsPercentage
+													jcr:primaryType="nt:unstructured"
+													sling:resourceType="granite/ui/components/coral/foundation/form/checkbox"
+													name="./medicalCare/inPreventiveServicesIsPercentage"
+													text="%"
+													value="{Boolean}true"
+													uncheckedValue="{Boolean}false"/>
+											<oonPreventiveServices
+												granite:class="cmp-healthPlan__editor-Field"
+												jcr:primaryType="nt:unstructured"
+												sling:resourceType="granite/ui/components/coral/foundation/form/numberfield"
+												fieldLabel="Out Of Network"
+												metaType="number"
+												min="0"
+												name="./medicalCare/oonPreventiveServices"
+												step="any"
+												typeHint="long"
+												valueType="long"/>
+											<oonPreventiveServicesIsPercentage
+													jcr:primaryType="nt:unstructured"
+													sling:resourceType="granite/ui/components/coral/foundation/form/checkbox"
+													name="./medicalCare/oonPreventiveServicesIsPercentage"
+													text="%"
+													value="{Boolean}true"
+													uncheckedValue="{Boolean}false"/>
+										</items>
+									</well>
+								</items>
+							</preventiveServices>
+							<intermediateServices
+								jcr:primaryType="nt:unstructured"
+								sling:resourceType="granite/ui/components/coral/foundation/container">
+								<items jcr:primaryType="nt:unstructured">
+									<heading
+										granite:class="coral-Heading coral-Heading--4"
+										jcr:primaryType="nt:unstructured"
+										sling:resourceType="granite/ui/components/coral/foundation/heading"
+										level="{Long}4"
+										text="Intermediate Services ($)"/>
+									<well
+										granite:class="cmp-dentalPlan__editor-row"
+										jcr:primaryType="nt:unstructured"
+										sling:resourceType="granite/ui/components/coral/foundation/well">
+										<items jcr:primaryType="nt:unstructured">
+											<inIntermediateServices
+												granite:class="cmp-healthPlan__editor-Field"
+												jcr:primaryType="nt:unstructured"
+												sling:resourceType="granite/ui/components/coral/foundation/form/numberfield"
+												fieldLabel="In Network"
+												metaType="number"
+												min="0"
+												name="./medicalCare/inIntermediateServices"
+												step="any"
+												typeHint="long"
+												valueType="long"/>
+											<inIntermediateServicesIsPercentage
+													jcr:primaryType="nt:unstructured"
+													sling:resourceType="granite/ui/components/coral/foundation/form/checkbox"
+													name="./medicalCare/inIntermediateServicesIsPercentage"
+													text="%"
+													value="{Boolean}true"
+													uncheckedValue="{Boolean}false"/>
+											<oonIntermediateServices
+												granite:class="cmp-healthPlan__editor-Field"
+												jcr:primaryType="nt:unstructured"
+												sling:resourceType="granite/ui/components/coral/foundation/form/numberfield"
+												fieldLabel="Out Of Network"
+												metaType="number"
+												min="0"
+												name="./medicalCare/oonIntermediateServices"
+												step="any"
+												typeHint="long"
+												valueType="long"/>
+											<oonIntermediateServicesIsPercentage
+													jcr:primaryType="nt:unstructured"
+													sling:resourceType="granite/ui/components/coral/foundation/form/checkbox"
+													name="./medicalCare/oonIntermediateServicesIsPercentage"
+													text="%"
+													value="{Boolean}true"
+													uncheckedValue="{Boolean}false"/>
+										</items>
+									</well>
+								</items>
+							</intermediateServices>
+							<mayorServices
+								jcr:primaryType="nt:unstructured"
+								sling:resourceType="granite/ui/components/coral/foundation/container">
+								<items jcr:primaryType="nt:unstructured">
+									<heading
+										granite:class="coral-Heading coral-Heading--4"
+										jcr:primaryType="nt:unstructured"
+										sling:resourceType="granite/ui/components/coral/foundation/heading"
+										level="{Long}4"
+										text="Mayor Services ($)"/>
+									<well
+										granite:class="cmp-dentalPlan__editor-row"
+										jcr:primaryType="nt:unstructured"
+										sling:resourceType="granite/ui/components/coral/foundation/well">
+										<items jcr:primaryType="nt:unstructured">
+											<inMayorServices
+												granite:class="cmp-healthPlan__editor-Field"
+												jcr:primaryType="nt:unstructured"
+												sling:resourceType="granite/ui/components/coral/foundation/form/numberfield"
+												fieldLabel="In Network"
+												metaType="number"
+												min="0"
+												name="./medicalCare/inMayorServices"
+												step="any"
+												typeHint="long"
+												valueType="long"/>
+											<inMayorServicesIsPercentage
+													jcr:primaryType="nt:unstructured"
+													sling:resourceType="granite/ui/components/coral/foundation/form/checkbox"
+													name="./medicalCare/inMayorServicesIsPercentage"
+													text="%"
+													value="{Boolean}true"
+													uncheckedValue="{Boolean}false"/>
+											<oonMayorServices
+												granite:class="cmp-healthPlan__editor-Field"
+												jcr:primaryType="nt:unstructured"
+												sling:resourceType="granite/ui/components/coral/foundation/form/numberfield"
+												fieldLabel="Out Of Network"
+												metaType="number"
+												min="0"
+												name="./medicalCare/oonMayorServices"
+												step="any"
+												typeHint="long"
+												valueType="long"/>
+											<oonMayorServicesIsPercentage
+													jcr:primaryType="nt:unstructured"
+													sling:resourceType="granite/ui/components/coral/foundation/form/checkbox"
+													name="./medicalCare/oonMayorServicesIsPercentage"
+													text="%"
+													value="{Boolean}true"
+													uncheckedValue="{Boolean}false"/>
+										</items>
+									</well>
+								</items>
+							</mayorServices>
+							<annualMaximumsForA
+								jcr:primaryType="nt:unstructured"
+								sling:resourceType="granite/ui/components/coral/foundation/container">
+								<items jcr:primaryType="nt:unstructured">
+									<heading
+										granite:class="coral-Heading coral-Heading--4"
+										jcr:primaryType="nt:unstructured"
+										sling:resourceType="granite/ui/components/coral/foundation/heading"
+										level="{Long}4"
+										text="Annual Maximums For A ($)"/>
+									<well
+										granite:class="cmp-dentalPlan__editor-row"
+										jcr:primaryType="nt:unstructured"
+										sling:resourceType="granite/ui/components/coral/foundation/well">
+										<items jcr:primaryType="nt:unstructured">
+											<inAnnualMaximumsForA
+												granite:class="cmp-healthPlan__editor-Field"
+												jcr:primaryType="nt:unstructured"
+												sling:resourceType="granite/ui/components/coral/foundation/form/numberfield"
+												fieldLabel="In Network"
+												metaType="number"
+												min="0"
+												name="./medicalCare/inAnnualMaximumsForA"
+												step="any"
+												typeHint="long"
+												valueType="long"/>
+											<oonAnnualMaximumsForA
+												granite:class="cmp-healthPlan__editor-Field"
+												jcr:primaryType="nt:unstructured"
+												sling:resourceType="granite/ui/components/coral/foundation/form/numberfield"
+												fieldLabel="Out Of Network"
+												metaType="number"
+												min="0"
+												name="./medicalCare/oonAnnualMaximumsForA"
+												step="any"
+												typeHint="long"
+												valueType="long"/>
+										</items>
+									</well>
+								</items>
+							</annualMaximumsForA>
+							<annualMaximumsForB
+								jcr:primaryType="nt:unstructured"
+								sling:resourceType="granite/ui/components/coral/foundation/container">
+								<items jcr:primaryType="nt:unstructured">
+									<heading
+										granite:class="coral-Heading coral-Heading--4"
+										jcr:primaryType="nt:unstructured"
+										sling:resourceType="granite/ui/components/coral/foundation/heading"
+										level="{Long}4"
+										text="Annual Maximums For B ($)"/>
+									<well
+										granite:class="cmp-dentalPlan__editor-row"
+										jcr:primaryType="nt:unstructured"
+										sling:resourceType="granite/ui/components/coral/foundation/well">
+										<items jcr:primaryType="nt:unstructured">
+											<inAnnualMaximumsForB
+												granite:class="cmp-healthPlan__editor-Field"
+												jcr:primaryType="nt:unstructured"
+												sling:resourceType="granite/ui/components/coral/foundation/form/numberfield"
+												fieldLabel="In Network"
+												metaType="number"
+												min="0"
+												name="./medicalCare/inAnnualMaximumsForB"
+												step="any"
+												typeHint="long"
+												valueType="long"/>
+											<oonAnnualMaximumsForB
+												granite:class="cmp-healthPlan__editor-Field"
+												jcr:primaryType="nt:unstructured"
+												sling:resourceType="granite/ui/components/coral/foundation/form/numberfield"
+												fieldLabel="Out Of Network"
+												metaType="number"
+												min="0"
+												name="./medicalCare/oonAnnualMaximumsForB"
+												step="any"
+												typeHint="long"
+												valueType="long"/>
+										</items>
+									</well>
+								</items>
+							</annualMaximumsForB>
+							<annualMaximumsForC
+								jcr:primaryType="nt:unstructured"
+								sling:resourceType="granite/ui/components/coral/foundation/container">
+								<items jcr:primaryType="nt:unstructured">
+									<heading
+										granite:class="coral-Heading coral-Heading--4"
+										jcr:primaryType="nt:unstructured"
+										sling:resourceType="granite/ui/components/coral/foundation/heading"
+										level="{Long}4"
+										text="Annual Maximums For C ($)"/>
+									<well
+										granite:class="cmp-dentalPlan__editor-row"
+										jcr:primaryType="nt:unstructured"
+										sling:resourceType="granite/ui/components/coral/foundation/well">
+										<items jcr:primaryType="nt:unstructured">
+											<inAnnualMaximumsForC
+												granite:class="cmp-healthPlan__editor-Field"
+												jcr:primaryType="nt:unstructured"
+												sling:resourceType="granite/ui/components/coral/foundation/form/numberfield"
+												fieldLabel="In Network"
+												metaType="number"
+												min="0"
+												name="./medicalCare/inAnnualMaximumsForC"
+												step="any"
+												typeHint="long"
+												valueType="long"/>
+											<oonAnnualMaximumsForC
+												granite:class="cmp-healthPlan__editor-Field"
+												jcr:primaryType="nt:unstructured"
+												sling:resourceType="granite/ui/components/coral/foundation/form/numberfield"
+												fieldLabel="Out Of Network"
+												metaType="number"
+												min="0"
+												name="./medicalCare/oonAnnualMaximumsForC"
+												step="any"
+												typeHint="long"
+												valueType="long"/>
+										</items>
+									</well>
+								</items>
+							</annualMaximumsForC>
+							<annualMaximumsForD
+									jcr:primaryType="nt:unstructured"
+									sling:resourceType="granite/ui/components/coral/foundation/container">
+								<items jcr:primaryType="nt:unstructured">
+									<heading
+											granite:class="coral-Heading coral-Heading--4"
+											jcr:primaryType="nt:unstructured"
+											sling:resourceType="granite/ui/components/coral/foundation/heading"
+											level="{Long}4"
+											text="Annual Maximums For D ($)"/>
+									<well
+											granite:class="cmp-dentalPlan__editor-row"
+											jcr:primaryType="nt:unstructured"
+											sling:resourceType="granite/ui/components/coral/foundation/well">
+										<items jcr:primaryType="nt:unstructured">
+											<inAnnualMaximumsForD
+													granite:class="cmp-healthPlan__editor-Field"
+													jcr:primaryType="nt:unstructured"
+													sling:resourceType="granite/ui/components/coral/foundation/form/numberfield"
+													fieldLabel="In Network"
+													metaType="number"
+													min="0"
+													name="./medicalCare/inAnnualMaximumsForD"
+													step="any"
+													typeHint="long"
+													valueType="long"
+											/>
+											<oonAnnualMaximumsForD
+													granite:class="cmp-healthPlan__editor-Field"
+													jcr:primaryType="nt:unstructured"
+													sling:resourceType="granite/ui/components/coral/foundation/form/numberfield"
+													fieldLabel="Out Of Network"
+													metaType="number"
+													min="0"
+													name="./medicalCare/oonAnnualMaximumsForD"
+													step="any"
+													typeHint="long"
+													valueType="long"
+											/>
+										</items>
+									</well>
+								</items>
+							</annualMaximumsForD>
+							<lifetimeMaximumsforD
+									jcr:primaryType="nt:unstructured"
+									sling:resourceType="granite/ui/components/coral/foundation/container">
+								<items jcr:primaryType="nt:unstructured">
+									<heading
+											granite:class="coral-Heading coral-Heading--4"
+											jcr:primaryType="nt:unstructured"
+											sling:resourceType="granite/ui/components/coral/foundation/heading"
+											level="{Long}4"
+											text="Lifetime Maximums For D * ($)"/>
+									<well
+											granite:class="cmp-dentalPlan__editor-row"
+											jcr:primaryType="nt:unstructured"
+											sling:resourceType="granite/ui/components/coral/foundation/well">
+										<items jcr:primaryType="nt:unstructured">
+											<inLifetimeMaximumsForD
+												granite:class="cmp-healthPlan__editor-Field"
+												jcr:primaryType="nt:unstructured"
+												sling:resourceType="granite/ui/components/coral/foundation/form/numberfield"
+												fieldLabel="In Network"
+												metaType="number"
+												min="0"
+												name="./medicalCare/inLifetimeMaximumsForD"
+												step="any"
+												typeHint="long"
+												valueType="long"
+											/>
+											<oonLifetimeMaximumsForD
+												granite:class="cmp-healthPlan__editor-Field"
+												jcr:primaryType="nt:unstructured"
+												sling:resourceType="granite/ui/components/coral/foundation/form/numberfield"
+												fieldLabel="Out Of Network"
+												metaType="number"
+												min="0"
+												name="./medicalCare/oonLifetimeMaximumsForD"
+												step="any"
+												typeHint="long"
+												valueType="long"
+											/>
+										</items>
+									</well>
+								</items>
+							</lifetimeMaximumsforD>
+							<orthodonticServices
+								jcr:primaryType="nt:unstructured"
+								sling:resourceType="granite/ui/components/coral/foundation/container">
+								<items jcr:primaryType="nt:unstructured">
+									<heading
+										granite:class="coral-Heading coral-Heading--4"
+										jcr:primaryType="nt:unstructured"
+										sling:resourceType="granite/ui/components/coral/foundation/heading"
+										level="{Long}4"
+										text="Orthodontic Services ($)"/>
+									<well
+										granite:class="cmp-dentalPlan__editor-row"
+										jcr:primaryType="nt:unstructured"
+										sling:resourceType="granite/ui/components/coral/foundation/well">
+										<items jcr:primaryType="nt:unstructured">
+											<inOrthodonticServices
+												granite:class="cmp-healthPlan__editor-Field"
+												jcr:primaryType="nt:unstructured"
+												sling:resourceType="granite/ui/components/coral/foundation/form/numberfield"
+												fieldLabel="In Network"
+												metaType="number"
+												min="0"
+												name="./medicalCare/inOrthodonticServices"
+												step="any"
+												typeHint="long"
+												valueType="long"/>
+											<inOrthodonticServicesIsPercentage
+													jcr:primaryType="nt:unstructured"
+													sling:resourceType="granite/ui/components/coral/foundation/form/checkbox"
+													name="./medicalCare/inOrthodonticServicesIsPercentage"
+													text="%"
+													value="{Boolean}true"
+													uncheckedValue="{Boolean}false"/>
+											<oonOrthodonticServices
+												granite:class="cmp-healthPlan__editor-Field"
+												jcr:primaryType="nt:unstructured"
+												sling:resourceType="granite/ui/components/coral/foundation/form/numberfield"
+												fieldLabel="Out Of Network"
+												metaType="number"
+												min="0"
+												name="./medicalCare/oonOrthodonticServices"
+												step="any"
+												typeHint="long"
+												valueType="long"/>
+											<oonOrthodonticServicesIsPercentage
+													jcr:primaryType="nt:unstructured"
+													sling:resourceType="granite/ui/components/coral/foundation/form/checkbox"
+													name="./medicalCare/oonOrthodonticServicesIsPercentage"
+													text="%"
+													value="{Boolean}true"
+													uncheckedValue="{Boolean}false"/>
+											<orthodonticServicesFootnote
+												jcr:primaryType="nt:unstructured"
+												sling:resourceType="granite/ui/components/coral/foundation/form/textarea"
+												fieldLabel="Footnote"
+												name="./medicalCare/orthodonticsServicesFootnote"/>
+										</items>
+									</well>
+								</items>
+							</orthodonticServices>
+						</items>
+					</medicalCareTab>
+					<brochures
+						jcr:primaryType="nt:unstructured"
+						jcr:title="Brochures"
+						sling:resourceType="granite/ui/components/coral/foundation/container"
+						margin="{Boolean}true">
+						<items jcr:primaryType="nt:unstructured">
+							<columns
+								jcr:primaryType="nt:unstructured"
+								sling:resourceType="granite/ui/components/coral/foundation/fixedcolumns"
+								margin="{Boolean}true">
+								<items jcr:primaryType="nt:unstructured">
+									<brochuresList
+										jcr:primaryType="nt:unstructured"
+										sling:resourceType="granite/ui/components/coral/foundation/container">
+										<items jcr:primaryType="nt:unstructured">
+											<heading
+												granite:class="coral-Heading coral-Heading--4"
+												jcr:primaryType="nt:unstructured"
+												sling:resourceType="granite/ui/components/coral/foundation/heading"
+												level="{Long}4"
+												text="Brochures List"/>
+											<well
+												jcr:primaryType="nt:unstructured"
+												sling:resourceType="granite/ui/components/coral/foundation/well">
+												<items jcr:primaryType="nt:unstructured">
+													<sectionTitle
+														jcr:primaryType="nt:unstructured"
+														sling:resourceType="granite/ui/components/coral/foundation/form/textfield"
+														fieldLabel="Section Title"
+														name="./brochures/sectionTitle"/>
+													<links
+														jcr:primaryType="nt:unstructured"
+														sling:resourceType="granite/ui/components/coral/foundation/form/multifield"
+														composite="{Boolean}true"
+														fieldLabel="Brochure Files">
+														<field
+															jcr:primaryType="nt:unstructured"
+															sling:resourceType="granite/ui/components/coral/foundation/container"
+															name="./brochures/items">
+															<items jcr:primaryType="nt:unstructured">
+																<title
+																	jcr:primaryType="nt:unstructured"
+																	sling:resourceType="granite/ui/components/coral/foundation/form/textfield"
+																	fieldLabel="Title"
+																	name="title"
+																	required="{Boolean}true"/>
+																<link
+																	jcr:primaryType="nt:unstructured"
+																	sling:resourceType="granite/ui/components/coral/foundation/form/pathfield"
+																	fieldLabel="Path"
+																	name="path"
+																	required="{Boolean}true"
+																	rootPath="/content/dam/premember/documents"/>
+															</items>
+														</field>
+													</links>
+												</items>
+											</well>
+										</items>
+									</brochuresList>
+								</items>
+							</columns>
+						</items>
+					</brochures>
+					<benefitsDescriptions
+						jcr:primaryType="nt:unstructured"
+						jcr:title="Benefits Description"
+						sling:resourceType="granite/ui/components/coral/foundation/container"
+						margin="{Boolean}true">
+						<items jcr:primaryType="nt:unstructured">
+							<general
+								jcr:primaryType="nt:unstructured"
+								sling:resourceType="cq/gui/components/authoring/dialog/richtext"
+								fieldLabel="General"
+								name="./benefitsDescriptions/general"
+								useFixedInlineToolbar="{Boolean}true"/>
+						</items>
+					</benefitsDescriptions>
+				</items>
+            </tabs>
+        </items>
+    </content>
+</jcr:root>

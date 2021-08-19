@@ -1,0 +1,48 @@
+$c-awards-size: 8.375rem !default;
+
+@mixin award-item-vert () {
+	[class*="o-grid__item-4"] {
+		.c-awards__item {
+			flex-direction: column;
+
+			.c-awards__img {
+				width: auto;
+				height: $c-awards-size;
+				margin: 0 auto $g-spacing;
+			}
+
+			.o-media__body {
+				text-align: center;
+				width: 100%; // set width 100% for ie11 flexbox bugfix.
+			}
+		}
+	}
+}
+
+.c-awards {
+	@include mq($until: lg) {
+		[class*="o-grid__item"]:not(:last-child):not(:only-child) {
+			margin-bottom: $g-spacing;
+		}
+	}
+
+	@include mq($from: xs, $until: md) {
+		@include award-item-vert;
+	}
+
+	@include mq(lg) {
+		@include award-item-vert;
+	}
+}
+
+.c-awards__item {
+	@include mq(lg) {
+		height: 100%;
+	}
+}
+
+.c-awards__img {
+	width: $c-awards-size;
+	height: auto;
+	margin-right: $g-spacing;
+}

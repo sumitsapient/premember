@@ -1,0 +1,64 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<jcr:root xmlns:dam="http://www.day.com/dam/1.0" xmlns:cq="http://www.day.com/jcr/cq/1.0" xmlns:jcr="http://www.jcp.org/jcr/1.0" xmlns:mix="http://www.jcp.org/jcr/mix/1.0" xmlns:nt="http://www.jcp.org/jcr/nt/1.0"
+    jcr:mixinTypes="[mix:referenceable]"
+    jcr:primaryType="dam:Asset">
+    <jcr:content
+        cq:name="pharmacy-plan-copy"
+        cq:parentPath="/content/dam/premember/plans/plans-copy"
+        jcr:description=""
+        jcr:primaryType="dam:AssetContent"
+        jcr:title="Pharmacy Plan Copy"
+        contentFragment="{Boolean}true"
+        lastFragmentSave="{Date}2020-06-25T02:42:57.668Z">
+        <data
+            cq:model="/conf/premember/plans-copy/settings/dam/cfm/models/pharmacy-plans-copy"
+            jcr:primaryType="nt:unstructured">
+            <master
+                jcr:mixinTypes="[cq:Taggable]"
+                jcr:primaryType="nt:unstructured"
+                access3TierLink="http://example.com/tier3access"
+                access3TierName="Access 3-Tier"
+                access4TierLink="http://example.com/tier4access"
+                access4TierName="Access 4-Tier"
+                advantage3TierLink="http://example.com/tier3advantage"
+                advantage3TierName="Advantage 3-Tier"
+                advantage4TierLink="http://example.com/tier4"
+                advantage4TierName="Advantage 4-Tier"
+                coloradoDoctorsPlanLink="http://example.com/colorado"
+                coloradoDoctorsPlanName="Colorado Doctors Plan"
+                essentialAllStatesName="Essential All States"
+                essentialAllStatesPdf="http://example.com/allstate"
+                plansIconLink="/content/dam/premember/icons/ic_drug-prescription.svg"
+                plansNameHeader="Pharmacy Plans"
+                prescriptionDrugCostsText="&lt;p>Use the OptumRx Drug Pricing Tool to look up the estimated price of a medication based on pharmacies near you. This tool is only a guide and the actual cost may vary. Estimated pricing is&amp;nbsp;not specific to your benefit and is not available for all medications. The estimated pricing reflects 100% of the medication cost.&amp;nbsp;&lt;/p>&#xa;"
+                tier1Description="Mostly generic and some name-brand medications."
+                tier1DollarSigns="$"
+                tier1Name="Tier 1"
+                tier1Range="Lowest Cost"
+                tier2Description="A mix of brand-name and generic medications."
+                tier2DollarSigns="$$"
+                tier2Name="Tier 2"
+                tier2Range="Mid-range Cost"
+                tier3Description="A mix of brand-name and generic medications."
+                tier3DollarSigns="$$$"
+                tier3highestDescription="Mostly brand-name drugs, as well as some generic medications."
+                tier3highestDollarSigns="$$$"
+                tier3highestName="Tier 3 Highest"
+                tier3highestRange="Highest Cost"
+                tier3Name="Tier 3"
+                tier3Range="Higher Cost"
+                tier4Description="Mostly brand-name drugs, as well as some generic medications."
+                tier4DollarSigns="$$$$"
+                tier4Name="Tier 4"
+                tier4Range="Highest Cost"
+                traditional3TierLink="http://example.com/tier3"
+                traditional3TierName="Traditional 3-Tier"
+                traditional4TierLink="http://example.com/tier4"
+                traditional4TierName="Traditional 4-Tier"/>
+        </data>
+        <metadata
+            jcr:mixinTypes="[cq:Taggable]"
+            jcr:primaryType="nt:unstructured"/>
+        <related jcr:primaryType="nt:unstructured"/>
+    </jcr:content>
+</jcr:root>

@@ -1,0 +1,35 @@
+<sly data-sly-use.model="com.mirumagency.uhc.premember.core.models.ProviderCardList">
+  <p data-sly-test="${wcmmode.edit}">Provider Card List Component</p>
+  <div data-sly-use.templates="core/wcm/components/commons/v1/templates.html"
+       class="o-grid o-grid--aem-container">
+
+    <sly data-sly-use.template="card.html"
+         data-sly-call="${template.card @ show=model.tokens['selectedOption.traditional3Tier'], name=model.tokens['copy.traditional3TierName'], link=model.tokens['copy.traditional3TierLink'], linkTitle=model.tokens['copy.traditional3TierLinkTitle'], pdfTitle=model.tokens['copy.traditional3TierPDFTitle'], pdfLink=model.tokens['copy.traditional3TierPdf'], futureLink=model.tokens['copy.traditional3TierFutureCoverageLink'], futureLinkTitle=model.tokens['copy.traditional3TierFutureCoverageLinkTitle']}"></sly>
+
+    <sly data-sly-use.template="card.html"
+         data-sly-call="${template.card @ show=model.tokens['selectedOption.traditional4Tier'], name=model.tokens['copy.traditional4TierName'], link=model.tokens['copy.traditional4TierLink'], linkTitle=model.tokens['copy.traditional4TierLinkTitle'], pdfTitle=model.tokens['copy.traditional4TierPDFTitle'], pdfLink=model.tokens['copy.traditional4TierPdf'], futureLink=model.tokens['copy.traditional4TierFutureCoverageLink'], futureLinkTitle=model.tokens['copy.traditional4TierFutureCoverageLinkTitle']}"></sly>
+
+    <sly data-sly-use.template="card.html"
+         data-sly-call="${template.card @ show=model.tokens['selectedOption.advantage3Tier'], name=model.tokens['copy.advantage3TierName'], link=model.tokens['copy.advantage3TierLink'], linkTitle=model.tokens['copy.advantage3TierLinkTitle'], pdfTitle=model.tokens['copy.advantage3TierPDFTitle'], pdfLink=model.tokens['copy.advantage3TierPdf'], futureLink=model.tokens['copy.advantage3TierFutureCoverageLink'], futureLinkTitle=model.tokens['copy.advantage3TierFutureCoverageLinkTitle']}"></sly>
+
+    <sly data-sly-use.template="card.html"
+         data-sly-call="${template.card @ show=model.tokens['selectedOption.advantage4Tier'], name=model.tokens['copy.advantage4TierName'], link=model.tokens['copy.advantage4TierLink'], linkTitle=model.tokens['copy.advantage4TierLinkTitle'], pdfTitle=model.tokens['copy.advantage4TierPDFTitle'], pdfLink=model.tokens['copy.advantage4TierPdf'], futureLink=model.tokens['copy.advantage4TierFutureCoverageLink'], futureLinkTitle=model.tokens['copy.advantage4TierFutureCoverageLinkTitle']}"></sly>
+
+    <sly data-sly-use.template="card.html"
+         data-sly-call="${template.card @ show=model.tokens['selectedOption.access3Tier'], name=model.tokens['copy.access3TierName'], link=model.tokens['copy.access3TierLink'], linkTitle=model.tokens['copy.access3TierLinkTitle'], pdfTitle=model.tokens['copy.access3TierPDFTitle'], pdfLink=model.tokens['copy.access3TierPdf'], futureLink=model.tokens['copy.access3TierFutureCoverageLink'], futureLinkTitle=model.tokens['copy.access3TierFutureCoverageLinkTitle']}"></sly>
+
+    <sly data-sly-use.template="card.html"
+         data-sly-call="${template.card @ show=model.tokens['selectedOption.access4Tier'], name=model.tokens['copy.access4TierName'], link=model.tokens['copy.access4TierLink'], linkTitle=model.tokens['copy.access4TierLinkTitle'], pdfTitle=model.tokens['copy.access4TierPDFTitle'], pdfLink=model.tokens['copy.access4TierPdf'], futureLink=model.tokens['copy.access4TierFutureCoverageLink'], futureLinkTitle=model.tokens['copy.access4TierFutureCoverageLinkTitle']}"></sly>
+
+    <sly data-sly-use.template="card.html"
+         data-sly-call="${template.card @ show=model.tokens['selectedOption.essentialAllStates'], name=model.tokens['copy.essentialAllStatesName'], link=model.tokens['copy.essentialAllStatesLink'], linkTitle=model.tokens['copy.essentialAllStatesLinkTitle'], pdfTitle=model.tokens['copy.essentialAllStatesPDFTitle'], pdfLink=model.tokens['copy.essentialAllStatesPdf'], futureLink=model.tokens['copy.essentialAllStatesFutureCoverageLink'], futureLinkTitle=model.tokens['copy.essentialAllStatesFutureCoverageLinkTitle']}"></sly>
+
+    <sly data-sly-use.template="card.html"
+         data-sly-call="${template.card @ show=model.tokens['selectedOption.coloradoDoctorsPlan'], name=model.tokens['copy.coloradoDoctorsPlanName'], link=model.tokens['copy.coloradoDoctorsPlanLink'], linkTitle=model.tokens['copy.coloradoDoctorsPlanLinkTitle'], pdfTitle=model.tokens['copy.coloradoDoctorsPlanPDFTitle'], pdfLink=model.tokens['copy.coloradoDoctorsPlanPdf'], futureLink=model.tokens['copy.coloradoDoctorsPlanFutureCoverageLink'], futureLinkTitle=model.tokens['copy.coloradoDoctorsPlanFutureCoverageLinkTitle']}"></sly>
+
+    <sly data-sly-list.customPdl="${model.customPdls}">
+      <sly data-sly-use.template="card.html"
+           data-sly-call="${template.card @ show=customPdl.planName, name=customPdl.planName, link=customPdl.planLink, linkTitle=customPdl.planLinkTitle, pdfTitle=customPdl.planPdfTitle, pdfLink=customPdl.planPdf, futureLink=customPdl.planFutureCoverageLink, futureLinkTitle=customPdl.planFutureCoverageTitle}"></sly>
+    </sly>
+  </div>
+</sly>

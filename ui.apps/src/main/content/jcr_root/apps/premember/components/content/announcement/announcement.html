@@ -1,0 +1,38 @@
+<div class="aem-component u-p-r-sm u-bg-white${announcement.greyBorder ? ' u-b u-b-gray-dark' : ''}"
+     data-sly-use.templates="core/wcm/components/commons/v1/templates.html"
+     data-sly-use.announcement="com.mirumagency.uhc.premember.core.models.Announcement"
+     data-sly-use.employerData="com.mirumagency.uhc.premember.core.models.EmployerData"
+     data-sly-attribute.id="${employerData.id}"
+     data-container="Announcement">
+    <div data-sly-test="${wcmmode.edit || announcement.alwaysDisplay || employerData.employer.announcement.showAnnouncement}" class="o-grid">
+        <div class="o-grid__item o-grid__item-4${announcement.greyBorder ? ' u-d-flex u-f-align-center': ''}"  data-sly-test="${wcmmode.edit || announcement.isImageNotEmpty}">
+            <!-- Image -->
+            <sly
+                data-sly-test="${wcmmode.edit || announcement.isImageNotEmpty}"
+                data-sly-resource="${'image' @ resourceType='premember/components/content/image', decoration=true}"></sly>
+        </div>
+        <div class="o-grid__item o-grid__item-8 u-d-flex u-f-column u-f-justify-center">
+            <!-- Title -->
+            <h4
+                class="${announcement.greyBorder ? 'unity-type-h3 u-text-serif  u-m-t-sm' : 'unity-type-h3 u-text-bold u-m-t-sm'}"
+                data-sly-test="${announcement.isTitleNotEmpty}"
+                data-sly-element="${announcement.titleType}">
+                ${announcement.title}
+            </h4>
+            <!-- Body Text -->
+            <div data-sly-test="${wcmmode.edit || announcement.isTextNotEmpty}"
+                data-sly-resource="${'text' @ resourceType='premember/components/content/text'}"></div>
+            <!-- Button List -->
+            <div class="o-list-pack">
+                <ul class="o-list-pack__list">
+                    <li
+                        class="o-list-pack__item"
+                        data-sly-resource="${'button' @ resourceType='premember/components/content/button'}"></li>
+                    <li
+                        class="o-list-pack__item"
+                        data-sly-resource="${'pdfButton' @ resourceType='premember/components/content/button'}"></li>
+                </ul>
+            </div>
+        </div>
+    </div>
+</div>

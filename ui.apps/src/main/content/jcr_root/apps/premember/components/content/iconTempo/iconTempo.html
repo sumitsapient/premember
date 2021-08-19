@@ -1,0 +1,13 @@
+<sly data-sly-use.icontempo="com.mirumagency.uhc.premember.core.models.IconTempo"
+     data-sly-use.templates="core/wcm/components/commons/v1/templates.html"
+     data-sly-test.hasContent="${icontempo.svgContent}">
+	<div class="cmp-icon" data-sly-attribute.id="${icontempo.id}">
+		${icontempo.svgContent @ context='unsafe'}
+	</div>
+</sly>
+<sly data-sly-test="${wcmmode.edit}">
+	<sly data-sly-test="${icontempo.path && !icontempo.svgContent}">
+		Invalid icon!
+	</sly>
+</sly>
+<sly data-sly-call="${templates.placeholder @ isEmpty = !hasContent}"></sly>

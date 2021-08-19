@@ -1,0 +1,158 @@
+// CMP Image - AEM Core Image additions
+.image {
+	width: 100%;
+}
+
+.cmp-image__image {
+	width: initial;
+}
+
+.aem-image--center {
+	text-align: center;
+}
+
+.aem-image--right {
+	position: relative !important;
+	text-align: right;
+
+	@include mq(md) {
+		right: -$g-spacing;
+	}
+
+	@include mq(lg) {
+		right: -$g-spacing-lg; // Shifted to the edge of the screen, including Anchor Nav border
+	}
+
+	@include mq(xl) {
+		right: -32.5px;
+	}
+}
+
+.aem-image--right,
+.aem-image--top-left,
+.aem-image--top-right,
+.aem-image--bottom-left,
+.aem-image--bottom-right {
+	width: 100vw;
+	margin-left: -1.75rem;
+
+	@include mq(md) {
+		width: 100%;
+		margin-left: 0;
+		position: absolute;
+	}
+
+	@include mq(xl) {
+		width: calc(100% + 50vw - 648px); // Parent column width + distance to the edge of the screen
+	}
+
+	.o-container--padding-lg & {
+		@include mq($until: md) {
+			margin-bottom: -$g-spacing-lg !important;
+		}
+	}
+
+	.o-container--padding-xl & {
+		@include mq($until: md) {
+			margin-bottom: -$g-spacing-xl !important;
+		}
+	}
+}
+
+.aem-image--top-right,
+.aem-image--bottom-right {
+	text-align: right;
+}
+
+.aem-image--top-left {
+	left: calc(-50vw + 100% + 8px);
+
+	.o-container--padding-lg & {
+		top: -$g-spacing-xxl;
+	}
+
+	.o-container--padding-xl & {
+		top: -$g-spacing-xxxl;
+	}
+}
+
+.aem-image--top-right {
+	right: -$g-spacing-xs;
+
+	@include mq(lg) {
+		right: -$g-spacing-sm;
+	}
+
+	@include mq(xl) {
+		right: calc(-50vw + 632px);
+	}
+
+	.o-container--padding-lg & {
+		top: -$g-spacing-xxl;
+	}
+
+	.o-container--padding-xl & {
+		top: -$g-spacing-xxxl;
+	}
+}
+
+.aem-image--bottom-left {
+	@include mq(md) {
+		left: -$g-spacing-xs;
+	}
+
+	@include mq(lg) {
+		left: -$g-spacing-sm;
+	}
+
+	@include mq(xl) {
+		left: calc(-50vw + 632px);
+	}
+
+	.o-container--padding-lg & {
+		bottom: -$g-spacing-xxl;
+	}
+
+	.o-container--padding-xl & {
+		bottom: -$g-spacing-xxxl;
+	}
+}
+
+.aem-image--bottom-right {
+	right: -$g-spacing-xs;
+
+	@include mq(lg) {
+		right: -$g-spacing-sm;
+	}
+
+	@include mq(xl) {
+		right: calc(-50vw + 624px);
+		z-index: -1;
+	}
+
+	.o-container--padding-lg & {
+		bottom: -$g-spacing-xxl;
+	}
+
+	.o-container--padding-xl & {
+		bottom: -$g-spacing-xxxl;
+	}
+}
+
+.aem-image--shift-upward {
+	@include mq(md) {
+		transform: translateY(-3.25rem);
+	}
+}
+
+.aem-image--shift-downward {
+	@include mq(md) {
+		transform: translateY(3.25rem);
+	}
+}
+
+.aem-image--shift-right\@sm-only {
+	@include mq($until: md) {
+		transform: translateX(1.75rem);
+	}
+}
